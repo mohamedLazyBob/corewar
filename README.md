@@ -7,7 +7,7 @@
 
 ## Contributors :
 + Douae El Alj : [dino](https://github.com/eauod17)
-+ Mohamed essafi : [mesafi](https://github.com/MohammedEsafi) 
++ [Mohammed Esafi](https://github.com/MohammedEsafi) 
 + tareq bareich : [tareich](https://github.com/tareqbareich)
 + Mohamed Zaboub : [LazyBob](https://github.com/mohamedLazyBob)
 
