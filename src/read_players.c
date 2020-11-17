@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 14:13:29 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/17 14:17:36 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/17 14:53:39 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,32 @@
 
 /*
 *******************************************************************************
-** this checks if there is a dump flag and reads it's value if available
-** the bol is there to configure the output (32 vs 64 bit per row)
+** we'll remove this function afterword, it's just for test purpose
 */
-void	print_input(t_input_data *bloc, int *nbr_cycles);
 
-int		ft_read_dump(int i, char **av, int *nbr_cycles)
+void	print_input(t_input_data *bloc, int *nbr_cycles)
 {
+	int idx;
 
+	idx = 0;
+	printf("dump -- type: %d, value : %d\n", nbr_cycles[0], nbr_cycles[1]);
+	while (idx < bloc->players_counter)
+	{
+		printf("id: %d, name: [%s]\n", bloc->ids[idx], bloc->names[idx]);
+		idx++;
+	}
+}
+
+/*
+*******************************************************************************
+** this checks if there is a dump flag and reads it's value if available
+** the bol (nbr_cycles[0]) 
+**	is there to configure the output (32 vs 64 bit per row)
+** and if the flag -V is given
+*/
+
+int		ft_read_sideflags(int i, char **av, int *nbr_cycles)
+{
 	if ((ft_strcmp(av[i], "--dump") == 0) && (av[i + 1]))
 	{
 		nbr_cycles[0] = 0;
@@ -31,6 +49,9 @@ int		ft_read_dump(int i, char **av, int *nbr_cycles)
 	{
 		nbr_cycles[0] = 1;
 		nbr_cycles[1] = ft_atoi(av[i + 1]);
+	}
+	else if ((ft_strcmp(ft_lower(av[i]), "-v") == 0) || (ft_strcmp(ft_lower(av[i]), "--visu") == 0))
+	{
 	}
 	else
 		return (0);
@@ -75,38 +96,26 @@ int		ft_add_ids(t_input_data *bloc)
 	int	small_id;
 	int	i;
 	int	j;
-	int	test[2];
-	
+	int	test;
+
 	small_id = 1;
-	ft_memset(test, 0, 2 * sizeof(int));
-	i = 0;
-	while (i < bloc->players_counter)
+	test = 0;
+	i = -1;
+	while (++i < bloc->players_counter)
 	{
 		if (bloc->ids[i] > MAX_PLAYERS || bloc->ids[i] < 0)
-		{
 			return (2);
-		}
 		if (bloc->ids[i] == 0)
 		{
-			j = 0;
-			while (j < bloc->players_counter)
-			{
+			j = -1;
+			while (++j < bloc->players_counter)
 				if (small_id == bloc->ids[j])
-				{
-					small_id++;
-					j = -1;
-				}
-				j++;
-			}
-			bloc->ids[i] = small_id;
-			small_id++;
+					(small_id++) && (j = -1);
+			bloc->ids[i] = small_id++;
 		}
-		test[0] += bloc->ids[i];
-		i++;
+		test += bloc->ids[i];
 	}
-	i = 0;
-	test[1] = (bloc->players_counter * (bloc->players_counter + 1)) / 2;
-	if (test[0] != test[1])
+	if (test != ((bloc->players_counter * (bloc->players_counter + 1)) / 2))
 		return (2);
 	return (0);
 }
@@ -115,42 +124,26 @@ int		ft_add_ids(t_input_data *bloc)
 *******************************************************************************
 */
 
-void	print_input(t_input_data *bloc, int *nbr_cycles)
-{
-	printf("dump -- type: %d, value : %d\n", nbr_cycles[0], nbr_cycles[1]);
-
-	int idx = 0;
-	while (idx < bloc->players_counter)
-	{
-		printf ("id: %d, name: [%s]\n", bloc->ids[idx], bloc->names[idx]);
-		idx++;
-	}
-
-}
-
-/*
-*******************************************************************************
-*/
-
-int ft_read_players(int argc, char **av, t_input_data *bloc, int *nbr_cycles)
+int		ft_read_players(int argc, char **av,\
+						t_input_data *bloc, int *nbr_cycles)
 {
 	int		idx;
-	int		ret = 0;
+	int		ret;
 
 	idx = 1;
+	ret = 0;
 	while (idx < argc)
 	{
 		if (bloc->players_counter == MAX_PLAYERS)
 			return (1);
-		ret = ft_read_dump(idx, av, nbr_cycles);
+		ret = ft_read_sideflags(idx, av, nbr_cycles);
 		if (ret == 0)
 			ret = ft_read_player_numb(idx, av, bloc);
 		if (ret == 0)
 			ft_read_player_name(idx, av, bloc);
-		idx += ret + 1;	
+		idx += ret + 1;
 	}
-	ret = ft_add_ids(bloc); // we need this func here;
-
+	ret = ft_add_ids(bloc);
 	return (ret);
 }
 
