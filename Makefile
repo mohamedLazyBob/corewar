@@ -1,11 +1,11 @@
 # this is the empty template
-NAME= 
+NAME= corewar
 
 SRC_PATH= src
-SRC_NAME= 
+SRC_NAME= main_vm_parse.c read_players.c
 
 HDR_PATH= includes
-HDR_NAME= 
+HDR_NAME= virtual_machine.h op.h
 
 LIB_PATH= libft
 LIB= libft.a
