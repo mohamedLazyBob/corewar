@@ -6,7 +6,7 @@
 /*   By: zaz <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:33:27 by zaz               #+#    #+#             */
-/*   Updated: 2020/11/16 20:14:55 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/17 14:03:43 by del-alj          ###   ########.fr       *
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,3 +74,9 @@ typedef struct		header_s
   unsigned int		prog_size;
   char				comment[COMMENT_LENGTH + 1];
 }					header_t;
+
+typedef struct		playrs_s
+{
+// header_t			header;
+ unsigned char		*exec_code;
+}					playrs_t;
