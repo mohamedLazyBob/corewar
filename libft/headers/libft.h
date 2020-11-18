@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/29 23:32:55 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/03 10:37:16 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/18 10:27:34 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ int				ft_isstr_digit(char *str);
 char			*ft_itoa(int n);
 int				ft_toupper(int c);
 int				ft_tolower(int	c);
+char			*ft_strlower(char *buff);
 void			ft_putchar(char c);
 void			ft_putstr(char const *s);
 void			ft_putendl(char const *s);

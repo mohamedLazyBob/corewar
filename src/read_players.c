@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 14:13:29 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/17 14:53:39 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/18 10:53:06 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,44 +14,28 @@
 
 /*
 *******************************************************************************
-** we'll remove this function afterword, it's just for test purpose
-*/
-
-void	print_input(t_input_data *bloc, int *nbr_cycles)
-{
-	int idx;
-
-	idx = 0;
-	printf("dump -- type: %d, value : %d\n", nbr_cycles[0], nbr_cycles[1]);
-	while (idx < bloc->players_counter)
-	{
-		printf("id: %d, name: [%s]\n", bloc->ids[idx], bloc->names[idx]);
-		idx++;
-	}
-}
-
-/*
-*******************************************************************************
 ** this checks if there is a dump flag and reads it's value if available
-** the bol (nbr_cycles[0]) 
+** the bol (nbr_cycles[0])
 **	is there to configure the output (32 vs 64 bit per row)
 ** and if the flag -V is given
 */
 
-int		ft_read_sideflags(int i, char **av, int *nbr_cycles)
+int		ft_read_sideflags(int i, char **av, t_input_data *bloc)
 {
 	if ((ft_strcmp(av[i], "--dump") == 0) && (av[i + 1]))
 	{
-		nbr_cycles[0] = 0;
-		nbr_cycles[1] = ft_atoi(av[i + 1]);
+		bloc->nbr_cycles[0] = 0;
+		bloc->nbr_cycles[1] = ft_atoi(av[i + 1]);
 	}
 	else if ((ft_strcmp(av[i], "-d") == 0) && (av[i + 1]))
 	{
-		nbr_cycles[0] = 1;
-		nbr_cycles[1] = ft_atoi(av[i + 1]);
+		bloc->nbr_cycles[0] = 1;
+		bloc->nbr_cycles[1] = ft_atoi(av[i + 1]);
 	}
-	else if ((ft_strcmp(ft_lower(av[i]), "-v") == 0) || (ft_strcmp(ft_lower(av[i]), "--visu") == 0))
+	else if ((ft_strcmp(ft_strlower(av[i]), "-v") == 0) || \
+				(ft_strcmp(ft_strlower(av[i]), "--visu") == 0))
 	{
+		bloc->visu = 1;
 	}
 	else
 		return (0);
@@ -124,8 +108,7 @@ int		ft_add_ids(t_input_data *bloc)
 *******************************************************************************
 */
 
-int		ft_read_players(int argc, char **av,\
-						t_input_data *bloc, int *nbr_cycles)
+int		ft_read_players(int argc, char **av, t_input_data *bloc)
 {
 	int		idx;
 	int		ret;
@@ -134,9 +117,10 @@ int		ft_read_players(int argc, char **av,\
 	ret = 0;
 	while (idx < argc)
 	{
-		if (bloc->players_counter == MAX_PLAYERS)
+		if ((bloc->players_counter == MAX_PLAYERS) && \
+				(0 == ft_read_sideflags(idx, av, bloc)))
 			return (1);
-		ret = ft_read_sideflags(idx, av, nbr_cycles);
+		ret = ft_read_sideflags(idx, av, bloc);
 		if (ret == 0)
 			ret = ft_read_player_numb(idx, av, bloc);
 		if (ret == 0)

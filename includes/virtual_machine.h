@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/17 14:36:43 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/18 10:54:42 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdio.h>
 # include <stdlib.h>
-#include "op.h"
+# include "op.h"
 # include "../libft/headers/libft.h"
 
 # define FALSE 0
@@ -23,11 +23,35 @@
 
 typedef struct	s_input_data
 {
-	int		players_counter;
-	char	*names[MAX_PLAYERS];
-	int		ids[MAX_PLAYERS];
+	int				players_counter;
+	char			*names[MAX_PLAYERS];
+	int				ids[MAX_PLAYERS];
+	int				nbr_cycles[2];
+	int				visu;
 }				t_input_data;
 
-int ft_read_players(int argc, char **av, t_input_data *bloc, int *nbr_cycles);
+/*
+**					struct up
+** ****************************************************************************
+**					files down
+*/
 
+/*
+** main_vm_parse.c
+*/
+void			print_input(t_input_data *bloc, int *nbr_cycles);
+
+/*
+** read_players.c
+*/
+int				ft_read_players(int argc, char **av, t_input_data *bloc);
+
+/*
+** main_vm_parse.c
+** this file contains the main func
+*/
+
+/*
+** ex.c
+*/
 #endif
