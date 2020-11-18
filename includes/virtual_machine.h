@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/18 13:27:28 by del-alj          ###   ########.fr       */
+/*   Updated: 2020/11/18 13:47:36 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct	s_input_data
 
 typedef struct	s_playrs
 {
-	header_t		header;
+	t_header		header;
 	unsigned char	*exec_code;
 }				t_playrs;
 
