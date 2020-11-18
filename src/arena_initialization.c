@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 13:53:57 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/18 14:41:33 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/18 14:51:16 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	print_arena(t_input_data bloc, unsigned char *arena)
 	}
 }
 
-void	ft_init_arena(t_input_data bloc, t_playrs **players)
+void	ft_init_arena(t_input_data bloc, t_playrs *players)
 {
 	unsigned	char	arena[MEM_SIZE];
 	int		chunk;
@@ -41,8 +41,8 @@ void	ft_init_arena(t_input_data bloc, t_playrs **players)
 	printf("\n\n\n");
 	while (++idx < bloc.players_counter)
 	{
-		ft_memcpy(arena + jdx, players[idx]->exec_code, \
-												players[idx]->header.prog_size);
+		ft_memcpy(arena + jdx, players[idx].exec_code, \
+												players[idx].header.prog_size);
 		jdx += chunk;
 	}
 
