@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/18 10:54:42 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/18 13:27:28 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,15 @@ typedef struct	s_input_data
 	char			*names[MAX_PLAYERS];
 	int				ids[MAX_PLAYERS];
 	int				nbr_cycles[2];
+	int				fd[MAX_PLAYERS];
 	int				visu;
 }				t_input_data;
+
+typedef struct	s_playrs
+{
+	header_t		header;
+	unsigned char	*exec_code;
+}				t_playrs;
 
 /*
 **					struct up
@@ -38,18 +45,16 @@ typedef struct	s_input_data
 **					files down
 */
 
+/*
+** ft_read_champion.c
+*/
 
-typedef struct		playrs_s
-{
- 	header_t			header;
-	 unsigned char		*exec_code;
-}					playrs_t;
-
-void			ft_read_champion(int fd, playrs_t *playrs);
-void			ft_open_champion(t_input_data bloc , playrs_t playrs);
+void			ft_read_champion(int fd, t_playrs *playrs);
+void			ft_open_champion(t_input_data bloc, t_playrs **playrs);
 void			ft_fd_players(t_input_data	*bloc);
 unsigned int	ft_convert_num(unsigned char *temp);
-void	ft_exit(char *str);
+
+void			ft_exit(char *str);
 
 /*
 ** main_vm_parse.c

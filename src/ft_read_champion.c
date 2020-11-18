@@ -1,26 +1,35 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_read_champion.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/18 13:21:01 by del-alj           #+#    #+#             */
+/*   Updated: 2020/11/18 13:25:21 by del-alj          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/virtual_machine.h"
 
-
-void	ft_exit(char *str)
+void			ft_exit(char *str)
 {
 	ft_putendl(str);
 	exit(0);
 }
 
 /*
- * *****************************************************************************
- */
+********************************************************************************
+*/
 
 unsigned int	ft_convert_num(unsigned char *temp)
 {
 	int				i;
 	unsigned int	hex;
-   
+
 	i = -1;
-	hex	= 0;
-	while(++i < 4)
+	hex = 0;
+	while (++i < 4)
 	{
 		hex = hex << 8;
 		hex = hex | (unsigned int)temp[i];
@@ -29,13 +38,12 @@ unsigned int	ft_convert_num(unsigned char *temp)
 }
 
 /*
- * *****************************************************************************
- */
+********************************************************************************
+*/
 
-
-void	ft_fd_players(t_input_data	*bloc)
+void			ft_fd_players(t_input_data *bloc)
 {
-	int i;
+	int				i;
 
 	i = 0;
 	while (i < bloc->players_counter)
@@ -46,10 +54,10 @@ void	ft_fd_players(t_input_data	*bloc)
 }
 
 /*
- * *****************************************************************************
- */
+*******************************************************************************
+*/
 
-void	ft_read_champion(int fd, playrs_t *playrs)
+void			ft_read_champion(int fd, t_playrs *playrs)
 {
 	unsigned char	temp[4];
 
@@ -63,7 +71,8 @@ void	ft_read_champion(int fd, playrs_t *playrs)
 		ft_exit("Error Header !");
 	read(fd, temp, 4);
 	playrs->header.prog_size = ft_convert_num(temp);
-	if (playrs->header.prog_size <= 0)
+	if (playrs->header.prog_size <= 0 &&
+			playrs->header.prog_size < CHAMP_MAX_SIZE)
 		ft_exit("Error Size Code !");
 	read(fd, playrs->header.comment, COMMENT_LENGTH);
 	read(fd, temp, 4);
@@ -73,25 +82,23 @@ void	ft_read_champion(int fd, playrs_t *playrs)
 				(unsigned char*)ft_strnew(playrs->header.prog_size)) == NULL)
 		exit(0);
 	read(fd, playrs->exec_code, playrs->header.prog_size);
+	if ((read(fd, temp, 4) < 0))
+		ft_exit("Error Size Code !");
 }
 
 /*
- * *****************************************************************************
- */
+*******************************************************************************
+*/
 
-void	ft_open_champion(t_input_data bloc, playrs_t playrs)
+void			ft_open_champion(t_input_data bloc, t_playrs **playrs)
 {
 	int				i;
-	
-	i = 0;
+
+	i = -1;
 	ft_fd_players(&bloc);
-	while (i < bloc.players_counter)
+	while (++i < bloc.players_counter)
 	{
-		//add playrs now i stock just 1 player
-		ft_read_champion(bloc.fd[i], &playrs);
-		printf("{%x}\n{%s}\n{%d}\n{%s}\n{%s}\n\n", playrs.header.magic,
-			playrs.header.prog_name, playrs.header.prog_size,
-			playrs.header.comment, playrs.exec_code);
-		i++;
+		playrs[i] = ft_memalloc(sizeof(t_playrs));
+		ft_read_champion(bloc.fd[i], playrs[i]);
 	}
 }

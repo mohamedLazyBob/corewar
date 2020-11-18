@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 14:13:29 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/18 10:53:06 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/18 11:41:11 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,10 @@ int		ft_read_players(int argc, char **av, t_input_data *bloc)
 		idx += ret + 1;
 	}
 	ret = ft_add_ids(bloc);
-	return (ret);
+	if (bloc->players_counter == 1)
+		return (1);
+	else
+		return (ret);
 }
 
 /*
