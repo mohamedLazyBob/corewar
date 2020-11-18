@@ -15,6 +15,8 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include <fcntl.h>
+# include <string.h>
 # include "op.h"
 # include "../libft/headers/libft.h"
 
@@ -35,6 +37,19 @@ typedef struct	s_input_data
 ** ****************************************************************************
 **					files down
 */
+
+
+typedef struct		playrs_s
+{
+ 	header_t			header;
+	 unsigned char		*exec_code;
+}					playrs_t;
+
+void			ft_read_champion(int fd, playrs_t *playrs);
+void			ft_open_champion(t_input_data bloc , playrs_t playrs);
+void			ft_fd_players(t_input_data	*bloc);
+unsigned int	ft_convert_num(unsigned char *temp);
+void	ft_exit(char *str);
 
 /*
 ** main_vm_parse.c
