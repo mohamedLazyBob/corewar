@@ -34,7 +34,7 @@ all: lib $(NAME)
 
 
 $(NAME): $(LIB_PATH)/$(LIB) $(OBJ)
-	@$(COMP) -g $(LD_FLAGS) $(LD_LIBS) $(CFLAGS) $(OBJ) -o $@
+	@$(COMP) $(OBJ) $(LD_FLAGS) $(LD_LIBS) -o $@
 	@ echo "\033[1;34m>>\033[0m $(NAME)\033[1;32m binary is ready.\033[0m"
 
 lib:

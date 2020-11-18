@@ -52,7 +52,7 @@ int		main(int ac, char **av)
 	else
 	{
 		print_input(&(bloc), bloc.nbr_cycles);
-		playrs = (t_players*)ft_memalloc(sizeof(t_playrs) * bloc.players_counter);
+		playrs = (t_playrs*)ft_memalloc(sizeof(t_playrs) * bloc.players_counter);
 		ft_open_champion(bloc, playrs);
 		ft_init_arena(bloc, playrs);
 	}
