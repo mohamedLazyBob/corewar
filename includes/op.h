@@ -6,8 +6,7 @@
 /*   By: zaz <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:33:27 by zaz               #+#    #+#             */
-/*   Updated: 2020/11/18 11:07:15 by mzaboub          ###   ########.fr       */
-/*                                                                            */
+/*   Updated: 2020/11/18 11:10:33 by mzaboub          ###   ########.fr       */
 /* ************************************************************************** */
 
 /*
@@ -88,9 +87,15 @@ typedef struct	header_s
 */
 typedef struct	s_header
 {
-	unsigned int	magic;
-	char			prog_name[PROG_NAME_LENGTH + 1];
-	unsigned int	prog_size;
-	char			comment[COMMENT_LENGTH + 1];
-}				t_header;
+  unsigned int		magic;
+  char				prog_name[PROG_NAME_LENGTH + 1];
+  unsigned int		prog_size;
+  char				comment[COMMENT_LENGTH + 1];
+}				header_t;
+
+typedef struct		playrs_s
+{
+	// header_t			header;
+	 unsigned char		*exec_code;
+}					playrs_t;
 #endif
