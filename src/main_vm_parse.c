@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:42:03 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/18 10:52:54 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/18 13:02:03 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 void	print_input(t_input_data *bloc, int *nbr_cycles)
 {
-	int idx;
+	int				idx;
 
 	idx = 0;
 	printf("dump -- type: %d, value : %d\n", nbr_cycles[0], nbr_cycles[1]);
@@ -39,9 +39,8 @@ int		main(int ac, char **av)
 	t_input_data	bloc;
 	int				nbr_cycles[2];
 	int				ret;
-   	header_t		data;
-	playrs_t		playrs;
-
+	t_header		data;
+	t_playrs		**playrs;
 
 	ft_memset(&bloc, 0, sizeof(bloc));
 	ft_memset(bloc.nbr_cycles, -1, 2 * sizeof(int));
@@ -51,10 +50,10 @@ int		main(int ac, char **av)
 	else if (ret == 2)
 		printf("wrong number in ID values \n");
 	else
-  {
-		//add playrs now i stock just 1 player
+	{
 		print_input(&(bloc), bloc.nbr_cycles);
+		playrs = ft_memalloc(sizeof(t_playrs**) * bloc.players_counter);
 		ft_open_champion(bloc, playrs);
 	}
-		return (0);
+	return (0);
 }
