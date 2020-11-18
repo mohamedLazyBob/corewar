@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/18 14:33:39 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/18 14:51:36 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ typedef struct	s_playrs
 */
 
 void			ft_read_champion(int fd, t_playrs *playrs);
-void			ft_open_champion(t_input_data bloc, t_playrs **playrs);
+void			ft_open_champion(t_input_data bloc, t_playrs *playrs);
 void			ft_fd_players(t_input_data	*bloc);
 unsigned int	ft_convert_num(unsigned char *temp);
 
@@ -74,5 +74,5 @@ int				ft_read_players(int argc, char **av, t_input_data *bloc);
 /*
 ** arena_initialization.c
 */
-void	ft_init_arena(t_input_data bloc, t_playrs **players);
+void	ft_init_arena(t_input_data bloc, t_playrs *players);
 #endif
