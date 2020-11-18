@@ -13,17 +13,17 @@ void	ft_exit(char *str)
  * *****************************************************************************
  */
 
-int	ft_convert_num(char *temp)
+unsigned int	ft_convert_num(unsigned char *temp)
 {
-	int		i;
-	int		hex;
+	int				i;
+	unsigned int	hex;
    
 	i = -1;
 	hex	= 0;
 	while(++i < 4)
 	{
 		hex = hex << 8;
-		hex = hex | (temp[i] & 0xff);
+		hex = hex | (unsigned int)temp[i];
 	}
 	return (hex);
 }
@@ -49,38 +49,37 @@ void	ft_fd_players(t_input_data	*bloc)
  * *****************************************************************************
  */
 
-void	ft_read_champion(int fd, header_t *data, playrs_t *playrs)
+void	ft_read_champion(int fd, playrs_t *playrs)
 {
-	char		temp[4];
-	int			hex;
+	unsigned char	temp[4];
 
 	read(fd, temp, 4);
-	data->magic = ft_convert_num(temp);
-	if (data->magic != COREWAR_EXEC_MAGIC)
+	playrs->header.magic = ft_convert_num(temp);
+	if (playrs->header.magic != COREWAR_EXEC_MAGIC)
 		ft_exit("Error Magic Header !");
-	read(fd, data->prog_name, PROG_NAME_LENGTH);
+	read(fd, playrs->header.prog_name, PROG_NAME_LENGTH);
 	read(fd, temp, 4);
 	if (ft_convert_num(temp) != 0)
 		ft_exit("Error Header !");
 	read(fd, temp, 4);
-	data->prog_size = ft_convert_num(temp);
-	if (data->prog_size <= 0)
+	playrs->header.prog_size = ft_convert_num(temp);
+	if (playrs->header.prog_size <= 0)
 		ft_exit("Error Size Code !");
-	read(fd, data->comment, COMMENT_LENGTH);
+	read(fd, playrs->header.comment, COMMENT_LENGTH);
 	read(fd, temp, 4);
 	if (ft_convert_num(temp) != 0)
 		ft_exit("Error Header !");
-	//if (playrs->exec_code != ft_strnew(data->prog_size))
-	//	exit(0);
-	playrs->exec_code = malloc(sizeof(char) * data->prog_size + 1);
-	read(fd, playrs->exec_code, data->prog_size);
+	if ((playrs->exec_code =
+				(unsigned char*)ft_strnew(playrs->header.prog_size)) == NULL)
+		exit(0);
+	read(fd, playrs->exec_code, playrs->header.prog_size);
 }
 
 /*
  * *****************************************************************************
  */
 
-void	ft_open_champion(t_input_data bloc, header_t data, playrs_t playrs)
+void	ft_open_champion(t_input_data bloc, playrs_t playrs)
 {
 	int				i;
 	
@@ -89,9 +88,10 @@ void	ft_open_champion(t_input_data bloc, header_t data, playrs_t playrs)
 	while (i < bloc.players_counter)
 	{
 		//add playrs now i stock just 1 player
-		ft_read_champion(bloc.fd[i], &data, &playrs);
-		//printf("{%x}\n{%s}\n{%d}\n{%s}\n{%s}\n\n", data.magic,
-		//	/data.prog_name, data.prog_size, data.comment, playrs.exec_code);
+		ft_read_champion(bloc.fd[i], &playrs);
+		printf("{%x}\n{%s}\n{%d}\n{%s}\n{%s}\n\n", playrs.header.magic,
+			playrs.header.prog_name, playrs.header.prog_size,
+			playrs.header.comment, playrs.exec_code);
 		i++;
 	}
 }
