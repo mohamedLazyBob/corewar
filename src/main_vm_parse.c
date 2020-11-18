@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:42:03 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/17 14:16:14 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/18 11:07:32 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int		main(int ac, char **av)
 	{
 		//add playrs now i stock just 1 player
 		print_input(&bloc, nbr_cycles);
-		ft_open_champion(bloc, data, playrs);
+		ft_open_champion(bloc, playrs);
 	}
 		return (0);
 }
