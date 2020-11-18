@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/18 13:27:28 by del-alj          ###   ########.fr       */
+/*   Updated: 2020/11/18 14:33:39 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct	s_input_data
 
 typedef struct	s_playrs
 {
-	header_t		header;
+	t_header		header;
 	unsigned char	*exec_code;
 }				t_playrs;
 
@@ -72,6 +72,7 @@ int				ft_read_players(int argc, char **av, t_input_data *bloc);
 */
 
 /*
-** ex.c
+** arena_initialization.c
 */
+void	ft_init_arena(t_input_data bloc, t_playrs **players);
 #endif
