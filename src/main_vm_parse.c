@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "virtual_machine.h"
+#include "../includes/virtual_machine.h"
 
 /*
 *******************************************************************************
@@ -39,6 +39,9 @@ int		main(int ac, char **av)
 	t_input_data	bloc;
 	int				nbr_cycles[2];
 	int				ret;
+   	header_t		data;
+	playrs_t		playrs;
+
 
 	ft_memset(&bloc, 0, sizeof(bloc));
 	ft_memset(bloc.nbr_cycles, -1, 2 * sizeof(int));
@@ -48,6 +51,10 @@ int		main(int ac, char **av)
 	else if (ret == 2)
 		printf("wrong number in ID values \n");
 	else
+  {
+		//add playrs now i stock just 1 player
 		print_input(&(bloc), bloc.nbr_cycles);
-	return (0);
+		ft_open_champion(bloc, playrs);
+	}
+		return (0);
 }
