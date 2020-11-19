@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/18 14:51:36 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/19 13:46:52 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@
 
 typedef struct	s_input_data
 {
-	int				players_counter;
-	char			*names[MAX_PLAYERS];
-	int				ids[MAX_PLAYERS];
-	int				nbr_cycles[2];
-	int				fd[MAX_PLAYERS];
-	int				visu;
+	int		players_counter;
+	char	*names[MAX_PLAYERS];
+	int		ids[MAX_PLAYERS];
+	int		nbr_cycles[2];
+	int		fd[MAX_PLAYERS];
+	int		visu;
 }				t_input_data;
 
 typedef struct	s_playrs
@@ -38,6 +38,18 @@ typedef struct	s_playrs
 	t_header		header;
 	unsigned char	*exec_code;
 }				t_playrs;
+
+typedef struct	s_op
+{
+	char	*op_name;
+	int		args_num;
+	char	args_type[3];
+	int		idx;
+	int		execution_cycle;
+	char	*op_description;
+	int		arg_type_code;
+	int		reg_size;
+}				t_op;
 
 /*
 **					struct up
@@ -74,5 +86,5 @@ int				ft_read_players(int argc, char **av, t_input_data *bloc);
 /*
 ** arena_initialization.c
 */
-void	ft_init_arena(t_input_data bloc, t_playrs *players);
+void			ft_init_arena(t_input_data bloc, t_playrs *players);
 #endif
