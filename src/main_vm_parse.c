@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:42:03 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/18 13:02:03 by del-alj          ###   ########.fr       */
+/*   Updated: 2020/11/18 14:52:34 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		main(int ac, char **av)
 	int				nbr_cycles[2];
 	int				ret;
 	t_header		data;
-	t_playrs		**playrs;
+	t_playrs		*playrs;
 
 	ft_memset(&bloc, 0, sizeof(bloc));
 	ft_memset(bloc.nbr_cycles, -1, 2 * sizeof(int));
@@ -52,8 +52,9 @@ int		main(int ac, char **av)
 	else
 	{
 		print_input(&(bloc), bloc.nbr_cycles);
-		playrs = ft_memalloc(sizeof(t_playrs**) * bloc.players_counter);
+		playrs = (t_playrs*)ft_memalloc(sizeof(t_playrs) * bloc.players_counter);
 		ft_open_champion(bloc, playrs);
+		ft_init_arena(bloc, playrs);
 	}
 	return (0);
 }
