@@ -2,7 +2,8 @@
 NAME= corewar
 
 SRC_PATH= src
-SRC_NAME= main_vm_parse.c read_players.c ft_read_champion.c
+SRC_NAME= main_vm_parse.c read_players.c ft_read_champion.c \
+			arena_initialization.c
 
 HDR_PATH= includes
 HDR_NAME= virtual_machine.h op.h
@@ -33,7 +34,7 @@ all: lib $(NAME)
 
 
 $(NAME): $(LIB_PATH)/$(LIB) $(OBJ)
-	@$(COMP) -g $(LD_FLAGS) $(LD_LIBS) $(CFLAGS) $(OBJ) -o $@
+	@$(COMP) $(OBJ) $(LD_FLAGS) $(LD_LIBS) -o $@
 	@ echo "\033[1;34m>>\033[0m $(NAME)\033[1;32m binary is ready.\033[0m"
 
 lib:
