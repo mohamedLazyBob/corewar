@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 13:53:57 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/18 14:51:16 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/19 09:16:45 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,14 @@ void	print_arena(t_input_data bloc, unsigned char *arena)
 void	ft_init_arena(t_input_data bloc, t_playrs *players)
 {
 	unsigned	char	arena[MEM_SIZE];
-	int		chunk;
-	int		idx;
-	int		jdx;
+	int					chunk;
+	int					idx;
+	int					jdx;
 
 	ft_memset((void*)arena, 0, MEM_SIZE);
 	chunk = MEM_SIZE / bloc.players_counter;
 	idx = -1;
 	jdx = 0;
-	print_arena(bloc, arena);
-	printf("\n\n\n");
 	while (++idx < bloc.players_counter)
 	{
 		ft_memcpy(arena + jdx, players[idx].exec_code, \
