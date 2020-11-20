@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/19 13:46:52 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/20 09:28:37 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,47 @@ int				ft_read_players(int argc, char **av, t_input_data *bloc);
 ** arena_initialization.c
 */
 void			ft_init_arena(t_input_data bloc, t_playrs *players);
+
+/*
+** operations_1.c
+**
+** arena: is pointer bcs all process need access to the same memory
+*/
+
+typedef	struct	s_process
+{
+		unsigned char	*arena;
+		unsigned int	regestries[REG_NUMBER];
+		unsigned int	pc;
+		unsigned int	next_inst;
+		unsigned int	player_id;
+		unsigned int	process_live;
+}				t_process;
+
+typedef	struct	s_args
+{
+	unsigned char	types_code;
+	unsigned char	arg1;
+	unsigned char	arg2;
+	unsigned char	arg3;
+}				t_args;
+
+void	ft_operation_add(t_process proc, );
+
+void	ft_operation_lfork();
+void	ft_operation_sti();
+void	ft_operation_fork();
+void	ft_operation_lld();
+void	ft_operation_ld();
+void	ft_operation_zjmp();
+void	ft_operation_sub();
+void	ft_operation_ldi();
+void	ft_operation_or();
+void	ft_operation_st();
+void	ft_operation_aff();
+void	ft_operation_live();
+void	ft_operation_xor();
+void	ft_operation_lldi();
+void	ft_operation_and();
+
 #endif
