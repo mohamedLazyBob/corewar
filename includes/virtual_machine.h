@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/20 09:28:37 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/20 10:05:50 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ typedef	struct	s_process
 		unsigned int	next_inst;
 		unsigned int	player_id;
 		unsigned int	process_live;
+		unsigned char	carry;
 }				t_process;
 
 typedef	struct	s_args
@@ -112,22 +113,28 @@ typedef	struct	s_args
 	unsigned char	arg3;
 }				t_args;
 
-void	ft_operation_add(t_process proc, );
-
-void	ft_operation_lfork();
-void	ft_operation_sti();
-void	ft_operation_fork();
-void	ft_operation_lld();
-void	ft_operation_ld();
-void	ft_operation_zjmp();
+void	ft_operation_add(t_process proc);
 void	ft_operation_sub();
+
+
+void	ft_operation_ld();
+void	ft_operation_lld();
 void	ft_operation_ldi();
-void	ft_operation_or();
-void	ft_operation_st();
-void	ft_operation_aff();
-void	ft_operation_live();
-void	ft_operation_xor();
 void	ft_operation_lldi();
+
+void	ft_operation_st();
+void	ft_operation_sti();
+
 void	ft_operation_and();
+void	ft_operation_or();
+void	ft_operation_xor();
+
+void	ft_operation_fork();
+void	ft_operation_lfork();
+
+void	ft_operation_live();
+void	ft_operation_zjmp();
+void	ft_operation_aff();
+
 
 #endif
