@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 13:53:57 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/19 19:06:41 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/20 12:01:45 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	print_arena(t_input_data bloc, unsigned char *arena)
 	{
 		printf("%.2x ", arena[idx]);
 		idx++;
+		if (arena[idx] == 4)
+			 printf("heer \n\n\n");
 		if (idx % 128 == 0)
 			printf("\n");
 	}
