@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/20 10:05:50 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/20 10:19:20 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,9 @@ typedef	struct	s_args
 	unsigned char	arg3;
 }				t_args;
 
+/*
+********************* Douae part **************
+*/
 void	ft_operation_add(t_process proc);
 void	ft_operation_sub();
 
@@ -125,6 +128,9 @@ void	ft_operation_lldi();
 void	ft_operation_st();
 void	ft_operation_sti();
 
+/*
+********************* lazy part **************
+*/
 void	ft_operation_and();
 void	ft_operation_or();
 void	ft_operation_xor();
