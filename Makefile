@@ -11,7 +11,7 @@ HDR_NAME= virtual_machine.h op.h
 LIB_PATH= libft
 LIB= libft.a
 
-OBJ_PATH= obj
+OBJ_PATH= .obj
 OBJ_NAME= $(SRC_NAME:.c=.o)
 
 SRC= $(addprefix $(SRC_PATH)/,$(SRC_NAME))
@@ -29,6 +29,7 @@ LD_LIBS= -l$(patsubst lib%.a,%, $(LIB))
 HDR_FLAGS= $(HDR_PATH)
 
 # **************************************************************************** #
+.PHONY: all lib clean fclean re 
 
 all: lib $(NAME) 
 
@@ -42,9 +43,11 @@ lib:
 
 $(LIB_PATH)/$(LIB): lib
 
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(HDR)
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(HDR) $(OBJ_PATH)
 	@$(COMP) $(CFLAGS) -I $(HDR_FLAGS) -o $@ -c $<
+
+$(OBJ_PATH):
+	@mkdir $@
 
 clean:
 	@rm -fr $(OBJ)
