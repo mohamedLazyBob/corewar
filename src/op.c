@@ -37,7 +37,7 @@ t_op	g_op_tab[17] =
 		"long load index", 1, 1},
 	{"lfork", 1, {T_DIR}, 15, 1000, "long fork", 0, 1},
 	{"aff", 1, {T_REG}, 16, 2, "aff", 1, 0},
-	{0, 0, {0}, 0, 0, 0, 0, 0}
+	{"", 0, {0}, 0, 0, 0, 0, 0}
 };
 /*
 int	main(void)

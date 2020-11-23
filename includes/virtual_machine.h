@@ -66,6 +66,7 @@ typedef	struct	s_process
 		unsigned int	process_live;
 		unsigned char	carry;
 		unsigned int	cycle_number;
+		unsigned int	players_counter;
 }				t_process;
 
 
