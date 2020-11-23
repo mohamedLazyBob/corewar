@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/20 10:52:42 by del-alj          ###   ########.fr       */
+/*   Updated: 2020/11/23 13:47:59 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,16 +114,16 @@ typedef	struct	s_args
 }				t_args;
 
 void	ft_operation_add(t_process proc);
-void	ft_operation_sub();
+void	ft_operation_sub(t_process proc);
 
 
-void	ft_operation_ld();
-void	ft_operation_lld();
-void	ft_operation_ldi();
-void	ft_operation_lldi();
+void	ft_operation_ld(t_process proc);
+void	ft_operation_lld(t_process proc);
+void	ft_operation_ldi(t_process proc);
+void	ft_operation_lldi(t_process proc);
 
-void	ft_operation_st();
-void	ft_operation_sti();
+void	ft_operation_st(t_process proc);
+void	ft_operation_sti(t_process proc);
 
 void	ft_operation_and();
 void	ft_operation_or();

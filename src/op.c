@@ -6,12 +6,12 @@
 /*   By: zaz <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:43:01 by zaz               #+#    #+#             */
-/*   Updated: 2020/11/19 20:38:14 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/23 14:00:19 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "op.h"
-//#include <stdio.h>
+#include <stdio.h>
 
 t_op	g_op_tab[17] =
 {
@@ -39,12 +39,16 @@ t_op	g_op_tab[17] =
 	{"aff", 1, {T_REG}, 16, 2, "aff", 1, 0},
 	{0, 0, {0}, 0, 0, 0, 0, 0}
 };
+
 /*
 int	main(void)
 {
 	for (int i = 0; i < 17; i++)
 	{
-		printf("name :%s,\n args_num: %d, \nargs type :%d, %d, %d, \nidx: %d, \nexec_cycle: %d, \ndescription: %s, \narg_type_code: %d, \nreg_size: %d\n\n", 
+		printf("name :%s,\n args_num: %d, \nargs type :%d, %d, %d, \nidx: %d, \
+				nexec_cycle: %d, \
+				ndescription: %s, \narg_type_code: %d, \
+				nreg_size: %d\n\n", 
 				  g_op_tab[i].op_name, \
 				  g_op_tab[i].args_num\
 				, g_op_tab[i].args_type[0] \
