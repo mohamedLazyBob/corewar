@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:42:03 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/18 14:52:34 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/23 20:55:12 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,25 @@ void	print_input(t_input_data *bloc, int *nbr_cycles)
 *******************************************************************************
 */
 
+void	ft_temp(t_input_data bloc, t_playrs *playrs)
+{
+	t_process process;
+
+	process.arena = ft_init_arena(bloc, playrs);
+	ft_memset(process.regestries, 0, REG_SIZE);
+	process.pc = 1;
+	process.next_inst = 9;
+	process.player_id = bloc.ids[0];
+	process.carry = 1;
+
+	//ft_operation_and(&process);
+	ft_operation_zjmp(&process);
+}
+
+/*
+*******************************************************************************
+*/
+
 int		main(int ac, char **av)
 {
 	t_input_data	bloc;
@@ -54,7 +73,8 @@ int		main(int ac, char **av)
 		print_input(&(bloc), bloc.nbr_cycles);
 		playrs = (t_playrs*)ft_memalloc(sizeof(t_playrs) * bloc.players_counter);
 		ft_open_champion(bloc, playrs);
-		ft_init_arena(bloc, playrs);
+	//	ft_init_arena(bloc, playrs);
+		ft_temp(bloc, playrs);
 	}
 	return (0);
 }

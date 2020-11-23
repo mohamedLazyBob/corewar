@@ -6,11 +6,13 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 19:15:15 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/20 15:03:55 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/23 20:55:11 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "virtual_machine.h"
+extern t_op g_op_tab[];
+unsigned int g_last_live;
 /*
 - get the inst
 
@@ -32,9 +34,10 @@
 ** get the 2 bits coresponding to each argument type then checks if it's valid
 */
 
-unsigned char	*ft_get_args_type(t_process process, unsigned int types_byte)
+void	ft_get_args_type(t_process process, unsigned int types_byte, \
+									unsigned char *args)
 {
-	unsigned char	args[3];
+	//unsigned char	args[3];
 	unsigned char	bit1;
 	unsigned char	bit2;
 	unsigned char	bit3;
@@ -46,51 +49,215 @@ unsigned char	*ft_get_args_type(t_process process, unsigned int types_byte)
 	//		maybe there is an error here if args[x] == 0
 	// args can get these values : 1 or 2 or 3 (decimal numbers)
 	// 1 << bitx to check if that exact bit is activeted, means that argument is valid
-	bi1 = 1 << (args[0] - 1);
-	bi2 = 1 << (args[1] - 1);
-	bi3 = 1 << (args[2] - 1);
-
-	if (((bit1 & g_op_tab[process.next_inst].args_type[0]) == bit1) && \
-		((bit2 & g_op_tab[process.next_inst].args_type[1]) == bit2) && \
-		((bit3 & g_op_tab[process.next_inst].args_type[2]) == bit3))
-		return (args);
-	else
-		return ("ERR");
+	bit1 = 1 << (args[0] - 1);
+	bit2 = 1 << (args[1] - 1);
+	bit3 = 1 << (args[2] - 1);
+	if (!(((bit1 & g_op_tab[process.next_inst].args_type[0]) == bit1) && \
+		  ((bit2 & g_op_tab[process.next_inst].args_type[1]) == bit2) && \
+		  ((bit3 & g_op_tab[process.next_inst].args_type[2]) == bit3)))
+		ft_memcpy(args, "ER", 3);
 }
 
-void	ft_operation_and(t_process process)
+/*
+******************************************************************************
+*/
+
+int		ft_parse_args(t_process *process, unsigned char par)
+{
+	unsigned int	num;
+	int	dir_size;
+
+	num = 0;
+	dir_size = 0;
+	if (par == 1)
+	{
+		num = (unsigned int)process->arena[process->pc];
+		process->pc++;
+		return (num);
+	}
+	else if (par == 2)// read a direct value
+	{
+		printf("=========================\n");
+		dir_size = (g_op_tab[process->next_inst].t_dir_size ? 2: 4);
+		ft_memcpy(&num, process->arena + process->pc, dir_size);
+		num = ft_reverse_endianness((unsigned char*)&num, 4);
+		process->pc += dir_size;
+		return (num);
+	}
+	else if (par == 3)// read an indirect value
+	{
+		ft_memcpy(&num, process->arena + process->pc, 2);
+		num = ft_reverse_endianness((unsigned char*)&num, 2);
+		process->pc += 2;
+		return (num);// this is ind pointer value, (&value)
+	}
+	else
+		printf("this is an error\n\n\n");
+	return (-1);
+}
+
+/*
+******************************************************************************
+*/
+
+unsigned int	ft_get_argument_value(t_process *process, \
+										unsigned int arg, \
+										unsigned char parameter)
+{
+	// does the translation if necessary
+	if (parameter == 1)
+		arg = process->regestries[arg];
+	else if (parameter == 3)
+	{
+		ft_memcpy(&arg, process->arena + ((process->pc + arg) % IDX_MOD), 4);// *T_ind
+		arg = ft_reverse_endianness((unsigned char*)&arg, 4);
+	}
+	return (arg);
+}
+
+/*
+******************************************************************************
+** I think this should work, I havent tested the IND
+*/
+
+void	ft_operation_and(t_process *process)
 {
 	unsigned char	parameters[3];
 	unsigned int	types_byte;
+	unsigned int	arg1;
+	unsigned int	arg2;
+	unsigned int	arg3;
 
-	types_byte = process.arena[process.pc + 1];
-	process.pc++;
+	// pc -> types_code
+	types_byte = process->arena[process->pc];
+	ft_get_args_type(*process, types_byte, parameters);
+	process->pc += 1;// pc -> argument1
 
-	parameters = ft_get_args_type(t_process, types_byte);
-	if (ft_strcmp(parameters, "ERR") == 0)
+	if (ft_strcmp((char*)parameters, "ER") == 0)
 	{
 		printf("champion operation args error\n");
 		exit(0);
 	}
-
 	// get me this parameter from pc, and it's type is the 3rd param
-	arg1 = get_this(proccess, parameters[1]);
+	arg1 = ft_parse_args(process, parameters[0]);// arg1 contains the value that is in the byte code
+	arg1 = ft_get_argument_value(process, arg1, parameters[0]);// translate that value if necessary
 
-/*
-	if (parameters[0] == 1) 
-		arg1_value = process.regestries[process.arena[pc + 2]];
-	else if (parameters[0] == 2)
+	arg2 = ft_parse_args(process, parameters[1]);
+	arg2 = ft_get_argument_value(process, arg2, parameters[1]);// translate that value if necessary
+
+	arg3 = ft_parse_args(process, parameters[2]);
+	if (1 <= arg3 && arg3 <= 16)
+		process->regestries[arg3] = (arg1 & arg2);
+
+	(process->regestries[arg3] == 0) ? (process->carry = 1) : \
+										(process->carry = 0);
+}
+
+void	ft_operation_or(t_process *process)
+{
+	unsigned char	parameters[3];
+	unsigned int	types_byte;
+	unsigned int	arg1;
+	unsigned int	arg2;
+	unsigned int	arg3;
+
+	// pc -> types_code
+	types_byte = process->arena[process->pc];
+	ft_get_args_type(*process, types_byte, parameters);
+	process->pc += 1;// pc -> argument1
+
+	if (ft_strcmp((char*)parameters, "ER") == 0)
 	{
-		// copy the next 4 bytes directly from the arena, 
-		ft_memcpy(process.arena + pc + 2, arg1_value, 4);
+		printf("champion operation args error\n");
+		exit(0);
 	}
-	else
+	// get me this parameter from pc, and it's type is the 3rd param
+	arg1 = ft_parse_args(process, parameters[0]);// arg1 contains the value that is in the byte code
+	arg1 = ft_get_argument_value(process, arg1, parameters[0]);// translate that value if necessary
+
+	arg2 = ft_parse_args(process, parameters[1]);
+	arg2 = ft_get_argument_value(process, arg2, parameters[1]);// translate that value if necessary
+
+	arg3 = ft_parse_args(process, parameters[2]);
+	if (1 <= arg3 && arg3 <= 16)
+		process->regestries[arg3] = (arg1 | arg2);
+
+	(process->regestries[arg3] == 0) ? (process->carry = 1) : \
+										(process->carry = 0);
+}
+
+void	ft_operation_xor(t_process *process)
+{
+	unsigned char	parameters[3];
+	unsigned int	types_byte;
+	unsigned int	arg1;
+	unsigned int	arg2;
+	unsigned int	arg3;
+
+	// pc -> types_code
+	types_byte = process->arena[process->pc];
+	ft_get_args_type(*process, types_byte, parameters);
+	process->pc += 1;// pc -> argument1
+
+	if (ft_strcmp((char*)parameters, "ER") == 0)
 	{
-		
+		printf("champion operation args error\n");
+		exit(0);
 	}
+	// get me this parameter from pc, and it's type is the 3rd param
+	arg1 = ft_parse_args(process, parameters[0]);// arg1 contains the value that is in the byte code
+	arg1 = ft_get_argument_value(process, arg1, parameters[0]);// translate that value if necessary
 
-	if (parameters[1] == 1) 
-		arg1_value = process.regestries[process.arena[pc + 2]];
-*/	
+	arg2 = ft_parse_args(process, parameters[1]);
+	arg2 = ft_get_argument_value(process, arg2, parameters[1]);// translate that value if necessary
 
+	arg3 = ft_parse_args(process, parameters[2]);
+	if (1 <= arg3 && arg3 <= 16)
+		process->regestries[arg3] = (arg1 ^ arg2);
+
+	(process->regestries[arg3] == 0) ? (process->carry = 1) : \
+										(process->carry = 0);
+}
+
+void	ft_operation_zjmp(t_process *process)
+{
+	unsigned int	arg;
+
+	arg = ft_parse_args(process, (unsigned char)2);
+	arg = ft_reverse_endianness((unsigned char*)&arg, 3);
+
+	if (process->carry == 1)
+		process->pc = (process->pc + arg) % IDX_MOD;
+}
+
+void	ft_operation_aff(t_process *process)
+{
+	unsigned int	arg;
+	unsigned int	types_byte;
+	char			var;
+
+	types_byte = process->arena[process->pc];
+	ft_get_args_type(*process, types_byte, parameters);
+	process->pc += 1;// pc -> argument1
+
+	if (ft_strcmp((char*)parameters, "ER") == 0)
+	{
+		printf("champion operation args error\n");
+		exit(0);
+	}
+	var = process->arena[process->pc];
+	write(1, var % 256, 1);
+	process->pc++;
+}
+
+void	ft_operation_live(t_process *process)
+{
+	unsigned int	arg;
+
+	arg = ft_parse_args(process, (unsigned char)1);
+	process->process_live = 1;
+	if (0 <= arg && arg <= REG_NUMBER)
+	{
+		g_last_live = process->regestries[arg];
+	}
 }
