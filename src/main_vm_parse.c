@@ -44,6 +44,7 @@ void	ft_temp(t_input_data bloc, t_playrs *playrs)
 	process.next_inst = 9;
 	process.player_id = bloc.ids[0];
 	process.carry = 1;
+	process.players_counter = bloc.players_counter;
 
 	//ft_operation_and(&process);
 	ft_operation_zjmp(&process);

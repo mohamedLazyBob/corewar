@@ -232,21 +232,22 @@ void	ft_operation_zjmp(t_process *process)
 
 void	ft_operation_aff(t_process *process)
 {
+	unsigned char	parameter[3];
 	unsigned int	arg;
 	unsigned int	types_byte;
-	char			var;
+	char		var;
 
 	types_byte = process->arena[process->pc];
-	ft_get_args_type(*process, types_byte, parameters);
+	ft_get_args_type(*process, types_byte, parameter);
 	process->pc += 1;// pc -> argument1
-
-	if (ft_strcmp((char*)parameters, "ER") == 0)
+	if (ft_strcmp(parameter, "ER") == 0)
 	{
-		printf("champion operation args error\n");
+		printf("ERROR in aff operation.\n");
 		exit(0);
 	}
 	var = process->arena[process->pc];
-	write(1, var % 256, 1);
+	var = var % 256;
+	write(1, &var, 1);
 	process->pc++;
 }
 
@@ -256,8 +257,9 @@ void	ft_operation_live(t_process *process)
 
 	arg = ft_parse_args(process, (unsigned char)1);
 	process->process_live = 1;
-	if (0 <= arg && arg <= REG_NUMBER)
+	if (0 <= arg && arg <= REG_NUMBER)// if regester num is valid
 	{
-		g_last_live = process->regestries[arg];
+		if (1 <= process->regestries[arg] && process->regestries[arg] <= process->players_counter)
+			g_last_live = process->regestries[arg];
 	}
 }
