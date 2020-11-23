@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/20 10:19:20 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/23 20:55:16 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,35 @@ typedef struct	s_playrs
 	unsigned char	*exec_code;
 }				t_playrs;
 
+/*
+** t_dir_size values: 0 means sizeof(T_DIR) == 4, 1 -> sizeof(T_DIR) == 2
+**
+*/
+
 typedef struct	s_op
 {
-	char	*op_name;
+	char	op_name[10];
 	int		args_num;
-	char	args_type[3];
+	unsigned char	args_type[3];
 	int		idx;
 	int		execution_cycle;
 	char	*op_description;
 	int		arg_type_code;
-	int		reg_size;
+	int		t_dir_size;
 }				t_op;
+
+typedef	struct	s_process
+{
+		unsigned char	*arena;
+		unsigned int	regestries[REG_NUMBER];
+		unsigned int	pc;
+		unsigned int	next_inst;
+		unsigned int	player_id;
+		unsigned int	process_live;
+		unsigned char	carry;
+		unsigned int	cycle_number;
+}				t_process;
+
 
 /*
 **					struct up
@@ -86,32 +104,18 @@ int				ft_read_players(int argc, char **av, t_input_data *bloc);
 /*
 ** arena_initialization.c
 */
-void			ft_init_arena(t_input_data bloc, t_playrs *players);
+unsigned char	*ft_init_arena(t_input_data bloc, t_playrs *players);
+
+/*
+** operations_tools.c
+*/
+unsigned int	ft_reverse_endianness(unsigned char *temp, size_t size);
 
 /*
 ** operations_1.c
 **
 ** arena: is pointer bcs all process need access to the same memory
 */
-
-typedef	struct	s_process
-{
-		unsigned char	*arena;
-		unsigned int	regestries[REG_NUMBER];
-		unsigned int	pc;
-		unsigned int	next_inst;
-		unsigned int	player_id;
-		unsigned int	process_live;
-		unsigned char	carry;
-}				t_process;
-
-typedef	struct	s_args
-{
-	unsigned char	types_code;
-	unsigned char	arg1;
-	unsigned char	arg2;
-	unsigned char	arg3;
-}				t_args;
 
 /*
 ********************* Douae part **************
@@ -131,16 +135,16 @@ void	ft_operation_sti();
 /*
 ********************* lazy part **************
 */
-void	ft_operation_and();
-void	ft_operation_or();
-void	ft_operation_xor();
+void	ft_operation_and(t_process *process);
+void	ft_operation_or(t_process *process);
+void	ft_operation_xor(t_process *process);
 
 void	ft_operation_fork();
 void	ft_operation_lfork();
 
 void	ft_operation_live();
-void	ft_operation_zjmp();
-void	ft_operation_aff();
+void	ft_operation_zjmp(t_process *process);
+void	ft_operation_aff(t_process *process);
 
 
 #endif

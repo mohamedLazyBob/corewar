@@ -6,7 +6,7 @@
 #    By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/01 06:06:14 by mzaboub           #+#    #+#              #
-#    Updated: 2019/04/15 20:05:09 by mzaboub          ###   ########.fr        #
+#    Updated: 2020/11/23 13:24:50 by mzaboub          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,14 +52,16 @@ HDR_FLAGS= -I headers
 
 all: $(NAME) 
 
-$(NAME): $(OBJ) $(HDR)
+$(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 	@echo "\033[1;34m>>\033[0m libft\033[1;32m Library compilled.\033[0m"
 
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c 
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(HDR) | $(OBJ_PATH)
 	@$(CC) $(CFLAGS) $(HDR_FLAGS) -o $@ -c $<
+
+$(OBJ_PATH):
+	mkdir obj
 
 clean:
 	@rm -fr $(OBJ)

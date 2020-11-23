@@ -2,8 +2,9 @@
 NAME= corewar
 
 SRC_PATH= src
-SRC_NAME= main_vm_parse.c read_players.c ft_read_champion.c \
-			arena_initialization.c
+SRC_NAME=	main_vm_parse.c			read_players.c	ft_read_champion.c \
+			arena_initialization.c	op.c			operations_1.c \
+			operations_tools.c 
 
 HDR_PATH= includes
 HDR_NAME= virtual_machine.h op.h
@@ -43,7 +44,7 @@ lib:
 
 $(LIB_PATH)/$(LIB): lib
 
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(HDR) $(OBJ_PATH)
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(HDR) | $(OBJ_PATH)
 	@$(COMP) $(CFLAGS) -I $(HDR_FLAGS) -o $@ -c $<
 
 $(OBJ_PATH):
