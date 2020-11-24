@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 19:15:15 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/24 11:20:37 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/24 11:50:31 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -264,4 +264,24 @@ void	ft_operation_live(t_process *process)
 				process->regestries[arg] <= process->players_counter)
 			g_last_live = process->regestries[arg];
 	}
+}
+
+/*
+** ****************************************************************************
+** this func makes a copy of the carriage (process), and places the copy at 
+** FIRST_ARGUMENT % IDX_MOD
+*/ 
+void	ft_operation_fork(t_process *process)
+{
+	return ;
+}
+
+/*
+** ****************************************************************************
+** this func makes a copy of the carriage (process), and places the copy at 
+** FIRST_ARGUMENT (without the modulo)
+*/ 
+void	ft_operation_lfork(t_process *process)
+{
+	return ;
 }
