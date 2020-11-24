@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:42:03 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/24 09:37:00 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/24 11:58:44 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int		main(int ac, char **av)
 	t_header		data;
 	t_playrs		*playrs;
 
+	// if ac == 1;
 	ft_memset(&bloc, 0, sizeof(bloc));
 	ft_memset(bloc.nbr_cycles, -1, 2 * sizeof(int));
 	ret = ft_read_players(ac, av, &bloc);
@@ -72,10 +73,16 @@ int		main(int ac, char **av)
 	else
 	{
 		print_input(&(bloc), bloc.nbr_cycles);
+		// playrs is a tab of players (size == bloc.players_counter)
 		playrs = (t_playrs*)ft_memalloc(sizeof(t_playrs) * bloc.players_counter);
+		// open_champion fills playrs tab.
 		ft_open_champion(bloc, playrs);
 	//	ft_init_arena(bloc, playrs);
 		ft_temp(bloc, playrs);
+		// init processes (all of them)
+		// play the game
+		// announce the winner
+		// exit
 	}
 	return (0);
 }
