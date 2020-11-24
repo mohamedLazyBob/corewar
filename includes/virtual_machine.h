@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/23 20:55:16 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/24 11:22:46 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,7 @@ void	ft_operation_xor(t_process *process);
 void	ft_operation_fork();
 void	ft_operation_lfork();
 
-void	ft_operation_live();
+void	ft_operation_live(t_process *process);
 void	ft_operation_zjmp(t_process *process);
 void	ft_operation_aff(t_process *process);
 
