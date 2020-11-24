@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 19:15:15 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/23 20:55:11 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/24 11:20:37 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ int		ft_parse_args(t_process *process, unsigned char par)
 	}
 	else if (par == 2)// read a direct value
 	{
-		printf("=========================\n");
 		dir_size = (g_op_tab[process->next_inst].t_dir_size ? 2: 4);
 		ft_memcpy(&num, process->arena + process->pc, dir_size);
 		num = ft_reverse_endianness((unsigned char*)&num, 4);
@@ -107,9 +106,9 @@ unsigned int	ft_get_argument_value(t_process *process, \
 	// does the translation if necessary
 	if (parameter == 1)
 		arg = process->regestries[arg];
-	else if (parameter == 3)
+	else if (parameter == 3)// *T_ind
 	{
-		ft_memcpy(&arg, process->arena + ((process->pc + arg) % IDX_MOD), 4);// *T_ind
+		ft_memcpy(&arg, process->arena + ((process->pc + arg) % IDX_MOD), 4);
 		arg = ft_reverse_endianness((unsigned char*)&arg, 4);
 	}
 	return (arg);
@@ -139,11 +138,11 @@ void	ft_operation_and(t_process *process)
 		exit(0);
 	}
 	// get me this parameter from pc, and it's type is the 3rd param
-	arg1 = ft_parse_args(process, parameters[0]);// arg1 contains the value that is in the byte code
-	arg1 = ft_get_argument_value(process, arg1, parameters[0]);// translate that value if necessary
+	arg1 = ft_parse_args(process, parameters[0]);
+	arg1 = ft_get_argument_value(process, arg1, parameters[0]);
 
 	arg2 = ft_parse_args(process, parameters[1]);
-	arg2 = ft_get_argument_value(process, arg2, parameters[1]);// translate that value if necessary
+	arg2 = ft_get_argument_value(process, arg2, parameters[1]);
 
 	arg3 = ft_parse_args(process, parameters[2]);
 	if (1 <= arg3 && arg3 <= 16)
@@ -172,11 +171,10 @@ void	ft_operation_or(t_process *process)
 		exit(0);
 	}
 	// get me this parameter from pc, and it's type is the 3rd param
-	arg1 = ft_parse_args(process, parameters[0]);// arg1 contains the value that is in the byte code
-	arg1 = ft_get_argument_value(process, arg1, parameters[0]);// translate that value if necessary
-
+	arg1 = ft_parse_args(process, parameters[0]);
+	arg1 = ft_get_argument_value(process, arg1, parameters[0]);
 	arg2 = ft_parse_args(process, parameters[1]);
-	arg2 = ft_get_argument_value(process, arg2, parameters[1]);// translate that value if necessary
+	arg2 = ft_get_argument_value(process, arg2, parameters[1]);
 
 	arg3 = ft_parse_args(process, parameters[2]);
 	if (1 <= arg3 && arg3 <= 16)
@@ -205,11 +203,14 @@ void	ft_operation_xor(t_process *process)
 		exit(0);
 	}
 	// get me this parameter from pc, and it's type is the 3rd param
-	arg1 = ft_parse_args(process, parameters[0]);// arg1 contains the value that is in the byte code
-	arg1 = ft_get_argument_value(process, arg1, parameters[0]);// translate that value if necessary
+	// arg1 contains the value that is in the byte code
+	arg1 = ft_parse_args(process, parameters[0]);
+	// translate that value if necessary
+	arg1 = ft_get_argument_value(process, arg1, parameters[0]);
 
 	arg2 = ft_parse_args(process, parameters[1]);
-	arg2 = ft_get_argument_value(process, arg2, parameters[1]);// translate that value if necessary
+	// translate that value if necessary
+	arg2 = ft_get_argument_value(process, arg2, parameters[1]);
 
 	arg3 = ft_parse_args(process, parameters[2]);
 	if (1 <= arg3 && arg3 <= 16)
@@ -240,7 +241,7 @@ void	ft_operation_aff(t_process *process)
 	types_byte = process->arena[process->pc];
 	ft_get_args_type(*process, types_byte, parameter);
 	process->pc += 1;// pc -> argument1
-	if (ft_strcmp(parameter, "ER") == 0)
+	if (ft_strcmp((char*)parameter, "ER") == 0)
 	{
 		printf("ERROR in aff operation.\n");
 		exit(0);
@@ -259,7 +260,8 @@ void	ft_operation_live(t_process *process)
 	process->process_live = 1;
 	if (0 <= arg && arg <= REG_NUMBER)// if regester num is valid
 	{
-		if (1 <= process->regestries[arg] && process->regestries[arg] <= process->players_counter)
+		if (1 <= process->regestries[arg] && \
+				process->regestries[arg] <= process->players_counter)
 			g_last_live = process->regestries[arg];
 	}
 }
