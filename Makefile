@@ -4,6 +4,7 @@ NAME= corewar
 SRC_PATH= src
 SRC_NAME= main_vm_parse.c read_players.c ft_read_champion.c \
 			arena_initialization.c	ft_operation_add.c	ft_operation_ld.c \
+			operations_1.c	
 
 HDR_PATH= includes
 HDR_NAME= virtual_machine.h op.h

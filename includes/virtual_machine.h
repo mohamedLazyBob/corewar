@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/24 14:02:57 by del-alj          ###   ########.fr       */
+/*   Updated: 2020/11/24 14:29:03 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,26 @@ typedef struct	s_op
 	int		t_dir_size;
 }				t_op;
 
+typedef	struct	s_process
+{
+		unsigned char	*arena;
+		unsigned int	regestries[REG_NUMBER];
+		unsigned int	pc;
+		unsigned int	next_inst;
+		unsigned int	player_id;
+		unsigned int	process_live;
+		unsigned char	carry;
+}				t_process;
+
+typedef	struct	s_args
+{
+	unsigned char	types_code;
+	unsigned char	arg1;
+	unsigned char	arg2;
+	unsigned char	arg3;
+}				t_args;
+
+
 /*
 **					struct up
 ** ****************************************************************************
@@ -93,27 +113,11 @@ void			ft_init_arena(t_input_data bloc, t_playrs *players);
 **
 ** arena: is pointer bcs all process need access to the same memory
 */
+void	ft_get_args_type(t_process process, unsigned int types_byte, \
+									unsigned char *args);
 
-typedef	struct	s_process
-{
-		unsigned char	*arena;
-		unsigned int	regestries[REG_NUMBER];
-		unsigned int	pc;
-		unsigned int	next_inst;
-		unsigned int	player_id;
-		unsigned int	process_live;
-		unsigned char	carry;
-}				t_process;
 
-typedef	struct	s_args
-{
-	unsigned char	types_code;
-	unsigned char	arg1;
-	unsigned char	arg2;
-	unsigned char	arg3;
-}				t_args;
-
-unsigned char   *ft_get_args_type(t_process process, unsigned int types_byte);
+//unsigned char   *ft_get_args_type(t_process process, unsigned int types_byte);
 
 void	ft_operation_add(t_process proc);
 void	ft_operation_sub(t_process proc);

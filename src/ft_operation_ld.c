@@ -6,20 +6,24 @@
 /*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:01:18 by del-alj           #+#    #+#             */
-/*   Updated: 2020/11/24 14:14:33 by del-alj          ###   ########.fr       */
+/*   Updated: 2020/11/24 14:31:39 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/virtual_machine.h"
 
+/*
+********************************************************************************
+*/
+
 void	ft_operation_ld(t_process proc)
 {
 	unsigned int	types_byte;
-	unsigned char	parameters[3];
+	unsigned char	*parameters;
 
 	types_byte = proc.arena[++proc.pc];
-	parameters = ft_get_args_type(proc, types_byte);
-	if (ft_strcmp(ft_get_args_type(parameters, types_byte), "ERR") == 0)
+	ft_get_args_type(proc, types_byte, parameters);
+	if (ft_strcmp((const char*)parameters, "ERR") == 0)
 		ft_exit("champion operation args error");
 	proc.pc++;
 	if (parameters[0] == T_DIR)
@@ -36,14 +40,18 @@ void	ft_operation_ld(t_process proc)
 	proc.carry = (proc.regestries[proc.arena[proc.pc++]] == 0) ? 1 : 0;
 }
 
+/*
+********************************************************************************
+*/
+
  void	ft_operation_lld(t_process proc)
 {
 	unsigned int	types_byte;
-	unsigned char	parameters[3];
+	unsigned char	*parameters;
 
 	types_byte = proc.arena[++proc.pc];
-	parameters = ft_get_args_type(proc, types_byte);
-	if (ft_strcmp(ft_get_args_type(parameters, types_byte), "ERR") == 0)
+	ft_get_args_type(proc, types_byte, parameters);
+	if (ft_strcmp((const char*)parameters, "ERR") == 0)
 		ft_exit("champion operation args error");
 	proc.pc++;
 	if (parameters[0] == T_DIR)
@@ -60,15 +68,19 @@ void	ft_operation_ld(t_process proc)
 	proc.carry = (proc.regestries[proc.arena[proc.pc++]] == 0) ? 1 : 0;
 }
 
+/*
+********************************************************************************
+*/
+
 void	ft_operation_ldi(t_process proc)
 {
 	unsigned int	types_byte;
-	unsigned char	parameters[3];
+	unsigned char	*parameters;
 	int				temp;
 
 	types_byte = proc.arena[++proc.pc];
-	parameters = ft_get_args_type(proc, types_byte);
-	if (ft_strcmp(ft_get_args_type(parameters, types_byte), "ERR") == 0)
+	ft_get_args_type(proc, types_byte, parameters);
+	if (ft_strcmp((const char*)parameters, "ERR") == 0)
 		ft_exit("champion operation args error");
 	proc.pc++;
 	if (parameters[0] == T_IND)
@@ -86,15 +98,19 @@ void	ft_operation_ldi(t_process proc)
 	proc.regestries[proc.arena[proc.pc++]] = temp;
 }
 
+/*
+********************************************************************************
+*/
+
 void	ft_operation_lldi(t_process proc)
 {
 	unsigned int	types_byte;
-	unsigned char	parameters[3];
+	unsigned char	*parameters;
 	int				temp;
 
 	types_byte = proc.arena[++proc.pc];
-	parameters = ft_get_args_type(proc, types_byte);
-	if (ft_strcmp(ft_get_args_type(parameters, types_byte), "ERR") == 0)
+	ft_get_args_type(proc, types_byte, parameters);
+	if (ft_strcmp((const char*)parameters, "ERR") == 0)
 		ft_exit("champion operation args error");
 	proc.pc++;
 	if (parameters[0] == T_IND)
