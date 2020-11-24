@@ -6,7 +6,7 @@
 /*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 10:14:10 by del-alj           #+#    #+#             */
-/*   Updated: 2020/11/23 13:58:20 by del-alj          ###   ########.fr       */
+/*   Updated: 2020/11/24 14:07:35 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,9 @@ void	ft_operation_st(t_process proc)
 	}
 	else
 	{
-		temp = proc.pc + (ft_convert_num(proc.arena[proc.pc + 1]) % IDX_MOD);
-		ft_strncpy(proc.arena + temp, proc.arena + proc.pc, 2);
+		temp = proc.pc + (ft_convert_num(proc.arena + (proc.pc + 1), 4) %\
+			   	IDX_MOD);
+		ft_memcpy(proc.arena + temp, proc.arena + proc.pc, 2);
 	}
 	proc.pc += 2;
 }
@@ -130,9 +131,9 @@ void	ft_operation_sti(t_process proc)
 		ft_exit("champion operation args error");
 	proc.pc++;
 	if (parameters[1] == T_IND)
-		proc.pc = proc.pc + (ft_convert_num(proc.arena[proc.pc + 1]) % IDX_MOD);
+		proc.pc = proc.pc + (ft_convert_num(proc.arena + (proc.pc + 1), 4) % \
+				IDX_MOD);
 	temp = proc.pc + ((proc.arena[proc.pc + 1] + proc.arena[proc.pc + 2]) %\
 			IDX_MOD);
-	ft_strncpy(proc.arena + temp, proc.arena + proc.pc, 2);
+	ft_memcpy(proc.arena + temp, proc.arena + proc.pc, 2);
 }
-

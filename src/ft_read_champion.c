@@ -6,7 +6,7 @@
 /*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 13:21:01 by del-alj           #+#    #+#             */
-/*   Updated: 2020/11/20 10:22:11 by del-alj          ###   ########.fr       */
+/*   Updated: 2020/11/24 10:37:10 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ void			ft_exit(char *str)
 ********************************************************************************
 */
 
-unsigned int	ft_convert_num(unsigned char *temp)
+unsigned int	ft_convert_num(unsigned char *temp, int	byte)
 {
 	int				i;
 	unsigned int	hex;
 
 	i = -1;
 	hex = 0;
-	while (++i < 4)
+	while (++i < byte)
 	{
 		hex = hex << 8;
 		hex = hex | (unsigned int)temp[i];
@@ -62,21 +62,21 @@ void			ft_read_champion(int fd, t_playrs *playrs)
 	unsigned char	temp[4];
 
 	read(fd, temp, 4);
-	playrs->header.magic = ft_convert_num(temp);
+	playrs->header.magic = ft_convert_num(temp, 4);
 	if (playrs->header.magic != COREWAR_EXEC_MAGIC)
 		ft_exit("Error Magic Header !");
 	read(fd, playrs->header.prog_name, PROG_NAME_LENGTH);
 	read(fd, temp, 4);
-	if (ft_convert_num(temp) != 0)
+	if (ft_convert_num(temp, 4) != 0)
 		ft_exit("Error Header !");
 	read(fd, temp, 4);
-	playrs->header.prog_size = ft_convert_num(temp);
+	playrs->header.prog_size = ft_convert_num(temp, 4);
 	if (playrs->header.prog_size <= 0 ||
 			playrs->header.prog_size > CHAMP_MAX_SIZE)
 		ft_exit("Error Size Code !");
 	read(fd, playrs->header.comment, COMMENT_LENGTH);
 	read(fd, temp, 4);
-	if (ft_convert_num(temp) != 0)
+	if (ft_convert_num(temp, 4) != 0)
 		ft_exit("Error Header !");
 	if ((playrs->exec_code =
 				(unsigned char*)ft_strnew(playrs->header.prog_size)) == NULL)

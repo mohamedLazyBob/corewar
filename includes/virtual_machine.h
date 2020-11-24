@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/23 13:47:59 by del-alj          ###   ########.fr       */
+/*   Updated: 2020/11/24 14:02:57 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef struct	s_op
 	int		execution_cycle;
 	char	*op_description;
 	int		arg_type_code;
-	int		reg_size;
+	int		t_dir_size;
 }				t_op;
 
 /*
@@ -64,7 +64,7 @@ typedef struct	s_op
 void			ft_read_champion(int fd, t_playrs *playrs);
 void			ft_open_champion(t_input_data bloc, t_playrs *playrs);
 void			ft_fd_players(t_input_data	*bloc);
-unsigned int	ft_convert_num(unsigned char *temp);
+unsigned int	ft_convert_num(unsigned char *temp, int byte);
 
 void			ft_exit(char *str);
 
@@ -112,6 +112,8 @@ typedef	struct	s_args
 	unsigned char	arg2;
 	unsigned char	arg3;
 }				t_args;
+
+unsigned char   *ft_get_args_type(t_process process, unsigned int types_byte);
 
 void	ft_operation_add(t_process proc);
 void	ft_operation_sub(t_process proc);
