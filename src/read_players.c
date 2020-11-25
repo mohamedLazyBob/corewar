@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 14:13:29 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/18 11:41:11 by del-alj          ###   ########.fr       */
+/*   Updated: 2020/11/25 09:49:08 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	ft_read_player_name(int idx, char **av, t_input_data *bloc)
 ** test[0] gather
 */
 
-int		ft_add_ids(t_input_data *bloc)
+void	ft_add_ids(t_input_data *bloc)
 {
 	int	small_id;
 	int	i;
@@ -88,7 +88,7 @@ int		ft_add_ids(t_input_data *bloc)
 	while (++i < bloc->players_counter)
 	{
 		if (bloc->ids[i] > MAX_PLAYERS || bloc->ids[i] < 0)
-			return (2);
+			ft_exit("ERROR: ID values, out of range (< 1 || > 4");
 		if (bloc->ids[i] == 0)
 		{
 			j = -1;
@@ -100,15 +100,14 @@ int		ft_add_ids(t_input_data *bloc)
 		test += bloc->ids[i];
 	}
 	if (test != ((bloc->players_counter * (bloc->players_counter + 1)) / 2))
-		return (2);
-	return (0);
+		ft_exit("ERROR: ID values, Duplicated ids.");
 }
 
 /*
 *******************************************************************************
 */
 
-int		ft_read_players(int argc, char **av, t_input_data *bloc)
+void	ft_read_players(int argc, char **av, t_input_data *bloc)
 {
 	int		idx;
 	int		ret;
@@ -119,7 +118,7 @@ int		ft_read_players(int argc, char **av, t_input_data *bloc)
 	{
 		if ((bloc->players_counter == MAX_PLAYERS) && \
 				(0 == ft_read_sideflags(idx, av, bloc)))
-			return (1);
+			ft_exit("ERROR: Wrong number of args");
 		ret = ft_read_sideflags(idx, av, bloc);
 		if (ret == 0)
 			ret = ft_read_player_numb(idx, av, bloc);
@@ -127,11 +126,10 @@ int		ft_read_players(int argc, char **av, t_input_data *bloc)
 			ft_read_player_name(idx, av, bloc);
 		idx += ret + 1;
 	}
-	ret = ft_add_ids(bloc);
+	ft_add_ids(bloc);
 	if (bloc->players_counter == 1)
-		return (1);
-	else
-		return (ret);
+		ft_free_exit("ERROR: in number of args, too few.", 
+						(void**)bloc->names, bloc->players_counter);
 }
 
 /*

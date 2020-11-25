@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/24 11:50:29 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/25 09:47:49 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,12 @@ void			ft_exit(char *str);
 ** main_vm_parse.c
 */
 void			print_input(t_input_data *bloc, int *nbr_cycles);
+void			ft_free_exit(char *str, void **buff, size_t size);
 
 /*
 ** read_players.c
 */
-int				ft_read_players(int argc, char **av, t_input_data *bloc);
+void			ft_read_players(int argc, char **av, t_input_data *bloc);
 
 /*
 ** main_vm_parse.c
