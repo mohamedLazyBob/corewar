@@ -6,7 +6,7 @@
 /*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 10:14:10 by del-alj           #+#    #+#             */
-/*   Updated: 2020/11/25 14:52:14 by del-alj          ###   ########.fr       */
+/*   Updated: 2020/11/25 18:51:20 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,10 @@ void	ft_operation_sub(t_process *proc)
 */
 void	ft_int_to_str(int var, char *str)
 {
-	str[3] = (char)(var & 0x000000ff);
-	str[2] = (char)(var & 0x0000ff00) >> 8;
-	str[1] = (char)(var & 0x00ff0000) >> 16;
-	str[0] = (char)(var & 0xff000000) >> 24;
-	printf("\n[%.8x]\n",var);
-	printf("--%x %x %x %x--\n", str[0], str[1], str[2], str[3]);
+	str[3] = (unsigned int)(var);
+	str[2] = (unsigned int)(var & 0x0000ff00) >> 8;
+	str[1] = (unsigned int)(var & 0x00ff0000) >> 16;
+	str[0] = (unsigned int)(var & 0xff000000) >> 24;
 }
 
 void	ft_operation_st(t_process *proc)
@@ -86,13 +84,16 @@ void	ft_operation_st(t_process *proc)
 	unsigned int	types_byte;
 	unsigned char	parameters[3];
 	int				temp;
-
+	int				var;
+	char			str[4];
+	
+	var = 0;
+	temp = proc->pc - 1;
 	types_byte = proc->arena[proc->pc];
 	proc->pc++;
 	ft_get_args_type(*proc, types_byte, parameters);
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 		ft_exit("champion operation args error");
-
 	if (parameters[1] == T_REG)
 	{
 		proc->regestries[proc->arena[proc->pc]] = \
@@ -101,17 +102,10 @@ void	ft_operation_st(t_process *proc)
 	}
 	else
 	{
-		int var = 0;
 		ft_memcpy(((unsigned char*)&var) + 2,proc->arena + (proc->pc + 1), 2);
-		var = ft_convert_num((unsigned char*)&var, 4);
-
-		temp = proc->pc + (var % IDX_MOD);
-		printf(";;%d;;\n", temp);
-		char str[4];
+		temp = temp + (ft_convert_num((unsigned char*)&var, 4) % IDX_MOD);	
 		ft_int_to_str(proc->regestries[proc->arena[proc->pc]], str);
-		ft_memcpy(proc->arena + temp, \
-				(const void *)str, 4);
-		printf("[%d]\n", proc->arena[proc->pc]);
+		ft_memcpy(proc->arena + temp, (const void *)str, 4);
 		proc->pc += 3;
 	}
 }
@@ -125,16 +119,19 @@ void	ft_operation_sti(t_process *proc)
 	unsigned int	types_byte;
 	unsigned char	parameters[3];
 	int				temp;
+	int 			var;
 
-	types_byte = proc->arena[++proc->pc];
-	ft_get_args_type(*proc, types_byte, parameters);
-	if (ft_strcmp((const char*)parameters, "ERR") == 0)
-		ft_exit("champion operation args error");
+	var = 0;
+	temp = proc->pc - 1;
+	types_byte = proc->arena[proc->pc];
 	proc->pc++;
+	ft_get_args_type(*proc, types_byte, parameters);
+	if (ft_strcmp((const char*)parameters, "ER") == 0)
+		ft_exit("champion operation args error");
 	if (parameters[1] == T_IND)
-		proc->pc = proc->pc + (ft_convert_num(proc->arena + (proc->pc + 1), 4) % \
+		proc->pc = temp + (ft_convert_num(proc->arena + (proc->pc + 1), 4) % \
 				IDX_MOD);
-	temp = proc->pc + ((proc->arena[proc->pc + 1] + proc->arena[proc->pc + 2]) %\
+	temp = temp + ((proc->arena[proc->pc + 1] + proc->arena[proc->pc + 2]) %\
 			IDX_MOD);
 	ft_memcpy(proc->arena + temp, proc->arena + proc->pc, 2);
 }
