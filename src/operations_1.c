@@ -6,12 +6,13 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 19:15:15 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/25 09:06:56 by del-alj          ###   ########.fr       */
+/*   Updated: 2020/11/25 13:46:22 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "virtual_machine.h"
-extern t_op g_op_tab[];
+extern t_op	g_op_tab[17];
+
 unsigned int g_last_live;
 
 /*
@@ -46,16 +47,25 @@ void	ft_get_args_type(t_process process, unsigned int types_byte, \
 	args[0] = (types_byte & 192) >> 6;
 	args[1] = (types_byte & 48) >> 4;
 	args[2] = (types_byte & 12) >> 2;
+//	fprintf(stderr,"fin kina nti\n");
 
 	//		maybe there is an error here if args[x] == 0
 	// args can get these values : 1 or 2 or 3 (decimal numbers)
 	// 1 << bitx to check if that exact bit is activeted, means that argument is valid
-	bit1 = 1 << (args[0] - 1);
-	bit2 = 1 << (args[1] - 1);
-	bit3 = 1 << (args[2] - 1);
+	bit1 = 0;
+    bit2 = 0;
+    bit3 = 0;
+
+	if (args[0] != 0)
+		bit1 = 1 << (args[0] - 1);
+	if (args[1] != 0)
+		bit2 = 1 << (args[1] - 1);
+	if (args[2] != 0)
+		bit3 = 1 << (args[2] - 1);
 	if (!(((bit1 & g_op_tab[process.next_inst].args_type[0]) == bit1) && \
 		  ((bit2 & g_op_tab[process.next_inst].args_type[1]) == bit2) && \
 		  ((bit3 & g_op_tab[process.next_inst].args_type[2]) == bit3)))
-		ft_memcpy(args, "ERR", 3);
+		ft_memcpy(args, "ER", 3);
+
 }
 

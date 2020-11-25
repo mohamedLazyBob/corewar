@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/24 14:29:03 by del-alj          ###   ########.fr       */
+/*   Updated: 2020/11/25 09:47:27 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ typedef struct	s_playrs
 
 typedef struct	s_op
 {
-	char	*op_name;
+	char	op_name[10];
 	int		args_num;
-	char	args_type[3];
+	unsigned char	args_type[3];
 	int		idx;
 	int		execution_cycle;
 	char	*op_description;
@@ -60,6 +60,8 @@ typedef	struct	s_process
 		unsigned int	player_id;
 		unsigned int	process_live;
 		unsigned char	carry;
+		unsigned int	cycle_number;
+		unsigned int	players_counter;
 }				t_process;
 
 typedef	struct	s_args
@@ -106,8 +108,7 @@ int				ft_read_players(int argc, char **av, t_input_data *bloc);
 /*
 ** arena_initialization.c
 */
-void			ft_init_arena(t_input_data bloc, t_playrs *players);
-
+unsigned char	*ft_init_arena(t_input_data bloc, t_playrs *players);
 /*
 ** operations_1.c
 **
@@ -119,17 +120,17 @@ void	ft_get_args_type(t_process process, unsigned int types_byte, \
 
 //unsigned char   *ft_get_args_type(t_process process, unsigned int types_byte);
 
-void	ft_operation_add(t_process proc);
-void	ft_operation_sub(t_process proc);
+void	ft_operation_add(t_process *proc);
+void	ft_operation_sub(t_process *proc);
 
 
-void	ft_operation_ld(t_process proc);
-void	ft_operation_lld(t_process proc);
-void	ft_operation_ldi(t_process proc);
-void	ft_operation_lldi(t_process proc);
+void	ft_operation_ld(t_process *proc);
+void	ft_operation_lld(t_process *proc);
+void	ft_operation_ldi(t_process *proc);
+void	ft_operation_lldi(t_process *proc);
 
-void	ft_operation_st(t_process proc);
-void	ft_operation_sti(t_process proc);
+void	ft_operation_st(t_process *proc);
+void	ft_operation_sti(t_process *proc);
 
 void	ft_operation_and();
 void	ft_operation_or();

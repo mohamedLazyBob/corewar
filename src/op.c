@@ -6,12 +6,12 @@
 /*   By: zaz <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:43:01 by zaz               #+#    #+#             */
-/*   Updated: 2020/11/23 14:00:19 by del-alj          ###   ########.fr       */
+/*   Updated: 2020/11/23 20:55:12 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "op.h"
-#include <stdio.h>
+#include "virtual_machine.h"
+//#include <stdio.h>
 
 t_op	g_op_tab[17] =
 {
@@ -20,7 +20,7 @@ t_op	g_op_tab[17] =
 	{"st", 2, {T_REG, T_IND | T_REG}, 3, 5, "store", 1, 0},
 	{"add", 3, {T_REG, T_REG, T_REG}, 4, 10, "addition", 1, 0},
 	{"sub", 3, {T_REG, T_REG, T_REG}, 5, 10, "soustraction", 1, 0},
-	{"and", 3, {T_REG | T_DIR | T_IND, T_REG | T_IND | T_DIR, T_REG}, 6, 6,
+	{"and", 3, {T_REG | T_DIR | T_IND, T_REG | T_DIR | T_IND, T_REG}, 6, 6,
 		"et (and  r1, r2, r3   r1&r2 -> r3", 1, 0},
 	{"or", 3, {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}, 7, 6,
 		"ou  (or   r1, r2, r3   r1 | r2 -> r3", 1, 0},
@@ -37,18 +37,14 @@ t_op	g_op_tab[17] =
 		"long load index", 1, 1},
 	{"lfork", 1, {T_DIR}, 15, 1000, "long fork", 0, 1},
 	{"aff", 1, {T_REG}, 16, 2, "aff", 1, 0},
-	{0, 0, {0}, 0, 0, 0, 0, 0}
+	{"", 0, {0}, 0, 0, 0, 0, 0}
 };
-
 /*
 int	main(void)
 {
 	for (int i = 0; i < 17; i++)
 	{
-		printf("name :%s,\n args_num: %d, \nargs type :%d, %d, %d, \nidx: %d, \
-				nexec_cycle: %d, \
-				ndescription: %s, \narg_type_code: %d, \
-				nreg_size: %d\n\n", 
+		printf("name :%s,\n args_num: %d, \nargs type :%d, %d, %d, \nidx: %d, \nexec_cycle: %d, \ndescription: %s, \narg_type_code: %d, \nreg_size: %d\n\n", 
 				  g_op_tab[i].op_name, \
 				  g_op_tab[i].args_num\
 				, g_op_tab[i].args_type[0] \

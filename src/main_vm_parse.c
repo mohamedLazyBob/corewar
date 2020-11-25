@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:42:03 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/18 14:52:34 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/25 14:47:12 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,61 @@ void	print_input(t_input_data *bloc, int *nbr_cycles)
 *******************************************************************************
 */
 
+void	ft_temp(t_input_data bloc, t_playrs *playrs)
+{
+	t_process process;
+
+	process.arena = ft_init_arena(bloc, playrs);
+	ft_memset(process.regestries, 0, 16*sizeof(int));
+
+	process.player_id = bloc.ids[1];// 2
+	process.regestries[1] = -process.player_id;
+	printf("{{%.8x}}\n", process.regestries[1]);
+
+	process.pc = 1;
+	process.next_inst = process.arena[0] - 1;
+	process.carry = 1;
+	process.players_counter = bloc.players_counter;
+	
+	printf("\n\n\n\n");
+	//printf("next inst : %.2d\n", process.next_inst);
+	for (int idx = 0; idx < 100; idx++)
+		printf("%.2x ", process.arena[idx]);
+	//ft_operation_and(&process);
+	//ft_operation_zjmp(&process);
+	//ft_operation_add(&process);
+	ft_operation_st(&process);
+//	ft_operation_ld(&process);
+//	ft_operation_ld(&process);
+//	ft_operation_ld(&process);
+//	ft_operation_add(&process);
+//	ft_operation_ldi(&process);
+//	ft_operation_sti(&process);
+//	ft_operation_add(&process);
+//	ft_operation_sub(&process);
+//	ft_operation_ld(&process);
+//	ft_operation_sub(&process);
+//	ft_operation_ld(&process);
+//	ft_operation_lld(&process);
+//	ft_operation_ldi(&process);
+//	ft_operation_lldi(&process);
+//	ft_operation_st(&process);
+//	ft_operation_sti(&process);
+	printf("\n");
+	for (int idx = 0; idx < 100; idx++)
+		printf("%.2x ", process.arena[idx]);
+
+	printf("\n\n\n\n");
+	for (int i = 0; i < 16; i++)
+		printf("%d ", process.regestries[i]);
+	printf("\n");
+
+}
+
+/*
+*******************************************************************************
+*/
+
 int		main(int ac, char **av)
 {
 	t_input_data	bloc;
@@ -54,7 +109,8 @@ int		main(int ac, char **av)
 		print_input(&(bloc), bloc.nbr_cycles);
 		playrs = (t_playrs*)ft_memalloc(sizeof(t_playrs) * bloc.players_counter);
 		ft_open_champion(bloc, playrs);
-		ft_init_arena(bloc, playrs);
+	//	ft_init_arena(bloc, playrs);
+		ft_temp(bloc, playrs);
 	}
 	return (0);
 }
