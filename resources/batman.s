@@ -2,7 +2,7 @@
 .comment    "This city needs me"
 
 #izjmp %:loop
-and %03, %:live, r1
+and %03, :live, r1
 loop:
         sti r1, %:live, %1
 live:
