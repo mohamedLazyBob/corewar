@@ -43,11 +43,11 @@ void	ft_operation_add(t_process *proc)
 	ft_get_args_type(*proc, types_byte, parameters);
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 		ft_exit("champion operation args error");
-	proc->regestries[proc->arena[proc->pc + 3]] = \
-	proc->regestries[proc->arena[proc->pc + 1]] + \
-	proc->regestries[proc->arena[proc->pc + 2]];
-	proc->carry = (proc->regestries[proc->arena[proc->pc + 3]] == 0) ? 1 : 0;
-	proc->pc += 3;
+	proc->regestries[proc->arena[(proc->pc + 3) % IDX_MOD]] = \
+	proc->regestries[proc->arena[(proc->pc + 1) % IDX_MOD]] + \
+	proc->regestries[proc->arena[(proc->pc + 2) % IDX_MOD]];
+	proc->carry = (proc->regestries[proc->arena[(proc->pc + 3) % IDX_MOD]] == 0) ? 1 : 0;
+	proc->pc = (proc->pc + parameters[0] + parameters[1] + parameters[2]) % IDX_MOD;
 }
 
 /*
@@ -63,11 +63,11 @@ void	ft_operation_sub(t_process *proc)
 	ft_get_args_type(*proc, types_byte, parameters);
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 		ft_exit("champion operation args error");
-	proc->regestries[proc->arena[proc->pc + 3]] = \
-	proc->regestries[proc->arena[proc->pc + 1]] - \
-	proc->regestries[proc->arena[proc->pc + 2]];
-	proc->carry = (proc->regestries[proc->arena[proc->pc + 3]] == 0) ? 1 : 0;
-	proc->pc += 3;
+	proc->regestries[proc->arena[(proc->pc + 3) % IDX_MOD]] = \
+	proc->regestries[proc->arena[(proc->pc + 1) % IDX_MOD]] - \
+	proc->regestries[proc->arena[(proc->pc + 2) % IDX_MOD]];
+	proc->carry = (proc->regestries[proc->arena[(proc->pc + 3) % IDX_MOD]] == 0) ? 1 : 0;
+	proc->pc = (proc->pc + parameters[0] + parameters[1] + parameters[2]) % IDX_MOD;
 }
 
 /*
@@ -89,7 +89,7 @@ void	ft_int_to_str(int var, char *str)
 void	ft_operation_st(t_process *proc)
 {
 	unsigned int	types_byte;
-	unsigned char	parameters[3];
+	unsigned char	parameters[3]; 
 	int				temp;
 	int				var;
 	char			str[4];
@@ -104,17 +104,16 @@ void	ft_operation_st(t_process *proc)
 	if (parameters[1] == T_REG)
 	{
 		proc->regestries[proc->arena[proc->pc]] = \
-		proc->regestries[proc->arena[proc->pc + 1]];
-		proc->pc += 2;
+		proc->regestries[proc->arena[(proc->pc + 1) % IDX_MOD]];
 	}
 	else
 	{
-		ft_memcpy(((unsigned char*)&var) + 2,proc->arena + (proc->pc + 1), 2);
+		ft_memcpy(((unsigned char*)&var) + 2,proc->arena + ((proc->pc + 1) % IDX_MOD), 2);
 		temp = temp + (ft_convert_num((unsigned char*)&var, 4) % IDX_MOD);	
 		ft_int_to_str(proc->regestries[proc->arena[proc->pc]], str);
 		ft_memcpy(proc->arena + temp, (const void *)str, 4);
-		proc->pc += 3;
 	}
+	proc->pc = (proc->pc + parameters[0] + parameters[1] + parameters[2]) % IDX_MOD;
 }
 
 /*
@@ -137,25 +136,12 @@ void	ft_operation_sti(t_process *proc)
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 		ft_exit("champion operation args error");
 	if (parameters[1] == T_IND)
-		temp = temp + (ft_convert_num(proc->arena + (proc->pc + 1), 4) % \
+		temp = temp + (ft_convert_num(proc->arena + ((proc->pc + 1) % IDX_MOD), 4) % \
 				IDX_MOD);
 	else
-	{
-			if (parameters[1] == T_REG && parameters[2] == T_REG)
-				temp = temp + ((proc->regestries[proc->arena[proc->pc + 1]] + \
-						proc->regestries[proc->arena[proc->pc + 2]]) % IDX_MOD);
-			else if (parameters[1] == T_REG && parameters[2] == T_DIR)
-				temp = temp + ((proc->regestries[proc->arena[proc->pc + 1]] + \
-					ft_convert_num(proc->arena + (proc->pc + 2), 2)) % IDX_MOD);
-			else if (parameters[1] == T_DIR && parameters[2] == T_REG)
-				temp = temp + ((ft_convert_num(proc->arena + (proc->pc + 1), 2)\
-					+ proc->regestries[proc->arena[proc->pc + 3]]) % IDX_MOD);
-			else if (parameters[1] == T_DIR && parameters[2] == T_DIR)
-				temp = temp + (ft_convert_num(proc->arena + (proc->pc + 1), 2)\
-				+ (ft_convert_num(proc->arena + (proc->pc + 3), 2)) % IDX_MOD);
-			else
-				;
-	}
+		temp = temp + ((proc->regestries[proc->arena[(proc->pc + parameters[1]) % IDX_MOD]] + \
+				proc->regestries[proc->arena[(proc->pc + parameters[2]) % IDX_MOD]]) % IDX_MOD);
 	ft_int_to_str(proc->regestries[proc->arena[proc->pc]], str);
 	ft_memcpy(proc->arena + temp, (const void *)str, 2);
+	proc->pc = (proc->pc + parameters[0] + parameters[1] + parameters[2]) % IDX_MOD;
 }
