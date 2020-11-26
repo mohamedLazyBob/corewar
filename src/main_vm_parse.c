@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:42:03 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/25 09:53:22 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/26 14:46:26 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,19 @@ void	ft_temp(t_input_data bloc, t_playrs *playrs)
 	t_process process;
 
 	process.arena = ft_init_arena(bloc, playrs);
-	ft_memset(process.regestries, 0, REG_SIZE);
+	ft_memset(process.regestries, 0, REG_SIZE * REG_NUMBER);
+	process.regestries[0] = 1;// player id
 	process.pc = 1;
-	process.next_inst = 6;
+	process.next_inst = process.arena[0];
 	process.player_id = bloc.ids[0];
-	process.carry = 1;
+	process.carry = 0;
 	process.players_counter = bloc.players_counter;
 
 	ft_operation_and(&process);
 	//ft_operation_zjmp(&process);
+	for (int i = 0; i < REG_NUMBER; i++)
+		printf("%d ", process.regestries[i]);
+	printf("\n");
 }
 
 /*
@@ -73,11 +77,8 @@ int		main(int ac, char **av)
 {
 	t_input_data	bloc;
 	int				nbr_cycles[2];
-	//int				ret;
-	t_header		data;
 	t_playrs		*playrs;
 
-	// if ac == 1;
 	ft_memset(&bloc, 0, sizeof(bloc));
 	ft_memset(bloc.nbr_cycles, -1, 2 * sizeof(int));
 	ft_read_players(ac, av, &bloc);
