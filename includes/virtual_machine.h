@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/25 09:47:49 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/26 14:46:29 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,6 @@
 
 # define FALSE 0
 # define TRUE 1
-
-typedef struct	s_input_data
-{
-	int		players_counter;
-	char	*names[MAX_PLAYERS];
-	int		ids[MAX_PLAYERS];
-	int		nbr_cycles[2];
-	int		fd[MAX_PLAYERS];
-	int		visu;
-}				t_input_data;
-
-typedef struct	s_playrs
-{
-	t_header		header;
-	unsigned char	*exec_code;
-}				t_playrs;
 
 /*
 ** t_dir_size values: 0 means sizeof(T_DIR) == 4, 1 -> sizeof(T_DIR) == 2
@@ -55,12 +39,45 @@ typedef struct	s_op
 	int		arg_type_code;
 	int		t_dir_size;
 }				t_op;
+/*
+**
+** this struct contains all what we need from the input, everything!
+**
+*/
+typedef struct	s_playrs
+{
+	t_header		header;
+	unsigned char	*exec_code;
+}				t_playrs;
 
+typedef struct	s_input_data
+{
+	int		players_counter;
+	char	*names[MAX_PLAYERS];
+	int		ids[MAX_PLAYERS];
+	int		nbr_cycles[2];
+	int		fd[MAX_PLAYERS];
+	int		visu;
+}				t_input_data;
+
+/*
+**
+** this struct contains contains all what we need during the execution
+** of the cycles 
+** vars:
+** 		proc_id : unique carriage number
+** 		arena   : pointer to the arena; initialased at start.
+** 
+** 
+** 
+*/
 typedef	struct	s_process
 {
+		unsigned int	proc_id;
 		unsigned char	*arena;
 		unsigned int	regestries[REG_NUMBER];
 		unsigned int	pc;
+		unsigned int	op_pc;
 		unsigned int	next_inst;
 		unsigned int	player_id;
 		unsigned int	process_live;
