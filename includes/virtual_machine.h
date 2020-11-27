@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/27 11:14:12 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/27 13:21:34 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,8 @@ int				ft_parse_args(t_process *process, unsigned char parameter);
 unsigned int	ft_get_argument_value(t_process *process, \
 										unsigned int arg, \
 										unsigned char parameter);
+int				ft_sizeof_params(t_process *process, \
+								unsigned char parameter[3]);
 
 /*
 *******************************************************************************
