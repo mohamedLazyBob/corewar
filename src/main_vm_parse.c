@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:42:03 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/26 14:46:26 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/27 11:18:29 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_free_exit(char *str, void **buff, size_t size)
 *******************************************************************************
 ** we'll remove this function afterword, it's just for test purpose
 */
-
+#if 0
 void	print_input(t_input_data *bloc, int *nbr_cycles)
 {
 	int				idx;
@@ -44,7 +44,7 @@ void	print_input(t_input_data *bloc, int *nbr_cycles)
 		idx++;
 	}
 }
-
+#endif
 /*
 *******************************************************************************
 */

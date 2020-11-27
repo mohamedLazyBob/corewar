@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:55:39 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/27 11:11:25 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/27 13:20:12 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,3 +130,28 @@ unsigned int	ft_get_argument_value(t_process *process, \
 	}
 	return (arg);
 }
+
+/*
+******************************************************************************
+*/
+
+int		ft_sizeof_params(t_process *process, unsigned char parameters[3])
+{
+	int i;
+	int	ret;
+
+	i = -1;
+	ret = 0;
+	while (++i < 4)
+	{
+		if (parameters[i] == T_REG)
+			ret += 1;
+		else if (parameters[i] == T_IND)
+			ret += 2;
+		else if (parameters[i] == T_DIR)
+			ret += (g_op_tab[process->next_inst].t_dir_size ? 2 : 4);
+	}
+	return (ret);
+}
+
+
