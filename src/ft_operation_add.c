@@ -6,7 +6,7 @@
 /*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 10:14:10 by del-alj           #+#    #+#             */
-/*   Updated: 2020/11/26 12:10:46 by del-alj          ###   ########.fr       */
+/*   Updated: 2020/11/27 11:28:01 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,12 @@ void	ft_operation_add(t_process *proc)
 	ft_get_args_type(*proc, types_byte, parameters);
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 		ft_exit("champion operation args error");
+	proc->pc++;
 	proc->regestries[proc->arena[(proc->pc + 3) % IDX_MOD]] = \
 	proc->regestries[proc->arena[(proc->pc + 1) % IDX_MOD]] + \
 	proc->regestries[proc->arena[(proc->pc + 2) % IDX_MOD]];
 	proc->carry = (proc->regestries[proc->arena[(proc->pc + 3) % IDX_MOD]] == 0) ? 1 : 0;
-	proc->pc = (proc->pc + parameters[0] + parameters[1] + parameters[2]) % IDX_MOD;
+	proc->pc = (proc->pc + 3) % IDX_MOD;
 }
 
 /*
@@ -67,7 +68,7 @@ void	ft_operation_sub(t_process *proc)
 	proc->regestries[proc->arena[(proc->pc + 1) % IDX_MOD]] - \
 	proc->regestries[proc->arena[(proc->pc + 2) % IDX_MOD]];
 	proc->carry = (proc->regestries[proc->arena[(proc->pc + 3) % IDX_MOD]] == 0) ? 1 : 0;
-	proc->pc = (proc->pc + parameters[0] + parameters[1] + parameters[2]) % IDX_MOD;
+	proc->pc = (proc->pc + 3) % IDX_MOD;
 }
 
 /*
@@ -113,7 +114,7 @@ void	ft_operation_st(t_process *proc)
 		ft_int_to_str(proc->regestries[proc->arena[proc->pc]], str);
 		ft_memcpy(proc->arena + temp, (const void *)str, 4);
 	}
-	proc->pc = (proc->pc + parameters[0] + parameters[1] + parameters[2]) % IDX_MOD;
+	proc->pc = (proc->pc + size(parameters[0], 4) + size(parameters[1], 4) + size(parameters[2], 4)) % IDX_MOD;
 }
 
 /*
@@ -139,9 +140,9 @@ void	ft_operation_sti(t_process *proc)
 		temp = temp + (ft_convert_num(proc->arena + ((proc->pc + 1) % IDX_MOD), 4) % \
 				IDX_MOD);
 	else
-		temp = temp + ((proc->regestries[proc->arena[(proc->pc + parameters[1]) % IDX_MOD]] + \
-				proc->regestries[proc->arena[(proc->pc + parameters[2]) % IDX_MOD]]) % IDX_MOD);
+		temp = temp + ((proc->regestries[proc->arena[(proc->pc + size(parameters[1], 2)) % IDX_MOD]] + \
+				proc->regestries[proc->arena[(proc->pc + size(parameters[2], 2)) % IDX_MOD]]) % IDX_MOD);
 	ft_int_to_str(proc->regestries[proc->arena[proc->pc]], str);
 	ft_memcpy(proc->arena + temp, (const void *)str, 2);
-	proc->pc = (proc->pc + parameters[0] + parameters[1] + parameters[2]) % IDX_MOD;
+	proc->pc = (proc->pc + size(parameters[0], 2) + size(parameters[1], 2) + size(parameters[2], 2)) % IDX_MOD;
 }

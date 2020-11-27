@@ -31,6 +31,10 @@ void	print_arena(t_input_data bloc, unsigned char *arena)
 	}
 }
 
+/*
+********************************************************************************
+*/
+
 unsigned char	*ft_init_arena(t_input_data bloc, t_playrs *players)
 {
 	unsigned	char	*arena;
@@ -51,4 +55,19 @@ unsigned char	*ft_init_arena(t_input_data bloc, t_playrs *players)
 
 	print_arena(bloc, arena);
 	return (arena);
+}
+
+/*
+********************************************************************************
+*/
+
+int 	size(int param, int t_dir_size)
+{
+	if (param == T_REG)
+		param = 1;
+	else if (param == T_IND)
+		param = 2;
+	else if (param == T_DIR)
+		param = t_dir_size;
+	return (param);
 }

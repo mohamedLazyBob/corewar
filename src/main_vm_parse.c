@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:42:03 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/25 14:47:12 by del-alj          ###   ########.fr       */
+/*   Updated: 2020/11/27 11:01:51 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_temp(t_input_data bloc, t_playrs *playrs)
 
 	process.player_id = bloc.ids[1];// 2
 	process.regestries[1] = -process.player_id;
-	printf("{{%.8x}}\n", process.regestries[1]);
+	//printf("{{%.8x}}\n", process.regestries[1]);
 
 	process.pc = 1;
 	process.next_inst = process.arena[0] - 1;
@@ -56,9 +56,12 @@ void	ft_temp(t_input_data bloc, t_playrs *playrs)
 		printf("%.2x ", process.arena[idx]);
 	//ft_operation_and(&process);
 	//ft_operation_zjmp(&process);
-	//ft_operation_add(&process);
-	ft_operation_st(&process);
-//	ft_operation_ld(&process);
+	process.player_id = bloc.ids[3];// 4
+	printf("\n*****%d***%d***%d******\n", process.regestries[3], process.regestries[6], process.regestries[3]);
+	ft_operation_add(&process);
+	printf("\n*****%d***%d***%d******\n", process.regestries[3], process.regestries[6], process.regestries[3]);
+	 printf("\n*****%d***\n", process.pc);
+//	ft_operation_st(&process);
 //	ft_operation_ld(&process);
 //	ft_operation_ld(&process);
 //	ft_operation_add(&process);
