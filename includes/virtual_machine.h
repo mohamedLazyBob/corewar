@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/26 14:46:29 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/27 11:02:52 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ typedef	struct	s_process
 		unsigned char	*arena;
 		unsigned int	regestries[REG_NUMBER];
 		unsigned int	pc;
-		unsigned int	op_pc;
 		unsigned int	next_inst;
 		unsigned int	player_id;
 		unsigned int	process_live;
@@ -94,6 +93,13 @@ typedef	struct	s_process
 */
 
 /*
+*******************************************************************************
+** main_vm_parse.c
+** this file contains the main func
+*/
+
+/*
+*******************************************************************************
 ** ft_read_champion.c
 */
 
@@ -101,40 +107,59 @@ void			ft_read_champion(int fd, t_playrs *playrs);
 void			ft_open_champion(t_input_data bloc, t_playrs *playrs);
 void			ft_fd_players(t_input_data	*bloc);
 unsigned int	ft_convert_num(unsigned char *temp);
-
 void			ft_exit(char *str);
 
 /*
+*******************************************************************************
 ** main_vm_parse.c
 */
 void			print_input(t_input_data *bloc, int *nbr_cycles);
 void			ft_free_exit(char *str, void **buff, size_t size);
 
 /*
+*******************************************************************************
 ** read_players.c
 */
 void			ft_read_players(int argc, char **av, t_input_data *bloc);
 
 /*
-** main_vm_parse.c
-** this file contains the main func
-*/
-
-/*
+*******************************************************************************
 ** arena_initialization.c
 */
 unsigned char	*ft_init_arena(t_input_data bloc, t_playrs *players);
 
 /*
+*******************************************************************************
 ** operations_tools.c
 */
 unsigned int	ft_reverse_endianness(unsigned char *temp, size_t size);
+void			ft_get_args_type(t_process *process, \
+									unsigned char types_byte, \
+									unsigned char *args);
+int				ft_parse_args(t_process *process, unsigned char parameter);
+unsigned int	ft_get_argumet_value(t_process *process, \
+										unsigned int arg, \
+										unsigned char parameter);
 
 /*
-** operations_1.c
-**
-** arena: is pointer bcs all process need access to the same memory
+*******************************************************************************
+** logical_operators_and_jmp.c
 */
+
+void			ft_operation_and(t_process *process);
+void			ft_operation_or(t_process *process);
+void			ft_operation_xor(t_process *process);
+void			ft_operation_zjmp(t_process *process);
+
+/*
+*******************************************************************************
+** operations_fork_live.c
+*/
+
+void	ft_operation_fork(t_process *process);
+void	ft_operation_lfork(t_process *process);
+void	ft_operation_live(t_process *process);
+void	ft_operation_aff(t_process *process);
 
 /*
 ********************* Douae part **************
@@ -150,20 +175,5 @@ void	ft_operation_lldi();
 
 void	ft_operation_st();
 void	ft_operation_sti();
-
-/*
-********************* lazy part **************
-*/
-void	ft_operation_and(t_process *process);
-void	ft_operation_or(t_process *process);
-void	ft_operation_xor(t_process *process);
-
-void	ft_operation_fork();
-void	ft_operation_lfork();
-
-void	ft_operation_live(t_process *process);
-void	ft_operation_zjmp(t_process *process);
-void	ft_operation_aff(t_process *process);
-
 
 #endif

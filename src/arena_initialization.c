@@ -6,18 +6,18 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 13:53:57 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/23 14:38:41 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/27 11:09:00 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "virtual_machine.h"
+#include "virtual_machine.h"
 
 /*
 ** this file is just for test, I think that we'll delete or unuse these
 ** function after. (we'll do a new structure)
 */
 
-void	print_arena(t_input_data bloc, unsigned char *arena)
+void			print_arena(t_input_data bloc, unsigned char *arena)
 {
 	int	idx;
 
@@ -48,7 +48,6 @@ unsigned char	*ft_init_arena(t_input_data bloc, t_playrs *players)
 												players[idx].header.prog_size);
 		jdx += chunk;
 	}
-
 	print_arena(bloc, arena);
 	return (arena);
 }
