@@ -6,12 +6,13 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:55:39 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/27 11:07:39 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/27 11:11:25 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "virtual_machine.h"
 
+extern t_op g_op_tab[17];
 /*
 ** this func reverse the endianess of a number (int, long ...)
 ** for now it's working only with 2/4 bytes values (what we need)

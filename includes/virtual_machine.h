@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/27 11:02:52 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/27 11:14:12 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ typedef	struct	s_process
 		unsigned char	*arena;
 		unsigned int	regestries[REG_NUMBER];
 		unsigned int	pc;
+		unsigned int	op_pc;
 		unsigned int	next_inst;
 		unsigned int	player_id;
 		unsigned int	process_live;
@@ -137,7 +138,7 @@ void			ft_get_args_type(t_process *process, \
 									unsigned char types_byte, \
 									unsigned char *args);
 int				ft_parse_args(t_process *process, unsigned char parameter);
-unsigned int	ft_get_argumet_value(t_process *process, \
+unsigned int	ft_get_argument_value(t_process *process, \
 										unsigned int arg, \
 										unsigned char parameter);
 

@@ -6,12 +6,13 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 10:44:23 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/27 11:09:28 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/27 11:15:49 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "virtual_machine.h"
 
+extern int g_last_live;
 /*
 ** ****************************************************************************
 ** live operation reads the regestre number, checks if it's a valid reg
