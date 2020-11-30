@@ -143,6 +143,7 @@ unsigned int	ft_get_argument_value(t_process *process, \
 										unsigned char parameter);
 int				ft_sizeof_params(t_process *process, \
 								unsigned char parameter[3]);
+int				ft_reg_check(int reg);
 
 /*
 *******************************************************************************
@@ -167,16 +168,28 @@ void	ft_operation_aff(t_process *process);
 /*
 ********************* Douae part **************
 */
-void	ft_operation_add(t_process proc);
-void	ft_operation_sub();
 
+/*
+*******************************************************************************
+** ft_operations_add.c
+*/
 
-void	ft_operation_ld();
-void	ft_operation_lld();
-void	ft_operation_ldi();
-void	ft_operation_lldi();
+int 	ft_size(int param, int t_dir_size);
+void	ft_operation_add(t_process *proc);
+void	ft_operation_sub(t_process *proc);
+void	ft_operation_st(t_process *proc);
+void	ft_operation_sti(t_process *proc);
 
-void	ft_operation_st();
-void	ft_operation_sti();
+/*
+*******************************************************************************
+** ft_operations_ld.c
+*/
+
+void	ft_int_to_str(int var, char *str);
+void	ft_operation_ld(t_process *proc);
+void	ft_operation_lld(t_process *proc);
+void	ft_operation_ldi(t_process *proc);
+void	ft_operation_lldi(t_process *proc);
+
 
 #endif
