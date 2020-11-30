@@ -74,7 +74,7 @@ typedef struct	s_input_data
 typedef	struct	s_process
 {
 		unsigned int	proc_id;
-		unsigned char	*arena;
+		unsigned char	*arena[2];
 		unsigned int	regestries[REG_NUMBER];
 		unsigned int	pc;
 		unsigned int	op_pc;
@@ -143,7 +143,6 @@ unsigned int	ft_get_argument_value(t_process *process, \
 										unsigned char parameter);
 int				ft_sizeof_params(t_process *process, \
 								unsigned char parameter[3]);
-int				ft_reg_check(int reg);
 
 /*
 *******************************************************************************
@@ -160,10 +159,10 @@ void			ft_operation_zjmp(t_process *process);
 ** operations_fork_live.c
 */
 
-void	ft_operation_fork(t_process *process);
-void	ft_operation_lfork(t_process *process);
-void	ft_operation_live(t_process *process);
-void	ft_operation_aff(t_process *process);
+void			ft_operation_fork(t_process *process);
+void			ft_operation_lfork(t_process *process);
+void			ft_operation_live(t_process *process);
+void			ft_operation_aff(t_process *process);
 
 /*
 ********************* Douae part **************
@@ -174,22 +173,32 @@ void	ft_operation_aff(t_process *process);
 ** ft_operations_add.c
 */
 
-int 	ft_size(int param, int t_dir_size);
-void	ft_operation_add(t_process *proc);
-void	ft_operation_sub(t_process *proc);
-void	ft_operation_st(t_process *proc);
-void	ft_operation_sti(t_process *proc);
+int 			ft_size(int param, int t_dir_size);
+void			ft_operation_add(t_process *proc);
+void			ft_operation_sub(t_process *proc);
+void			ft_operation_st(t_process *proc);
+void			ft_operation_sti(t_process *proc);
 
 /*
 *******************************************************************************
 ** ft_operations_ld.c
 */
 
-void	ft_int_to_str(int var, char *str);
-void	ft_operation_ld(t_process *proc);
-void	ft_operation_lld(t_process *proc);
-void	ft_operation_ldi(t_process *proc);
-void	ft_operation_lldi(t_process *proc);
+void			ft_int_to_str(int var, char *str);
+void			ft_operation_ld(t_process *proc);
+void			ft_operation_lld(t_process *proc);
+void			ft_operation_ldi(t_process *proc);
+void			ft_operation_lldi(t_process *proc);
 
+
+
+/*
+*******************************************************************************
+** ft_any_player.c
+*/
+
+
+int				ft_reg_check(int reg);
+void   			ft_any_player(t_process *proc, int temp, char *str, int size);
 
 #endif

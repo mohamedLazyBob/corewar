@@ -21,7 +21,7 @@ unsigned int g_last_live;
 ** when we print with printf, mayge we should write to stderr
 ** when there is an error we estimate the max size of all args,
 ** and we jump to that
-** types_byte -> process->arena[process->pc];
+** types_byte -> process->arena[0][process->pc];
 */
 
 void	ft_operation_and(t_process *process)
@@ -30,7 +30,7 @@ void	ft_operation_and(t_process *process)
 	unsigned char	parameters[3];
 
 	process->op_pc = process->pc - 1;
-	ft_get_args_type(process, process->arena[process->pc], parameters);
+	ft_get_args_type(process, process->arena[0][process->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
 	{
 		printf("champion operation args error, AT PC= %d\n", process->op_pc);
@@ -67,7 +67,7 @@ void	ft_operation_or(t_process *process)
 
 	i = -1;
 	process->op_pc = process->pc - 1;
-	ft_get_args_type(process, process->arena[process->pc], parameters);
+	ft_get_args_type(process, process->arena[0][process->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
 	{
 		printf("champion operation args error, AT PC= %d\n", process->op_pc);
@@ -101,7 +101,7 @@ void	ft_operation_xor(t_process *process)
 
 	i = -1;
 	process->op_pc = process->pc - 1;
-	ft_get_args_type(process, process->arena[process->pc], parameters);
+	ft_get_args_type(process, process->arena[0][process->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
 	{
 		printf("champion operation args error, AT PC= %d\n", process->op_pc);

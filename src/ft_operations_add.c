@@ -35,20 +35,20 @@ void	ft_operation_add(t_process *proc)
 {
 	unsigned char	parameters[3];
 
-	ft_get_args_type(proc, proc->arena[proc->pc], parameters);
+	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if ((ft_strcmp((const char*)parameters, "ER") == 0) || \
-		(!(ft_reg_check(proc->arena[(proc->pc + 3) % MEM_SIZE]) && \
-		ft_reg_check(proc->arena[(proc->pc + 1) % MEM_SIZE]) &&  \
-		ft_reg_check(proc->arena[(proc->pc + 2) % MEM_SIZE]))))
+		(!(ft_reg_check(proc->arena[0][(proc->pc + 3) % MEM_SIZE]) && \
+		ft_reg_check(proc->arena[0][(proc->pc + 1) % MEM_SIZE]) &&  \
+		ft_reg_check(proc->arena[0][(proc->pc + 2) % MEM_SIZE]))))
 	{
 		proc->pc = (proc->pc + \
 						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 		return ;
 	}
-	proc->regestries[proc->arena[(proc->pc + 3) % MEM_SIZE]] = \
-	proc->regestries[proc->arena[(proc->pc + 1) % MEM_SIZE]] + \
-	proc->regestries[proc->arena[(proc->pc + 2) % MEM_SIZE]];
-	proc->carry = (proc->regestries[proc->arena[(proc->pc + 3) \
+	proc->regestries[proc->arena[0][(proc->pc + 3) % MEM_SIZE]] = \
+	proc->regestries[proc->arena[0][(proc->pc + 1) % MEM_SIZE]] + \
+	proc->regestries[proc->arena[0][(proc->pc + 2) % MEM_SIZE]];
+	proc->carry = (proc->regestries[proc->arena[0][(proc->pc + 3) \
 						% IDX_MOD]] == 0) ? 1 : 0;
 	proc->pc = (proc->pc + \
 						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
@@ -62,20 +62,20 @@ void	ft_operation_sub(t_process *proc)
 {
 	unsigned char	parameters[3];
 
-	ft_get_args_type(proc, proc->arena[proc->pc], parameters);
+	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if ((ft_strcmp((const char*)parameters, "ER") == 0) || \
-		(!(ft_reg_check(proc->arena[(proc->pc + 3) % MEM_SIZE]) && \
-		ft_reg_check(proc->arena[(proc->pc + 1) % MEM_SIZE]) &&  \
-		ft_reg_check(proc->arena[(proc->pc + 2) % MEM_SIZE]))))
+		(!(ft_reg_check(proc->arena[0][(proc->pc + 3) % MEM_SIZE]) && \
+		ft_reg_check(proc->arena[0][(proc->pc + 1) % MEM_SIZE]) &&  \
+		ft_reg_check(proc->arena[0][(proc->pc + 2) % MEM_SIZE]))))
 	{
 		proc->pc = (proc->pc + \
 						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 		return ;
 	}
-	proc->regestries[proc->arena[(proc->pc + 3) % IDX_MOD]] = \
-	proc->regestries[proc->arena[(proc->pc + 1) % IDX_MOD]] - \
-	proc->regestries[proc->arena[(proc->pc + 2) % IDX_MOD]];
-	proc->carry = (proc->regestries[proc->arena[(proc->pc + 3) \
+	proc->regestries[proc->arena[0][(proc->pc + 3) % IDX_MOD]] = \
+	proc->regestries[proc->arena[0][(proc->pc + 1) % IDX_MOD]] - \
+	proc->regestries[proc->arena[0][(proc->pc + 2) % IDX_MOD]];
+	proc->carry = (proc->regestries[proc->arena[0][(proc->pc + 3) \
 						% IDX_MOD]] == 0) ? 1 : 0;
 	proc->pc = (proc->pc + \
 						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
@@ -94,9 +94,9 @@ void	ft_operation_st(t_process *proc)
 
 	var = 0;
 	temp = proc->pc - 1;
-	ft_get_args_type(proc, proc->arena[proc->pc], parameters);
+	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if ((ft_strcmp((const char*)parameters, "ER") == 0) || \
-		(!(ft_reg_check(proc->arena[proc->pc % MEM_SIZE]))))
+		(!(ft_reg_check(proc->arena[0][proc->pc % MEM_SIZE]))))
 	{
 			proc->pc = (proc->pc + \
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
@@ -104,21 +104,23 @@ void	ft_operation_st(t_process *proc)
 	}
 	if (parameters[1] == T_REG)
 	{
-		if (!(ft_reg_check(proc->arena[(proc->pc + 1) % MEM_SIZE])))
+		if (!(ft_reg_check(proc->arena[0][(proc->pc + 1) % MEM_SIZE])))
 		{
 			proc->pc = (proc->pc + \
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 			return ;
 		}
-		proc->regestries[proc->arena[proc->pc]] = \
-		proc->regestries[proc->arena[(proc->pc + 1) % IDX_MOD]];
+		proc->regestries[proc->arena[0][proc->pc]] = \
+		proc->regestries[proc->arena[0][(proc->pc + 1) % IDX_MOD]];
 	}
 	else
 	{
-		ft_memcpy(((unsigned char*)&var) + 2,proc->arena + ((proc->pc + 1) % MEM_SIZE), 2);
+		ft_memcpy(((unsigned char*)&var) + 2,proc->arena[0] + ((proc->pc + 1) % MEM_SIZE), 2);
 		temp = temp + (ft_reverse_endianness((unsigned char*)&var, 4) % IDX_MOD);
-		ft_int_to_str(proc->regestries[proc->arena[proc->pc]], str);
-		ft_memcpy(proc->arena + temp, (const void *)str, 4);
+		ft_int_to_str(proc->regestries[proc->arena[0][proc->pc]], str);
+		ft_memcpy(proc->arena[0] + temp, (const void *)str, 4);
+
+		ft_any_player(proc, temp, str, 4);
 	}
 	proc->pc = (proc->pc + \
 						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
@@ -137,9 +139,9 @@ void	ft_operation_sti(t_process *proc)
 
 	var = 0;
 	temp = proc->pc - 1;
-	ft_get_args_type(proc, proc->arena[proc->pc], parameters);
+	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if ((ft_strcmp((const char*)parameters, "ER") == 0) || \
-		(!(ft_reg_check(proc->arena[proc->pc % MEM_SIZE]))))
+		(!(ft_reg_check(proc->arena[0][proc->pc % MEM_SIZE]))))
 	{
 			proc->pc = (proc->pc + \
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
@@ -148,11 +150,10 @@ void	ft_operation_sti(t_process *proc)
 	
 /**/
 	if (parameters[1] == T_IND)
-		temp = temp + (ft_reverse_endianness(proc->arena + ((proc->pc + 1) % MEM_SIZE), 4) % IDX_MOD);
+		temp = temp + (ft_reverse_endianness(proc->arena[0] + ((proc->pc + 1) % MEM_SIZE), 4) % IDX_MOD);
 	else
-		temp = temp + ((proc->regestries[proc->arena[(proc->pc + ft_size(parameters[1], 2)) % MEM_SIZE]] + proc->regestries[proc->arena[(proc->pc + ft_size(parameters[2], 2)) % MEM_SIZE]]) % IDX_MOD);
-	ft_int_to_str(proc->regestries[proc->arena[proc->pc]], str);
-	ft_memcpy(proc->arena + temp, (const void *)str, 2);
+		temp = temp + ((proc->regestries[proc->arena[0][(proc->pc + ft_size(parameters[1], 2)) % MEM_SIZE]] + proc->regestries[proc->arena[0][(proc->pc + ft_size(parameters[2], 2)) % MEM_SIZE]]) % IDX_MOD);
+	ft_any_player(proc, temp, str, 2);
 /**/
 	proc->pc = (proc->pc + ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 }
