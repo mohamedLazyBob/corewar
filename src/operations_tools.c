@@ -153,12 +153,3 @@ int		ft_sizeof_params(t_process *process, unsigned char parameters[3])
 	}
 	return (ret);
 }
-
-/*
-********************************************************************************
-*/
-
-int ft_reg_check(int reg)
-{
-	return ((reg < 1 || 16 < reg) ? 0 : 1);
-}
