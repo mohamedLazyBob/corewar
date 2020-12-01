@@ -30,14 +30,14 @@
 
 typedef struct	s_op
 {
-	char	op_name[10];
-	int		args_num;
-	unsigned char	args_type[3];
-	int		idx;
-	int		execution_cycle;
-	char	*op_description;
-	int		arg_type_code;
-	int		t_dir_size;
+	char				op_name[10];
+	int					args_num;
+	unsigned char		args_type[3];
+	int					idx;
+	int					execution_cycle;
+	char				*op_description;
+	int					arg_type_code;
+	int					t_dir_size;
 }				t_op;
 /*
 **
@@ -46,18 +46,18 @@ typedef struct	s_op
 */
 typedef struct	s_playrs
 {
-	t_header		header;
-	unsigned char	*exec_code;
+	t_header			header;
+	unsigned char		*exec_code;
 }				t_playrs;
 
 typedef struct	s_input_data
 {
-	int		players_counter;
-	char	*names[MAX_PLAYERS];
-	int		ids[MAX_PLAYERS];
-	int		nbr_cycles[2];
-	int		fd[MAX_PLAYERS];
-	int		visu;
+	int					players_counter;
+	char				*names[MAX_PLAYERS];
+	int					ids[MAX_PLAYERS];
+	int					nbr_cycles[2];
+	int					fd[MAX_PLAYERS];
+	int					visu;
 }				t_input_data;
 
 /*
@@ -73,17 +73,22 @@ typedef struct	s_input_data
 */
 typedef	struct	s_process
 {
-		unsigned int	proc_id;
-		unsigned char	*arena[2];
-		unsigned int	regestries[REG_NUMBER];
-		unsigned int	pc;
-		unsigned int	op_pc;
-		unsigned int	next_inst;
-		unsigned int	player_id;
-		unsigned int	process_live;
-		unsigned char	carry;
-		unsigned int	cycle_number;
-		unsigned int	players_counter;
+	unsigned int		proc_id;
+	unsigned char		*arena[2];
+	unsigned int		regestries[REG_NUMBER];
+	unsigned int		pc;
+	unsigned int		op_pc;
+	unsigned int		next_inst;
+	unsigned int		player_id;
+	unsigned int		process_live;
+	unsigned char		carry;
+	unsigned int		cycle_number;
+	unsigned int		players_counter;
+	int 				operation_live;
+    int 				cycle_to_die;
+    int 				check;
+	struct s_process	*next;
+	struct s_process	*previous;
 }				t_process;
 
 
@@ -190,8 +195,6 @@ void			ft_operation_lld(t_process *proc);
 void			ft_operation_ldi(t_process *proc);
 void			ft_operation_lldi(t_process *proc);
 
-
-
 /*
 *******************************************************************************
 ** ft_any_player.c
@@ -200,5 +203,14 @@ void			ft_operation_lldi(t_process *proc);
 
 int				ft_reg_check(int reg);
 void   			ft_any_player(t_process *proc, int temp, char *str, int size);
+
+/*
+*******************************************************************************
+** ft_any_player.c
+*/
+
+int     		ft_chek_carriage(t_process *carriage, int *cycle);
+void    		ft_kill_carriage(t_process *carriage);
+void    		ft_chek(t_process *proc, int *cycle);
 
 #endif
