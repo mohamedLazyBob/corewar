@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 10:44:23 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/27 11:15:49 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/01 11:02:59 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	ft_operation_aff(t_process *process)
 	unsigned int	arg;
 	unsigned char	parameter[3];
 
-	ft_get_args_type(process, process->arena[process->pc], parameter);
+	ft_get_args_type(process, process->arena[0][process->pc], parameter);
 	if (ft_strcmp((char*)parameter, "ER") == 0)
 	{
 		printf("ERROR in aff operation: args byte.\n");

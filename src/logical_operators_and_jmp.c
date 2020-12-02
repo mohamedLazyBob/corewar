@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 19:15:15 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/27 13:41:42 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/01 11:03:02 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_operation_and(t_process *process)
 	unsigned char	parameters[3];
 
 	process->op_pc = process->pc - 1;
-	ft_get_args_type(process, process->arena[process->pc], parameters);
+	ft_get_args_type(process, process->arena[0][process->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
 	{
 		printf("champion operation args error, AT PC= %d\n", process->op_pc);
@@ -67,7 +67,7 @@ void	ft_operation_or(t_process *process)
 
 	i = -1;
 	process->op_pc = process->pc - 1;
-	ft_get_args_type(process, process->arena[process->pc], parameters);
+	ft_get_args_type(process, process->arena[0][process->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
 	{
 		printf("champion operation args error, AT PC= %d\n", process->op_pc);
@@ -103,7 +103,7 @@ void	ft_operation_xor(t_process *process)
 
 	i = -1;
 	process->op_pc = process->pc - 1;
-	ft_get_args_type(process, process->arena[process->pc], parameters);
+	ft_get_args_type(process, process->arena[0][process->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
 	{
 		printf("champion operation args error, AT PC= %d\n", process->op_pc);

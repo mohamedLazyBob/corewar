@@ -4,7 +4,8 @@ NAME= corewar
 SRC_PATH= src
 SRC_NAME=	main_vm_parse.c			read_players.c	ft_read_champion.c \
 			arena_initialization.c	op.c			logical_operators_and_jmp.c \
-			operations_tools.c 		operations_fork_live.c
+			operations_tools.c 		operations_fork_live.c \
+			init_process_arena.c
 			
 
 HDR_PATH= includes
