@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:42:03 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/27 11:18:29 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/02 15:01:05 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,16 @@ void	print_input(t_input_data *bloc, int *nbr_cycles)
 /*
 *******************************************************************************
 */
-
+#if 0
 void	ft_temp(t_input_data bloc, t_playrs *playrs)
 {
 	t_process process;
 
-	process.arena = ft_init_arena(bloc, playrs);
+	process.arena[0] = ft_init_arena(bloc, playrs);
 	ft_memset(process.regestries, 0, REG_SIZE * REG_NUMBER);
 	process.regestries[0] = 1;// player id
 	process.pc = 1;
-	process.next_inst = process.arena[0];
+	process.next_inst = process.arena[0][0];
 	process.player_id = bloc.ids[0];
 	process.carry = 0;
 	process.players_counter = bloc.players_counter;
@@ -68,7 +68,7 @@ void	ft_temp(t_input_data bloc, t_playrs *playrs)
 		printf("%d ", process.regestries[i]);
 	printf("\n");
 }
-
+#endif
 /*
 *******************************************************************************
 */
@@ -76,20 +76,27 @@ void	ft_temp(t_input_data bloc, t_playrs *playrs)
 int		main(int ac, char **av)
 {
 	t_input_data	bloc;
-	int				nbr_cycles[2];
-	t_playrs		*playrs;
+	t_process		*procs;
+	//int				nbr_cycles[2];
+	//t_playrs		*playrs;
 
 	ft_memset(&bloc, 0, sizeof(bloc));
 	ft_memset(bloc.nbr_cycles, -1, 2 * sizeof(int));
 	ft_read_players(ac, av, &bloc);
-	//print_input(&(bloc), bloc.nbr_cycles);
 	
-	playrs = (t_playrs*)ft_memalloc(sizeof(t_playrs) * bloc.players_counter);
-	ft_open_champion(bloc, playrs);
+	bloc.players = (t_playrs*)ft_memalloc(sizeof(t_playrs) * bloc.players_counter);
+	ft_open_champion(bloc, bloc.players);
 
-	ft_temp(bloc, playrs);
 	// init processes (all of them)
-	// play the game
+	ft_init_procs(&procs, &bloc);
+	print_procs(procs, &bloc);
+	print_arena(bloc, procs->arena[0]);
+
+	// play the game: the loop
+		// sets the opcode
+		// Reduce the number of cycles before execution
+		// Perform operation
+		// Check if needed:tabe 
 	// announce the winner
 	// exit
 	
