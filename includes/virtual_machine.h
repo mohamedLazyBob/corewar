@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/02 15:01:08 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/02 16:30:51 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,6 +135,15 @@ int				ft_init_arena(t_input_data *bloc, unsigned char *arena, int player_id);
 
 /*
 *******************************************************************************
+** init_process_arena.c
+*/
+
+t_process	*ft_init_proc(t_input_data *bloc, int player_id, unsigned char *arena[2]);
+void		ft_init_procs_arena(t_process **procs, t_input_data *bloc);
+void		print_procs(t_process *ptr, t_input_data *bloc);
+
+/*
+*******************************************************************************
 ** operations_tools.c
 */
 unsigned int	ft_reverse_endianness(unsigned char *temp, size_t size);
@@ -183,12 +192,4 @@ void	ft_operation_lldi();
 void	ft_operation_st();
 void	ft_operation_sti();
 
-/*
-*******************************************************************************
-** init_process_arena.c
-*/
-
-t_process	*ft_init_proc(t_input_data *bloc, int player_id, unsigned char *arena[2]);
-void		ft_init_procs(t_process **procs, t_input_data *bloc);
-void		print_procs(t_process *ptr, t_input_data *bloc);
 #endif
