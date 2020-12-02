@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 10:15:04 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/02 15:01:07 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/02 16:21:21 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void		print_procs(t_process *ptr, t_input_data *bloc)
 ** the procs that we gonna use afer, and allocates/ filles the arena
 */
 
-void		ft_init_procs(t_process **procs, t_input_data *bloc)
+void		ft_init_procs_arena(t_process **procs, t_input_data *bloc)
 {
 	int				player_id;
 	char			*str;

@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:42:03 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/02 15:01:05 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/02 16:52:09 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,26 @@ void	ft_temp(t_input_data bloc, t_playrs *playrs)
 	printf("\n");
 }
 #endif
+
+/*
+*******************************************************************************
+*/
+
+void	ft_introduce_players(t_input_data *bloc)
+{
+	int	i;
+
+	i = 0;
+	ft_putstr("Introducing contestants...\n");
+	while (++i <= bloc->players_counter)
+	{
+		printf("* Player %d, weighting %.2d bytes, \"%s\" (\"%s\") !\n", i, \
+				bloc->players[i - 1].header.prog_size, \
+				bloc->players[i - 1].header.prog_name, \
+				bloc->players[i - 1].header.comment);
+	}
+}
+
 /*
 *******************************************************************************
 */
@@ -88,9 +108,10 @@ int		main(int ac, char **av)
 	ft_open_champion(bloc, bloc.players);
 
 	// init processes (all of them)
-	ft_init_procs(&procs, &bloc);
-	print_procs(procs, &bloc);
-	print_arena(bloc, procs->arena[0]);
+	ft_init_procs_arena(&procs, &bloc);
+//		print_procs(procs, &bloc);
+//		print_arena(bloc, procs->arena[0]);
+	ft_introduce_players(&bloc);
 
 	// play the game: the loop
 		// sets the opcode
