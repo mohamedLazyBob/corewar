@@ -53,17 +53,29 @@ void	ft_temp(t_input_data bloc, t_playrs *playrs)
 {
 	t_process process;
 
-	process.arena[0] = ft_init_arena(bloc, playrs);
-	ft_memset(process.regestries, 0, REG_SIZE * REG_NUMBER);
-	process.regestries[0] = 1;// player id
+		process.arena[0] = ft_init_arena(bloc, playrs);
+	ft_memset(process.regestries, 0, 16*sizeof(int));
+
+	process.player_id = bloc.ids[1];// 2
+	process.regestries[1] = -process.player_id;
+	//printf("{{%.8x}}\n", process.regestries[1]);
+
 	process.pc = 1;
-	process.next_inst = process.arena[0][0];
-	process.player_id = bloc.ids[0];
-	process.carry = 0;
+	process.next_inst = process.arena[0][0] - 1;
+	process.carry = 1;
+
 	process.players_counter = bloc.players_counter;
 
-	ft_operation_and(&process);
+	printf("\n\n\n\n");
+	//printf("next inst : %.2d\n", process.next_inst);
+	for (int idx = 0; idx < 100; idx++)
+		printf("%.2x ", process.arena[0][idx]);
+	//ft_operation_and(&process);
 	//ft_operation_zjmp(&process);
+	printf("\n*****%d***%d***%d******\n", process.regestries[3], process.regestries[6], process.regestries[3]);
+	ft_operation_st(&process);
+	printf("\n*****%d***%d***%d******\n", process.regestries[3], process.regestries[6], process.regestries[3]);
+	 printf("\n*****%d***\n", process.pc);
 	for (int i = 0; i < REG_NUMBER; i++)
 		printf("%d ", process.regestries[i]);
 	printf("\n");
