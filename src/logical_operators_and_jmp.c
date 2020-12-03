@@ -21,7 +21,7 @@ unsigned int g_last_live;
 ** when we print with printf, mayge we should write to stderr
 ** when there is an error we estimate the max size of all args,
 ** and we jump to that
-** types_byte -> process->arena[process->pc];
+** types_byte -> process->arena[0][process->pc];
 */
 
 void	ft_operation_and(t_process *process)

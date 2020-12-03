@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:55:39 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/03 09:30:46 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/11/27 14:34:41 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,5 +153,3 @@ int		ft_sizeof_params(t_process *process, unsigned char parameters[3])
 	}
 	return (ret);
 }
-
-
