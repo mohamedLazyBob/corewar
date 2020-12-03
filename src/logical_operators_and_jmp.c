@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 19:15:15 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/27 13:23:57 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/03 09:30:45 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,14 +75,16 @@ void	ft_operation_or(t_process *process)
 	}
 	else
 	{
-		while (++i < 2)
-		{
-			args[i] = ft_parse_args(process, parameters[i]);
-			args[i] = ft_get_argument_value(process, args[i], parameters[i]);
-		}
+		args[0] = ft_parse_args(process, parameters[0]);
+		args[1] = ft_parse_args(process, parameters[1]);
 		args[2] = ft_parse_args(process, parameters[2]);
-		if (1 <= args[2] && args[2] <= 16)
-			process->regestries[args[2]] = (args[0] | args[1]);
+		if ((parameters[0] == T_REG && (args[0] < 1 || 16 < args[0])) || \
+			(parameters[1] == T_REG && (args[1] < 1 || 16 < args[1])) || \
+			(parameters[2] == T_REG && (args[2] < 1 || 16 < args[2])))
+			return ;
+		args[0] = ft_get_argument_value(process, args[0], parameters[0]);
+		args[1] = ft_get_argument_value(process, args[1], parameters[1]);
+		process->regestries[args[2]] = (args[0] | args[1]);
 		(process->regestries[args[2]] == 0) ? (process->carry = 1) : \
 											(process->carry = 0);
 	}
@@ -109,14 +111,16 @@ void	ft_operation_xor(t_process *process)
 	}
 	else
 	{
-		while (++i < 2)
-		{
-			args[i] = ft_parse_args(process, parameters[i]);
-			args[i] = ft_get_argument_value(process, args[i], parameters[i]);
-		}
+		args[0] = ft_parse_args(process, parameters[0]);
+		args[1] = ft_parse_args(process, parameters[1]);
 		args[2] = ft_parse_args(process, parameters[2]);
-		if (1 <= args[2] && args[2] <= 16)
-			process->regestries[args[2]] = (args[0] ^ args[1]);
+		if ((parameters[0] == T_REG && (args[0] < 1 || 16 < args[0])) || \
+			(parameters[1] == T_REG && (args[1] < 1 || 16 < args[1])) || \
+			(parameters[2] == T_REG && (args[2] < 1 || 16 < args[2])))
+			return ;
+		args[0] = ft_get_argument_value(process, args[0], parameters[0]);
+		args[1] = ft_get_argument_value(process, args[1], parameters[1]);
+		process->regestries[args[2]] = (args[0] ^ args[1]);
 		(process->regestries[args[2]] == 0) ? (process->carry = 1) : \
 											(process->carry = 0);
 	}

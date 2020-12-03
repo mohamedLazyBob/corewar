@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/27 13:21:34 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/03 09:29:33 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,13 @@ typedef struct	s_playrs
 
 typedef struct	s_input_data
 {
-	int					players_counter;
-	char				*names[MAX_PLAYERS];
-	int					ids[MAX_PLAYERS];
-	int					nbr_cycles[2];
-	int					fd[MAX_PLAYERS];
-	int					visu;
+	int			players_counter;
+	char		*names[MAX_PLAYERS];
+	int			ids[MAX_PLAYERS];
+	int			nbr_cycles[2];
+	int			fd[MAX_PLAYERS];
+	int			visu;
+	t_playrs	*players;
 }				t_input_data;
 
 /*
@@ -73,22 +74,22 @@ typedef struct	s_input_data
 */
 typedef	struct	s_process
 {
-	unsigned int		proc_id;
-	unsigned char		*arena[2];
-	unsigned int		regestries[REG_NUMBER];
-	unsigned int		pc;
-	unsigned int		op_pc;
-	unsigned int		next_inst;
-	unsigned int		player_id;
-	unsigned int		process_live;
-	unsigned char		carry;
-	unsigned int		cycle_number;
-	unsigned int		players_counter;
-	int 				operation_live;
-    int 				cycle_to_die;
-    int 				check;
+	int 				      operation_live;
+  int 				      cycle_to_die;
+  int 				      check;
+	unsigned int    	proc_id;
+	unsigned int    	player_id;
+	unsigned char   	*arena[2];
+	unsigned int	    regestries[REG_NUMBER];
+	unsigned int	    pc;
+	unsigned int	    op_pc;
+	unsigned int	    next_inst;
+	unsigned int	    process_live;
+	unsigned char     carry;
+	unsigned int	    cycle_number;
+	unsigned int	    players_counter;
 	struct s_process	*next;
-	struct s_process	*previous;
+  struct s_process	*previous;
 }				t_process;
 
 
@@ -126,13 +127,23 @@ void			ft_free_exit(char *str, void **buff, size_t size);
 *******************************************************************************
 ** read_players.c
 */
+void			print_arena(t_input_data bloc, unsigned char *arena);
 void			ft_read_players(int argc, char **av, t_input_data *bloc);
 
 /*
 *******************************************************************************
 ** arena_initialization.c
 */
-unsigned char	*ft_init_arena(t_input_data bloc, t_playrs *players);
+int				ft_init_arena(t_input_data *bloc, unsigned char *arena, int player_id);
+
+/*
+*******************************************************************************
+** init_process_arena.c
+*/
+
+t_process	*ft_init_proc(t_input_data *bloc, int player_id, unsigned char *arena[2]);
+void		ft_init_procs_arena(t_process **procs, t_input_data *bloc);
+void		print_procs(t_process *ptr, t_input_data *bloc);
 
 /*
 *******************************************************************************
@@ -170,8 +181,11 @@ void			ft_operation_live(t_process *process);
 void			ft_operation_aff(t_process *process);
 
 /*
-********************* Douae part **************
+*******************************************************************************
+** operations_fork_live.c
 */
+
+void	ft_play_game(t_process *procs);
 
 /*
 *******************************************************************************
