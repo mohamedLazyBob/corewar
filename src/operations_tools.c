@@ -142,7 +142,7 @@ int		ft_sizeof_params(t_process *process, unsigned char parameters[3])
 
 	i = -1;
 	ret = 0;
-	while (++i < 4)
+	while (++i < 3)
 	{
 		if (parameters[i] == T_REG)
 			ret += 1;

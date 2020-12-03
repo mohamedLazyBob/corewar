@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 13:53:57 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/27 11:09:00 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/03 09:30:49 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** function after. (we'll do a new structure)
 */
 
-void			print_arena(t_input_data bloc, unsigned char *arena)
+void	print_arena(t_input_data bloc, unsigned char *arena)
 {
 	int	idx;
 
@@ -31,23 +31,16 @@ void			print_arena(t_input_data bloc, unsigned char *arena)
 	}
 }
 
-unsigned char	*ft_init_arena(t_input_data bloc, t_playrs *players)
+int		ft_init_arena(t_input_data *bloc, unsigned char *arena, int player_id)
 {
-	unsigned	char	*arena;
-	int					chunk;
-	int					idx;
-	int					jdx;
+	static int	pc;
+	int			chunk;
+	int			len;
 
-	arena = ft_memalloc(MEM_SIZE);
-	chunk = MEM_SIZE / bloc.players_counter;
-	idx = -1;
-	jdx = 0;
-	while (++idx < bloc.players_counter)
-	{
-		ft_memcpy(arena + jdx, players[idx].exec_code, \
-												players[idx].header.prog_size);
-		jdx += chunk;
-	}
-	print_arena(bloc, arena);
-	return (arena);
+	chunk = (int)(MEM_SIZE / bloc->players_counter);
+	len = bloc->players[player_id].header.prog_size;
+	ft_memcpy(arena + pc, bloc->players[player_id].exec_code, len);
+	pc += chunk;
+	//print_arena(bloc, arena);
+	return (pc - chunk);
 }
