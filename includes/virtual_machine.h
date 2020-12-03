@@ -210,7 +210,7 @@ void   			ft_any_player(t_process *proc, int temp, char *str, int size);
 */
 
 int     		ft_chek_carriage(t_process *carriage, int *cycle);
-void    		ft_kill_carriage(t_process *carriage);
-void    		ft_chek(t_process *proc, int *cycle);
+void    		ft_kill_carriage(t_process **carriage, t_process **proc);
+void    		ft_chek(t_process **proc, int *cycle);
 
 #endif
