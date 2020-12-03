@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:55:39 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/27 13:20:12 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/03 09:30:46 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,7 @@ int		ft_sizeof_params(t_process *process, unsigned char parameters[3])
 
 	i = -1;
 	ret = 0;
-	while (++i < 4)
+	while (++i < 3)
 	{
 		if (parameters[i] == T_REG)
 			ret += 1;

@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/02 16:30:51 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/03 09:29:33 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,18 +178,25 @@ void	ft_operation_live(t_process *process);
 void	ft_operation_aff(t_process *process);
 
 /*
+*******************************************************************************
+** operations_fork_live.c
+*/
+
+void	ft_play_game(t_process *procs);
+
+/*
 ********************* Douae part **************
 */
-void	ft_operation_add(t_process proc);
-void	ft_operation_sub();
+void	ft_operation_add(t_process *proc);
+void	ft_operation_sub(t_process *proc);
 
 
-void	ft_operation_ld();
-void	ft_operation_lld();
-void	ft_operation_ldi();
-void	ft_operation_lldi();
+void	ft_operation_ld(t_process *proc);
+void	ft_operation_lld(t_process *proc);
+void	ft_operation_ldi(t_process *proc);
+void	ft_operation_lldi(t_process *proc);
 
-void	ft_operation_st();
-void	ft_operation_sti();
+void	ft_operation_st(t_process *proc);
+void	ft_operation_sti(t_process *proc);
 
 #endif
