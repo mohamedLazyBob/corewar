@@ -33,43 +33,55 @@ int     ft_chek_carriage(t_process *carriage, int *cycle)
     return (1);
 }
 
-void    ft_kill_carriage(t_process *carriage)
+void    ft_kill_carriage(t_process **carriage, t_process **proc)
 {
     t_process *temp;
 
-    if ((carriage->next == NULL && carriage->previous == NULL) || carriage->next == NULL) /* the last carriage || last curriage in the list order*/
+    if (((*carriage)->next == NULL && (*carriage)->previous == NULL)) /* the last (*carriage)*/
     {
-        free(carriage);
-        carriage = NULL;
+        free((*proc));
+        (*proc) = NULL;
+        (proc) = NULL;
+        (*carriage) = NULL;
+        (carriage) = NULL;
+    }
+    else if ((*carriage)->next == NULL) /*last curriage in the list order*/
+    {
+        free((*carriage));
+        (*carriage)->previous->next = NULL;
+        (*carriage) = NULL;
+
     }
     else
     {
-        if (carriage->previous == NULL) /* the first curriage in the list order*/
+        
+        if ((*carriage)->previous == NULL) /* the first curriage in the list order*/
         {
-            carriage = carriage->next;
-            free(carriage->previous);
-            carriage->previous = NULL;
+            (*carriage) = (*carriage)->next;
+            free((*carriage)->previous);
+            (*carriage)->previous = NULL;
+            (*proc) = (*carriage);
+
         }
         else
         {
-            temp = carriage;
-            carriage = carriage->next;
-            carriage->previous = temp->previous;
-            free(temp);
-            temp = NULL;
+            temp = (*carriage)->previous;
+            temp->next = (*carriage)->next;
+            (*carriage) = (*carriage)->next;
+            (*carriage)->previous = temp;
         }
     }
 }
 
-void    ft_chek(t_process *proc, int *cycle)
+void    ft_chek(t_process **proc, int *cycle)
 {
     t_process *carriage;
 
-    carriage = proc;
+    carriage = *proc;
     while (carriage != NULL)
     {
         if (!(ft_chek_carriage(carriage, cycle)))
-            ft_kill_carriage(carriage); /* ft_kill_carriage point to the next*/
+            ft_kill_carriage(&carriage, proc); /* ft_kill_carriage point to the next*/
         else
             carriage = carriage->next;
     }
