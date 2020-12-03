@@ -37,39 +37,17 @@ void    ft_kill_carriage(t_process **carriage, t_process **proc)
 {
     t_process *temp;
 
-    if (((*carriage)->next == NULL && (*carriage)->previous == NULL)) /* the last (*carriage)*/
+   if ((*carriage)->next->next == NULL) /*last curriage in the list order*/
     {
-        free((*proc));
-        (*proc) = NULL;
-        (proc) = NULL;
-        (*carriage) = NULL;
-        (carriage) = NULL;
-    }
-    else if ((*carriage)->next == NULL) /*last curriage in the list order*/
-    {
-        free((*carriage));
-        (*carriage)->previous->next = NULL;
-        (*carriage) = NULL;
-
+        free((*carriage)->next);
+        (*carriage)->next = NULL;
     }
     else
     {
-        
-        if ((*carriage)->previous == NULL) /* the first curriage in the list order*/
-        {
-            (*carriage) = (*carriage)->next;
-            free((*carriage)->previous);
-            (*carriage)->previous = NULL;
-            (*proc) = (*carriage);
-
-        }
-        else
-        {
-            temp = (*carriage)->previous;
-            temp->next = (*carriage)->next;
-            (*carriage) = (*carriage)->next;
-            (*carriage)->previous = temp;
-        }
+        temp = (*carriage);
+        temp->next = (*carriage)->next->next;
+        (*carriage) = (*carriage)->next->next;
+        (*carriage) = temp;
     }
 }
 
@@ -78,6 +56,19 @@ void    ft_chek(t_process **proc, int *cycle)
     t_process *carriage;
 
     carriage = *proc;
+    if (carriage != NULL && carriage->next == NULL && (!(ft_chek_carriage(carriage, cycle)))) /* the first curriage in the list order*/
+    {
+        free((*proc));
+        (*proc) = NULL;
+        (proc) = NULL;
+        (carriage) = NULL;
+    }
+    else if (carriage != NULL && carriage->next != NULL && (!(ft_chek_carriage(carriage, cycle)))) /* the first curriage in the list order*/
+    {
+        (carriage) = (carriage)->next;
+        free(*proc);
+        (*proc) = (carriage);
+    }
     while (carriage != NULL)
     {
         if (!(ft_chek_carriage(carriage, cycle)))
