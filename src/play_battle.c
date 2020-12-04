@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 16:56:52 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/04 11:56:20 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/04 12:40:55 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@ extern	void			(*g_operation[16])(t_process *process);
 extern	unsigned int	g_cycles_to_wait[16];
 
 /*
+** ****************************************************************************
 ** for the cycles_number we -1 of the curr cycle;
-**
 */
+
 static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 {
 	unsigned char temp;
@@ -31,7 +32,38 @@ static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 	proc->pc = (proc->pc + 1) % MEM_SIZE;
 }
 
-void	ft_play_battle(t_process *procs, t_input_data *bloc)
+/*
+** ****************************************************************************
+**
+*/
+
+void	ft_execute_cycle(t_process *ptr)
+{
+	while (ptr)
+	{
+		// 1st mra ghadi idkhl || last op excuted
+		if (ptr->execution_cycle == -1 || \
+				ptr->execution_cycle < curr_life_cycle)
+			ft_read_opcode(ptr, curr_life_cycle);
+
+		// ila tqado executi l'operation
+		if(ptr->execution_cycle == curr_life_cycle)
+		{
+			if (1 <= ptr->next_inst && ptr->next_inst <= 16)
+				g_operation[ptr->next_inst - 1](ptr);
+			else
+				ptr->pc++;
+		}
+		ptr = ptr->next;
+	}
+}
+
+/*
+** ****************************************************************************
+**
+*/
+
+void	ft_play_battle(t_process **procs, t_input_data *bloc)
 {
 	t_process	*ptr;
 	size_t		curr_life_cycle;
@@ -42,24 +74,8 @@ void	ft_play_battle(t_process *procs, t_input_data *bloc)
 		curr_life_cycle = 0;
 		while (curr_life_cycle < game_params.cycles_to_die)
 		{
-			ptr = procs;
-			while (ptr)
-			{
-				// 1st mra ghadi idkhl || last op excuted
-				if (ptr->execution_cycle == -1 || \
-						ptr->execution_cycle < curr_life_cycle)
-					ft_read_opcode(ptr, curr_life_cycle);
-
-				// ila tqado executi l'operation
-				if(ptr->execution_cycle == curr_life_cycle)
-				{
-					if (1 <= ptr->next_inst && ptr->next_inst <= 16)
-						g_operation[ptr->next_inst - 1](ptr);
-					else
-						ptr->pc++;
-				}
-				ptr = ptr->next;
-			}
+			ptr = *procs;
+			ft_execute_cycle(ptr);
 			// if dump flag is activated, and we gonna dump
 			// cycles_number[1] == -1 : no dump flag
 			if ((bloc->nbr_cycles[1] != -1) && \
