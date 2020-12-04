@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 10:15:04 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/03 09:30:48 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/04 10:53:30 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,6 @@ t_process	*ft_init_proc(t_input_data *bloc, \
 	proc->arena[0] = arena[0];
 	proc->arena[1] = arena[1];
 	proc->players_counter = bloc->players_counter;
+	proc->execution_cycle = -1;
 	return (proc);
 }

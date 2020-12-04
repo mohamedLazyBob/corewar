@@ -2,12 +2,13 @@
 .comment    "This city needs me"
 
 #izjmp %:loop
-#and %191365376, :loop, r1
+byte:
+	ld %4, r5
 loop:
         sti r1, %:live, %1
 live:
         live %0
         ld %1, r2
-		ldi r2, r1, r1 
+		add r2, r1, r1 
+		st r1, :byte
         zjmp %:loop
-
