@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:42:03 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/04 11:13:25 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/04 12:12:45 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ int		main(int ac, char **av)
 	//		print_procs(procs, &bloc);
 	//		print_arena(bloc, procs->arena[0]);
 	ft_introduce_players(&bloc);
-	ft_play_battle(procs, &bloc);
+	ft_play_battle(&procs, &bloc);
 	// play the game: the loop
 		// sets the opcode
 		// Reduce the number of cycles before execution

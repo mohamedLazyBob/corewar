@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/04 11:14:02 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/04 12:12:31 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -243,6 +243,6 @@ void    		ft_chek(t_process *proc, int *cycle);
 ** play_battle.c
 */
 
-void	ft_play_battle(t_process *procs, t_input_data *bloc);
+void			ft_play_battle(t_process **procs, t_input_data *bloc);
 
 #endif
