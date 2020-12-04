@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 13:53:57 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/03 09:30:49 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/03 12:19:34 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,21 @@
 ** function after. (we'll do a new structure)
 */
 
-void	print_arena(t_input_data bloc, unsigned char *arena)
+void	print_arena(unsigned char *arena, int bol)
 {
 	int	idx;
 
 	idx = 0;
+	system("clear");
+	if (bol == 0)
+		bol = 32;
+	else
+		bol = 64;
 	while (idx < MEM_SIZE)
 	{
 		printf("%.2x ", arena[idx]);
 		idx++;
-		if (idx % 64 == 0)
+		if (idx % bol == 0)
 			printf("\n");
 	}
 }
