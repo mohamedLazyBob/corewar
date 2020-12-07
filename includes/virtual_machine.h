@@ -52,13 +52,13 @@ typedef struct	s_playrs
 
 typedef struct	s_input_data
 {
-	int			players_counter;
-	char		*names[MAX_PLAYERS];
-	int			ids[MAX_PLAYERS];
-	int			nbr_cycles[2];
-	int			fd[MAX_PLAYERS];
-	int			visu;
-	t_playrs	*players;
+	int					players_counter;
+	char				*names[MAX_PLAYERS];
+	int					ids[MAX_PLAYERS];
+	int					nbr_cycles[2];
+	int					fd[MAX_PLAYERS];
+	int					visu;
+	t_playrs			*players;
 }				t_input_data;
 
 /*
@@ -78,6 +78,7 @@ typedef	struct	s_process
 	int 			    cycle_to_die;
 	int 			    check;
 	unsigned int	    execution_cycle;
+  unsigned int	    cycle_number;
 	unsigned int	    next_inst;
 
 	unsigned int	    pc;
@@ -86,6 +87,7 @@ typedef	struct	s_process
 	unsigned int    	proc_id;
 	unsigned int    	player_id;
 
+	int					players_counter;
 	unsigned char   	*arena[2];
 	unsigned int	    regestries[REG_NUMBER];
 
@@ -95,6 +97,7 @@ typedef	struct	s_process
 
 	struct s_process	*next;
   	struct s_process	*previous;
+
 }				t_process;
 
 typedef struct	s_game
@@ -103,7 +106,10 @@ typedef struct	s_game
 	unsigned int	checks_counter;
 	size_t			total_cycles_counter;
 	size_t			live_counter;
+ 	size_t				total_live_counter;
 }				t_game;
+
+
 /*
 **					struct up
 ** ****************************************************************************
@@ -231,12 +237,10 @@ void   			ft_any_player(t_process *proc, int temp, char *str, int size);
 
 /*
 *******************************************************************************
-** ft_any_player.c
+** ft_chek.c
 */
 
-int     		ft_chek_carriage(t_process *carriage, int *cycle);
-void    		ft_kill_carriage(t_process *carriage);
-void    		ft_chek(t_process *proc, int *cycle);
+void    		ft_chek(t_process **proc, t_game **game_params);
 
 /*
 *******************************************************************************
