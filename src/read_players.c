@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 14:13:29 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/04 11:34:37 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/04 13:51:38 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,37 @@
 
 int		ft_read_sideflags(int i, char **av, t_input_data *bloc)
 {
-	if ((ft_strcmp(av[i], "--dump") == 0) && (av[i + 1]))
+	char	*temp_str;
+	int		ret;
+
+	temp_str = ft_strdup_lower(av[i]);
+	ret = 1;
+	if ((ft_strcmp(temp_str, "--dump") == 0) && (av[i + 1]))
 	{
 		bloc->nbr_cycles[0] = 0;
 		bloc->nbr_cycles[1] = ft_atoi(av[i + 1]);
 	}
-	else if ((ft_strcmp(av[i], "-d") == 0) && (av[i + 1]))
+	else if ((ft_strcmp(temp_str, "-d") == 0) && (av[i + 1]))
 	{
 		bloc->nbr_cycles[0] = 1;
 		bloc->nbr_cycles[1] = ft_atoi(av[i + 1]);
 	}
-	else if ((ft_strcmp(ft_strlower(av[i]), "-v") == 0) || \
-				(ft_strcmp(ft_strlower(av[i]), "--visu") == 0))
+	else if ((ft_strcmp(temp_str, "-n") == 0) || \
+				(ft_strcmp(temp_str, "--visu") == 0))
 	{
 		bloc->visu = 1;
+		ret = 0;
+	}
+	else if (((ft_strcmp(temp_str, "-v") == 0) || \
+				(ft_strcmp(temp_str, "--verbos") == 0)) && (av[i + 1]))
+	{
+		bloc->verbos_activated = 1;
+		bloc->verbos_level = ft_atoi(av[i + 1]);
 	}
 	else
-		return (0);
-	return (1);
+		ret = 0;
+	free(temp_str);
+	return (ret);
 }
 
 /*
@@ -135,6 +148,7 @@ void	ft_read_players(int argc, char **av, t_input_data *bloc)
 		printf("print coreware usage\n");
 		exit(0);
 	}
+	exit(0);
 }
 
 /*

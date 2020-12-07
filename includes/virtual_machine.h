@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/04 12:12:31 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/04 12:49:04 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ typedef struct	s_input_data
 	int			nbr_cycles[2];
 	int			fd[MAX_PLAYERS];
 	int			visu;
+	int			verbos_activated;
+	int			verbos_level;
 	t_playrs	*players;
 }				t_input_data;
 
