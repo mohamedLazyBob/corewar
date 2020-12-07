@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 16:56:52 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/04 12:40:55 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/04 12:53:47 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 **
 */
 
-void	ft_execute_cycle(t_process *ptr)
+void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle)
 {
 	while (ptr)
 	{
@@ -75,13 +75,15 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 		while (curr_life_cycle < game_params.cycles_to_die)
 		{
 			ptr = *procs;
-			ft_execute_cycle(ptr);
+			if (bloc->verbos_activated)
+				printf("It is now cycle %zu\n", game_params.total_cycles_counter);
+			ft_execute_cycle(ptr, curr_life_cycle);
 			// if dump flag is activated, and we gonna dump
 			// cycles_number[1] == -1 : no dump flag
 			if ((bloc->nbr_cycles[1] != -1) && \
 					(game_params.total_cycles_counter == bloc->nbr_cycles[1]))
 			{
-				print_arena(procs->arena[0], bloc->nbr_cycles[0]);
+				print_arena((*procs)->arena[0], bloc->nbr_cycles[0]);
 				return ;
 			}
 			curr_life_cycle++;
