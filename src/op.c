@@ -6,14 +6,14 @@
 /*   By: zaz <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:43:01 by zaz               #+#    #+#             */
-/*   Updated: 2020/11/26 14:46:30 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/04 08:27:52 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "virtual_machine.h"
 //#include <stdio.h>
 
-t_op	g_op_tab[17] =
+t_op			g_op_tab[17] =
 {
 	{"live", 1, {T_DIR}, 1, 10, "alive", 0, 0},
 	{"ld", 2, {T_DIR | T_IND, T_REG}, 2, 5, "load", 1, 0},
@@ -39,6 +39,33 @@ t_op	g_op_tab[17] =
 	{"aff", 1, {T_REG}, 16, 2, "aff", 1, 0},
 	{"", 0, {0}, 0, 0, 0, 0, 0}
 };
+
+unsigned int	g_cycles_to_wait[16] =
+{
+	10, 5, 5, 10, 10, 6, 6, 6, \
+	20, 25, 25, 800, 10, 50, 1000, 2
+};
+
+void			(*g_operation[16])(t_process *process) = 
+{
+	ft_operation_live, \
+	ft_operation_ld, \
+	ft_operation_st, \
+	ft_operation_add, \
+	ft_operation_sub, \
+	ft_operation_and, \
+	ft_operation_or, \
+	ft_operation_xor, \
+	ft_operation_zjmp, \
+	ft_operation_ldi, \
+	ft_operation_sti, \
+	ft_operation_fork, \
+	ft_operation_lld, \
+	ft_operation_lldi, \
+	ft_operation_lfork, \
+	ft_operation_aff
+};
+
 /*
 int	main(void)
 {

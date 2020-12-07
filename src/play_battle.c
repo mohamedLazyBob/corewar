@@ -6,77 +6,88 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 16:56:52 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/03 09:30:43 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/04 12:40:55 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "virtual_machine.h"
+extern	void			(*g_operation[16])(t_process *process);
+extern	unsigned int	g_cycles_to_wait[16];
 
-unsigned int g_cycles_to_wait[16] = {10, 5, 5, 10, 10, 6, 6, 6, \
-									20, 25, 25, 800, 10, 50, 1000, 2};
-void	(*g_operation[16])(t_process *process) = 
-{
-	ft_operation_live, \
-	ft_operation_ld, \
-	ft_operation_st, \
-	ft_operation_add, \
-	ft_operation_sub, \
-	ft_operation_and, \
-	ft_operation_or, \
-	ft_operation_xor, \
-	ft_operation_zjmp, \
-	ft_operation_ldi, \
-	ft_operation_sti, \
-	ft_operation_fork, \
-	ft_operation_lld, \
-	ft_operation_lldi, \
-	ft_operation_lfork, \
-	ft_operation_aff
-};
+/*
+** ****************************************************************************
+** for the cycles_number we -1 of the curr cycle;
+*/
 
-static void	ft_read_opcode(t_process *proc)
+static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 {
 	unsigned char temp;
 
-	if (proc->next_inst == 0)// first time 
-	{
-		temp = proc->arena[0][proc->pc];
-		proc->next_inst = temp;
-		if (1 <= temp && temp <= 16)
-			proc->cycle_number = g_cycles_to_wait[temp];
-		proc->pc++;
-	}
-
+	temp = proc->arena[0][proc->pc];
+	proc->next_inst = temp;
+	if (1 <= temp && temp <= 16)
+		proc->execution_cycle = curr_life_cycle + g_cycles_to_wait[temp - 1] - 1;
+	//	else
+	//		proc->cycle_number = 0;
+	proc->pc = (proc->pc + 1) % MEM_SIZE;
 }
 
-void	ft_play_game(t_process *procs)
+/*
+** ****************************************************************************
+**
+*/
+
+void	ft_execute_cycle(t_process *ptr)
+{
+	while (ptr)
+	{
+		// 1st mra ghadi idkhl || last op excuted
+		if (ptr->execution_cycle == -1 || \
+				ptr->execution_cycle < curr_life_cycle)
+			ft_read_opcode(ptr, curr_life_cycle);
+
+		// ila tqado executi l'operation
+		if(ptr->execution_cycle == curr_life_cycle)
+		{
+			if (1 <= ptr->next_inst && ptr->next_inst <= 16)
+				g_operation[ptr->next_inst - 1](ptr);
+			else
+				ptr->pc++;
+		}
+		ptr = ptr->next;
+	}
+}
+
+/*
+** ****************************************************************************
+**
+*/
+
+void	ft_play_battle(t_process **procs, t_input_data *bloc)
 {
 	t_process	*ptr;
-	size_t		cycles_counter;
+	size_t		curr_life_cycle;
+	t_game		game_params;
 
-	cycles_counter = 0;
 	while (procs)
 	{
-		ptr = procs;
-		while (ptr)
+		curr_life_cycle = 0;
+		while (curr_life_cycle < game_params.cycles_to_die)
 		{
-			// set opCode
-			if (ptr->cycle_number == 0)
-				ft_read_opcode(ptr);
-			// Reduce the number of cycles before execution
-			if (ptr->cycle_number > 0)
-				ptr->cycle_number--;
-			// Perform operation
-			if(ptr->cycle_number == 0)
+			ptr = *procs;
+			ft_execute_cycle(ptr);
+			// if dump flag is activated, and we gonna dump
+			// cycles_number[1] == -1 : no dump flag
+			if ((bloc->nbr_cycles[1] != -1) && \
+					(game_params.total_cycles_counter == bloc->nbr_cycles[1]))
 			{
-				if (1 <= ptr->next_inst && ptr->next_inst <= 16)
-					g_operation[ptr->next_inst - 1](ptr);
-				else
-					ptr->pc++;
+				print_arena(procs->arena[0], bloc->nbr_cycles[0]);
+				return ;
 			}
-			ptr = ptr->next;
+			curr_life_cycle++;
+			game_params.total_cycles_counter++;// kaykhdm ghi f live, for vis
 		}
-		// ft_check();
-	}	
+		//ft_check(procs, game_params);
+	}
 
 }
