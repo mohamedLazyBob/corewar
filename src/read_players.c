@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 14:13:29 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/11/25 09:49:08 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/04 11:34:37 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,11 @@ void	ft_read_players(int argc, char **av, t_input_data *bloc)
 	if (bloc->players_counter == 1)
 		ft_free_exit("ERROR: in number of args, too few.", 
 						(void**)bloc->names, bloc->players_counter);
+	else if (bloc->players_counter == 0)
+	{
+		printf("print coreware usage\n");
+		exit(0);
+	}
 }
 
 /*

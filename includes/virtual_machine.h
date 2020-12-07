@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/03 09:29:33 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/04 12:12:31 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,26 +74,39 @@ typedef struct	s_input_data
 */
 typedef	struct	s_process
 {
+	int 				operation_live;
+	int 			    cycle_to_die;
+	int 			    check;
+	unsigned int	    execution_cycle;
+  unsigned int	    cycle_number;
+	unsigned int	    next_inst;
+
+	unsigned int	    pc;
+	unsigned int	    op_pc;
+
 	unsigned int    	proc_id;
 	unsigned int    	player_id;
+
 	int					players_counter;
 	unsigned char   	*arena[2];
 	unsigned int	    regestries[REG_NUMBER];
-	unsigned int	    pc;
-	unsigned int	    op_pc;
-	unsigned int	    next_inst;
+
 	unsigned int	    process_live;
-	unsigned char		carry;
-	unsigned int	    cycle_number;
+	unsigned char    	carry;
+	unsigned int	    players_counter;
+
 	struct s_process	*next;
+  	struct s_process	*previous;
+
 }				t_process;
 
 typedef struct	s_game
 {
-	size_t				total_cycles_counter;
-	int					cycles_to_die;
-	size_t				total_live_counter;
-	unsigned int		checks_counter;
+	int				cycles_to_die;
+	unsigned int	checks_counter;
+	size_t			total_cycles_counter;
+	size_t			live_counter;
+ 	size_t				total_live_counter;
 }				t_game;
 
 
@@ -131,7 +144,7 @@ void			ft_free_exit(char *str, void **buff, size_t size);
 *******************************************************************************
 ** read_players.c
 */
-void			print_arena(t_input_data bloc, unsigned char *arena);
+void			print_arena(unsigned char *arena, int bol);
 void			ft_read_players(int argc, char **av, t_input_data *bloc);
 
 /*
@@ -228,5 +241,12 @@ void   			ft_any_player(t_process *proc, int temp, char *str, int size);
 */
 
 void    		ft_chek(t_process **proc, t_game **game_params);
+
+/*
+*******************************************************************************
+** play_battle.c
+*/
+
+void			ft_play_battle(t_process **procs, t_input_data *bloc);
 
 #endif
