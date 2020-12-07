@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_chek.c                                          :+:      :+:    :+:   */
+/*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,14 +12,14 @@
 
 #include "../includes/virtual_machine.h"
 
-static  int ft_chek_carriage(t_process *carriage, t_game *game_params)
+static  int ft_check_carriage(t_process *carriage, t_game *game_params)
 {
     if (game_params->cycles_to_die <= 0 || carriage->process_live <= 0)
         return (0);
     return (1);
 }
 
-static void ft_chek_cycle(t_game *game_params)
+static void ft_check_cycle(t_game *game_params)
 {
     if (game_params->total_live_counter >= NBR_LIVE || game_params->checks_counter == MAX_CHECKS)
         game_params->checks_counter = 0;
@@ -48,19 +48,19 @@ static void ft_kill_carriage(t_process **carriage)
     }
 }
 
-void        ft_chek(t_process **proc, t_game **game_params)
+void        ft_check(t_process **proc, t_game **game_params)
 {
     t_process *carriage;
 
     carriage = *proc;
-    if (carriage != NULL && carriage->next == NULL && (!(ft_chek_carriage(carriage, (*game_params)))))
+    if (carriage != NULL && carriage->next == NULL && (!(ft_check_carriage(carriage, (*game_params)))))
     {
         free((*proc));
         (*proc) = NULL;
         (proc) = NULL;
         (carriage) = NULL;
     }
-    else if (carriage != NULL && carriage->next != NULL && (!(ft_chek_carriage(carriage, (*game_params)))))
+    else if (carriage != NULL && carriage->next != NULL && (!(ft_check_carriage(carriage, (*game_params)))))
     {
         (carriage) = (carriage)->next;
         free(*proc);
@@ -68,10 +68,10 @@ void        ft_chek(t_process **proc, t_game **game_params)
     }
     while (carriage != NULL)
     {
-        if (!(ft_chek_carriage(carriage, (*game_params))))
+        if (!(ft_check_carriage(carriage, (*game_params))))
             ft_kill_carriage(&carriage); /* ft_kill_carriage point to the next*/
         else
             carriage = carriage->next;
     }
-    ft_chek_cycle((*game_params));
+    ft_check_cycle((*game_params));
 }
