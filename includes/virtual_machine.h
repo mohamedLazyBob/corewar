@@ -74,11 +74,8 @@ typedef struct	s_input_data
 */
 typedef	struct	s_process
 {
-	int 				operation_live;
-	int 			    cycle_to_die;
-	int 			    check;
 	unsigned int	    execution_cycle;
-  unsigned int	    cycle_number;
+	unsigned int	    cycle_number; //
 	unsigned int	    next_inst;
 
 	unsigned int	    pc;
@@ -87,7 +84,6 @@ typedef	struct	s_process
 	unsigned int    	proc_id;
 	unsigned int    	player_id;
 
-	int					players_counter;
 	unsigned char   	*arena[2];
 	unsigned int	    regestries[REG_NUMBER];
 
@@ -96,7 +92,6 @@ typedef	struct	s_process
 	unsigned int	    players_counter;
 
 	struct s_process	*next;
-  	struct s_process	*previous;
 
 }				t_process;
 
@@ -106,7 +101,7 @@ typedef struct	s_game
 	unsigned int	checks_counter;
 	size_t			total_cycles_counter;
 	size_t			live_counter;
- 	size_t				total_live_counter;
+ 	size_t			total_live_counter;
 }				t_game;
 
 
@@ -237,10 +232,10 @@ void   			ft_any_player(t_process *proc, int temp, char *str, int size);
 
 /*
 *******************************************************************************
-** ft_chek.c
+** ft_check.c
 */
 
-void    		ft_chek(t_process **proc, t_game **game_params);
+void    		ft_check(t_process **proc, t_game **game_params);
 
 /*
 *******************************************************************************
