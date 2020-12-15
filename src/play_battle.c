@@ -34,14 +34,14 @@ static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 
 /*
 ** ****************************************************************************
-**
+** Done!
 */
 
 void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle)
 {
 	while (ptr)
 	{
-		// 1st mra ghadi idkhl || last op excuted
+		// 1st mra ghadi idkhl || the last op excuted, read another one
 		if (ptr->execution_cycle == -1 || \
 				ptr->execution_cycle < curr_life_cycle)
 			ft_read_opcode(ptr, curr_life_cycle);
@@ -60,9 +60,64 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle)
 
 /*
 ** ****************************************************************************
+** TO-DO: tomorrow 13/12/2020
+*/
+void	mz_print_debug_infos(t_process **procs, \
+							t_input_data *bloc, \
+							t_game game_params)
+{
+	printf("It is now cycle %zu\n", game_params.total_cycles_counter);
+
+}
+
+/*
+** ****************************************************************************
+** Done!
+*/
+int		mz_dump_memory(t_input_data *bloc, t_process **procs, t_game game_params)
+{
+	if ((bloc->flags[DUMP_32] != -1 && (game_params.total_cycles_counter == (bloc->flags[DUMP_32]))) ||
+		(bloc->flags[DUMP_64] != -1 && (game_params.total_cycles_counter == (bloc->flags[DUMP_64]))))
+	{
+		// if dump flag is activated, and we gonna dump
+		// flags[x] == -1 : no dump flag
+		if (bloc->flags[DUMP_64] != -1)
+			print_arena((*procs)->arena[0], bloc->flags[DUMP_64]);
+		else
+			print_arena((*procs)->arena[0], bloc->flags[DUMP_32]);
+		return (1);
+	}
+	return (0);
+}
+
+/*
+** ****************************************************************************
+** Done
+*/
+void	mz_do_pause(t_game game_params, t_process **procs, t_input_data *bloc)
+{
+	const int	pause_value = (bloc->flags[PAUSE_1] != -1) ? \
+						bloc->flags[PAUSE_1] : bloc->flags[PAUSE_2];
+
+	if (game_params.cycles_to_die == pause_value)
+		print_arena((*procs)->arena[0], 1);
+}
+
+/*
+** ****************************************************************************
+** mesafi well take care of it.
+*/
+void	mesafi_visualize(t_input_data *bloc, \
+							t_game game_params, \
+							t_process **procs)
+{
+	// mesafi part
+}
+
+/*
+** ****************************************************************************
 **
 */
-
 void	ft_play_battle(t_process **procs, t_input_data *bloc)
 {
 	t_process	*ptr;
@@ -74,18 +129,16 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 		curr_life_cycle = 0;
 		while (curr_life_cycle < game_params.cycles_to_die)
 		{
-			ptr = *procs;
-			if (bloc->verbos_activated)
-				printf("It is now cycle %zu\n", game_params.total_cycles_counter);
+			ptr = *procs;// we can send *procs directly and del ptr
 			ft_execute_cycle(ptr, curr_life_cycle);
-			// if dump flag is activated, and we gonna dump
-			// cycles_number[1] == -1 : no dump flag
-			if ((bloc->nbr_cycles[1] != -1) && \
-					(game_params.total_cycles_counter == bloc->nbr_cycles[1]))
-			{
-				print_arena((*procs)->arena[0], bloc->nbr_cycles[0]);
+			if (mz_dump_memory(bloc, procs, game_params) == 1)
 				return ;
-			}
+			if (bloc->flags[PAUSE_1] != -1 || bloc->flags[PAUSE_2] != -1)
+				mz_do_pause(game_params, procs, bloc);
+			if (bloc->flags[VERBOS_1] != -1 || bloc->flags[VERBOS_2] != -1)// if debug is on
+				mz_print_debug_infos(procs, bloc, game_params);
+			if (bloc->flags[VISU_1] != -1 || bloc->flags[VISU_2] != -1)
+				mesafi_visualize(bloc, game_params, procs);
 			curr_life_cycle++;
 			game_params.total_cycles_counter++;// kaykhdm ghi f live, for vis
 		}
