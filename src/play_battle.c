@@ -128,15 +128,16 @@ void	mesafi_visualize(t_input_data *bloc, \
 void	ft_play_battle(t_process **procs, t_input_data *bloc)
 {
 	t_process	*ptr;
-	size_t		curr_life_cycle;
+	//size_t		curr_life_cycle;
 	t_game		game_params;
 
 	ft_memset((void*)&game_params, 0, sizeof(t_game));
 	game_params.cycles_to_die = CYCLE_TO_DIE;
+	printf("game_params->total_cycles : %zu\n", game_params.total_cycles_counter);
 	while (procs)
 	{
 		game_params.curr_life_cycle = 0;
-		while (curr_life_cycle < game_params.cycles_to_die)
+		while (game_params.curr_life_cycle < game_params.cycles_to_die)
 		{
 			ptr = *procs;// we can send *procs directly and del ptr
 			ft_execute_cycle(ptr, game_params.curr_life_cycle);
@@ -151,6 +152,9 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			game_params.curr_life_cycle++;
 			game_params.total_cycles_counter++;// kaykhdm ghi f live, for vis
 		}
+		printf("debug : %zu\n", game_params.total_cycles_counter);
+	//	if (game_params.total_cycles_counter > 100)
+	//			break;
 		//ft_check(procs, game_params);
 	}
 

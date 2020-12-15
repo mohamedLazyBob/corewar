@@ -13,6 +13,8 @@
 #include "virtual_machine.h"
 
 extern int g_last_live;
+extern t_input_data *g_input_bloc;
+
 /*
 ** ****************************************************************************
 ** live operation reads the regestre number, checks if it's a valid reg
@@ -20,17 +22,43 @@ extern int g_last_live;
 ** the last one alive
 */
 
+static	void	mz_print_live(t_process *process)
+{
+	char			*name;
+
+	if ((g_input_bloc->flags[VERBOS_1] != -1 && g_input_bloc->flags[VERBOS_1] & 1)\
+	 || (g_input_bloc->flags[VERBOS_2] != -1 && g_input_bloc->flags[VERBOS_2] & 1))
+	{
+		for (int i = 0; i < g_input_bloc->players_counter; i++)
+		{
+			if (g_input_bloc->ids[i] == -1 * process->player_id)
+			{
+				name = g_input_bloc->players[i].header.prog_name;
+				break;
+			}
+		}
+
+		printf("Player %d (%s) is said to be alive\n", \
+						-1*process->player_id, name);
+	}
+}
+
 void	ft_operation_live(t_process *process)
 {
 	unsigned int	arg;
 
+	//printf("I'm in Liive\n");
 	arg = ft_parse_args(process, (unsigned char)DIR_CODE);
 	process->process_live = 1;
 	if (0 <= arg && arg <= REG_NUMBER)
 	{
+		//printf("I'm in Liive: registre valid : %d, reg[%d] = %d\n", arg, arg, process->regestries[arg]);
 		if (1 <= process->regestries[arg] && \
 				process->regestries[arg] <= process->players_counter)
-			g_last_live = process->regestries[arg];
+			{
+				g_last_live = -1 * process->regestries[arg];
+				mz_print_live(process);
+			}
 	}
 }
 

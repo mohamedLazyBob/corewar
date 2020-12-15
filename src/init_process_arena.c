@@ -96,6 +96,8 @@ t_process	*ft_init_proc(t_input_data *bloc, \
 	proc->player_id = -1 * player_id;
 	proc->arena[0] = arena[0];
 	proc->arena[1] = arena[1];
+	ft_memset(proc->regestries, 0, REG_NUMBER);
+	proc->regestries[0] = -1*proc->player_id;
 	proc->players_counter = bloc->players_counter;
 	proc->execution_cycle = -1;
 	return (proc);
