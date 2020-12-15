@@ -2,6 +2,7 @@
 *.o
 *.swp
 *.swo
+*.log
 corewar
 # we can add also gitignore itself but I'm not sure if every one have this file in it's localy repo
 # .gitignore
