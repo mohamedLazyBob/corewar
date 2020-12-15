@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 16:56:52 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/04 12:40:55 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/07 17:03:12 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,9 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle)
 void	ft_play_battle(t_process **procs, t_input_data *bloc)
 {
 	t_process	*ptr;
-	size_t		curr_life_cycle;
+	int			curr_life_cycle;
 	t_game		*game_params;
+	int			i = 0;
 
 	game_params = (t_game*)malloc(sizeof(t_game));
 	game_params->cycles_to_die = CYCLE_TO_DIE;	
@@ -78,7 +79,14 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 	while (procs)
 	{
 		curr_life_cycle = 0;
-		while (curr_life_cycle < game_params->cycles_to_die)
+		if (game_params->cycles_to_die < 0 && procs != NULL)
+		{
+			ft_check(procs, &game_params);
+			(procs) = NULL;
+			return ;
+		}
+		
+		while (procs && curr_life_cycle < game_params->cycles_to_die)
 		{
 			ptr = *procs;
 			ft_execute_cycle(ptr, curr_life_cycle);
