@@ -49,19 +49,21 @@ HDR_FLAGS= $(HDR_PATH)
 
 # **************************************************************************** #
 
-all:$(NAME)
+all: lib $(NAME)
 
 $(NAME): $(LIB_PATH)/$(LIB) $(OBJ)
 	@ar rc $(NAME) $(OBJ) $(LIB_OBJ_PATH)
 	@ranlib $(NAME)
 	@echo "\033[1;34m>>\033[0m ft_printf: \033[1;32m Library compilled.\033[0m"
 
-$(LIB_PATH)/$(LIB):
+lib:
 	@make -sC libft
 
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(HDR)
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(HDR) | $(OBJ_PATH)
 	@$(COMP) $(CFLAGS) -I $(HDR_FLAGS) -o $@ -c $<
+
+$(OBJ_PATH):
+	mkdir $@
 
 clean:
 	@rm -fr $(OBJ)
