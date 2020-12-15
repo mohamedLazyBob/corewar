@@ -71,7 +71,11 @@ void	mz_print_debug_infos(t_process **procs, \
 	verbos = (bloc->flags[VERBOS_1] != -1) ? \
 				bloc->flags[VERBOS_1] : bloc->flags[VERBOS_2];
 	if (verbos & 2)
-		printf("It is now cycle %zu\n", game_params.total_cycles_counter);
+	{
+		ft_putstr("It is now cycle ");
+		ft_putnbr(game_params.total_cycles_counter);
+		write(1, "\n", 1);
+	}
 
 }
 
@@ -133,7 +137,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 
 	ft_memset((void*)&game_params, 0, sizeof(t_game));
 	game_params.cycles_to_die = CYCLE_TO_DIE;
-	printf("game_params->total_cycles : %zu\n", game_params.total_cycles_counter);
+	//printf("game_params->total_cycles : %zu\n", game_params.total_cycles_counter);
 	while (procs)
 	{
 		game_params.curr_life_cycle = 0;
@@ -152,7 +156,6 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			game_params.curr_life_cycle++;
 			game_params.total_cycles_counter++;// kaykhdm ghi f live, for vis
 		}
-		printf("debug : %zu\n", game_params.total_cycles_counter);
 	//	if (game_params.total_cycles_counter > 100)
 	//			break;
 		//ft_check(procs, game_params);
