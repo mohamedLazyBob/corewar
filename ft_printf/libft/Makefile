@@ -55,7 +55,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
-	@echo "\033[1;34m>>\033[0m libft\033[1;32m Library compilled.\033[0m"
+	@echo "\033[1;34m>>\033[0m libft: \033[1;32m Library compilled.\033[0m"
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(HDR) | $(OBJ_PATH)
 	@$(CC) $(CFLAGS) $(HDR_FLAGS) -o $@ -c $<
@@ -66,10 +66,10 @@ $(OBJ_PATH):
 clean:
 	@rm -fr $(OBJ)
 	@rmdir $(OBJ_PATH) 2> /dev/null || true
-	@echo "\033[1;34m>>\033[0m $(NAME)\033[1;33m Library object files deleted.\033[0m"
+	@echo "\033[1;34m>>\033[0m $(NAME): \033[1;33m Library object files deleted.\033[0m"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "\033[0;34m>>\033[0m $(NAME)\033[0;31m Library deleted.\033[0m"
+	@echo "\033[0;34m>>\033[0m $(NAME): \033[0;31m Library deleted.\033[0m"
 
 re: fclean all
