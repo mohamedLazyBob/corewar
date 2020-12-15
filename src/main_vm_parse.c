@@ -96,6 +96,14 @@ void	ft_introduce_players(t_input_data *bloc)
 	ft_putstr("Introducing contestants...\n");
 	while (++i <= bloc->players_counter)
 	{
+		/*
+		putstr("* Player ");
+		ft_putnbr(%d);
+		ft_putstr(", weighting ");
+		ft_putnbr("%.2d ");
+		ft_putstr("bytes, \"");
+		ft_putstr("%s\"); (\"%s\") !\n", i, \
+		*/
 		printf("* Player %d, weighting %.2d bytes, \"%s\" (\"%s\") !\n", i, \
 				bloc->players[i - 1].header.prog_size, \
 				bloc->players[i - 1].header.prog_name, \
