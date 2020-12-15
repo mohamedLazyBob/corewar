@@ -116,6 +116,7 @@ typedef	struct	s_process
 typedef struct	s_game
 {
 	int				cycles_to_die;
+	int				curr_life_cycle;
 	unsigned int	checks_counter;
 	size_t			total_cycles_counter;
 	size_t			live_counter;

@@ -22,7 +22,7 @@ void	print_arena(unsigned char *arena, int bol)
 	int	idx;
 
 	idx = 0;
-	system("clear");
+//	system("clear");
 	if (bol == 0)
 		bol = 32;
 	else

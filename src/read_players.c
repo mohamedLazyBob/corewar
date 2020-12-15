@@ -171,7 +171,6 @@ void	ft_read_players(int argc, char **av, t_input_data *bloc)
 		printf("print coreware usage\n");
 		exit(0);
 	}
-	exit(0);
 }
 
 /*
