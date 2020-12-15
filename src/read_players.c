@@ -15,16 +15,40 @@
 /*
 *******************************************************************************
 ** this checks if there is a dump flag and reads it's value if available
-** the bol (nbr_cycles[0])
-**	is there to configure the output (32 vs 64 bit per row)
-** and if the flag -V is given
+** checks and reads the following flags:
+** - -d / --dump	: that controls when to flush the mem and how.
+** - -n 			: should we visualize the arena or not.
+** + -v / --verbos	: are we running in debug mode and wich debug mode it's
 */
 
 int		ft_read_sideflags(int i, char **av, t_input_data *bloc)
 {
-	char	*temp_str;
-	int		ret;
+	char			*temp_str;
+	int				ret;
+	const char	flags[11][10] = {"-d", "--dump", "-s", "--pause", "-v", "--verbos", \
+								"-n", "--visu", "-a", "--aff", "--stealth"};
 
+	temp_str = ft_strdup_lower(av[i]);
+	ret = 0;
+	for (int j = 0; j < 11; j++)
+	{
+		if (0 == ft_strcmp(temp_str, flags[j]))
+		{
+			if (j < 6 && (av[i + 1]))
+			{
+				bloc->flags[j] = ft_atoi(av[i + 1]);
+				ret = 1;
+			}
+			else if (6 <= j)
+				bloc->flags[j] = 1;
+			break;
+		}
+	}
+	free(temp_str);
+	return (ret);
+
+
+/*
 	temp_str = ft_strdup_lower(av[i]);
 	ret = 1;
 	if ((ft_strcmp(temp_str, "--dump") == 0) && (av[i + 1]))
@@ -51,8 +75,7 @@ int		ft_read_sideflags(int i, char **av, t_input_data *bloc)
 	}
 	else
 		ret = 0;
-	free(temp_str);
-	return (ret);
+*/
 }
 
 /*
@@ -148,7 +171,6 @@ void	ft_read_players(int argc, char **av, t_input_data *bloc)
 		printf("print coreware usage\n");
 		exit(0);
 	}
-	exit(0);
 }
 
 /*

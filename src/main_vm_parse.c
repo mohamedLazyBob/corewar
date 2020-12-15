@@ -113,7 +113,7 @@ int		main(int ac, char **av)
 	//t_playrs		*playrs;
 
 	ft_memset(&bloc, 0, sizeof(bloc));
-	ft_memset(bloc.nbr_cycles, -1, 2 * sizeof(int));
+	ft_memset(bloc.flags, -1, 11 * sizeof(int));
 	ft_read_players(ac, av, &bloc);
 	
 	bloc.players = (t_playrs*)ft_memalloc(sizeof(t_playrs) * bloc.players_counter);
