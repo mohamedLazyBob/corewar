@@ -55,13 +55,27 @@ typedef struct	s_input_data
 	int			players_counter;
 	char		*names[MAX_PLAYERS];
 	int			ids[MAX_PLAYERS];
-	int			nbr_cycles[2];
 	int			fd[MAX_PLAYERS];
-	int			visu;
-	int			verbos_activated;
-	int			verbos_level;
+
+	// int			nbr_cycles[2];
+	// int			visu;
+	// int			verbos_activated;
+	// int			verbos_level;
+	int			flags[11];
+
 	t_playrs	*players;
 }				t_input_data;
+
+/*
+******************************************************************
+** an enumiration that we'll use in t_input_data->flag[]
+** to access the flags when we need them.
+*/
+enum e_flags
+{
+	DUMP_64, DUMP_32, PAUSE_1, PAUSE_2, VERBOS_1, VERBOS_2, \
+	VISU_1, VISU_2, AFF_1, AFF2, STEALTH
+};
 
 /*
 **
