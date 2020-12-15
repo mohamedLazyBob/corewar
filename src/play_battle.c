@@ -72,9 +72,10 @@ void	mz_print_debug_infos(t_process **procs, \
 				bloc->flags[VERBOS_1] : bloc->flags[VERBOS_2];
 	if (verbos & 2)
 	{
-		ft_putstr("It is now cycle ");
-		ft_putnbr(game_params.total_cycles_counter);
-		write(1, "\n", 1);
+		// ft_putstr("It is now cycle ");
+		// ft_putnbr(game_params.total_cycles_counter);
+		// write(1, "\n", 1);
+		ft_printf("It is now cycle %d\n", game_params.total_cycles_counter);
 	}
 
 }
@@ -145,6 +146,9 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 		{
 			ptr = *procs;// we can send *procs directly and del ptr
 			ft_execute_cycle(ptr, game_params.curr_life_cycle);
+			game_params.curr_life_cycle++;
+			game_params.total_cycles_counter++;// kaykhdm ghi f live, for vis
+
 			if (mz_dump_memory(bloc, procs, game_params) == 1)
 				return ;
 			if (bloc->flags[PAUSE_1] != -1 || bloc->flags[PAUSE_2] != -1)
@@ -153,8 +157,6 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 				mz_print_debug_infos(procs, bloc, game_params);
 			if (bloc->flags[VISU_1] != -1 || bloc->flags[VISU_2] != -1)
 				mesafi_visualize(bloc, game_params, procs);
-			game_params.curr_life_cycle++;
-			game_params.total_cycles_counter++;// kaykhdm ghi f live, for vis
 		}
 	//	if (game_params.total_cycles_counter > 100)
 	//			break;

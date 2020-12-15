@@ -18,7 +18,7 @@
 # include <fcntl.h>
 # include <string.h>
 # include "op.h"
-# include "../libft/headers/libft.h"
+# include "../ft_printf/headers/ft_printf.h"
 
 # define FALSE 0
 # define TRUE 1

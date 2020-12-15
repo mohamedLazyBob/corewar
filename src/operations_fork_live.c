@@ -38,7 +38,7 @@ static	void	mz_print_live(t_process *process)
 			}
 		}
 
-		printf("Player %d (%s) is said to be alive\n", \
+		ft_printf("Player %d (%s) is said to be alive\n", \
 						-1*process->player_id, name);
 	}
 }
