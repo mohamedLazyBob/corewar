@@ -12,6 +12,8 @@
 
 #include "../includes/virtual_machine.h"
 
+t_input_data *g_input_bloc;
+
 /*
 *******************************************************************************
 */
@@ -115,6 +117,7 @@ int		main(int ac, char **av)
 	ft_memset(&bloc, 0, sizeof(bloc));
 	ft_memset(bloc.flags, -1, 11 * sizeof(int));
 	ft_read_players(ac, av, &bloc);
+	g_input_bloc = &bloc;
 	
 	bloc.players = (t_playrs*)ft_memalloc(sizeof(t_playrs) * bloc.players_counter);
 	ft_open_champion(bloc, bloc.players);
