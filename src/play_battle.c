@@ -66,7 +66,12 @@ void	mz_print_debug_infos(t_process **procs, \
 							t_input_data *bloc, \
 							t_game game_params)
 {
-	printf("It is now cycle %zu\n", game_params.total_cycles_counter);
+	int	verbos;
+
+	verbos = (bloc->flags[VERBOS_1] != -1) ? \
+				bloc->flags[VERBOS_1] : bloc->flags[VERBOS_2];
+	if (verbos & 2)
+		printf("It is now cycle %zu\n", game_params.total_cycles_counter);
 
 }
 
@@ -99,7 +104,9 @@ void	mz_do_pause(t_game game_params, t_process **procs, t_input_data *bloc)
 	const int	pause_value = (bloc->flags[PAUSE_1] != -1) ? \
 						bloc->flags[PAUSE_1] : bloc->flags[PAUSE_2];
 
-	if (game_params.cycles_to_die == pause_value)
+	printf("pause value == %d, %d\n", bloc->flags[PAUSE_1], bloc->flags[PAUSE_2]);
+	//if (game_params.curr_life_cycle == pause_value)// maybe we should use this
+	if (game_params.total_cycles_counter == pause_value)
 		print_arena((*procs)->arena[0], 1);
 }
 
@@ -124,13 +131,15 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 	size_t		curr_life_cycle;
 	t_game		game_params;
 
+	ft_memset((void*)&game_params, 0, sizeof(t_game));
+	game_params.cycles_to_die = CYCLE_TO_DIE;
 	while (procs)
 	{
-		curr_life_cycle = 0;
+		game_params.curr_life_cycle = 0;
 		while (curr_life_cycle < game_params.cycles_to_die)
 		{
 			ptr = *procs;// we can send *procs directly and del ptr
-			ft_execute_cycle(ptr, curr_life_cycle);
+			ft_execute_cycle(ptr, game_params.curr_life_cycle);
 			if (mz_dump_memory(bloc, procs, game_params) == 1)
 				return ;
 			if (bloc->flags[PAUSE_1] != -1 || bloc->flags[PAUSE_2] != -1)
@@ -139,7 +148,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 				mz_print_debug_infos(procs, bloc, game_params);
 			if (bloc->flags[VISU_1] != -1 || bloc->flags[VISU_2] != -1)
 				mesafi_visualize(bloc, game_params, procs);
-			curr_life_cycle++;
+			game_params.curr_life_cycle++;
 			game_params.total_cycles_counter++;// kaykhdm ghi f live, for vis
 		}
 		//ft_check(procs, game_params);
