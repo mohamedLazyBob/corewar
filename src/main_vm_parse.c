@@ -27,6 +27,25 @@ void	ft_free_exit(char *str, void **buff, size_t size)
 	exit(0);
 }
 
+void ft_check_size_players(t_input_data *bloc)
+{
+	int	i;
+	int	cnt;
+
+	i = -1;
+	cnt = 0;
+	while (++i <= bloc->players_counter)
+	{
+		if (CHAMP_MAX_SIZE < bloc->players[i].header.prog_size)
+		{
+			printf("Error : Player size %.2d bytes > %.2d bytes\n", bloc->players[i].header.prog_size, CHAMP_MAX_SIZE);
+			cnt++;
+		}
+	}
+	if (cnt > 0)
+		exit(-1);
+}
+
 /*
 *******************************************************************************
 ** we'll remove this function afterword, it's just for test purpose
@@ -88,7 +107,7 @@ void	ft_temp(t_input_data bloc, t_playrs *playrs)
 
 void	ft_introduce_players(t_input_data *bloc)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	ft_putstr("Introducing contestants...\n");
@@ -118,6 +137,7 @@ int		main(int ac, char **av)
 	
 	bloc.players = (t_playrs*)ft_memalloc(sizeof(t_playrs) * bloc.players_counter);
 	ft_open_champion(bloc, bloc.players);
+	ft_check_size_players(&bloc);
 
 	// init processes (all of them)
 	ft_init_procs_arena(&procs, &bloc);
