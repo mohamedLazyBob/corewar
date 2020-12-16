@@ -176,7 +176,7 @@ void	ft_operation_sti(t_process *proc)
 // 						proc->regestries[proc->arena[0][(proc->pc + ft_size(parameters[2], 2)) % MEM_SIZE]]) % IDX_MOD);
 // 	ft_any_player(proc, temp, str, 2);
 // /**/
-	proc->pc = (proc->pc + ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+//	proc->pc = (proc->pc + ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 }
 
 /*

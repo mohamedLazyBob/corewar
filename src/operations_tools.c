@@ -115,7 +115,7 @@ int				ft_parse_args(t_process *process, unsigned char par)
 		// ft_printf("old num: %d\n", num);
 		// ft_printf("%d, %d, %d, %d\n",   ((char*)&num)[0], ((char*)&num)[1], ((char*)&num)[2], ((char*)&num)[3]);
 		num = ft_reverse_endianness((unsigned char*)&num, 4);
-		// ft_printf("new num: %d\n", num);
+		ft_printf("new num: %d\n", num);
 		// exit(0);
 		process->pc = (process->pc + dir_size) % MEM_SIZE;
 	}
