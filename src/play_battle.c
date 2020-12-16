@@ -13,7 +13,7 @@
 #include "virtual_machine.h"
 extern	void			(*g_operation[16])(t_process *process);
 extern	unsigned int	g_cycles_to_wait[16];
-
+extern const t_op g_op_tab[17];
 /*
 ** ****************************************************************************
 ** for the cycles_number we -1 of the curr cycle;
@@ -23,10 +23,11 @@ static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 {
 	unsigned char temp;
 
-	temp = proc->arena[0][proc->pc];
+	temp = proc->arena[0][proc->pc] - 1;
 	proc->next_inst = temp;
-	if (1 <= temp && temp <= 16)
-		proc->execution_cycle = curr_life_cycle + g_cycles_to_wait[temp - 1] - 1;
+	// ft_printf("this inst is done : [%d]\n", proc->next_inst);
+	if (0 <= temp && temp <= 15)
+		proc->execution_cycle = curr_life_cycle + g_cycles_to_wait[temp] - 1;
 	//	else
 	//		proc->cycle_number = 0;
 	proc->pc = (proc->pc + 1) % MEM_SIZE;
@@ -39,6 +40,7 @@ static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 
 void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle)
 {
+	ft_printf("exec_cycle: %.2d, curr_cycle: %d, pc: %3d\n", ptr->execution_cycle, curr_life_cycle, ptr->pc);
 	while (ptr)
 	{
 		// 1st mra ghadi idkhl || the last op excuted, read another one
@@ -46,11 +48,15 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle)
 				ptr->execution_cycle < curr_life_cycle)
 			ft_read_opcode(ptr, curr_life_cycle);
 
+
 		// ila tqado executi l'operation
 		if(ptr->execution_cycle == curr_life_cycle)
 		{
-			if (1 <= ptr->next_inst && ptr->next_inst <= 16)
-				g_operation[ptr->next_inst - 1](ptr);
+			if (0 <= ptr->next_inst && ptr->next_inst <= 15)
+			{
+				ft_printf("func : %5s, player_id: %d\n", g_op_tab[ptr->next_inst].op_name, ptr->player_id);
+				g_operation[ptr->next_inst](ptr);
+			}
 			else
 				ptr->pc++;
 		}
@@ -141,7 +147,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 	//printf("game_params->total_cycles : %zu\n", game_params.total_cycles_counter);
 	while (procs)
 	{
-		game_params.curr_life_cycle = 0;
+		game_params.curr_life_cycle = 1;
 		while (game_params.curr_life_cycle < game_params.cycles_to_die)
 		{
 			ptr = *procs;// we can send *procs directly and del ptr
@@ -157,9 +163,11 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 				mz_print_debug_infos(procs, bloc, game_params);
 			if (bloc->flags[VISU_1] != -1 || bloc->flags[VISU_2] != -1)
 				mesafi_visualize(bloc, game_params, procs);
+		if (game_params.total_cycles_counter > 1000)
+				break;
 		}
-	//	if (game_params.total_cycles_counter > 100)
-	//			break;
+		if (game_params.total_cycles_counter > 1000)
+				break;
 		//ft_check(procs, game_params);
 	}
 

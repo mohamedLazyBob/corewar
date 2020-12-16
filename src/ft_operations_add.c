@@ -104,7 +104,7 @@ void	ft_operation_st(t_process *proc)
 	}
 	if (parameters[1] == T_REG)
 	{
-		if (!(ft_reg_check(proc->arena[0][(proc->pc + 1) % MEM_SIZE])))
+		if (!(ft_reg_check(proc->arena[0][(proc->pc + 1) % MEM_SIZE])))// check if 1 <= arg2_mem_value <= 16
 		{
 			proc->pc = (proc->pc + \
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
@@ -113,12 +113,12 @@ void	ft_operation_st(t_process *proc)
 		proc->regestries[proc->arena[0][proc->pc]] = \
 		proc->regestries[proc->arena[0][(proc->pc + 1) % IDX_MOD]];
 	}
-	else
+	else // indirect choice
 	{
 		ft_memcpy(((unsigned char*)&var) + 2,proc->arena[0] + ((proc->pc + 1) % MEM_SIZE), 2);
 		temp = temp + (ft_reverse_endianness((unsigned char*)&var, 4) % IDX_MOD);
-		ft_int_to_str(proc->regestries[proc->arena[0][proc->pc]], str);
-		ft_memcpy(proc->arena[0] + temp, (const void *)str, 4);
+		// ft_int_to_str(proc->regestries[proc->arena[0][proc->pc]], str);
+		// ft_memcpy(proc->arena[0] + temp, (const void *)str, 4);
 
 		ft_any_player(proc, temp, str, 4);
 	}
@@ -136,6 +136,7 @@ void	ft_operation_sti(t_process *proc)
 	int				temp;
 	int 			var;
 	char			str[4];
+	unsigned int	args[3];
 
 	var = 0;
 	temp = proc->pc - 1;
@@ -147,14 +148,34 @@ void	ft_operation_sti(t_process *proc)
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 			return ;
 	}
+	else
+	{
+		// ft_printf("------------------\n");
+		args[0] = ft_parse_args(proc, parameters[0]);
+		// ft_printf("args 0 : %u, pc : %d\n", args[0], proc->pc);
+		args[1] = ft_parse_args(proc, parameters[1]);
+		args[2] = ft_parse_args(proc, parameters[2]);
+		if ((parameters[0] == T_REG && (args[0] < 1 || 16 < args[0])) || \
+			(parameters[1] == T_REG && (args[1] < 1 || 16 < args[1])) || \
+			(parameters[2] == T_REG && (args[2] < 1 || 16 < args[2])))
+			return ;
+		// ft_printf("[%d][%d][%d]\n", args[0], args[1], args[2]);
+		args[1] = ft_get_argument_value(proc, args[1], parameters[1]);
+		args[2] = ft_get_argument_value(proc, args[2], parameters[2]);
+		// mem[args[1] + args[2]] =  args[0]
+		temp = args[1] + args[2];
+		ft_any_player(proc, temp, str, 4);
+	}
+	// ft_printf("sti r%d %d %d\n pc ", args[0], args[1], args[2]);	
 	
 /**/
-	if (parameters[1] == T_IND)
-		temp = temp + (ft_reverse_endianness(proc->arena[0] + ((proc->pc + 1) % MEM_SIZE), 4) % IDX_MOD);
-	else
-		temp = temp + ((proc->regestries[proc->arena[0][(proc->pc + ft_size(parameters[1], 2)) % MEM_SIZE]] + proc->regestries[proc->arena[0][(proc->pc + ft_size(parameters[2], 2)) % MEM_SIZE]]) % IDX_MOD);
-	ft_any_player(proc, temp, str, 2);
-/**/
+// 	if (parameters[1] == T_IND)
+// 		temp = temp + (ft_reverse_endianness(proc->arena[0] + ((proc->pc + 1) % MEM_SIZE), 4) % IDX_MOD);
+// 	else
+// 		temp = temp + ((proc->regestries[proc->arena[0][(proc->pc + ft_size(parameters[1], 2)) % MEM_SIZE]] + \
+// 						proc->regestries[proc->arena[0][(proc->pc + ft_size(parameters[2], 2)) % MEM_SIZE]]) % IDX_MOD);
+// 	ft_any_player(proc, temp, str, 2);
+// /**/
 	proc->pc = (proc->pc + ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 }
 
