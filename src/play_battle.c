@@ -25,12 +25,15 @@ static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 
 	temp = proc->arena[0][proc->pc] - 1;
 	proc->next_inst = temp;
-	// ft_printf("this inst is done : [%d]\n", proc->next_inst);
+	ft_printf("this inst is read : [%d][%d]\n", \ 
+				temp, proc->next_inst); // the error is here, it shouldn't == 103 it should be 10;
 	if (0 <= temp && temp <= 15)
 		proc->execution_cycle = curr_life_cycle + g_cycles_to_wait[temp] - 1;
 	//	else
 	//		proc->cycle_number = 0;
 	proc->pc = (proc->pc + 1) % MEM_SIZE;
+	ft_printf("\tupdate --> P:[%d] exec_at_cycle: %.2d, pc: %3d\n", proc->player_id, proc->execution_cycle, proc->pc);
+
 }
 
 /*
@@ -40,9 +43,9 @@ static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 
 void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle)
 {
-	ft_printf("exec_cycle: %.2d, curr_cycle: %d, pc: %3d\n", ptr->execution_cycle, curr_life_cycle, ptr->pc);
-	while (ptr)
+while (ptr)
 	{
+		// ft_printf("\tP:[%d] exec_at_cycle: %.2d, pc: %3d\n", ptr->player_id, ptr->execution_cycle, ptr->pc);
 		// 1st mra ghadi idkhl || the last op excuted, read another one
 		if (ptr->execution_cycle == -1 || \
 				ptr->execution_cycle < curr_life_cycle)
@@ -54,8 +57,13 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle)
 		{
 			if (0 <= ptr->next_inst && ptr->next_inst <= 15)
 			{
-				ft_printf("func : %5s, player_id: %d\n", g_op_tab[ptr->next_inst].op_name, ptr->player_id);
+				ft_printf("\t\tP\t%d | %5s\n", -ptr->player_id, g_op_tab[ptr->next_inst].op_name);
+				if (ptr->next_inst == 8)
+					ft_printf("\t\tP\t%d | %5s | before zjmp pc : %d\n", -ptr->player_id, g_op_tab[ptr->next_inst].op_name, ptr->pc);
 				g_operation[ptr->next_inst](ptr);
+				if (ptr->next_inst == 8)
+					ft_printf("\t\tP\t%d | %5s | after zjmp pc : %d\n", -ptr->player_id, g_op_tab[ptr->next_inst].op_name, ptr->pc);
+
 			}
 			else
 				ptr->pc++;
@@ -144,12 +152,14 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 
 	ft_memset((void*)&game_params, 0, sizeof(t_game));
 	game_params.cycles_to_die = CYCLE_TO_DIE;
+	game_params.total_cycles_counter = 1;
 	//printf("game_params->total_cycles : %zu\n", game_params.total_cycles_counter);
 	while (procs)
 	{
 		game_params.curr_life_cycle = 1;
 		while (game_params.curr_life_cycle < game_params.cycles_to_die)
 		{
+			ft_printf("It is now cycle %d\n", game_params.total_cycles_counter);
 			ptr = *procs;// we can send *procs directly and del ptr
 			ft_execute_cycle(ptr, game_params.curr_life_cycle);
 			game_params.curr_life_cycle++;

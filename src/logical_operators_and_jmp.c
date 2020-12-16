@@ -136,9 +136,15 @@ void	ft_operation_zjmp(t_process *process)
 {
 	unsigned int	arg;
 
+	printf("old pc == %d", process->pc);
 	process->op_pc = process->pc;
-	arg = ft_parse_args(process, (unsigned char)2);
-	arg = ft_reverse_endianness((unsigned char*)&arg, 3);
-	if (process->carry == 1)
-		process->pc = (process->op_pc + arg) % IDX_MOD;
+	arg = ft_parse_args(process, (unsigned char)DIR_CODE);
+	// arg = ft_reverse_endianness((unsigned char*)&arg, 3);
+	ft_printf("arg : %u\n", arg);
+	// if (process->carry == 1)
+	{
+		process->pc = process->op_pc + (arg % IDX_MOD);
+		printf("+++++++++\n");
+	}
+	printf("new pc == %d", process->pc);
 }
