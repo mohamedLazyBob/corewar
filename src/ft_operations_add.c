@@ -12,6 +12,7 @@
 
 #include "../includes/virtual_machine.h"
 
+extern t_input_data *g_input_bloc;
 /*
 ******************************************************************************
 */
@@ -121,6 +122,15 @@ void	ft_operation_st(t_process *proc)
 		// ft_memcpy(proc->arena[0] + temp, (const void *)str, 4);
 
 		ft_any_player(proc, temp, str, 4);
+	}
+	if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
+	{
+		// 2nd arg isn't always a direct number ;
+		ft_printf("P\t%d | st r%d %d, or %d\n", -proc->player_id, \
+										proc->arena[0][proc->pc] , \
+										proc->regestries[proc->arena[0][proc->pc]], \
+										temp);
+										// last thing we did, is this we're working on the -v 4 
 	}
 	proc->pc = (proc->pc + \
 						ft_sizeof_params(proc, parameters)) % MEM_SIZE;

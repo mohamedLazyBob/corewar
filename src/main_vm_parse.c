@@ -115,7 +115,7 @@ int		main(int ac, char **av)
 	//t_playrs		*playrs;
 
 	ft_memset(&bloc, 0, sizeof(bloc));
-	ft_memset(bloc.flags, -1, 11 * sizeof(int));
+	ft_memset(bloc.flags, 0, 11 * sizeof(int));
 	ft_read_players(ac, av, &bloc);
 	g_input_bloc = &bloc;
 	
@@ -125,7 +125,7 @@ int		main(int ac, char **av)
 	// init processes (all of them)
 	ft_init_procs_arena(&procs, &bloc);
 	//		print_procs(procs, &bloc);
-			print_arena(procs->arena[0], 1);
+			// print_arena(procs->arena[0], 1);
 		
 	ft_introduce_players(&bloc);
 	ft_play_battle(&procs, &bloc);
