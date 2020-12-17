@@ -1,10 +1,10 @@
 Introducing contestants...
-* Player 1, weighing 16 bytes, "tester" ("test st") !
-* Player 2, weighing 16 bytes, "tester" ("test st") !
-P    2 | ld 100 r3
-P    1 | ld 100 r3
-P    2 | st r3 4
-P    1 | st r3 4
-P    2 | st r4 53
-P    1 | st r4 53
+* Player 1, weighing 24 bytes, "tester" ("test sub") !
+* Player 2, weighing 24 bytes, "tester" ("test sub") !
+P    2 | ld 100 r1
+P    1 | ld 100 r1
+P    2 | ld 100 r2
+P    1 | ld 100 r2
+P    2 | st r3 45
+P    1 | st r3 45
 Contestant 2, "tester", has won !
