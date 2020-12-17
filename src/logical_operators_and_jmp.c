@@ -14,6 +14,7 @@
 
 extern t_op g_op_tab[];
 unsigned int g_last_live;
+extern t_input_data *g_input_bloc;
 
 /*
 ******************************************************************************
@@ -148,7 +149,16 @@ void	ft_operation_zjmp(t_process *process)
 	if (process->carry == 1)
 	{
 		process->pc = process->op_pc + (arg1 % IDX_MOD);
+		if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
+		{
+			ft_printf("P\t%d | zjmp %d OK\n", process->proc_id, arg1);
+		}
 		// printf("+++++++++\n");
 	}
+	else if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
+	{
+		ft_printf("P\t%d | zjmp %d FAILED\n", process->proc_id, arg1);
+	}
+	
 	// printf("new pc == %d", process->pc);
 }

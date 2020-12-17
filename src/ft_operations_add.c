@@ -49,10 +49,19 @@ void	ft_operation_add(t_process *proc)
 	proc->regestries[proc->arena[0][(proc->pc + 3) % MEM_SIZE]] = \
 	proc->regestries[proc->arena[0][(proc->pc + 1) % MEM_SIZE]] + \
 	proc->regestries[proc->arena[0][(proc->pc + 2) % MEM_SIZE]];
+
+	if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
+	{
+		ft_printf("P\t%d | add r%d r%d r%d\n", proc->proc_id, \
+					proc->arena[0][(proc->pc) % MEM_SIZE], \
+					proc->arena[0][(proc->pc + 1) % MEM_SIZE], \
+					proc->arena[0][(proc->pc + 2) % MEM_SIZE]);
+	}
 	proc->carry = (proc->regestries[proc->arena[0][(proc->pc + 3) \
 						% IDX_MOD]] == 0) ? 1 : 0;
 	proc->pc = (proc->pc + \
 						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+						
 }
 
 /*
@@ -76,6 +85,14 @@ void	ft_operation_sub(t_process *proc)
 	proc->regestries[proc->arena[0][(proc->pc + 3) % IDX_MOD]] = \
 	proc->regestries[proc->arena[0][(proc->pc + 1) % IDX_MOD]] - \
 	proc->regestries[proc->arena[0][(proc->pc + 2) % IDX_MOD]];
+
+	if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
+	{
+		ft_printf("P\t%d | sub r%d r%d r%d\n", proc->proc_id, \
+					proc->arena[0][(proc->pc) % MEM_SIZE], \
+					proc->arena[0][(proc->pc + 1) % MEM_SIZE], \
+					proc->arena[0][(proc->pc + 2) % MEM_SIZE]);
+	}
 	proc->carry = (proc->regestries[proc->arena[0][(proc->pc + 3) \
 						% IDX_MOD]] == 0) ? 1 : 0;
 	proc->pc = (proc->pc + \
