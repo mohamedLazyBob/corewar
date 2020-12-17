@@ -44,9 +44,9 @@ void	ft_operation_ld(t_process *proc)
 /**/
 	if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
 	{
-		ft_printf("P\t%d | ld %d r%d\n", -proc->player_id, \
+		ft_printf("P\t%d | ld %d r%d\n", proc->proc_id, \
 										ft_reverse_endianness(proc->arena[0] + proc->pc, 4), \
-										proc->arena[0][proc->pc + ft_size(parameters[0], 4)] + 1);
+										proc->arena[0][proc->pc + ft_size(parameters[0], 4)]);
 	}
 	proc->pc = (proc->pc + \
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
