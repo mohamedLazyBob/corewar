@@ -23,16 +23,21 @@ static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 {
 	unsigned char temp;
 
+	// ft_printf("-------------------------------------------------\n");
+	// if (proc->pc > 1)
+		// for (int i = 0; i < 20; i++)
+			// ft_printf("%x ", proc->arena[0][proc->pc + i]);
+	// ft_printf("\n");
 	temp = proc->arena[0][proc->pc] - 1;
 	proc->next_inst = temp;
-	ft_printf("this inst is read : [%d][%d]\n", \ 
-				temp, proc->next_inst); // the error is here, it shouldn't == 103 it should be 10;
+	// ft_printf("this inst is read : [%x][%d]\n",  
+				// temp, proc->next_inst); // the error is here, it shouldn't == 103 it should be 10;
 	if (0 <= temp && temp <= 15)
 		proc->execution_cycle = curr_life_cycle + g_cycles_to_wait[temp] - 1;
 	//	else
 	//		proc->cycle_number = 0;
 	proc->pc = (proc->pc + 1) % MEM_SIZE;
-	ft_printf("\tupdate --> P:[%d] exec_at_cycle: %.2d, pc: %3d\n", proc->player_id, proc->execution_cycle, proc->pc);
+	// ft_printf("\tupdate --> P:[%d] exec_at_cycle: %.2d, pc: %3d\n", proc->player_id, proc->execution_cycle, proc->pc);
 
 }
 
@@ -58,11 +63,11 @@ while (ptr)
 			if (0 <= ptr->next_inst && ptr->next_inst <= 15)
 			{
 				ft_printf("\t\tP\t%d | %5s\n", -ptr->player_id, g_op_tab[ptr->next_inst].op_name);
-				if (ptr->next_inst == 8)
-					ft_printf("\t\tP\t%d | %5s | before zjmp pc : %d\n", -ptr->player_id, g_op_tab[ptr->next_inst].op_name, ptr->pc);
+				// if (ptr->next_inst == 8)
+					// ft_printf("\t\tP\t%d | %5s | before zjmp pc : %d\n", -ptr->player_id, g_op_tab[ptr->next_inst].op_name, ptr->pc);
 				g_operation[ptr->next_inst](ptr);
-				if (ptr->next_inst == 8)
-					ft_printf("\t\tP\t%d | %5s | after zjmp pc : %d\n", -ptr->player_id, g_op_tab[ptr->next_inst].op_name, ptr->pc);
+				// if (ptr->next_inst == 8)
+					// ft_printf("\t\tP\t%d | %5s | after zjmp pc : %d\n", -ptr->player_id, g_op_tab[ptr->next_inst].op_name, ptr->pc);
 
 			}
 			else

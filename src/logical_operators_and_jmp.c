@@ -134,17 +134,21 @@ void	ft_operation_xor(t_process *process)
 
 void	ft_operation_zjmp(t_process *process)
 {
-	unsigned int	arg;
+	// int	arg;
+	short int arg1;
 
-	printf("old pc == %d", process->pc);
-	process->op_pc = process->pc;
-	arg = ft_parse_args(process, (unsigned char)DIR_CODE);
+	// printf("old pc == %d", process->pc);
+	process->op_pc = process->pc - 1;
+	arg1 = ft_parse_args(process, (unsigned char)DIR_CODE);
 	// arg = ft_reverse_endianness((unsigned char*)&arg, 3);
-	ft_printf("arg : %u\n", arg);
-	// if (process->carry == 1)
+	// arg1 = arg;
+	// ft_printf("arg : %d\n", arg);
+	// ft_printf("short arg : %d\n", arg1);
+
+	if (process->carry == 1)
 	{
-		process->pc = process->op_pc + (arg % IDX_MOD);
-		printf("+++++++++\n");
+		process->pc = process->op_pc + (arg1 % IDX_MOD);
+		// printf("+++++++++\n");
 	}
-	printf("new pc == %d", process->pc);
+	// printf("new pc == %d", process->pc);
 }
