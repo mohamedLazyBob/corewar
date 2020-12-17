@@ -71,14 +71,14 @@ void		ft_init_procs_arena(t_process **procs, t_input_data *bloc)
 	*procs = proc;
 	while (player_id > 0)
 	{
-		// temp = ft_init_proc(bloc, player_id, arena);
-		proc->next = ft_init_proc(bloc, player_id, arena);
-		// temp->next = proc;
-		proc = proc->next;
-		// proc = temp;
+		temp = ft_init_proc(bloc, player_id, arena);
+		// proc->next = ft_init_proc(bloc, player_id, arena);
+		temp->next = proc;
+		// proc = proc->next;
+		proc = temp;
 		player_id--;
 	}
-	// *procs = proc;
+	*procs = proc;
 	// temp = *procs;
 	// while (temp)
 	// {

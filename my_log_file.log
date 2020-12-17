@@ -1,9 +1,9 @@
 Introducing contestants...
-* Player 1, weighting 24 bytes, "tester" ("test add") !
-* Player 2, weighting 24 bytes, "tester" ("test add") !
-P	2 | ld 100 r2
-P	1 | ld 100 r2
+* Player 1, weighting 14 bytes, "tester" ("test sti") !
+* Player 2, weighting 14 bytes, "tester" ("test sti") !
 P	2 | ld 100 r3
 P	1 | ld 100 r3
-P	2 | st r3 0, or 64
-P	1 | st r3 0, or 2112
+P	2 | sti r3 17665 53
+	  | -> store to 17665 + 53 = 17718 (with pc and mod 2365)
+P	1 | sti r3 17665 53
+	  | -> store to 17665 + 53 = 17718 (with pc and mod 317)
