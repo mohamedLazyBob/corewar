@@ -94,7 +94,8 @@ void	ft_operation_st(t_process *proc)
 	char			str[4];
 
 	var = 0;
-	temp = proc->pc - 1;
+	//temp = proc->pc - 1;
+	proc->op_pc = proc->pc -1;
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if ((ft_strcmp((const char*)parameters, "ER") == 0) || \
 		(!(ft_reg_check(proc->arena[0][proc->pc % MEM_SIZE]))))
@@ -111,24 +112,27 @@ void	ft_operation_st(t_process *proc)
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 			return ;
 		}
-		proc->regestries[proc->arena[0][proc->pc]] = \
-		proc->regestries[proc->arena[0][(proc->pc + 1) % IDX_MOD]];
+		temp = proc->regestries[proc->arena[0][(proc->pc + 1) % IDX_MOD]];
+		proc->regestries[proc->arena[0][proc->pc]] = temp;
+		temp = proc->arena[0][(proc->pc + 1) % IDX_MOD];
 	}
 	else // indirect choice
 	{
 		ft_memcpy(((unsigned char*)&var) + 2,proc->arena[0] + ((proc->pc + 1) % MEM_SIZE), 2);
-		temp = temp + (ft_reverse_endianness((unsigned char*)&var, 4) % IDX_MOD);
+		temp = proc->op_pc + (ft_reverse_endianness((unsigned char*)&var, 4) % IDX_MOD);
 		// ft_int_to_str(proc->regestries[proc->arena[0][proc->pc]], str);
 		// ft_memcpy(proc->arena[0] + temp, (const void *)str, 4);
 
 		ft_any_player(proc, temp, str, 4);
+		temp = (ft_reverse_endianness((unsigned char*)&var, 4) % IDX_MOD);
 	}
 	if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
 	{
 		// 2nd arg isn't always a direct number ;
-		ft_printf("P\t%d | st r%d %d, or %d\n", -proc->player_id, \
-										proc->arena[0][proc->pc] , \
-										proc->regestries[proc->arena[0][proc->pc]], \
+		// ft_printf("debug : %d, temp: %d\n", proc->arena[0][(proc->pc + 1) % IDX_MOD], (ft_reverse_endianness((unsigned char*)&var, 4) % IDX_MOD));
+
+		ft_printf("P\t%d | st r%d %d\n", proc->proc_id, \
+										proc->arena[0][proc->pc], \
 										temp);
 										// last thing we did, is this we're working on the -v 4 
 	}
@@ -166,6 +170,14 @@ void	ft_operation_sti(t_process *proc)
 		// ft_printf("args 0 : %u, pc : %d\n", args[0], proc->pc);
 		args[1] = ft_parse_args(proc, parameters[1]);
 		args[2] = ft_parse_args(proc, parameters[2]);
+		if ((parameters[0] == T_REG && (args[0] < 1 || 16 < args[0])) || \
+			(parameters[1] == T_REG && (args[1] < 1 || 16 < args[1])) || \
+			(parameters[2] == T_REG && (args[2] < 1 || 16 < args[2])))
+			return ;
+		// ft_printf("[%d][%d][%d]\n", args[0], args[1], args[2]);
+		args[1] = ft_get_argument_value(proc, args[1], parameters[1]);
+		args[2] = ft_get_argument_value(proc, args[2], parameters[2]);
+		// mem[args[1] + args[2]] =  args[0]
 		if (g_input_bloc->flags[VERBOS_1] == 4 || g_input_bloc->flags[VERBOS_2] == 4)
 		{
 			ft_printf("P\t%d | sti%s%d%s%d%s%d\n", proc->proc_id, \
@@ -180,14 +192,6 @@ void	ft_operation_sti(t_process *proc)
 
 			// ft_printf("debug : %d, pid %d\n", proc->op_pc, proc->proc_id);
 		}
-		if ((parameters[0] == T_REG && (args[0] < 1 || 16 < args[0])) || \
-			(parameters[1] == T_REG && (args[1] < 1 || 16 < args[1])) || \
-			(parameters[2] == T_REG && (args[2] < 1 || 16 < args[2])))
-			return ;
-		// ft_printf("[%d][%d][%d]\n", args[0], args[1], args[2]);
-		args[1] = ft_get_argument_value(proc, args[1], parameters[1]);
-		args[2] = ft_get_argument_value(proc, args[2], parameters[2]);
-		// mem[args[1] + args[2]] =  args[0]
 		temp = (args[1] + args[2]);
 		
 		ft_any_player(proc, temp, str, 4);
