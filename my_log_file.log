@@ -65,18 +65,12 @@
 * Player 1, weighting 325 bytes, "Celebration Funebre v0.99pl42" ("Jour J") !
 * Player 2, weighting 22 bytes, "Batman" ("This city needs me") !
 It is now cycle 1
-this inst is read : [10][10]
-	update --> P:[-2] exec_at_cycle: 25, pc:   1
-this inst is read : [1][1]
-	update --> P:[-1] exec_at_cycle: 05, pc: 2049
 It is now cycle 2
 It is now cycle 3
 It is now cycle 4
 It is now cycle 5
 		P	1 |    ld
 It is now cycle 6
-this inst is read : [8][8]
-	update --> P:[-1] exec_at_cycle: 25, pc: 2056
 It is now cycle 7
 It is now cycle 8
 It is now cycle 9
@@ -97,21 +91,9 @@ It is now cycle 23
 It is now cycle 24
 It is now cycle 25
 		P	2 |   sti
-new num: 7
-new num: 1
 		P	1 |  zjmp
-		P	1 |  zjmp | before zjmp pc : 2056
-new num: 80
-arg : 80
-		P	1 |  zjmp | after zjmp pc : 2136
 It is now cycle 26
-this inst is read : [0][0]
-	update --> P:[-2] exec_at_cycle: 35, pc:   8
-this inst is read : [103][103]
-	update --> P:[-1] exec_at_cycle: 25, pc: 2137
 It is now cycle 27
-this inst is read : [0][0]
-	update --> P:[-1] exec_at_cycle: 36, pc: 2138
 It is now cycle 28
 It is now cycle 29
 It is now cycle 30
@@ -121,22 +103,13 @@ It is now cycle 33
 It is now cycle 34
 It is now cycle 35
 		P	2 |  live
-new num: 0
 It is now cycle 36
-this inst is read : [1][1]
-	update --> P:[-2] exec_at_cycle: 40, pc:  13
-		P	1 |  live
-new num: -4849663
 It is now cycle 37
-this inst is read : [10][10]
-	update --> P:[-1] exec_at_cycle: 61, pc: 2143
 It is now cycle 38
 It is now cycle 39
 It is now cycle 40
 		P	2 |    ld
 It is now cycle 41
-this inst is read : [8][8]
-	update --> P:[-2] exec_at_cycle: 60, pc:  20
 It is now cycle 42
 It is now cycle 43
 It is now cycle 44
@@ -146,6 +119,7 @@ It is now cycle 47
 It is now cycle 48
 It is now cycle 49
 It is now cycle 50
+		P	1 |   sti
 It is now cycle 51
 It is now cycle 52
 It is now cycle 53
@@ -157,4377 +131,1091 @@ It is now cycle 58
 It is now cycle 59
 It is now cycle 60
 		P	2 |  zjmp
-		P	2 |  zjmp | before zjmp pc : 20
-new num: 65517
-arg : 65517
-		P	2 |  zjmp | after zjmp pc : 513
 It is now cycle 61
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 514
-		P	1 |   sti
-new num: 65455
-new num: 15
 It is now cycle 62
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 515
-this inst is read : [10][10]
-	update --> P:[-1] exec_at_cycle: 86, pc: 2150
 It is now cycle 63
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 516
 It is now cycle 64
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 517
 It is now cycle 65
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 518
 It is now cycle 66
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 519
 It is now cycle 67
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 520
 It is now cycle 68
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 521
 It is now cycle 69
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 522
 It is now cycle 70
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 523
 It is now cycle 71
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 524
 It is now cycle 72
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 525
 It is now cycle 73
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 526
 It is now cycle 74
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 527
 It is now cycle 75
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 528
+		P	1 |   sti
 It is now cycle 76
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 529
 It is now cycle 77
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 530
 It is now cycle 78
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 531
 It is now cycle 79
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 532
 It is now cycle 80
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 533
 It is now cycle 81
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 534
 It is now cycle 82
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 535
 It is now cycle 83
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 536
 It is now cycle 84
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 537
 It is now cycle 85
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 538
+		P	2 |   sti
 It is now cycle 86
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 539
-		P	1 |   sti
-new num: 65448
-new num: 29
 It is now cycle 87
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 540
-this inst is read : [10][10]
-	update --> P:[-1] exec_at_cycle: 111, pc: 2157
 It is now cycle 88
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 541
 It is now cycle 89
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 542
 It is now cycle 90
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 543
 It is now cycle 91
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 544
 It is now cycle 92
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 545
 It is now cycle 93
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 546
 It is now cycle 94
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 547
 It is now cycle 95
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 548
+		P	2 |  live
 It is now cycle 96
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 549
 It is now cycle 97
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 550
 It is now cycle 98
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 551
 It is now cycle 99
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 552
 It is now cycle 100
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 553
+		P	2 |    ld
+		P	1 |   sti
 It is now cycle 101
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 554
 It is now cycle 102
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 555
 It is now cycle 103
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 556
 It is now cycle 104
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 557
 It is now cycle 105
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 558
 It is now cycle 106
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 559
 It is now cycle 107
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 560
 It is now cycle 108
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 561
 It is now cycle 109
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 562
 It is now cycle 110
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 563
 It is now cycle 111
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 564
-		P	1 |   sti
-new num: 65441
-new num: 43
 It is now cycle 112
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 565
-this inst is read : [10][10]
-	update --> P:[-1] exec_at_cycle: 136, pc: 2164
 It is now cycle 113
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 566
 It is now cycle 114
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 567
 It is now cycle 115
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 568
 It is now cycle 116
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 569
 It is now cycle 117
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 570
 It is now cycle 118
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 571
 It is now cycle 119
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 572
 It is now cycle 120
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 573
+		P	2 |  zjmp
 It is now cycle 121
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 574
 It is now cycle 122
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 575
 It is now cycle 123
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 576
 It is now cycle 124
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 577
 It is now cycle 125
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 578
+		P	1 |   sti
 It is now cycle 126
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 579
 It is now cycle 127
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 580
 It is now cycle 128
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 581
 It is now cycle 129
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 582
 It is now cycle 130
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 583
 It is now cycle 131
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 584
 It is now cycle 132
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 585
 It is now cycle 133
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 586
 It is now cycle 134
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 587
 It is now cycle 135
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 588
 It is now cycle 136
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 589
-		P	1 |   sti
-new num: 65434
-new num: 57
 It is now cycle 137
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 590
-this inst is read : [10][10]
-	update --> P:[-1] exec_at_cycle: 161, pc: 2171
 It is now cycle 138
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 591
 It is now cycle 139
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 592
 It is now cycle 140
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 593
 It is now cycle 141
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 594
 It is now cycle 142
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 595
 It is now cycle 143
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 596
 It is now cycle 144
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 597
 It is now cycle 145
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 598
+		P	2 |   sti
 It is now cycle 146
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 599
 It is now cycle 147
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 600
 It is now cycle 148
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 601
 It is now cycle 149
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 602
 It is now cycle 150
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 603
+		P	1 |   sti
 It is now cycle 151
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 604
 It is now cycle 152
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 605
 It is now cycle 153
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 606
 It is now cycle 154
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 607
 It is now cycle 155
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 608
+		P	2 |  live
 It is now cycle 156
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 609
 It is now cycle 157
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 610
 It is now cycle 158
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 611
 It is now cycle 159
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 612
 It is now cycle 160
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 613
+		P	2 |    ld
 It is now cycle 161
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 614
-		P	1 |   sti
-new num: 65427
-new num: 71
 It is now cycle 162
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 615
-this inst is read : [1][1]
-	update --> P:[-1] exec_at_cycle: 166, pc: 2178
 It is now cycle 163
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 616
 It is now cycle 164
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 617
 It is now cycle 165
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 618
 It is now cycle 166
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 619
-		P	1 |    ld
 It is now cycle 167
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 620
-this inst is read : [1][1]
-	update --> P:[-1] exec_at_cycle: 171, pc: 2185
 It is now cycle 168
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 621
 It is now cycle 169
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 622
 It is now cycle 170
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 623
 It is now cycle 171
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 624
-		P	1 |    ld
 It is now cycle 172
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 625
-this inst is read : [1][1]
-	update --> P:[-1] exec_at_cycle: 176, pc: 2192
 It is now cycle 173
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 626
 It is now cycle 174
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 627
 It is now cycle 175
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 628
-It is now cycle 176
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 629
-		P	1 |    ld
-It is now cycle 177
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 630
-this inst is read : [1][1]
-	update --> P:[-1] exec_at_cycle: 181, pc: 2199
-It is now cycle 178
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 631
-It is now cycle 179
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 632
-It is now cycle 180
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 633
-It is now cycle 181
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 634
-		P	1 |    ld
-It is now cycle 182
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 635
-this inst is read : [0][0]
-	update --> P:[-1] exec_at_cycle: 191, pc: 2206
-It is now cycle 183
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 636
-It is now cycle 184
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 637
-It is now cycle 185
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 638
-It is now cycle 186
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 639
-It is now cycle 187
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 640
-It is now cycle 188
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 641
-It is now cycle 189
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 642
-It is now cycle 190
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 643
-It is now cycle 191
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 644
-		P	1 |  live
-new num: 42
-It is now cycle 192
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 645
-this inst is read : [10][10]
-	update --> P:[-1] exec_at_cycle: 216, pc: 2211
-It is now cycle 193
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 646
-It is now cycle 194
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 647
-It is now cycle 195
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 648
-It is now cycle 196
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 649
-It is now cycle 197
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 650
-It is now cycle 198
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 651
-It is now cycle 199
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 652
-It is now cycle 200
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 653
-It is now cycle 201
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 654
-It is now cycle 202
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 655
-It is now cycle 203
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 656
-It is now cycle 204
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 657
-It is now cycle 205
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 658
-It is now cycle 206
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 659
-It is now cycle 207
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 660
-It is now cycle 208
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 661
-It is now cycle 209
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 662
-It is now cycle 210
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 663
-It is now cycle 211
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 664
-It is now cycle 212
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 665
-It is now cycle 213
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 666
-It is now cycle 214
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 667
-It is now cycle 215
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 668
-It is now cycle 216
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 669
 		P	1 |   sti
-new num: 65381
-new num: 1
+It is now cycle 176
+It is now cycle 177
+It is now cycle 178
+It is now cycle 179
+It is now cycle 180
+		P	2 |  zjmp
+		P	1 |    ld
+It is now cycle 181
+It is now cycle 182
+It is now cycle 183
+It is now cycle 184
+It is now cycle 185
+		P	1 |    ld
+It is now cycle 186
+It is now cycle 187
+It is now cycle 188
+It is now cycle 189
+It is now cycle 190
+		P	1 |    ld
+It is now cycle 191
+It is now cycle 192
+It is now cycle 193
+It is now cycle 194
+It is now cycle 195
+		P	1 |    ld
+It is now cycle 196
+It is now cycle 197
+It is now cycle 198
+It is now cycle 199
+It is now cycle 200
+It is now cycle 201
+It is now cycle 202
+It is now cycle 203
+It is now cycle 204
+It is now cycle 205
+		P	2 |   sti
+		P	1 |  live
+It is now cycle 206
+It is now cycle 207
+It is now cycle 208
+It is now cycle 209
+It is now cycle 210
+It is now cycle 211
+It is now cycle 212
+It is now cycle 213
+It is now cycle 214
+It is now cycle 215
+		P	2 |  live
+It is now cycle 216
 It is now cycle 217
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 670
-this inst is read : [3][3]
-	update --> P:[-1] exec_at_cycle: 226, pc: 2218
 It is now cycle 218
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 671
 It is now cycle 219
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 672
 It is now cycle 220
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 673
+		P	2 |    ld
 It is now cycle 221
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 674
 It is now cycle 222
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 675
 It is now cycle 223
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 676
 It is now cycle 224
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 677
 It is now cycle 225
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 678
 It is now cycle 226
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 679
-		P	1 |   add
 It is now cycle 227
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 680
-this inst is read : [4][4]
-	update --> P:[-1] exec_at_cycle: 236, pc: 2223
 It is now cycle 228
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 681
 It is now cycle 229
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 682
 It is now cycle 230
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 683
+		P	1 |   sti
 It is now cycle 231
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 684
 It is now cycle 232
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 685
 It is now cycle 233
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 686
 It is now cycle 234
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 687
 It is now cycle 235
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 688
 It is now cycle 236
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 689
-		P	1 |   sub
 It is now cycle 237
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 690
-this inst is read : [8][8]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2228
 It is now cycle 238
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 691
 It is now cycle 239
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 692
 It is now cycle 240
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 693
+		P	2 |  zjmp
+		P	1 |   add
 It is now cycle 241
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 694
 It is now cycle 242
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 695
 It is now cycle 243
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 696
 It is now cycle 244
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 697
 It is now cycle 245
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 698
 It is now cycle 246
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 699
 It is now cycle 247
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 700
 It is now cycle 248
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 701
 It is now cycle 249
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 702
 It is now cycle 250
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 703
+		P	1 |   sub
 It is now cycle 251
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 704
 It is now cycle 252
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 705
 It is now cycle 253
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 706
 It is now cycle 254
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 707
 It is now cycle 255
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 708
 It is now cycle 256
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 709
-		P	1 |  zjmp
-		P	1 |  zjmp | before zjmp pc : 2228
-new num: 65486
-arg : 65486
-		P	1 |  zjmp | after zjmp pc : 2690
 It is now cycle 257
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 710
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2691
 It is now cycle 258
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 711
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2692
 It is now cycle 259
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 712
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2693
 It is now cycle 260
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 713
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2694
 It is now cycle 261
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 714
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2695
 It is now cycle 262
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 715
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2696
 It is now cycle 263
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 716
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2697
 It is now cycle 264
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 717
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2698
 It is now cycle 265
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 718
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2699
+		P	2 |   sti
 It is now cycle 266
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 719
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2700
 It is now cycle 267
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 720
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2701
 It is now cycle 268
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 721
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2702
 It is now cycle 269
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 722
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2703
 It is now cycle 270
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 723
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2704
+		P	1 |  zjmp
 It is now cycle 271
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 724
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2705
 It is now cycle 272
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 725
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2706
 It is now cycle 273
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 726
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2707
 It is now cycle 274
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 727
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2708
 It is now cycle 275
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 728
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2709
+		P	2 |  live
+		P	1 |    ld
 It is now cycle 276
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 729
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2710
 It is now cycle 277
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 730
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2711
 It is now cycle 278
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 731
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2712
 It is now cycle 279
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 732
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2713
 It is now cycle 280
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 733
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2714
+		P	2 |    ld
+		P	1 |    ld
 It is now cycle 281
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 734
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2715
 It is now cycle 282
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 735
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2716
 It is now cycle 283
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 736
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2717
 It is now cycle 284
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 737
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2718
 It is now cycle 285
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 738
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2719
+		P	1 |    ld
 It is now cycle 286
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 739
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2720
 It is now cycle 287
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 740
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2721
 It is now cycle 288
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 741
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2722
 It is now cycle 289
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 742
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2723
 It is now cycle 290
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 743
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2724
+		P	1 |    ld
 It is now cycle 291
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 744
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2725
 It is now cycle 292
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 745
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2726
 It is now cycle 293
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 746
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2727
 It is now cycle 294
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 747
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2728
 It is now cycle 295
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 748
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2729
 It is now cycle 296
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 749
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2730
 It is now cycle 297
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 750
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2731
 It is now cycle 298
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 751
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2732
 It is now cycle 299
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 752
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2733
 It is now cycle 300
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 753
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2734
+		P	2 |  zjmp
+		P	1 |  live
 It is now cycle 301
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 754
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2735
 It is now cycle 302
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 755
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2736
 It is now cycle 303
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 756
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2737
 It is now cycle 304
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 757
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2738
 It is now cycle 305
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 758
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2739
 It is now cycle 306
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 759
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2740
 It is now cycle 307
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 760
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2741
 It is now cycle 308
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 761
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2742
 It is now cycle 309
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 762
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2743
 It is now cycle 310
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 763
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2744
 It is now cycle 311
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 764
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2745
 It is now cycle 312
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 765
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2746
 It is now cycle 313
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 766
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2747
 It is now cycle 314
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 767
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2748
 It is now cycle 315
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 768
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2749
 It is now cycle 316
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 769
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2750
 It is now cycle 317
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 770
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2751
 It is now cycle 318
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 771
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2752
 It is now cycle 319
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 772
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2753
 It is now cycle 320
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 773
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2754
 It is now cycle 321
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 774
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2755
 It is now cycle 322
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 775
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2756
 It is now cycle 323
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 776
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2757
 It is now cycle 324
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 777
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2758
 It is now cycle 325
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 778
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2759
+		P	2 |   sti
+		P	1 |   sti
 It is now cycle 326
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 779
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2760
 It is now cycle 327
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 780
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2761
 It is now cycle 328
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 781
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2762
 It is now cycle 329
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 782
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2763
 It is now cycle 330
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 783
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2764
 It is now cycle 331
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 784
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2765
 It is now cycle 332
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 785
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2766
 It is now cycle 333
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 786
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2767
 It is now cycle 334
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 787
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2768
 It is now cycle 335
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 788
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2769
+		P	2 |  live
+		P	1 |   add
 It is now cycle 336
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 789
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2770
 It is now cycle 337
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 790
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2771
 It is now cycle 338
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 791
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2772
 It is now cycle 339
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 792
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2773
 It is now cycle 340
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 793
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2774
+		P	2 |    ld
 It is now cycle 341
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 794
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2775
 It is now cycle 342
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 795
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2776
 It is now cycle 343
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 796
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2777
 It is now cycle 344
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 797
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2778
 It is now cycle 345
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 798
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2779
+		P	1 |   sub
 It is now cycle 346
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 799
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2780
 It is now cycle 347
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 800
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2781
 It is now cycle 348
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 801
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2782
 It is now cycle 349
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 802
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2783
 It is now cycle 350
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 803
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2784
 It is now cycle 351
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 804
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2785
 It is now cycle 352
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 805
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2786
 It is now cycle 353
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 806
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2787
 It is now cycle 354
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 807
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2788
 It is now cycle 355
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 808
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2789
 It is now cycle 356
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 809
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2790
 It is now cycle 357
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 810
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2791
 It is now cycle 358
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 811
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2792
 It is now cycle 359
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 812
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2793
 It is now cycle 360
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 813
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2794
+		P	2 |  zjmp
 It is now cycle 361
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 814
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2795
 It is now cycle 362
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 815
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2796
 It is now cycle 363
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 816
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2797
 It is now cycle 364
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 817
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2798
 It is now cycle 365
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 818
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2799
+		P	1 |  zjmp
 It is now cycle 366
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 819
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2800
 It is now cycle 367
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 820
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2801
 It is now cycle 368
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 821
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2802
 It is now cycle 369
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 822
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2803
 It is now cycle 370
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 823
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2804
+		P	1 |    ld
 It is now cycle 371
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 824
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2805
 It is now cycle 372
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 825
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2806
 It is now cycle 373
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 826
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2807
 It is now cycle 374
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 827
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2808
 It is now cycle 375
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 828
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2809
+		P	1 |    ld
 It is now cycle 376
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 829
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2810
 It is now cycle 377
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 830
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2811
 It is now cycle 378
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 831
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2812
 It is now cycle 379
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 832
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2813
 It is now cycle 380
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 833
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2814
+		P	1 |    ld
 It is now cycle 381
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 834
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2815
 It is now cycle 382
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 835
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2816
 It is now cycle 383
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 836
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2817
 It is now cycle 384
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 837
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2818
 It is now cycle 385
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 838
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2819
+		P	2 |   sti
+		P	1 |    ld
 It is now cycle 386
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 839
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2820
 It is now cycle 387
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 840
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2821
 It is now cycle 388
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 841
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2822
 It is now cycle 389
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 842
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2823
 It is now cycle 390
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 843
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2824
 It is now cycle 391
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 844
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2825
 It is now cycle 392
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 845
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2826
 It is now cycle 393
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 846
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2827
 It is now cycle 394
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 847
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2828
 It is now cycle 395
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 848
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2829
+		P	2 |  live
+		P	1 |  live
 It is now cycle 396
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 849
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2830
 It is now cycle 397
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 850
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2831
 It is now cycle 398
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 851
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2832
 It is now cycle 399
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 852
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2833
 It is now cycle 400
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 853
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2834
+		P	2 |    ld
 It is now cycle 401
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 854
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2835
 It is now cycle 402
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 855
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2836
 It is now cycle 403
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 856
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2837
 It is now cycle 404
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 857
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2838
 It is now cycle 405
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 858
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2839
 It is now cycle 406
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 859
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2840
 It is now cycle 407
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 860
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2841
 It is now cycle 408
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 861
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2842
 It is now cycle 409
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 862
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2843
 It is now cycle 410
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 863
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2844
 It is now cycle 411
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 864
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2845
 It is now cycle 412
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 865
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2846
 It is now cycle 413
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 866
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2847
 It is now cycle 414
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 867
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2848
 It is now cycle 415
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 868
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2849
 It is now cycle 416
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 869
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2850
 It is now cycle 417
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 870
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2851
 It is now cycle 418
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 871
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2852
 It is now cycle 419
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 872
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2853
 It is now cycle 420
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 873
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2854
+		P	2 |  zjmp
+		P	1 |   sti
 It is now cycle 421
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 874
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2855
 It is now cycle 422
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 875
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2856
 It is now cycle 423
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 876
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2857
 It is now cycle 424
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 877
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2858
 It is now cycle 425
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 878
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2859
 It is now cycle 426
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 879
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2860
 It is now cycle 427
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 880
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2861
 It is now cycle 428
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 881
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2862
 It is now cycle 429
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 882
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2863
 It is now cycle 430
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 883
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2864
+		P	1 |   add
 It is now cycle 431
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 884
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2865
 It is now cycle 432
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 885
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2866
 It is now cycle 433
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 886
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2867
 It is now cycle 434
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 887
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2868
 It is now cycle 435
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 888
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2869
 It is now cycle 436
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 889
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2870
 It is now cycle 437
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 890
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2871
 It is now cycle 438
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 891
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2872
 It is now cycle 439
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 892
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2873
 It is now cycle 440
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 893
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2874
+		P	1 |   sub
 It is now cycle 441
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 894
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2875
 It is now cycle 442
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 895
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2876
 It is now cycle 443
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 896
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2877
 It is now cycle 444
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 897
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2878
 It is now cycle 445
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 898
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2879
+		P	2 |   sti
 It is now cycle 446
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 899
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2880
 It is now cycle 447
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 900
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2881
 It is now cycle 448
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 901
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2882
 It is now cycle 449
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 902
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2883
 It is now cycle 450
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 903
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2884
 It is now cycle 451
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 904
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2885
 It is now cycle 452
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 905
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2886
 It is now cycle 453
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 906
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2887
 It is now cycle 454
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 907
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2888
 It is now cycle 455
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 908
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2889
+		P	2 |  live
 It is now cycle 456
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 909
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2890
 It is now cycle 457
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 910
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2891
 It is now cycle 458
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 911
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2892
 It is now cycle 459
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 912
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2893
 It is now cycle 460
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 913
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2894
+		P	2 |    ld
+		P	1 |  zjmp
 It is now cycle 461
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 914
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2895
 It is now cycle 462
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 915
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2896
 It is now cycle 463
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 916
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2897
 It is now cycle 464
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 917
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2898
 It is now cycle 465
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 918
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2899
+		P	1 |    ld
 It is now cycle 466
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 919
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2900
 It is now cycle 467
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 920
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2901
 It is now cycle 468
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 921
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2902
 It is now cycle 469
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 922
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2903
 It is now cycle 470
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 923
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2904
+		P	1 |    ld
 It is now cycle 471
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 924
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2905
 It is now cycle 472
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 925
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2906
 It is now cycle 473
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 926
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2907
 It is now cycle 474
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 927
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2908
 It is now cycle 475
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 928
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2909
+		P	1 |    ld
 It is now cycle 476
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 929
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2910
 It is now cycle 477
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 930
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2911
 It is now cycle 478
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 931
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2912
 It is now cycle 479
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 932
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2913
 It is now cycle 480
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 933
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2914
+		P	2 |  zjmp
+		P	1 |    ld
 It is now cycle 481
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 934
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2915
 It is now cycle 482
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 935
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2916
 It is now cycle 483
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 936
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2917
 It is now cycle 484
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 937
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2918
 It is now cycle 485
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 938
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2919
 It is now cycle 486
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 939
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2920
 It is now cycle 487
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 940
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2921
 It is now cycle 488
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 941
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2922
 It is now cycle 489
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 942
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2923
 It is now cycle 490
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 943
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2924
+		P	1 |  live
 It is now cycle 491
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 944
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2925
 It is now cycle 492
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 945
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2926
 It is now cycle 493
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 946
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2927
 It is now cycle 494
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 947
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2928
 It is now cycle 495
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 948
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2929
 It is now cycle 496
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 949
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2930
 It is now cycle 497
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 950
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2931
 It is now cycle 498
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 951
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2932
 It is now cycle 499
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 952
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2933
 It is now cycle 500
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 953
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2934
 It is now cycle 501
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 954
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2935
 It is now cycle 502
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 955
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2936
 It is now cycle 503
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 956
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2937
 It is now cycle 504
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 957
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2938
 It is now cycle 505
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 958
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2939
+		P	2 |   sti
 It is now cycle 506
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 959
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2940
 It is now cycle 507
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 960
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2941
 It is now cycle 508
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 961
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2942
 It is now cycle 509
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 962
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2943
 It is now cycle 510
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 963
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2944
 It is now cycle 511
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 964
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2945
 It is now cycle 512
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 965
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2946
 It is now cycle 513
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 966
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2947
 It is now cycle 514
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 967
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2948
 It is now cycle 515
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 968
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2949
+		P	2 |  live
+		P	1 |   sti
 It is now cycle 516
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 969
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2950
 It is now cycle 517
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 970
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2951
 It is now cycle 518
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 971
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2952
 It is now cycle 519
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 972
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2953
 It is now cycle 520
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 973
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2954
+		P	2 |    ld
 It is now cycle 521
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 974
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2955
 It is now cycle 522
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 975
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2956
 It is now cycle 523
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 976
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2957
 It is now cycle 524
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 977
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2958
 It is now cycle 525
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 978
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2959
+		P	1 |   add
 It is now cycle 526
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 979
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2960
 It is now cycle 527
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 980
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2961
 It is now cycle 528
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 981
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2962
 It is now cycle 529
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 982
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2963
 It is now cycle 530
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 983
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2964
 It is now cycle 531
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 984
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2965
 It is now cycle 532
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 985
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2966
 It is now cycle 533
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 986
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2967
 It is now cycle 534
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 987
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2968
 It is now cycle 535
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 988
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2969
+		P	1 |   sub
 It is now cycle 536
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 989
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2970
 It is now cycle 537
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 990
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2971
 It is now cycle 538
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 991
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2972
 It is now cycle 539
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 992
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2973
 It is now cycle 540
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 993
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2974
+		P	2 |  zjmp
 It is now cycle 541
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 994
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2975
 It is now cycle 542
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 995
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2976
 It is now cycle 543
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 996
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2977
 It is now cycle 544
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 997
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2978
 It is now cycle 545
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 998
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2979
 It is now cycle 546
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 999
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2980
 It is now cycle 547
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1000
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2981
 It is now cycle 548
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1001
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2982
 It is now cycle 549
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1002
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2983
 It is now cycle 550
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1003
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2984
 It is now cycle 551
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1004
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2985
 It is now cycle 552
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1005
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2986
 It is now cycle 553
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1006
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2987
 It is now cycle 554
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1007
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2988
 It is now cycle 555
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1008
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2989
+		P	1 |  zjmp
 It is now cycle 556
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1009
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2990
 It is now cycle 557
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1010
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2991
 It is now cycle 558
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1011
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2992
 It is now cycle 559
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1012
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2993
 It is now cycle 560
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1013
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2994
+		P	1 |    ld
 It is now cycle 561
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1014
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2995
 It is now cycle 562
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1015
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2996
 It is now cycle 563
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1016
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2997
 It is now cycle 564
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1017
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2998
 It is now cycle 565
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1018
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 2999
+		P	2 |   sti
+		P	1 |    ld
 It is now cycle 566
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1019
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3000
 It is now cycle 567
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1020
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3001
 It is now cycle 568
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1021
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3002
 It is now cycle 569
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1022
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3003
 It is now cycle 570
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1023
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3004
+		P	1 |    ld
 It is now cycle 571
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1024
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3005
 It is now cycle 572
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1025
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3006
 It is now cycle 573
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1026
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3007
 It is now cycle 574
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1027
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3008
 It is now cycle 575
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1028
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3009
+		P	2 |  live
+		P	1 |    ld
 It is now cycle 576
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1029
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3010
 It is now cycle 577
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1030
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3011
 It is now cycle 578
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1031
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3012
 It is now cycle 579
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1032
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3013
 It is now cycle 580
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1033
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3014
+		P	2 |    ld
 It is now cycle 581
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1034
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3015
 It is now cycle 582
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1035
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3016
 It is now cycle 583
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1036
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3017
 It is now cycle 584
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1037
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3018
 It is now cycle 585
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1038
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3019
+		P	1 |  live
 It is now cycle 586
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1039
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3020
 It is now cycle 587
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1040
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3021
 It is now cycle 588
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1041
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3022
 It is now cycle 589
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1042
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3023
 It is now cycle 590
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1043
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3024
 It is now cycle 591
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1044
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3025
 It is now cycle 592
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1045
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3026
 It is now cycle 593
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1046
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3027
 It is now cycle 594
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1047
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3028
 It is now cycle 595
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1048
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3029
 It is now cycle 596
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1049
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3030
 It is now cycle 597
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1050
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3031
 It is now cycle 598
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1051
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3032
 It is now cycle 599
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1052
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3033
 It is now cycle 600
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1053
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3034
+		P	2 |  zjmp
 It is now cycle 601
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1054
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3035
 It is now cycle 602
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1055
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3036
 It is now cycle 603
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1056
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3037
 It is now cycle 604
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1057
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3038
 It is now cycle 605
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1058
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3039
 It is now cycle 606
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1059
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3040
 It is now cycle 607
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1060
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3041
 It is now cycle 608
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1061
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3042
 It is now cycle 609
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1062
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3043
 It is now cycle 610
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1063
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3044
+		P	1 |   sti
 It is now cycle 611
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1064
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3045
 It is now cycle 612
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1065
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3046
 It is now cycle 613
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1066
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3047
 It is now cycle 614
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1067
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3048
 It is now cycle 615
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1068
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3049
 It is now cycle 616
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1069
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3050
 It is now cycle 617
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1070
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3051
 It is now cycle 618
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1071
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3052
 It is now cycle 619
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1072
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3053
 It is now cycle 620
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1073
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3054
+		P	1 |   add
 It is now cycle 621
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1074
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3055
 It is now cycle 622
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1075
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3056
 It is now cycle 623
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1076
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3057
 It is now cycle 624
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1077
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3058
 It is now cycle 625
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1078
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3059
+		P	2 |   sti
 It is now cycle 626
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1079
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3060
 It is now cycle 627
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1080
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3061
 It is now cycle 628
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1081
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3062
 It is now cycle 629
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1082
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3063
 It is now cycle 630
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1083
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3064
+		P	1 |   sub
 It is now cycle 631
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1084
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3065
 It is now cycle 632
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1085
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3066
 It is now cycle 633
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1086
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3067
 It is now cycle 634
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1087
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3068
 It is now cycle 635
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1088
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3069
+		P	2 |  live
 It is now cycle 636
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1089
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3070
 It is now cycle 637
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1090
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3071
 It is now cycle 638
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1091
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3072
 It is now cycle 639
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1092
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3073
 It is now cycle 640
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1093
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3074
+		P	2 |    ld
 It is now cycle 641
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1094
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3075
 It is now cycle 642
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1095
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3076
 It is now cycle 643
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1096
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3077
 It is now cycle 644
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1097
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3078
 It is now cycle 645
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1098
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3079
 It is now cycle 646
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1099
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3080
 It is now cycle 647
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1100
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3081
 It is now cycle 648
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1101
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3082
 It is now cycle 649
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1102
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3083
 It is now cycle 650
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1103
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3084
+		P	1 |  zjmp
 It is now cycle 651
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1104
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3085
 It is now cycle 652
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1105
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3086
 It is now cycle 653
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1106
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3087
 It is now cycle 654
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1107
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3088
 It is now cycle 655
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1108
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3089
+		P	1 |    ld
 It is now cycle 656
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1109
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3090
 It is now cycle 657
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1110
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3091
 It is now cycle 658
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1111
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3092
 It is now cycle 659
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1112
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3093
 It is now cycle 660
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1113
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3094
+		P	2 |  zjmp
+		P	1 |    ld
 It is now cycle 661
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1114
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3095
 It is now cycle 662
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1115
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3096
 It is now cycle 663
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1116
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3097
 It is now cycle 664
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1117
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3098
 It is now cycle 665
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1118
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3099
+		P	1 |    ld
 It is now cycle 666
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1119
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3100
 It is now cycle 667
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1120
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3101
 It is now cycle 668
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1121
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3102
 It is now cycle 669
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1122
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3103
 It is now cycle 670
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1123
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3104
+		P	1 |    ld
 It is now cycle 671
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1124
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3105
 It is now cycle 672
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1125
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3106
 It is now cycle 673
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1126
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3107
 It is now cycle 674
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1127
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3108
 It is now cycle 675
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1128
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3109
 It is now cycle 676
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1129
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3110
 It is now cycle 677
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1130
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3111
 It is now cycle 678
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1131
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3112
 It is now cycle 679
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1132
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3113
 It is now cycle 680
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1133
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3114
+		P	1 |  live
 It is now cycle 681
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1134
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3115
 It is now cycle 682
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1135
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3116
 It is now cycle 683
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1136
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3117
 It is now cycle 684
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1137
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3118
 It is now cycle 685
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1138
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3119
+		P	2 |   sti
 It is now cycle 686
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1139
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3120
 It is now cycle 687
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1140
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3121
 It is now cycle 688
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1141
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3122
 It is now cycle 689
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1142
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3123
 It is now cycle 690
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1143
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3124
 It is now cycle 691
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1144
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3125
 It is now cycle 692
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1145
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3126
 It is now cycle 693
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1146
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3127
 It is now cycle 694
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1147
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3128
 It is now cycle 695
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1148
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3129
+		P	2 |  live
 It is now cycle 696
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1149
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3130
 It is now cycle 697
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1150
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3131
 It is now cycle 698
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1151
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3132
 It is now cycle 699
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1152
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3133
 It is now cycle 700
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1153
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3134
+		P	2 |    ld
 It is now cycle 701
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1154
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3135
 It is now cycle 702
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1155
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3136
 It is now cycle 703
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1156
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3137
 It is now cycle 704
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1157
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3138
 It is now cycle 705
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1158
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3139
+		P	1 |   sti
 It is now cycle 706
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1159
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3140
 It is now cycle 707
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1160
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3141
 It is now cycle 708
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1161
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3142
 It is now cycle 709
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1162
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3143
 It is now cycle 710
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1163
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3144
 It is now cycle 711
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1164
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3145
 It is now cycle 712
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1165
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3146
 It is now cycle 713
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1166
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3147
 It is now cycle 714
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1167
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3148
 It is now cycle 715
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1168
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3149
+		P	1 |   add
 It is now cycle 716
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1169
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3150
 It is now cycle 717
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1170
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3151
 It is now cycle 718
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1171
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3152
 It is now cycle 719
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1172
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3153
 It is now cycle 720
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1173
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3154
+		P	2 |  zjmp
 It is now cycle 721
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1174
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3155
 It is now cycle 722
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1175
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3156
 It is now cycle 723
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1176
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3157
 It is now cycle 724
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1177
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3158
 It is now cycle 725
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1178
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3159
+		P	1 |   sub
 It is now cycle 726
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1179
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3160
 It is now cycle 727
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1180
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3161
 It is now cycle 728
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1181
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3162
 It is now cycle 729
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1182
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3163
 It is now cycle 730
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1183
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3164
 It is now cycle 731
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1184
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3165
 It is now cycle 732
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1185
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3166
 It is now cycle 733
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1186
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3167
 It is now cycle 734
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1187
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3168
 It is now cycle 735
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1188
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3169
 It is now cycle 736
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1189
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3170
 It is now cycle 737
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1190
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3171
 It is now cycle 738
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1191
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3172
 It is now cycle 739
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1192
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3173
 It is now cycle 740
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1193
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3174
 It is now cycle 741
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1194
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3175
 It is now cycle 742
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1195
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3176
 It is now cycle 743
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1196
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3177
 It is now cycle 744
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1197
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3178
 It is now cycle 745
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1198
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3179
+		P	2 |   sti
+		P	1 |  zjmp
 It is now cycle 746
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1199
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3180
 It is now cycle 747
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1200
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3181
 It is now cycle 748
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1201
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3182
 It is now cycle 749
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1202
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3183
 It is now cycle 750
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1203
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3184
+		P	1 |    ld
 It is now cycle 751
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1204
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3185
 It is now cycle 752
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1205
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3186
 It is now cycle 753
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1206
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3187
 It is now cycle 754
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1207
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3188
 It is now cycle 755
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1208
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3189
+		P	2 |  live
+		P	1 |    ld
 It is now cycle 756
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1209
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3190
 It is now cycle 757
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1210
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3191
 It is now cycle 758
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1211
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3192
 It is now cycle 759
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1212
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3193
 It is now cycle 760
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1213
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3194
+		P	2 |    ld
+		P	1 |    ld
 It is now cycle 761
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1214
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3195
 It is now cycle 762
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1215
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3196
 It is now cycle 763
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1216
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3197
 It is now cycle 764
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1217
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3198
 It is now cycle 765
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1218
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3199
+		P	1 |    ld
 It is now cycle 766
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1219
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3200
 It is now cycle 767
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1220
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3201
 It is now cycle 768
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1221
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3202
 It is now cycle 769
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1222
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3203
 It is now cycle 770
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1223
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3204
 It is now cycle 771
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1224
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3205
 It is now cycle 772
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1225
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3206
 It is now cycle 773
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1226
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3207
 It is now cycle 774
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1227
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3208
 It is now cycle 775
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1228
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3209
+		P	1 |  live
 It is now cycle 776
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1229
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3210
 It is now cycle 777
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1230
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3211
 It is now cycle 778
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1231
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3212
 It is now cycle 779
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1232
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3213
 It is now cycle 780
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1233
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3214
+		P	2 |  zjmp
 It is now cycle 781
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1234
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3215
 It is now cycle 782
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1235
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3216
 It is now cycle 783
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1236
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3217
 It is now cycle 784
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1237
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3218
 It is now cycle 785
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1238
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3219
 It is now cycle 786
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1239
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3220
 It is now cycle 787
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1240
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3221
 It is now cycle 788
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1241
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3222
 It is now cycle 789
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1242
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3223
 It is now cycle 790
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1243
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3224
 It is now cycle 791
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1244
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3225
 It is now cycle 792
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1245
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3226
 It is now cycle 793
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1246
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3227
 It is now cycle 794
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1247
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3228
 It is now cycle 795
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1248
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3229
 It is now cycle 796
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1249
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3230
 It is now cycle 797
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1250
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3231
 It is now cycle 798
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1251
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3232
 It is now cycle 799
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1252
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3233
 It is now cycle 800
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1253
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3234
+		P	1 |   sti
 It is now cycle 801
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1254
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3235
 It is now cycle 802
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1255
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3236
 It is now cycle 803
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1256
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3237
 It is now cycle 804
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1257
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3238
 It is now cycle 805
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1258
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3239
+		P	2 |   sti
 It is now cycle 806
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1259
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3240
 It is now cycle 807
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1260
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3241
 It is now cycle 808
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1261
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3242
 It is now cycle 809
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1262
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3243
 It is now cycle 810
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1263
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3244
+		P	1 |   add
 It is now cycle 811
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1264
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3245
 It is now cycle 812
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1265
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3246
 It is now cycle 813
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1266
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3247
 It is now cycle 814
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1267
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3248
 It is now cycle 815
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1268
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3249
+		P	2 |  live
 It is now cycle 816
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1269
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3250
 It is now cycle 817
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1270
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3251
 It is now cycle 818
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1271
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3252
 It is now cycle 819
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1272
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3253
 It is now cycle 820
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1273
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3254
+		P	2 |    ld
+		P	1 |   sub
 It is now cycle 821
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1274
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3255
 It is now cycle 822
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1275
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3256
 It is now cycle 823
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1276
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3257
 It is now cycle 824
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1277
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3258
 It is now cycle 825
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1278
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3259
 It is now cycle 826
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1279
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3260
 It is now cycle 827
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1280
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3261
 It is now cycle 828
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1281
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3262
 It is now cycle 829
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1282
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3263
 It is now cycle 830
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1283
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3264
 It is now cycle 831
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1284
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3265
 It is now cycle 832
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1285
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3266
 It is now cycle 833
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1286
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3267
 It is now cycle 834
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1287
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3268
 It is now cycle 835
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1288
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3269
 It is now cycle 836
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1289
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3270
 It is now cycle 837
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1290
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3271
 It is now cycle 838
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1291
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3272
 It is now cycle 839
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1292
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3273
 It is now cycle 840
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1293
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3274
+		P	2 |  zjmp
+		P	1 |  zjmp
 It is now cycle 841
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1294
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3275
 It is now cycle 842
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1295
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3276
 It is now cycle 843
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1296
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3277
 It is now cycle 844
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1297
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3278
 It is now cycle 845
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1298
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3279
+		P	1 |    ld
 It is now cycle 846
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1299
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3280
 It is now cycle 847
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1300
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3281
 It is now cycle 848
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1301
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3282
 It is now cycle 849
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1302
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3283
 It is now cycle 850
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1303
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3284
+		P	1 |    ld
 It is now cycle 851
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1304
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3285
 It is now cycle 852
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1305
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3286
 It is now cycle 853
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1306
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3287
 It is now cycle 854
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1307
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3288
 It is now cycle 855
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1308
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3289
+		P	1 |    ld
 It is now cycle 856
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1309
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3290
 It is now cycle 857
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1310
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3291
 It is now cycle 858
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1311
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3292
 It is now cycle 859
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1312
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3293
 It is now cycle 860
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1313
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3294
+		P	1 |    ld
 It is now cycle 861
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1314
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3295
 It is now cycle 862
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1315
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3296
 It is now cycle 863
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1316
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3297
 It is now cycle 864
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1317
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3298
 It is now cycle 865
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1318
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3299
+		P	2 |   sti
 It is now cycle 866
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1319
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3300
 It is now cycle 867
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1320
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3301
 It is now cycle 868
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1321
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3302
 It is now cycle 869
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1322
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3303
 It is now cycle 870
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1323
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3304
+		P	1 |  live
 It is now cycle 871
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1324
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3305
 It is now cycle 872
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1325
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3306
 It is now cycle 873
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1326
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3307
 It is now cycle 874
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1327
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3308
 It is now cycle 875
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1328
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3309
+		P	2 |  live
 It is now cycle 876
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1329
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3310
 It is now cycle 877
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1330
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3311
 It is now cycle 878
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1331
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3312
 It is now cycle 879
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1332
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3313
 It is now cycle 880
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1333
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3314
+		P	2 |    ld
 It is now cycle 881
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1334
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3315
 It is now cycle 882
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1335
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3316
 It is now cycle 883
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1336
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3317
 It is now cycle 884
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1337
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3318
 It is now cycle 885
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1338
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3319
 It is now cycle 886
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1339
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3320
 It is now cycle 887
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1340
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3321
 It is now cycle 888
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1341
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3322
 It is now cycle 889
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1342
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3323
 It is now cycle 890
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1343
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3324
 It is now cycle 891
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1344
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3325
 It is now cycle 892
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1345
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3326
 It is now cycle 893
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1346
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3327
 It is now cycle 894
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1347
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3328
 It is now cycle 895
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1348
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3329
+		P	1 |   sti
 It is now cycle 896
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1349
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3330
 It is now cycle 897
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1350
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3331
 It is now cycle 898
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1351
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3332
 It is now cycle 899
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1352
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3333
 It is now cycle 900
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1353
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3334
+		P	2 |  zjmp
 It is now cycle 901
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1354
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3335
 It is now cycle 902
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1355
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3336
 It is now cycle 903
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1356
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3337
 It is now cycle 904
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1357
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3338
 It is now cycle 905
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1358
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3339
+		P	1 |   add
 It is now cycle 906
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1359
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3340
 It is now cycle 907
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1360
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3341
 It is now cycle 908
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1361
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3342
 It is now cycle 909
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1362
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3343
 It is now cycle 910
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1363
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3344
 It is now cycle 911
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1364
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3345
 It is now cycle 912
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1365
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3346
 It is now cycle 913
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1366
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3347
 It is now cycle 914
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1367
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3348
 It is now cycle 915
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1368
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3349
+		P	1 |   sub
 It is now cycle 916
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1369
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3350
 It is now cycle 917
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1370
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3351
 It is now cycle 918
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1371
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3352
 It is now cycle 919
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1372
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3353
 It is now cycle 920
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1373
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3354
 It is now cycle 921
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1374
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3355
 It is now cycle 922
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1375
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3356
 It is now cycle 923
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1376
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3357
 It is now cycle 924
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1377
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3358
 It is now cycle 925
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1378
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3359
+		P	2 |   sti
 It is now cycle 926
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1379
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3360
 It is now cycle 927
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1380
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3361
 It is now cycle 928
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1381
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3362
 It is now cycle 929
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1382
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3363
 It is now cycle 930
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1383
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3364
 It is now cycle 931
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1384
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3365
 It is now cycle 932
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1385
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3366
 It is now cycle 933
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1386
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3367
 It is now cycle 934
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1387
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3368
 It is now cycle 935
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1388
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3369
+		P	2 |  live
+		P	1 |  zjmp
 It is now cycle 936
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1389
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3370
 It is now cycle 937
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1390
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3371
 It is now cycle 938
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1391
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3372
 It is now cycle 939
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1392
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3373
 It is now cycle 940
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1393
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3374
+		P	2 |    ld
+		P	1 |    ld
 It is now cycle 941
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1394
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3375
 It is now cycle 942
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1395
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3376
 It is now cycle 943
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1396
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3377
 It is now cycle 944
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1397
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3378
 It is now cycle 945
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1398
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3379
+		P	1 |    ld
 It is now cycle 946
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1399
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3380
 It is now cycle 947
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1400
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3381
 It is now cycle 948
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1401
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3382
 It is now cycle 949
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1402
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3383
 It is now cycle 950
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1403
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3384
+		P	1 |    ld
 It is now cycle 951
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1404
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3385
 It is now cycle 952
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1405
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3386
 It is now cycle 953
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1406
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3387
 It is now cycle 954
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1407
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3388
 It is now cycle 955
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1408
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3389
+		P	1 |    ld
 It is now cycle 956
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1409
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3390
 It is now cycle 957
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1410
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3391
 It is now cycle 958
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1411
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3392
 It is now cycle 959
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1412
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3393
 It is now cycle 960
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1413
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3394
+		P	2 |  zjmp
 It is now cycle 961
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1414
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3395
 It is now cycle 962
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1415
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3396
 It is now cycle 963
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1416
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3397
 It is now cycle 964
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1417
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3398
 It is now cycle 965
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1418
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3399
+		P	1 |  live
 It is now cycle 966
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1419
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3400
 It is now cycle 967
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1420
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3401
 It is now cycle 968
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1421
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3402
 It is now cycle 969
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1422
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3403
 It is now cycle 970
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1423
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3404
 It is now cycle 971
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1424
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3405
 It is now cycle 972
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1425
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3406
 It is now cycle 973
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1426
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3407
 It is now cycle 974
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1427
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3408
 It is now cycle 975
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1428
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3409
 It is now cycle 976
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1429
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3410
 It is now cycle 977
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1430
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3411
 It is now cycle 978
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1431
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3412
 It is now cycle 979
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1432
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3413
 It is now cycle 980
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1433
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3414
 It is now cycle 981
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1434
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3415
 It is now cycle 982
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1435
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3416
 It is now cycle 983
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1436
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3417
 It is now cycle 984
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1437
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3418
 It is now cycle 985
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1438
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3419
+		P	2 |   sti
 It is now cycle 986
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1439
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3420
 It is now cycle 987
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1440
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3421
 It is now cycle 988
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1441
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3422
 It is now cycle 989
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1442
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3423
 It is now cycle 990
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1443
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3424
+		P	1 |   sti
 It is now cycle 991
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1444
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3425
 It is now cycle 992
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1445
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3426
 It is now cycle 993
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1446
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3427
 It is now cycle 994
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1447
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3428
 It is now cycle 995
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1448
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3429
+		P	2 |  live
 It is now cycle 996
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1449
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3430
 It is now cycle 997
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1450
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3431
 It is now cycle 998
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1451
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3432
 It is now cycle 999
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1452
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3433
 It is now cycle 1000
-this inst is read : [255][255]
-	update --> P:[-2] exec_at_cycle: 60, pc: 1453
-this inst is read : [255][255]
-	update --> P:[-1] exec_at_cycle: 256, pc: 3434
+		P	2 |    ld
+		P	1 |   add
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-old pc == 2056+++++++++
-new pc == 2136old pc == 20+++++++++
-new pc == 513old pc == 2228+++++++++
-new pc == 2690

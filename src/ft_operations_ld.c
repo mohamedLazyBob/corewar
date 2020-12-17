@@ -31,7 +31,9 @@ void	ft_operation_ld(t_process *proc)
 	else
 		proc->regestries[proc->arena[0][(proc->pc + 2) % IDX_MOD]] = temp + \
 						(ft_reverse_endianness(proc->arena[0] + proc->pc, 2) % IDX_MOD);
-	proc->carry = (proc->regestries[proc->arena[0][proc->pc]] == 0) ? 1 : 0;
+	// ft_printf("-----------------\n");
+	// ft_printf("in ld --> arg 1 : %d\n", proc->regestries[proc->arena[0][proc->pc + ft_size(parameters[0], 4)]]);
+	proc->carry = (proc->regestries[proc->arena[0][proc->pc + ft_size(parameters[0], 4)]] == 0) ? 1 : 0;
 /**/
 	proc->pc = (proc->pc + \
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;

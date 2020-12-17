@@ -94,7 +94,7 @@ void			ft_get_args_type(t_process *process, \
 
 int				ft_parse_args(t_process *process, unsigned char par)
 {
-	unsigned int	num;
+	int	num;
 	int				dir_size;
 
 	num = 0;
@@ -113,9 +113,10 @@ int				ft_parse_args(t_process *process, unsigned char par)
 		ft_memcpy((char*)&(num) + 4 - dir_size, process->arena[0] + process->pc, dir_size);
 		// ft_printf("num : %d, pc value : %d, pc : %d\n", num, process->arena[0][process->pc], process->pc);
 		// ft_printf("old num: %d\n", num);
-		// ft_printf("%d, %d, %d, %d\n",   ((char*)&num)[0], ((char*)&num)[1], ((char*)&num)[2], ((char*)&num)[3]);
+		// ft_printf("%x, %x, %x, %x\n",   ((char*)&num)[0], ((char*)&num)[1], ((char*)&num)[2], ((char*)&num)[3]);
 		num = ft_reverse_endianness((unsigned char*)&num, 4);
-		ft_printf("new num: %d\n", num);
+		// ft_printf("%x, %x, %x, %x\n",   ((char*)&num)[0], ((char*)&num)[1], ((char*)&num)[2], ((char*)&num)[3]);
+		// ft_printf("new num: %d\n", num);
 		// exit(0);
 		process->pc = (process->pc + dir_size) % MEM_SIZE;
 	}
