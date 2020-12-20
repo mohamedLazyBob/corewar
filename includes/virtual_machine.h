@@ -262,4 +262,10 @@ void    		ft_chek(t_process *proc, int *cycle);
 
 void			ft_play_battle(t_process **procs, t_input_data *bloc);
 
+/*
+*******************************************************************************
+** mz_mode_verbos.c
+*/
+void	mz_print_op(t_process *proc, char types[3], unsigned int values[3]);
+
 #endif

@@ -195,6 +195,10 @@ void	ft_operation_sti(t_process *proc)
 		args[1] = ft_get_argument_value(proc, args[1], parameters[1]);
 		args[2] = ft_get_argument_value(proc, args[2], parameters[2]);
 		// mem[args[1] + args[2]] =  args[0]
+		#if 0
+		// we can use this to print instead of the bellow function.
+		mz_print_op(proc, parameters, args);
+		#endif
 		if (g_input_bloc->flags[VERBOS_1] == 4 || g_input_bloc->flags[VERBOS_2] == 4)
 		{
 			ft_printf("P\t%d | sti%s%d%s%d%s%d\n", proc->proc_id, \
