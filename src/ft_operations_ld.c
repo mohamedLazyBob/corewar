@@ -96,6 +96,10 @@ void	ft_operation_lld(t_process *proc)
 /**/
 	proc->pc = (proc->pc + \
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+	#if 0
+	// make this compilable whenever you want
+	mz_print_op(proc, parameters, args);
+	#endif
 }
 
 /*
@@ -105,7 +109,7 @@ void	ft_operation_lld(t_process *proc)
 void	ft_operation_ldi(t_process *proc)
 {
 	unsigned char	parameters[3];
-	int				temp;
+	int		temp;
 	int             add_to_pc;
 
 	temp = proc->pc - 1;
@@ -126,6 +130,10 @@ void	ft_operation_ldi(t_process *proc)
 /**/
 	proc->pc = (proc->pc + \
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+#if 0
+	// make this compilable whenever you want
+	mz_print_op(proc, parameters, args);
+#endif
 }
 
 /*
@@ -157,6 +165,10 @@ void	ft_operation_lldi(t_process *proc)
 /**/
 	proc->pc = (proc->pc + \
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+	#if 0
+	// make this compilable whenever you want
+	mz_print_op(proc, parameters, args);
+	#endif
 }
 
 /*
