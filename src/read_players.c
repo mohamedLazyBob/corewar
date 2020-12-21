@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 14:13:29 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/04 11:34:37 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/04 13:51:38 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,67 @@
 /*
 *******************************************************************************
 ** this checks if there is a dump flag and reads it's value if available
-** the bol (nbr_cycles[0])
-**	is there to configure the output (32 vs 64 bit per row)
-** and if the flag -V is given
+** checks and reads the following flags:
+** - -d / --dump	: that controls when to flush the mem and how.
+** - -n 			: should we visualize the arena or not.
+** + -v / --verbos	: are we running in debug mode and wich debug mode it's
 */
 
 int		ft_read_sideflags(int i, char **av, t_input_data *bloc)
 {
-	if ((ft_strcmp(av[i], "--dump") == 0) && (av[i + 1]))
+	char			*temp_str;
+	int				ret;
+	const char	flags[11][10] = {"-d", "--dump", "-s", "--pause", "-v", "--verbos", \
+								"-n", "--visu", "-a", "--aff", "--stealth"};
+
+	temp_str = ft_strdup_lower(av[i]);
+	ret = 0;
+	for (int j = 0; j < 11; j++)
+	{
+		if (0 == ft_strcmp(temp_str, flags[j]))
+		{
+			if (j < 6 && (av[i + 1]))
+			{
+				bloc->flags[j] = ft_atoi(av[i + 1]);
+				ret = 1;
+			}
+			else if (6 <= j)
+				bloc->flags[j] = 1;
+			break;
+		}
+	}
+	free(temp_str);
+	return (ret);
+
+
+/*
+	temp_str = ft_strdup_lower(av[i]);
+	ret = 1;
+	if ((ft_strcmp(temp_str, "--dump") == 0) && (av[i + 1]))
 	{
 		bloc->nbr_cycles[0] = 0;
 		bloc->nbr_cycles[1] = ft_atoi(av[i + 1]);
 	}
-	else if ((ft_strcmp(av[i], "-d") == 0) && (av[i + 1]))
+	else if ((ft_strcmp(temp_str, "-d") == 0) && (av[i + 1]))
 	{
 		bloc->nbr_cycles[0] = 1;
 		bloc->nbr_cycles[1] = ft_atoi(av[i + 1]);
 	}
-	else if ((ft_strcmp(ft_strlower(av[i]), "-v") == 0) || \
-				(ft_strcmp(ft_strlower(av[i]), "--visu") == 0))
+	else if ((ft_strcmp(temp_str, "-n") == 0) || \
+				(ft_strcmp(temp_str, "--visu") == 0))
 	{
 		bloc->visu = 1;
+		ret = 0;
+	}
+	else if (((ft_strcmp(temp_str, "-v") == 0) || \
+				(ft_strcmp(temp_str, "--verbos") == 0)) && (av[i + 1]))
+	{
+		bloc->verbos_activated = 1;
+		bloc->verbos_level = ft_atoi(av[i + 1]);
 	}
 	else
-		return (0);
-	return (1);
+		ret = 0;
+*/
 }
 
 /*

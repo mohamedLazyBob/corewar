@@ -13,7 +13,7 @@
 #include "virtual_machine.h"
 //#include <stdio.h>
 
-t_op			g_op_tab[17] =
+const t_op			g_op_tab[17] =
 {
 	{"live", 1, {T_DIR}, 1, 10, "alive", 0, 0},
 	{"ld", 2, {T_DIR | T_IND, T_REG}, 2, 5, "load", 1, 0},
@@ -42,8 +42,22 @@ t_op			g_op_tab[17] =
 
 unsigned int	g_cycles_to_wait[16] =
 {
-	10, 5, 5, 10, 10, 6, 6, 6, \
-	20, 25, 25, 800, 10, 50, 1000, 2
+	10,  //live
+	5,   //ld 
+	5,   // st
+	10,  // add
+	10,  // sub
+	6,  // and
+	6,  // or
+	6,  // xor
+	20,  // zjmp
+	25,  // ldi
+	25,  // sti
+	800,  // fork
+	10,  // lld
+	50,  // lldi
+	1000,  // lfork
+	2 // aff
 };
 
 void			(*g_operation[16])(t_process *process) = 

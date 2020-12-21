@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 13:53:57 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/07 13:06:04 by del-alj          ###   ########.fr       */
+/*   Updated: 2020/12/03 12:19:34 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	print_arena(unsigned char *arena, int bol)
 	int	idx;
 
 	idx = 0;
-	system("clear");
+//	system("clear");
 	if (bol == 0)
 		bol = 32;
 	else

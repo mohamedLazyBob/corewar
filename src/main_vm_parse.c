@@ -12,6 +12,8 @@
 
 #include "../includes/virtual_machine.h"
 
+t_input_data *g_input_bloc;
+
 /*
 *******************************************************************************
 */
@@ -25,25 +27,6 @@ void	ft_free_exit(char *str, void **buff, size_t size)
 		free(buff[i]);
 	ft_putendl(str);
 	exit(0);
-}
-
-void ft_check_size_players(t_input_data *bloc)
-{
-	int	i;
-	int	cnt;
-
-	i = -1;
-	cnt = 0;
-	while (++i <= bloc->players_counter)
-	{
-		if (CHAMP_MAX_SIZE < bloc->players[i].header.prog_size)
-		{
-			printf("Error : Player size %.2d bytes > %.2d bytes\n", bloc->players[i].header.prog_size, CHAMP_MAX_SIZE);
-			cnt++;
-		}
-	}
-	if (cnt > 0)
-		exit(-1);
 }
 
 /*
@@ -107,13 +90,13 @@ void	ft_temp(t_input_data bloc, t_playrs *playrs)
 
 void	ft_introduce_players(t_input_data *bloc)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	ft_putstr("Introducing contestants...\n");
 	while (++i <= bloc->players_counter)
 	{
-		printf("* Player %d, weighting %.2d bytes, \"%s\" (\"%s\") !\n", i, \
+		ft_printf("* Player %d, weighting %.2d bytes, \"%s\" (\"%s\") !\n", i, \
 				bloc->players[i - 1].header.prog_size, \
 				bloc->players[i - 1].header.prog_name, \
 				bloc->players[i - 1].header.comment);
@@ -132,17 +115,19 @@ int		main(int ac, char **av)
 	//t_playrs		*playrs;
 
 	ft_memset(&bloc, 0, sizeof(bloc));
-	ft_memset(bloc.nbr_cycles, -1, 2 * sizeof(int));
+	ft_memset(bloc.flags, 0, 11 * sizeof(int));
 	ft_read_players(ac, av, &bloc);
+	g_input_bloc = &bloc;
 	
 	bloc.players = (t_playrs*)ft_memalloc(sizeof(t_playrs) * bloc.players_counter);
 	ft_open_champion(bloc, bloc.players);
-	ft_check_size_players(&bloc);
-
+  ft_check_size_players(&bloc);
+  
 	// init processes (all of them)
 	ft_init_procs_arena(&procs, &bloc);
 	//		print_procs(procs, &bloc);
-	//		print_arena(bloc, procs->arena[0]);
+			// print_arena(procs->arena[0], 1);
+		
 	ft_introduce_players(&bloc);
 	ft_play_battle(&procs, &bloc);
 	// play the game: the loop
