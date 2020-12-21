@@ -1,76 +1,97 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_chek.c                                          :+:      :+:    :+:   */
+/*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:23:56 by del-alj           #+#    #+#             */
-/*   Updated: 2020/12/01 09:24:51 by del-alj          ###   ########.fr       */
+/*   Updated: 2020/12/07 17:11:35 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/virtual_machine.h"
 
-int     ft_chek_carriage(t_process *carriage, int *cycle)
+static  int ft_check_carriage(t_process *carriage, t_game *game_params)
 {
-    if (carriage->cycle_to_die <= 0 || carriage->operation_live <= 0)
+    if (game_params->cycles_to_die <= 0 || carriage->process_live <= 0)
         return (0);
-    if (carriage->operation_live >= NBR_LIVE || carriage->check == MAX_CHECKS)
-    {
-        carriage->cycle_to_die -= CYCLE_DELTA;
-        carriage->check = 0;
-    }
-    else
-    {
-        /* If MAX_CHECKS after checks the value cycles_to_die does \
-        not change, then it will be forcedly decreased by the value CYCLE_DELTA. */
-       carriage->cycle_to_die -= CYCLE_DELTA;
-    }
-    carriage->operation_live = 0;
-    carriage->check++;
-    cycle += carriage->cycle_to_die;
     return (1);
 }
 
-void    ft_kill_carriage(t_process *carriage)
+static void ft_check_cycle(t_game *game_params)
+{
+    if (game_params->total_live_counter >= NBR_LIVE || game_params->checks_counter == MAX_CHECKS)
+        game_params->checks_counter = 0;
+    game_params->cycles_to_die -= CYCLE_DELTA;
+    game_params->checks_counter++;
+	if (game_params->cycles_to_die < 0)
+		game_params->total_cycles_counter += 1;
+	else
+    	game_params->total_cycles_counter += game_params->cycles_to_die;
+    game_params->total_live_counter = 0;
+}
+
+
+static void ft_kill_carriage(t_process **carriage)
 {
     t_process *temp;
 
-    if ((carriage->next == NULL && carriage->previous == NULL) || carriage->next == NULL) /* the last carriage || last curriage in the list order*/
+   if ((*carriage)->next->next == NULL)
     {
-        free(carriage);
-        carriage = NULL;
+        free((*carriage)->next);
+        (*carriage)->next = NULL;
     }
     else
     {
-        if (carriage->previous == NULL) /* the first curriage in the list order*/
-        {
-            carriage = carriage->next;
-            free(carriage->previous);
-            carriage->previous = NULL;
-        }
-        else
-        {
-            temp = carriage;
-            carriage = carriage->next;
-            carriage->previous = temp->previous;
-            free(temp);
-            temp = NULL;
-        }
+  		temp = (*carriage);
+        temp->next = (*carriage)->next->next;
+        (*carriage) = (*carriage)->next->next;
+        (*carriage) = temp;
+
+  /*      temp = (*carriage)->next->next;
+        free((*carriage)->next);
+        (*carriage)->next = temp;*/
     }
 }
 
-void    ft_chek(t_process *proc, int *cycle)
+void        ft_check(t_process **proc, t_game **game_params)
 {
     t_process *carriage;
 
-    carriage = proc;
-    while (carriage != NULL)
-    {
-        if (!(ft_chek_carriage(carriage, cycle)))
-            ft_kill_carriage(carriage); /* ft_kill_carriage point to the next*/
-        else
-            carriage = carriage->next;
-    }
+	carriage = NULL;
+    if (proc && *proc)
+   {
+        carriage = *proc;
+        if (carriage != NULL && carriage->next == NULL && \
+				(!(ft_check_carriage(carriage, (*game_params)))))
+        {
+            free((*proc));
+            (*proc) = NULL;
+            (proc) = NULL;
+            (carriage) = NULL;
+        }
+        else if (carriage != NULL && carriage->next != NULL && \
+				(!(ft_check_carriage(carriage, (*game_params)))))
+        {
+            (carriage) = (carriage)->next;
+            free(*proc);
+            (*proc) = (carriage);
+        }
+    
+        while (carriage && carriage->next != NULL)
+        {
+            if (!(ft_check_carriage(carriage->next, (*game_params))))
+                ft_kill_carriage(&carriage);
+            else
+                carriage = carriage->next;
+        }
+		if ((*game_params)->cycles_to_die < 0)
+		{
+            free((*proc));
+            (*proc) = NULL;
+            (proc) = NULL;
+		}
+   }
+    ft_check_cycle((*game_params));
 }

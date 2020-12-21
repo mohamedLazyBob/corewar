@@ -148,7 +148,7 @@ void	mesafi_visualize(t_input_data *bloc, \
 /*
 ** ****************************************************************************
 **
-*/
+*
 void	ft_play_battle(t_process **procs, t_input_data *bloc)
 {
 	t_process	*ptr;
@@ -170,6 +170,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			game_params.curr_life_cycle++;
 			game_params.total_cycles_counter++;// kaykhdm ghi f live, for vis
 
+      
 			if (mz_dump_memory(bloc, procs, game_params) == 1)
 				return ;
 			if (bloc->flags[PAUSE_1] != 0 || bloc->flags[PAUSE_2] != 0)
@@ -183,7 +184,53 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 		}
 		if (game_params.total_cycles_counter > 10000)
 				break;
-		//ft_check(procs, game_params);
+		ft_check(procs, game_params);
 	}
+
+/*
+** ****************************************************************************
+**
+*/
+ void	ft_play_battle(t_process **procs, t_input_data *bloc)
+{
+	t_process	*ptr;
+	int			curr_life_cycle;
+	t_game		*game_params;
+	int			i = 0;
+
+	game_params = (t_game*)malloc(sizeof(t_game));
+	game_params->cycles_to_die = CYCLE_TO_DIE;	
+	game_params->checks_counter = 0;
+	game_params->total_cycles_counter = 0;
+	game_params->live_counter = 0;
+	game_params->total_live_counter = 0;
+	while (procs)
+	{
+		curr_life_cycle = 0;
+		if (game_params->cycles_to_die < 0 && procs != NULL)
+		{
+			ft_check(procs, &game_params);
+			(procs) = NULL;
+			return ;
+		}
+		
+		while (procs && curr_life_cycle < game_params->cycles_to_die)
+		{
+			ptr = *procs;
+			ft_execute_cycle(ptr, curr_life_cycle);
+			// if dump flag is activated, and we gonna dump
+			// cycles_number[1] == -1 : no dump flag
+			if ((bloc->nbr_cycles[1] != -1) && \
+					(game_params->total_cycles_counter == bloc->nbr_cycles[1]))
+			{
+				print_arena((*procs)->arena[0], bloc->nbr_cycles[0]);
+				return ;
+			}
+			curr_life_cycle++;
+			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
+		}
+		ft_check(procs, &game_params);
+	}
+}
 
 }

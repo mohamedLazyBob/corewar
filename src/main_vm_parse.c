@@ -121,7 +121,8 @@ int		main(int ac, char **av)
 	
 	bloc.players = (t_playrs*)ft_memalloc(sizeof(t_playrs) * bloc.players_counter);
 	ft_open_champion(bloc, bloc.players);
-
+  ft_check_size_players(&bloc);
+  
 	// init processes (all of them)
 	ft_init_procs_arena(&procs, &bloc);
 	//		print_procs(procs, &bloc);
