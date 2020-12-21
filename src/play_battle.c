@@ -148,49 +148,50 @@ void	mesafi_visualize(t_input_data *bloc, \
 /*
 ** ****************************************************************************
 **
-*
+*/
+
 void	ft_play_battle(t_process **procs, t_input_data *bloc)
 {
 	t_process	*ptr;
 	//size_t		curr_life_cycle;
-	t_game		game_params;
+	t_game		*game_params;
 
 	ft_memset((void*)&game_params, 0, sizeof(t_game));
-	game_params.cycles_to_die = CYCLE_TO_DIE;
-	game_params.total_cycles_counter = 1;
-	//printf("game_params->total_cycles : %zu\n", game_params.total_cycles_counter);
+	game_params->cycles_to_die = CYCLE_TO_DIE;
+	game_params->total_cycles_counter = 1;
+	//printf("game_params->total_cycles : %zu\n", game_params->total_cycles_counter);
 	while (procs)
 	{
-		game_params.curr_life_cycle = 1;
-		while (game_params.curr_life_cycle < game_params.cycles_to_die)
+		game_params->curr_life_cycle = 1;
+		while (game_params->curr_life_cycle < game_params->cycles_to_die)
 		{
-			// ft_printf("It is now cycle %d\n", game_params.total_cycles_counter);
+			// ft_printf("It is now cycle %d\n", game_params->total_cycles_counter);
 			ptr = *procs;// we can send *procs directly and del ptr
-			ft_execute_cycle(ptr, game_params.curr_life_cycle);
-			game_params.curr_life_cycle++;
-			game_params.total_cycles_counter++;// kaykhdm ghi f live, for vis
+			ft_execute_cycle(ptr, game_params->curr_life_cycle);
+			game_params->curr_life_cycle++;
+			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
 
       
-			if (mz_dump_memory(bloc, procs, game_params) == 1)
+			if (mz_dump_memory(bloc, procs, (*game_params)) == 1)
 				return ;
 			if (bloc->flags[PAUSE_1] != 0 || bloc->flags[PAUSE_2] != 0)
-				mz_do_pause(game_params, procs, bloc);
+				mz_do_pause((*game_params), procs, bloc);
 			if (bloc->flags[VERBOS_1] != 0 || bloc->flags[VERBOS_2] != 0)// if debug is onB
-				mz_print_debug_infos(procs, bloc, game_params);
+				mz_print_debug_infos(procs, bloc, (*game_params));
 			if (bloc->flags[VISU_1] != 0 || bloc->flags[VISU_2] != 0)
-				mesafi_visualize(bloc, game_params, procs);
-		if (game_params.total_cycles_counter > 10000)
+				mesafi_visualize(bloc, (*game_params), procs);
+		if (game_params->total_cycles_counter > 10000)
 				break;
 		}
-		if (game_params.total_cycles_counter > 10000)
+		if (game_params->total_cycles_counter > 10000)
 				break;
-		ft_check(procs, game_params);
+		ft_check(procs, &game_params);
 	}
-
+}
 /*
 ** ****************************************************************************
 **
-*/
+*
  void	ft_play_battle(t_process **procs, t_input_data *bloc)
 {
 	t_process	*ptr;
@@ -234,3 +235,8 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 }
 
 }
+
+*
+** ****************************************************************************
+**
+*/

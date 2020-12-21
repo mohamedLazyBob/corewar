@@ -119,6 +119,7 @@ typedef struct	s_game
 	int				curr_life_cycle;
 	unsigned int	checks_counter;
 	size_t			total_cycles_counter;
+	size_t			total_live_counter;
 	size_t			live_counter;
 }				t_game;
 /*
@@ -251,9 +252,7 @@ void   			ft_any_player(t_process *proc, int temp, char *str, int size);
 ** ft_any_player.c
 */
 
-int     		ft_chek_carriage(t_process *carriage, int *cycle);
-void    		ft_kill_carriage(t_process *carriage);
-void    		ft_chek(t_process *proc, int *cycle);
+void    		ft_check(t_process **proc, t_game **game_params);
 
 /*
 *******************************************************************************
