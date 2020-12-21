@@ -10,22 +10,23 @@ typedef enum s_ops
 	LLD, LLDI, LFORK, AFF
 }		t_ops;
 
-void	mz_print_op(t_process *proc, char args_types[3], unsigned int value[3])
+void	mz_print_op(t_process *proc, unsigned char args_types[3], unsigned int value[3])
 {
-	printf("i was called \n");
+	// ft_printf("i was called \n");
 	if (!(g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4))
-		return ;	
-	if ((proc->next_inst ==  ADD) || \
-		(proc->next_inst ==  OR) || \
-		(proc->next_inst ==  XOR))
 	{
-		ft_printf("P\t%d | %s %d %d r%d\n", \
+		ft_printf("non verbos!\n");
+		return ;	
+	}
+	// ft_printf("next inst : [%d], add == %d\n", proc->next_inst, AND);
+	if ((proc->next_inst ==  AND) || (proc->next_inst ==  OR) || (proc->next_inst ==  XOR))
+	{
+		ft_printf("P\t%d | %s %d %d r%d\n", proc->proc_id, \
 			g_op_tab[proc->next_inst].op_name, \
 			proc->proc_id, \
 			value[0], value[1], value[2]);
 	}
-	else if ((proc->next_inst ==  LDI) || \
-		(proc->next_inst == STI))
+	else if ((proc->next_inst ==  LDI) || (proc->next_inst == STI))
 	{
 		char string[2][50] = {"P\t%d | sti r%d %d %d\n", \
 				    "P\t%d | ldi %d %d r%d\n"};

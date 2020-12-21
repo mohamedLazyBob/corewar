@@ -104,7 +104,7 @@ t_process	*ft_init_proc(t_input_data *bloc, \
 		exit(0);
 	proc->pc = ft_init_arena(bloc, arena[0], idx);
 	proc->proc_id = 1 + proc_id++;
-	proc->player_id = -1 * player_id;
+	proc->player_id = -1 * proc->proc_id;
 	proc->arena[0] = arena[0];
 	proc->arena[1] = arena[1];
 	ft_memset(proc->regestries, 0, REG_NUMBER);
