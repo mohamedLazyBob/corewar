@@ -29,6 +29,23 @@ void	ft_free_exit(char *str, void **buff, size_t size)
 	exit(0);
 }
 
+void ft_check_size_players(t_input_data *bloc)
+{
+	int	i;
+
+	i = -1;
+	while (++i <= bloc->players_counter)
+	{
+		if (CHAMP_MAX_SIZE < bloc->players[i].header.prog_size)
+		{
+			//creat somthing like dprintf
+			dprintf(2, "Error: File %s has too large a code (%d bytes > 682 bytes)\n", bloc->players[i].header.prog_name, bloc->players[i].header.prog_size);
+			//ft_exit(2, bloc->playrs[i]);
+			exit(1);
+		}
+	}
+}
+
 /*
 *******************************************************************************
 ** we'll remove this function afterword, it's just for test purpose
