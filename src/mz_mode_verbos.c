@@ -55,6 +55,13 @@ void	mz_print_op(t_process *proc, unsigned char args_types[3], unsigned int valu
 	{
 		ft_printf("P\t%d | lldi %d %d r%d\n", proc->proc_id, value[0], value[1], value[2]);
 	}
-	
+	else if (proc->next_inst == LD)
+	{
+		ft_printf("P\t%d | ld %d r%d\n", proc->proc_id, value[0], value[1]);
+	}
+	else if (proc->next_inst == ST)
+	{
+		ft_printf("P\t%d | st r%d %d\n", proc->proc_id, value[0], value[1]);
+	}
 }
 

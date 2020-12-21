@@ -1,23 +1,83 @@
 Introducing contestants...
-* Player 1, weighing 14 bytes, "tester" ("test sti") !
-* Player 2, weighing 14 bytes, "tester" ("test sti") !
-* Player 3, weighing 14 bytes, "tester" ("test sti") !
-P    3 | ld 100 r3
-P    2 | ld 100 r3
+* Player 1, weighing 12 bytes, "tester" ("test ld") !
+* Player 2, weighing 10 bytes, "tester" ("test ld") !
+P    2 | ld 0 r2
 P    1 | ld 100 r3
-P    3 | sti r3 3735552 57
-       | -> store to 3735552 + 57 = 3735609 (with pc and mod 2794)
-P    2 | sti r3 3735552 57
-       | -> store to 3735552 + 57 = 3735609 (with pc and mod 1429)
-P    1 | sti r3 3735552 57
-       | -> store to 3735552 + 57 = 3735609 (with pc and mod 64)
-P    2 | ld 100 r3
-P    1 | ld 100 r3
-P    3 | ld 100 r3
-P    2 | sti r3 3735552 57
-       | -> store to 3735552 + 57 = 3735609 (with pc and mod 2794)
-P    1 | sti r3 3735552 57
-       | -> store to 3735552 + 57 = 3735609 (with pc and mod 1429)
-P    3 | sti r3 3735552 57
-       | -> store to 3735552 + 57 = 3735609 (with pc and mod 64)
-Contestant 3, "tester", has won !
+P    1 | st r3 57
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+Contestant 2, "tester", has won !

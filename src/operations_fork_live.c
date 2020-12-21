@@ -47,17 +47,25 @@ void	ft_operation_live(t_process *process)
 {
 	unsigned int	arg;
 
-	//printf("I'm in Liive\n");
-	arg = ft_parse_args(process, (unsigned char)DIR_CODE);
+	// printf("I'm in Liive\n");
+	arg = -ft_parse_args(process, (unsigned char)DIR_CODE);
+	// ft_printf("arg : %d\n", arg);
 	process->process_live = 1;
-	if (0 <= arg && arg <= REG_NUMBER)
+	// if (0 <= arg && arg <= REG_NUMBER)
 	{
-		//printf("I'm in Liive: registre valid : %d, reg[%d] = %d\n", arg, arg, process->regestries[arg]);
-		if (1 <= process->regestries[arg] && \
-				process->regestries[arg] <= process->players_counter)
+		// printf("I'm in Liive: registre valid : %d, reg[%d] = %d\n", arg, arg, process->regestries[arg]);
+		// if (1 <= process->regestries[arg] && \
+				// process->regestries[arg] <= process->players_counter)
+		if (1 <= arg && \
+				arg <= process->players_counter)
 			{
 				g_last_live = -1 * process->regestries[arg];
+				// printf("i'm doing live\n");
 				mz_print_live(process);
+				if (g_input_bloc->flags[VERBOS_1] || g_input_bloc->flags[VERBOS_2])
+				{
+					ft_printf("P\t%d | live %d\n", process->proc_id, -arg);
+				}
 			}
 	}
 }

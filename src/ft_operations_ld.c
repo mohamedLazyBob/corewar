@@ -17,13 +17,9 @@ void	ft_int_to_str(int var, char *str)
 void	ft_operation_ld(t_process *proc)
 {
 	unsigned char	parameters[3];
-	int				temp;
+	unsigned int	args[3];
 
-	temp = proc->pc - 1;
-	proc->op_pc = temp;
-	// for (int i = 0; i < 10; i++)
-		// ft_printf("%.2x ", proc->arena[0][proc->op_pc + i]);
-	// ft_printf("\n");
+	proc->op_pc = proc->pc - 1;
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 	{
@@ -31,41 +27,20 @@ void	ft_operation_ld(t_process *proc)
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 			return ;
 	}
-/**/
+	args[0] = ft_parse_args(proc, parameters[0]);
+	args[1] = ft_parse_args(proc, parameters[1]);
+	if (args[1] < 1 || 16 < args[1])
+		return;
 
-	if (parameters[0] == T_DIR)
-	{
-		proc->regestries[proc->arena[0][(proc->pc + 4) % IDX_MOD]] = ft_reverse_endianness(proc->arena[0] + proc->pc, 4);
-		// ft_printf("debug : %d\n", ft_reverse_endianness(proc->arena[0] + proc->pc, 4));
-	}
-	else
-	{
-		short int a1 = ft_reverse_endianness(proc->arena[0] + proc->pc, 2); 
-		
-		proc->regestries[proc->arena[0][(proc->pc + 2) % IDX_MOD]] = ft_reverse_endianness(proc->arena[0] + ((proc->op_pc + a1) % MEM_SIZE), 4);
+	// ft_printf("debug -- before args 0: %d\n", args[0]);
 
-		// ft_printf("reg = %d\n", proc->regestries[proc->arena[0][(proc->pc + 2) % IDX_MOD]]);
-		//  ft_printf("debug_2 : %d\n", proc->regestries[proc->arena[0][(proc->pc + 2) % IDX_MOD]]);
-	}
-	// ft_printf("-----------------\n");
-	// ft_printf("in ld --> arg 1 : %d\n", proc->regestries[proc->arena[0][proc->pc + ft_size(parameters[0], 4)]]);
-	proc->carry = (proc->regestries[proc->arena[0][proc->pc + ft_size(parameters[0], 4)]] == 0) ? 1 : 0;
-/**/
-	if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
-	{
-		// ft_printf("-------------------------\n");
-		ft_printf("P\t%d | ld %d r%d\n", proc->proc_id, \
-										proc->regestries[proc->arena[0][(proc->pc + ft_size(parameters[0], 4)) % IDX_MOD]], \
-										 proc->arena[0][proc->pc + ft_size(parameters[0], 4)]);
-//		int num = ft_reverse_endianness(proc->arena[0] + proc->op_pc, 2);
-		//ft_printf("[%x] [%x] in int : %d\n", proc->arena[0][proc->pc], proc->arena[0][proc->pc + 1], num);
-		//ft_printf("mem_value : [%d]\n", proc->arena[0][ft_reverse_endianness(proc->arena[0] + temp + num, 2)]);
-		//ft_printf("space in memory : %d	num : %d	\n", proc->arena[0][num], proc->regestries[proc->arena[0][num]]);
-
-		// ft_printf("-------------------------\n");
-	}
-	proc->pc = (proc->pc + \
-					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+	args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
+	proc->carry = (args[0] == 0) ? 1 : 0;
+	// ft_printf("debug -- after args 0: %d\n", args[0]);
+	proc->regestries[args[1]] = args[0];
+	// proc->carry = (proc->regestries[args[1]] == 0) ? 1 : 0;
+	ft_printf("dest: %d, and carry: %d\n", proc->regestries[args[1]], proc->carry);
+	mz_print_op(proc, parameters, args);
 }
 
 /*

@@ -18,12 +18,12 @@ extern t_input_data *g_input_bloc;
 */
 
 int 	ft_size(int param, int t_dir_size)
-{
-	if (param == T_REG)
+{	
+	if (param == REG_CODE)
 		param = 1;
-	else if (param == T_IND)
+	else if (param == IND_CODE)
 		param = 2;
-	else if (param == T_DIR)
+	else if (param == DIR_CODE)
 		param = t_dir_size;
 	return (param);
 }
@@ -239,11 +239,8 @@ void	ft_operation_st(t_process *proc)
 {
 	unsigned int	args[3];
 	unsigned char	parameters[3];
-	int				temp;
-	int				var;
 	char			str[4];
 
-	var = 0;
 	proc->op_pc = proc->pc - 1;
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
@@ -259,21 +256,18 @@ void	ft_operation_st(t_process *proc)
 		if ((parameters[0] == T_REG && (args[0] < 1 || 16 < args[0])) || \
 			(parameters[1] == T_REG && (args[1] < 1 || 16 < args[1])))
 			return ;
-		args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
 
-		if (parameters[1] == T_REG)
+		if (parameters[0] == T_REG)
 		{
+			mz_print_op(proc, parameters, args);
+			args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
 			proc->regestries[args[1]] = args[0];
 		}
 		else // indirect choice
 		{
-
+			args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
 			ft_any_player(proc, (proc->op_pc + args[1] % IDX_MOD), str, 4);
-		}
-		if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
-		{
-			ft_printf("P\t%d | st r%d %d\n", proc->proc_id, args[0], args[1]);
-											// last thing we did, is this we're working on the -v 4 
+			mz_print_op(proc, parameters, args);
 		}
 	}
 }
@@ -314,6 +308,17 @@ void	ft_operation_sti(t_process *proc)
 		// ft_printf("[%d][%d][%d]\n", args[0], args[1], args[2]);
 		args[1] = ft_get_argument_value(proc, args[1], parameters[1]);
 		args[2] = ft_get_argument_value(proc, args[2], parameters[2]);
+		// ft_printf("pc: %d, args 1: %d\n", proc->pc, args[1]);
+		// if (parameters[1] == IND_CODE)
+		// {
+		// 	ft_memcpy(args + 1, proc->arena[0] + ((proc->op_pc + args[1])), 4);
+		// 	args[1] = ft_reverse_endianness((unsigned char*)&args[1], 4);
+		// }
+		// else if (parameters[1] == REG_CODE)
+		// 	args[1] = proc->regestries[args[1]];
+
+		// ft_printf("debug -- arg1 = %d, arg2 = %d;\n", args[1], args[2]);
+		// ft_printf("ID : %d\n", parameters[1]);
 		// mem[args[1] + args[2]] =  args[0]
 		#if 1
 		// we can use this to print instead of the bellow if.
@@ -335,7 +340,10 @@ void	ft_operation_sti(t_process *proc)
 			// ft_printf("debug : %d, pid %d\n", proc->op_pc, proc->proc_id);
 		}
 		#endif
-		temp = (args[1] + args[2]);
+		// if (parameters[1] == REG_CODE)
+		// 	temp = (short int)(args[1] + args[2]);
+		// else
+			temp = proc->op_pc + (args[1] + args[2]) % IDX_MOD;
 		
 		ft_any_player(proc, temp, str, 4);
 	}
