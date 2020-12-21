@@ -178,10 +178,10 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 				mz_print_debug_infos(procs, bloc, game_params);
 			if (bloc->flags[VISU_1] != 0 || bloc->flags[VISU_2] != 0)
 				mesafi_visualize(bloc, game_params, procs);
-		if (game_params.total_cycles_counter > 1000)
+		if (game_params.total_cycles_counter > 10000)
 				break;
 		}
-		if (game_params.total_cycles_counter > 1000)
+		if (game_params.total_cycles_counter > 10000)
 				break;
 		//ft_check(procs, game_params);
 	}

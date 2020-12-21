@@ -141,7 +141,9 @@ unsigned int	ft_get_argument_value(t_process *process, \
 		arg = process->regestries[arg];
 	else if (parameter == IND_CODE)
 	{
-		ft_memcpy(&arg, process->arena[0] + ((process->op_pc + arg) % IDX_MOD), 4);
+		ft_memcpy(&arg, process->arena[0] + (process->op_pc + (arg % IDX_MOD)), 4);
+		// maybe it should be like this instead 
+	//	ft_memcpy(&arg, process->arena[0] + (process->op_pc + arg), 4);
 		arg = ft_reverse_endianness((unsigned char*)&arg, 4);
 	}
 	return (arg);
