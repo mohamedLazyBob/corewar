@@ -48,7 +48,7 @@ static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 
 void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle)
 {
-while (ptr)
+	while (ptr)
 	{
 		// ft_printf("\tP:[%d] exec_at_cycle: %.2d, pc: %3d\n", ptr->player_id, ptr->execution_cycle, ptr->pc);
 		// 1st mra ghadi idkhl || the last op excuted, read another one
@@ -156,7 +156,8 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 	//size_t		curr_life_cycle;
 	t_game		*game_params;
 
-	ft_memset((void*)&game_params, 0, sizeof(t_game));
+	game_params = ft_memalloc(sizeof(t_game));
+	// ft_memset((void*)&game_params, 0, sizeof(t_game));
 	game_params->cycles_to_die = CYCLE_TO_DIE;
 	game_params->total_cycles_counter = 1;
 	//printf("game_params->total_cycles : %zu\n", game_params->total_cycles_counter);
@@ -180,7 +181,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 				mz_print_debug_infos(procs, bloc, (*game_params));
 			if (bloc->flags[VISU_1] != 0 || bloc->flags[VISU_2] != 0)
 				mesafi_visualize(bloc, (*game_params), procs);
-		if (game_params->total_cycles_counter > 10000)
+			if (game_params->total_cycles_counter > 10000)
 				break;
 		}
 		if (game_params->total_cycles_counter > 10000)
