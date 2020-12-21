@@ -14,6 +14,7 @@
 
 extern t_op g_op_tab[];
 unsigned int g_last_live;
+extern t_input_data *g_input_bloc;
 
 /*
 ******************************************************************************
@@ -51,6 +52,7 @@ void	ft_operation_and(t_process *process)
 		process->regestries[args[2]] = (args[0] & args[1]);
 		(process->regestries[args[2]] == 0) ? (process->carry = 1) : \
 											(process->carry = 0);
+		mz_print_op(process, parameters, args);
 	}
 }
 
@@ -87,6 +89,7 @@ void	ft_operation_or(t_process *process)
 		process->regestries[args[2]] = (args[0] | args[1]);
 		(process->regestries[args[2]] == 0) ? (process->carry = 1) : \
 											(process->carry = 0);
+		mz_print_op(process, parameters, args);
 	}
 }
 
@@ -123,6 +126,7 @@ void	ft_operation_xor(t_process *process)
 		process->regestries[args[2]] = (args[0] ^ args[1]);
 		(process->regestries[args[2]] == 0) ? (process->carry = 1) : \
 											(process->carry = 0);
+		mz_print_op(process, parameters, args);
 	}
 }
 
@@ -134,11 +138,30 @@ void	ft_operation_xor(t_process *process)
 
 void	ft_operation_zjmp(t_process *process)
 {
-	unsigned int	arg;
+	// int	arg;
+	short int arg1;
 
-	process->op_pc = process->pc;
-	arg = ft_parse_args(process, (unsigned char)2);
-	arg = ft_reverse_endianness((unsigned char*)&arg, 3);
+	// printf("old pc == %d", process->pc);
+	process->op_pc = process->pc - 1;
+	arg1 = ft_parse_args(process, (unsigned char)DIR_CODE);
+	// arg = ft_reverse_endianness((unsigned char*)&arg, 3);
+	// arg1 = arg;
+	// ft_printf("arg : %d\n", arg);
+	// ft_printf("short arg : %d\n", arg1);
+
 	if (process->carry == 1)
-		process->pc = (process->op_pc + arg) % IDX_MOD;
+	{
+		process->pc = process->op_pc + (arg1 % IDX_MOD);
+		if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
+		{
+			ft_printf("P\t%d | zjmp %d OK\n", process->proc_id, arg1);
+		}
+		// printf("+++++++++\n");
+	}
+	else if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
+	{
+		ft_printf("P\t%d | zjmp %d FAILED\n", process->proc_id, arg1);
+	}
+	
+	// printf("new pc == %d", process->pc);
 }

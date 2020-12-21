@@ -1,0 +1,104 @@
+— A float is a single precision, 32-bit floating-point data type that accommodates seven digits. Its range is approximately 1.5 × 10−45 to 3.4 × 1038.
+— A double is a double-precision, 64-bit floating-point data type. It accommodates 15 to 16 digits, with a range of approximately 5.0 × 10−345 to 1.7 × 10308.
+
+/Users/mzaboub/Desktop/done/piscine/days/day05/topuh/ex20/ft_putnbr_base.c
+#
+
+For f, e, g : the # assures to add the decimal point at the end.  For g and G conversions, trailing zeros are not removed from the result as they would otherwise be.
+For o : the precision of the number is increased to force the first character of the output string to a zero.(prepended '0' at the beginning of an octal);
+For x : a non-zero result has the string `0x' (or `0X' for X conversions) prepended to it.
+
+0
+
+For all conversions except n, the value will be padded on the left with zeros. If the precision is given the `0` flag is ignored.
+
+-
+
+the converted value is padded on the right `with blanks`,  A - overrides a 0 if both are given.
+
+
++
+
+Always add a sign with a signed conversion (d, i, f,). A `+` overrides a space if both are used.
+
+
+
+` `(space) a blank should be left before positive number.(produced by signed conversion);
+
+———————————————————————————————————————————————————————————————————————
+
+An optional precision, in the form of a period . followed by an optional digit string.
+
+# Conversion Spec. (s)
+	if a precision is specified, no more than the number specified are written.  If a precision is  given, no null character need be present;
+
+	if the precision is not specified, or is greater than the size of the array, the array must contain a terminating NUL character.;
+
+# for d, i, o, u, x, and X conversions
+	 This gives the minimum number of digits to appear;
+# for a, A,e, E, f, and F conversions
+	 the number of digits to appear after the decimal-point;
+
+——————————————————————————————————————————————————————————————————————
+
+This specifies the size of the argument;
+
+Modifier          d, i           o, u, x, X 		e, E, g, G, f, F					c, 	s;
+hh                signed char    unsigned char    		—— 		    		    		  —— 			;
+h                 short          unsigned short    		——		    				  —— 			;	 
+l (ell)           long           unsigned long     	double(ignored, same behavior as without it)		win_t,  wchar_t *	;
+L		   ——		  ——			long double						  —— 			;
+ll (ell ell)      long long      unsigned long long 		——		    				  —— 			;
+
+#define FD 3
+
+
+
+
+printf ("{fd}%d{eoc}normal string", fd);
+printf (“%r; normal string", fd);
+	
+FD = stdarg(ptr, int);
+
+Write(FD, &str, nor);
+
+size of float       : 4  (1 + 08 + 23 = 32/32)                                                                                                                                                                                                                         
+size of double      : 8  (1 + 11 + 52 = 64/64)                                                                                                                                                                                                                        
+size of int         : 4                                                                                                                                                                                                                          
+size of long        : 8                                                                                                                                                                                                                          
+size of long long   : 8     
+size of size_t	    : 8                                                                                                                                                                                                                      
+size of long int    : 8  
+Size of long double : 16 (1 + 15 + 64 = 80/128)
+
+Dbl buff size == the number of digits in “4503599627370495 * 2^2047” => 633 ;
+Ldvl buff size == the nor of digits in 11111111 11111111 11111111 11111111 11111111 11111111 11111111 11111111 * 2 ^ 1111111 == 18446744073709551615 * 2 ^ 32767 ==> ~= 9884
+
+
+ 0./0  nan	01111111 11000000 00000000 00000000
+10./0  0inf	01111111 10000000 00000000 00000000
+0.  0.000000	00000000 00000000 00000000 00000000
+-10./0   -inf	11111111 10000000 00000000 00000000
+-0./0   nan	01111111 11000000 00000000 00000000
+-0.  -0.000000	10000000 00000000 00000000 00000000
+
+Wild
+Into the wild
+Forrest Gump
+— lost in translation
+The beach
+Tracks
+Before sunrise
+Couples retreat
+— the motorcycle diaries
+— the bucket list 
+— the secret life of Walter mitty 
+Midnight in Paris
+Little miss sunshine
+— the way
+— roman holiday
+— Under the tuscan sun
+Eat pray love
+Finding Nemo
+The darjeeling Limited
+— one week 

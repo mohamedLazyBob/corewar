@@ -46,6 +46,7 @@ unsigned int	ft_reverse_endianness(unsigned char *temp, size_t size)
 ** (1100 0000) == 192 == 0xc0
 ** (0011 0000) == 48  == 0x30
 ** (0000 1100) == 12  == 0x0c
+** it only parses the memory/arena, reads it and validate it.
 */
 
 void			ft_get_args_type(t_process *process, \
@@ -55,6 +56,7 @@ void			ft_get_args_type(t_process *process, \
 	int				i;
 	unsigned char	bit[3];
 
+	// ft_printf("types byts : [%x]\n", types_byte);
 	args[0] = (types_byte & 192) >> 6;
 	args[1] = (types_byte & 48) >> 4;
 	args[2] = (types_byte & 12) >> 2;
@@ -64,10 +66,15 @@ void			ft_get_args_type(t_process *process, \
 		(args[i] == 0) ? (bit[i] = 0) : \
 							(bit[i] = (unsigned char)(1 << (args[i] - 1)));
 	}
+	// ft_printf("[%d][%d][%d]\n", bit[0],  bit[1], bit[2]);
 	if (!(((bit[0] & g_op_tab[process->next_inst].args_type[0]) == bit[0]) && \
 		((bit[1] & g_op_tab[process->next_inst].args_type[1]) == bit[1]) && \
 		((bit[2] & g_op_tab[process->next_inst].args_type[2]) == bit[2])))
-		ft_memcpy(args, "ER", 3);
+		{
+			ft_memcpy(args, "ER", 3);
+			// ft_printf("debug, bit : %d., type: %d\n", bit[1], g_op_tab[process->next_inst].args_type[1]);
+			// ft_printf("debug, inst : %d.\n", (bit[1] & g_op_tab[process->next_inst].args_type[1]));
+		}
 	i = -1;
 	while (++i < 3)
 		if (bit[i] == 0 && g_op_tab[process->next_inst].args_type[i] != 0)
@@ -87,26 +94,35 @@ void			ft_get_args_type(t_process *process, \
 
 int				ft_parse_args(t_process *process, unsigned char par)
 {
-	unsigned int	num;
+	int	num;
 	int				dir_size;
 
-	num = -1;
+	num = 0;
 	dir_size = 0;
 	if (par == REG_CODE)
 	{
-		num = (unsigned int)process->arena[process->pc];
+		num = (unsigned int)process->arena[0][process->pc];
+		// ft_printf("num : %d, pc value : %d, pc : %d\n", num, process->arena[0][process->pc], process->pc);
+		// ft_printf("[%.10x]\n", process->arena[0]);
 		process->pc = (process->pc + 1) % MEM_SIZE;
 	}
 	else if (par == DIR_CODE)
 	{
 		dir_size = (g_op_tab[process->next_inst].t_dir_size ? 2 : 4);
-		ft_memcpy(&num, process->arena + process->pc, dir_size);
+		// ft_printf("dir_size : %d\n", dir_size);
+		ft_memcpy((char*)&(num) + 4 - dir_size, process->arena[0] + process->pc, dir_size);
+		// ft_printf("num : %d, pc value : %d, pc : %d\n", num, process->arena[0][process->pc], process->pc);
+		// ft_printf("old num: %d\n", num);
+		// ft_printf("%x, %x, %x, %x\n",   ((char*)&num)[0], ((char*)&num)[1], ((char*)&num)[2], ((char*)&num)[3]);
 		num = ft_reverse_endianness((unsigned char*)&num, 4);
+		// ft_printf("%x, %x, %x, %x\n",   ((char*)&num)[0], ((char*)&num)[1], ((char*)&num)[2], ((char*)&num)[3]);
+		// ft_printf("new num: %d\n", num);
+		// exit(0);
 		process->pc = (process->pc + dir_size) % MEM_SIZE;
 	}
 	else if (par == IND_CODE)
 	{
-		ft_memcpy(&num, process->arena + process->pc, 2);
+		ft_memcpy(&num, process->arena[0] + process->pc, 2);
 		num = ft_reverse_endianness((unsigned char*)&num, 2);
 		process->pc = (process->pc + 2) % MEM_SIZE;
 	}
@@ -125,7 +141,9 @@ unsigned int	ft_get_argument_value(t_process *process, \
 		arg = process->regestries[arg];
 	else if (parameter == IND_CODE)
 	{
-		ft_memcpy(&arg, process->arena + ((process->op_pc + arg) % IDX_MOD), 4);
+		ft_memcpy(&arg, process->arena[0] + (process->op_pc + (arg % IDX_MOD)), 4);
+		// maybe it should be like this instead 
+	//	ft_memcpy(&arg, process->arena[0] + (process->op_pc + arg), 4);
 		arg = ft_reverse_endianness((unsigned char*)&arg, 4);
 	}
 	return (arg);

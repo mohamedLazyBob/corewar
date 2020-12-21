@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:51:02 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/04 12:12:31 by mzaboub          ###   ########.fr       */
+/*   Updated: 2020/12/04 12:49:04 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <fcntl.h>
 # include <string.h>
 # include "op.h"
-# include "../libft/headers/libft.h"
+# include "../ft_printf/headers/ft_printf.h"
 
 # define FALSE 0
 # define TRUE 1
@@ -52,14 +52,30 @@ typedef struct	s_playrs
 
 typedef struct	s_input_data
 {
-	int					players_counter;
-	char				*names[MAX_PLAYERS];
-	int					ids[MAX_PLAYERS];
-	int					nbr_cycles[2];
-	int					fd[MAX_PLAYERS];
-	int					visu;
-	t_playrs			*players;
+	int			players_counter;
+	char		*names[MAX_PLAYERS];
+	int			ids[MAX_PLAYERS];
+	int			fd[MAX_PLAYERS];
+
+	// int			nbr_cycles[2];
+	// int			visu;
+	// int			verbos_activated;
+	// int			verbos_level;
+	int			flags[11];
+
+	t_playrs	*players;
 }				t_input_data;
+
+/*
+******************************************************************
+** an enumiration that we'll use in t_input_data->flag[]
+** to access the flags when we need them.
+*/
+enum e_flags
+{
+	DUMP_64, DUMP_32, PAUSE_1, PAUSE_2, VERBOS_1, VERBOS_2, \
+	VISU_1, VISU_2, AFF_1, AFF2, STEALTH
+};
 
 /*
 **
@@ -74,8 +90,10 @@ typedef struct	s_input_data
 */
 typedef	struct	s_process
 {
+	int 				operation_live;
+	int 			    cycle_to_die;
+	int 			    check;
 	unsigned int	    execution_cycle;
-	unsigned int	    cycle_number; //
 	unsigned int	    next_inst;
 
 	unsigned int	    pc;
@@ -92,19 +110,17 @@ typedef	struct	s_process
 	unsigned int	    players_counter;
 
 	struct s_process	*next;
-
+  	struct s_process	*previous;
 }				t_process;
 
 typedef struct	s_game
 {
 	int				cycles_to_die;
+	int				curr_life_cycle;
 	unsigned int	checks_counter;
 	size_t			total_cycles_counter;
 	size_t			live_counter;
- 	size_t			total_live_counter;
 }				t_game;
-
-
 /*
 **					struct up
 ** ****************************************************************************
@@ -232,10 +248,12 @@ void   			ft_any_player(t_process *proc, int temp, char *str, int size);
 
 /*
 *******************************************************************************
-** ft_check.c
+** ft_any_player.c
 */
 
-void    		ft_check(t_process **proc, t_game **game_params);
+int     		ft_chek_carriage(t_process *carriage, int *cycle);
+void    		ft_kill_carriage(t_process *carriage);
+void    		ft_chek(t_process *proc, int *cycle);
 
 /*
 *******************************************************************************
@@ -243,5 +261,11 @@ void    		ft_check(t_process **proc, t_game **game_params);
 */
 
 void			ft_play_battle(t_process **procs, t_input_data *bloc);
+
+/*
+*******************************************************************************
+** mz_mode_verbos.c
+*/
+void	mz_print_op(t_process *proc, unsigned char types[3], unsigned int values[3]);
 
 #endif

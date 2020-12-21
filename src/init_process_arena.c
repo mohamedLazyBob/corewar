@@ -59,6 +59,7 @@ void		ft_init_procs_arena(t_process **procs, t_input_data *bloc)
 	int				player_id;
 	char			*str;
 	t_process		*proc;
+	t_process		*temp;
 	unsigned char	*arena[2];
 
 	arena[0] = (unsigned char*)ft_memalloc(MEM_SIZE);
@@ -70,10 +71,20 @@ void		ft_init_procs_arena(t_process **procs, t_input_data *bloc)
 	*procs = proc;
 	while (player_id > 0)
 	{
-		proc->next = ft_init_proc(bloc, player_id, arena);
-		proc = proc->next;
+		temp = ft_init_proc(bloc, player_id, arena);
+		// proc->next = ft_init_proc(bloc, player_id, arena);
+		temp->next = proc;
+		// proc = proc->next;
+		proc = temp;
 		player_id--;
 	}
+	*procs = proc;
+	// temp = *procs;
+	// while (temp)
+	// {
+	// 	ft_printf("player_id: %d, proc_id: %d, pc: %d;\n", temp->player_id, temp->proc_id, temp->pc);
+	// 	temp = temp->next;
+	// }
 }
 
 /*
@@ -88,15 +99,18 @@ t_process	*ft_init_proc(t_input_data *bloc, \
 	int			idx;
 	static int	proc_id;
 
-	idx = ft_get_player_index(bloc, player_id);
+	idx = ft_get_player_index(bloc, proc_id + 1);
 	if (!(proc = (t_process*)ft_memalloc(sizeof(t_process))))
 		exit(0);
 	proc->pc = ft_init_arena(bloc, arena[0], idx);
 	proc->proc_id = 1 + proc_id++;
-	proc->player_id = -1 * player_id;
+	proc->player_id = -1 * proc->proc_id;
 	proc->arena[0] = arena[0];
 	proc->arena[1] = arena[1];
+	ft_memset(proc->regestries, 0, REG_NUMBER);
+	proc->regestries[0] = proc->player_id;
 	proc->players_counter = bloc->players_counter;
 	proc->execution_cycle = -1;
+	proc->next = NULL;
 	return (proc);
 }
