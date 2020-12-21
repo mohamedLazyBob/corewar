@@ -30,7 +30,7 @@ int 	ft_size(int param, int t_dir_size)
 
 /*
 ******************************************************************************
-*/
+*
 
 void	ft_operation_add(t_process *proc)
 {
@@ -64,9 +64,46 @@ void	ft_operation_add(t_process *proc)
 						
 }
 
-/*
+*
 ******************************************************************************
 */
+
+void	ft_operation_add(t_process *proc)
+{
+	unsigned char	parameters[3];
+	unsigned int	args[3];
+
+	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
+	if (ft_strcmp((const char*)parameters, "ER") == 0)
+	{
+		proc->pc = (proc->pc + \
+						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+		return ;
+	}
+	else
+	{
+		args[0] = ft_parse_args(proc, parameters[0]);
+		args[1] = ft_parse_args(proc, parameters[1]);
+		args[2] = ft_parse_args(proc, parameters[2]);
+		if ((parameters[0] == T_REG && (args[0] < 1 || 16 < args[0])) || \
+			(parameters[1] == T_REG && (args[1] < 1 || 16 < args[1])) || \
+			(parameters[2] == T_REG && (args[2] < 1 || 16 < args[2])))
+			return ;
+		if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
+		{
+			ft_printf("P\t%d | add r%d r%d r%d\n", proc->proc_id, \
+				args[0], args[1], args[2]);
+		}
+		args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
+		args[1] = ft_get_argument_value(proc, args[1], parameters[1]);
+		proc->regestries[args[2]] = args[0] + args[1];
+		proc->carry = (proc->regestries[args[2]] == 0) ? 1 : 0;
+	}			
+}
+
+/*
+******************************************************************************
+*
 
 void	ft_operation_sub(t_process *proc)
 {
@@ -99,9 +136,46 @@ void	ft_operation_sub(t_process *proc)
 						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 }
 
-/*
+*
 ******************************************************************************
 */
+
+void	ft_operation_sub(t_process *proc)
+{
+	unsigned char	parameters[3];
+	unsigned int	args[3];
+
+	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
+	if (ft_strcmp((const char*)parameters, "ER") == 0)
+	{
+		proc->pc = (proc->pc + \
+						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+		return ;
+	}
+	else
+	{
+		args[0] = ft_parse_args(proc, parameters[0]);
+		args[1] = ft_parse_args(proc, parameters[1]);
+		args[2] = ft_parse_args(proc, parameters[2]);
+		if ((parameters[0] == T_REG && (args[0] < 1 || 16 < args[0])) || \
+			(parameters[1] == T_REG && (args[1] < 1 || 16 < args[1])) || \
+			(parameters[2] == T_REG && (args[2] < 1 || 16 < args[2])))
+			return ;
+		if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
+		{
+			ft_printf("P\t%d | sub r%d r%d r%d\n", proc->proc_id, \
+				args[0], args[1], args[2]);
+		}
+		args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
+		args[1] = ft_get_argument_value(proc, args[1], parameters[1]);
+		proc->regestries[args[2]] = args[0] + args[1];
+		proc->carry = (proc->regestries[args[2]] == 0) ? 1 : 0;
+	}
+}
+
+/*
+******************************************************************************
+*
 
 void	ft_operation_st(t_process *proc)
 {
@@ -157,6 +231,52 @@ void	ft_operation_st(t_process *proc)
 						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 }
 
+*
+******************************************************************************
+*/
+
+void	ft_operation_st(t_process *proc)
+{
+	unsigned int	args[3];
+	unsigned char	parameters[3];
+	int				temp;
+	int				var;
+	char			str[4];
+
+	var = 0;
+	proc->op_pc = proc->pc - 1;
+	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
+	if (ft_strcmp((char*)parameters, "ER") == 0)
+	{
+		printf("champion operation args error, AT PC= %d\n", proc->op_pc);
+		proc->pc = (proc->pc + \
+						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+	}
+	else
+	{
+		args[0] = ft_parse_args(proc, parameters[0]);
+		args[1] = ft_parse_args(proc, parameters[1]);
+		if ((parameters[0] == T_REG && (args[0] < 1 || 16 < args[0])) || \
+			(parameters[1] == T_REG && (args[1] < 1 || 16 < args[1])))
+			return ;
+		args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
+
+		if (parameters[1] == T_REG)
+		{
+			proc->regestries[args[1]] = args[0];
+		}
+		else // indirect choice
+		{
+
+			ft_any_player(proc, (proc->op_pc + args[1] % IDX_MOD), str, 4);
+		}
+		if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
+		{
+			ft_printf("P\t%d | st r%d %d\n", proc->proc_id, args[0], args[1]);
+											// last thing we did, is this we're working on the -v 4 
+		}
+	}
+}
 /*
 ******************************************************************************
 */
@@ -196,7 +316,7 @@ void	ft_operation_sti(t_process *proc)
 		args[2] = ft_get_argument_value(proc, args[2], parameters[2]);
 		// mem[args[1] + args[2]] =  args[0]
 		#if 1
-		// we can use this to print instead of the bellow function.
+		// we can use this to print instead of the bellow if.
 		mz_print_op(proc, parameters, args);
 		#endif
 		#if 0
