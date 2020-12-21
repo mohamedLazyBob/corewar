@@ -89,6 +89,7 @@ void	ft_operation_or(t_process *process)
 		process->regestries[args[2]] = (args[0] | args[1]);
 		(process->regestries[args[2]] == 0) ? (process->carry = 1) : \
 											(process->carry = 0);
+		mz_print_op(process, parameters, args);
 	}
 }
 
@@ -125,6 +126,7 @@ void	ft_operation_xor(t_process *process)
 		process->regestries[args[2]] = (args[0] ^ args[1]);
 		(process->regestries[args[2]] == 0) ? (process->carry = 1) : \
 											(process->carry = 0);
+		mz_print_op(process, parameters, args);
 	}
 }
 
