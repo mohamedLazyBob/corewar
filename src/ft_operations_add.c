@@ -109,6 +109,7 @@ void	ft_operation_st(t_process *proc)
 	unsigned char	parameters[3];
 	char			str[4];
 
+	proc->regestries[1] = proc->regestries[0];
 	proc->op_pc = proc->pc - 1;
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
@@ -124,12 +125,12 @@ void	ft_operation_st(t_process *proc)
 		if ((parameters[0] == T_REG && (args[0] < 1 || 16 < args[0])) || \
 			(parameters[1] == T_REG && (args[1] < 1 || 16 < args[1])))
 			return ;
-
+		printf("=============%d		%d\n", proc->regestries[1], proc->regestries[args[0]]);
 		mz_print_op(proc, parameters, args);
 		args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
 		
 		if (parameters[1] == T_REG)
-			proc->regestries[args[1]] = args[0];
+			proc->regestries[args[1]] = proc->regestries[args[0]];
 		else // indirect choice
 		{
 			// im change value args[1] = (short)args[1] for work in negatif case;
