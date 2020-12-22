@@ -188,6 +188,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 		ft_check(procs, &game_params);
 	}
 }
+
 /*
 ** ****************************************************************************
 **
