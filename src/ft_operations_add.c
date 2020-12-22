@@ -127,10 +127,15 @@ void	ft_operation_st(t_process *proc)
 
 		mz_print_op(proc, parameters, args);
 		args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
+		printf("*********value of arg 0 : %d\n", args[0]);
 		if (parameters[1] == T_REG)
 			proc->regestries[args[1]] = args[0];
 		else // indirect choice
-			ft_any_player(proc, (proc->op_pc + args[1] % IDX_MOD), str, 4);
+			{//ft_any_player(proc, (proc->op_pc + args[1] % IDX_MOD), str, 4);
+			 ft_int_to_str(args[0], str);
+			ft_memcpy(proc->arena[0] + (proc->op_pc + args[1] % IDX_MOD), (const void *)str, 4);
+			ft_memset(proc->arena[1] + (proc->op_pc + args[1] % IDX_MOD), proc->player_id, 4);
+			}
 	}
 }
 

@@ -150,7 +150,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 	game_params = ft_memalloc(sizeof(t_game));
 	// ft_memset((void*)&game_params, 0, sizeof(t_game));
 	game_params->cycles_to_die = CYCLE_TO_DIE;
-	game_params->total_cycles_counter = 1;
+	game_params->total_cycles_counter = 0;
 /**/	
 	game_params->checks_counter = 0;
 	//game_params->total_cycles_counter = 0;
@@ -169,7 +169,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			return ;
 		}
 /**/
-		game_params->curr_life_cycle = 1;
+		game_params->curr_life_cycle = 0;
 		while (procs && game_params->curr_life_cycle < game_params->cycles_to_die)
 		//while (game_params->curr_life_cycle < game_params->cycles_to_die) //kant
 		{
@@ -180,7 +180,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 				mz_print_debug_infos(procs, bloc, (*game_params));
 
 			ft_execute_cycle(ptr, game_params->curr_life_cycle);
-
+/*
       
 			if (mz_dump_memory(bloc, procs, (*game_params)) == 1)
 				return ;
@@ -188,13 +188,13 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 				mz_do_pause((*game_params), procs, bloc);
 			if (bloc->flags[VISU_1] != 0 || bloc->flags[VISU_2] != 0)
 				mesafi_visualize(bloc, (*game_params), procs);
-
+*/
 			game_params->curr_life_cycle++;
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
 
 		/*	if (game_params->total_cycles_counter > 10000) //kant
 				break;*/
-			if (game_params->total_cycles_counter > 40)
+			if (game_params->total_cycles_counter > 100)
 			{
 				print_arena((*procs)->arena[0], 1);
 				return;
