@@ -35,7 +35,6 @@ void	ft_operation_ld(t_process *proc)
 	// exit(0);
 	ft_memset(args, 0, 3);
 	ft_memset(parameters, 0, 3);
-
 	proc->op_pc = proc->pc - 1;
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
@@ -49,12 +48,18 @@ void	ft_operation_ld(t_process *proc)
 	if (args[1] < 1 || 16 < args[1])
 		return;
 //	ft_printf("debug -- after args[0]: %d, args[1]: %d\n", proc->regestries[1], args[1]);
-
 	args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
-	// ft_printf("\ndebug -- p%d args[0]: %d\n", proc->proc_id, args[0]);
+	//  ft_printf("\ndebug -- p%d args[0]: %d\n", proc->proc_id, args[0]);
 	proc->carry = (args[0] == 0) ? 1 : 0;
+	
+	
+					// ma3raftx wache khesn  nhot a1 f a2 awla l3aks
+					// pvalor li talbin mna hiya dyal proc->regestries[args[1]] ma3raftx wax khesna nbdloha ra f printag awla ta hna
+
 	proc->regestries[args[1]] = args[0];
-	ft_printf("debug -- after args[0]: %d, args[1]: %d\n", args[0], args[1]);
+
+
+//	ft_printf("debug -- after args[0]: %d, args[1]: %d\n", args[0], args[1]);
 	// ft_printf("debug -- after args[0]: %d, carry: %d\n", args[0], proc->carry);
 
 	// proc->carry = (proc->regestries[args[1]] == 0) ? 1 : 0;
