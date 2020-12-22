@@ -106,7 +106,7 @@ typedef	struct	s_process
 	unsigned int	    regestries[REG_NUMBER];
 
 	unsigned int	    process_live;
-	unsigned char    	carry;
+	unsigned int    	carry;
 	unsigned int	    players_counter;
 
 	struct s_process	*next;

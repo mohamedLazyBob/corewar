@@ -148,7 +148,7 @@ void	ft_operation_zjmp(t_process *process)
 	// arg1 = arg;
 	// ft_printf("arg : %d\n", arg);
 	// ft_printf("short arg : %d\n", arg1);
-
+	// ft_printf("\t inside zjmp, p%d carry == %u\n", process->proc_id, process->carry);
 	if (process->carry == 1)
 	{
 		process->pc = process->op_pc + (arg1 % IDX_MOD);
@@ -162,6 +162,6 @@ void	ft_operation_zjmp(t_process *process)
 	{
 		ft_printf("P\t%d | zjmp %d FAILED\n", process->proc_id, arg1);
 	}
-	
+	// ft_printf("\t-->called by P %d, with carry: %d\n", process->proc_id, process->carry);
 	// printf("new pc == %d", process->pc);
 }
