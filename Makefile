@@ -24,7 +24,7 @@ OBJ= $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 # **************************************************************************** #
 
 COMP= gcc
-CFLAGES= -Wall -Wextra -Werror
+CFLAGES= -g -Wall -Wextra -Werror
 
 LD_FLAGS= -L$(LIB_PATH)
 LD_LIBS= -l$(patsubst lib%.a,%, $(LIB))

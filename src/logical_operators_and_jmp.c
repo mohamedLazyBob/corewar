@@ -27,7 +27,7 @@ extern t_input_data *g_input_bloc;
 
 void	ft_operation_and(t_process *process)
 {
-	unsigned int	args[3];
+	int	args[3];
 	unsigned char	parameters[3];
 
 	process->op_pc = process->pc - 1;
@@ -63,11 +63,11 @@ void	ft_operation_and(t_process *process)
 
 void	ft_operation_or(t_process *process)
 {
-	int				i;
-	unsigned int	args[3];
+	// int				i;
+	int	args[3];
 	unsigned char	parameters[3];
 
-	i = -1;
+	// i = -1;
 	process->op_pc = process->pc - 1;
 	ft_get_args_type(process, process->arena[0][process->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
@@ -100,11 +100,11 @@ void	ft_operation_or(t_process *process)
 
 void	ft_operation_xor(t_process *process)
 {
-	int				i;
-	unsigned int	args[3];
+	// int				i;
+	int	args[3];
 	unsigned char	parameters[3];
 
-	i = -1;
+	// i = -1;
 	process->op_pc = process->pc - 1;
 	ft_get_args_type(process, process->arena[0][process->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
@@ -138,30 +138,16 @@ void	ft_operation_xor(t_process *process)
 
 void	ft_operation_zjmp(t_process *process)
 {
-	// int	arg;
 	short int arg1;
 
-	// printf("old pc == %d", process->pc);
 	process->op_pc = process->pc - 1;
 	arg1 = ft_parse_args(process, (unsigned char)DIR_CODE);
-	// arg = ft_reverse_endianness((unsigned char*)&arg, 3);
-	// arg1 = arg;
-	// ft_printf("arg : %d\n", arg);
-	// ft_printf("short arg : %d\n", arg1);
-
 	if (process->carry == 1)
 	{
 		process->pc = process->op_pc + (arg1 % IDX_MOD);
 		if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
-		{
 			ft_printf("P\t%d | zjmp %d OK\n", process->proc_id, arg1);
-		}
-		// printf("+++++++++\n");
 	}
 	else if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
-	{
 		ft_printf("P\t%d | zjmp %d FAILED\n", process->proc_id, arg1);
-	}
-	
-	// printf("new pc == %d", process->pc);
 }

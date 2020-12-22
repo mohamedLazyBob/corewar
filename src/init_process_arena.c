@@ -112,5 +112,6 @@ t_process	*ft_init_proc(t_input_data *bloc, \
 	proc->players_counter = bloc->players_counter;
 	proc->execution_cycle = -1;
 	proc->next = NULL;
+	proc->carry = 0;
 	return (proc);
 }
