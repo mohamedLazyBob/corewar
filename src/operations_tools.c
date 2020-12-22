@@ -95,13 +95,13 @@ void			ft_get_args_type(t_process *process, \
 int				ft_parse_args(t_process *process, unsigned char par)
 {
 	int	num;
-	int				dir_size;
+	int	dir_size;
 
 	num = 0;
 	dir_size = 0;
 	if (par == REG_CODE)
 	{
-		num = (unsigned int)process->arena[0][process->pc];
+		num = (int)process->arena[0][process->pc];
 		// ft_printf("num : %d, pc value : %d, pc : %d\n", num, process->arena[0][process->pc], process->pc);
 		// ft_printf("[%.10x]\n", process->arena[0]);
 		process->pc = (process->pc + 1) % MEM_SIZE;
@@ -115,6 +115,8 @@ int				ft_parse_args(t_process *process, unsigned char par)
 		// ft_printf("old num: %d\n", num);
 		// ft_printf("%x, %x, %x, %x\n",   ((char*)&num)[0], ((char*)&num)[1], ((char*)&num)[2], ((char*)&num)[3]);
 		num = ft_reverse_endianness((unsigned char*)&num, 4);
+		if (dir_size == 2)
+			num = (short int)num;
 		// ft_printf("%x, %x, %x, %x\n",   ((char*)&num)[0], ((char*)&num)[1], ((char*)&num)[2], ((char*)&num)[3]);
 		// ft_printf("new num: %d\n", num);
 		// exit(0);
@@ -133,8 +135,8 @@ int				ft_parse_args(t_process *process, unsigned char par)
 ******************************************************************************
 */
 
-unsigned int	ft_get_argument_value(t_process *process, \
-										unsigned int arg, \
+int	ft_get_argument_value(t_process *process, \
+										int arg, \
 										unsigned char parameter)
 {
 	if (parameter == REG_CODE)

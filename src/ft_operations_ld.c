@@ -29,7 +29,7 @@ void	ft_int_to_str(int var, char *str)
 void	ft_operation_ld(t_process *proc)
 {
 	unsigned char	parameters[3];
-	unsigned int	args[3];
+	int	args[3];
 
 	// ft_printf("debug -- inside ld\n");
 	// exit(0);

@@ -27,7 +27,7 @@ extern t_input_data *g_input_bloc;
 
 void	ft_operation_and(t_process *process)
 {
-	unsigned int	args[3];
+	int	args[3];
 	unsigned char	parameters[3];
 
 	process->op_pc = process->pc - 1;
@@ -64,7 +64,7 @@ void	ft_operation_and(t_process *process)
 void	ft_operation_or(t_process *process)
 {
 	int				i;
-	unsigned int	args[3];
+	int	args[3];
 	unsigned char	parameters[3];
 
 	i = -1;
@@ -101,7 +101,7 @@ void	ft_operation_or(t_process *process)
 void	ft_operation_xor(t_process *process)
 {
 	int				i;
-	unsigned int	args[3];
+	int	args[3];
 	unsigned char	parameters[3];
 
 	i = -1;
