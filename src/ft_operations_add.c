@@ -143,7 +143,7 @@ void	ft_operation_sti(t_process *proc)
 {
 	unsigned char	parameters[3];
 	int				args[3];
-	int				offset;
+	int				place_memory;
 	char			str[4];
 
 	proc->op_pc = proc->pc - 1;
@@ -170,8 +170,19 @@ void	ft_operation_sti(t_process *proc)
 		args[2] = ft_get_argument_value(proc, args[2], parameters[2]);
 
 		mz_print_op(proc, parameters, args);
-		offset = proc->op_pc + (args[1] + args[2]) % IDX_MOD;
-		ft_any_player(proc, offset, str, 4);
+		if (parameters[1] == T_IND)
+			place_memory = (proc->op_pc + args[2] % IDX_MOD% MEM_SIZE);
+		else
+			place_memory = (proc->op_pc + (args[1] + args[2]) % IDX_MOD)% MEM_SIZE;
+		// the value in  -> args[0] not the same in -> proc->arena[0][proc->op_pc]
+		// args[0] ==  proc->arena[0][proc->op_pc + 2] 
+		proc->op_pc += 2;
+		
+		ft_any_player(proc, place_memory, str, 4);
+		//ima nzid f op_pc 2  awla ndir hadxi li ntahit -> ntih nichan args[0]
+		// ft_int_to_str(proc->regestries[args[0]], str);
+		// ft_memcpy(proc->arena[0] + (unsigned int)place_memory, (const void *)str, 4);
+		// ft_memset(proc->arena[1] + place_memory, proc->player_id, 4);
 	}
 }
 

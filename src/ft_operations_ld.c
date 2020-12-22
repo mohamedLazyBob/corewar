@@ -54,7 +54,6 @@ void	ft_operation_ld(t_process *proc)
 	// ft_printf("\ndebug -- p%d args[0]: %d\n", proc->proc_id, args[0]);
 	proc->carry = (args[0] == 0) ? 1 : 0;
 	proc->regestries[args[1]] = args[0];
-
 	// ft_printf("debug -- after args[0]: %d, carry: %d\n", args[0], proc->carry);
 
 	// proc->carry = (proc->regestries[args[1]] == 0) ? 1 : 0;
