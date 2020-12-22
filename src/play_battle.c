@@ -37,7 +37,7 @@ static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 	//	else
 	//		proc->cycle_number = 0;
 	proc->pc = (proc->pc + 1) % MEM_SIZE;
-	// ft_printf("\tupdate --> P:[%d] exec_at_cycle: %.2d, pc: %3d\n", proc->player_id, proc->execution_cycle, proc->pc);
+	// ft_printf("\tupdate --> P:[%d] exec_at_cycle: %.2d, pc: %3d, carry: %d\n", proc->player_id, proc->execution_cycle, proc->pc, proc->carry);
 
 }
 
@@ -55,14 +55,15 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle)
 		if (ptr->execution_cycle == -1 || \
 				ptr->execution_cycle < curr_life_cycle)
 			ft_read_opcode(ptr, curr_life_cycle);
-
+		// ft_printf("%d/%d -- P%d | op: %4s, carry:%d\n", ptr->execution_cycle, curr_life_cycle, ptr->proc_id, \
+						// g_op_tab[ptr->next_inst].op_name, ptr->carry);
 
 		// ila tqado executi l'operation
 		if(ptr->execution_cycle == curr_life_cycle)
 		{
 			if (0 <= ptr->next_inst && ptr->next_inst <= 15)
 			{
-				// ft_printf("\t\tP\t%d | %5s\n", -ptr->player_id, g_op_tab[ptr->next_inst].op_name);
+				// ft_printf("\t\t==>P\t%d | %5s, with carry: %d\n", -ptr->player_id, g_op_tab[ptr->next_inst].op_name, ptr->carry);
 				// if (ptr->next_inst == 8)
 					// ft_printf("\t\tP\t%d | %5s | before zjmp pc : %d\n", -ptr->player_id, g_op_tab[ptr->next_inst].op_name, ptr->pc);
 				g_operation[ptr->next_inst](ptr);

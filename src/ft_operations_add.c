@@ -257,7 +257,7 @@ void	ft_operation_st(t_process *proc)
 			(parameters[1] == T_REG && (args[1] < 1 || 16 < args[1])))
 			return ;
 
-		if (parameters[0] == T_REG)
+		if (parameters[1] == T_REG)
 		{
 			mz_print_op(proc, parameters, args);
 			args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
@@ -265,11 +265,12 @@ void	ft_operation_st(t_process *proc)
 		}
 		else // indirect choice
 		{
+			mz_print_op(proc, parameters, args);
 			args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
 			ft_any_player(proc, (proc->op_pc + args[1] % IDX_MOD), str, 4);
-			mz_print_op(proc, parameters, args);
 		}
 	}
+	// ft_printf("at the end of sti: p%d carry= %d\n", proc->proc_id, proc->carry);
 }
 /*
 ******************************************************************************
