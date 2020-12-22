@@ -106,7 +106,7 @@ typedef	struct	s_process
 	unsigned int	    regestries[REG_NUMBER];
 
 	unsigned int	    process_live;
-	unsigned char    	carry;
+	unsigned int    	carry;
 	unsigned int	    players_counter;
 
 	struct s_process	*next;
@@ -183,8 +183,8 @@ void			ft_get_args_type(t_process *process, \
 									unsigned char types_byte, \
 									unsigned char *args);
 int				ft_parse_args(t_process *process, unsigned char parameter);
-unsigned int	ft_get_argument_value(t_process *process, \
-										unsigned int arg, \
+int	ft_get_argument_value(t_process *process, \
+										int arg, \
 										unsigned char parameter);
 int				ft_sizeof_params(t_process *process, \
 								unsigned char parameter[3]);
@@ -265,6 +265,6 @@ void			ft_play_battle(t_process **procs, t_input_data *bloc);
 *******************************************************************************
 ** mz_mode_verbos.c
 */
-void	mz_print_op(t_process *proc, unsigned char types[3], unsigned int values[3]);
+void	mz_print_op(t_process *proc, unsigned char types[3], int values[3]);
 
 #endif

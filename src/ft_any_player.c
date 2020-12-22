@@ -24,9 +24,13 @@ int     ft_reg_check(int reg)
 /*
 ******************************************************************************
 */
-
+// note : we should call this function : write_to_ram()
 void    ft_any_player(t_process *proc, int temp, char *str, int size)
 {
+	// int to_del = proc->regestries[proc->arena[0][proc->pc]];
+	// to_del = ft_reverse_endianness((unsigned char*)&to_del, 4);
+    // ft_int_to_str(to_del, str);
+
     ft_int_to_str(proc->regestries[proc->arena[0][proc->pc]], str);
 	ft_memcpy(proc->arena[0] + temp, (const void *)str, size);
 	ft_memset(proc->arena[1] + temp, proc->player_id, size);
