@@ -151,11 +151,27 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 	// ft_memset((void*)&game_params, 0, sizeof(t_game));
 	game_params->cycles_to_die = CYCLE_TO_DIE;
 	game_params->total_cycles_counter = 1;
+/**/	
+	game_params->checks_counter = 0;
+	//game_params->total_cycles_counter = 0;
+	game_params->live_counter = 0;
+	game_params->total_live_counter = 0;
+/**/
 	//printf("game_params->total_cycles : %zu\n", game_params->total_cycles_counter);
 	while (procs)
 	{
+/**/
+		
+		if (game_params->cycles_to_die < 0 && procs != NULL)
+		{
+			ft_check(procs, &game_params);
+			(procs) = NULL;
+			return ;
+		}
+/**/
 		game_params->curr_life_cycle = 1;
-		while (game_params->curr_life_cycle < game_params->cycles_to_die)
+		while (procs && game_params->curr_life_cycle < game_params->cycles_to_die)
+		//while (game_params->curr_life_cycle < game_params->cycles_to_die) //kant
 		{
 			// ft_printf("It is now cycle %d\n", game_params->total_cycles_counter);
 			ptr = *procs;// we can send *procs directly and del ptr
@@ -176,16 +192,16 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			game_params->curr_life_cycle++;
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
 
-			if (game_params->total_cycles_counter > 10000)
-				break;
+		/*	if (game_params->total_cycles_counter > 10000) //kant
+				break;*/
 			if (game_params->total_cycles_counter > 40)
 			{
 				print_arena((*procs)->arena[0], 1);
 				return;
 			}
 		}
-		if (game_params->total_cycles_counter > 10000)
-				break;
+		/*if (game_params->total_cycles_counter > 10000) // kant
+				break;*/
 		ft_check(procs, &game_params);
 	}
 }
