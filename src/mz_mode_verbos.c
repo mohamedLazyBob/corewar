@@ -38,11 +38,21 @@ void	mz_print_op(t_process *proc, unsigned char args_types[3], int value[3])
 		else if (proc->next_inst == LDI)
 			ft_printf("P\t%d | ldi %d %d r%d\n", proc->proc_id, args[0], args[1], args[2]);
 */
-		ft_printf("\t  | -> store to %d + %d = %d (with pc and mod %d)\n", \
+		if (proc->next_inst == STI)
+			ft_printf("\t  | -> store to %d + %d = %d (with pc and mod %d)\n", \
 					value[1], \
 					value[2], \
 					value[1] + value[2], \
 					(value[1] + value[2]) % IDX_MOD + proc->op_pc);
+		else if (proc->next_inst == LDI)
+		{
+			ft_printf("\t  | -> load %d + %d = %d (with pc and mod %d)\n", \
+					value[0], \
+					value[1], \
+					value[0] + value[1], \
+					(value[0] + value[1]) % IDX_MOD + proc->op_pc);
+		}
+		
 
 		// ft_printf("debug : %d, pid %d\n", proc->op_pc, proc->proc_id);
 		
