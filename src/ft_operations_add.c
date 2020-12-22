@@ -127,11 +127,15 @@ void	ft_operation_st(t_process *proc)
 
 		mz_print_op(proc, parameters, args);
 		args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
-	//	printf("*********value of arg 0 : %d\n", args[0]);
+		
 		if (parameters[1] == T_REG)
 			proc->regestries[args[1]] = args[0];
 		else // indirect choice
+		{
+			// im change value args[1] = (short)args[1] for work in negatif case;
 			ft_any_player(proc, (proc->op_pc + args[1] % IDX_MOD), str, 4);
+
+		}
 	}
 }
 
