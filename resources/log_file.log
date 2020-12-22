@@ -1,10 +1,84 @@
 Introducing contestants...
-* Player 1, weighing 14 bytes, "tester 2" ("test sti 2") !
-* Player 2, weighing 14 bytes, "tester" ("test sti negative") !
-P    2 | ld 100 r2
-P    1 | ld 100 r3
-P    2 | sti r2 0 -32761
-       | -> store to 0 + -32761 = -32761 (with pc and mod 1550)
-P    1 | sti r3 3735552 57
-       | -> store to 3735552 + 57 = 3735609 (with pc and mod 64)
+* Player 1, weighing 24 bytes, "tester" ("test sub") !
+* Player 2, weighing 8 bytes, "tester" ("test sub") !
+P    1 | ld 100 r1
+P    2 | sub r2 r3 r4
+P    1 | ld 100 r2
+P    1 | st r3 45
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
+P    2 | zjmp 0 OK
 Contestant 2, "tester", has won !
