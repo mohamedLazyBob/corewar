@@ -10,7 +10,7 @@ typedef enum s_ops
 	LLD, LLDI, LFORK, AFF
 }		t_ops;
 
-void	mz_print_op(t_process *proc, unsigned char args_types[3], unsigned int value[3])
+void	mz_print_op(t_process *proc, unsigned char args_types[3], int value[3])
 {
 	// ft_printf("i was called \n");
 	if (!(g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4))
