@@ -1,54 +1,257 @@
 Introducing contestants...
-* Player 1, weighting 12 bytes, "tester" ("test ldi") !
-* Player 2, weighting 12 bytes, "tester" ("test ldi") !
-It is now cycle 1
-It is now cycle 2
-It is now cycle 3
-It is now cycle 4
-It is now cycle 5
-It is now cycle 6
-It is now cycle 7
-It is now cycle 8
-It is now cycle 9
-It is now cycle 10
-It is now cycle 11
-It is now cycle 12
-It is now cycle 13
-It is now cycle 14
-It is now cycle 15
-It is now cycle 16
-It is now cycle 17
-It is now cycle 18
-It is now cycle 19
-It is now cycle 20
-It is now cycle 21
-It is now cycle 22
-It is now cycle 23
-It is now cycle 24
-It is now cycle 25
-P	2 | ldi 50332675 4 r3
-	  | -> load 50332675 + 4 = 50332679 (with pc and mod 2055)
-P	1 | ldi 50332675 4 r3
-	  | -> load 50332675 + 4 = 50332679 (with pc and mod 7)
-It is now cycle 26
-It is now cycle 27
-It is now cycle 28
-It is now cycle 29
-It is now cycle 30
-P	2 | st r3 57
-P	1 | st r3 57
-It is now cycle 31
-It is now cycle 32
-It is now cycle 33
-It is now cycle 34
-It is now cycle 35
-It is now cycle 36
-It is now cycle 37
-It is now cycle 38
-It is now cycle 39
-It is now cycle 40
-0a e4 00 03 00 04 03 03 70 03 00 39 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+* Player 1, weighting 22 bytes, "Batman" ("This city needs me") !
+* Player 2, weighting 22 bytes, "Batman" ("This city needs me") !
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+P	2 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 2056)
+P	1 | sti r1 7 1
+	  | -> store to 7 + 1 = 8 (with pc and mod 8)
+P	2 | live -2
+P	1 | live -1
+P	2 | ld 0 r2
+P	1 | ld 0 r2
+P	2 | zjmp -19 OK
+P	1 | zjmp -19 OK
+0b 68 01 00 07 00 01 01 ff ff ff ff 02 90 00 00 00 00 02 09 ff ed 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
@@ -79,8 +282,9 @@ ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-0a e4 00 03 00 04 03 03 70 03 00 39 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-ff ff ff fe 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+0b 68 01 00 07 00 01 01 ff ff ff fe 02 90 00 00 00 00 02 09 ff ed 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 

@@ -150,7 +150,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 	game_params = ft_memalloc(sizeof(t_game));
 	// ft_memset((void*)&game_params, 0, sizeof(t_game));
 	game_params->cycles_to_die = CYCLE_TO_DIE;
-	game_params->total_cycles_counter = 0;
+	game_params->total_cycles_counter = 1;
 /**/	
 	game_params->checks_counter = 0;
 	//game_params->total_cycles_counter = 0;
@@ -169,7 +169,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			return ;
 		}
 /**/
-		game_params->curr_life_cycle = 0;
+		game_params->curr_life_cycle = 1;
 		while (procs && game_params->curr_life_cycle < game_params->cycles_to_die)
 		//while (game_params->curr_life_cycle < game_params->cycles_to_die) //kant
 		{
@@ -194,7 +194,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 
 		/*	if (game_params->total_cycles_counter > 10000) //kant
 				break;*/
-			if (game_params->total_cycles_counter > 100)
+			if (game_params->total_cycles_counter > 1500)
 			{
 				print_arena((*procs)->arena[0], 1);
 				return;
@@ -202,7 +202,8 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 		}
 		/*if (game_params->total_cycles_counter > 10000) // kant
 				break;*/
-		ft_check(procs, &game_params);
+	print_arena((*procs)->arena[0], 1);
+		// ft_check(procs, &game_params);
 	}
 }
 

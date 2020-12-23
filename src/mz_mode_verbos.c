@@ -72,7 +72,8 @@ void	mz_print_op(t_process *proc, unsigned char args_types[3], int value[3])
 	else if (proc->next_inst == ST)
 	{
 		// in case value[1] negative need to cast whit short i dont know if afect positive numbers 
-		ft_printf("P\t%d | st r%d %d\n", proc->proc_id, value[0], (short)value[1]);
+		//ft_printf("P\t%d | st r%d %d\n", proc->proc_id, value[0], (short)value[1]);
+		ft_printf("P\t%d | st r%d %d\n", proc->proc_id, value[0], value[1]);
 	}
 	else if (proc->next_inst == ADD)
 	{

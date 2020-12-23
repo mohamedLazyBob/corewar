@@ -20,11 +20,14 @@ t_input_data *g_input_bloc;
 
 void	ft_free_exit(char *str, void **buff, size_t size)
 {
-	int	i;
+	size_t	i;
 
-	i = -1;
-	while (++i < size)
+	i = 0;
+	while (i < size)
+	{
 		free(buff[i]);
+		i++;
+	}
 	ft_putendl(str);
 	exit(0);
 }
