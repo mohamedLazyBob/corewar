@@ -3,4 +3,6 @@ Introducing contestants...
 * Player 2, weighting 20 bytes, "tester" ("test aff") !
 P    2 | ld 52 r3
 P    2 | ld 53 r2
+aff: 4
+aff: 5
 P    1 | fork -1 (-1)
