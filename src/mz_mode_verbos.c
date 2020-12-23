@@ -21,9 +21,9 @@ void	mz_print_op(t_process *proc, unsigned char args_types[3], int value[3])
 	// ft_printf("next inst : [%d], add == %d\n", proc->next_inst, AND);
 	if ((proc->next_inst ==  AND) || (proc->next_inst ==  OR) || (proc->next_inst ==  XOR))
 	{
+		// ft_printf("debug -- print xor -- %d, %d, r%d\n", value[0], value[1], value[2]);
 		ft_printf("P\t%d | %s %d %d r%d\n", proc->proc_id, \
 			g_op_tab[proc->next_inst].op_name, \
-			proc->proc_id, \
 			value[0], value[1], value[2]);
 	}
 	else if ((proc->next_inst ==  LDI) || (proc->next_inst == STI))

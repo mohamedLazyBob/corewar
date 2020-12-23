@@ -133,7 +133,12 @@ void	ft_operation_st(t_process *proc)
 		else // indirect choice
 		{
 			// im change value args[1] = (short)args[1] for work in negatif case;
-			ft_any_player(proc, (proc->op_pc + args[1] % IDX_MOD), str, 4);
+			// ft_any_player(proc, (proc->op_pc + (args[1] % IDX_MOD)), str, 4);
+			ft_int_to_str(args[0], str);
+			// ft_printf("str --> [%.2x][%.2x][%.2x][%.2x]\n", str[0],  str[1], str[2], str[3]);
+			ft_memcpy(proc->arena[0] + (proc->op_pc + (args[1] % IDX_MOD)), str, 4);
+			ft_memset(proc->arena[1] + (proc->op_pc + (args[1] % IDX_MOD)), proc->player_id, 4);
+			// ft_printf("this addr {%#x} should recieve recieved [%d]\n", proc->op_pc + (args[1] % IDX_MOD), args[0]);
 
 		}
 	}
