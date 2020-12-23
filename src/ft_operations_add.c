@@ -56,8 +56,8 @@ void	ft_operation_add(t_process *proc)
 		mz_print_op(proc, parameters, args);
 		args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
 		args[1] = ft_get_argument_value(proc, args[1], parameters[1]);
-		proc->regestries[args[2]] = args[0] + args[1];
-		proc->carry = (proc->regestries[args[2]] == 0) ? 1 : 0;
+		proc->regestries[args[2] - 1] = args[0] + args[1];
+		proc->carry = (proc->regestries[args[2] - 1] == 0) ? 1 : 0;
 	}			
 }
 
@@ -94,8 +94,8 @@ void	ft_operation_sub(t_process *proc)
 		mz_print_op(proc, parameters, args);
 		args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
 		args[1] = ft_get_argument_value(proc, args[1], parameters[1]);
-		proc->regestries[args[2]] = args[0] + args[1];
-		proc->carry = (proc->regestries[args[2]] == 0) ? 1 : 0;
+		proc->regestries[args[2] - 1] = args[0] + args[1];
+		proc->carry = (proc->regestries[args[2] - 1] == 0) ? 1 : 0;
 	}
 }
 
@@ -130,7 +130,7 @@ void	ft_operation_st(t_process *proc)
 		args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
 		
 		if (parameters[1] == T_REG)
-			proc->regestries[args[1]] = proc->regestries[args[0]];
+			proc->regestries[args[1] - 1] = args[0];
 		else // indirect choice
 		{
 			// im change value args[1] = (short)args[1] for work in negatif case;
@@ -175,19 +175,24 @@ void	ft_operation_sti(t_process *proc)
 		args[2] = ft_get_argument_value(proc, args[2], parameters[2]);
 
 		mz_print_op(proc, parameters, args);
-		if (parameters[1] == T_IND)
-			place_memory = (proc->op_pc + args[2] % IDX_MOD% MEM_SIZE);
-		else
-			place_memory = (proc->op_pc + (args[1] + args[2]) % IDX_MOD)% MEM_SIZE;
+		// if (parameters[1] == T_IND)
+			// place_memory = (proc->op_pc + args[2] % IDX_MOD% MEM_SIZE);
+		// else
+		place_memory = proc->op_pc + ((args[1] + args[2]) % IDX_MOD);
 		// the value in  -> args[0] not the same in -> proc->arena[0][proc->op_pc]
 		// args[0] ==  proc->arena[0][proc->op_pc + 2] 
-		proc->op_pc += 2;
+		// proc->op_pc += 2;
 		
-		ft_any_player(proc, place_memory, str, 4);
+		// ft_any_player(proc, place_memory, str, 4);
 		//ima nzid f op_pc 2  awla ndir hadxi li ntahit -> ntih nichan args[0]
-		// ft_int_to_str(proc->regestries[args[0]], str);
-		// ft_memcpy(proc->arena[0] + (unsigned int)place_memory, (const void *)str, 4);
-		// ft_memset(proc->arena[1] + place_memory, proc->player_id, 4);
+		ft_int_to_str(proc->regestries[args[0] - 1], str);
+		// ft_printf("printing offset == %d , arg[0] = %d\n", place_memory, args[0]);
+		if (place_memory < 0)
+			place_memory = MEM_SIZE + place_memory;
+		// ft_printf("printing offset == %d \n", place_memory);
+		// ft_printf("str == [%.2x][%.2x][%.2x][%.2x]\n", str[0], str[1], str[2], str[3]);
+		ft_memcpy(proc->arena[0] + place_memory, (const void *)str, 4);
+		ft_memset(proc->arena[1] + place_memory, proc->player_id, 4);
 	}
 }
 
