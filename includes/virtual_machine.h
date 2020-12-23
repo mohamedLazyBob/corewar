@@ -201,14 +201,19 @@ void			ft_operation_zjmp(t_process *process);
 
 /*
 *******************************************************************************
-** operations_fork_live.c
+** op_live_aff.c
+*/
+
+void			ft_operation_live(t_process *process);
+void			ft_operation_aff(t_process *process);
+
+/*
+*******************************************************************************
+** op_fork_lfork.c
 */
 
 void			ft_operation_fork(t_process *process);
 void			ft_operation_lfork(t_process *process);
-void			ft_operation_live(t_process *process);
-void			ft_operation_aff(t_process *process);
-
 /*
 *******************************************************************************
 ** operations_fork_live.c

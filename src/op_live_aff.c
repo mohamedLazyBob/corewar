@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_fork_live.c                             :+:      :+:    :+:   */
+/*   op_live_aff.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -43,6 +43,10 @@ static	void	mz_print_live(t_process *process)
 	}
 }
 
+/*
+** ****************************************************************************
+*/
+
 void	ft_operation_live(t_process *process)
 {
 	unsigned int	arg;
@@ -59,37 +63,15 @@ void	ft_operation_live(t_process *process)
 		if (1 <= arg && \
 				arg <= process->players_counter)
 			{
-				g_last_live = -1 * process->regestries[arg];
-				// printf("i'm doing live\n");
+				g_last_live = -1 * process->regestries[arg - 1];
+				// ft_printf("+++++++++++++++++++> i'm doing live\n");
 				mz_print_live(process);
-				if (g_input_bloc->flags[VERBOS_1] || g_input_bloc->flags[VERBOS_2])
+				if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
 				{
 					ft_printf("P\t%d | live %d\n", process->proc_id, -arg);
 				}
 			}
 	}
-}
-
-/*
-** ****************************************************************************
-** this func makes a copy of the carriage (process), and places the copy at
-** FIRST_ARGUMENT % IDX_MOD
-*/
-
-void	ft_operation_fork(t_process *process)
-{
-	return ;
-}
-
-/*
-** ****************************************************************************
-** this func makes a copy of the carriage (process), and places the copy at
-** FIRST_ARGUMENT (without the modulo)
-*/
-
-void	ft_operation_lfork(t_process *process)
-{
-	return ;
 }
 
 /*
@@ -118,3 +100,7 @@ void	ft_operation_aff(t_process *process)
 		write(1, &var, 1);
 	}
 }
+
+/*
+** ****************************************************************************
+*/

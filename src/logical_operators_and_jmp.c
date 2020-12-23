@@ -49,8 +49,8 @@ void	ft_operation_and(t_process *process)
 			return ;
 		args[0] = ft_get_argument_value(process, args[0], parameters[0]);
 		args[1] = ft_get_argument_value(process, args[1], parameters[1]);
-		process->regestries[args[2]] = (args[0] & args[1]);
-		(process->regestries[args[2]] == 0) ? (process->carry = 1) : \
+		process->regestries[args[2] - 1] = (args[0] & args[1]);
+		(process->regestries[args[2] - 1] == 0) ? (process->carry = 1) : \
 											(process->carry = 0);
 		mz_print_op(process, parameters, args);
 	}
@@ -86,8 +86,8 @@ void	ft_operation_or(t_process *process)
 			return ;
 		args[0] = ft_get_argument_value(process, args[0], parameters[0]);
 		args[1] = ft_get_argument_value(process, args[1], parameters[1]);
-		process->regestries[args[2]] = (args[0] | args[1]);
-		(process->regestries[args[2]] == 0) ? (process->carry = 1) : \
+		process->regestries[args[2] - 1] = (args[0] | args[1]);
+		(process->regestries[args[2] - 1] == 0) ? (process->carry = 1) : \
 											(process->carry = 0);
 		mz_print_op(process, parameters, args);
 	}
@@ -123,8 +123,8 @@ void	ft_operation_xor(t_process *process)
 			return ;
 		args[0] = ft_get_argument_value(process, args[0], parameters[0]);
 		args[1] = ft_get_argument_value(process, args[1], parameters[1]);
-		process->regestries[args[2]] = (args[0] ^ args[1]);
-		(process->regestries[args[2]] == 0) ? (process->carry = 1) : \
+		process->regestries[args[2] - 1] = (args[0] ^ args[1]);
+		(process->regestries[args[2] - 1] == 0) ? (process->carry = 1) : \
 											(process->carry = 0);
 		mz_print_op(process, parameters, args);
 	}

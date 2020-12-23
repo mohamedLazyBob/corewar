@@ -125,7 +125,7 @@ int				ft_parse_args(t_process *process, unsigned char par)
 	else if (par == IND_CODE)
 	{
 		ft_memcpy(&num, process->arena[0] + process->pc, 2);
-		num = ft_reverse_endianness((unsigned char*)&num, 2);
+		num = (short int)ft_reverse_endianness((unsigned char*)&num, 2);
 		process->pc = (process->pc + 2) % MEM_SIZE;
 	}
 	return (num);
@@ -140,7 +140,7 @@ int	ft_get_argument_value(t_process *process, \
 										unsigned char parameter)
 {
 	if (parameter == REG_CODE)
-		arg = process->regestries[arg];
+		arg = process->regestries[arg - 1];// this was before just arg;
 	else if (parameter == IND_CODE)
 	{
 		ft_memcpy(&arg, process->arena[0] + (process->op_pc + (arg % IDX_MOD)), 4);
