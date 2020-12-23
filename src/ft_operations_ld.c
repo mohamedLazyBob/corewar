@@ -52,6 +52,9 @@ void	ft_operation_ld(t_process *proc)
 
 	args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
 	// ft_printf("\ndebug -- p%d args[0]: %d\n", proc->proc_id, args[0]);
+	// ft_printf("\ndebug -- p%d reg[0]: %d, reg[1]: %d, reg[6]: %d\n", proc->proc_id, \
+						proc->regestries[0], proc->regestries[1], proc->regestries[5]);
+
 	proc->carry = (args[0] == 0) ? 1 : 0;
 	proc->regestries[args[1] - 1] = args[0];
 	// ft_printf("debug -- after args[0]: %d, args[1]: %d\n", args[0], args[1]);
