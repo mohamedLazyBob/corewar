@@ -97,3 +97,42 @@ void	mz_l_fork_mode_verbos(t_process *proc, int par1, int new_pc)
 	else
 		ft_printf("P    %d | lfork %d (%d)\n", proc->proc_id, par1, new_pc);
 }
+
+void	mz_print_usage(void)
+{
+	ft_printf("{RED}Usage: ./corewar [-d N -s N -v N | -b --stealth | -n --stealth] [-a] <champion1.cor> <...>{EOC}\n");
+  	ft_printf("\t-a / --aff       : Prints output from \"aff\" (Default is to hide it)\n");
+	ft_printf("{GREEN} #### TEXT OUTPUT MODE ########################################################## {EOC}\n");
+    ft_printf("\t-d / --dump   N    : Dumps memory after N cycles then exits\n");
+    ft_printf("\t-s / --pause  N    : Runs N cycles, dumps memory, pauses, then repeats\n");
+    ft_printf("\t-v / --verbos N    : Verbosity levels, can be added together to enable several\n");
+    ft_printf("\t\t\t\t- 0 : Show only essentials (introduction + the winner)\n");
+	ft_printf("\t\t\t\t- 1 : Show lives\n");
+	ft_printf("\t\t\t\t- 2 : Show cycles\n");
+	ft_printf("\t\t\t\t- 4 : Show operations (Params are NOT litteral ...)\n");
+	ft_printf("\t\t\t\t- 8 : Show deaths\n");
+    ft_printf("\t\t\t\t- 16 : Show PC movements (Except for jumps)\n");
+    ft_printf("\t--stealth : Hides the real contents of the memory\n");
+	ft_printf("{GREEN} #### visualization OUTPUT MODE ################################################{EOC}\n");
+    ft_printf("\t-n / --visu    : visualization output mode\n");
+    ft_printf("\t--stealth : Hides the real contents of the memory\n");
+	ft_printf("{GREEN}################################################################################{EOC}\n");
+}
+
+void	mz_print_pc_movements(t_process *proc)
+{
+	int	i;
+	int	operation_length;
+
+	i = proc->op_pc;
+	operation_length = proc->pc - proc->op_pc;
+	ft_printf("ADV %d (0x%.4x -> 0x%.4x) ", operation_length, \
+											proc->op_pc, \
+											proc->pc);
+	while (i < proc->pc)
+	{
+		ft_printf(" %.2x", proc->arena[0][i]);
+		i++;
+	}
+	ft_printf("\n");
+}

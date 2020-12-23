@@ -1,8 +1,10 @@
 Introducing contestants...
-* Player 1, weighting 03 bytes, "tester" ("test fork") !
-* Player 2, weighting 20 bytes, "tester" ("test aff") !
-P    2 | ld 52 r3
-P    2 | ld 53 r2
-aff: 4
-aff: 5
-P    1 | fork -1 (-1)
+* Player 1, weighting 24 bytes, "tester" ("test add") !
+* Player 2, weighting 16 bytes, "tester" ("test st") !
+ADV 7 (0x0800 -> 0x0807)  02 90 00 00 00 64 03
+ADV 7 (0x0000 -> 0x0007)  02 90 00 00 00 64 01
+ADV 4 (0x0807 -> 0x080b)  03 50 03 04
+ADV 7 (0x0007 -> 0x000e)  02 90 00 00 00 64 02
+ADV 5 (0x080b -> 0x0810)  03 70 04 00 35
+ADV 5 (0x000e -> 0x0013)  04 54 01 11 03
+ADV 5 (0x0013 -> 0x0018)  03 70 03 00 2d

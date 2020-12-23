@@ -28,8 +28,8 @@ static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 	proc->next_inst = temp;
 	if (0 <= temp && temp <= 15)
 		proc->execution_cycle = curr_life_cycle + g_cycles_to_wait[temp] - 1;
+	proc->op_pc = proc->pc;
 	proc->pc = (proc->pc + 1) % MEM_SIZE;
-
 }
 
 /*
@@ -58,6 +58,7 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle)
 				// if (ptr->next_inst == 8)
 					// ft_printf("\t\tP\t%d | %5s | before zjmp pc : %d\n", -ptr->player_id, g_op_tab[ptr->next_inst].op_name, ptr->pc);
 				g_operation[ptr->next_inst](ptr);
+				mz_print_pc_movements(ptr);
 
 
 				// if (ptr->next_inst == 8)
