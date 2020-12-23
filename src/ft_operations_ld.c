@@ -53,8 +53,8 @@ void	ft_operation_ld(t_process *proc)
 	args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
 	// ft_printf("\ndebug -- p%d args[0]: %d\n", proc->proc_id, args[0]);
 	proc->carry = (args[0] == 0) ? 1 : 0;
-	proc->regestries[args[1]] = args[0];
-	ft_printf("debug -- after args[0]: %d, args[1]: %d\n", args[0], args[1]);
+	proc->regestries[args[1] - 1] = args[0];
+	// ft_printf("debug -- after args[0]: %d, args[1]: %d\n", args[0], args[1]);
 	// ft_printf("debug -- after args[0]: %d, carry: %d\n", args[0], proc->carry);
 
 	// proc->carry = (proc->regestries[args[1]] == 0) ? 1 : 0;
@@ -84,12 +84,12 @@ void	ft_operation_lld(t_process *proc)
 	}
 /**/
 	if (parameters[0] == T_DIR)
-		proc->regestries[proc->arena[0][(proc->pc + 4) % IDX_MOD]] = \
+		proc->regestries[proc->arena[0][(proc->pc + 4) % IDX_MOD] - 1] = \
 									ft_reverse_endianness(proc->arena[0] + proc->pc, 4);
 	else
-		proc->regestries[proc->arena[0][(proc->pc + 2) % IDX_MOD]] = temp + \
+		proc->regestries[proc->arena[0][(proc->pc + 2) % IDX_MOD] - 1] = temp + \
 						ft_reverse_endianness(proc->arena[0] + proc->pc, 2);
-	proc->carry = (proc->regestries[proc->arena[0][proc->pc++]] == 0) ? 1 : 0;
+	proc->carry = (proc->regestries[proc->arena[0][proc->pc++] - 1] == 0) ? 1 : 0;
 /**/
 	proc->pc = (proc->pc + \
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
@@ -135,7 +135,7 @@ void	ft_operation_ldi(t_process *proc)
 	value[1] = ft_get_argument_value(proc, value[1], parameters[1]);
 	ft_memcpy(&temp, proc->arena[0] + proc->op_pc + ((value[0] + value[1]) % IDX_MOD), 4);// reading the value from ram
 	temp = ft_reverse_endianness((unsigned char*)&temp, 4); // revering from big_endien to small_endian
-	proc->regestries[value[2]] = temp;// storing the result to the 3dr argument.	
+	proc->regestries[value[2] - 1] = temp;// storing the result to the 3dr argument.	
 	proc->carry = (temp == 0) ? 1 : 0; // modify the carry.
 #endif
 
@@ -181,8 +181,8 @@ void	ft_operation_lldi(t_process *proc)
 	else
 		temp = temp + (ft_reverse_endianness(proc->arena[0] + proc->pc, ft_size(parameters[1], 2)) +\
 				ft_reverse_endianness(proc->arena[0] + proc->pc, ft_size(parameters[2], 2)));
-	proc->regestries[proc->arena[0][proc->pc + ft_size(parameters[0], 2)]] = temp;
-	proc->carry = (proc->regestries[proc->arena[0][proc->pc]] == 0) ? 1 : 0;
+	proc->regestries[proc->arena[0][proc->pc + ft_size(parameters[0], 2)] - 1] = temp;
+	proc->carry = (proc->regestries[proc->arena[0][proc->pc] - 1] == 0) ? 1 : 0;
 /**/
 	proc->pc = (proc->pc + \
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
