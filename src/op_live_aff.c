@@ -96,8 +96,8 @@ void	ft_operation_aff(t_process *process)
 		arg = ft_parse_args(process, parameter[0]);
 		arg = ft_get_argument_value(process, arg, parameter[0]);
 		var = (char)(arg % 256);
-		//if (g_input_bloc->flags[AFF_1] || g_input_bloc->flags[AFF_2])
-		write(1, &var, 1);
+		if (g_input_bloc->flags[AFF_1] || g_input_bloc->flags[AFF_2])
+			write(1, &var, 1);
 	}
 }
 
