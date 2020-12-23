@@ -1,6 +1,7 @@
 Introducing contestants...
 * Player 1, weighing 3 bytes, "tester" ("test fork") !
-* Player 2, weighing 6 bytes, "tester" ("test fork") !
-P    2 | fork 50 (2098)
+* Player 2, weighing 20 bytes, "tester" ("test aff") !
+P    2 | ld 52 r3
+P    2 | ld 53 r2
 P    1 | fork -1 (-1)
 Contestant 2, "tester", has won !

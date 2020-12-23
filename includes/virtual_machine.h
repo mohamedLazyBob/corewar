@@ -74,7 +74,7 @@ typedef struct	s_input_data
 enum e_flags
 {
 	DUMP_64, DUMP_32, PAUSE_1, PAUSE_2, VERBOS_1, VERBOS_2, \
-	VISU_1, VISU_2, AFF_1, AFF2, STEALTH
+	VISU_1, VISU_2, AFF_1, AFF_2, STEALTH
 };
 
 /*
