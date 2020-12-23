@@ -175,7 +175,7 @@ void	ft_read_players(int argc, char **av, t_input_data *bloc)
 						(void**)bloc->names, bloc->players_counter);
 	else if (bloc->players_counter == 0)
 	{
-		printf("print coreware usage\n");
+		mz_print_usage();
 		exit(0);
 	}
 }
