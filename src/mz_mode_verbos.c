@@ -15,7 +15,7 @@ void	mz_print_op(t_process *proc, unsigned char args_types[3], int value[3])
 	// ft_printf("i was called \n");
 	if (!(g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4))
 	{
-		ft_printf("non verbos!\n");
+		// ft_printf("non verbos!\n");
 		return ;	
 	}
 	// ft_printf("next inst : [%d], add == %d\n", proc->next_inst, AND);
@@ -87,3 +87,13 @@ void	mz_print_op(t_process *proc, unsigned char args_types[3], int value[3])
 	}
 }
 
+void	mz_l_fork_mode_verbos(t_process *proc, int par1, int new_pc)
+{
+	if (!(g_input_bloc->flags[VERBOS_1] & 4 || \
+			g_input_bloc->flags[VERBOS_2] & 4))
+		return ;	
+	if (proc->next_inst == FORK)
+		ft_printf("P    %d | fork %d (%d)\n", proc->proc_id, par1, new_pc);
+	else
+		ft_printf("P    %d | lfork %d (%d)\n", proc->proc_id, par1, new_pc);
+}
