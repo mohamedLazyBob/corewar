@@ -109,7 +109,7 @@ void	ft_operation_st(t_process *proc)
 	unsigned char	parameters[3];
 	char			str[4];
 
-	// why you do this ???
+		// why you do this ???
 	// proc->regestries[1] = proc->regestries[0];
 	proc->op_pc = proc->pc - 1;
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
