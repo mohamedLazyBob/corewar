@@ -29,7 +29,8 @@ int		ft_read_sideflags(int i, char **av, t_input_data *bloc)
 								"-n", "--visu", "-a", "--aff", "--stealth"};
 
 	temp_str = ft_strdup_lower(av[i]);
-	ret = 0;
+	// ft_printf("temp_str = [%s]\n", temp_str);
+	ret = -1;
 	for (int j = 0; j < 11; j++)
 	{
 		if (0 == ft_strcmp(temp_str, flags[j]))
@@ -40,7 +41,11 @@ int		ft_read_sideflags(int i, char **av, t_input_data *bloc)
 				ret = 1;
 			}
 			else if (6 <= j)
+			{
+				// ft_printf("[%s] -%d- [%s]\n", temp_str,j,  flags[j]);
 				bloc->flags[j] = 1;
+				ret = 0;
+			}
 			break;
 		}
 	}
@@ -92,17 +97,18 @@ int		ft_read_player_numb(int idx, char **av, t_input_data *bloc)
 			return (1);
 		}
 	}
-	return (0);
+	return (-1);
 }
 
 /*
 *******************************************************************************
 */
 
-void	ft_read_player_name(int idx, char **av, t_input_data *bloc)
+int		ft_read_player_name(int idx, char **av, t_input_data *bloc)
 {
 	bloc->names[bloc->players_counter] = ft_strdup(av[idx]);
 	bloc->players_counter++;
+	return (0);
 }
 
 /*
@@ -149,17 +155,18 @@ void	ft_read_players(int argc, char **av, t_input_data *bloc)
 	int		ret;
 
 	idx = 1;
-	ret = 0;
+	ret = -1;
 	while (idx < argc)
 	{
 		if ((bloc->players_counter == MAX_PLAYERS) && \
 				(0 == ft_read_sideflags(idx, av, bloc)))
 			ft_exit("ERROR: Wrong number of args");
 		ret = ft_read_sideflags(idx, av, bloc);
-		if (ret == 0)
+		// ft_printf("ret == %d for av[i] : [%s]\n", ret, av[idx]);
+		if (ret == -1)
 			ret = ft_read_player_numb(idx, av, bloc);
-		if (ret == 0)
-			ft_read_player_name(idx, av, bloc);
+		if (ret == -1)
+			ret = ft_read_player_name(idx, av, bloc);
 		idx += ret + 1;
 	}
 	ft_add_ids(bloc);
@@ -168,7 +175,7 @@ void	ft_read_players(int argc, char **av, t_input_data *bloc)
 						(void**)bloc->names, bloc->players_counter);
 	else if (bloc->players_counter == 0)
 	{
-		printf("print coreware usage\n");
+		mz_print_usage();
 		exit(0);
 	}
 }

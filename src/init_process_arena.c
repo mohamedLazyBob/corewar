@@ -12,13 +12,26 @@
 
 #include "virtual_machine.h"
 
+extern t_process *g_procs_head;
+
 /*
+*******************************************************************************
+*/
+
+void	mz_update_procs(t_process **proc)
+{
+	*proc = g_procs_head;
+}
+
+
+/*
+*******************************************************************************
 ** procs id starts from 1
 ** players id starts from 1
 ** proc 1 <-- last player
 */
 
-static int	ft_get_player_index(t_input_data *bloc, int player_id)
+int	ft_get_player_index(t_input_data *bloc, int player_id)
 {
 	int i;
 
@@ -31,25 +44,8 @@ static int	ft_get_player_index(t_input_data *bloc, int player_id)
 	}
 	return (-1);
 }
-
-void		print_procs(t_process *ptr, t_input_data *bloc)
-{
-	int	idx;
-
-	while (ptr)
-	{
-		printf("proc id: %d\n", ptr->proc_id);
-		printf("player id: %d\n", ptr->player_id);
-		idx = ft_get_player_index(bloc, -1 * ptr->player_id);
-		printf("player name: %s\n", bloc->names[idx]);
-		printf("pc: %d\n", ptr->pc);
-		printf("player counter: %d\n", ptr->players_counter);
-		ptr = ptr->next;
-		printf("======================\n");
-	}
-}
-
 /*
+*******************************************************************************
 ** this function iterates on the input data and created a linked list of
 ** the procs that we gonna use afer, and allocates/ filles the arena
 */
@@ -72,22 +68,18 @@ void		ft_init_procs_arena(t_process **procs, t_input_data *bloc)
 	while (player_id > 0)
 	{
 		temp = ft_init_proc(bloc, player_id, arena);
-		// proc->next = ft_init_proc(bloc, player_id, arena);
 		temp->next = proc;
-		// proc = proc->next;
+		proc->previous = temp;
 		proc = temp;
+		temp = NULL;
 		player_id--;
 	}
 	*procs = proc;
-	// temp = *procs;
-	// while (temp)
-	// {
-	// 	ft_printf("player_id: %d, proc_id: %d, pc: %d;\n", temp->player_id, temp->proc_id, temp->pc);
-	// 	temp = temp->next;
-	// }
+	g_procs_head = proc;
 }
 
 /*
+*******************************************************************************
 ** this function, allocates and initialize one node of the processes list.
 */
 
@@ -112,6 +104,31 @@ t_process	*ft_init_proc(t_input_data *bloc, \
 	proc->players_counter = bloc->players_counter;
 	proc->execution_cycle = -1;
 	proc->next = NULL;
+	proc->previous = NULL;
 	proc->carry = 0;
 	return (proc);
+}
+
+/*
+*******************************************************************************
+*/
+
+/*
+** this func reverse the endianess of a number (int, long ...)
+** for now it's working only with 2/4 bytes values (what we need)
+*/
+
+unsigned int	ft_reverse_endianness(unsigned char *temp, size_t size)
+{
+	int				i;
+	unsigned int	hex;
+
+	i = -1;
+	hex = 0;
+	while (++i < size)
+	{
+		hex = hex << 8;
+		hex = hex | (unsigned int)temp[i];
+	}
+	return (hex);
 }
