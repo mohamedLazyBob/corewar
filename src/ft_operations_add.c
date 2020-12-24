@@ -109,7 +109,8 @@ void	ft_operation_st(t_process *proc)
 	unsigned char	parameters[3];
 	char			str[4];
 
-	proc->regestries[1] = proc->regestries[0];
+	// why you do this ???
+	// proc->regestries[1] = proc->regestries[0];
 	proc->op_pc = proc->pc - 1;
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
@@ -125,10 +126,14 @@ void	ft_operation_st(t_process *proc)
 		if ((parameters[0] == T_REG && (args[0] < 1 || 16 < args[0])) || \
 			(parameters[1] == T_REG && (args[1] < 1 || 16 < args[1])))
 			return ;
-	//	printf("=============%d		%d\n", proc->regestries[1], proc->regestries[args[0]]);
 		mz_print_op(proc, parameters, args);
+		// ft_printf("=============%d		%d\n", proc->regestries[1], proc->regestries[args[0] - 1]);
 		args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
-		
+		// ft_printf("=============%d		%d, [%u]{%x}\n", proc->regestries[1], args[0], args[0], args[0]);
+
+		// for (int i = 0; i < REG_NUMBER; i++)
+		// 	ft_printf("[%d] ", proc->regestries[i]);
+		// ft_printf("\n");
 		if (parameters[1] == T_REG)
 			proc->regestries[args[1] - 1] = args[0];
 		else // indirect choice
@@ -137,13 +142,16 @@ void	ft_operation_st(t_process *proc)
 			// ft_any_player(proc, (proc->op_pc + (args[1] % IDX_MOD)), str, 4);
 			ft_int_to_str(args[0], str);
 			int offset = ((proc->op_pc + (args[1] % IDX_MOD)) % MEM_SIZE);
+			// ft_printf("old offset = %d\n", offset);
 			if (offset < 0)
 				offset += MEM_SIZE;
+			// ft_printf("new offset = %d\n", offset);
 			// ft_printf("str from st--> [%.2x][%.2x][%.2x][%.2x]\n", str[0],  str[1], str[2], str[3]);
+			// ft_printf("args[0]: %d, reg2/reg[1]: %d\n", args[0], proc->regestries[1]);
 			ft_memcpy(proc->arena[0] + offset, str, 4);
 			ft_memset(proc->arena[1] + offset, proc->player_id, 4);
 			// ft_printf("this addr {%d} should recieve recieved [%d]\n", \
-			(proc->op_pc + (args[1] % IDX_MOD)) % MEM_SIZE, args[0]);
+			offset, args[0]);
 
 		}
 	}

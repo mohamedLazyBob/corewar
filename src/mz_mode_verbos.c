@@ -97,13 +97,18 @@ void	mz_l_fork_mode_verbos(t_process *proc, int par1, int new_pc)
 {
 	if (!(g_input_bloc->flags[VERBOS_1] & 4 || \
 			g_input_bloc->flags[VERBOS_2] & 4))
+	{
+		if ((g_input_bloc->flags[VERBOS_1] & 16 || \
+			g_input_bloc->flags[VERBOS_2] & 16) && (proc->next_inst != 8))
+			mz_print_pc_movements(proc);
 		return ;	
+	}
 	if (proc->next_inst == FORK)
 		ft_printf("P    %d | fork %d (%d)\n", proc->proc_id, par1, new_pc);
 	else
 		ft_printf("P    %d | lfork %d (%d)\n", proc->proc_id, par1, new_pc);
 	if ((g_input_bloc->flags[VERBOS_1] & 16 || \
-		g_input_bloc->flags[VERBOS_2] & 16) && (proc->next_inst != 8))
+		g_input_bloc->flags[VERBOS_2] & 16))
 		mz_print_pc_movements(proc);
 }
 

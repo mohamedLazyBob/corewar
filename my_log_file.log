@@ -3420,7 +3420,6 @@ It is now cycle 2500
 It is now cycle 2501
 It is now cycle 2502
 It is now cycle 2503
-ADV 2 (0x000d -> 0x000f) 03 04 
 It is now cycle 2504
 It is now cycle 2505
 It is now cycle 2506
@@ -3435,15 +3434,12 @@ P    5 | zjmp 19 OK
 It is now cycle 2511
 It is now cycle 2512
 It is now cycle 2513
-ADV 2 (0x000f -> 0x0011) 05 09 
 It is now cycle 2514
 It is now cycle 2515
 P    2 | zjmp -35 OK
 P    1 | zjmp -35 OK
 It is now cycle 2516
 It is now cycle 2517
-ADV 2 (0x000d -> 0x000f) 03 04 
-ADV 2 (0x000d -> 0x000f) 03 04 
 It is now cycle 2518
 It is now cycle 2519
 It is now cycle 2520
@@ -3461,8 +3457,6 @@ P    1 | live -1
 ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
 It is now cycle 2526
 It is now cycle 2527
-ADV 2 (0x000f -> 0x0011) 05 09 
-ADV 2 (0x000f -> 0x0011) 05 09 
 It is now cycle 2528
 It is now cycle 2529
 P    3 | live 201494528
@@ -3524,7 +3518,6 @@ P    7 | zjmp 19 OK
 P    6 | zjmp 19 OK
 It is now cycle 2556
 It is now cycle 2557
-ADV 2 (0x001f -> 0x0021) 0b 03 
 It is now cycle 2558
 It is now cycle 2559
 It is now cycle 2560
@@ -3548,8 +3541,6 @@ ADV 3 (0x0843 -> 0x0846) 09 00 21
 P    1 | zjmp 33 FAILED
 ADV 3 (0x0043 -> 0x0046) 09 00 21 
 It is now cycle 2571
-ADV 2 (0x001f -> 0x0021) 0b 03 
-ADV 2 (0x001f -> 0x0021) 0b 03 
 It is now cycle 2572
 It is now cycle 2573
 It is now cycle 2574
@@ -3655,7 +3646,7 @@ ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b
 P    5 | sub r11 r12 r11
 ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
 P    2 | st r11 21507
-ADV 5 (0x0839 -> 0x083e) 03 70 0b 00 00 
+ADV 5 (0x0839 -> 0x083e) 03 70 0b 54 03 
 P    1 | st r2 -301
 ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
 It is now cycle 2616
@@ -3672,8 +3663,6 @@ It is now cycle 2622
 It is now cycle 2623
 It is now cycle 2624
 It is now cycle 2625
-ADV 2 (0x083b -> 0x083d) 0b 00 
-ADV 2 (0x083b -> 0x083d) 0b 00 
 It is now cycle 2626
 P    3 | ld 0 r16
 ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
@@ -3743,7 +3732,7 @@ ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4
 It is now cycle 2662
 P    2 | sti r3 0 0
        | -> store to 0 + 0 = 0 (with pc and mod 2131)
-ADV 5 (0x0853 -> 0x0858) 00 00 00 00 09 
+ADV 5 (0x0853 -> 0x0858) 0b 54 03 04 09 
 It is now cycle 2663
 It is now cycle 2664
 It is now cycle 2665
@@ -3761,15 +3750,12 @@ ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff
 P    5 | live -1
 ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
 It is now cycle 2671
-ADV 3 (0x0860 -> 0x0863) 10 09 01 
 P    3 | st r2 -302
 ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
 It is now cycle 2672
 P    2 | live -838692864
 ADV 5 (0x0858 -> 0x085d) 01 ce 02 90 00 
 It is now cycle 2673
-ADV 2 (0x0853 -> 0x0855) 00 00 
-ADV 2 (0x0853 -> 0x0855) 00 00 
 It is now cycle 2674
 It is now cycle 2675
 P    8 | st r16 -300
@@ -3779,7 +3765,6 @@ ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4
 P    1 | zjmp -35 OK
 It is now cycle 2676
 It is now cycle 2677
-ADV 3 (0x0860 -> 0x0863) 10 09 01 
 It is now cycle 2678
 It is now cycle 2679
 It is now cycle 2680
@@ -3881,27 +3866,22 @@ P    5 | ld 0 r16
 ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
 It is now cycle 2721
 It is now cycle 2722
-ADV 5 (0x086b -> 0x0870) 0b 54 03 04 00 
 It is now cycle 2723
 It is now cycle 2724
 It is now cycle 2725
-ADV 3 (0x0871 -> 0x0874) 10 03 70 
 It is now cycle 2726
 P    3 | zjmp -35 OK
 It is now cycle 2727
 It is now cycle 2728
-ADV 5 (0x086b -> 0x0870) 0b 54 03 04 00 
 It is now cycle 2729
 It is now cycle 2730
 P    1 | zjmp 33 FAILED
 ADV 3 (0x0043 -> 0x0046) 09 00 21 
 It is now cycle 2731
-ADV 3 (0x0871 -> 0x0874) 10 03 70 
 It is now cycle 2732
 It is now cycle 2733
 It is now cycle 2734
 It is now cycle 2735
-ADV 2 (0x0874 -> 0x0876) 0d 00 
 P    1 | ld 0 r16
 ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
 It is now cycle 2736
@@ -3914,10 +3894,8 @@ It is now cycle 2740
 P    8 | zjmp -35 OK
 P    5 | zjmp -35 OK
 It is now cycle 2741
-ADV 2 (0x0876 -> 0x0878) 06 01 
 P    3 | st r16 -300
 ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
-ADV 2 (0x0874 -> 0x0876) 0d 00 
 It is now cycle 2742
 It is now cycle 2743
 It is now cycle 2744
@@ -3926,7 +3904,6 @@ It is now cycle 2746
 P    3 | st r2 -301
 ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
 It is now cycle 2747
-ADV 2 (0x0876 -> 0x0878) 06 01 
 It is now cycle 2748
 It is now cycle 2749
 It is now cycle 2750
@@ -5443,7 +5420,6 @@ It is now cycle 3571
 It is now cycle 3572
 It is now cycle 3573
 It is now cycle 3574
-ADV 2 (0x0881 -> 0x0883) 0d 00 
 It is now cycle 3575
 P    8 | sub r11 r12 r11
 ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
@@ -5468,8 +5444,6 @@ P    7 | st r11 510
 ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
 P    6 | st r11 510
 ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
-ADV 2 (0x0883 -> 0x0885) 06 01 
-ADV 2 (0x0881 -> 0x0883) 0d 00 
 P    1 | st r2 -302
 ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
 It is now cycle 3581
@@ -5488,7 +5462,6 @@ ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff
 It is now cycle 3586
 P    3 | ld 0 r16
 ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
-ADV 2 (0x0883 -> 0x0885) 06 01 
 It is now cycle 3587
 It is now cycle 3588
 It is now cycle 3589
@@ -5577,7 +5550,7 @@ It is now cycle 3629
 It is now cycle 3630
 P    12 | sti r3 0 0
        | -> store to 0 + 0 = 0 (with pc and mod 1939)
-ADV 5 (0x0793 -> 0x0798) 00 00 00 00 05 
+ADV 5 (0x0793 -> 0x0798) 0b 54 03 04 05 
 P    8 | live -1
 ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
 P    5 | live -1
@@ -5720,7 +5693,7 @@ ADV 3 (0x0043 -> 0x0046) 09 00 21
 It is now cycle 3691
 P    12 | sti r3 0 0
        | -> store to 0 + 0 = 0 (with pc and mod 1963)
-ADV 5 (0x07ab -> 0x07b0) 00 00 00 00 05 
+ADV 5 (0x07ab -> 0x07b0) 0b 54 03 04 05 
 P    7 | zjmp 19 OK
 P    6 | zjmp 19 OK
 It is now cycle 3692
@@ -5860,7 +5833,7 @@ It is now cycle 3751
 It is now cycle 3752
 P    12 | sti r3 0 0
        | -> store to 0 + 0 = 0 (with pc and mod 1987)
-ADV 5 (0x07c3 -> 0x07c8) 00 00 00 00 05 
+ADV 5 (0x07c3 -> 0x07c8) 0b 54 03 04 05 
 It is now cycle 3753
 It is now cycle 3754
 It is now cycle 3755
@@ -5999,7 +5972,7 @@ It is now cycle 3812
 It is now cycle 3813
 P    12 | sti r3 0 0
        | -> store to 0 + 0 = 0 (with pc and mod 2011)
-ADV 5 (0x07db -> 0x07e0) 00 00 00 00 05 
+ADV 5 (0x07db -> 0x07e0) 0b 54 03 04 05 
 It is now cycle 3814
 It is now cycle 3815
 P    8 | sub r11 r12 r11
@@ -6135,7 +6108,7 @@ It is now cycle 3873
 It is now cycle 3874
 P    12 | sti r3 0 0
        | -> store to 0 + 0 = 0 (with pc and mod 2035)
-ADV 5 (0x07f3 -> 0x07f8) 00 00 00 00 05 
+ADV 5 (0x07f3 -> 0x07f8) 0b 54 03 04 05 
 It is now cycle 3875
 P    8 | st r16 -300
 ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
@@ -7138,8 +7111,6 @@ It is now cycle 4351
 P    3 | st r2 -302
 ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
 It is now cycle 4352
-ADV 2 (0x000d -> 0x000f) 03 04 
-ADV 2 (0x000d -> 0x000f) 03 04 
 It is now cycle 4353
 It is now cycle 4354
 It is now cycle 4355
@@ -7163,10 +7134,6 @@ It is now cycle 4361
 P    3 | sub r11 r12 r11
 ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
 It is now cycle 4362
-ADV 2 (0x000d -> 0x000f) 03 04 
-ADV 2 (0x000d -> 0x000f) 03 04 
-ADV 2 (0x000f -> 0x0011) 05 09 
-ADV 2 (0x000f -> 0x0011) 05 09 
 It is now cycle 4363
 It is now cycle 4364
 It is now cycle 4365
@@ -7185,8 +7152,6 @@ P    1 | st r16 -300
 ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
 It is now cycle 4371
 It is now cycle 4372
-ADV 2 (0x000f -> 0x0011) 05 09 
-ADV 2 (0x000f -> 0x0011) 05 09 
 It is now cycle 4373
 It is now cycle 4374
 It is now cycle 4375
@@ -7273,8 +7238,6 @@ It is now cycle 4405
 P    14 | ld 150994956 r8
 ADV 7 (0x08c0 -> 0x08c7) 02 90 09 00 00 0c 08 
 It is now cycle 4406
-ADV 2 (0x001f -> 0x0021) 0b 03 
-ADV 2 (0x001f -> 0x0021) 0b 03 
 P    3 | zjmp -35 OK
 It is now cycle 4407
 It is now cycle 4408
@@ -7300,8 +7263,6 @@ ADV 5 (0x0025 -> 0x002a) 03 70 10 ff fc
 P    1 | ld 0 r16
 ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
 It is now cycle 4416
-ADV 2 (0x001f -> 0x0021) 0b 03 
-ADV 2 (0x001f -> 0x0021) 0b 03 
 P    3 | live -1
 ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
 It is now cycle 4417
@@ -8025,7 +7986,6 @@ ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3
 It is now cycle 4696
 It is now cycle 4697
 It is now cycle 4698
-ADV 7 (0x0850 -> 0x0857) 02 90 00 00 00 00 00 
 It is now cycle 4699
 P    12 | fork 80 (2128)
 ADV 3 (0x0800 -> 0x0803) 0c 00 50 
@@ -8044,7 +8004,6 @@ It is now cycle 4703
 P    11 | live 0
 ADV 5 (0x0803 -> 0x0808) 01 00 00 00 00 
 It is now cycle 4704
-ADV 7 (0x0850 -> 0x0857) 02 90 00 00 00 00 00 
 It is now cycle 4705
 It is now cycle 4706
 P    3 | ld 0 r16
@@ -8261,7 +8220,6 @@ ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3
 It is now cycle 4776
 It is now cycle 4777
 It is now cycle 4778
-ADV 7 (0x0a0d -> 0x0a14) 02 90 00 00 00 09 00 
 It is now cycle 4779
 P    16 | ld 150994956 r6
 ADV 7 (0x0a06 -> 0x0a0d) 02 90 09 00 00 0c 06 
@@ -8278,7 +8236,6 @@ ADV 3 (0x0043 -> 0x0046) 09 00 21
 It is now cycle 4782
 It is now cycle 4783
 It is now cycle 4784
-ADV 7 (0x0a0d -> 0x0a14) 02 90 00 00 00 09 00 
 It is now cycle 4785
 It is now cycle 4786
 P    3 | ld 0 r16
@@ -9313,7 +9270,6 @@ It is now cycle 5197
 P    2 | fork 3073 (2198)
 ADV 3 (0x0895 -> 0x0898) 0c 0c 01 
 It is now cycle 5198
-ADV 14 (0x0899 -> 0x08a7) 07 02 90 00 00 01 11 08 02 90 00 00 01 0e 
 It is now cycle 5199
 It is now cycle 5200
 P    10 | zjmp 33 FAILED
@@ -9328,7 +9284,6 @@ It is now cycle 5201
 It is now cycle 5202
 It is now cycle 5203
 It is now cycle 5204
-ADV 14 (0x0899 -> 0x08a7) 07 02 90 00 00 01 11 08 02 90 00 00 01 0e 
 It is now cycle 5205
 P    10 | ld 0 r16
 ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
@@ -9369,7 +9324,6 @@ P    3 | st r16 -300
 ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
 It is now cycle 5222
 It is now cycle 5223
-ADV 2 (0x08a7 -> 0x08a9) 0b 02 
 It is now cycle 5224
 It is now cycle 5225
 P    10 | zjmp -35 OK
@@ -9385,7 +9339,6 @@ It is now cycle 5227
 It is now cycle 5228
 It is now cycle 5229
 P    13 | zjmp 265 OK
-ADV 2 (0x08a7 -> 0x08a9) 0b 02 
 It is now cycle 5230
 P    8 | live -1
 ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
@@ -10173,7 +10126,7 @@ It is now cycle 5534
 P    22 | zjmp 395 OK
 P    12 | sti r3 0 0
        | -> store to 0 + 0 = 0 (with pc and mod 2059)
-ADV 5 (0x080b -> 0x0810) 00 00 00 00 05 
+ADV 5 (0x080b -> 0x0810) 0b 54 03 04 05 
 It is now cycle 5535
 P    7 | zjmp -35 OK
 P    6 | zjmp -35 OK
@@ -10282,7 +10235,6 @@ It is now cycle 5562
 P    11 | live 201494528
 ADV 5 (0x0817 -> 0x081c) 01 0c 02 90 00 
 It is now cycle 5563
-ADV 7 (0x0a0d -> 0x0a14) 02 90 00 00 00 09 00 
 It is now cycle 5564
 P    22 | ld 150994956 r6
 ADV 7 (0x0a06 -> 0x0a0d) 02 90 09 00 00 0c 06 
@@ -10303,7 +10255,6 @@ It is now cycle 5568
 P    12 | live 201494528
 ADV 5 (0x0817 -> 0x081c) 01 0c 02 90 00 
 It is now cycle 5569
-ADV 7 (0x0a0d -> 0x0a14) 02 90 00 00 00 09 00 
 It is now cycle 5570
 P    10 | st r2 -302
 ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
@@ -10357,7 +10308,6 @@ It is now cycle 5589
 P    15 | live -284949872
 ADV 5 (0x0a18 -> 0x0a1d) 01 ef 04 02 90 
 It is now cycle 5590
-ADV 2 (0x081f -> 0x0821) 0b 03 
 P    7 | zjmp 33 FAILED
 ADV 3 (0x0043 -> 0x0046) 09 00 21 
 P    6 | zjmp 33 FAILED
@@ -10380,7 +10330,6 @@ ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10
 P    5 | zjmp 33 FAILED
 ADV 3 (0x0043 -> 0x0046) 09 00 21 
 It is now cycle 5596
-ADV 2 (0x081f -> 0x0821) 0b 03 
 It is now cycle 5597
 It is now cycle 5598
 It is now cycle 5599
@@ -10396,7 +10345,6 @@ ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10
 It is now cycle 5601
 It is now cycle 5602
 It is now cycle 5603
-ADV 2 (0x0a21 -> 0x0a23) 05 09 
 It is now cycle 5604
 It is now cycle 5605
 P    10 | ld 0 r16
@@ -10408,7 +10356,6 @@ P    3 | zjmp -35 OK
 It is now cycle 5607
 It is now cycle 5608
 It is now cycle 5609
-ADV 2 (0x0a21 -> 0x0a23) 05 09 
 It is now cycle 5610
 P    1 | zjmp 33 FAILED
 ADV 3 (0x0043 -> 0x0046) 09 00 21 
@@ -10446,7 +10393,7 @@ It is now cycle 5622
 It is now cycle 5623
 P    12 | sti r3 0 0
        | -> store to 0 + 0 = 0 (with pc and mod 2083)
-ADV 5 (0x0823 -> 0x0828) 00 00 00 00 05 
+ADV 5 (0x0823 -> 0x0828) 0b 54 03 04 05 
 It is now cycle 5624
 It is now cycle 5625
 P    15 | ld 84476405 r11
@@ -10568,7 +10515,7 @@ P    1 | st r2 -301
 ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
 It is now cycle 5656
 P    11 | st r11 21507
-ADV 5 (0x0839 -> 0x083e) 03 70 0b 05 09 
+ADV 5 (0x0839 -> 0x083e) 03 70 0b 54 03 
 It is now cycle 5657
 P    12 | st r2 -301
 ADV 5 (0x0834 -> 0x0839) 03 70 02 fe d3 
@@ -11000,11 +10947,9 @@ ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b
 P    1 | st r16 -300
 ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
 It is now cycle 5811
-ADV 5 (0x086b -> 0x0870) 0b 54 03 04 00 
 It is now cycle 5812
 It is now cycle 5813
 It is now cycle 5814
-ADV 3 (0x0871 -> 0x0874) 10 03 70 
 It is now cycle 5815
 P    8 | sub r11 r12 r11
 ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
@@ -11014,11 +10959,9 @@ P    1 | st r2 -301
 ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
 It is now cycle 5816
 It is now cycle 5817
-ADV 5 (0x086b -> 0x0870) 0b 54 03 04 00 
 It is now cycle 5818
 It is now cycle 5819
 It is now cycle 5820
-ADV 3 (0x0871 -> 0x0874) 10 03 70 
 P    10 | sub r11 r12 r11
 ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
 P    9 | sub r11 r12 r11
@@ -11031,7 +10974,6 @@ ADV 3 (0x0043 -> 0x0046) 09 00 21
 It is now cycle 5822
 It is now cycle 5823
 It is now cycle 5824
-ADV 2 (0x0874 -> 0x0876) 0d 00 
 It is now cycle 5825
 It is now cycle 5826
 P    3 | ld 0 r16
@@ -11040,8 +10982,6 @@ It is now cycle 5827
 It is now cycle 5828
 It is now cycle 5829
 It is now cycle 5830
-ADV 2 (0x0874 -> 0x0876) 0d 00 
-ADV 2 (0x0876 -> 0x0878) 06 01 
 P    7 | zjmp 33 FAILED
 ADV 3 (0x0043 -> 0x0046) 09 00 21 
 P    6 | zjmp 33 FAILED
@@ -11062,7 +11002,6 @@ ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10
 P    5 | zjmp 33 FAILED
 ADV 3 (0x0043 -> 0x0046) 09 00 21 
 It is now cycle 5836
-ADV 2 (0x0876 -> 0x0878) 06 01 
 It is now cycle 5837
 It is now cycle 5838
 It is now cycle 5839
@@ -11472,7 +11411,6 @@ It is now cycle 5996
 It is now cycle 5997
 P    18 | fork 256 (2454)
 ADV 3 (0x0896 -> 0x0899) 0c 01 00 
-ADV 14 (0x0899 -> 0x08a7) 07 02 90 00 00 01 11 08 02 90 00 00 01 0e 
 It is now cycle 5998
 It is now cycle 5999
 It is now cycle 6000
@@ -11487,7 +11425,6 @@ ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10
 It is now cycle 6001
 It is now cycle 6002
 It is now cycle 6003
-ADV 14 (0x0899 -> 0x08a7) 07 02 90 00 00 01 11 08 02 90 00 00 01 0e 
 It is now cycle 6004
 It is now cycle 6005
 P    10 | ld 0 r16
@@ -11532,7 +11469,6 @@ ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4
 It is now cycle 6022
 P    28 | ld 84476405 r11
 ADV 7 (0x0a31 -> 0x0a38) 02 90 05 09 01 f5 0b 
-ADV 2 (0x08a7 -> 0x08a9) 0b 02 
 It is now cycle 6023
 It is now cycle 6024
 It is now cycle 6025
@@ -11547,7 +11483,6 @@ P    3 | st r2 -301
 ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
 It is now cycle 6027
 It is now cycle 6028
-ADV 2 (0x08a7 -> 0x08a9) 0b 02 
 It is now cycle 6029
 P    13 | fork 2304 (2785)
 ADV 3 (0x09e1 -> 0x09e4) 0c 09 00 
@@ -11583,7 +11518,6 @@ P    5 | st r16 -300
 ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
 P    1 | zjmp -35 OK
 It is now cycle 6036
-ADV 2 (0x08e0 -> 0x08e2) 0a 0b 
 It is now cycle 6037
 It is now cycle 6038
 It is now cycle 6039
@@ -11604,94 +11538,4740 @@ It is now cycle 6041
 P    3 | sub r11 r12 r11
 ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
 It is now cycle 6042
-ADV 2 (0x08e0 -> 0x08e2) 0a 0b 
 It is now cycle 6043
 P    17 | zjmp 0 FAILED
 ADV 3 (0x08aa -> 0x08ad) 09 00 00 
-champion operation args error, AT PC= 13
-champion operation args error, AT PC= 13
-champion operation args error, AT PC= 13
-ERROR in aff operation: args byte.
-ERROR in aff operation: args byte.
-ERROR in aff operation: args byte.
-ERROR in aff operation: args byte.
-champion operation args error, AT PC= 2166
-champion operation args error, AT PC= 2166
-champion operation args error, AT PC= 2179
-champion operation args error, AT PC= 2179
-champion operation args error, AT PC= 13
-champion operation args error, AT PC= 13
-champion operation args error, AT PC= 13
-champion operation args error, AT PC= 13
-champion operation args error, AT PC= 2201
-champion operation args error, AT PC= 2201
-ERROR in aff operation: args byte.
-ERROR in aff operation: args byte.
-champion operation args error, AT PC= 2166
-champion operation args error, AT PC= 2166
-champion operation args error, AT PC= 2201
-champion operation args error, AT PC= 2201
-0c 00 50 01 00 00 00 00 0c 00 52 0b 54 03 04 05 09 00 13 90 00 00 00 01 0c 02 90 00 00 00 28 0b 03 00 00 00 00 03 70 10 ff fc 01 ff ff ff ff 03 70 10 fe d4 03 70 02 fe d3 03 70 02 fe d2 05 54 
-0b 0c 0b 09 00 21 02 90 00 00 00 00 10 09 ff dd 02 90 00 00 00 00 10 09 01 ce 02 90 00 00 00 00 10 09 01 8b 0a a4 ff c6 00 01 0d 02 90 00 00 00 00 10 03 70 0d 00 06 01 00 00 09 00 00 0c fb 03 
-70 0d 00 06 01 00 00 00 00 0c 00 2c 02 90 0b 54 0a 0b 09 00 00 0c 0c 01 00 07 02 90 00 00 01 11 08 02 90 00 00 01 0e 0b 02 90 09 00 00 0c 0c 0c 00 2c 09 01 2b 02 90 0c 0b 54 07 0a 03 50 0d 07 
-02 90 09 00 00 0c 08 02 90 00 00 01 12 0b 02 90 00 00 00 00 0c 0c 00 06 09 01 09 00 00 0c 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 09 00 00 0c 0c 01 00 00 00 00 0b 54 0a 0b 
-0c 0b 54 07 08 0c 01 00 00 00 09 00 00 0c 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 0b 54 07 09 00 00 0c 00 00 00 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 09 00 00 0c 54 07 
-08 0c 01 00 00 00 00 0b 54 0a 0b 0c 0b 54 07 08 0c 01 09 00 00 0c 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 09 00 00 0c 0c 01 00 00 00 00 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 
-00 00 09 00 00 0c 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 0b 54 07 09 00 00 0c 00 00 00 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 09 00 00 0c 54 07 08 0c 01 00 00 00 00 0b 
-54 0a 0b 0c 0b 54 07 08 0c 01 09 00 00 0c 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 09 00 00 0c 0c 01 00 00 00 00 01 00 00 00 00 02 90 0b 54 06 07 0a 02 90 05 09 01 f5 0b 02 
-90 09 00 00 0c 03 02 90 09 00 00 0c 06 02 90 00 00 00 1a 07 02 90 00 00 01 ef 04 02 90 00 00 00 00 05 09 00 6a 01 00 00 00 00 02 90 0b 54 06 07 0a 02 90 05 09 01 f5 0b 0c 00 29 02 90 0b 54 03 
-04 03 02 90 0b 54 03 04 06 02 90 00 00 01 fb 07 02 90 00 00 00 18 04 02 90 00 00 00 00 05 09 00 2e 01 00 00 00 00 02 90 05 09 00 13 03 02 90 05 09 00 13 06 02 90 00 00 01 ff 07 02 90 00 00 00 
-1c 04 02 90 00 00 00 00 05 09 00 03 01 00 00 00 00 03 70 0a 01 ff 03 70 0b 01 fe 09 01 f5 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 06 07 05 09 01 f5 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 09 00 00 0c 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 
-09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 0f 00 00 0f 0f 00 00 0f 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 
-09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 05 09 00 13 00 00 00 00 00 
-0c 00 50 01 00 00 00 00 0c 00 52 00 00 00 00 05 09 00 13 90 00 00 00 01 0c 02 90 00 00 00 28 0b 03 00 00 00 00 00 00 05 09 00 13 ff ff ff fe 03 70 10 fe d4 03 70 02 fe d3 03 70 0b 05 09 01 f5 
-09 00 13 09 00 21 02 90 00 00 00 00 10 09 ff dd 02 90 00 00 00 00 00 09 01 ce 02 90 00 00 00 00 10 09 01 8b 0a a4 ff c6 00 01 0d 0b 54 03 04 00 00 10 03 70 0d 00 06 01 00 00 09 00 00 0c fb 03 
-70 0d 00 06 01 00 00 00 00 0c 00 2c 02 90 0b 54 0a 0b 09 00 00 0c 0c 01 00 07 02 90 00 00 01 11 08 02 90 00 00 01 0e 0b 02 90 09 00 00 0c 0c 0c 00 2c 09 01 2b 02 90 0c 0b 54 07 0a 03 50 0d 07 
-02 90 09 00 00 0c 08 02 90 00 00 01 12 0b 02 90 00 00 00 00 0c 0c 00 06 09 01 09 00 00 0c 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 09 00 00 0c 0c 01 00 00 00 00 0b 54 0a 0b 
-0c 0b 54 07 08 0c 01 00 00 00 09 00 00 0c 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 0b 54 07 09 00 00 0c 00 00 00 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 09 00 00 0c 54 07 
-08 0c 00 00 00 34 00 0b 54 0a 0b 0c 0b 54 07 08 0c 01 09 00 00 0c 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 09 00 00 0c 0c 01 00 00 00 00 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 
-00 00 09 00 00 0c 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 0b 54 07 09 00 00 0c 00 00 00 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 09 00 00 0c 54 07 08 0c 01 00 00 00 00 0b 
-54 0a 0b 0c 0b 54 07 08 0c 01 09 00 00 0c 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 09 00 00 0c 0c 01 00 00 00 00 01 00 00 00 00 02 90 0b 54 06 07 0a 02 90 09 00 00 0c 0b 02 
-90 09 00 00 0c 03 02 90 09 00 00 0c 06 02 90 00 00 00 09 00 00 0c 00 00 01 ef 04 02 90 00 00 00 00 05 09 00 6a 01 00 00 00 00 02 90 0b 54 06 07 0a 02 90 05 09 01 f5 0b 0c 00 29 02 90 0b 54 03 
-04 03 02 90 0b 54 03 04 06 02 90 00 00 01 fb 07 02 90 00 00 00 18 04 02 90 00 00 00 00 05 09 00 2e 01 00 00 00 00 02 90 05 09 00 13 03 02 90 05 09 00 13 06 02 90 00 00 01 ff 07 02 90 00 00 00 
-1c 04 02 90 00 00 00 00 05 09 00 03 01 00 00 00 00 03 70 0a 01 ff 03 70 0b 01 fe 09 01 f5 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 06 07 05 09 01 f5 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 09 00 00 0c 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 
-09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 
-00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 
-09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 
-00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 
+It is now cycle 6044
+P    4 | fork 3084 (2233)
+ADV 3 (0x08ad -> 0x08b0) 0c 0c 0c 
+It is now cycle 6045
+P    10 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    9 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    8 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    1 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6046
+It is now cycle 6047
+It is now cycle 6048
+It is now cycle 6049
+P    18 | zjmp 0 FAILED
+ADV 3 (0x08aa -> 0x08ad) 09 00 00 
+It is now cycle 6050
+P    10 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    9 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    7 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    6 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    2 | fork 3084 (2233)
+ADV 3 (0x08ad -> 0x08b0) 0c 0c 0c 
+P    1 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6051
+It is now cycle 6052
+It is now cycle 6053
+It is now cycle 6054
+It is now cycle 6055
+P    8 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    5 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6056
+It is now cycle 6057
+It is now cycle 6058
+It is now cycle 6059
+It is now cycle 6060
+P    10 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    9 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6061
+P    3 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6062
+It is now cycle 6063
+It is now cycle 6064
+P    31 | live 302711440
+ADV 5 (0x08cb -> 0x08d0) 01 12 0b 02 90 
+It is now cycle 6065
+It is now cycle 6066
+P    4 | zjmp 299 FAILED
+ADV 3 (0x08b2 -> 0x08b5) 09 01 2b 
+P    3 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6067
+It is now cycle 6068
+It is now cycle 6069
+It is now cycle 6070
+P    32 | live 302711440
+ADV 5 (0x08cb -> 0x08d0) 01 12 0b 02 90 
+P    7 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    6 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    1 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6071
+P    4 | ld 202068999 r10
+ADV 7 (0x08b5 -> 0x08bc) 02 90 0c 0b 54 07 0a 
+It is now cycle 6072
+P    2 | zjmp 299 FAILED
+ADV 3 (0x08b2 -> 0x08b5) 09 01 2b 
+It is now cycle 6073
+It is now cycle 6074
+It is now cycle 6075
+P    8 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    7 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    6 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6076
+P    4 | st r13 7
+ADV 4 (0x08bc -> 0x08c0) 03 50 0d 07 
+It is now cycle 6077
+P    2 | ld 202068999 r10
+ADV 7 (0x08b5 -> 0x08bc) 02 90 0c 0b 54 07 0a 
+It is now cycle 6078
+It is now cycle 6079
+It is now cycle 6080
+P    10 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    9 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    8 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6081
+P    4 | ld 150994956 r8
+ADV 7 (0x08c0 -> 0x08c7) 02 90 09 00 00 0c 08 
+It is now cycle 6082
+P    2 | st r13 7
+ADV 4 (0x08bc -> 0x08c0) 03 50 0d 07 
+It is now cycle 6083
+It is now cycle 6084
+It is now cycle 6085
+P    10 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    9 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6086
+P    4 | ld 274 r11
+ADV 7 (0x08c7 -> 0x08ce) 02 90 00 00 01 12 0b 
+P    3 | zjmp -35 OK
+It is now cycle 6087
+P    2 | ld 150994956 r8
+ADV 7 (0x08c0 -> 0x08c7) 02 90 09 00 00 0c 08 
+It is now cycle 6088
+It is now cycle 6089
+It is now cycle 6090
+P    1 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6091
+P    4 | ld 0 r12
+ADV 7 (0x08ce -> 0x08d5) 02 90 00 00 00 00 0c 
+It is now cycle 6092
+P    2 | ld 274 r11
+ADV 7 (0x08c7 -> 0x08ce) 02 90 00 00 01 12 0b 
+It is now cycle 6093
+It is now cycle 6094
+It is now cycle 6095
+P    7 | zjmp -35 OK
+P    6 | zjmp -35 OK
+P    1 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6096
+P    3 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6097
+P    2 | ld 0 r12
+ADV 7 (0x08ce -> 0x08d5) 02 90 00 00 00 00 0c 
+It is now cycle 6098
+It is now cycle 6099
+It is now cycle 6100
+P    8 | zjmp -35 OK
+P    5 | zjmp -35 OK
+It is now cycle 6101
+P    3 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6102
+It is now cycle 6103
+It is now cycle 6104
+It is now cycle 6105
+P    10 | zjmp -35 OK
+P    9 | zjmp -35 OK
+P    7 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    6 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6106
+P    3 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6107
+It is now cycle 6108
+It is now cycle 6109
+It is now cycle 6110
+P    8 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    7 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    6 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    5 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6111
+P    3 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6112
+It is now cycle 6113
+It is now cycle 6114
+It is now cycle 6115
+P    10 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    9 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    8 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    7 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    6 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    5 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    1 | zjmp -35 OK
+It is now cycle 6116
+It is now cycle 6117
+It is now cycle 6118
+It is now cycle 6119
+It is now cycle 6120
+P    10 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    9 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    8 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    7 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    6 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6121
+P    3 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6122
+It is now cycle 6123
+It is now cycle 6124
+It is now cycle 6125
+P    10 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    9 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    8 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    1 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6126
+It is now cycle 6127
+It is now cycle 6128
+It is now cycle 6129
+It is now cycle 6130
+P    10 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    9 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    7 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    6 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6131
+It is now cycle 6132
+It is now cycle 6133
+It is now cycle 6134
+It is now cycle 6135
+P    8 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    5 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6136
+It is now cycle 6137
+It is now cycle 6138
+It is now cycle 6139
+It is now cycle 6140
+P    10 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    9 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6141
+P    3 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6142
+It is now cycle 6143
+It is now cycle 6144
+It is now cycle 6145
+It is now cycle 6146
+P    3 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6147
+It is now cycle 6148
+It is now cycle 6149
+It is now cycle 6150
+P    7 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    6 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    1 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6151
+It is now cycle 6152
+It is now cycle 6153
+It is now cycle 6154
+It is now cycle 6155
+P    8 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    7 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    6 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6156
+It is now cycle 6157
+It is now cycle 6158
+It is now cycle 6159
+It is now cycle 6160
+P    10 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    9 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    8 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6161
+It is now cycle 6162
+It is now cycle 6163
+It is now cycle 6164
+It is now cycle 6165
+P    10 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    9 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6166
+P    3 | zjmp -35 OK
+It is now cycle 6167
+It is now cycle 6168
+It is now cycle 6169
+It is now cycle 6170
+P    1 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6171
+It is now cycle 6172
+It is now cycle 6173
+It is now cycle 6174
+It is now cycle 6175
+P    7 | zjmp -35 OK
+P    6 | zjmp -35 OK
+P    1 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6176
+P    3 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6177
+It is now cycle 6178
+It is now cycle 6179
+It is now cycle 6180
+P    8 | zjmp -35 OK
+P    5 | zjmp -35 OK
+It is now cycle 6181
+P    3 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6182
+It is now cycle 6183
+It is now cycle 6184
+It is now cycle 6185
+P    10 | zjmp -35 OK
+P    9 | zjmp -35 OK
+P    7 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    6 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6186
+P    3 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6187
+It is now cycle 6188
+It is now cycle 6189
+It is now cycle 6190
+P    8 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    7 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    6 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    5 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6191
+P    3 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6192
+It is now cycle 6193
+It is now cycle 6194
+It is now cycle 6195
+P    10 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    9 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    8 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    7 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    6 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    5 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    1 | zjmp -35 OK
+It is now cycle 6196
+It is now cycle 6197
+It is now cycle 6198
+It is now cycle 6199
+It is now cycle 6200
+P    10 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    9 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    8 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    7 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    6 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6201
+P    3 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6202
+It is now cycle 6203
+It is now cycle 6204
+It is now cycle 6205
+P    10 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    9 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    8 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    1 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6206
+It is now cycle 6207
+It is now cycle 6208
+It is now cycle 6209
+It is now cycle 6210
+P    10 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    9 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    7 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    6 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6211
+It is now cycle 6212
+It is now cycle 6213
+It is now cycle 6214
+It is now cycle 6215
+P    8 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    5 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6216
+It is now cycle 6217
+It is now cycle 6218
+It is now cycle 6219
+It is now cycle 6220
+P    10 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    9 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6221
+P    3 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6222
+It is now cycle 6223
+It is now cycle 6224
+It is now cycle 6225
+It is now cycle 6226
+P    3 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6227
+It is now cycle 6228
+It is now cycle 6229
+It is now cycle 6230
+P    7 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    6 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    1 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6231
+It is now cycle 6232
+It is now cycle 6233
+It is now cycle 6234
+It is now cycle 6235
+P    8 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    7 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    6 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6236
+It is now cycle 6237
+It is now cycle 6238
+It is now cycle 6239
+It is now cycle 6240
+P    10 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    9 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    8 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6241
+It is now cycle 6242
+It is now cycle 6243
+It is now cycle 6244
+It is now cycle 6245
+P    10 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    9 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6246
+P    3 | zjmp -35 OK
+It is now cycle 6247
+It is now cycle 6248
+It is now cycle 6249
+It is now cycle 6250
+P    1 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6251
+It is now cycle 6252
+It is now cycle 6253
+It is now cycle 6254
+It is now cycle 6255
+P    7 | zjmp -35 OK
+P    6 | zjmp -35 OK
+P    1 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6256
+P    3 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6257
+It is now cycle 6258
+It is now cycle 6259
+It is now cycle 6260
+P    8 | zjmp -35 OK
+P    5 | zjmp -35 OK
+It is now cycle 6261
+P    3 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6262
+It is now cycle 6263
+It is now cycle 6264
+It is now cycle 6265
+P    10 | zjmp -35 OK
+P    9 | zjmp -35 OK
+P    7 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    6 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6266
+P    3 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6267
+It is now cycle 6268
+It is now cycle 6269
+It is now cycle 6270
+P    8 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    7 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    6 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    5 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6271
+P    3 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6272
+It is now cycle 6273
+It is now cycle 6274
+It is now cycle 6275
+P    10 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    9 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    8 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    7 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    6 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    5 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    1 | zjmp -35 OK
+It is now cycle 6276
+It is now cycle 6277
+It is now cycle 6278
+It is now cycle 6279
+It is now cycle 6280
+P    10 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    9 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    8 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    7 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    6 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6281
+P    3 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6282
+It is now cycle 6283
+It is now cycle 6284
+It is now cycle 6285
+P    10 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    9 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    8 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    1 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6286
+It is now cycle 6287
+It is now cycle 6288
+It is now cycle 6289
+It is now cycle 6290
+P    10 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    9 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    7 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    6 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6291
+It is now cycle 6292
+It is now cycle 6293
+It is now cycle 6294
+It is now cycle 6295
+P    8 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    5 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6296
+It is now cycle 6297
+It is now cycle 6298
+It is now cycle 6299
+It is now cycle 6300
+P    10 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    9 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6301
+P    3 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6302
+It is now cycle 6303
+It is now cycle 6304
+It is now cycle 6305
+It is now cycle 6306
+P    3 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6307
+It is now cycle 6308
+It is now cycle 6309
+It is now cycle 6310
+P    7 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    6 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    1 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6311
+It is now cycle 6312
+It is now cycle 6313
+It is now cycle 6314
+It is now cycle 6315
+P    8 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    7 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    6 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6316
+It is now cycle 6317
+It is now cycle 6318
+It is now cycle 6319
+It is now cycle 6320
+P    10 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    9 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    8 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6321
+It is now cycle 6322
+It is now cycle 6323
+It is now cycle 6324
+It is now cycle 6325
+P    10 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    9 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6326
+P    3 | zjmp -35 OK
+It is now cycle 6327
+It is now cycle 6328
+It is now cycle 6329
+It is now cycle 6330
+P    1 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6331
+It is now cycle 6332
+It is now cycle 6333
+It is now cycle 6334
+It is now cycle 6335
+P    7 | zjmp -35 OK
+P    6 | zjmp -35 OK
+P    1 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6336
+P    3 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6337
+It is now cycle 6338
+It is now cycle 6339
+It is now cycle 6340
+P    8 | zjmp -35 OK
+P    5 | zjmp -35 OK
+It is now cycle 6341
+P    3 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6342
+It is now cycle 6343
+It is now cycle 6344
+It is now cycle 6345
+P    10 | zjmp -35 OK
+P    9 | zjmp -35 OK
+P    7 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    6 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6346
+P    3 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6347
+It is now cycle 6348
+It is now cycle 6349
+It is now cycle 6350
+P    8 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    7 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    6 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    5 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6351
+P    3 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6352
+It is now cycle 6353
+It is now cycle 6354
+It is now cycle 6355
+P    10 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    9 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    8 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    7 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    6 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    5 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    1 | zjmp -35 OK
+It is now cycle 6356
+It is now cycle 6357
+It is now cycle 6358
+It is now cycle 6359
+It is now cycle 6360
+P    10 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    9 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    8 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    7 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    6 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6361
+P    3 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6362
+It is now cycle 6363
+It is now cycle 6364
+P    21 | fork 0 (2581)
+ADV 3 (0x0a15 -> 0x0a18) 0c 00 00 
+It is now cycle 6365
+P    10 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    9 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    8 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    1 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6366
+It is now cycle 6367
+It is now cycle 6368
+It is now cycle 6369
+It is now cycle 6370
+P    22 | fork 0 (2581)
+ADV 3 (0x0a15 -> 0x0a18) 0c 00 00 
+P    10 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    9 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    7 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    6 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6371
+It is now cycle 6372
+It is now cycle 6373
+It is now cycle 6374
+P    21 | live -284949872
+ADV 5 (0x0a18 -> 0x0a1d) 01 ef 04 02 90 
+It is now cycle 6375
+P    8 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    5 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6376
+It is now cycle 6377
+It is now cycle 6378
+It is now cycle 6379
+P    23 | fork 0 (2581)
+ADV 3 (0x0a15 -> 0x0a18) 0c 00 00 
+It is now cycle 6380
+P    22 | live -284949872
+ADV 5 (0x0a18 -> 0x0a1d) 01 ef 04 02 90 
+P    10 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    9 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6381
+P    3 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6382
+It is now cycle 6383
+It is now cycle 6384
+It is now cycle 6385
+P    24 | fork 0 (2581)
+ADV 3 (0x0a15 -> 0x0a18) 0c 00 00 
+It is now cycle 6386
+P    3 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6387
+It is now cycle 6388
+It is now cycle 6389
+P    23 | live -284949872
+ADV 5 (0x0a18 -> 0x0a1d) 01 ef 04 02 90 
+It is now cycle 6390
+P    7 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    6 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    1 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6391
+It is now cycle 6392
+It is now cycle 6393
+It is now cycle 6394
+It is now cycle 6395
+P    24 | live -284949872
+ADV 5 (0x0a18 -> 0x0a1d) 01 ef 04 02 90 
+P    8 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    7 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    6 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6396
+It is now cycle 6397
+It is now cycle 6398
+It is now cycle 6399
+It is now cycle 6400
+P    21 | live 0
+ADV 5 (0x0a25 -> 0x0a2a) 01 00 00 00 00 
+P    10 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    9 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    8 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6401
+It is now cycle 6402
+It is now cycle 6403
+It is now cycle 6404
+It is now cycle 6405
+P    21 | ld 190055943 r10
+ADV 7 (0x0a2a -> 0x0a31) 02 90 0b 54 06 07 0a 
+P    10 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    9 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6406
+P    22 | live 0
+ADV 5 (0x0a25 -> 0x0a2a) 01 00 00 00 00 
+P    3 | zjmp -35 OK
+It is now cycle 6407
+It is now cycle 6408
+It is now cycle 6409
+It is now cycle 6410
+P    21 | ld 84476405 r11
+ADV 7 (0x0a31 -> 0x0a38) 02 90 05 09 01 f5 0b 
+P    1 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6411
+P    22 | ld 190055943 r10
+ADV 7 (0x0a2a -> 0x0a31) 02 90 0b 54 06 07 0a 
+It is now cycle 6412
+It is now cycle 6413
+It is now cycle 6414
+It is now cycle 6415
+P    23 | live 0
+ADV 5 (0x0a25 -> 0x0a2a) 01 00 00 00 00 
+P    7 | zjmp -35 OK
+P    6 | zjmp -35 OK
+P    1 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6416
+P    22 | ld 84476405 r11
+ADV 7 (0x0a31 -> 0x0a38) 02 90 05 09 01 f5 0b 
+P    3 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6417
+It is now cycle 6418
+It is now cycle 6419
+It is now cycle 6420
+P    23 | ld 190055943 r10
+ADV 7 (0x0a2a -> 0x0a31) 02 90 0b 54 06 07 0a 
+P    8 | zjmp -35 OK
+P    5 | zjmp -35 OK
+It is now cycle 6421
+P    24 | live 0
+ADV 5 (0x0a25 -> 0x0a2a) 01 00 00 00 00 
+P    3 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6422
+It is now cycle 6423
+It is now cycle 6424
+It is now cycle 6425
+P    23 | ld 84476405 r11
+ADV 7 (0x0a31 -> 0x0a38) 02 90 05 09 01 f5 0b 
+P    15 | fork 41 (2657)
+ADV 3 (0x0a38 -> 0x0a3b) 0c 00 29 
+P    10 | zjmp -35 OK
+P    9 | zjmp -35 OK
+P    7 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    6 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6426
+P    24 | ld 190055943 r10
+ADV 7 (0x0a2a -> 0x0a31) 02 90 0b 54 06 07 0a 
+P    3 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6427
+It is now cycle 6428
+It is now cycle 6429
+It is now cycle 6430
+P    15 | ld 190055172 r3
+ADV 7 (0x0a3b -> 0x0a42) 02 90 0b 54 03 04 03 
+P    8 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    7 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    6 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    5 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6431
+P    24 | ld 84476405 r11
+ADV 7 (0x0a31 -> 0x0a38) 02 90 05 09 01 f5 0b 
+P    16 | fork 41 (2657)
+ADV 3 (0x0a38 -> 0x0a3b) 0c 00 29 
+P    3 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6432
+It is now cycle 6433
+It is now cycle 6434
+It is now cycle 6435
+P    37 | live 0
+ADV 5 (0x0a61 -> 0x0a66) 01 00 00 00 00 
+P    15 | ld 190055172 r6
+ADV 7 (0x0a42 -> 0x0a49) 02 90 0b 54 03 04 06 
+P    10 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    9 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    8 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    7 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    6 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    5 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    1 | zjmp -35 OK
+It is now cycle 6436
+P    16 | ld 190055172 r3
+ADV 7 (0x0a3b -> 0x0a42) 02 90 0b 54 03 04 03 
+It is now cycle 6437
+It is now cycle 6438
+It is now cycle 6439
+It is now cycle 6440
+P    37 | ld 84475923 r3
+ADV 7 (0x0a66 -> 0x0a6d) 02 90 05 09 00 13 03 
+P    15 | ld 507 r7
+ADV 7 (0x0a49 -> 0x0a50) 02 90 00 00 01 fb 07 
+P    10 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    9 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    8 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    7 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    6 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6441
+P    38 | live 0
+ADV 5 (0x0a61 -> 0x0a66) 01 00 00 00 00 
+P    16 | ld 190055172 r6
+ADV 7 (0x0a42 -> 0x0a49) 02 90 0b 54 03 04 06 
+P    3 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6442
+It is now cycle 6443
+It is now cycle 6444
+It is now cycle 6445
+P    37 | ld 84475923 r6
+ADV 7 (0x0a6d -> 0x0a74) 02 90 05 09 00 13 06 
+P    15 | ld 24 r4
+ADV 7 (0x0a50 -> 0x0a57) 02 90 00 00 00 18 04 
+P    10 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    9 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    8 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    1 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6446
+P    38 | ld 84475923 r3
+ADV 7 (0x0a66 -> 0x0a6d) 02 90 05 09 00 13 03 
+P    16 | ld 507 r7
+ADV 7 (0x0a49 -> 0x0a50) 02 90 00 00 01 fb 07 
+It is now cycle 6447
+It is now cycle 6448
+It is now cycle 6449
+It is now cycle 6450
+P    37 | ld 511 r7
+ADV 7 (0x0a74 -> 0x0a7b) 02 90 00 00 01 ff 07 
+P    15 | ld 0 r5
+ADV 7 (0x0a57 -> 0x0a5e) 02 90 00 00 00 00 05 
+P    10 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    9 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    7 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    6 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6451
+P    38 | ld 84475923 r6
+ADV 7 (0x0a6d -> 0x0a74) 02 90 05 09 00 13 06 
+P    16 | ld 24 r4
+ADV 7 (0x0a50 -> 0x0a57) 02 90 00 00 00 18 04 
+It is now cycle 6452
+It is now cycle 6453
+It is now cycle 6454
+It is now cycle 6455
+P    37 | ld 28 r4
+ADV 7 (0x0a7b -> 0x0a82) 02 90 00 00 00 1c 04 
+P    8 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    5 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6456
+P    38 | ld 511 r7
+ADV 7 (0x0a74 -> 0x0a7b) 02 90 00 00 01 ff 07 
+P    16 | ld 0 r5
+ADV 7 (0x0a57 -> 0x0a5e) 02 90 00 00 00 00 05 
+It is now cycle 6457
+It is now cycle 6458
+It is now cycle 6459
+It is now cycle 6460
+P    37 | ld 0 r5
+ADV 7 (0x0a82 -> 0x0a89) 02 90 00 00 00 00 05 
+P    10 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    9 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6461
+P    38 | ld 28 r4
+ADV 7 (0x0a7b -> 0x0a82) 02 90 00 00 00 1c 04 
+P    3 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6462
+It is now cycle 6463
+It is now cycle 6464
+It is now cycle 6465
+It is now cycle 6466
+P    38 | ld 0 r5
+ADV 7 (0x0a82 -> 0x0a89) 02 90 00 00 00 00 05 
+P    3 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6467
+It is now cycle 6468
+It is now cycle 6469
+It is now cycle 6470
+P    15 | zjmp 46 OK
+P    7 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    6 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    1 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6471
+It is now cycle 6472
+It is now cycle 6473
+It is now cycle 6474
+It is now cycle 6475
+P    8 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    7 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    6 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6476
+P    16 | zjmp 46 OK
+It is now cycle 6477
+It is now cycle 6478
+It is now cycle 6479
+It is now cycle 6480
+P    37 | zjmp 3 OK
+P    15 | live 0
+ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
+P    10 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    9 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    8 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6481
+It is now cycle 6482
+It is now cycle 6483
+It is now cycle 6484
+It is now cycle 6485
+P    29 | sti r6 -2 0
+       | -> store to -2 + 0 = -2 (with pc and mod 3214)
+ADV 5 (0x0c90 -> 0x0c95) 0b 54 06 07 05 
+P    15 | st r10 511
+ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
+P    10 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    9 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6486
+P    38 | zjmp 3 OK
+P    16 | live 0
+ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
+P    3 | zjmp -35 OK
+It is now cycle 6487
+It is now cycle 6488
+It is now cycle 6489
+It is now cycle 6490
+P    37 | live 0
+ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
+P    15 | st r11 510
+ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
+P    1 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6491
+P    30 | sti r6 -2 0
+       | -> store to -2 + 0 = -2 (with pc and mod 3214)
+ADV 5 (0x0c90 -> 0x0c95) 0b 54 06 07 05 
+P    16 | st r10 511
+ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
+It is now cycle 6492
+It is now cycle 6493
+It is now cycle 6494
+It is now cycle 6495
+P    37 | st r10 511
+ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
+P    7 | zjmp -35 OK
+P    6 | zjmp -35 OK
+P    1 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6496
+P    38 | live 0
+ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
+P    16 | st r11 510
+ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
+P    3 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6497
+It is now cycle 6498
+It is now cycle 6499
+It is now cycle 6500
+P    37 | st r11 510
+ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
+P    8 | zjmp -35 OK
+P    5 | zjmp -35 OK
+It is now cycle 6501
+P    38 | st r10 511
+ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
+P    3 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6502
+It is now cycle 6503
+It is now cycle 6504
+It is now cycle 6505
+P    29 | zjmp 501 OK
+P    10 | zjmp -35 OK
+P    9 | zjmp -35 OK
+P    7 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    6 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6506
+P    38 | st r11 510
+ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
+P    3 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6507
+It is now cycle 6508
+It is now cycle 6509
+It is now cycle 6510
+P    15 | zjmp 501 OK
+P    8 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    7 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    6 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    5 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6511
+P    30 | zjmp 501 OK
+P    3 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6512
+It is now cycle 6513
+It is now cycle 6514
+It is now cycle 6515
+P    10 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    9 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    8 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    7 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    6 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    5 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    1 | zjmp -35 OK
+It is now cycle 6516
+P    16 | zjmp 501 OK
+It is now cycle 6517
+It is now cycle 6518
+It is now cycle 6519
+It is now cycle 6520
+P    37 | zjmp 501 OK
+P    10 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    9 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    8 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    7 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    6 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6521
+P    3 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6522
+It is now cycle 6523
+It is now cycle 6524
+It is now cycle 6525
+P    10 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    9 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    8 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    1 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6526
+P    38 | zjmp 501 OK
+It is now cycle 6527
+It is now cycle 6528
+It is now cycle 6529
+It is now cycle 6530
+P    10 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    9 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    7 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    6 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6531
+P    29 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3747)
+ADV 5 (0x0e8b -> 0x0e90) 0b 54 03 04 05 
+It is now cycle 6532
+It is now cycle 6533
+It is now cycle 6534
+It is now cycle 6535
+P    15 | sti r6 507 0
+       | -> store to 507 + 0 = 507 (with pc and mod 3723)
+ADV 5 (0x0c90 -> 0x0c95) 0b 54 06 07 05 
+P    8 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    5 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6536
+It is now cycle 6537
+P    30 | sti r3 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 3723)
+ADV 5 (0x0e8b -> 0x0e90) 0b 54 03 04 05 
+It is now cycle 6538
+It is now cycle 6539
+It is now cycle 6540
+P    10 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    9 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6541
+P    16 | sti r6 507 0
+       | -> store to 507 + 0 = 507 (with pc and mod 3723)
+ADV 5 (0x0c90 -> 0x0c95) 0b 54 06 07 05 
+P    3 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6542
+It is now cycle 6543
+It is now cycle 6544
+It is now cycle 6545
+P    37 | sti r6 511 0
+       | -> store to 511 + 0 = 511 (with pc and mod 3727)
+ADV 5 (0x0c90 -> 0x0c95) 0b 54 06 07 05 
+It is now cycle 6546
+P    3 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6547
+It is now cycle 6548
+It is now cycle 6549
+It is now cycle 6550
+P    7 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    6 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    1 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6551
+P    38 | sti r6 511 0
+       | -> store to 511 + 0 = 511 (with pc and mod 3727)
+ADV 5 (0x0c90 -> 0x0c95) 0b 54 06 07 05 
+P    29 | zjmp 19 OK
+It is now cycle 6552
+It is now cycle 6553
+It is now cycle 6554
+It is now cycle 6555
+P    15 | zjmp 501 OK
+P    8 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    7 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    6 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6556
+It is now cycle 6557
+P    30 | zjmp 19 OK
+It is now cycle 6558
+It is now cycle 6559
+It is now cycle 6560
+P    10 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    9 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    8 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6561
+P    16 | zjmp 501 OK
+It is now cycle 6562
+It is now cycle 6563
+It is now cycle 6564
+It is now cycle 6565
+P    37 | zjmp 501 OK
+P    10 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    9 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6566
+P    3 | zjmp -35 OK
+It is now cycle 6567
+It is now cycle 6568
+It is now cycle 6569
+It is now cycle 6570
+P    1 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6571
+P    38 | zjmp 501 OK
+It is now cycle 6572
+It is now cycle 6573
+It is now cycle 6574
+It is now cycle 6575
+P    7 | zjmp -35 OK
+P    6 | zjmp -35 OK
+P    1 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6576
+P    29 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3771)
+ADV 5 (0x0ea3 -> 0x0ea8) 0b 54 03 04 05 
+P    3 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6577
+It is now cycle 6578
+It is now cycle 6579
+It is now cycle 6580
+P    8 | zjmp -35 OK
+P    5 | zjmp -35 OK
+It is now cycle 6581
+P    15 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3747)
+ADV 5 (0x0e8b -> 0x0e90) 0b 54 03 04 05 
+P    3 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6582
+P    30 | sti r3 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 3747)
+ADV 5 (0x0ea3 -> 0x0ea8) 0b 54 03 04 05 
+It is now cycle 6583
+It is now cycle 6584
+It is now cycle 6585
+P    10 | zjmp -35 OK
+P    9 | zjmp -35 OK
+P    7 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    6 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6586
+P    3 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6587
+P    16 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3747)
+ADV 5 (0x0e8b -> 0x0e90) 0b 54 03 04 05 
+It is now cycle 6588
+It is now cycle 6589
+It is now cycle 6590
+P    8 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    7 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    6 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    5 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6591
+P    37 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3751)
+ADV 5 (0x0e8b -> 0x0e90) 0b 54 03 04 05 
+P    3 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6592
+It is now cycle 6593
+It is now cycle 6594
+It is now cycle 6595
+P    10 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    9 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    8 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    7 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    6 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    5 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    1 | zjmp -35 OK
+It is now cycle 6596
+P    29 | zjmp 19 OK
+It is now cycle 6597
+P    38 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3751)
+ADV 5 (0x0e8b -> 0x0e90) 0b 54 03 04 05 
+It is now cycle 6598
+It is now cycle 6599
+It is now cycle 6600
+P    10 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    9 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    8 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    7 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    6 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6601
+P    15 | zjmp 19 OK
+P    3 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6602
+P    30 | zjmp 19 OK
+It is now cycle 6603
+It is now cycle 6604
+It is now cycle 6605
+P    10 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    9 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    8 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    1 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6606
+It is now cycle 6607
+P    16 | zjmp 19 OK
+It is now cycle 6608
+It is now cycle 6609
+It is now cycle 6610
+P    10 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    9 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    7 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    6 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6611
+P    37 | zjmp 19 OK
+It is now cycle 6612
+It is now cycle 6613
+It is now cycle 6614
+It is now cycle 6615
+P    8 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    5 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6616
+It is now cycle 6617
+P    38 | zjmp 19 OK
+It is now cycle 6618
+It is now cycle 6619
+It is now cycle 6620
+P    10 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    9 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6621
+P    29 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3795)
+ADV 5 (0x0ebb -> 0x0ec0) 0b 54 03 04 05 
+P    3 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6622
+It is now cycle 6623
+It is now cycle 6624
+It is now cycle 6625
+It is now cycle 6626
+P    15 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3771)
+ADV 5 (0x0ea3 -> 0x0ea8) 0b 54 03 04 05 
+P    3 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6627
+P    30 | sti r3 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 3771)
+ADV 5 (0x0ebb -> 0x0ec0) 0b 54 03 04 05 
+It is now cycle 6628
+It is now cycle 6629
+It is now cycle 6630
+P    7 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    6 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    1 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6631
+It is now cycle 6632
+P    16 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3771)
+ADV 5 (0x0ea3 -> 0x0ea8) 0b 54 03 04 05 
+It is now cycle 6633
+It is now cycle 6634
+It is now cycle 6635
+P    8 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    7 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    6 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6636
+P    37 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3775)
+ADV 5 (0x0ea3 -> 0x0ea8) 0b 54 03 04 05 
+It is now cycle 6637
+It is now cycle 6638
+It is now cycle 6639
+It is now cycle 6640
+P    10 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    9 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    8 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6641
+P    29 | zjmp 19 OK
+It is now cycle 6642
+P    38 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3775)
+ADV 5 (0x0ea3 -> 0x0ea8) 0b 54 03 04 05 
+It is now cycle 6643
+It is now cycle 6644
+It is now cycle 6645
+P    10 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    9 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6646
+P    15 | zjmp 19 OK
+P    3 | zjmp -35 OK
+It is now cycle 6647
+P    30 | zjmp 19 OK
+It is now cycle 6648
+It is now cycle 6649
+It is now cycle 6650
+P    1 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6651
+It is now cycle 6652
+P    16 | zjmp 19 OK
+P    11 | fork -1277 (1920)
+ADV 3 (0x087d -> 0x0880) 0c fb 03 
+It is now cycle 6653
+It is now cycle 6654
+It is now cycle 6655
+P    7 | zjmp -35 OK
+P    6 | zjmp -35 OK
+P    1 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6656
+P    37 | zjmp 19 OK
+P    3 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6657
+It is now cycle 6658
+P    12 | fork -1277 (1920)
+ADV 3 (0x087d -> 0x0880) 0c fb 03 
+It is now cycle 6659
+It is now cycle 6660
+P    8 | zjmp -35 OK
+P    5 | zjmp -35 OK
+It is now cycle 6661
+P    3 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6662
+P    38 | zjmp 19 OK
+It is now cycle 6663
+It is now cycle 6664
+It is now cycle 6665
+P    10 | zjmp -35 OK
+P    9 | zjmp -35 OK
+P    7 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    6 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6666
+P    29 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3819)
+ADV 5 (0x0ed3 -> 0x0ed8) 0b 54 03 04 05 
+P    3 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6667
+It is now cycle 6668
+It is now cycle 6669
+It is now cycle 6670
+P    8 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    7 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    6 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    5 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6671
+P    15 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3795)
+ADV 5 (0x0ebb -> 0x0ec0) 0b 54 03 04 05 
+P    3 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6672
+P    39 | zjmp 19 FAILED
+ADV 3 (0x0780 -> 0x0783) 09 00 13 
+P    30 | sti r3 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 3795)
+ADV 5 (0x0ed3 -> 0x0ed8) 0b 54 03 04 05 
+It is now cycle 6673
+It is now cycle 6674
+It is now cycle 6675
+P    10 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    9 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    8 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    7 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    6 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    5 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    1 | zjmp -35 OK
+It is now cycle 6676
+It is now cycle 6677
+P    16 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3795)
+ADV 5 (0x0ebb -> 0x0ec0) 0b 54 03 04 05 
+It is now cycle 6678
+P    40 | zjmp 19 FAILED
+ADV 3 (0x0780 -> 0x0783) 09 00 13 
+It is now cycle 6679
+It is now cycle 6680
+P    10 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    9 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    8 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    7 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    6 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6681
+P    37 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3799)
+ADV 5 (0x0ebb -> 0x0ec0) 0b 54 03 04 05 
+P    3 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6682
+It is now cycle 6683
+It is now cycle 6684
+It is now cycle 6685
+P    10 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    9 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    8 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    1 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6686
+P    29 | zjmp 19 OK
+It is now cycle 6687
+P    38 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3799)
+ADV 5 (0x0ebb -> 0x0ec0) 0b 54 03 04 05 
+It is now cycle 6688
+It is now cycle 6689
+It is now cycle 6690
+P    10 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    9 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    7 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    6 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6691
+P    15 | zjmp 19 OK
+It is now cycle 6692
+P    30 | zjmp 19 OK
+It is now cycle 6693
+It is now cycle 6694
+It is now cycle 6695
+P    8 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    5 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6696
+It is now cycle 6697
+P    16 | zjmp 19 OK
+It is now cycle 6698
+It is now cycle 6699
+It is now cycle 6700
+P    10 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    9 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6701
+P    37 | zjmp 19 OK
+P    3 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6702
+It is now cycle 6703
+It is now cycle 6704
+It is now cycle 6705
+It is now cycle 6706
+P    3 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6707
+P    38 | zjmp 19 OK
+It is now cycle 6708
+It is now cycle 6709
+It is now cycle 6710
+P    7 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    6 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    1 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6711
+P    29 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3843)
+ADV 5 (0x0eeb -> 0x0ef0) 0b 54 03 04 05 
+It is now cycle 6712
+It is now cycle 6713
+It is now cycle 6714
+It is now cycle 6715
+P    8 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    7 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    6 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6716
+P    15 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3819)
+ADV 5 (0x0ed3 -> 0x0ed8) 0b 54 03 04 05 
+It is now cycle 6717
+P    30 | sti r3 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 3819)
+ADV 5 (0x0eeb -> 0x0ef0) 0b 54 03 04 05 
+It is now cycle 6718
+It is now cycle 6719
+It is now cycle 6720
+P    10 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    9 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    8 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6721
+It is now cycle 6722
+P    16 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3819)
+ADV 5 (0x0ed3 -> 0x0ed8) 0b 54 03 04 05 
+It is now cycle 6723
+It is now cycle 6724
+It is now cycle 6725
+P    10 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    9 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6726
+P    37 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3823)
+ADV 5 (0x0ed3 -> 0x0ed8) 0b 54 03 04 05 
+P    3 | zjmp -35 OK
+It is now cycle 6727
+It is now cycle 6728
+It is now cycle 6729
+It is now cycle 6730
+P    1 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6731
+P    29 | zjmp 19 OK
+It is now cycle 6732
+P    38 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3823)
+ADV 5 (0x0ed3 -> 0x0ed8) 0b 54 03 04 05 
+It is now cycle 6733
+It is now cycle 6734
+It is now cycle 6735
+P    7 | zjmp -35 OK
+P    6 | zjmp -35 OK
+P    1 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6736
+P    15 | zjmp 19 OK
+P    3 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6737
+P    30 | zjmp 19 OK
+It is now cycle 6738
+It is now cycle 6739
+It is now cycle 6740
+P    8 | zjmp -35 OK
+P    5 | zjmp -35 OK
+It is now cycle 6741
+P    3 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6742
+P    16 | zjmp 19 OK
+It is now cycle 6743
+It is now cycle 6744
+It is now cycle 6745
+P    10 | zjmp -35 OK
+P    9 | zjmp -35 OK
+P    7 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    6 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6746
+P    37 | zjmp 19 OK
+P    3 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6747
+It is now cycle 6748
+It is now cycle 6749
+It is now cycle 6750
+P    8 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    7 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    6 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    5 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6751
+P    3 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6752
+P    38 | zjmp 19 OK
+It is now cycle 6753
+It is now cycle 6754
+It is now cycle 6755
+P    10 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    9 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    8 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    7 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    6 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    5 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    1 | zjmp -35 OK
+It is now cycle 6756
+It is now cycle 6757
+It is now cycle 6758
+It is now cycle 6759
+It is now cycle 6760
+P    10 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    9 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    8 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    7 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    6 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6761
+P    15 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3843)
+ADV 5 (0x0eeb -> 0x0ef0) 0b 54 03 04 05 
+P    3 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6762
+It is now cycle 6763
+It is now cycle 6764
+It is now cycle 6765
+P    10 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    9 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    8 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    1 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6766
+It is now cycle 6767
+P    16 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3843)
+ADV 5 (0x0eeb -> 0x0ef0) 0b 54 03 04 05 
+It is now cycle 6768
+It is now cycle 6769
+It is now cycle 6770
+P    10 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    9 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    7 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    6 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6771
+P    37 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3847)
+ADV 5 (0x0eeb -> 0x0ef0) 0b 54 03 04 05 
+It is now cycle 6772
+It is now cycle 6773
+It is now cycle 6774
+It is now cycle 6775
+P    8 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    5 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6776
+It is now cycle 6777
+P    38 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3847)
+ADV 5 (0x0eeb -> 0x0ef0) 0b 54 03 04 05 
+It is now cycle 6778
+It is now cycle 6779
+It is now cycle 6780
+P    10 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    9 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6781
+P    15 | zjmp 19 OK
+P    3 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6782
+It is now cycle 6783
+It is now cycle 6784
+It is now cycle 6785
+It is now cycle 6786
+P    3 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6787
+P    16 | zjmp 19 OK
+It is now cycle 6788
+It is now cycle 6789
+It is now cycle 6790
+P    7 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    6 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    1 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6791
+P    37 | zjmp 19 OK
+P    25 | fork 2900 (2794)
+ADV 3 (0x0996 -> 0x0999) 0c 0b 54 
+It is now cycle 6792
+It is now cycle 6793
+It is now cycle 6794
+It is now cycle 6795
+P    8 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    7 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    6 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6796
+It is now cycle 6797
+P    38 | zjmp 19 OK
+P    26 | fork 2900 (2794)
+ADV 3 (0x0996 -> 0x0999) 0c 0b 54 
+It is now cycle 6798
+It is now cycle 6799
+It is now cycle 6800
+P    10 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    9 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    8 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6801
+It is now cycle 6802
+It is now cycle 6803
+P    29 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3891)
+ADV 5 (0x0f1b -> 0x0f20) 0b 54 03 04 05 
+It is now cycle 6804
+It is now cycle 6805
+P    10 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    9 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6806
+P    30 | sti r3 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 3867)
+ADV 5 (0x0f1b -> 0x0f20) 0b 54 03 04 05 
+P    3 | zjmp -35 OK
+It is now cycle 6807
+It is now cycle 6808
+It is now cycle 6809
+It is now cycle 6810
+P    1 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6811
+It is now cycle 6812
+It is now cycle 6813
+It is now cycle 6814
+It is now cycle 6815
+P    7 | zjmp -35 OK
+P    6 | zjmp -35 OK
+P    1 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6816
+P    27 | fork 41 (2657)
+ADV 3 (0x0a38 -> 0x0a3b) 0c 00 29 
+P    3 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6817
+It is now cycle 6818
+It is now cycle 6819
+It is now cycle 6820
+P    8 | zjmp -35 OK
+P    5 | zjmp -35 OK
+It is now cycle 6821
+P    27 | ld 190055172 r3
+ADV 7 (0x0a3b -> 0x0a42) 02 90 0b 54 03 04 03 
+P    3 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6822
+P    28 | fork 41 (2657)
+ADV 3 (0x0a38 -> 0x0a3b) 0c 00 29 
+It is now cycle 6823
+P    29 | zjmp 19 OK
+It is now cycle 6824
+It is now cycle 6825
+P    10 | zjmp -35 OK
+P    9 | zjmp -35 OK
+P    7 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    6 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6826
+P    43 | live 0
+ADV 5 (0x0a61 -> 0x0a66) 01 00 00 00 00 
+P    30 | zjmp 19 OK
+P    27 | ld 190055172 r6
+ADV 7 (0x0a42 -> 0x0a49) 02 90 0b 54 03 04 06 
+P    3 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6827
+P    28 | ld 190055172 r3
+ADV 7 (0x0a3b -> 0x0a42) 02 90 0b 54 03 04 03 
+It is now cycle 6828
+It is now cycle 6829
+It is now cycle 6830
+P    13 | fork 3073 (2534)
+ADV 3 (0x09e5 -> 0x09e8) 0c 0c 01 
+P    8 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    7 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    6 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    5 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6831
+P    43 | ld 84475923 r3
+ADV 7 (0x0a66 -> 0x0a6d) 02 90 05 09 00 13 03 
+P    27 | ld 507 r7
+ADV 7 (0x0a49 -> 0x0a50) 02 90 00 00 01 fb 07 
+P    3 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6832
+P    44 | live 0
+ADV 5 (0x0a61 -> 0x0a66) 01 00 00 00 00 
+P    28 | ld 190055172 r6
+ADV 7 (0x0a42 -> 0x0a49) 02 90 0b 54 03 04 06 
+It is now cycle 6833
+It is now cycle 6834
+It is now cycle 6835
+P    10 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    9 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    8 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    7 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    6 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    5 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    1 | zjmp -35 OK
+It is now cycle 6836
+P    43 | ld 84475923 r6
+ADV 7 (0x0a6d -> 0x0a74) 02 90 05 09 00 13 06 
+P    27 | ld 24 r4
+ADV 7 (0x0a50 -> 0x0a57) 02 90 00 00 00 18 04 
+P    19 | fork 2900 (2614)
+ADV 3 (0x08e2 -> 0x08e5) 0c 0b 54 
+P    14 | fork 3073 (2534)
+ADV 3 (0x09e5 -> 0x09e8) 0c 0c 01 
+It is now cycle 6837
+P    44 | ld 84475923 r3
+ADV 7 (0x0a66 -> 0x0a6d) 02 90 05 09 00 13 03 
+P    28 | ld 507 r7
+ADV 7 (0x0a49 -> 0x0a50) 02 90 00 00 01 fb 07 
+It is now cycle 6838
+It is now cycle 6839
+It is now cycle 6840
+P    10 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    9 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    8 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    7 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    6 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6841
+P    43 | ld 511 r7
+ADV 7 (0x0a74 -> 0x0a7b) 02 90 00 00 01 ff 07 
+P    27 | ld 0 r5
+ADV 7 (0x0a57 -> 0x0a5e) 02 90 00 00 00 00 05 
+P    3 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6842
+P    44 | ld 84475923 r6
+ADV 7 (0x0a6d -> 0x0a74) 02 90 05 09 00 13 06 
+P    28 | ld 24 r4
+ADV 7 (0x0a50 -> 0x0a57) 02 90 00 00 00 18 04 
+P    20 | fork 2900 (2614)
+ADV 3 (0x08e2 -> 0x08e5) 0c 0b 54 
+It is now cycle 6843
+P    17 | fork 3084 (2233)
+ADV 3 (0x08ad -> 0x08b0) 0c 0c 0c 
+It is now cycle 6844
+P    13 | live 0
+ADV 5 (0x09ec -> 0x09f1) 01 00 00 00 00 
+It is now cycle 6845
+P    10 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    9 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    8 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    1 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6846
+P    43 | ld 28 r4
+ADV 7 (0x0a7b -> 0x0a82) 02 90 00 00 00 1c 04 
+It is now cycle 6847
+P    44 | ld 511 r7
+ADV 7 (0x0a74 -> 0x0a7b) 02 90 00 00 01 ff 07 
+P    28 | ld 0 r5
+ADV 7 (0x0a57 -> 0x0a5e) 02 90 00 00 00 00 05 
+It is now cycle 6848
+P    29 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3915)
+ADV 5 (0x0f33 -> 0x0f38) 0b 54 03 04 05 
+It is now cycle 6849
+P    18 | fork 3084 (2233)
+ADV 3 (0x08ad -> 0x08b0) 0c 0c 0c 
+P    13 | ld 190055943 r10
+ADV 7 (0x09f1 -> 0x09f8) 02 90 0b 54 06 07 0a 
+It is now cycle 6850
+P    14 | live 0
+ADV 5 (0x09ec -> 0x09f1) 01 00 00 00 00 
+P    10 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    9 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    7 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    6 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6851
+P    43 | ld 0 r5
+ADV 7 (0x0a82 -> 0x0a89) 02 90 00 00 00 00 05 
+P    30 | sti r3 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 3891)
+ADV 5 (0x0f33 -> 0x0f38) 0b 54 03 04 05 
+It is now cycle 6852
+P    44 | ld 28 r4
+ADV 7 (0x0a7b -> 0x0a82) 02 90 00 00 00 1c 04 
+It is now cycle 6853
+It is now cycle 6854
+P    13 | ld 150994956 r11
+ADV 7 (0x09f8 -> 0x09ff) 02 90 09 00 00 0c 0b 
+It is now cycle 6855
+P    14 | ld 190055943 r10
+ADV 7 (0x09f1 -> 0x09f8) 02 90 0b 54 06 07 0a 
+P    8 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    5 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6856
+It is now cycle 6857
+P    44 | ld 0 r5
+ADV 7 (0x0a82 -> 0x0a89) 02 90 00 00 00 00 05 
+It is now cycle 6858
+It is now cycle 6859
+P    13 | ld 150994956 r3
+ADV 7 (0x09ff -> 0x0a06) 02 90 09 00 00 0c 03 
+It is now cycle 6860
+P    14 | ld 150994956 r11
+ADV 7 (0x09f8 -> 0x09ff) 02 90 09 00 00 0c 0b 
+P    10 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    9 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6861
+P    27 | zjmp 46 OK
+P    3 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6862
+It is now cycle 6863
+P    49 | live 302711440
+ADV 5 (0x08cb -> 0x08d0) 01 12 0b 02 90 
+It is now cycle 6864
+P    13 | ld 150994956 r6
+ADV 7 (0x0a06 -> 0x0a0d) 02 90 09 00 00 0c 06 
+It is now cycle 6865
+P    17 | zjmp 299 FAILED
+ADV 3 (0x08b2 -> 0x08b5) 09 01 2b 
+P    14 | ld 150994956 r3
+ADV 7 (0x09ff -> 0x0a06) 02 90 09 00 00 0c 03 
+It is now cycle 6866
+P    3 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6867
+P    28 | zjmp 46 OK
+It is now cycle 6868
+P    31 | fork 3072 (2260)
+ADV 3 (0x08d4 -> 0x08d7) 0c 0c 00 
+P    29 | zjmp 19 OK
+It is now cycle 6869
+P    50 | live 302711440
+ADV 5 (0x08cb -> 0x08d0) 01 12 0b 02 90 
+P    46 | ld 190055172 r3
+ADV 7 (0x0a3b -> 0x0a42) 02 90 0b 54 03 04 03 
+It is now cycle 6870
+P    17 | ld 202068999 r10
+ADV 7 (0x08b5 -> 0x08bc) 02 90 0c 0b 54 07 0a 
+P    14 | ld 150994956 r6
+ADV 7 (0x0a06 -> 0x0a0d) 02 90 09 00 00 0c 06 
+P    7 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    6 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    1 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6871
+P    43 | zjmp 3 OK
+P    30 | zjmp 19 OK
+P    27 | live 0
+ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
+P    18 | zjmp 299 FAILED
+ADV 3 (0x08b2 -> 0x08b5) 09 01 2b 
+It is now cycle 6872
+It is now cycle 6873
+It is now cycle 6874
+P    46 | ld 190055172 r6
+ADV 7 (0x0a42 -> 0x0a49) 02 90 0b 54 03 04 06 
+P    32 | fork 3072 (2260)
+ADV 3 (0x08d4 -> 0x08d7) 0c 0c 00 
+It is now cycle 6875
+P    48 | ld 190055172 r3
+ADV 7 (0x0a3b -> 0x0a42) 02 90 0b 54 03 04 03 
+P    17 | st r13 7
+ADV 4 (0x08bc -> 0x08c0) 03 50 0d 07 
+P    8 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    7 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    6 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6876
+P    27 | st r10 511
+ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
+P    18 | ld 202068999 r10
+ADV 7 (0x08b5 -> 0x08bc) 02 90 0c 0b 54 07 0a 
+It is now cycle 6877
+P    44 | zjmp 3 OK
+P    28 | live 0
+ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
+It is now cycle 6878
+It is now cycle 6879
+P    46 | ld 507 r7
+ADV 7 (0x0a49 -> 0x0a50) 02 90 00 00 01 fb 07 
+It is now cycle 6880
+P    48 | ld 190055172 r6
+ADV 7 (0x0a42 -> 0x0a49) 02 90 0b 54 03 04 06 
+P    17 | ld 150994956 r8
+ADV 7 (0x08c0 -> 0x08c7) 02 90 09 00 00 0c 08 
+P    10 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    9 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    8 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6881
+P    43 | live 0
+ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
+P    27 | st r11 510
+ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
+P    18 | st r13 7
+ADV 4 (0x08bc -> 0x08c0) 03 50 0d 07 
+It is now cycle 6882
+P    28 | st r10 511
+ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
+It is now cycle 6883
+It is now cycle 6884
+P    46 | ld 24 r4
+ADV 7 (0x0a50 -> 0x0a57) 02 90 00 00 00 18 04 
+P    31 | live 150994956
+ADV 5 (0x08d9 -> 0x08de) 01 09 00 00 0c 
+It is now cycle 6885
+P    48 | ld 507 r7
+ADV 7 (0x0a49 -> 0x0a50) 02 90 00 00 01 fb 07 
+P    17 | ld 274 r11
+ADV 7 (0x08c7 -> 0x08ce) 02 90 00 00 01 12 0b 
+P    10 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    9 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6886
+P    43 | st r10 511
+ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
+P    18 | ld 150994956 r8
+ADV 7 (0x08c0 -> 0x08c7) 02 90 09 00 00 0c 08 
+P    3 | zjmp -35 OK
+It is now cycle 6887
+P    44 | live 0
+ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
+P    28 | st r11 510
+ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
+It is now cycle 6888
+It is now cycle 6889
+P    46 | ld 0 r5
+ADV 7 (0x0a57 -> 0x0a5e) 02 90 00 00 00 00 05 
+It is now cycle 6890
+P    48 | ld 24 r4
+ADV 7 (0x0a50 -> 0x0a57) 02 90 00 00 00 18 04 
+P    32 | live 150994956
+ADV 5 (0x08d9 -> 0x08de) 01 09 00 00 0c 
+P    17 | ld 0 r12
+ADV 7 (0x08ce -> 0x08d5) 02 90 00 00 00 00 0c 
+P    1 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6891
+P    43 | st r11 510
+ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
+P    18 | ld 274 r11
+ADV 7 (0x08c7 -> 0x08ce) 02 90 00 00 01 12 0b 
+P    4 | fork 6 (2267)
+ADV 3 (0x08d5 -> 0x08d8) 0c 00 06 
+It is now cycle 6892
+P    44 | st r10 511
+ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
+It is now cycle 6893
+P    29 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3939)
+ADV 5 (0x0f4b -> 0x0f50) 0b 54 03 04 05 
+It is now cycle 6894
+It is now cycle 6895
+P    48 | ld 0 r5
+ADV 7 (0x0a57 -> 0x0a5e) 02 90 00 00 00 00 05 
+P    7 | zjmp -35 OK
+P    6 | zjmp -35 OK
+P    1 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6896
+P    30 | sti r3 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 3915)
+ADV 5 (0x0f4b -> 0x0f50) 0b 54 03 04 05 
+P    18 | ld 0 r12
+ADV 7 (0x08ce -> 0x08d5) 02 90 00 00 00 00 0c 
+P    3 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6897
+P    44 | st r11 510
+ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
+P    2 | fork 6 (2267)
+ADV 3 (0x08d5 -> 0x08d8) 0c 00 06 
+It is now cycle 6898
+It is now cycle 6899
+It is now cycle 6900
+P    8 | zjmp -35 OK
+P    5 | zjmp -35 OK
+It is now cycle 6901
+P    27 | zjmp 501 OK
+P    3 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6902
+It is now cycle 6903
+It is now cycle 6904
+It is now cycle 6905
+P    10 | zjmp -35 OK
+P    9 | zjmp -35 OK
+P    7 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    6 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6906
+P    3 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6907
+P    28 | zjmp 501 OK
+It is now cycle 6908
+It is now cycle 6909
+P    46 | zjmp 46 OK
+P    31 | sti r10 84476405 0
+       | -> store to 84476405 + 0 = 84476405 (with pc and mod 2771)
+ADV 5 (0x08de -> 0x08e3) 0b 54 0a 0b 0c 
+It is now cycle 6910
+P    8 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    7 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    6 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    5 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6911
+P    43 | zjmp 501 OK
+P    4 | zjmp 265 OK
+P    3 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6912
+It is now cycle 6913
+P    29 | zjmp 19 OK
+It is now cycle 6914
+It is now cycle 6915
+P    48 | zjmp 46 OK
+P    32 | sti r10 52 1
+       | -> store to 52 + 1 = 53 (with pc and mod 2323)
+ADV 5 (0x08de -> 0x08e3) 0b 54 0a 0b 0c 
+P    10 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    9 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    8 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    7 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    6 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    5 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    1 | zjmp -35 OK
+It is now cycle 6916
+P    30 | zjmp 19 OK
+It is now cycle 6917
+P    44 | zjmp 501 OK
+P    2 | zjmp 265 OK
+It is now cycle 6918
+It is now cycle 6919
+P    46 | live 0
+ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
+It is now cycle 6920
+P    10 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    9 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    8 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    7 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    6 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6921
+P    3 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6922
+It is now cycle 6923
+It is now cycle 6924
+P    46 | st r10 511
+ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
+It is now cycle 6925
+P    48 | live 0
+ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
+P    10 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    9 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    8 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    1 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6926
+It is now cycle 6927
+It is now cycle 6928
+It is now cycle 6929
+P    46 | st r11 510
+ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
+It is now cycle 6930
+P    48 | st r10 511
+ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
+P    10 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    9 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    7 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    6 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6931
+It is now cycle 6932
+It is now cycle 6933
+It is now cycle 6934
+P    31 | sti r7 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 2275)
+ADV 5 (0x08e3 -> 0x08e8) 0b 54 07 08 0c 
+It is now cycle 6935
+P    48 | st r11 510
+ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
+P    8 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    5 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6936
+It is now cycle 6937
+It is now cycle 6938
+P    29 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3963)
+ADV 5 (0x0f63 -> 0x0f68) 0b 54 03 04 05 
+It is now cycle 6939
+It is now cycle 6940
+P    10 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    9 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6941
+P    30 | sti r3 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 3939)
+ADV 5 (0x0f63 -> 0x0f68) 0b 54 03 04 05 
+P    3 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6942
+It is now cycle 6943
+It is now cycle 6944
+P    31 | live 0
+ADV 5 (0x08e8 -> 0x08ed) 01 00 00 00 00 
+It is now cycle 6945
+It is now cycle 6946
+P    3 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6947
+It is now cycle 6948
+It is now cycle 6949
+P    46 | zjmp 501 OK
+It is now cycle 6950
+P    32 | live -83099392
+ADV 5 (0x08e5 -> 0x08ea) 01 fb 0c 01 00 
+P    7 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    6 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    1 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 6951
+It is now cycle 6952
+It is now cycle 6953
+It is now cycle 6954
+It is now cycle 6955
+P    48 | zjmp 501 OK
+P    8 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    7 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    6 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6956
+It is now cycle 6957
+It is now cycle 6958
+P    29 | zjmp 19 OK
+It is now cycle 6959
+It is now cycle 6960
+P    10 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    9 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    8 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6961
+P    30 | zjmp 19 OK
+It is now cycle 6962
+It is now cycle 6963
+It is now cycle 6964
+It is now cycle 6965
+P    10 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    9 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6966
+P    3 | zjmp -35 OK
+It is now cycle 6967
+It is now cycle 6968
+It is now cycle 6969
+P    31 | sti r10 84476405 0
+       | -> store to 84476405 + 0 = 84476405 (with pc and mod 2786)
+ADV 5 (0x08ed -> 0x08f2) 0b 54 0a 0b 0c 
+It is now cycle 6970
+P    1 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 6971
+It is now cycle 6972
+It is now cycle 6973
+It is now cycle 6974
+It is now cycle 6975
+P    7 | zjmp -35 OK
+P    6 | zjmp -35 OK
+P    1 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 6976
+P    3 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6977
+It is now cycle 6978
+P    32 | sti r10 52 1
+       | -> store to 52 + 1 = 53 (with pc and mod 2338)
+ADV 5 (0x08ed -> 0x08f2) 0b 54 0a 0b 0c 
+It is now cycle 6979
+It is now cycle 6980
+P    8 | zjmp -35 OK
+P    5 | zjmp -35 OK
+It is now cycle 6981
+P    3 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 6982
+It is now cycle 6983
+P    29 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3987)
+ADV 5 (0x0f7b -> 0x0f80) 0b 54 03 04 05 
+It is now cycle 6984
+It is now cycle 6985
+P    10 | zjmp -35 OK
+P    9 | zjmp -35 OK
+P    7 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    6 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6986
+P    30 | sti r3 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 3963)
+ADV 5 (0x0f7b -> 0x0f80) 0b 54 03 04 05 
+P    3 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 6987
+It is now cycle 6988
+It is now cycle 6989
+P    31 | zjmp 0 FAILED
+ADV 3 (0x08f2 -> 0x08f5) 09 00 00 
+It is now cycle 6990
+P    8 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    7 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    6 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    5 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 6991
+P    3 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 6992
+It is now cycle 6993
+It is now cycle 6994
+It is now cycle 6995
+P    10 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    9 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    8 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    7 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    6 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    5 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    1 | zjmp -35 OK
+It is now cycle 6996
+It is now cycle 6997
+It is now cycle 6998
+P    32 | zjmp 0 FAILED
+ADV 3 (0x08f2 -> 0x08f5) 09 00 00 
+It is now cycle 6999
+It is now cycle 7000
+P    10 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    9 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    8 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    7 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    6 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7001
+P    3 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7002
+It is now cycle 7003
+P    29 | zjmp 19 OK
+It is now cycle 7004
+It is now cycle 7005
+P    10 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    9 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    8 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    1 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7006
+P    30 | zjmp 19 OK
+It is now cycle 7007
+It is now cycle 7008
+It is now cycle 7009
+It is now cycle 7010
+P    10 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    9 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    7 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    6 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 7011
+It is now cycle 7012
+It is now cycle 7013
+It is now cycle 7014
+It is now cycle 7015
+P    8 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    5 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7016
+It is now cycle 7017
+It is now cycle 7018
+It is now cycle 7019
+It is now cycle 7020
+P    10 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    9 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 7021
+P    3 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7022
+It is now cycle 7023
+It is now cycle 7024
+It is now cycle 7025
+It is now cycle 7026
+P    3 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7027
+It is now cycle 7028
+P    29 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 4011)
+ADV 5 (0x0f93 -> 0x0f98) 0b 54 03 04 05 
+It is now cycle 7029
+It is now cycle 7030
+P    7 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    6 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    1 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7031
+P    30 | sti r3 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 3987)
+ADV 5 (0x0f93 -> 0x0f98) 0b 54 03 04 05 
+It is now cycle 7032
+It is now cycle 7033
+It is now cycle 7034
+It is now cycle 7035
+P    8 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    7 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    6 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7036
+It is now cycle 7037
+It is now cycle 7038
+It is now cycle 7039
+It is now cycle 7040
+P    10 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    9 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    8 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7041
+It is now cycle 7042
+It is now cycle 7043
+It is now cycle 7044
+It is now cycle 7045
+P    10 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    9 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7046
+P    3 | zjmp -35 OK
+It is now cycle 7047
+It is now cycle 7048
+P    29 | zjmp 19 OK
+It is now cycle 7049
+It is now cycle 7050
+P    1 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7051
+P    30 | zjmp 19 OK
+It is now cycle 7052
+It is now cycle 7053
+It is now cycle 7054
+It is now cycle 7055
+P    7 | zjmp -35 OK
+P    6 | zjmp -35 OK
+P    1 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7056
+P    3 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7057
+It is now cycle 7058
+It is now cycle 7059
+It is now cycle 7060
+P    8 | zjmp -35 OK
+P    5 | zjmp -35 OK
+It is now cycle 7061
+P    3 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 7062
+It is now cycle 7063
+It is now cycle 7064
+It is now cycle 7065
+P    10 | zjmp -35 OK
+P    9 | zjmp -35 OK
+P    7 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    6 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7066
+P    3 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7067
+It is now cycle 7068
+It is now cycle 7069
+It is now cycle 7070
+P    8 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    7 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    6 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    5 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7071
+P    3 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 7072
+It is now cycle 7073
+P    29 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 4035)
+ADV 5 (0x0fab -> 0x0fb0) 0b 54 03 04 05 
+It is now cycle 7074
+It is now cycle 7075
+P    10 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    9 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    8 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    7 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    6 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    5 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    1 | zjmp -35 OK
+It is now cycle 7076
+P    30 | sti r3 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 4011)
+ADV 5 (0x0fab -> 0x0fb0) 0b 54 03 04 05 
+It is now cycle 7077
+It is now cycle 7078
+It is now cycle 7079
+It is now cycle 7080
+P    10 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    9 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    8 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    7 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    6 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7081
+P    3 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7082
+It is now cycle 7083
+It is now cycle 7084
+It is now cycle 7085
+P    10 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    9 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    8 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    1 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7086
+It is now cycle 7087
+It is now cycle 7088
+It is now cycle 7089
+It is now cycle 7090
+P    10 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    9 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    7 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    6 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 7091
+It is now cycle 7092
+It is now cycle 7093
+P    29 | zjmp 19 OK
+It is now cycle 7094
+It is now cycle 7095
+P    8 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    5 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7096
+P    30 | zjmp 19 OK
+It is now cycle 7097
+It is now cycle 7098
+It is now cycle 7099
+It is now cycle 7100
+P    10 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    9 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 7101
+P    3 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7102
+It is now cycle 7103
+It is now cycle 7104
+It is now cycle 7105
+It is now cycle 7106
+P    3 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7107
+It is now cycle 7108
+It is now cycle 7109
+It is now cycle 7110
+P    7 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    6 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    1 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7111
+It is now cycle 7112
+It is now cycle 7113
+It is now cycle 7114
+It is now cycle 7115
+P    8 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    7 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    6 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7116
+It is now cycle 7117
+It is now cycle 7118
+P    29 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 4059)
+ADV 5 (0x0fc3 -> 0x0fc8) 0b 54 03 04 05 
+It is now cycle 7119
+It is now cycle 7120
+P    10 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    9 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    8 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7121
+P    30 | sti r3 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 4035)
+ADV 5 (0x0fc3 -> 0x0fc8) 0b 54 03 04 05 
+It is now cycle 7122
+It is now cycle 7123
+It is now cycle 7124
+It is now cycle 7125
+P    10 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    9 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7126
+P    3 | zjmp -35 OK
+It is now cycle 7127
+It is now cycle 7128
+It is now cycle 7129
+It is now cycle 7130
+P    1 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7131
+It is now cycle 7132
+It is now cycle 7133
+It is now cycle 7134
+It is now cycle 7135
+P    7 | zjmp -35 OK
+P    6 | zjmp -35 OK
+P    1 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7136
+P    3 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7137
+It is now cycle 7138
+P    29 | zjmp 19 OK
+It is now cycle 7139
+It is now cycle 7140
+P    8 | zjmp -35 OK
+P    5 | zjmp -35 OK
+It is now cycle 7141
+P    30 | zjmp 19 OK
+P    3 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 7142
+It is now cycle 7143
+It is now cycle 7144
+It is now cycle 7145
+P    10 | zjmp -35 OK
+P    9 | zjmp -35 OK
+P    7 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    6 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7146
+P    3 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7147
+It is now cycle 7148
+It is now cycle 7149
+It is now cycle 7150
+P    8 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    7 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    6 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    5 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7151
+P    3 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 7152
+It is now cycle 7153
+It is now cycle 7154
+It is now cycle 7155
+P    10 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    9 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    8 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    7 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    6 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    5 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    1 | zjmp -35 OK
+It is now cycle 7156
+It is now cycle 7157
+It is now cycle 7158
+It is now cycle 7159
+It is now cycle 7160
+P    10 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    9 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    8 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    7 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    6 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7161
+P    3 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7162
+It is now cycle 7163
+P    29 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 4083)
+ADV 5 (0x0fdb -> 0x0fe0) 0b 54 03 04 05 
+It is now cycle 7164
+P    33 | fork 0 (2581)
+ADV 3 (0x0a15 -> 0x0a18) 0c 00 00 
+It is now cycle 7165
+P    10 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    9 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    8 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    1 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7166
+P    30 | sti r3 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 4059)
+ADV 5 (0x0fdb -> 0x0fe0) 0b 54 03 04 05 
+It is now cycle 7167
+It is now cycle 7168
+It is now cycle 7169
+It is now cycle 7170
+P    34 | fork 0 (2581)
+ADV 3 (0x0a15 -> 0x0a18) 0c 00 00 
+P    10 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    9 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    7 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    6 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 7171
+It is now cycle 7172
+It is now cycle 7173
+It is now cycle 7174
+P    33 | live -284949872
+ADV 5 (0x0a18 -> 0x0a1d) 01 ef 04 02 90 
+It is now cycle 7175
+P    8 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    5 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7176
+It is now cycle 7177
+It is now cycle 7178
+It is now cycle 7179
+P    35 | fork 0 (2581)
+ADV 3 (0x0a15 -> 0x0a18) 0c 00 00 
+It is now cycle 7180
+P    34 | live -284949872
+ADV 5 (0x0a18 -> 0x0a1d) 01 ef 04 02 90 
+P    10 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    9 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 7181
+P    3 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7182
+It is now cycle 7183
+P    29 | zjmp 19 OK
+It is now cycle 7184
+It is now cycle 7185
+P    36 | fork 0 (2581)
+ADV 3 (0x0a15 -> 0x0a18) 0c 00 00 
+It is now cycle 7186
+P    30 | zjmp 19 OK
+P    3 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7187
+It is now cycle 7188
+It is now cycle 7189
+P    35 | live -284949872
+ADV 5 (0x0a18 -> 0x0a1d) 01 ef 04 02 90 
+It is now cycle 7190
+P    7 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    6 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    1 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7191
+It is now cycle 7192
+It is now cycle 7193
+It is now cycle 7194
+It is now cycle 7195
+P    36 | live -284949872
+ADV 5 (0x0a18 -> 0x0a1d) 01 ef 04 02 90 
+P    8 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    7 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    6 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7196
+It is now cycle 7197
+It is now cycle 7198
+It is now cycle 7199
+It is now cycle 7200
+P    33 | live 0
+ADV 5 (0x0a25 -> 0x0a2a) 01 00 00 00 00 
+P    10 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    9 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    8 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7201
+It is now cycle 7202
+It is now cycle 7203
+It is now cycle 7204
+It is now cycle 7205
+P    33 | ld 190055943 r10
+ADV 7 (0x0a2a -> 0x0a31) 02 90 0b 54 06 07 0a 
+P    10 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    9 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7206
+P    34 | live 0
+ADV 5 (0x0a25 -> 0x0a2a) 01 00 00 00 00 
+P    3 | zjmp -35 OK
+It is now cycle 7207
+It is now cycle 7208
+P    29 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 4107)
+ADV 5 (0x0ff3 -> 0x0ff8) 0b 54 03 04 05 
+It is now cycle 7209
+It is now cycle 7210
+P    33 | ld 84476405 r11
+ADV 7 (0x0a31 -> 0x0a38) 02 90 05 09 01 f5 0b 
+P    21 | fork 41 (2657)
+ADV 3 (0x0a38 -> 0x0a3b) 0c 00 29 
+P    1 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7211
+P    34 | ld 190055943 r10
+ADV 7 (0x0a2a -> 0x0a31) 02 90 0b 54 06 07 0a 
+P    30 | sti r3 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 4083)
+ADV 5 (0x0ff3 -> 0x0ff8) 0b 54 03 04 05 
+It is now cycle 7212
+It is now cycle 7213
+It is now cycle 7214
+It is now cycle 7215
+P    35 | live 0
+ADV 5 (0x0a25 -> 0x0a2a) 01 00 00 00 00 
+P    21 | ld 190055172 r3
+ADV 7 (0x0a3b -> 0x0a42) 02 90 0b 54 03 04 03 
+P    7 | zjmp -35 OK
+P    6 | zjmp -35 OK
+P    1 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7216
+P    34 | ld 84476405 r11
+ADV 7 (0x0a31 -> 0x0a38) 02 90 05 09 01 f5 0b 
+P    22 | fork 41 (2657)
+ADV 3 (0x0a38 -> 0x0a3b) 0c 00 29 
+P    3 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7217
+It is now cycle 7218
+It is now cycle 7219
+It is now cycle 7220
+P    59 | live 0
+ADV 5 (0x0a61 -> 0x0a66) 01 00 00 00 00 
+P    35 | ld 190055943 r10
+ADV 7 (0x0a2a -> 0x0a31) 02 90 0b 54 06 07 0a 
+P    21 | ld 190055172 r6
+ADV 7 (0x0a42 -> 0x0a49) 02 90 0b 54 03 04 06 
+P    8 | zjmp -35 OK
+P    5 | zjmp -35 OK
+It is now cycle 7221
+P    36 | live 0
+ADV 5 (0x0a25 -> 0x0a2a) 01 00 00 00 00 
+P    22 | ld 190055172 r3
+ADV 7 (0x0a3b -> 0x0a42) 02 90 0b 54 03 04 03 
+P    3 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 7222
+It is now cycle 7223
+It is now cycle 7224
+It is now cycle 7225
+P    59 | ld 84475923 r3
+ADV 7 (0x0a66 -> 0x0a6d) 02 90 05 09 00 13 03 
+P    35 | ld 84476405 r11
+ADV 7 (0x0a31 -> 0x0a38) 02 90 05 09 01 f5 0b 
+P    23 | fork 41 (2657)
+ADV 3 (0x0a38 -> 0x0a3b) 0c 00 29 
+P    21 | ld 507 r7
+ADV 7 (0x0a49 -> 0x0a50) 02 90 00 00 01 fb 07 
+P    10 | zjmp -35 OK
+P    9 | zjmp -35 OK
+P    7 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    6 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7226
+P    60 | live 0
+ADV 5 (0x0a61 -> 0x0a66) 01 00 00 00 00 
+P    36 | ld 190055943 r10
+ADV 7 (0x0a2a -> 0x0a31) 02 90 0b 54 06 07 0a 
+P    22 | ld 190055172 r6
+ADV 7 (0x0a42 -> 0x0a49) 02 90 0b 54 03 04 06 
+P    3 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7227
+It is now cycle 7228
+P    29 | zjmp 19 OK
+It is now cycle 7229
+It is now cycle 7230
+P    59 | ld 84475923 r6
+ADV 7 (0x0a6d -> 0x0a74) 02 90 05 09 00 13 06 
+P    23 | ld 190055172 r3
+ADV 7 (0x0a3b -> 0x0a42) 02 90 0b 54 03 04 03 
+P    21 | ld 24 r4
+ADV 7 (0x0a50 -> 0x0a57) 02 90 00 00 00 18 04 
+P    8 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    7 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    6 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    5 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7231
+P    60 | ld 84475923 r3
+ADV 7 (0x0a66 -> 0x0a6d) 02 90 05 09 00 13 03 
+P    36 | ld 84476405 r11
+ADV 7 (0x0a31 -> 0x0a38) 02 90 05 09 01 f5 0b 
+P    30 | zjmp 19 OK
+P    24 | fork 41 (2657)
+ADV 3 (0x0a38 -> 0x0a3b) 0c 00 29 
+P    22 | ld 507 r7
+ADV 7 (0x0a49 -> 0x0a50) 02 90 00 00 01 fb 07 
+P    3 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 7232
+It is now cycle 7233
+It is now cycle 7234
+It is now cycle 7235
+P    61 | live 0
+ADV 5 (0x0a61 -> 0x0a66) 01 00 00 00 00 
+P    59 | ld 511 r7
+ADV 7 (0x0a74 -> 0x0a7b) 02 90 00 00 01 ff 07 
+P    23 | ld 190055172 r6
+ADV 7 (0x0a42 -> 0x0a49) 02 90 0b 54 03 04 06 
+P    21 | ld 0 r5
+ADV 7 (0x0a57 -> 0x0a5e) 02 90 00 00 00 00 05 
+P    10 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    9 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    8 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    7 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    6 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    5 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    1 | zjmp -35 OK
+It is now cycle 7236
+P    60 | ld 84475923 r6
+ADV 7 (0x0a6d -> 0x0a74) 02 90 05 09 00 13 06 
+P    24 | ld 190055172 r3
+ADV 7 (0x0a3b -> 0x0a42) 02 90 0b 54 03 04 03 
+P    22 | ld 24 r4
+ADV 7 (0x0a50 -> 0x0a57) 02 90 00 00 00 18 04 
+It is now cycle 7237
+It is now cycle 7238
+It is now cycle 7239
+It is now cycle 7240
+P    61 | ld 84475923 r3
+ADV 7 (0x0a66 -> 0x0a6d) 02 90 05 09 00 13 03 
+P    59 | ld 28 r4
+ADV 7 (0x0a7b -> 0x0a82) 02 90 00 00 00 1c 04 
+P    23 | ld 507 r7
+ADV 7 (0x0a49 -> 0x0a50) 02 90 00 00 01 fb 07 
+P    10 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    9 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    8 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    7 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    6 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7241
+P    62 | live 0
+ADV 5 (0x0a61 -> 0x0a66) 01 00 00 00 00 
+P    60 | ld 511 r7
+ADV 7 (0x0a74 -> 0x0a7b) 02 90 00 00 01 ff 07 
+P    24 | ld 190055172 r6
+ADV 7 (0x0a42 -> 0x0a49) 02 90 0b 54 03 04 06 
+P    22 | ld 0 r5
+ADV 7 (0x0a57 -> 0x0a5e) 02 90 00 00 00 00 05 
+P    3 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7242
+It is now cycle 7243
+It is now cycle 7244
+It is now cycle 7245
+P    61 | ld 84475923 r6
+ADV 7 (0x0a6d -> 0x0a74) 02 90 05 09 00 13 06 
+P    59 | ld 0 r5
+ADV 7 (0x0a82 -> 0x0a89) 02 90 00 00 00 00 05 
+P    23 | ld 24 r4
+ADV 7 (0x0a50 -> 0x0a57) 02 90 00 00 00 18 04 
+P    10 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    9 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    8 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    1 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7246
+P    62 | ld 84475923 r3
+ADV 7 (0x0a66 -> 0x0a6d) 02 90 05 09 00 13 03 
+P    60 | ld 28 r4
+ADV 7 (0x0a7b -> 0x0a82) 02 90 00 00 00 1c 04 
+P    24 | ld 507 r7
+ADV 7 (0x0a49 -> 0x0a50) 02 90 00 00 01 fb 07 
+It is now cycle 7247
+It is now cycle 7248
+It is now cycle 7249
+It is now cycle 7250
+P    61 | ld 511 r7
+ADV 7 (0x0a74 -> 0x0a7b) 02 90 00 00 01 ff 07 
+P    23 | ld 0 r5
+ADV 7 (0x0a57 -> 0x0a5e) 02 90 00 00 00 00 05 
+P    10 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    9 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    7 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    6 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 7251
+P    62 | ld 84475923 r6
+ADV 7 (0x0a6d -> 0x0a74) 02 90 05 09 00 13 06 
+P    60 | ld 0 r5
+ADV 7 (0x0a82 -> 0x0a89) 02 90 00 00 00 00 05 
+P    24 | ld 24 r4
+ADV 7 (0x0a50 -> 0x0a57) 02 90 00 00 00 18 04 
+It is now cycle 7252
+It is now cycle 7253
+It is now cycle 7254
+It is now cycle 7255
+P    61 | ld 28 r4
+ADV 7 (0x0a7b -> 0x0a82) 02 90 00 00 00 1c 04 
+P    21 | zjmp 46 OK
+P    8 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    5 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7256
+P    62 | ld 511 r7
+ADV 7 (0x0a74 -> 0x0a7b) 02 90 00 00 01 ff 07 
+P    24 | ld 0 r5
+ADV 7 (0x0a57 -> 0x0a5e) 02 90 00 00 00 00 05 
+It is now cycle 7257
+It is now cycle 7258
+It is now cycle 7259
+It is now cycle 7260
+P    61 | ld 0 r5
+ADV 7 (0x0a82 -> 0x0a89) 02 90 00 00 00 00 05 
+P    10 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    9 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 7261
+P    62 | ld 28 r4
+ADV 7 (0x0a7b -> 0x0a82) 02 90 00 00 00 1c 04 
+P    29 | live 201494528
+ADV 5 (0x0017 -> 0x001c) 01 0c 02 90 00 
+P    22 | zjmp 46 OK
+P    3 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7262
+It is now cycle 7263
+It is now cycle 7264
+P    30 | live 201494528
+ADV 5 (0x0017 -> 0x001c) 01 0c 02 90 00 
+It is now cycle 7265
+P    59 | zjmp 3 OK
+P    21 | live 0
+ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
+It is now cycle 7266
+P    62 | ld 0 r5
+ADV 7 (0x0a82 -> 0x0a89) 02 90 00 00 00 00 05 
+P    3 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7267
+It is now cycle 7268
+It is now cycle 7269
+It is now cycle 7270
+P    23 | zjmp 46 OK
+P    21 | st r10 511
+ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
+P    7 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    6 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    1 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7271
+P    60 | zjmp 3 OK
+P    22 | live 0
+ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
+It is now cycle 7272
+It is now cycle 7273
+It is now cycle 7274
+It is now cycle 7275
+P    59 | live 0
+ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
+P    21 | st r11 510
+ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
+P    8 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    7 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    6 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7276
+P    24 | zjmp 46 OK
+P    22 | st r10 511
+ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
+It is now cycle 7277
+It is now cycle 7278
+It is now cycle 7279
+It is now cycle 7280
+P    61 | zjmp 3 OK
+P    59 | st r10 511
+ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
+P    23 | live 0
+ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
+P    10 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    9 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    8 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7281
+P    60 | live 0
+ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
+P    22 | st r11 510
+ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
+It is now cycle 7282
+It is now cycle 7283
+It is now cycle 7284
+It is now cycle 7285
+P    59 | st r11 510
+ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
+P    23 | st r10 511
+ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
+P    10 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    9 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7286
+P    62 | zjmp 3 OK
+P    60 | st r10 511
+ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
+P    24 | live 0
+ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
+P    3 | zjmp -35 OK
+It is now cycle 7287
+It is now cycle 7288
+It is now cycle 7289
+It is now cycle 7290
+P    61 | live 0
+ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
+P    23 | st r11 510
+ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
+P    1 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7291
+P    60 | st r11 510
+ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
+P    24 | st r10 511
+ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
+It is now cycle 7292
+It is now cycle 7293
+It is now cycle 7294
+It is now cycle 7295
+P    61 | st r10 511
+ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
+P    21 | zjmp 501 OK
+P    7 | zjmp -35 OK
+P    6 | zjmp -35 OK
+P    1 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7296
+P    62 | live 0
+ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
+P    24 | st r11 510
+ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
+P    3 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7297
+It is now cycle 7298
+P    29 | st r16 -4
+ADV 5 (0x0025 -> 0x002a) 03 70 10 ff fc 
+It is now cycle 7299
+It is now cycle 7300
+P    61 | st r11 510
+ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
+P    8 | zjmp -35 OK
+P    5 | zjmp -35 OK
+It is now cycle 7301
+P    62 | st r10 511
+ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
+P    30 | st r16 -4
+ADV 5 (0x0025 -> 0x002a) 03 70 10 ff fc 
+P    22 | zjmp 501 OK
+P    3 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 7302
+It is now cycle 7303
+It is now cycle 7304
+It is now cycle 7305
+P    59 | zjmp 501 OK
+P    10 | zjmp -35 OK
+P    9 | zjmp -35 OK
+P    7 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    6 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7306
+P    62 | st r11 510
+ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
+P    3 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7307
+It is now cycle 7308
+P    29 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7309
+It is now cycle 7310
+P    23 | zjmp 501 OK
+P    8 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    7 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    6 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    5 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7311
+P    60 | zjmp 501 OK
+P    30 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    3 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 7312
+It is now cycle 7313
+P    29 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 7314
+It is now cycle 7315
+P    10 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    9 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    8 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    7 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    6 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    5 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    1 | zjmp -35 OK
+It is now cycle 7316
+P    30 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    24 | zjmp 501 OK
+It is now cycle 7317
+It is now cycle 7318
+P    29 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7319
+It is now cycle 7320
+P    61 | zjmp 501 OK
+P    21 | sti r6 507 0
+       | -> store to 507 + 0 = 507 (with pc and mod 3723)
+ADV 5 (0x0c90 -> 0x0c95) 0b 54 06 07 05 
+P    10 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    9 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    8 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    7 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    6 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7321
+P    30 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    3 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7322
+It is now cycle 7323
+P    29 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 7324
+It is now cycle 7325
+P    10 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    9 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    8 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    1 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7326
+P    62 | zjmp 501 OK
+P    30 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    22 | sti r6 507 0
+       | -> store to 507 + 0 = 507 (with pc and mod 3723)
+ADV 5 (0x0c90 -> 0x0c95) 0b 54 06 07 05 
+It is now cycle 7327
+It is now cycle 7328
+It is now cycle 7329
+It is now cycle 7330
+P    59 | sti r6 511 0
+       | -> store to 511 + 0 = 511 (with pc and mod 3727)
+ADV 5 (0x0c90 -> 0x0c95) 0b 54 06 07 05 
+P    10 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    9 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    7 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    6 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 7331
+It is now cycle 7332
+It is now cycle 7333
+P    29 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7334
+It is now cycle 7335
+P    23 | sti r6 507 0
+       | -> store to 507 + 0 = 507 (with pc and mod 3723)
+ADV 5 (0x0c90 -> 0x0c95) 0b 54 06 07 05 
+P    8 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    5 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7336
+P    60 | sti r6 511 0
+       | -> store to 511 + 0 = 511 (with pc and mod 3727)
+ADV 5 (0x0c90 -> 0x0c95) 0b 54 06 07 05 
+P    30 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7337
+It is now cycle 7338
+It is now cycle 7339
+It is now cycle 7340
+P    21 | zjmp 501 OK
+P    10 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    9 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 7341
+P    24 | sti r6 507 0
+       | -> store to 507 + 0 = 507 (with pc and mod 3723)
+ADV 5 (0x0c90 -> 0x0c95) 0b 54 06 07 05 
+P    3 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7342
+It is now cycle 7343
+It is now cycle 7344
+It is now cycle 7345
+P    61 | sti r6 511 0
+       | -> store to 511 + 0 = 511 (with pc and mod 3727)
+ADV 5 (0x0c90 -> 0x0c95) 0b 54 06 07 05 
+It is now cycle 7346
+P    22 | zjmp 501 OK
+P    3 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7347
+It is now cycle 7348
+It is now cycle 7349
+It is now cycle 7350
+P    59 | zjmp 501 OK
+P    7 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    6 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    1 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7351
+P    62 | sti r6 511 0
+       | -> store to 511 + 0 = 511 (with pc and mod 3727)
+ADV 5 (0x0c90 -> 0x0c95) 0b 54 06 07 05 
+It is now cycle 7352
+It is now cycle 7353
+P    29 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7354
+It is now cycle 7355
+P    23 | zjmp 501 OK
+P    8 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    7 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    6 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7356
+P    60 | zjmp 501 OK
+P    30 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7357
+It is now cycle 7358
+P    29 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7359
+It is now cycle 7360
+P    10 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    9 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    8 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7361
+P    30 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    24 | zjmp 501 OK
+It is now cycle 7362
+It is now cycle 7363
+It is now cycle 7364
+It is now cycle 7365
+P    61 | zjmp 501 OK
+P    10 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    9 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7366
+P    21 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3747)
+ADV 5 (0x0e8b -> 0x0e90) 0b 54 03 04 05 
+P    3 | zjmp -35 OK
+It is now cycle 7367
+It is now cycle 7368
+It is now cycle 7369
+It is now cycle 7370
+P    1 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7371
+P    62 | zjmp 501 OK
+It is now cycle 7372
+P    22 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3747)
+ADV 5 (0x0e8b -> 0x0e90) 0b 54 03 04 05 
+It is now cycle 7373
+It is now cycle 7374
+It is now cycle 7375
+P    7 | zjmp -35 OK
+P    6 | zjmp -35 OK
+P    1 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7376
+P    59 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3751)
+ADV 5 (0x0e8b -> 0x0e90) 0b 54 03 04 05 
+P    3 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7377
+It is now cycle 7378
+P    29 | zjmp -35 OK
+It is now cycle 7379
+It is now cycle 7380
+P    8 | zjmp -35 OK
+P    5 | zjmp -35 OK
+It is now cycle 7381
+P    30 | zjmp -35 OK
+P    23 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3747)
+ADV 5 (0x0e8b -> 0x0e90) 0b 54 03 04 05 
+P    3 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 7382
+P    60 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3751)
+ADV 5 (0x0e8b -> 0x0e90) 0b 54 03 04 05 
+It is now cycle 7383
+It is now cycle 7384
+It is now cycle 7385
+P    10 | zjmp -35 OK
+P    9 | zjmp -35 OK
+P    7 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    6 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7386
+P    21 | zjmp 19 OK
+P    3 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7387
+P    24 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3747)
+ADV 5 (0x0e8b -> 0x0e90) 0b 54 03 04 05 
+It is now cycle 7388
+P    29 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7389
+It is now cycle 7390
+P    8 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    7 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    6 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    5 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7391
+P    61 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3751)
+ADV 5 (0x0e8b -> 0x0e90) 0b 54 03 04 05 
+P    30 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    3 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 7392
+P    22 | zjmp 19 OK
+It is now cycle 7393
+P    29 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 7394
+It is now cycle 7395
+P    10 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    9 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    8 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    7 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    6 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    5 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    1 | zjmp -35 OK
+It is now cycle 7396
+P    59 | zjmp 19 OK
+P    30 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 7397
+P    62 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3751)
+ADV 5 (0x0e8b -> 0x0e90) 0b 54 03 04 05 
+It is now cycle 7398
+P    29 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7399
+It is now cycle 7400
+P    10 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    9 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    8 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    7 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    6 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7401
+P    30 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    23 | zjmp 19 OK
+P    3 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7402
+P    60 | zjmp 19 OK
+It is now cycle 7403
+P    29 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 7404
+It is now cycle 7405
+P    10 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    9 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    8 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    1 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7406
+P    30 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 7407
+P    24 | zjmp 19 OK
+It is now cycle 7408
+It is now cycle 7409
+It is now cycle 7410
+P    10 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    9 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    7 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    6 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 7411
+P    61 | zjmp 19 OK
+P    21 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3771)
+ADV 5 (0x0ea3 -> 0x0ea8) 0b 54 03 04 05 
+It is now cycle 7412
+It is now cycle 7413
+P    29 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7414
+It is now cycle 7415
+P    8 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    5 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7416
+P    30 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7417
+P    62 | zjmp 19 OK
+P    22 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3771)
+ADV 5 (0x0ea3 -> 0x0ea8) 0b 54 03 04 05 
+It is now cycle 7418
+It is now cycle 7419
+It is now cycle 7420
+P    10 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    9 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 7421
+P    59 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3775)
+ADV 5 (0x0ea3 -> 0x0ea8) 0b 54 03 04 05 
+P    3 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7422
+It is now cycle 7423
+It is now cycle 7424
+It is now cycle 7425
+It is now cycle 7426
+P    23 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3771)
+ADV 5 (0x0ea3 -> 0x0ea8) 0b 54 03 04 05 
+P    3 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7427
+P    60 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3775)
+ADV 5 (0x0ea3 -> 0x0ea8) 0b 54 03 04 05 
+It is now cycle 7428
+It is now cycle 7429
+It is now cycle 7430
+P    7 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    6 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    1 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7431
+P    21 | zjmp 19 OK
+It is now cycle 7432
+P    24 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3771)
+ADV 5 (0x0ea3 -> 0x0ea8) 0b 54 03 04 05 
+It is now cycle 7433
+P    29 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7434
+It is now cycle 7435
+P    8 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    7 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    6 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7436
+P    61 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3775)
+ADV 5 (0x0ea3 -> 0x0ea8) 0b 54 03 04 05 
+P    30 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7437
+P    22 | zjmp 19 OK
+It is now cycle 7438
+P    29 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7439
+It is now cycle 7440
+P    10 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    9 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    8 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    5 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7441
+P    59 | zjmp 19 OK
+P    30 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7442
+P    62 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3775)
+ADV 5 (0x0ea3 -> 0x0ea8) 0b 54 03 04 05 
+It is now cycle 7443
+It is now cycle 7444
+It is now cycle 7445
+P    10 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+P    9 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7446
+P    23 | zjmp 19 OK
+P    3 | zjmp -35 OK
+It is now cycle 7447
+P    60 | zjmp 19 OK
+It is now cycle 7448
+It is now cycle 7449
+It is now cycle 7450
+P    1 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7451
+It is now cycle 7452
+P    24 | zjmp 19 OK
+It is now cycle 7453
+It is now cycle 7454
+It is now cycle 7455
+P    7 | zjmp -35 OK
+P    6 | zjmp -35 OK
+P    1 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7456
+P    61 | zjmp 19 OK
+P    21 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3795)
+ADV 5 (0x0ebb -> 0x0ec0) 0b 54 03 04 05 
+P    3 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7457
+It is now cycle 7458
+P    29 | zjmp -35 OK
+It is now cycle 7459
+It is now cycle 7460
+P    8 | zjmp -35 OK
+P    5 | zjmp -35 OK
+It is now cycle 7461
+P    30 | zjmp -35 OK
+P    3 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 7462
+P    62 | zjmp 19 OK
+P    22 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3795)
+ADV 5 (0x0ebb -> 0x0ec0) 0b 54 03 04 05 
+It is now cycle 7463
+It is now cycle 7464
+It is now cycle 7465
+P    10 | zjmp -35 OK
+P    9 | zjmp -35 OK
+P    7 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    6 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7466
+P    59 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3799)
+ADV 5 (0x0ebb -> 0x0ec0) 0b 54 03 04 05 
+P    3 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7467
+It is now cycle 7468
+P    29 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7469
+It is now cycle 7470
+P    8 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    7 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    6 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    5 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7471
+P    30 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    23 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3795)
+ADV 5 (0x0ebb -> 0x0ec0) 0b 54 03 04 05 
+P    3 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 7472
+P    60 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3799)
+ADV 5 (0x0ebb -> 0x0ec0) 0b 54 03 04 05 
+It is now cycle 7473
+P    29 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    11 | fork 44 (2229)
+ADV 3 (0x0889 -> 0x088c) 0c 00 2c 
+It is now cycle 7474
+It is now cycle 7475
+P    10 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    9 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+P    8 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    7 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    6 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    5 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    1 | zjmp -35 OK
+It is now cycle 7476
+P    30 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    21 | zjmp 19 OK
+It is now cycle 7477
+P    24 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3795)
+ADV 5 (0x0ebb -> 0x0ec0) 0b 54 03 04 05 
+It is now cycle 7478
+P    63 | ld 202068999 r10
+ADV 7 (0x08b5 -> 0x08bc) 02 90 0c 0b 54 07 0a 
+P    29 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    11 | ld 190056971 r9
+ADV 7 (0x088c -> 0x0893) 02 90 0b 54 0a 0b 09 
+It is now cycle 7479
+P    12 | fork 44 (2229)
+ADV 3 (0x0889 -> 0x088c) 0c 00 2c 
+It is now cycle 7480
+P    10 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    9 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+P    8 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    7 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    6 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7481
+P    61 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3799)
+ADV 5 (0x0ebb -> 0x0ec0) 0b 54 03 04 05 
+P    30 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    3 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7482
+P    22 | zjmp 19 OK
+It is now cycle 7483
+P    63 | st r13 7
+ADV 4 (0x08bc -> 0x08c0) 03 50 0d 07 
+P    29 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 7484
+P    64 | ld 202068999 r10
+ADV 7 (0x08b5 -> 0x08bc) 02 90 0c 0b 54 07 0a 
+P    12 | ld 190056971 r9
+ADV 7 (0x088c -> 0x0893) 02 90 0b 54 0a 0b 09 
+It is now cycle 7485
+P    10 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    9 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+P    8 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    5 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    1 | live -1
+ADV 5 (0x002a -> 0x002f) 01 ff ff ff ff 
+It is now cycle 7486
+P    59 | zjmp 19 OK
+P    30 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 7487
+P    62 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3799)
+ADV 5 (0x0ebb -> 0x0ec0) 0b 54 03 04 05 
+It is now cycle 7488
+P    63 | ld 150994956 r8
+ADV 7 (0x08c0 -> 0x08c7) 02 90 09 00 00 0c 08 
+It is now cycle 7489
+P    64 | st r13 7
+ADV 4 (0x08bc -> 0x08c0) 03 50 0d 07 
+It is now cycle 7490
+P    10 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    9 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+P    7 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    6 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r16 -300
+ADV 5 (0x002f -> 0x0034) 03 70 10 fe d4 
+It is now cycle 7491
+P    23 | zjmp 19 OK
+It is now cycle 7492
+P    60 | zjmp 19 OK
+It is now cycle 7493
+P    63 | ld 274 r11
+ADV 7 (0x08c7 -> 0x08ce) 02 90 00 00 01 12 0b 
+P    29 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7494
+P    64 | ld 150994956 r8
+ADV 7 (0x08c0 -> 0x08c7) 02 90 09 00 00 0c 08 
+It is now cycle 7495
+P    8 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    5 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -301
+ADV 5 (0x0034 -> 0x0039) 03 70 02 fe d3 
+It is now cycle 7496
+P    30 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7497
+P    24 | zjmp 19 OK
+It is now cycle 7498
+P    63 | ld 0 r12
+ADV 7 (0x08ce -> 0x08d5) 02 90 00 00 00 00 0c 
+It is now cycle 7499
+P    64 | ld 274 r11
+ADV 7 (0x08c7 -> 0x08ce) 02 90 00 00 01 12 0b 
+It is now cycle 7500
+P    10 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    9 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+P    1 | st r2 -302
+ADV 5 (0x0039 -> 0x003e) 03 70 02 fe d2 
+It is now cycle 7501
+P    61 | zjmp 19 OK
+P    21 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3819)
+ADV 5 (0x0ed3 -> 0x0ed8) 0b 54 03 04 05 
+P    3 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7502
+It is now cycle 7503
+It is now cycle 7504
+P    64 | ld 0 r12
+ADV 7 (0x08ce -> 0x08d5) 02 90 00 00 00 00 0c 
+It is now cycle 7505
+It is now cycle 7506
+P    3 | ld 0 r16
+ADV 7 (0x0046 -> 0x004d) 02 90 00 00 00 00 10 
+It is now cycle 7507
+P    62 | zjmp 19 OK
+P    22 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3819)
+ADV 5 (0x0ed3 -> 0x0ed8) 0b 54 03 04 05 
+It is now cycle 7508
+It is now cycle 7509
+It is now cycle 7510
+P    7 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    6 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+P    1 | sub r11 r12 r11
+ADV 5 (0x003e -> 0x0043) 05 54 0b 0c 0b 
+It is now cycle 7511
+P    59 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3823)
+ADV 5 (0x0ed3 -> 0x0ed8) 0b 54 03 04 05 
+It is now cycle 7512
+It is now cycle 7513
+P    29 | zjmp 33 FAILED
+ADV 3 (0x0043 -> 0x0046) 09 00 21 
+It is now cycle 7514
+It is now cycle 7515
+P    8 | zjmp 33 FAILED
+A
