@@ -196,7 +196,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 				break;*/
 			if (game_params->total_cycles_counter > 1500)
 			{
-				print_arena((*procs)->arena[0], 1);
+				print_arena((*procs)->arena[1], 1);
 				return;
 			}
 		}
