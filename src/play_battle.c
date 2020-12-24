@@ -59,7 +59,6 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle, int *flags)
 				// if (ptr->next_inst == 8)
 					// ft_printf("\t\tP\t%d | %5s | before zjmp pc : %d\n", -ptr->player_id, g_op_tab[ptr->next_inst].op_name, ptr->pc);
 				g_operation[ptr->next_inst](ptr);
-				// I should check if the verbos is on first;
 				if ((flags[VERBOS_1] & 16 || flags[VERBOS_2] & 16) && (ptr->next_inst != 8))
 					mz_print_pc_movements(ptr);
 
