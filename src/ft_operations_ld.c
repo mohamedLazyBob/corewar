@@ -48,7 +48,13 @@ void	ft_operation_ld(t_process *proc)
 	args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
 	proc->carry = (args[0] == 0) ? 1 : 0;
 	proc->regestries[args[1] - 1] = args[0];
+	// ft_printf("the reg[%d] == %d\n", args[1] - 1, args[0]);
 	mz_print_op(proc, parameters, args);
+// // // 
+// // 	ft_printf("at the end of ld regs value: \n");
+// 	for (int i = 0; i < REG_NUMBER; i++)
+// 		ft_printf("[%d] ", proc->regestries[i]);
+// 	ft_printf("\n");
 }
 
 /*
