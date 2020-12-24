@@ -74,7 +74,7 @@ typedef struct	s_input_data
 enum e_flags
 {
 	DUMP_64, DUMP_32, PAUSE_1, PAUSE_2, VERBOS_1, VERBOS_2, \
-	VISU_1, VISU_2, AFF_1, AFF2, STEALTH
+	VISU_1, VISU_2, AFF_1, AFF_2, STEALTH
 };
 
 /*
@@ -96,8 +96,8 @@ typedef	struct	s_process
 	unsigned int	    execution_cycle;
 	unsigned int	    next_inst;
 
-	unsigned int	    pc;
-	unsigned int	    op_pc;
+	int	    pc;
+	int	    op_pc;
 
 	unsigned int    	proc_id;
 	unsigned int    	player_id;
@@ -108,6 +108,7 @@ typedef	struct	s_process
 	unsigned int	    process_live;
 	unsigned int    	carry;
 	unsigned int	    players_counter;
+	unsigned int	    procs_counter;
 
 	struct s_process	*next;
   	struct s_process	*previous;
@@ -170,25 +171,29 @@ int				ft_init_arena(t_input_data *bloc, unsigned char *arena, int player_id);
 ** init_process_arena.c
 */
 
-t_process	*ft_init_proc(t_input_data *bloc, int player_id, unsigned char *arena[2]);
-void		ft_init_procs_arena(t_process **procs, t_input_data *bloc);
-void		print_procs(t_process *ptr, t_input_data *bloc);
+t_process		*ft_init_proc(t_input_data *bloc, int player_id, unsigned char *arena[2]);
+void			ft_init_procs_arena(t_process **procs, t_input_data *bloc);
+void			mz_update_procs(t_process **proc);
+int				ft_get_player_index(t_input_data *bloc, int player_id);
+unsigned int	ft_reverse_endianness(unsigned char *temp, size_t size);
 
 /*
 *******************************************************************************
 ** operations_tools.c
 */
-unsigned int	ft_reverse_endianness(unsigned char *temp, size_t size);
+
 void			ft_get_args_type(t_process *process, \
 									unsigned char types_byte, \
 									unsigned char *args);
 int				ft_parse_args(t_process *process, unsigned char parameter);
-int	ft_get_argument_value(t_process *process, \
+int				ft_get_argument_value(t_process *process, \
 										int arg, \
 										unsigned char parameter);
 int				ft_sizeof_params(t_process *process, \
 								unsigned char parameter[3]);
-
+int				ft_get_argument_value_war(t_process *process, \
+										int arg, \
+										unsigned char parameter);
 /*
 *******************************************************************************
 ** logical_operators_and_jmp.c
@@ -270,6 +275,16 @@ void			ft_play_battle(t_process **procs, t_input_data *bloc);
 *******************************************************************************
 ** mz_mode_verbos.c
 */
-void	mz_print_op(t_process *proc, unsigned char types[3], int values[3]);
+void		mz_print_op(t_process *proc, unsigned char types[3], int values[3]);
+void		mz_l_fork_mode_verbos(t_process *proc, int par1, int new_pc);
+void		mz_print_usage(void);
+
+/*
+*******************************************************************************
+** debug_functions.c
+*/
+
+void		debug_print_procs_list(t_process *procs);
+void		print_procs(t_process *ptr, t_input_data *bloc);
 
 #endif
