@@ -135,10 +135,14 @@ void	ft_operation_st(t_process *proc)
 			// im change value args[1] = (short)args[1] for work in negatif case;
 			// ft_any_player(proc, (proc->op_pc + (args[1] % IDX_MOD)), str, 4);
 			ft_int_to_str(args[0], str);
-			// ft_printf("str --> [%.2x][%.2x][%.2x][%.2x]\n", str[0],  str[1], str[2], str[3]);
-			ft_memcpy(proc->arena[0] + (proc->op_pc + (args[1] % IDX_MOD)), str, 4);
-			ft_memset(proc->arena[1] + (proc->op_pc + (args[1] % IDX_MOD)), proc->player_id, 4);
-			// ft_printf("this addr {%#x} should recieve recieved [%d]\n", proc->op_pc + (args[1] % IDX_MOD), args[0]);
+			int offset = ((proc->op_pc + (args[1] % IDX_MOD)) % MEM_SIZE);
+			if (offset < 0)
+				offset += MEM_SIZE;
+			// ft_printf("str from st--> [%.2x][%.2x][%.2x][%.2x]\n", str[0],  str[1], str[2], str[3]);
+			ft_memcpy(proc->arena[0] + offset, str, 4);
+			ft_memset(proc->arena[1] + offset, proc->player_id, 4);
+			// ft_printf("this addr {%d} should recieve recieved [%d]\n", \
+			(proc->op_pc + (args[1] % IDX_MOD)) % MEM_SIZE, args[0]);
 
 		}
 	}
@@ -183,6 +187,9 @@ void	ft_operation_sti(t_process *proc)
 			// place_memory = (proc->op_pc + args[2] % IDX_MOD% MEM_SIZE);
 		// else
 		place_memory = proc->op_pc + ((args[1] + args[2]) % IDX_MOD);
+		// ft_printf("before place_memory == %d\n", place_memory);
+		place_memory = (place_memory) % MEM_SIZE;
+		// ft_printf("after place_memory == %d\n", place_memory);
 		// the value in  -> args[0] not the same in -> proc->arena[0][proc->op_pc]
 		// args[0] ==  proc->arena[0][proc->op_pc + 2] 
 		// proc->op_pc += 2;
@@ -194,7 +201,9 @@ void	ft_operation_sti(t_process *proc)
 		if (place_memory < 0)
 			place_memory = MEM_SIZE + place_memory;
 		// ft_printf("printing offset == %d \n", place_memory);
-		// ft_printf("str == [%.2x][%.2x][%.2x][%.2x]\n", str[0], str[1], str[2], str[3]);
+		// ft_printf("sti : str == [%.2x][%.2x][%.2x][%.2x]\n", str[0], str[1], str[2], str[3]);
+		// ft_printf("this addr {%#x} should recieve recieved [%d]\n", place_memory, proc->regestries[args[0] - 1]);
+
 		ft_memcpy(proc->arena[0] + place_memory, (const void *)str, 4);
 		ft_memset(proc->arena[1] + place_memory, proc->player_id, 4);
 	}

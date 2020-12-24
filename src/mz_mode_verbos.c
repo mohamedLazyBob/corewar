@@ -39,7 +39,7 @@ void	mz_print_op(t_process *proc, unsigned char args_types[3], int value[3])
 			ft_printf("P    %d | ldi %d %d r%d\n", proc->proc_id, args[0], args[1], args[2]);
 */
 		if (proc->next_inst == STI)
-			ft_printf("      | -> store to %d + %d = %d (with pc and mod %d)\n", \
+			ft_printf("       | -> store to %d + %d = %d (with pc and mod %d)\n", \
 					value[1], \
 					value[2], \
 					value[1] + value[2], \
@@ -126,12 +126,15 @@ void	mz_print_pc_movements(t_process *proc)
 
 	i = proc->op_pc;
 	operation_length = proc->pc - proc->op_pc;
+
+	// if (proc->next_inst == 8)// we print nothing for zjmp
+		// return ;
 	ft_printf("ADV %d (0x%.4x -> 0x%.4x) ", operation_length, \
 											proc->op_pc, \
 											proc->pc);
 	while (i < proc->pc)
 	{
-		ft_printf(" %.2x", proc->arena[0][i]);
+		ft_printf("%.2x ", proc->arena[0][i]);
 		i++;
 	}
 	ft_printf("\n");
