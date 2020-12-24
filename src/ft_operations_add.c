@@ -169,6 +169,7 @@ void	ft_operation_sti(t_process *proc)
 	char			str[4];
 
 	proc->op_pc = proc->pc - 1;
+	// ft_printf("debug -- sti got called with op_pc: %d\n", proc->op_pc);
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 
 	if ((ft_strcmp((const char*)parameters, "ER") == 0) || \
