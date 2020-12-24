@@ -58,10 +58,16 @@ void	ft_operation_live(t_process *process)
 		{
 			g_last_live = -1 * process->regestries[arg - 1];
 			mz_print_live(process);
+	// if ((g_input_bloc->flags[VERBOS_1] & 16 || \
+	// 	g_input_bloc->flags[VERBOS_2] & 16) && (process->next_inst != 8))
+	// 	mz_print_pc_movements(process);
 		}
 	if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
 	{
 		ft_printf("P    %d | live %d\n", process->proc_id, -arg);
+	if ((g_input_bloc->flags[VERBOS_1] & 16 || \
+		g_input_bloc->flags[VERBOS_2] & 16) && (process->next_inst != 8))
+		mz_print_pc_movements(process);
 	}
 }
 
