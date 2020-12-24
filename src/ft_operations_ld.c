@@ -88,7 +88,7 @@ void	ft_operation_ldi(t_process *proc)
 {
 	unsigned char	parameters[3];
 	int				value[3];
-	int		temp;
+	int				temp;
 	int             add_to_pc;
 
 	temp = proc->pc - 1;
@@ -101,7 +101,6 @@ void	ft_operation_ldi(t_process *proc)
 			return ;
 	}
 
-#if 1
 	value[0] = ft_parse_args(proc, parameters[0]);
 	value[1] = ft_parse_args(proc, parameters[1]);
 	value[2] = ft_parse_args(proc, parameters[2]);
@@ -111,27 +110,16 @@ void	ft_operation_ldi(t_process *proc)
 		((parameters[2] == T_REG) && (value[2] < 1 || 16 < value[2])))
 		return;
 
-
-	value[0] = ft_get_argument_value(proc, value[0], parameters[0]);
-	value[1] = ft_get_argument_value(proc, value[1], parameters[1]);
-	ft_memcpy(&temp, proc->arena[0] + proc->op_pc + ((value[0] + value[1]) % IDX_MOD), 4);// reading the value from ram
+	value[0] = ft_get_argument_value_war(proc, value[0], parameters[0]);
+	value[1] = ft_get_argument_value_war(proc, value[1], parameters[1]);
+	if (parameters[0] == T_DIR || parameters[1] == T_DIR)
+		ft_memcpy(&temp, proc->arena[0] + proc->op_pc + ((short)(value[0] + value[1]) % IDX_MOD), 4);// reading the value from ram
+	else
+		ft_memcpy(&temp, proc->arena[0] + proc->op_pc + ((value[0] + value[1]) % IDX_MOD), 4);
 	temp = ft_reverse_endianness((unsigned char*)&temp, 4); // revering from big_endien to small_endian
 	proc->regestries[value[2] - 1] = temp;// storing the result to the 3dr argument.	
 	proc->carry = (temp == 0) ? 1 : 0; // modify the carry.
-#endif
 
-#if 0
-/**/
-	if (parameters[0] == T_IN
-		temp = temp + (ft_reverse_endianness(proc->arena[0] + proc->pc, 4) % IDX_MOD);
-	else
-		temp = temp + ((ft_reverse_endianness(proc->arena[0] + proc->pc, ft_size(parameters[1], 2)) +\
-			ft_reverse_endianness(proc->arena[0] + proc->pc, ft_size(parameters[2], 2))) % IDX_MOD);
-	proc->regestries[proc->arena[0][proc->pc +  ft_size(parameters[0], 2)]] = temp;
-/**/
-	proc->pc = (proc->pc + \
-					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
-#endif
 #if 1
 	// make this compilable whenever you want
 	mz_print_op(proc, parameters, value);
@@ -145,32 +133,40 @@ void	ft_operation_ldi(t_process *proc)
 void	ft_operation_lldi(t_process *proc)
 {
 	unsigned char	parameters[3];
-	int				args[3];
+	int				value[3];
 	int				temp;
+	int             add_to_pc;
 
 	temp = proc->pc - 1;
-		ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
+	proc->op_pc = proc->pc - 1;
+	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 	{
-			proc->pc = (proc->pc + \
+			proc->pc = (proc->pc + 
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 			return ;
 	}
-/**/
-	if (parameters[0] == T_IND)
-		temp = temp + (ft_reverse_endianness(proc->arena[0] + proc->pc, 4) % IDX_MOD);
+
+	value[0] = ft_parse_args(proc, parameters[0]);
+	value[1] = ft_parse_args(proc, parameters[1]);
+	value[2] = ft_parse_args(proc, parameters[2]);
+
+	if (((parameters[0] == T_REG) && (value[0] < 1 || 16 < value[0])) || \
+		((parameters[1] == T_REG) && (value[1] < 1 || 16 < value[1])) || \
+		((parameters[2] == T_REG) && (value[2] < 1 || 16 < value[2])))
+		return;
+
+	value[0] = ft_get_argument_value_war(proc, value[0], parameters[0]);
+	value[1] = ft_get_argument_value_war(proc, value[1], parameters[1]);
+	if (parameters[0] == T_DIR || parameters[1] == T_DIR)
+		ft_memcpy(&temp, proc->arena[0] + proc->op_pc + ((short)(value[0] + value[1])), 4);// reading the value from ram
 	else
-		temp = temp + (ft_reverse_endianness(proc->arena[0] + proc->pc, ft_size(parameters[1], 2)) +\
-				ft_reverse_endianness(proc->arena[0] + proc->pc, ft_size(parameters[2], 2)));
-	proc->regestries[proc->arena[0][proc->pc + ft_size(parameters[0], 2)] - 1] = temp;
-	proc->carry = (proc->regestries[proc->arena[0][proc->pc] - 1] == 0) ? 1 : 0;
-/**/
-	proc->pc = (proc->pc + \
-					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
-	#if 0
-	// make this compilable whenever you want
-	mz_print_op(proc, parameters, args);
-	#endif
+		ft_memcpy(&temp, proc->arena[0] + proc->op_pc + ((value[0] + value[1])), 4);
+	temp = ft_reverse_endianness((unsigned char*)&temp, 4); // revering from big_endien to small_endian
+	proc->regestries[value[2] - 1] = temp;// storing the result to the 3dr argument.	
+	proc->carry = (temp == 0) ? 1 : 0; // modify the carry.
+
+	mz_print_op(proc, parameters, value);
 }
 
 /*
