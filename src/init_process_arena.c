@@ -112,3 +112,23 @@ t_process	*ft_init_proc(t_input_data *bloc, \
 /*
 *******************************************************************************
 */
+
+/*
+** this func reverse the endianess of a number (int, long ...)
+** for now it's working only with 2/4 bytes values (what we need)
+*/
+
+unsigned int	ft_reverse_endianness(unsigned char *temp, size_t size)
+{
+	int				i;
+	unsigned int	hex;
+
+	i = -1;
+	hex = 0;
+	while (++i < size)
+	{
+		hex = hex << 8;
+		hex = hex | (unsigned int)temp[i];
+	}
+	return (hex);
+}

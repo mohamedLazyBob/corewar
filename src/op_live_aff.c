@@ -79,7 +79,7 @@ void	ft_operation_aff(t_process *process)
 	ft_get_args_type(process, process->arena[0][process->pc], parameter);
 	if (ft_strcmp((char*)parameter, "ER") == 0)
 	{
-		printf("ERROR in aff operation: args byte.\n");
+	//	printf("ERROR in aff operation: args byte.\n");
 		process->pc = (process->pc + 1) % MEM_SIZE;
 	}
 	else

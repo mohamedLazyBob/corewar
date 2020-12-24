@@ -171,26 +171,29 @@ int				ft_init_arena(t_input_data *bloc, unsigned char *arena, int player_id);
 ** init_process_arena.c
 */
 
-t_process	*ft_init_proc(t_input_data *bloc, int player_id, unsigned char *arena[2]);
-void		ft_init_procs_arena(t_process **procs, t_input_data *bloc);
-void		mz_update_procs(t_process **proc);
-int			ft_get_player_index(t_input_data *bloc, int player_id);
+t_process		*ft_init_proc(t_input_data *bloc, int player_id, unsigned char *arena[2]);
+void			ft_init_procs_arena(t_process **procs, t_input_data *bloc);
+void			mz_update_procs(t_process **proc);
+int				ft_get_player_index(t_input_data *bloc, int player_id);
+unsigned int	ft_reverse_endianness(unsigned char *temp, size_t size);
 
 /*
 *******************************************************************************
 ** operations_tools.c
 */
-unsigned int	ft_reverse_endianness(unsigned char *temp, size_t size);
+
 void			ft_get_args_type(t_process *process, \
 									unsigned char types_byte, \
 									unsigned char *args);
 int				ft_parse_args(t_process *process, unsigned char parameter);
-int	ft_get_argument_value(t_process *process, \
+int				ft_get_argument_value(t_process *process, \
 										int arg, \
 										unsigned char parameter);
 int				ft_sizeof_params(t_process *process, \
 								unsigned char parameter[3]);
-
+int				ft_get_argument_value_war(t_process *process, \
+										int arg, \
+										unsigned char parameter);
 /*
 *******************************************************************************
 ** logical_operators_and_jmp.c
