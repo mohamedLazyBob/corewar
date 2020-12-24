@@ -58,7 +58,7 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle)
 				// if (ptr->next_inst == 8)
 					// ft_printf("\t\tP\t%d | %5s | before zjmp pc : %d\n", -ptr->player_id, g_op_tab[ptr->next_inst].op_name, ptr->pc);
 				g_operation[ptr->next_inst](ptr);
-				//mz_print_pc_movements(ptr); // haydta hit makinax
+				//mz_print_pc_movements(ptr);
 
 
 				// if (ptr->next_inst == 8)
@@ -198,14 +198,14 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			game_params->curr_life_cycle++;
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
 
-			// if (game_params->total_cycles_counter > 1500)
-			// {
-			// 	// print_arena((*procs)->arena[0], 1);
-			// 	return;
-			// }
+			if (game_params->total_cycles_counter > 1500)
+			{
+				// print_arena((*procs)->arena[0], 1);
+				return;
+			}
 		}
 		// print_arena((*procs)->arena[0], 1);
-		 ft_check(procs, &game_params);
+		// ft_check(procs, &game_params);
 	}
 }
 

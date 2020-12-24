@@ -278,6 +278,7 @@ void			ft_play_battle(t_process **procs, t_input_data *bloc);
 void		mz_print_op(t_process *proc, unsigned char types[3], int values[3]);
 void		mz_l_fork_mode_verbos(t_process *proc, int par1, int new_pc);
 void		mz_print_usage(void);
+void		mz_print_pc_movements(t_process *proc);
 
 /*
 *******************************************************************************
