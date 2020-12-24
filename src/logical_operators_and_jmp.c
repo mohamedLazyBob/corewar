@@ -109,7 +109,7 @@ void	ft_operation_xor(t_process *process)
 	ft_get_args_type(process, process->arena[0][process->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
 	{
-		printf("champion operation args error, AT PC= %d\n", process->op_pc);
+	//	printf("champion operation args error, AT PC= %d\n", process->op_pc);
 		process->pc = (process->pc + REG_SIZE * 3) % MEM_SIZE;
 	}
 	else
