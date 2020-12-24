@@ -37,11 +37,12 @@ static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 ** Done!
 */
 
-void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle)
+void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle, int *flags)
 {
 	while (ptr)
 	{
-		// ft_printf("\tP:[%d] exec_at_cycle: %.2d, pc: %3d\n", ptr->player_id, ptr->execution_cycle, ptr->pc);
+		// ft_printf("\tP:[%d] exec_at_cycle: %.2d, curr_cycle: %d, pc: %3d\n", \
+				ptr->proc_id, ptr->execution_cycle, curr_life_cycle, ptr->pc);
 		// 1st mra ghadi idkhl || the last op excuted, read another one
 		if (ptr->execution_cycle == -1 || \
 				ptr->execution_cycle < curr_life_cycle)
@@ -58,7 +59,9 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle)
 				// if (ptr->next_inst == 8)
 					// ft_printf("\t\tP\t%d | %5s | before zjmp pc : %d\n", -ptr->player_id, g_op_tab[ptr->next_inst].op_name, ptr->pc);
 				g_operation[ptr->next_inst](ptr);
-				mz_print_pc_movements(ptr);
+				// I should check if the verbos is on first;
+				if ((flags[VERBOS_1] & 16 || flags[VERBOS_2] & 16) && (ptr->next_inst != 8))
+					mz_print_pc_movements(ptr);
 
 
 				// if (ptr->next_inst == 8)
@@ -183,7 +186,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			if (bloc->flags[VERBOS_1] != 0 || bloc->flags[VERBOS_2] != 0)// if debug is onB
 				mz_print_debug_infos(procs, bloc, (*game_params));
 
-			ft_execute_cycle(ptr, game_params->curr_life_cycle);
+			ft_execute_cycle(ptr, game_params->total_cycles_counter, bloc->flags);
 #if 1// hadi ghi tarqi3a
 				mz_update_procs(procs);
 				// debug_print_procs_list(*procs);
@@ -201,7 +204,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			if (game_params->total_cycles_counter > 1500)
 			{
 				// print_arena((*procs)->arena[0], 1);
-				return;
+				// return;
 			}
 		}
 		// print_arena((*procs)->arena[0], 1);
