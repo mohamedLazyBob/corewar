@@ -198,14 +198,14 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			game_params->curr_life_cycle++;
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
 
-			if (game_params->total_cycles_counter > 1500)
-			{
-				// print_arena((*procs)->arena[0], 1);
-				return;
-			}
+			// if (game_params->total_cycles_counter > 1500)
+			// {
+			// 	// print_arena((*procs)->arena[0], 1);
+			// 	return;
+			// }
 		}
 		// print_arena((*procs)->arena[0], 1);
-		// ft_check(procs, &game_params);
+		 ft_check(procs, &game_params);
 	}
 }
 

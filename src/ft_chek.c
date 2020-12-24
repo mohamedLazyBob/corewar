@@ -93,9 +93,9 @@ void        ft_check(t_process **proc, t_game **game_params)
             (proc) = NULL;
 		}
    }
-    // printf("cycles_to_die : %d\n, curr_life_cycle : %d\n, checks_counter : %d\n, live_counter : %zu\n, total_cycles_counter : %zu\n, total_live_counter : %zu\n", (*game_params)->cycles_to_die, (*game_params)->curr_life_cycle, \
-    //                         (*game_params)->checks_counter, (*game_params)->live_counter, \
-    //                         (*game_params)->total_cycles_counter, (*game_params)->total_live_counter);
+    printf("cycles_to_die : %d\n, curr_life_cycle : %d\n, checks_counter : %d\n, live_counter : %zu\n, total_cycles_counter : %zu\n, total_live_counter : %zu\n", (*game_params)->cycles_to_die, (*game_params)->curr_life_cycle, \
+                            (*game_params)->checks_counter, (*game_params)->live_counter, \
+                            (*game_params)->total_cycles_counter, (*game_params)->total_live_counter);
     ft_check_cycle((*game_params));
     
 }
