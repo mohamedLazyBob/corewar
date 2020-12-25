@@ -16,7 +16,13 @@
 extern t_process	*g_procs_head;
 unsigned int		g_fork_counter;
 
-/*
+/*gs[VERBOS_1] & 16 || \
+	// 	g_input_bloc->flags[VERBOS_2] & 16) && (process->next_inst != 8))
+	// 	mz_print_pc_movements(process);
+		}
+	if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
+	{
+
 ** ****************************************************************************
 ** this func makes a copy of the carriage (process), and places the copy at
 ** FIRST_ARGUMENT % IDX_MOD
@@ -49,6 +55,7 @@ void	ft_operation_fork(t_process *proc)
 	new_proc->previous = NULL;
 	g_procs_head = new_proc;
 	mz_l_fork_mode_verbos(proc, first_arg_value, new_proc->pc);
+	mz_print_pc_movements(proc);
 }
 
 /*
@@ -82,4 +89,5 @@ void	ft_operation_lfork(t_process *proc)
 	new_proc->previous = NULL;
 	g_procs_head = new_proc;
 	mz_l_fork_mode_verbos(proc, first_arg_value, new_proc->pc);
+	mz_print_pc_movements(proc);
 }
