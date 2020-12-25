@@ -14,7 +14,7 @@
 extern	void			(*g_operation[16])(t_process *process);
 extern	unsigned int	g_cycles_to_wait[16];
 extern	const t_op 		g_op_tab[17];
-
+t_process				*g_procs_head;
 /*
 ** ****************************************************************************
 ** for the cycles_number we -1 of the curr cycle;
@@ -168,8 +168,10 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 		
 		if (game_params->cycles_to_die < 0 && procs != NULL)
 		{
+			ft_printf("break here\n");
 			ft_check(procs, &game_params);
 			(procs) = NULL;
+			
 			return ;
 		}
 /**/
@@ -185,7 +187,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 
 			ft_execute_cycle(ptr, game_params->curr_life_cycle);
 #if 1// hadi ghi tarqi3a
-				mz_update_procs(procs);
+				//	mz_update_procs(procs); //
 				// debug_print_procs_list(*procs);
 #endif
       
@@ -198,14 +200,14 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			game_params->curr_life_cycle++;
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
 
-			if (game_params->total_cycles_counter > 1500)
-			{
-				// print_arena((*procs)->arena[0], 1);
-				return;
-			}
+			// if (game_params->total_cycles_counter > 1500)
+			// {
+			// 	// print_arena((*procs)->arena[0], 1);
+			// 	return;
+			// }
 		}
 		// print_arena((*procs)->arena[0], 1);
-		// ft_check(procs, &game_params);
+		ft_check(procs, &game_params);
 	}
 }
 
