@@ -39,8 +39,10 @@ void	ft_operation_ld(t_process *proc)
 	{
 			proc->pc = (proc->pc + \
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
-			return ;
+			// return ;
 	}
+	else
+	{
 	args[0] = ft_parse_args(proc, parameters[0]);
 	args[1] = ft_parse_args(proc, parameters[1]);
 	if (args[1] < 1 || 16 < args[1])
@@ -55,6 +57,8 @@ void	ft_operation_ld(t_process *proc)
 // 	for (int i = 0; i < REG_NUMBER; i++)
 // 		ft_printf("[%d] ", proc->regestries[i]);
 // 	ft_printf("\n");
+	}
+	mz_print_pc_movements(proc);
 }
 
 /*
@@ -74,8 +78,9 @@ void	ft_operation_lld(t_process *proc)
 	{
 			proc->pc = (proc->pc + \
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
-			return ;
 	}
+	else
+	{
 	args[0] = ft_parse_args(proc, parameters[0]);
 	args[1] = ft_parse_args(proc, parameters[1]);
 	if (args[1] < 1 || 16 < args[1])
@@ -84,6 +89,8 @@ void	ft_operation_lld(t_process *proc)
 	proc->carry = (args[0] == 0) ? 1 : 0;
 	proc->regestries[args[1] - 1] = args[0];
 	mz_print_op(proc, parameters, args);
+	}
+	mz_print_pc_movements(proc);
 }
 
 /*
@@ -104,8 +111,9 @@ void	ft_operation_ldi(t_process *proc)
 	{
 			proc->pc = (proc->pc + 
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
-			return ;
 	}
+	else
+	{
 
 	value[0] = ft_parse_args(proc, parameters[0]);
 	value[1] = ft_parse_args(proc, parameters[1]);
@@ -123,6 +131,8 @@ void	ft_operation_ldi(t_process *proc)
 	proc->regestries[value[2] - 1] = temp;// storing the result to the 3dr argument.	
 	proc->carry = (temp == 0) ? 1 : 0; // modify the carry.
 	mz_print_op(proc, parameters, value);
+	}
+	mz_print_pc_movements(proc);
 }
 
 /*
@@ -143,9 +153,11 @@ void	ft_operation_lldi(t_process *proc)
 	{
 			proc->pc = (proc->pc + 
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
-			return ;
 	}
+	else
+	{
 
+	
 	value[0] = ft_parse_args(proc, parameters[0]);
 	value[1] = ft_parse_args(proc, parameters[1]);
 	value[2] = ft_parse_args(proc, parameters[2]);
@@ -162,6 +174,8 @@ void	ft_operation_lldi(t_process *proc)
 	proc->regestries[value[2] - 1] = temp;// storing the result to the 3dr argument.	
 	proc->carry = (temp == 0) ? 1 : 0; // modify the carry.
 	mz_print_op(proc, parameters, value);
+	}
+	mz_print_pc_movements(proc);
 }
 
 /*

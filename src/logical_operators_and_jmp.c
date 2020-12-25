@@ -54,6 +54,7 @@ void	ft_operation_and(t_process *process)
 											(process->carry = 0);
 		mz_print_op(process, parameters, args);
 	}
+	mz_print_pc_movements(process);
 }
 
 /*
@@ -91,6 +92,7 @@ void	ft_operation_or(t_process *process)
 											(process->carry = 0);
 		mz_print_op(process, parameters, args);
 	}
+	mz_print_pc_movements(process);
 }
 
 /*
@@ -128,6 +130,7 @@ void	ft_operation_xor(t_process *process)
 											(process->carry = 0);
 		mz_print_op(process, parameters, args);
 	}
+	mz_print_pc_movements(process);
 }
 
 /*
@@ -143,6 +146,7 @@ void	ft_operation_zjmp(t_process *process)
 	process->op_pc = process->pc - 1;
 	arg1 = ft_parse_args(process, (unsigned char)DIR_CODE);
 	// ft_printf("\t\targ1: %d\n", arg1);
+	// ft_printf("debug -- in zjmp\n");
 	if (process->carry == 1)
 	{
 		process->pc = (process->op_pc + (arg1 % IDX_MOD)) % MEM_SIZE;
@@ -153,7 +157,8 @@ void	ft_operation_zjmp(t_process *process)
 	{
 		if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
 			ft_printf("P    %d | zjmp %d FAILED\n", process->proc_id, arg1);
-		if (g_input_bloc->flags[VERBOS_1] & 16 || g_input_bloc->flags[VERBOS_2] & 16)
-			mz_print_pc_movements(process);
+		// if (g_input_bloc->flags[VERBOS_1] & 16 || g_input_bloc->flags[VERBOS_2] & 16)
+		// 	mz_print_pc_movements(process);
+		mz_print_pc_movements(process);
 	}
 }

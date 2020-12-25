@@ -41,8 +41,8 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle, int *flags)
 {
 	while (ptr)
 	{
-		// ft_printf("\tP:[%d] exec_at_cycle: %.2d, curr_cycle: %d, pc: %3d\n", \
-				ptr->proc_id, ptr->execution_cycle, curr_life_cycle, ptr->pc);
+		// ft_printf("\tP:[%d] exec_at_cycle: %.2d, curr_cycle: %d, pc: %3d, op: %d\n", \
+				ptr->proc_id, ptr->execution_cycle, curr_life_cycle, ptr->pc, ptr->next_inst);
 		// 1st mra ghadi idkhl || the last op excuted, read another one
 		if (ptr->execution_cycle == -1 || \
 				ptr->execution_cycle < curr_life_cycle)
@@ -57,7 +57,7 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle, int *flags)
 			{
 				// ft_printf("\t\t==>P\t%d | %5s, with carry: %d\n", -ptr->player_id, g_op_tab[ptr->next_inst].op_name, ptr->carry);
 				// if (ptr->next_inst == 8)
-					// ft_printf("\t\tP\t%d | %5s | before zjmp pc : %d\n", -ptr->player_id, g_op_tab[ptr->next_inst].op_name, ptr->pc);
+					// ft_printf("\t\tP\t%d | %5s | pc : %d\n", ptr->proc_id, g_op_tab[ptr->next_inst].op_name, ptr->pc);
 				g_operation[ptr->next_inst](ptr);
 				// if ((flags[VERBOS_1] & 16 || flags[VERBOS_2] & 16) && (ptr->next_inst != 8))
 				// 	mz_print_pc_movements(ptr);
