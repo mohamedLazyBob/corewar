@@ -109,11 +109,12 @@ void	ft_operation_st(t_process *proc)
 	unsigned char	parameters[3];
 	char			str[4];
 
+	proc->regestries[1] = proc->regestries[0];
 	proc->op_pc = proc->pc - 1;
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
 	{
-		printf("champion operation args error, AT PC= %d\n", proc->op_pc);
+//		printf("champion operation args error, AT PC= %d\n", proc->op_pc);
 		proc->pc = (proc->pc + \
 						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 	}
@@ -124,7 +125,7 @@ void	ft_operation_st(t_process *proc)
 		if ((parameters[0] == T_REG && (args[0] < 1 || 16 < args[0])) || \
 			(parameters[1] == T_REG && (args[1] < 1 || 16 < args[1])))
 			return ;
-
+	//	printf("=============%d		%d\n", proc->regestries[1], proc->regestries[args[0]]);
 		mz_print_op(proc, parameters, args);
 		args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
 		

@@ -13,25 +13,6 @@
 #include "virtual_machine.h"
 
 extern t_op g_op_tab[17];
-/*
-** this func reverse the endianess of a number (int, long ...)
-** for now it's working only with 2/4 bytes values (what we need)
-*/
-
-unsigned int	ft_reverse_endianness(unsigned char *temp, size_t size)
-{
-	int				i;
-	unsigned int	hex;
-
-	i = -1;
-	hex = 0;
-	while (++i < size)
-	{
-		hex = hex << 8;
-		hex = hex | (unsigned int)temp[i];
-	}
-	return (hex);
-}
 
 /*
 ********************************************************************************
@@ -145,6 +126,26 @@ int	ft_get_argument_value(t_process *process, \
 	else if (parameter == IND_CODE)
 	{
 		ft_memcpy(&arg, process->arena[0] + (process->op_pc + (arg % IDX_MOD)), 4);
+		// maybe it should be like this instead 
+	//	ft_memcpy(&arg, process->arena[0] + (process->op_pc + arg), 4);
+		arg = ft_reverse_endianness((unsigned char*)&arg, 4);
+	}
+	return (arg);
+}
+
+/*
+******************************************************************************
+*/
+
+int		ft_get_argument_value_war(t_process *process, \
+										int arg, \
+										unsigned char parameter)
+{
+	if (parameter == REG_CODE)
+		arg = process->regestries[arg - 1];// this was before just arg;
+	else if (parameter == IND_CODE)
+	{
+		ft_memcpy(&arg, process->arena[0] + (process->op_pc + arg), 4);
 		// maybe it should be like this instead 
 	//	ft_memcpy(&arg, process->arena[0] + (process->op_pc + arg), 4);
 		arg = ft_reverse_endianness((unsigned char*)&arg, 4);
