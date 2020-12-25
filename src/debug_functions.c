@@ -21,26 +21,26 @@ void	debug_print_procs_list(t_process *procs)
 	t_process *temp;
 
 	temp = procs;
-	ft_printf("from the start: \n\t");
+	ft_printf("from the start: \n");
 	while (temp)
 	{
 		// ft_printf("player_id: %d, proc_id: %d, pc: %d; next = %p\n", temp->player_id, temp->proc_id, temp->pc, temp->next);
-		ft_printf("[%d] -> ", temp->proc_id);
+		ft_printf("\t[%d] live %d \n", temp->proc_id, temp->process_live);
 		temp = temp->next;
 	}
-	ft_printf("\n");
+	// ft_printf("\n");
 
-	temp = procs;
-	while (temp->next)
-		temp = temp->next;
-	ft_printf("from the end : \n\t");
-	while (temp)
-	{
-		// ft_printf("player_id: %d, proc_id: %d, pc: %d; next = %p\n", temp->player_id, temp->proc_id, temp->pc, temp->next);
-		ft_printf("[%d] -> ", temp->proc_id);
-		temp = temp->previous;
-	}
-	ft_printf("\n");
+	// temp = procs;
+	// while (temp->next)
+	// 	temp = temp->next;
+	// ft_printf("from the end : \n\t");
+	// while (temp)
+	// {
+	// 	// ft_printf("player_id: %d, proc_id: %d, pc: %d; next = %p\n", temp->player_id, temp->proc_id, temp->pc, temp->next);
+	// 	ft_printf("[%d] -> ", temp->proc_id);
+	// 	temp = temp->previous;
+	// }
+	// ft_printf("\n");
 }
 
 /*

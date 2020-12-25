@@ -52,7 +52,7 @@ void	ft_operation_live(t_process *process)
 	unsigned int	arg;
 
 	arg = -ft_parse_args(process, (unsigned char)DIR_CODE);
-	process->process_live = 1;
+	process->process_live++;
 	if (1 <= arg && \
 			arg <= process->players_counter)
 		{
