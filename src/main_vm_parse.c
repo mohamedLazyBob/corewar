@@ -13,7 +13,7 @@
 #include "../includes/virtual_machine.h"
 
 t_input_data		*g_input_bloc;
-t_process	*g_procs_head;
+
 
 /*
 *******************************************************************************
