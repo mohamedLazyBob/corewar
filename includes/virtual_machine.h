@@ -194,6 +194,7 @@ int				ft_sizeof_params(t_process *process, \
 int				ft_get_argument_value_war(t_process *process, \
 										int arg, \
 										unsigned char parameter);
+int				mz_size_to_escape(t_process *proc);
 /*
 *******************************************************************************
 ** logical_operators_and_jmp.c

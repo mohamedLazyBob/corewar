@@ -207,8 +207,8 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 				// return;
 			}
 		}
-		if (game_params->total_cycles_counter > 3000)
-			ft_printf("Cycle to die is now 1486\n");
+		// if (game_params->total_cycles_counter > 3000)
+			// ft_printf("Cycle to die is now 1486\n");
 		// print_arena((*procs)->arena[0], 1);
 		// ft_check(procs, &game_params);
 	}
