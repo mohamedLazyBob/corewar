@@ -4259,6 +4259,7 @@ It is now cycle 3071
 P    2 | zjmp 0 OK
 P    1 | zjmp 0 OK
 It is now cycle 3072
+Cycle to die is now 1486
 It is now cycle 3073
 It is now cycle 3074
 It is now cycle 3075
@@ -4816,11 +4817,11 @@ It is now cycle 3522
 It is now cycle 3523
 It is now cycle 3524
 It is now cycle 3525
-P    12 | live 0
+P   12 | live 0
 ADV 5 (0x0261 -> 0x0266) 01 00 00 00 00 
-P    11 | live 0
+P   11 | live 0
 ADV 5 (0x0a61 -> 0x0a66) 01 00 00 00 00 
-P    10 | live 0
+P   10 | live 0
 ADV 5 (0x0a61 -> 0x0a66) 01 00 00 00 00 
 P    9 | live 0
 ADV 5 (0x0261 -> 0x0266) 01 00 00 00 00 
@@ -4839,11 +4840,11 @@ It is now cycle 3527
 It is now cycle 3528
 It is now cycle 3529
 It is now cycle 3530
-P    12 | ld 84475923 r3
+P   12 | ld 84475923 r3
 ADV 7 (0x0266 -> 0x026d) 02 90 05 09 00 13 03 
-P    11 | ld 84475923 r3
+P   11 | ld 84475923 r3
 ADV 7 (0x0a66 -> 0x0a6d) 02 90 05 09 00 13 03 
-P    10 | ld 84475923 r3
+P   10 | ld 84475923 r3
 ADV 7 (0x0a66 -> 0x0a6d) 02 90 05 09 00 13 03 
 P    9 | ld 84475923 r3
 ADV 7 (0x0266 -> 0x026d) 02 90 05 09 00 13 03 
@@ -4862,11 +4863,11 @@ It is now cycle 3532
 It is now cycle 3533
 It is now cycle 3534
 It is now cycle 3535
-P    12 | ld 84475923 r6
+P   12 | ld 84475923 r6
 ADV 7 (0x026d -> 0x0274) 02 90 05 09 00 13 06 
-P    11 | ld 84475923 r6
+P   11 | ld 84475923 r6
 ADV 7 (0x0a6d -> 0x0a74) 02 90 05 09 00 13 06 
-P    10 | ld 84475923 r6
+P   10 | ld 84475923 r6
 ADV 7 (0x0a6d -> 0x0a74) 02 90 05 09 00 13 06 
 P    9 | ld 84475923 r6
 ADV 7 (0x026d -> 0x0274) 02 90 05 09 00 13 06 
@@ -4883,11 +4884,11 @@ It is now cycle 3537
 It is now cycle 3538
 It is now cycle 3539
 It is now cycle 3540
-P    12 | ld 511 r7
+P   12 | ld 511 r7
 ADV 7 (0x0274 -> 0x027b) 02 90 00 00 01 ff 07 
-P    11 | ld 511 r7
+P   11 | ld 511 r7
 ADV 7 (0x0a74 -> 0x0a7b) 02 90 00 00 01 ff 07 
-P    10 | ld 511 r7
+P   10 | ld 511 r7
 ADV 7 (0x0a74 -> 0x0a7b) 02 90 00 00 01 ff 07 
 P    9 | ld 511 r7
 ADV 7 (0x0274 -> 0x027b) 02 90 00 00 01 ff 07 
@@ -4904,11 +4905,11 @@ It is now cycle 3542
 It is now cycle 3543
 It is now cycle 3544
 It is now cycle 3545
-P    12 | ld 28 r4
+P   12 | ld 28 r4
 ADV 7 (0x027b -> 0x0282) 02 90 00 00 00 1c 04 
-P    11 | ld 28 r4
+P   11 | ld 28 r4
 ADV 7 (0x0a7b -> 0x0a82) 02 90 00 00 00 1c 04 
-P    10 | ld 28 r4
+P   10 | ld 28 r4
 ADV 7 (0x0a7b -> 0x0a82) 02 90 00 00 00 1c 04 
 P    9 | ld 28 r4
 ADV 7 (0x027b -> 0x0282) 02 90 00 00 00 1c 04 
@@ -4919,11 +4920,11 @@ It is now cycle 3547
 It is now cycle 3548
 It is now cycle 3549
 It is now cycle 3550
-P    12 | ld 0 r5
+P   12 | ld 0 r5
 ADV 7 (0x0282 -> 0x0289) 02 90 00 00 00 00 05 
-P    11 | ld 0 r5
+P   11 | ld 0 r5
 ADV 7 (0x0a82 -> 0x0a89) 02 90 00 00 00 00 05 
-P    10 | ld 0 r5
+P   10 | ld 0 r5
 ADV 7 (0x0a82 -> 0x0a89) 02 90 00 00 00 00 05 
 P    9 | ld 0 r5
 ADV 7 (0x0282 -> 0x0289) 02 90 00 00 00 00 05 
@@ -4955,9 +4956,9 @@ It is now cycle 3567
 It is now cycle 3568
 It is now cycle 3569
 It is now cycle 3570
-P    12 | zjmp 3 OK
-P    11 | zjmp 3 OK
-P    10 | zjmp 3 OK
+P   12 | zjmp 3 OK
+P   11 | zjmp 3 OK
+P   10 | zjmp 3 OK
 P    9 | zjmp 3 OK
 P    8 | live 0
 ADV 5 (0x028c -> 0x0291) 01 00 00 00 00 
@@ -4987,11 +4988,11 @@ It is now cycle 3577
 It is now cycle 3578
 It is now cycle 3579
 It is now cycle 3580
-P    12 | live 0
+P   12 | live 0
 ADV 5 (0x028c -> 0x0291) 01 00 00 00 00 
-P    11 | live 0
+P   11 | live 0
 ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
-P    10 | live 0
+P   10 | live 0
 ADV 5 (0x0a8c -> 0x0a91) 01 00 00 00 00 
 P    9 | live 0
 ADV 5 (0x028c -> 0x0291) 01 00 00 00 00 
@@ -5008,11 +5009,11 @@ It is now cycle 3582
 It is now cycle 3583
 It is now cycle 3584
 It is now cycle 3585
-P    12 | st r10 511
+P   12 | st r10 511
 ADV 5 (0x0291 -> 0x0296) 03 70 0a 01 ff 
-P    11 | st r10 511
+P   11 | st r10 511
 ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
-P    10 | st r10 511
+P   10 | st r10 511
 ADV 5 (0x0a91 -> 0x0a96) 03 70 0a 01 ff 
 P    9 | st r10 511
 ADV 5 (0x0291 -> 0x0296) 03 70 0a 01 ff 
@@ -5023,11 +5024,11 @@ It is now cycle 3587
 It is now cycle 3588
 It is now cycle 3589
 It is now cycle 3590
-P    12 | st r11 510
+P   12 | st r11 510
 ADV 5 (0x0296 -> 0x029b) 03 70 0b 01 fe 
-P    11 | st r11 510
+P   11 | st r11 510
 ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
-P    10 | st r11 510
+P   10 | st r11 510
 ADV 5 (0x0a96 -> 0x0a9b) 03 70 0b 01 fe 
 P    9 | st r11 510
 ADV 5 (0x0296 -> 0x029b) 03 70 0b 01 fe 
@@ -5059,9 +5060,9 @@ It is now cycle 3607
 It is now cycle 3608
 It is now cycle 3609
 It is now cycle 3610
-P    12 | zjmp 501 OK
-P    11 | zjmp 501 OK
-P    10 | zjmp 501 OK
+P   12 | zjmp 501 OK
+P   11 | zjmp 501 OK
+P   10 | zjmp 501 OK
 P    9 | zjmp 501 OK
 It is now cycle 3611
 P    2 | zjmp 0 OK
@@ -5106,13 +5107,13 @@ It is now cycle 3632
 It is now cycle 3633
 It is now cycle 3634
 It is now cycle 3635
-P    12 | sti r6 511 0
+P   12 | sti r6 511 0
        | -> store to 511 + 0 = 511 (with pc and mod 1679)
 ADV 5 (0x0490 -> 0x0495) 0b 54 06 07 05 
-P    11 | sti r6 511 0
+P   11 | sti r6 511 0
        | -> store to 511 + 0 = 511 (with pc and mod 3727)
 ADV 5 (0x0c90 -> 0x0c95) 0b 54 06 07 05 
-P    10 | sti r6 511 0
+P   10 | sti r6 511 0
        | -> store to 511 + 0 = 511 (with pc and mod 3727)
 ADV 5 (0x0c90 -> 0x0c95) 0b 54 06 07 05 
 P    9 | sti r6 511 0
@@ -5146,9 +5147,9 @@ It is now cycle 3652
 It is now cycle 3653
 It is now cycle 3654
 It is now cycle 3655
-P    12 | zjmp 501 OK
-P    11 | zjmp 501 OK
-P    10 | zjmp 501 OK
+P   12 | zjmp 501 OK
+P   11 | zjmp 501 OK
+P   10 | zjmp 501 OK
 P    9 | zjmp 501 OK
 It is now cycle 3656
 It is now cycle 3657
@@ -5192,13 +5193,13 @@ It is now cycle 3678
 It is now cycle 3679
 It is now cycle 3680
 It is now cycle 3681
-P    12 | sti r3 28 0
+P   12 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 1703)
 ADV 5 (0x068b -> 0x0690) 0b 54 03 04 05 
-P    11 | sti r3 28 0
+P   11 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 3751)
 ADV 5 (0x0e8b -> 0x0e90) 0b 54 03 04 05 
-P    10 | sti r3 28 0
+P   10 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 3751)
 ADV 5 (0x0e8b -> 0x0e90) 0b 54 03 04 05 
 P    9 | sti r3 28 0
@@ -5232,9 +5233,9 @@ It is now cycle 3698
 It is now cycle 3699
 It is now cycle 3700
 It is now cycle 3701
-P    12 | zjmp 19 OK
-P    11 | zjmp 19 OK
-P    10 | zjmp 19 OK
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
 P    9 | zjmp 19 OK
 It is now cycle 3702
 It is now cycle 3703
@@ -5279,13 +5280,13 @@ It is now cycle 3725
 P    4 | zjmp 0 OK
 P    3 | zjmp 0 OK
 It is now cycle 3726
-P    12 | sti r3 28 0
+P   12 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 1727)
 ADV 5 (0x06a3 -> 0x06a8) 0b 54 03 04 05 
-P    11 | sti r3 28 0
+P   11 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 3775)
 ADV 5 (0x0ea3 -> 0x0ea8) 0b 54 03 04 05 
-P    10 | sti r3 28 0
+P   10 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 3775)
 ADV 5 (0x0ea3 -> 0x0ea8) 0b 54 03 04 05 
 P    9 | sti r3 28 0
@@ -5319,9 +5320,9 @@ It is now cycle 3745
 P    4 | zjmp 0 OK
 P    3 | zjmp 0 OK
 It is now cycle 3746
-P    12 | zjmp 19 OK
-P    11 | zjmp 19 OK
-P    10 | zjmp 19 OK
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
 P    9 | zjmp 19 OK
 It is now cycle 3747
 It is now cycle 3748
@@ -5364,13 +5365,13 @@ It is now cycle 3768
 It is now cycle 3769
 It is now cycle 3770
 It is now cycle 3771
-P    12 | sti r3 28 0
+P   12 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 1751)
 ADV 5 (0x06bb -> 0x06c0) 0b 54 03 04 05 
-P    11 | sti r3 28 0
+P   11 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 3799)
 ADV 5 (0x0ebb -> 0x0ec0) 0b 54 03 04 05 
-P    10 | sti r3 28 0
+P   10 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 3799)
 ADV 5 (0x0ebb -> 0x0ec0) 0b 54 03 04 05 
 P    9 | sti r3 28 0
@@ -5404,9 +5405,9 @@ It is now cycle 3788
 It is now cycle 3789
 It is now cycle 3790
 It is now cycle 3791
-P    12 | zjmp 19 OK
-P    11 | zjmp 19 OK
-P    10 | zjmp 19 OK
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
 P    9 | zjmp 19 OK
 P    2 | zjmp 0 OK
 P    1 | zjmp 0 OK
@@ -5451,13 +5452,13 @@ It is now cycle 3813
 It is now cycle 3814
 It is now cycle 3815
 It is now cycle 3816
-P    12 | sti r3 28 0
+P   12 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 1775)
 ADV 5 (0x06d3 -> 0x06d8) 0b 54 03 04 05 
-P    11 | sti r3 28 0
+P   11 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 3823)
 ADV 5 (0x0ed3 -> 0x0ed8) 0b 54 03 04 05 
-P    10 | sti r3 28 0
+P   10 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 3823)
 ADV 5 (0x0ed3 -> 0x0ed8) 0b 54 03 04 05 
 P    9 | sti r3 28 0
@@ -5491,9 +5492,9 @@ It is now cycle 3833
 It is now cycle 3834
 It is now cycle 3835
 It is now cycle 3836
-P    12 | zjmp 19 OK
-P    11 | zjmp 19 OK
-P    10 | zjmp 19 OK
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
 P    9 | zjmp 19 OK
 It is now cycle 3837
 It is now cycle 3838
@@ -5536,13 +5537,13 @@ It is now cycle 3858
 It is now cycle 3859
 It is now cycle 3860
 It is now cycle 3861
-P    12 | sti r3 28 0
+P   12 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 1799)
 ADV 5 (0x06eb -> 0x06f0) 0b 54 03 04 05 
-P    11 | sti r3 28 0
+P   11 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 3847)
 ADV 5 (0x0eeb -> 0x0ef0) 0b 54 03 04 05 
-P    10 | sti r3 28 0
+P   10 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 3847)
 ADV 5 (0x0eeb -> 0x0ef0) 0b 54 03 04 05 
 P    9 | sti r3 28 0
@@ -5576,9 +5577,9 @@ It is now cycle 3878
 It is now cycle 3879
 It is now cycle 3880
 It is now cycle 3881
-P    12 | zjmp 19 OK
-P    11 | zjmp 19 OK
-P    10 | zjmp 19 OK
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
 P    9 | zjmp 19 OK
 It is now cycle 3882
 It is now cycle 3883
@@ -5623,13 +5624,13 @@ It is now cycle 3905
 P    4 | zjmp 0 OK
 P    3 | zjmp 0 OK
 It is now cycle 3906
-P    12 | sti r3 28 0
+P   12 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 1823)
 ADV 5 (0x0703 -> 0x0708) 0b 54 03 04 05 
-P    11 | sti r3 28 0
+P   11 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 3871)
 ADV 5 (0x0f03 -> 0x0f08) 0b 54 03 04 05 
-P    10 | sti r3 28 0
+P   10 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 3871)
 ADV 5 (0x0f03 -> 0x0f08) 0b 54 03 04 05 
 P    9 | sti r3 28 0
@@ -5663,9 +5664,9 @@ It is now cycle 3925
 P    4 | zjmp 0 OK
 P    3 | zjmp 0 OK
 It is now cycle 3926
-P    12 | zjmp 19 OK
-P    11 | zjmp 19 OK
-P    10 | zjmp 19 OK
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
 P    9 | zjmp 19 OK
 It is now cycle 3927
 It is now cycle 3928
@@ -5708,13 +5709,13 @@ It is now cycle 3948
 It is now cycle 3949
 It is now cycle 3950
 It is now cycle 3951
-P    12 | sti r3 28 0
+P   12 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 1847)
 ADV 5 (0x071b -> 0x0720) 0b 54 03 04 05 
-P    11 | sti r3 28 0
+P   11 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 3895)
 ADV 5 (0x0f1b -> 0x0f20) 0b 54 03 04 05 
-P    10 | sti r3 28 0
+P   10 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 3895)
 ADV 5 (0x0f1b -> 0x0f20) 0b 54 03 04 05 
 P    9 | sti r3 28 0
@@ -5748,9 +5749,9 @@ It is now cycle 3968
 It is now cycle 3969
 It is now cycle 3970
 It is now cycle 3971
-P    12 | zjmp 19 OK
-P    11 | zjmp 19 OK
-P    10 | zjmp 19 OK
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
 P    9 | zjmp 19 OK
 P    2 | zjmp 0 OK
 P    1 | zjmp 0 OK
@@ -5795,13 +5796,13 @@ It is now cycle 3993
 It is now cycle 3994
 It is now cycle 3995
 It is now cycle 3996
-P    12 | sti r3 28 0
+P   12 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 1871)
 ADV 5 (0x0733 -> 0x0738) 0b 54 03 04 05 
-P    11 | sti r3 28 0
+P   11 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 3919)
 ADV 5 (0x0f33 -> 0x0f38) 0b 54 03 04 05 
-P    10 | sti r3 28 0
+P   10 | sti r3 28 0
        | -> store to 28 + 0 = 28 (with pc and mod 3919)
 ADV 5 (0x0f33 -> 0x0f38) 0b 54 03 04 05 
 P    9 | sti r3 28 0
@@ -5811,21 +5812,3922 @@ It is now cycle 3997
 It is now cycle 3998
 It is now cycle 3999
 It is now cycle 4000
-0x0000: 0c 00 50 01 00 00 00 00 0c 00 52 0b 54 03 04 05 09 00 13 90 00 00 00 01 0c 02 90 00 00 00 28 0b 03 00 00 0b 54 03 04 05 09 00 13 ff ff ff ff 03 70 10 fe d4 03 70 02 fe d3 03 70 0b 00 00 00 34 
-0x0040: 09 00 13 09 00 21 02 90 00 00 00 00 10 09 ff dd 02 90 00 00 00 00 00 09 01 ce 02 90 00 00 00 00 10 09 01 8b 0a a4 ff c6 00 01 0d 0b 54 03 04 00 00 10 03 70 0d 00 06 01 00 00 09 00 00 0c fb 03 
-0x0080: 70 0d 00 06 01 00 00 00 00 0c 00 2c 02 90 0b 54 0a 0b 09 00 00 0c 0c 01 00 07 02 90 00 00 01 11 08 02 90 00 00 01 0e 0b 02 90 09 00 00 0c 0c 0c 00 2c 09 01 2b 02 90 0c 0b 54 07 0a 03 50 0d 07 
-0x00c0: 02 90 09 00 00 0c 08 02 90 00 00 01 12 0b 02 90 00 00 00 00 0c 0c 00 06 09 01 09 00 00 0c 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 09 00 00 0c 0c 01 00 00 00 00 0b 54 0a 0b 
-0x0100: 0c 0b 54 07 08 0c 01 00 00 00 09 00 00 0c 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 0b 54 07 09 00 00 0c 00 00 00 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 09 00 00 0c 54 07 
-0x0140: 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 0b 54 07 08 0c 01 09 00 00 0c 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 09 00 00 0c 0c 01 00 00 00 00 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 
-0x0180: 00 00 09 00 00 0c 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 0b 54 07 09 00 00 0c 00 00 00 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 09 00 00 0c 54 07 08 0c 01 00 00 00 00 0b 
-0x01c0: 54 0a 0b 0c 0b 54 07 08 0c 01 09 00 00 0c 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 09 00 00 0c 0c 01 00 00 00 00 01 00 00 00 00 02 90 0b 54 06 07 0a 02 90 09 00 00 0c 0b 02 
-0x0200: 90 09 00 00 0c 03 02 90 09 00 00 0c 06 02 90 00 00 00 09 00 00 0c 00 00 01 ef 04 02 90 00 00 00 00 05 09 00 6a 01 00 00 00 00 02 90 0b 54 06 07 0a 02 90 05 09 01 f5 0b 0c 00 29 02 90 0b 54 03 
-0x0240: 04 03 02 90 0b 54 03 04 06 02 90 00 00 01 fb 07 02 90 00 00 00 18 04 02 90 00 00 00 00 05 09 00 2e 01 00 00 00 00 02 90 05 09 00 13 03 02 90 05 09 00 13 06 02 90 00 00 01 ff 07 02 90 00 00 00 
-0x0280: 1c 04 02 90 00 00 00 00 05 09 00 03 01 00 00 00 00 03 70 0a 01 ff 03 70 0b 01 fe 09 01 f5 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-0x02c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-0x0300: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-0x0340: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-0x0380: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+It is now cycle 4001
+It is now cycle 4002
+It is now cycle 4003
+It is now cycle 4004
+It is now cycle 4005
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4006
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 4007
+It is now cycle 4008
+It is now cycle 4009
+It is now cycle 4010
+It is now cycle 4011
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4012
+It is now cycle 4013
+It is now cycle 4014
+It is now cycle 4015
+It is now cycle 4016
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 4017
+It is now cycle 4018
+It is now cycle 4019
+It is now cycle 4020
+It is now cycle 4021
+It is now cycle 4022
+It is now cycle 4023
+It is now cycle 4024
+It is now cycle 4025
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4026
+It is now cycle 4027
+It is now cycle 4028
+It is now cycle 4029
+It is now cycle 4030
+It is now cycle 4031
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 1891)
+ADV 5 (0x074b -> 0x0750) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3939)
+ADV 5 (0x0f4b -> 0x0f50) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3939)
+ADV 5 (0x0f4b -> 0x0f50) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 1891)
+ADV 5 (0x074b -> 0x0750) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4032
+It is now cycle 4033
+It is now cycle 4034
+It is now cycle 4035
+It is now cycle 4036
+It is now cycle 4037
+It is now cycle 4038
+It is now cycle 4039
+It is now cycle 4040
+It is now cycle 4041
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 1895)
+ADV 5 (0x074b -> 0x0750) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3943)
+ADV 5 (0x0f4b -> 0x0f50) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3943)
+ADV 5 (0x0f4b -> 0x0f50) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 1895)
+ADV 5 (0x074b -> 0x0750) 0b 54 03 04 05 
+It is now cycle 4042
+It is now cycle 4043
+It is now cycle 4044
+It is now cycle 4045
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4046
+It is now cycle 4047
+It is now cycle 4048
+It is now cycle 4049
+It is now cycle 4050
+It is now cycle 4051
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4052
+It is now cycle 4053
+It is now cycle 4054
+It is now cycle 4055
+It is now cycle 4056
+It is now cycle 4057
+It is now cycle 4058
+It is now cycle 4059
+It is now cycle 4060
+It is now cycle 4061
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 4062
+It is now cycle 4063
+It is now cycle 4064
+It is now cycle 4065
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4066
+It is now cycle 4067
+It is now cycle 4068
+It is now cycle 4069
+It is now cycle 4070
+It is now cycle 4071
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4072
+It is now cycle 4073
+It is now cycle 4074
+It is now cycle 4075
+It is now cycle 4076
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 1915)
+ADV 5 (0x0763 -> 0x0768) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3963)
+ADV 5 (0x0f63 -> 0x0f68) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3963)
+ADV 5 (0x0f63 -> 0x0f68) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 1915)
+ADV 5 (0x0763 -> 0x0768) 0b 54 03 04 05 
+It is now cycle 4077
+It is now cycle 4078
+It is now cycle 4079
+It is now cycle 4080
+It is now cycle 4081
+It is now cycle 4082
+It is now cycle 4083
+It is now cycle 4084
+It is now cycle 4085
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4086
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 1919)
+ADV 5 (0x0763 -> 0x0768) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3967)
+ADV 5 (0x0f63 -> 0x0f68) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3967)
+ADV 5 (0x0f63 -> 0x0f68) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 1919)
+ADV 5 (0x0763 -> 0x0768) 0b 54 03 04 05 
+It is now cycle 4087
+It is now cycle 4088
+It is now cycle 4089
+It is now cycle 4090
+It is now cycle 4091
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4092
+It is now cycle 4093
+It is now cycle 4094
+It is now cycle 4095
+It is now cycle 4096
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 4097
+It is now cycle 4098
+It is now cycle 4099
+It is now cycle 4100
+It is now cycle 4101
+It is now cycle 4102
+It is now cycle 4103
+It is now cycle 4104
+It is now cycle 4105
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4106
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 4107
+It is now cycle 4108
+It is now cycle 4109
+It is now cycle 4110
+It is now cycle 4111
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4112
+It is now cycle 4113
+It is now cycle 4114
+It is now cycle 4115
+It is now cycle 4116
+It is now cycle 4117
+It is now cycle 4118
+It is now cycle 4119
+It is now cycle 4120
+It is now cycle 4121
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 1939)
+ADV 5 (0x077b -> 0x0780) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3987)
+ADV 5 (0x0f7b -> 0x0f80) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 3987)
+ADV 5 (0x0f7b -> 0x0f80) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 1939)
+ADV 5 (0x077b -> 0x0780) 0b 54 03 04 05 
+It is now cycle 4122
+It is now cycle 4123
+It is now cycle 4124
+It is now cycle 4125
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4126
+It is now cycle 4127
+It is now cycle 4128
+It is now cycle 4129
+It is now cycle 4130
+It is now cycle 4131
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 1943)
+ADV 5 (0x077b -> 0x0780) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3991)
+ADV 5 (0x0f7b -> 0x0f80) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 3991)
+ADV 5 (0x0f7b -> 0x0f80) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 1943)
+ADV 5 (0x077b -> 0x0780) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4132
+It is now cycle 4133
+It is now cycle 4134
+It is now cycle 4135
+It is now cycle 4136
+It is now cycle 4137
+It is now cycle 4138
+It is now cycle 4139
+It is now cycle 4140
+It is now cycle 4141
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 4142
+It is now cycle 4143
+It is now cycle 4144
+It is now cycle 4145
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4146
+It is now cycle 4147
+It is now cycle 4148
+It is now cycle 4149
+It is now cycle 4150
+It is now cycle 4151
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4152
+It is now cycle 4153
+It is now cycle 4154
+It is now cycle 4155
+It is now cycle 4156
+It is now cycle 4157
+It is now cycle 4158
+It is now cycle 4159
+It is now cycle 4160
+It is now cycle 4161
+It is now cycle 4162
+It is now cycle 4163
+It is now cycle 4164
+It is now cycle 4165
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4166
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 1963)
+ADV 5 (0x0793 -> 0x0798) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 4011)
+ADV 5 (0x0f93 -> 0x0f98) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 4011)
+ADV 5 (0x0f93 -> 0x0f98) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 1963)
+ADV 5 (0x0793 -> 0x0798) 0b 54 03 04 05 
+It is now cycle 4167
+It is now cycle 4168
+It is now cycle 4169
+It is now cycle 4170
+It is now cycle 4171
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4172
+It is now cycle 4173
+It is now cycle 4174
+It is now cycle 4175
+It is now cycle 4176
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 1967)
+ADV 5 (0x0793 -> 0x0798) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 4015)
+ADV 5 (0x0f93 -> 0x0f98) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 4015)
+ADV 5 (0x0f93 -> 0x0f98) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 1967)
+ADV 5 (0x0793 -> 0x0798) 0b 54 03 04 05 
+It is now cycle 4177
+It is now cycle 4178
+It is now cycle 4179
+It is now cycle 4180
+It is now cycle 4181
+It is now cycle 4182
+It is now cycle 4183
+It is now cycle 4184
+It is now cycle 4185
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4186
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 4187
+It is now cycle 4188
+It is now cycle 4189
+It is now cycle 4190
+It is now cycle 4191
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4192
+It is now cycle 4193
+It is now cycle 4194
+It is now cycle 4195
+It is now cycle 4196
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 4197
+It is now cycle 4198
+It is now cycle 4199
+It is now cycle 4200
+It is now cycle 4201
+It is now cycle 4202
+It is now cycle 4203
+It is now cycle 4204
+It is now cycle 4205
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4206
+It is now cycle 4207
+It is now cycle 4208
+It is now cycle 4209
+It is now cycle 4210
+It is now cycle 4211
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 1987)
+ADV 5 (0x07ab -> 0x07b0) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 4035)
+ADV 5 (0x0fab -> 0x0fb0) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 4035)
+ADV 5 (0x0fab -> 0x0fb0) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 1987)
+ADV 5 (0x07ab -> 0x07b0) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4212
+It is now cycle 4213
+It is now cycle 4214
+It is now cycle 4215
+It is now cycle 4216
+It is now cycle 4217
+It is now cycle 4218
+It is now cycle 4219
+It is now cycle 4220
+It is now cycle 4221
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 1991)
+ADV 5 (0x07ab -> 0x07b0) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 4039)
+ADV 5 (0x0fab -> 0x0fb0) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 4039)
+ADV 5 (0x0fab -> 0x0fb0) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 1991)
+ADV 5 (0x07ab -> 0x07b0) 0b 54 03 04 05 
+It is now cycle 4222
+It is now cycle 4223
+It is now cycle 4224
+It is now cycle 4225
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4226
+It is now cycle 4227
+It is now cycle 4228
+It is now cycle 4229
+It is now cycle 4230
+It is now cycle 4231
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4232
+It is now cycle 4233
+It is now cycle 4234
+It is now cycle 4235
+It is now cycle 4236
+It is now cycle 4237
+It is now cycle 4238
+It is now cycle 4239
+It is now cycle 4240
+It is now cycle 4241
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 4242
+It is now cycle 4243
+It is now cycle 4244
+It is now cycle 4245
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4246
+It is now cycle 4247
+It is now cycle 4248
+It is now cycle 4249
+It is now cycle 4250
+It is now cycle 4251
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4252
+It is now cycle 4253
+It is now cycle 4254
+It is now cycle 4255
+It is now cycle 4256
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2011)
+ADV 5 (0x07c3 -> 0x07c8) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 4059)
+ADV 5 (0x0fc3 -> 0x0fc8) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 4059)
+ADV 5 (0x0fc3 -> 0x0fc8) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2011)
+ADV 5 (0x07c3 -> 0x07c8) 0b 54 03 04 05 
+It is now cycle 4257
+It is now cycle 4258
+It is now cycle 4259
+It is now cycle 4260
+It is now cycle 4261
+It is now cycle 4262
+It is now cycle 4263
+It is now cycle 4264
+It is now cycle 4265
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4266
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2015)
+ADV 5 (0x07c3 -> 0x07c8) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 4063)
+ADV 5 (0x0fc3 -> 0x0fc8) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 4063)
+ADV 5 (0x0fc3 -> 0x0fc8) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2015)
+ADV 5 (0x07c3 -> 0x07c8) 0b 54 03 04 05 
+It is now cycle 4267
+It is now cycle 4268
+It is now cycle 4269
+It is now cycle 4270
+It is now cycle 4271
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4272
+It is now cycle 4273
+It is now cycle 4274
+It is now cycle 4275
+It is now cycle 4276
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 4277
+It is now cycle 4278
+It is now cycle 4279
+It is now cycle 4280
+It is now cycle 4281
+It is now cycle 4282
+It is now cycle 4283
+It is now cycle 4284
+It is now cycle 4285
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4286
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 4287
+It is now cycle 4288
+It is now cycle 4289
+It is now cycle 4290
+It is now cycle 4291
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4292
+It is now cycle 4293
+It is now cycle 4294
+It is now cycle 4295
+It is now cycle 4296
+It is now cycle 4297
+It is now cycle 4298
+It is now cycle 4299
+It is now cycle 4300
+It is now cycle 4301
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2035)
+ADV 5 (0x07db -> 0x07e0) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 4083)
+ADV 5 (0x0fdb -> 0x0fe0) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 4083)
+ADV 5 (0x0fdb -> 0x0fe0) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2035)
+ADV 5 (0x07db -> 0x07e0) 0b 54 03 04 05 
+It is now cycle 4302
+It is now cycle 4303
+It is now cycle 4304
+It is now cycle 4305
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4306
+It is now cycle 4307
+It is now cycle 4308
+It is now cycle 4309
+It is now cycle 4310
+It is now cycle 4311
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2039)
+ADV 5 (0x07db -> 0x07e0) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 4087)
+ADV 5 (0x0fdb -> 0x0fe0) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 4087)
+ADV 5 (0x0fdb -> 0x0fe0) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2039)
+ADV 5 (0x07db -> 0x07e0) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4312
+It is now cycle 4313
+It is now cycle 4314
+It is now cycle 4315
+It is now cycle 4316
+It is now cycle 4317
+It is now cycle 4318
+It is now cycle 4319
+It is now cycle 4320
+It is now cycle 4321
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 4322
+It is now cycle 4323
+It is now cycle 4324
+It is now cycle 4325
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4326
+It is now cycle 4327
+It is now cycle 4328
+It is now cycle 4329
+It is now cycle 4330
+It is now cycle 4331
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4332
+It is now cycle 4333
+It is now cycle 4334
+It is now cycle 4335
+It is now cycle 4336
+It is now cycle 4337
+It is now cycle 4338
+It is now cycle 4339
+It is now cycle 4340
+It is now cycle 4341
+It is now cycle 4342
+It is now cycle 4343
+It is now cycle 4344
+It is now cycle 4345
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4346
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2059)
+ADV 5 (0x07f3 -> 0x07f8) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 4107)
+ADV 5 (0x0ff3 -> 0x0ff8) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 4107)
+ADV 5 (0x0ff3 -> 0x0ff8) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2059)
+ADV 5 (0x07f3 -> 0x07f8) 0b 54 03 04 05 
+It is now cycle 4347
+It is now cycle 4348
+It is now cycle 4349
+It is now cycle 4350
+It is now cycle 4351
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4352
+It is now cycle 4353
+It is now cycle 4354
+It is now cycle 4355
+It is now cycle 4356
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2063)
+ADV 5 (0x07f3 -> 0x07f8) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 4111)
+ADV 5 (0x0ff3 -> 0x0ff8) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 4111)
+ADV 5 (0x0ff3 -> 0x0ff8) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2063)
+ADV 5 (0x07f3 -> 0x07f8) 0b 54 03 04 05 
+It is now cycle 4357
+It is now cycle 4358
+It is now cycle 4359
+It is now cycle 4360
+It is now cycle 4361
+It is now cycle 4362
+It is now cycle 4363
+It is now cycle 4364
+It is now cycle 4365
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4366
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 4367
+It is now cycle 4368
+It is now cycle 4369
+It is now cycle 4370
+It is now cycle 4371
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4372
+It is now cycle 4373
+It is now cycle 4374
+It is now cycle 4375
+It is now cycle 4376
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 4377
+It is now cycle 4378
+It is now cycle 4379
+It is now cycle 4380
+It is now cycle 4381
+It is now cycle 4382
+It is now cycle 4383
+It is now cycle 4384
+It is now cycle 4385
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4386
+It is now cycle 4387
+It is now cycle 4388
+It is now cycle 4389
+It is now cycle 4390
+It is now cycle 4391
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2083)
+ADV 5 (0x080b -> 0x0810) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 35)
+ADV 5 (0x000b -> 0x0010) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 35)
+ADV 5 (0x000b -> 0x0010) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2083)
+ADV 5 (0x080b -> 0x0810) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4392
+It is now cycle 4393
+It is now cycle 4394
+It is now cycle 4395
+It is now cycle 4396
+It is now cycle 4397
+It is now cycle 4398
+It is now cycle 4399
+It is now cycle 4400
+It is now cycle 4401
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2087)
+ADV 5 (0x080b -> 0x0810) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 39)
+ADV 5 (0x000b -> 0x0010) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 39)
+ADV 5 (0x000b -> 0x0010) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2087)
+ADV 5 (0x080b -> 0x0810) 0b 54 03 04 05 
+It is now cycle 4402
+It is now cycle 4403
+It is now cycle 4404
+It is now cycle 4405
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4406
+It is now cycle 4407
+It is now cycle 4408
+It is now cycle 4409
+It is now cycle 4410
+It is now cycle 4411
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4412
+It is now cycle 4413
+It is now cycle 4414
+It is now cycle 4415
+It is now cycle 4416
+It is now cycle 4417
+It is now cycle 4418
+It is now cycle 4419
+It is now cycle 4420
+It is now cycle 4421
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 4422
+It is now cycle 4423
+It is now cycle 4424
+It is now cycle 4425
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4426
+It is now cycle 4427
+It is now cycle 4428
+It is now cycle 4429
+It is now cycle 4430
+It is now cycle 4431
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4432
+It is now cycle 4433
+It is now cycle 4434
+It is now cycle 4435
+It is now cycle 4436
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2107)
+ADV 5 (0x0823 -> 0x0828) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 59)
+ADV 5 (0x0023 -> 0x0028) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 59)
+ADV 5 (0x0023 -> 0x0028) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2107)
+ADV 5 (0x0823 -> 0x0828) 0b 54 03 04 05 
+It is now cycle 4437
+It is now cycle 4438
+It is now cycle 4439
+It is now cycle 4440
+It is now cycle 4441
+It is now cycle 4442
+It is now cycle 4443
+It is now cycle 4444
+It is now cycle 4445
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4446
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2111)
+ADV 5 (0x0823 -> 0x0828) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 63)
+ADV 5 (0x0023 -> 0x0028) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 63)
+ADV 5 (0x0023 -> 0x0028) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2111)
+ADV 5 (0x0823 -> 0x0828) 0b 54 03 04 05 
+It is now cycle 4447
+It is now cycle 4448
+It is now cycle 4449
+It is now cycle 4450
+It is now cycle 4451
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4452
+It is now cycle 4453
+It is now cycle 4454
+It is now cycle 4455
+It is now cycle 4456
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 4457
+It is now cycle 4458
+It is now cycle 4459
+It is now cycle 4460
+It is now cycle 4461
+It is now cycle 4462
+It is now cycle 4463
+It is now cycle 4464
+It is now cycle 4465
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4466
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 4467
+It is now cycle 4468
+It is now cycle 4469
+It is now cycle 4470
+It is now cycle 4471
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4472
+It is now cycle 4473
+It is now cycle 4474
+It is now cycle 4475
+It is now cycle 4476
+It is now cycle 4477
+It is now cycle 4478
+It is now cycle 4479
+It is now cycle 4480
+It is now cycle 4481
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2131)
+ADV 5 (0x083b -> 0x0840) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 83)
+ADV 5 (0x003b -> 0x0040) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 83)
+ADV 5 (0x003b -> 0x0040) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2131)
+ADV 5 (0x083b -> 0x0840) 0b 54 03 04 05 
+It is now cycle 4482
+It is now cycle 4483
+It is now cycle 4484
+It is now cycle 4485
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4486
+It is now cycle 4487
+It is now cycle 4488
+It is now cycle 4489
+It is now cycle 4490
+It is now cycle 4491
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2135)
+ADV 5 (0x083b -> 0x0840) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 87)
+ADV 5 (0x003b -> 0x0040) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 87)
+ADV 5 (0x003b -> 0x0040) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2135)
+ADV 5 (0x083b -> 0x0840) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4492
+It is now cycle 4493
+It is now cycle 4494
+It is now cycle 4495
+It is now cycle 4496
+It is now cycle 4497
+It is now cycle 4498
+It is now cycle 4499
+It is now cycle 4500
+It is now cycle 4501
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 4502
+It is now cycle 4503
+It is now cycle 4504
+It is now cycle 4505
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4506
+It is now cycle 4507
+It is now cycle 4508
+It is now cycle 4509
+It is now cycle 4510
+It is now cycle 4511
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4512
+It is now cycle 4513
+It is now cycle 4514
+It is now cycle 4515
+It is now cycle 4516
+It is now cycle 4517
+It is now cycle 4518
+It is now cycle 4519
+It is now cycle 4520
+It is now cycle 4521
+It is now cycle 4522
+It is now cycle 4523
+It is now cycle 4524
+It is now cycle 4525
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4526
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2155)
+ADV 5 (0x0853 -> 0x0858) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 107)
+ADV 5 (0x0053 -> 0x0058) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 107)
+ADV 5 (0x0053 -> 0x0058) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2155)
+ADV 5 (0x0853 -> 0x0858) 0b 54 03 04 05 
+It is now cycle 4527
+It is now cycle 4528
+It is now cycle 4529
+It is now cycle 4530
+It is now cycle 4531
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4532
+It is now cycle 4533
+It is now cycle 4534
+It is now cycle 4535
+It is now cycle 4536
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2159)
+ADV 5 (0x0853 -> 0x0858) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 111)
+ADV 5 (0x0053 -> 0x0058) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 111)
+ADV 5 (0x0053 -> 0x0058) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2159)
+ADV 5 (0x0853 -> 0x0858) 0b 54 03 04 05 
+It is now cycle 4537
+It is now cycle 4538
+It is now cycle 4539
+It is now cycle 4540
+It is now cycle 4541
+It is now cycle 4542
+It is now cycle 4543
+It is now cycle 4544
+It is now cycle 4545
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4546
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 4547
+It is now cycle 4548
+It is now cycle 4549
+It is now cycle 4550
+It is now cycle 4551
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4552
+It is now cycle 4553
+It is now cycle 4554
+It is now cycle 4555
+It is now cycle 4556
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 4557
+It is now cycle 4558
+It is now cycle 4559
+It is now cycle 4560
+It is now cycle 4561
+It is now cycle 4562
+It is now cycle 4563
+It is now cycle 4564
+It is now cycle 4565
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4566
+It is now cycle 4567
+It is now cycle 4568
+It is now cycle 4569
+It is now cycle 4570
+It is now cycle 4571
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2179)
+ADV 5 (0x086b -> 0x0870) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 131)
+ADV 5 (0x006b -> 0x0070) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 131)
+ADV 5 (0x006b -> 0x0070) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2179)
+ADV 5 (0x086b -> 0x0870) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4572
+It is now cycle 4573
+It is now cycle 4574
+It is now cycle 4575
+It is now cycle 4576
+It is now cycle 4577
+It is now cycle 4578
+It is now cycle 4579
+It is now cycle 4580
+It is now cycle 4581
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2183)
+ADV 5 (0x086b -> 0x0870) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 135)
+ADV 5 (0x006b -> 0x0070) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 135)
+ADV 5 (0x006b -> 0x0070) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2183)
+ADV 5 (0x086b -> 0x0870) 0b 54 03 04 05 
+It is now cycle 4582
+It is now cycle 4583
+It is now cycle 4584
+It is now cycle 4585
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4586
+It is now cycle 4587
+It is now cycle 4588
+It is now cycle 4589
+It is now cycle 4590
+It is now cycle 4591
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4592
+It is now cycle 4593
+It is now cycle 4594
+It is now cycle 4595
+It is now cycle 4596
+It is now cycle 4597
+It is now cycle 4598
+It is now cycle 4599
+It is now cycle 4600
+It is now cycle 4601
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 4602
+It is now cycle 4603
+It is now cycle 4604
+It is now cycle 4605
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4606
+It is now cycle 4607
+It is now cycle 4608
+Cycle to die is now 1486
+It is now cycle 4609
+It is now cycle 4610
+It is now cycle 4611
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4612
+It is now cycle 4613
+It is now cycle 4614
+It is now cycle 4615
+It is now cycle 4616
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2203)
+ADV 5 (0x0883 -> 0x0888) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 155)
+ADV 5 (0x0083 -> 0x0088) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 155)
+ADV 5 (0x0083 -> 0x0088) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2203)
+ADV 5 (0x0883 -> 0x0888) 0b 54 03 04 05 
+It is now cycle 4617
+It is now cycle 4618
+It is now cycle 4619
+It is now cycle 4620
+It is now cycle 4621
+It is now cycle 4622
+It is now cycle 4623
+It is now cycle 4624
+It is now cycle 4625
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4626
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2207)
+ADV 5 (0x0883 -> 0x0888) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 159)
+ADV 5 (0x0083 -> 0x0088) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 159)
+ADV 5 (0x0083 -> 0x0088) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2207)
+ADV 5 (0x0883 -> 0x0888) 0b 54 03 04 05 
+It is now cycle 4627
+It is now cycle 4628
+It is now cycle 4629
+It is now cycle 4630
+It is now cycle 4631
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4632
+It is now cycle 4633
+It is now cycle 4634
+It is now cycle 4635
+It is now cycle 4636
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 4637
+It is now cycle 4638
+It is now cycle 4639
+It is now cycle 4640
+It is now cycle 4641
+It is now cycle 4642
+It is now cycle 4643
+It is now cycle 4644
+It is now cycle 4645
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4646
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 4647
+It is now cycle 4648
+It is now cycle 4649
+It is now cycle 4650
+It is now cycle 4651
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4652
+It is now cycle 4653
+It is now cycle 4654
+It is now cycle 4655
+It is now cycle 4656
+It is now cycle 4657
+It is now cycle 4658
+It is now cycle 4659
+It is now cycle 4660
+It is now cycle 4661
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2227)
+ADV 5 (0x089b -> 0x08a0) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 179)
+ADV 5 (0x009b -> 0x00a0) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 179)
+ADV 5 (0x009b -> 0x00a0) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2227)
+ADV 5 (0x089b -> 0x08a0) 0b 54 03 04 05 
+It is now cycle 4662
+It is now cycle 4663
+It is now cycle 4664
+It is now cycle 4665
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4666
+It is now cycle 4667
+It is now cycle 4668
+It is now cycle 4669
+It is now cycle 4670
+It is now cycle 4671
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2231)
+ADV 5 (0x089b -> 0x08a0) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 183)
+ADV 5 (0x009b -> 0x00a0) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 183)
+ADV 5 (0x009b -> 0x00a0) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2231)
+ADV 5 (0x089b -> 0x08a0) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4672
+It is now cycle 4673
+It is now cycle 4674
+It is now cycle 4675
+It is now cycle 4676
+It is now cycle 4677
+It is now cycle 4678
+It is now cycle 4679
+It is now cycle 4680
+It is now cycle 4681
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 4682
+It is now cycle 4683
+It is now cycle 4684
+It is now cycle 4685
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4686
+It is now cycle 4687
+It is now cycle 4688
+It is now cycle 4689
+It is now cycle 4690
+It is now cycle 4691
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4692
+It is now cycle 4693
+It is now cycle 4694
+It is now cycle 4695
+It is now cycle 4696
+It is now cycle 4697
+It is now cycle 4698
+It is now cycle 4699
+It is now cycle 4700
+It is now cycle 4701
+It is now cycle 4702
+It is now cycle 4703
+It is now cycle 4704
+It is now cycle 4705
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4706
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2251)
+ADV 5 (0x08b3 -> 0x08b8) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 203)
+ADV 5 (0x00b3 -> 0x00b8) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 203)
+ADV 5 (0x00b3 -> 0x00b8) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2251)
+ADV 5 (0x08b3 -> 0x08b8) 0b 54 03 04 05 
+It is now cycle 4707
+It is now cycle 4708
+It is now cycle 4709
+It is now cycle 4710
+It is now cycle 4711
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4712
+It is now cycle 4713
+It is now cycle 4714
+It is now cycle 4715
+It is now cycle 4716
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2255)
+ADV 5 (0x08b3 -> 0x08b8) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 207)
+ADV 5 (0x00b3 -> 0x00b8) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 207)
+ADV 5 (0x00b3 -> 0x00b8) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2255)
+ADV 5 (0x08b3 -> 0x08b8) 0b 54 03 04 05 
+It is now cycle 4717
+It is now cycle 4718
+It is now cycle 4719
+It is now cycle 4720
+It is now cycle 4721
+It is now cycle 4722
+It is now cycle 4723
+It is now cycle 4724
+It is now cycle 4725
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4726
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 4727
+It is now cycle 4728
+It is now cycle 4729
+It is now cycle 4730
+It is now cycle 4731
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4732
+It is now cycle 4733
+It is now cycle 4734
+It is now cycle 4735
+It is now cycle 4736
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 4737
+It is now cycle 4738
+It is now cycle 4739
+It is now cycle 4740
+It is now cycle 4741
+It is now cycle 4742
+It is now cycle 4743
+It is now cycle 4744
+It is now cycle 4745
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4746
+It is now cycle 4747
+It is now cycle 4748
+It is now cycle 4749
+It is now cycle 4750
+It is now cycle 4751
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2275)
+ADV 5 (0x08cb -> 0x08d0) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 227)
+ADV 5 (0x00cb -> 0x00d0) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 227)
+ADV 5 (0x00cb -> 0x00d0) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2275)
+ADV 5 (0x08cb -> 0x08d0) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4752
+It is now cycle 4753
+It is now cycle 4754
+It is now cycle 4755
+It is now cycle 4756
+It is now cycle 4757
+It is now cycle 4758
+It is now cycle 4759
+It is now cycle 4760
+It is now cycle 4761
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2279)
+ADV 5 (0x08cb -> 0x08d0) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 231)
+ADV 5 (0x00cb -> 0x00d0) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 231)
+ADV 5 (0x00cb -> 0x00d0) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2279)
+ADV 5 (0x08cb -> 0x08d0) 0b 54 03 04 05 
+It is now cycle 4762
+It is now cycle 4763
+It is now cycle 4764
+It is now cycle 4765
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4766
+It is now cycle 4767
+It is now cycle 4768
+It is now cycle 4769
+It is now cycle 4770
+It is now cycle 4771
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4772
+It is now cycle 4773
+It is now cycle 4774
+It is now cycle 4775
+It is now cycle 4776
+It is now cycle 4777
+It is now cycle 4778
+It is now cycle 4779
+It is now cycle 4780
+It is now cycle 4781
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 4782
+It is now cycle 4783
+It is now cycle 4784
+It is now cycle 4785
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4786
+It is now cycle 4787
+It is now cycle 4788
+It is now cycle 4789
+It is now cycle 4790
+It is now cycle 4791
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4792
+It is now cycle 4793
+It is now cycle 4794
+It is now cycle 4795
+It is now cycle 4796
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2299)
+ADV 5 (0x08e3 -> 0x08e8) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 251)
+ADV 5 (0x00e3 -> 0x00e8) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 251)
+ADV 5 (0x00e3 -> 0x00e8) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2299)
+ADV 5 (0x08e3 -> 0x08e8) 0b 54 03 04 05 
+It is now cycle 4797
+It is now cycle 4798
+It is now cycle 4799
+It is now cycle 4800
+It is now cycle 4801
+It is now cycle 4802
+It is now cycle 4803
+It is now cycle 4804
+It is now cycle 4805
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4806
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2303)
+ADV 5 (0x08e3 -> 0x08e8) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 255)
+ADV 5 (0x00e3 -> 0x00e8) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 255)
+ADV 5 (0x00e3 -> 0x00e8) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2303)
+ADV 5 (0x08e3 -> 0x08e8) 0b 54 03 04 05 
+It is now cycle 4807
+It is now cycle 4808
+It is now cycle 4809
+It is now cycle 4810
+It is now cycle 4811
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4812
+It is now cycle 4813
+It is now cycle 4814
+It is now cycle 4815
+It is now cycle 4816
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 4817
+It is now cycle 4818
+It is now cycle 4819
+It is now cycle 4820
+It is now cycle 4821
+It is now cycle 4822
+It is now cycle 4823
+It is now cycle 4824
+It is now cycle 4825
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4826
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 4827
+It is now cycle 4828
+It is now cycle 4829
+It is now cycle 4830
+It is now cycle 4831
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4832
+It is now cycle 4833
+It is now cycle 4834
+It is now cycle 4835
+It is now cycle 4836
+It is now cycle 4837
+It is now cycle 4838
+It is now cycle 4839
+It is now cycle 4840
+It is now cycle 4841
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2323)
+ADV 5 (0x08fb -> 0x0900) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 275)
+ADV 5 (0x00fb -> 0x0100) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 275)
+ADV 5 (0x00fb -> 0x0100) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2323)
+ADV 5 (0x08fb -> 0x0900) 0b 54 03 04 05 
+It is now cycle 4842
+It is now cycle 4843
+It is now cycle 4844
+It is now cycle 4845
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4846
+It is now cycle 4847
+It is now cycle 4848
+It is now cycle 4849
+It is now cycle 4850
+It is now cycle 4851
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2327)
+ADV 5 (0x08fb -> 0x0900) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 279)
+ADV 5 (0x00fb -> 0x0100) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 279)
+ADV 5 (0x00fb -> 0x0100) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2327)
+ADV 5 (0x08fb -> 0x0900) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4852
+It is now cycle 4853
+It is now cycle 4854
+It is now cycle 4855
+It is now cycle 4856
+It is now cycle 4857
+It is now cycle 4858
+It is now cycle 4859
+It is now cycle 4860
+It is now cycle 4861
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 4862
+It is now cycle 4863
+It is now cycle 4864
+It is now cycle 4865
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4866
+It is now cycle 4867
+It is now cycle 4868
+It is now cycle 4869
+It is now cycle 4870
+It is now cycle 4871
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4872
+It is now cycle 4873
+It is now cycle 4874
+It is now cycle 4875
+It is now cycle 4876
+It is now cycle 4877
+It is now cycle 4878
+It is now cycle 4879
+It is now cycle 4880
+It is now cycle 4881
+It is now cycle 4882
+It is now cycle 4883
+It is now cycle 4884
+It is now cycle 4885
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4886
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2347)
+ADV 5 (0x0913 -> 0x0918) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 299)
+ADV 5 (0x0113 -> 0x0118) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 299)
+ADV 5 (0x0113 -> 0x0118) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2347)
+ADV 5 (0x0913 -> 0x0918) 0b 54 03 04 05 
+It is now cycle 4887
+It is now cycle 4888
+It is now cycle 4889
+It is now cycle 4890
+It is now cycle 4891
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4892
+It is now cycle 4893
+It is now cycle 4894
+It is now cycle 4895
+It is now cycle 4896
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2351)
+ADV 5 (0x0913 -> 0x0918) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 303)
+ADV 5 (0x0113 -> 0x0118) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 303)
+ADV 5 (0x0113 -> 0x0118) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2351)
+ADV 5 (0x0913 -> 0x0918) 0b 54 03 04 05 
+It is now cycle 4897
+It is now cycle 4898
+It is now cycle 4899
+It is now cycle 4900
+It is now cycle 4901
+It is now cycle 4902
+It is now cycle 4903
+It is now cycle 4904
+It is now cycle 4905
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4906
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 4907
+It is now cycle 4908
+It is now cycle 4909
+It is now cycle 4910
+It is now cycle 4911
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4912
+It is now cycle 4913
+It is now cycle 4914
+It is now cycle 4915
+It is now cycle 4916
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 4917
+It is now cycle 4918
+It is now cycle 4919
+It is now cycle 4920
+It is now cycle 4921
+It is now cycle 4922
+It is now cycle 4923
+It is now cycle 4924
+It is now cycle 4925
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4926
+It is now cycle 4927
+It is now cycle 4928
+It is now cycle 4929
+It is now cycle 4930
+It is now cycle 4931
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2371)
+ADV 5 (0x092b -> 0x0930) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 323)
+ADV 5 (0x012b -> 0x0130) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 323)
+ADV 5 (0x012b -> 0x0130) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2371)
+ADV 5 (0x092b -> 0x0930) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4932
+It is now cycle 4933
+It is now cycle 4934
+It is now cycle 4935
+It is now cycle 4936
+It is now cycle 4937
+It is now cycle 4938
+It is now cycle 4939
+It is now cycle 4940
+It is now cycle 4941
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2375)
+ADV 5 (0x092b -> 0x0930) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 327)
+ADV 5 (0x012b -> 0x0130) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 327)
+ADV 5 (0x012b -> 0x0130) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2375)
+ADV 5 (0x092b -> 0x0930) 0b 54 03 04 05 
+It is now cycle 4942
+It is now cycle 4943
+It is now cycle 4944
+It is now cycle 4945
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4946
+It is now cycle 4947
+It is now cycle 4948
+It is now cycle 4949
+It is now cycle 4950
+It is now cycle 4951
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4952
+It is now cycle 4953
+It is now cycle 4954
+It is now cycle 4955
+It is now cycle 4956
+It is now cycle 4957
+It is now cycle 4958
+It is now cycle 4959
+It is now cycle 4960
+It is now cycle 4961
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 4962
+It is now cycle 4963
+It is now cycle 4964
+It is now cycle 4965
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4966
+It is now cycle 4967
+It is now cycle 4968
+It is now cycle 4969
+It is now cycle 4970
+It is now cycle 4971
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4972
+It is now cycle 4973
+It is now cycle 4974
+It is now cycle 4975
+It is now cycle 4976
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2395)
+ADV 5 (0x0943 -> 0x0948) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 347)
+ADV 5 (0x0143 -> 0x0148) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 347)
+ADV 5 (0x0143 -> 0x0148) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2395)
+ADV 5 (0x0943 -> 0x0948) 0b 54 03 04 05 
+It is now cycle 4977
+It is now cycle 4978
+It is now cycle 4979
+It is now cycle 4980
+It is now cycle 4981
+It is now cycle 4982
+It is now cycle 4983
+It is now cycle 4984
+It is now cycle 4985
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 4986
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2399)
+ADV 5 (0x0943 -> 0x0948) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 351)
+ADV 5 (0x0143 -> 0x0148) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 351)
+ADV 5 (0x0143 -> 0x0148) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2399)
+ADV 5 (0x0943 -> 0x0948) 0b 54 03 04 05 
+It is now cycle 4987
+It is now cycle 4988
+It is now cycle 4989
+It is now cycle 4990
+It is now cycle 4991
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 4992
+It is now cycle 4993
+It is now cycle 4994
+It is now cycle 4995
+It is now cycle 4996
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 4997
+It is now cycle 4998
+It is now cycle 4999
+It is now cycle 5000
+It is now cycle 5001
+It is now cycle 5002
+It is now cycle 5003
+It is now cycle 5004
+It is now cycle 5005
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5006
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 5007
+It is now cycle 5008
+It is now cycle 5009
+It is now cycle 5010
+It is now cycle 5011
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5012
+It is now cycle 5013
+It is now cycle 5014
+It is now cycle 5015
+It is now cycle 5016
+It is now cycle 5017
+It is now cycle 5018
+It is now cycle 5019
+It is now cycle 5020
+It is now cycle 5021
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2419)
+ADV 5 (0x095b -> 0x0960) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 371)
+ADV 5 (0x015b -> 0x0160) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 371)
+ADV 5 (0x015b -> 0x0160) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2419)
+ADV 5 (0x095b -> 0x0960) 0b 54 03 04 05 
+It is now cycle 5022
+It is now cycle 5023
+It is now cycle 5024
+It is now cycle 5025
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5026
+It is now cycle 5027
+It is now cycle 5028
+It is now cycle 5029
+It is now cycle 5030
+It is now cycle 5031
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2423)
+ADV 5 (0x095b -> 0x0960) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 375)
+ADV 5 (0x015b -> 0x0160) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 375)
+ADV 5 (0x015b -> 0x0160) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2423)
+ADV 5 (0x095b -> 0x0960) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5032
+It is now cycle 5033
+It is now cycle 5034
+It is now cycle 5035
+It is now cycle 5036
+It is now cycle 5037
+It is now cycle 5038
+It is now cycle 5039
+It is now cycle 5040
+It is now cycle 5041
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 5042
+It is now cycle 5043
+It is now cycle 5044
+It is now cycle 5045
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5046
+It is now cycle 5047
+It is now cycle 5048
+It is now cycle 5049
+It is now cycle 5050
+It is now cycle 5051
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5052
+It is now cycle 5053
+It is now cycle 5054
+It is now cycle 5055
+It is now cycle 5056
+It is now cycle 5057
+It is now cycle 5058
+It is now cycle 5059
+It is now cycle 5060
+It is now cycle 5061
+It is now cycle 5062
+It is now cycle 5063
+It is now cycle 5064
+It is now cycle 5065
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5066
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2443)
+ADV 5 (0x0973 -> 0x0978) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 395)
+ADV 5 (0x0173 -> 0x0178) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 395)
+ADV 5 (0x0173 -> 0x0178) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2443)
+ADV 5 (0x0973 -> 0x0978) 0b 54 03 04 05 
+It is now cycle 5067
+It is now cycle 5068
+It is now cycle 5069
+It is now cycle 5070
+It is now cycle 5071
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5072
+It is now cycle 5073
+It is now cycle 5074
+It is now cycle 5075
+It is now cycle 5076
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2447)
+ADV 5 (0x0973 -> 0x0978) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 399)
+ADV 5 (0x0173 -> 0x0178) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 399)
+ADV 5 (0x0173 -> 0x0178) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2447)
+ADV 5 (0x0973 -> 0x0978) 0b 54 03 04 05 
+It is now cycle 5077
+It is now cycle 5078
+It is now cycle 5079
+It is now cycle 5080
+It is now cycle 5081
+It is now cycle 5082
+It is now cycle 5083
+It is now cycle 5084
+It is now cycle 5085
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5086
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 5087
+It is now cycle 5088
+It is now cycle 5089
+It is now cycle 5090
+It is now cycle 5091
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5092
+It is now cycle 5093
+It is now cycle 5094
+It is now cycle 5095
+It is now cycle 5096
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 5097
+It is now cycle 5098
+It is now cycle 5099
+It is now cycle 5100
+It is now cycle 5101
+It is now cycle 5102
+It is now cycle 5103
+It is now cycle 5104
+It is now cycle 5105
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5106
+It is now cycle 5107
+It is now cycle 5108
+It is now cycle 5109
+It is now cycle 5110
+It is now cycle 5111
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2467)
+ADV 5 (0x098b -> 0x0990) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 419)
+ADV 5 (0x018b -> 0x0190) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 419)
+ADV 5 (0x018b -> 0x0190) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2467)
+ADV 5 (0x098b -> 0x0990) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5112
+It is now cycle 5113
+It is now cycle 5114
+It is now cycle 5115
+It is now cycle 5116
+It is now cycle 5117
+It is now cycle 5118
+It is now cycle 5119
+It is now cycle 5120
+It is now cycle 5121
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2471)
+ADV 5 (0x098b -> 0x0990) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 423)
+ADV 5 (0x018b -> 0x0190) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 423)
+ADV 5 (0x018b -> 0x0190) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2471)
+ADV 5 (0x098b -> 0x0990) 0b 54 03 04 05 
+It is now cycle 5122
+It is now cycle 5123
+It is now cycle 5124
+It is now cycle 5125
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5126
+It is now cycle 5127
+It is now cycle 5128
+It is now cycle 5129
+It is now cycle 5130
+It is now cycle 5131
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5132
+It is now cycle 5133
+It is now cycle 5134
+It is now cycle 5135
+It is now cycle 5136
+It is now cycle 5137
+It is now cycle 5138
+It is now cycle 5139
+It is now cycle 5140
+It is now cycle 5141
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 5142
+It is now cycle 5143
+It is now cycle 5144
+It is now cycle 5145
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5146
+It is now cycle 5147
+It is now cycle 5148
+It is now cycle 5149
+It is now cycle 5150
+It is now cycle 5151
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5152
+It is now cycle 5153
+It is now cycle 5154
+It is now cycle 5155
+It is now cycle 5156
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2491)
+ADV 5 (0x09a3 -> 0x09a8) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 443)
+ADV 5 (0x01a3 -> 0x01a8) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 443)
+ADV 5 (0x01a3 -> 0x01a8) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2491)
+ADV 5 (0x09a3 -> 0x09a8) 0b 54 03 04 05 
+It is now cycle 5157
+It is now cycle 5158
+It is now cycle 5159
+It is now cycle 5160
+It is now cycle 5161
+It is now cycle 5162
+It is now cycle 5163
+It is now cycle 5164
+It is now cycle 5165
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5166
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2495)
+ADV 5 (0x09a3 -> 0x09a8) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 447)
+ADV 5 (0x01a3 -> 0x01a8) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 447)
+ADV 5 (0x01a3 -> 0x01a8) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2495)
+ADV 5 (0x09a3 -> 0x09a8) 0b 54 03 04 05 
+It is now cycle 5167
+It is now cycle 5168
+It is now cycle 5169
+It is now cycle 5170
+It is now cycle 5171
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5172
+It is now cycle 5173
+It is now cycle 5174
+It is now cycle 5175
+It is now cycle 5176
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 5177
+It is now cycle 5178
+It is now cycle 5179
+It is now cycle 5180
+It is now cycle 5181
+It is now cycle 5182
+It is now cycle 5183
+It is now cycle 5184
+It is now cycle 5185
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5186
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 5187
+It is now cycle 5188
+It is now cycle 5189
+It is now cycle 5190
+It is now cycle 5191
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5192
+It is now cycle 5193
+It is now cycle 5194
+It is now cycle 5195
+It is now cycle 5196
+It is now cycle 5197
+It is now cycle 5198
+It is now cycle 5199
+It is now cycle 5200
+It is now cycle 5201
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2515)
+ADV 5 (0x09bb -> 0x09c0) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 467)
+ADV 5 (0x01bb -> 0x01c0) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 467)
+ADV 5 (0x01bb -> 0x01c0) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2515)
+ADV 5 (0x09bb -> 0x09c0) 0b 54 03 04 05 
+It is now cycle 5202
+It is now cycle 5203
+It is now cycle 5204
+It is now cycle 5205
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5206
+It is now cycle 5207
+It is now cycle 5208
+It is now cycle 5209
+It is now cycle 5210
+It is now cycle 5211
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2519)
+ADV 5 (0x09bb -> 0x09c0) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 471)
+ADV 5 (0x01bb -> 0x01c0) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 471)
+ADV 5 (0x01bb -> 0x01c0) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2519)
+ADV 5 (0x09bb -> 0x09c0) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5212
+It is now cycle 5213
+It is now cycle 5214
+It is now cycle 5215
+It is now cycle 5216
+It is now cycle 5217
+It is now cycle 5218
+It is now cycle 5219
+It is now cycle 5220
+It is now cycle 5221
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 5222
+It is now cycle 5223
+It is now cycle 5224
+It is now cycle 5225
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5226
+It is now cycle 5227
+It is now cycle 5228
+It is now cycle 5229
+It is now cycle 5230
+It is now cycle 5231
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5232
+It is now cycle 5233
+It is now cycle 5234
+It is now cycle 5235
+It is now cycle 5236
+It is now cycle 5237
+It is now cycle 5238
+It is now cycle 5239
+It is now cycle 5240
+It is now cycle 5241
+It is now cycle 5242
+It is now cycle 5243
+It is now cycle 5244
+It is now cycle 5245
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5246
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2539)
+ADV 5 (0x09d3 -> 0x09d8) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 491)
+ADV 5 (0x01d3 -> 0x01d8) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 491)
+ADV 5 (0x01d3 -> 0x01d8) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2539)
+ADV 5 (0x09d3 -> 0x09d8) 0b 54 03 04 05 
+It is now cycle 5247
+It is now cycle 5248
+It is now cycle 5249
+It is now cycle 5250
+It is now cycle 5251
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5252
+It is now cycle 5253
+It is now cycle 5254
+It is now cycle 5255
+It is now cycle 5256
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2543)
+ADV 5 (0x09d3 -> 0x09d8) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 495)
+ADV 5 (0x01d3 -> 0x01d8) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 495)
+ADV 5 (0x01d3 -> 0x01d8) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2543)
+ADV 5 (0x09d3 -> 0x09d8) 0b 54 03 04 05 
+It is now cycle 5257
+It is now cycle 5258
+It is now cycle 5259
+It is now cycle 5260
+It is now cycle 5261
+It is now cycle 5262
+It is now cycle 5263
+It is now cycle 5264
+It is now cycle 5265
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5266
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 5267
+It is now cycle 5268
+It is now cycle 5269
+It is now cycle 5270
+It is now cycle 5271
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5272
+It is now cycle 5273
+It is now cycle 5274
+It is now cycle 5275
+It is now cycle 5276
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 5277
+It is now cycle 5278
+It is now cycle 5279
+It is now cycle 5280
+It is now cycle 5281
+It is now cycle 5282
+It is now cycle 5283
+It is now cycle 5284
+It is now cycle 5285
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5286
+It is now cycle 5287
+It is now cycle 5288
+It is now cycle 5289
+It is now cycle 5290
+It is now cycle 5291
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2563)
+ADV 5 (0x09eb -> 0x09f0) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 515)
+ADV 5 (0x01eb -> 0x01f0) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 515)
+ADV 5 (0x01eb -> 0x01f0) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2563)
+ADV 5 (0x09eb -> 0x09f0) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5292
+It is now cycle 5293
+It is now cycle 5294
+It is now cycle 5295
+It is now cycle 5296
+It is now cycle 5297
+It is now cycle 5298
+It is now cycle 5299
+It is now cycle 5300
+It is now cycle 5301
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2567)
+ADV 5 (0x09eb -> 0x09f0) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 519)
+ADV 5 (0x01eb -> 0x01f0) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 519)
+ADV 5 (0x01eb -> 0x01f0) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2567)
+ADV 5 (0x09eb -> 0x09f0) 0b 54 03 04 05 
+It is now cycle 5302
+It is now cycle 5303
+It is now cycle 5304
+It is now cycle 5305
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5306
+It is now cycle 5307
+It is now cycle 5308
+It is now cycle 5309
+It is now cycle 5310
+It is now cycle 5311
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5312
+It is now cycle 5313
+It is now cycle 5314
+It is now cycle 5315
+It is now cycle 5316
+It is now cycle 5317
+It is now cycle 5318
+It is now cycle 5319
+It is now cycle 5320
+It is now cycle 5321
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 5322
+It is now cycle 5323
+It is now cycle 5324
+It is now cycle 5325
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5326
+It is now cycle 5327
+It is now cycle 5328
+It is now cycle 5329
+It is now cycle 5330
+It is now cycle 5331
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5332
+It is now cycle 5333
+It is now cycle 5334
+It is now cycle 5335
+It is now cycle 5336
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2587)
+ADV 5 (0x0a03 -> 0x0a08) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 539)
+ADV 5 (0x0203 -> 0x0208) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 539)
+ADV 5 (0x0203 -> 0x0208) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2587)
+ADV 5 (0x0a03 -> 0x0a08) 0b 54 03 04 05 
+It is now cycle 5337
+It is now cycle 5338
+It is now cycle 5339
+It is now cycle 5340
+It is now cycle 5341
+It is now cycle 5342
+It is now cycle 5343
+It is now cycle 5344
+It is now cycle 5345
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5346
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2591)
+ADV 5 (0x0a03 -> 0x0a08) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 543)
+ADV 5 (0x0203 -> 0x0208) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 543)
+ADV 5 (0x0203 -> 0x0208) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2591)
+ADV 5 (0x0a03 -> 0x0a08) 0b 54 03 04 05 
+It is now cycle 5347
+It is now cycle 5348
+It is now cycle 5349
+It is now cycle 5350
+It is now cycle 5351
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5352
+It is now cycle 5353
+It is now cycle 5354
+It is now cycle 5355
+It is now cycle 5356
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 5357
+It is now cycle 5358
+It is now cycle 5359
+It is now cycle 5360
+It is now cycle 5361
+It is now cycle 5362
+It is now cycle 5363
+It is now cycle 5364
+It is now cycle 5365
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5366
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 5367
+It is now cycle 5368
+It is now cycle 5369
+It is now cycle 5370
+It is now cycle 5371
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5372
+It is now cycle 5373
+It is now cycle 5374
+It is now cycle 5375
+It is now cycle 5376
+It is now cycle 5377
+It is now cycle 5378
+It is now cycle 5379
+It is now cycle 5380
+It is now cycle 5381
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2611)
+ADV 5 (0x0a1b -> 0x0a20) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 563)
+ADV 5 (0x021b -> 0x0220) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 563)
+ADV 5 (0x021b -> 0x0220) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2611)
+ADV 5 (0x0a1b -> 0x0a20) 0b 54 03 04 05 
+It is now cycle 5382
+It is now cycle 5383
+It is now cycle 5384
+It is now cycle 5385
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5386
+It is now cycle 5387
+It is now cycle 5388
+It is now cycle 5389
+It is now cycle 5390
+It is now cycle 5391
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2615)
+ADV 5 (0x0a1b -> 0x0a20) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 567)
+ADV 5 (0x021b -> 0x0220) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 567)
+ADV 5 (0x021b -> 0x0220) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2615)
+ADV 5 (0x0a1b -> 0x0a20) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5392
+It is now cycle 5393
+It is now cycle 5394
+It is now cycle 5395
+It is now cycle 5396
+It is now cycle 5397
+It is now cycle 5398
+It is now cycle 5399
+It is now cycle 5400
+It is now cycle 5401
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 5402
+It is now cycle 5403
+It is now cycle 5404
+It is now cycle 5405
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5406
+It is now cycle 5407
+It is now cycle 5408
+It is now cycle 5409
+It is now cycle 5410
+It is now cycle 5411
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5412
+It is now cycle 5413
+It is now cycle 5414
+It is now cycle 5415
+It is now cycle 5416
+It is now cycle 5417
+It is now cycle 5418
+It is now cycle 5419
+It is now cycle 5420
+It is now cycle 5421
+It is now cycle 5422
+It is now cycle 5423
+It is now cycle 5424
+It is now cycle 5425
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5426
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2635)
+ADV 5 (0x0a33 -> 0x0a38) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 587)
+ADV 5 (0x0233 -> 0x0238) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 587)
+ADV 5 (0x0233 -> 0x0238) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2635)
+ADV 5 (0x0a33 -> 0x0a38) 0b 54 03 04 05 
+It is now cycle 5427
+It is now cycle 5428
+It is now cycle 5429
+It is now cycle 5430
+It is now cycle 5431
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5432
+It is now cycle 5433
+It is now cycle 5434
+It is now cycle 5435
+It is now cycle 5436
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2639)
+ADV 5 (0x0a33 -> 0x0a38) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 591)
+ADV 5 (0x0233 -> 0x0238) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 591)
+ADV 5 (0x0233 -> 0x0238) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2639)
+ADV 5 (0x0a33 -> 0x0a38) 0b 54 03 04 05 
+It is now cycle 5437
+It is now cycle 5438
+It is now cycle 5439
+It is now cycle 5440
+It is now cycle 5441
+It is now cycle 5442
+It is now cycle 5443
+It is now cycle 5444
+It is now cycle 5445
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5446
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 5447
+It is now cycle 5448
+It is now cycle 5449
+It is now cycle 5450
+It is now cycle 5451
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5452
+It is now cycle 5453
+It is now cycle 5454
+It is now cycle 5455
+It is now cycle 5456
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 5457
+It is now cycle 5458
+It is now cycle 5459
+It is now cycle 5460
+It is now cycle 5461
+It is now cycle 5462
+It is now cycle 5463
+It is now cycle 5464
+It is now cycle 5465
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5466
+It is now cycle 5467
+It is now cycle 5468
+It is now cycle 5469
+It is now cycle 5470
+It is now cycle 5471
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2659)
+ADV 5 (0x0a4b -> 0x0a50) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 611)
+ADV 5 (0x024b -> 0x0250) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 611)
+ADV 5 (0x024b -> 0x0250) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2659)
+ADV 5 (0x0a4b -> 0x0a50) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5472
+It is now cycle 5473
+It is now cycle 5474
+It is now cycle 5475
+It is now cycle 5476
+It is now cycle 5477
+It is now cycle 5478
+It is now cycle 5479
+It is now cycle 5480
+It is now cycle 5481
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2663)
+ADV 5 (0x0a4b -> 0x0a50) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 615)
+ADV 5 (0x024b -> 0x0250) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 615)
+ADV 5 (0x024b -> 0x0250) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2663)
+ADV 5 (0x0a4b -> 0x0a50) 0b 54 03 04 05 
+It is now cycle 5482
+It is now cycle 5483
+It is now cycle 5484
+It is now cycle 5485
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5486
+It is now cycle 5487
+It is now cycle 5488
+It is now cycle 5489
+It is now cycle 5490
+It is now cycle 5491
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5492
+It is now cycle 5493
+It is now cycle 5494
+It is now cycle 5495
+It is now cycle 5496
+It is now cycle 5497
+It is now cycle 5498
+It is now cycle 5499
+It is now cycle 5500
+It is now cycle 5501
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 5502
+It is now cycle 5503
+It is now cycle 5504
+It is now cycle 5505
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5506
+It is now cycle 5507
+It is now cycle 5508
+It is now cycle 5509
+It is now cycle 5510
+It is now cycle 5511
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5512
+It is now cycle 5513
+It is now cycle 5514
+It is now cycle 5515
+It is now cycle 5516
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2683)
+ADV 5 (0x0a63 -> 0x0a68) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 635)
+ADV 5 (0x0263 -> 0x0268) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 635)
+ADV 5 (0x0263 -> 0x0268) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2683)
+ADV 5 (0x0a63 -> 0x0a68) 0b 54 03 04 05 
+It is now cycle 5517
+It is now cycle 5518
+It is now cycle 5519
+It is now cycle 5520
+It is now cycle 5521
+It is now cycle 5522
+It is now cycle 5523
+It is now cycle 5524
+It is now cycle 5525
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5526
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2687)
+ADV 5 (0x0a63 -> 0x0a68) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 639)
+ADV 5 (0x0263 -> 0x0268) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 639)
+ADV 5 (0x0263 -> 0x0268) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2687)
+ADV 5 (0x0a63 -> 0x0a68) 0b 54 03 04 05 
+It is now cycle 5527
+It is now cycle 5528
+It is now cycle 5529
+It is now cycle 5530
+It is now cycle 5531
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5532
+It is now cycle 5533
+It is now cycle 5534
+It is now cycle 5535
+It is now cycle 5536
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 5537
+It is now cycle 5538
+It is now cycle 5539
+It is now cycle 5540
+It is now cycle 5541
+It is now cycle 5542
+It is now cycle 5543
+It is now cycle 5544
+It is now cycle 5545
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5546
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 5547
+It is now cycle 5548
+It is now cycle 5549
+It is now cycle 5550
+It is now cycle 5551
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5552
+It is now cycle 5553
+It is now cycle 5554
+It is now cycle 5555
+It is now cycle 5556
+It is now cycle 5557
+It is now cycle 5558
+It is now cycle 5559
+It is now cycle 5560
+It is now cycle 5561
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2707)
+ADV 5 (0x0a7b -> 0x0a80) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 659)
+ADV 5 (0x027b -> 0x0280) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 659)
+ADV 5 (0x027b -> 0x0280) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2707)
+ADV 5 (0x0a7b -> 0x0a80) 0b 54 03 04 05 
+It is now cycle 5562
+It is now cycle 5563
+It is now cycle 5564
+It is now cycle 5565
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5566
+It is now cycle 5567
+It is now cycle 5568
+It is now cycle 5569
+It is now cycle 5570
+It is now cycle 5571
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2711)
+ADV 5 (0x0a7b -> 0x0a80) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 663)
+ADV 5 (0x027b -> 0x0280) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 663)
+ADV 5 (0x027b -> 0x0280) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2711)
+ADV 5 (0x0a7b -> 0x0a80) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5572
+It is now cycle 5573
+It is now cycle 5574
+It is now cycle 5575
+It is now cycle 5576
+It is now cycle 5577
+It is now cycle 5578
+It is now cycle 5579
+It is now cycle 5580
+It is now cycle 5581
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 5582
+It is now cycle 5583
+It is now cycle 5584
+It is now cycle 5585
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5586
+It is now cycle 5587
+It is now cycle 5588
+It is now cycle 5589
+It is now cycle 5590
+It is now cycle 5591
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5592
+It is now cycle 5593
+It is now cycle 5594
+It is now cycle 5595
+It is now cycle 5596
+It is now cycle 5597
+It is now cycle 5598
+It is now cycle 5599
+It is now cycle 5600
+It is now cycle 5601
+It is now cycle 5602
+It is now cycle 5603
+It is now cycle 5604
+It is now cycle 5605
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5606
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2731)
+ADV 5 (0x0a93 -> 0x0a98) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 683)
+ADV 5 (0x0293 -> 0x0298) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 683)
+ADV 5 (0x0293 -> 0x0298) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2731)
+ADV 5 (0x0a93 -> 0x0a98) 0b 54 03 04 05 
+It is now cycle 5607
+It is now cycle 5608
+It is now cycle 5609
+It is now cycle 5610
+It is now cycle 5611
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5612
+It is now cycle 5613
+It is now cycle 5614
+It is now cycle 5615
+It is now cycle 5616
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2735)
+ADV 5 (0x0a93 -> 0x0a98) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 687)
+ADV 5 (0x0293 -> 0x0298) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 687)
+ADV 5 (0x0293 -> 0x0298) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2735)
+ADV 5 (0x0a93 -> 0x0a98) 0b 54 03 04 05 
+It is now cycle 5617
+It is now cycle 5618
+It is now cycle 5619
+It is now cycle 5620
+It is now cycle 5621
+It is now cycle 5622
+It is now cycle 5623
+It is now cycle 5624
+It is now cycle 5625
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5626
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 5627
+It is now cycle 5628
+It is now cycle 5629
+It is now cycle 5630
+It is now cycle 5631
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5632
+It is now cycle 5633
+It is now cycle 5634
+It is now cycle 5635
+It is now cycle 5636
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 5637
+It is now cycle 5638
+It is now cycle 5639
+It is now cycle 5640
+It is now cycle 5641
+It is now cycle 5642
+It is now cycle 5643
+It is now cycle 5644
+It is now cycle 5645
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5646
+It is now cycle 5647
+It is now cycle 5648
+It is now cycle 5649
+It is now cycle 5650
+It is now cycle 5651
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2755)
+ADV 5 (0x0aab -> 0x0ab0) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 707)
+ADV 5 (0x02ab -> 0x02b0) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 707)
+ADV 5 (0x02ab -> 0x02b0) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2755)
+ADV 5 (0x0aab -> 0x0ab0) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5652
+It is now cycle 5653
+It is now cycle 5654
+It is now cycle 5655
+It is now cycle 5656
+It is now cycle 5657
+It is now cycle 5658
+It is now cycle 5659
+It is now cycle 5660
+It is now cycle 5661
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2759)
+ADV 5 (0x0aab -> 0x0ab0) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 711)
+ADV 5 (0x02ab -> 0x02b0) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 711)
+ADV 5 (0x02ab -> 0x02b0) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2759)
+ADV 5 (0x0aab -> 0x0ab0) 0b 54 03 04 05 
+It is now cycle 5662
+It is now cycle 5663
+It is now cycle 5664
+It is now cycle 5665
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5666
+It is now cycle 5667
+It is now cycle 5668
+It is now cycle 5669
+It is now cycle 5670
+It is now cycle 5671
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5672
+It is now cycle 5673
+It is now cycle 5674
+It is now cycle 5675
+It is now cycle 5676
+It is now cycle 5677
+It is now cycle 5678
+It is now cycle 5679
+It is now cycle 5680
+It is now cycle 5681
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 5682
+It is now cycle 5683
+It is now cycle 5684
+It is now cycle 5685
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5686
+It is now cycle 5687
+It is now cycle 5688
+It is now cycle 5689
+It is now cycle 5690
+It is now cycle 5691
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5692
+It is now cycle 5693
+It is now cycle 5694
+It is now cycle 5695
+It is now cycle 5696
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2779)
+ADV 5 (0x0ac3 -> 0x0ac8) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 731)
+ADV 5 (0x02c3 -> 0x02c8) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 731)
+ADV 5 (0x02c3 -> 0x02c8) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2779)
+ADV 5 (0x0ac3 -> 0x0ac8) 0b 54 03 04 05 
+It is now cycle 5697
+It is now cycle 5698
+It is now cycle 5699
+It is now cycle 5700
+It is now cycle 5701
+It is now cycle 5702
+It is now cycle 5703
+It is now cycle 5704
+It is now cycle 5705
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5706
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2783)
+ADV 5 (0x0ac3 -> 0x0ac8) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 735)
+ADV 5 (0x02c3 -> 0x02c8) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 735)
+ADV 5 (0x02c3 -> 0x02c8) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2783)
+ADV 5 (0x0ac3 -> 0x0ac8) 0b 54 03 04 05 
+It is now cycle 5707
+It is now cycle 5708
+It is now cycle 5709
+It is now cycle 5710
+It is now cycle 5711
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5712
+It is now cycle 5713
+It is now cycle 5714
+It is now cycle 5715
+It is now cycle 5716
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 5717
+It is now cycle 5718
+It is now cycle 5719
+It is now cycle 5720
+It is now cycle 5721
+It is now cycle 5722
+It is now cycle 5723
+It is now cycle 5724
+It is now cycle 5725
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5726
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 5727
+It is now cycle 5728
+It is now cycle 5729
+It is now cycle 5730
+It is now cycle 5731
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5732
+It is now cycle 5733
+It is now cycle 5734
+It is now cycle 5735
+It is now cycle 5736
+It is now cycle 5737
+It is now cycle 5738
+It is now cycle 5739
+It is now cycle 5740
+It is now cycle 5741
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2803)
+ADV 5 (0x0adb -> 0x0ae0) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 755)
+ADV 5 (0x02db -> 0x02e0) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 755)
+ADV 5 (0x02db -> 0x02e0) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2803)
+ADV 5 (0x0adb -> 0x0ae0) 0b 54 03 04 05 
+It is now cycle 5742
+It is now cycle 5743
+It is now cycle 5744
+It is now cycle 5745
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5746
+It is now cycle 5747
+It is now cycle 5748
+It is now cycle 5749
+It is now cycle 5750
+It is now cycle 5751
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2807)
+ADV 5 (0x0adb -> 0x0ae0) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 759)
+ADV 5 (0x02db -> 0x02e0) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 759)
+ADV 5 (0x02db -> 0x02e0) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2807)
+ADV 5 (0x0adb -> 0x0ae0) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5752
+It is now cycle 5753
+It is now cycle 5754
+It is now cycle 5755
+It is now cycle 5756
+It is now cycle 5757
+It is now cycle 5758
+It is now cycle 5759
+It is now cycle 5760
+It is now cycle 5761
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 5762
+It is now cycle 5763
+It is now cycle 5764
+It is now cycle 5765
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5766
+It is now cycle 5767
+It is now cycle 5768
+It is now cycle 5769
+It is now cycle 5770
+It is now cycle 5771
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5772
+It is now cycle 5773
+It is now cycle 5774
+It is now cycle 5775
+It is now cycle 5776
+It is now cycle 5777
+It is now cycle 5778
+It is now cycle 5779
+It is now cycle 5780
+It is now cycle 5781
+It is now cycle 5782
+It is now cycle 5783
+It is now cycle 5784
+It is now cycle 5785
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5786
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2827)
+ADV 5 (0x0af3 -> 0x0af8) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 779)
+ADV 5 (0x02f3 -> 0x02f8) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 779)
+ADV 5 (0x02f3 -> 0x02f8) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2827)
+ADV 5 (0x0af3 -> 0x0af8) 0b 54 03 04 05 
+It is now cycle 5787
+It is now cycle 5788
+It is now cycle 5789
+It is now cycle 5790
+It is now cycle 5791
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5792
+It is now cycle 5793
+It is now cycle 5794
+It is now cycle 5795
+It is now cycle 5796
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2831)
+ADV 5 (0x0af3 -> 0x0af8) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 783)
+ADV 5 (0x02f3 -> 0x02f8) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 783)
+ADV 5 (0x02f3 -> 0x02f8) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2831)
+ADV 5 (0x0af3 -> 0x0af8) 0b 54 03 04 05 
+It is now cycle 5797
+It is now cycle 5798
+It is now cycle 5799
+It is now cycle 5800
+It is now cycle 5801
+It is now cycle 5802
+It is now cycle 5803
+It is now cycle 5804
+It is now cycle 5805
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5806
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 5807
+It is now cycle 5808
+It is now cycle 5809
+It is now cycle 5810
+It is now cycle 5811
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5812
+It is now cycle 5813
+It is now cycle 5814
+It is now cycle 5815
+It is now cycle 5816
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 5817
+It is now cycle 5818
+It is now cycle 5819
+It is now cycle 5820
+It is now cycle 5821
+It is now cycle 5822
+It is now cycle 5823
+It is now cycle 5824
+It is now cycle 5825
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5826
+It is now cycle 5827
+It is now cycle 5828
+It is now cycle 5829
+It is now cycle 5830
+It is now cycle 5831
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2851)
+ADV 5 (0x0b0b -> 0x0b10) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 803)
+ADV 5 (0x030b -> 0x0310) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 803)
+ADV 5 (0x030b -> 0x0310) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2851)
+ADV 5 (0x0b0b -> 0x0b10) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5832
+It is now cycle 5833
+It is now cycle 5834
+It is now cycle 5835
+It is now cycle 5836
+It is now cycle 5837
+It is now cycle 5838
+It is now cycle 5839
+It is now cycle 5840
+It is now cycle 5841
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2855)
+ADV 5 (0x0b0b -> 0x0b10) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 807)
+ADV 5 (0x030b -> 0x0310) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 807)
+ADV 5 (0x030b -> 0x0310) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2855)
+ADV 5 (0x0b0b -> 0x0b10) 0b 54 03 04 05 
+It is now cycle 5842
+It is now cycle 5843
+It is now cycle 5844
+It is now cycle 5845
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5846
+It is now cycle 5847
+It is now cycle 5848
+It is now cycle 5849
+It is now cycle 5850
+It is now cycle 5851
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5852
+It is now cycle 5853
+It is now cycle 5854
+It is now cycle 5855
+It is now cycle 5856
+It is now cycle 5857
+It is now cycle 5858
+It is now cycle 5859
+It is now cycle 5860
+It is now cycle 5861
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 5862
+It is now cycle 5863
+It is now cycle 5864
+It is now cycle 5865
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5866
+It is now cycle 5867
+It is now cycle 5868
+It is now cycle 5869
+It is now cycle 5870
+It is now cycle 5871
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5872
+It is now cycle 5873
+It is now cycle 5874
+It is now cycle 5875
+It is now cycle 5876
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2875)
+ADV 5 (0x0b23 -> 0x0b28) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 827)
+ADV 5 (0x0323 -> 0x0328) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 827)
+ADV 5 (0x0323 -> 0x0328) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2875)
+ADV 5 (0x0b23 -> 0x0b28) 0b 54 03 04 05 
+It is now cycle 5877
+It is now cycle 5878
+It is now cycle 5879
+It is now cycle 5880
+It is now cycle 5881
+It is now cycle 5882
+It is now cycle 5883
+It is now cycle 5884
+It is now cycle 5885
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5886
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2879)
+ADV 5 (0x0b23 -> 0x0b28) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 831)
+ADV 5 (0x0323 -> 0x0328) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 831)
+ADV 5 (0x0323 -> 0x0328) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2879)
+ADV 5 (0x0b23 -> 0x0b28) 0b 54 03 04 05 
+It is now cycle 5887
+It is now cycle 5888
+It is now cycle 5889
+It is now cycle 5890
+It is now cycle 5891
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5892
+It is now cycle 5893
+It is now cycle 5894
+It is now cycle 5895
+It is now cycle 5896
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 5897
+It is now cycle 5898
+It is now cycle 5899
+It is now cycle 5900
+It is now cycle 5901
+It is now cycle 5902
+It is now cycle 5903
+It is now cycle 5904
+It is now cycle 5905
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5906
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 5907
+It is now cycle 5908
+It is now cycle 5909
+It is now cycle 5910
+It is now cycle 5911
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5912
+It is now cycle 5913
+It is now cycle 5914
+It is now cycle 5915
+It is now cycle 5916
+It is now cycle 5917
+It is now cycle 5918
+It is now cycle 5919
+It is now cycle 5920
+It is now cycle 5921
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2899)
+ADV 5 (0x0b3b -> 0x0b40) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 851)
+ADV 5 (0x033b -> 0x0340) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 851)
+ADV 5 (0x033b -> 0x0340) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2899)
+ADV 5 (0x0b3b -> 0x0b40) 0b 54 03 04 05 
+It is now cycle 5922
+It is now cycle 5923
+It is now cycle 5924
+It is now cycle 5925
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5926
+It is now cycle 5927
+It is now cycle 5928
+It is now cycle 5929
+It is now cycle 5930
+It is now cycle 5931
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2903)
+ADV 5 (0x0b3b -> 0x0b40) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 855)
+ADV 5 (0x033b -> 0x0340) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 855)
+ADV 5 (0x033b -> 0x0340) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2903)
+ADV 5 (0x0b3b -> 0x0b40) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5932
+It is now cycle 5933
+It is now cycle 5934
+It is now cycle 5935
+It is now cycle 5936
+It is now cycle 5937
+It is now cycle 5938
+It is now cycle 5939
+It is now cycle 5940
+It is now cycle 5941
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 5942
+It is now cycle 5943
+It is now cycle 5944
+It is now cycle 5945
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5946
+It is now cycle 5947
+It is now cycle 5948
+It is now cycle 5949
+It is now cycle 5950
+It is now cycle 5951
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5952
+It is now cycle 5953
+It is now cycle 5954
+It is now cycle 5955
+It is now cycle 5956
+It is now cycle 5957
+It is now cycle 5958
+It is now cycle 5959
+It is now cycle 5960
+It is now cycle 5961
+It is now cycle 5962
+It is now cycle 5963
+It is now cycle 5964
+It is now cycle 5965
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5966
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2923)
+ADV 5 (0x0b53 -> 0x0b58) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 875)
+ADV 5 (0x0353 -> 0x0358) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 875)
+ADV 5 (0x0353 -> 0x0358) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2923)
+ADV 5 (0x0b53 -> 0x0b58) 0b 54 03 04 05 
+It is now cycle 5967
+It is now cycle 5968
+It is now cycle 5969
+It is now cycle 5970
+It is now cycle 5971
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5972
+It is now cycle 5973
+It is now cycle 5974
+It is now cycle 5975
+It is now cycle 5976
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2927)
+ADV 5 (0x0b53 -> 0x0b58) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 879)
+ADV 5 (0x0353 -> 0x0358) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 879)
+ADV 5 (0x0353 -> 0x0358) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2927)
+ADV 5 (0x0b53 -> 0x0b58) 0b 54 03 04 05 
+It is now cycle 5977
+It is now cycle 5978
+It is now cycle 5979
+It is now cycle 5980
+It is now cycle 5981
+It is now cycle 5982
+It is now cycle 5983
+It is now cycle 5984
+It is now cycle 5985
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 5986
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+It is now cycle 5987
+It is now cycle 5988
+It is now cycle 5989
+It is now cycle 5990
+It is now cycle 5991
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 5992
+It is now cycle 5993
+It is now cycle 5994
+It is now cycle 5995
+It is now cycle 5996
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 5997
+It is now cycle 5998
+It is now cycle 5999
+It is now cycle 6000
+It is now cycle 6001
+It is now cycle 6002
+It is now cycle 6003
+It is now cycle 6004
+It is now cycle 6005
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 6006
+It is now cycle 6007
+It is now cycle 6008
+It is now cycle 6009
+It is now cycle 6010
+It is now cycle 6011
+P    8 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2947)
+ADV 5 (0x0b6b -> 0x0b70) 0b 54 03 04 05 
+P    7 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 899)
+ADV 5 (0x036b -> 0x0370) 0b 54 03 04 05 
+P    6 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 899)
+ADV 5 (0x036b -> 0x0370) 0b 54 03 04 05 
+P    5 | sti r3 24 0
+       | -> store to 24 + 0 = 24 (with pc and mod 2947)
+ADV 5 (0x0b6b -> 0x0b70) 0b 54 03 04 05 
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 6012
+It is now cycle 6013
+It is now cycle 6014
+It is now cycle 6015
+It is now cycle 6016
+It is now cycle 6017
+It is now cycle 6018
+It is now cycle 6019
+It is now cycle 6020
+It is now cycle 6021
+P   12 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2951)
+ADV 5 (0x0b6b -> 0x0b70) 0b 54 03 04 05 
+P   11 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 903)
+ADV 5 (0x036b -> 0x0370) 0b 54 03 04 05 
+P   10 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 903)
+ADV 5 (0x036b -> 0x0370) 0b 54 03 04 05 
+P    9 | sti r3 28 0
+       | -> store to 28 + 0 = 28 (with pc and mod 2951)
+ADV 5 (0x0b6b -> 0x0b70) 0b 54 03 04 05 
+It is now cycle 6022
+It is now cycle 6023
+It is now cycle 6024
+It is now cycle 6025
+P    4 | zjmp 0 OK
+P    3 | zjmp 0 OK
+It is now cycle 6026
+It is now cycle 6027
+It is now cycle 6028
+It is now cycle 6029
+It is now cycle 6030
+It is now cycle 6031
+P    8 | zjmp 19 OK
+P    7 | zjmp 19 OK
+P    6 | zjmp 19 OK
+P    5 | zjmp 19 OK
+P    2 | zjmp 0 OK
+P    1 | zjmp 0 OK
+It is now cycle 6032
+It is now cycle 6033
+It is now cycle 6034
+It is now cycle 6035
+It is now cycle 6036
+It is now cycle 6037
+It is now cycle 6038
+It is now cycle 6039
+It is now cycle 6040
+It is now cycle 6041
+P   12 | zjmp 19 OK
+P   11 | zjmp 19 OK
+P   10 | zjmp 19 OK
+P    9 | zjmp 19 OK
+It is now cycle 6042
+It is now cycle 6043
+It is now cycle 6044
+0x0000: 0c 00 50 01 00 00 00 00 0c 00 52 0b 54 03 04 05 09 00 13 90 00 00 00 01 0c 02 90 00 00 00 28 0b 03 00 00 0b 54 03 04 05 09 00 13 ff ff ff ff 03 70 10 fe d4 03 70 02 fe d3 03 70 0b 54 03 04 05 
+0x0040: 09 00 13 09 00 21 02 90 00 00 00 00 10 09 ff dd 02 90 00 0b 54 03 04 05 09 00 13 90 00 00 00 00 10 09 01 8b 0a a4 ff c6 00 01 0d 0b 54 03 04 05 09 00 13 70 0d 00 06 01 00 00 09 00 00 0c fb 03 
+0x0080: 70 0d 00 0b 54 03 04 05 09 00 13 2c 02 90 0b 54 0a 0b 09 00 00 0c 0c 01 00 07 02 0b 54 03 04 05 09 00 13 00 00 01 0e 0b 02 90 09 00 00 0c 0c 0c 00 2c 09 0b 54 03 04 05 09 00 13 0a 03 50 0d 07 
+0x00c0: 02 90 09 00 00 0c 08 02 90 00 00 0b 54 03 04 05 09 00 13 00 0c 0c 00 06 09 01 09 00 00 0c 0b 54 0a 0b 0c 0b 54 03 04 05 09 00 13 00 00 0b 54 0a 0b 0c 09 00 00 0c 0c 01 00 00 00 0b 54 03 04 05 
+0x0100: 09 00 13 07 08 0c 01 00 00 00 09 00 00 0c 0b 0c 0b 54 07 0b 54 03 04 05 09 00 13 54 0a 0b 0c 0b 54 07 09 00 00 0c 00 00 00 0b 54 0b 54 03 04 05 09 00 13 01 00 00 00 00 0b 54 09 00 00 0c 54 07 
+0x0140: 08 0c 01 0b 54 03 04 05 09 00 13 0c 0b 54 07 08 0c 01 09 00 00 0c 0b 54 0a 0b 0c 0b 54 03 04 05 09 00 13 00 00 0b 54 0a 0b 0c 09 00 00 0c 0c 01 00 00 00 0b 54 03 04 05 09 00 13 07 08 0c 01 00 
+0x0180: 00 00 09 00 00 0c 0b 0c 0b 54 07 0b 54 03 04 05 09 00 13 54 0a 0b 0c 0b 54 07 09 00 00 0c 00 00 00 0b 54 0b 54 03 04 05 09 00 13 01 00 00 00 00 0b 54 09 00 00 0c 54 07 08 0c 01 0b 54 03 04 05 
+0x01c0: 09 00 13 0c 0b 54 07 08 0c 01 09 00 00 0c 0b 54 0a 0b 0c 0b 54 03 04 05 09 00 13 00 00 0b 54 0a 0b 0c 09 00 00 0c 0c 01 00 00 00 0b 54 03 04 05 09 00 13 0b 54 06 07 0a 02 90 09 00 00 0c 0b 02 
+0x0200: 90 09 00 0b 54 03 04 05 09 00 13 0c 06 02 90 00 00 00 09 00 00 0c 00 00 01 ef 04 0b 54 03 04 05 09 00 13 00 6a 01 00 00 00 00 02 90 0b 54 06 07 0a 02 90 0b 54 03 04 05 09 00 13 02 90 0b 54 03 
+0x0240: 04 03 02 90 0b 54 03 04 06 02 90 0b 54 03 04 05 09 00 13 00 00 18 04 02 90 00 00 00 00 05 09 00 2e 01 00 0b 54 03 04 05 09 00 13 13 03 02 90 05 09 00 13 06 02 90 00 00 01 ff 07 0b 54 03 04 05 
+0x0280: 09 00 13 90 00 00 00 00 05 09 00 03 01 00 00 00 00 03 70 0b 54 03 04 05 09 00 13 09 01 f5 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 
+0x02c0: 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 
+0x0300: 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 
+0x0340: 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 
+0x0380: 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 0x03c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 0x0400: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 0x0440: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
@@ -5843,21 +9745,21 @@ It is now cycle 4000
 0x0740: 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 
 0x0780: 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 
 0x07c0: 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 
-0x0800: 0c 00 50 01 00 00 00 00 0c 00 52 0b 54 03 04 05 09 00 13 90 00 00 00 01 0c 02 90 00 00 00 28 0b 03 00 00 0b 54 03 04 05 09 00 13 ff ff ff fe 03 70 10 fe d4 03 70 02 fe d3 03 70 0b 00 00 00 34 
-0x0840: 09 00 13 09 00 21 02 90 00 00 00 00 10 09 ff dd 02 90 00 00 00 00 00 09 01 ce 02 90 00 00 00 00 10 09 01 8b 0a a4 ff c6 00 01 0d 0b 54 03 04 00 00 10 03 70 0d 00 06 01 00 00 09 00 00 0c fb 03 
-0x0880: 70 0d 00 06 01 00 00 00 00 0c 00 2c 02 90 0b 54 0a 0b 09 00 00 0c 0c 01 00 07 02 90 00 00 01 11 08 02 90 00 00 01 0e 0b 02 90 09 00 00 0c 0c 0c 00 2c 09 01 2b 02 90 0c 0b 54 07 0a 03 50 0d 07 
-0x08c0: 02 90 09 00 00 0c 08 02 90 00 00 01 12 0b 02 90 00 00 00 00 0c 0c 00 06 09 01 09 00 00 0c 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 09 00 00 0c 0c 01 00 00 00 00 0b 54 0a 0b 
-0x0900: 0c 0b 54 07 08 0c 01 00 00 00 09 00 00 0c 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 0b 54 07 09 00 00 0c 00 00 00 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 09 00 00 0c 54 07 
-0x0940: 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 0b 54 07 08 0c 01 09 00 00 0c 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 09 00 00 0c 0c 01 00 00 00 00 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 
-0x0980: 00 00 09 00 00 0c 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 0b 54 07 09 00 00 0c 00 00 00 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 09 00 00 0c 54 07 08 0c 01 00 00 00 00 0b 
-0x09c0: 54 0a 0b 0c 0b 54 07 08 0c 01 09 00 00 0c 0b 54 0a 0b 0c 0b 54 07 08 0c 01 00 00 00 00 0b 54 0a 0b 0c 09 00 00 0c 0c 01 00 00 00 00 01 00 00 00 00 02 90 0b 54 06 07 0a 02 90 09 00 00 0c 0b 02 
-0x0a00: 90 09 00 00 0c 03 02 90 09 00 00 0c 06 02 90 00 00 00 09 00 00 0c 00 00 01 ef 04 02 90 00 00 00 00 05 09 00 6a 01 00 00 00 00 02 90 0b 54 06 07 0a 02 90 05 09 01 f5 0b 0c 00 29 02 90 0b 54 03 
-0x0a40: 04 03 02 90 0b 54 03 04 06 02 90 00 00 01 fb 07 02 90 00 00 00 18 04 02 90 00 00 00 00 05 09 00 2e 01 00 00 00 00 02 90 05 09 00 13 03 02 90 05 09 00 13 06 02 90 00 00 01 ff 07 02 90 00 00 00 
-0x0a80: 1c 04 02 90 00 00 00 00 05 09 00 03 01 00 00 00 00 03 70 0a 01 ff 03 70 0b 01 fe 09 01 f5 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-0x0ac0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-0x0b00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-0x0b40: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-0x0b80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+0x0800: 0c 00 50 01 00 00 00 00 0c 00 52 0b 54 03 04 05 09 00 13 90 00 00 00 01 0c 02 90 00 00 00 28 0b 03 00 00 0b 54 03 04 05 09 00 13 ff ff ff fe 03 70 10 fe d4 03 70 02 fe d3 03 70 0b 54 03 04 05 
+0x0840: 09 00 13 09 00 21 02 90 00 00 00 00 10 09 ff dd 02 90 00 0b 54 03 04 05 09 00 13 90 00 00 00 00 10 09 01 8b 0a a4 ff c6 00 01 0d 0b 54 03 04 05 09 00 13 70 0d 00 06 01 00 00 09 00 00 0c fb 03 
+0x0880: 70 0d 00 0b 54 03 04 05 09 00 13 2c 02 90 0b 54 0a 0b 09 00 00 0c 0c 01 00 07 02 0b 54 03 04 05 09 00 13 00 00 01 0e 0b 02 90 09 00 00 0c 0c 0c 00 2c 09 0b 54 03 04 05 09 00 13 0a 03 50 0d 07 
+0x08c0: 02 90 09 00 00 0c 08 02 90 00 00 0b 54 03 04 05 09 00 13 00 0c 0c 00 06 09 01 09 00 00 0c 0b 54 0a 0b 0c 0b 54 03 04 05 09 00 13 00 00 0b 54 0a 0b 0c 09 00 00 0c 0c 01 00 00 00 0b 54 03 04 05 
+0x0900: 09 00 13 07 08 0c 01 00 00 00 09 00 00 0c 0b 0c 0b 54 07 0b 54 03 04 05 09 00 13 54 0a 0b 0c 0b 54 07 09 00 00 0c 00 00 00 0b 54 0b 54 03 04 05 09 00 13 01 00 00 00 00 0b 54 09 00 00 0c 54 07 
+0x0940: 08 0c 01 0b 54 03 04 05 09 00 13 0c 0b 54 07 08 0c 01 09 00 00 0c 0b 54 0a 0b 0c 0b 54 03 04 05 09 00 13 00 00 0b 54 0a 0b 0c 09 00 00 0c 0c 01 00 00 00 0b 54 03 04 05 09 00 13 07 08 0c 01 00 
+0x0980: 00 00 09 00 00 0c 0b 0c 0b 54 07 0b 54 03 04 05 09 00 13 54 0a 0b 0c 0b 54 07 09 00 00 0c 00 00 00 0b 54 0b 54 03 04 05 09 00 13 01 00 00 00 00 0b 54 09 00 00 0c 54 07 08 0c 01 0b 54 03 04 05 
+0x09c0: 09 00 13 0c 0b 54 07 08 0c 01 09 00 00 0c 0b 54 0a 0b 0c 0b 54 03 04 05 09 00 13 00 00 0b 54 0a 0b 0c 09 00 00 0c 0c 01 00 00 00 0b 54 03 04 05 09 00 13 0b 54 06 07 0a 02 90 09 00 00 0c 0b 02 
+0x0a00: 90 09 00 0b 54 03 04 05 09 00 13 0c 06 02 90 00 00 00 09 00 00 0c 00 00 01 ef 04 0b 54 03 04 05 09 00 13 00 6a 01 00 00 00 00 02 90 0b 54 06 07 0a 02 90 0b 54 03 04 05 09 00 13 02 90 0b 54 03 
+0x0a40: 04 03 02 90 0b 54 03 04 06 02 90 0b 54 03 04 05 09 00 13 00 00 18 04 02 90 00 00 00 00 05 09 00 2e 01 00 0b 54 03 04 05 09 00 13 13 03 02 90 05 09 00 13 06 02 90 00 00 01 ff 07 0b 54 03 04 05 
+0x0a80: 09 00 13 90 00 00 00 00 05 09 00 03 01 00 00 00 00 03 70 0b 54 03 04 05 09 00 13 09 01 f5 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 
+0x0ac0: 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 
+0x0b00: 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 
+0x0b40: 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 
+0x0b80: 00 00 00 0b 54 03 04 05 09 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 0x0bc0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 0x0c00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 0x0c40: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
