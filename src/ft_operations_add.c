@@ -42,7 +42,7 @@ void	ft_operation_add(t_process *proc)
 	{
 		proc->pc = (proc->pc + \
 						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
-		return ;
+		// return ;
 	}
 	else
 	{
@@ -59,6 +59,7 @@ void	ft_operation_add(t_process *proc)
 		proc->regestries[args[2] - 1] = args[0] + args[1];
 		proc->carry = (proc->regestries[args[2] - 1] == 0) ? 1 : 0;
 	}			
+		mz_print_pc_movements(proc);
 }
 
 /*
@@ -75,7 +76,7 @@ void	ft_operation_sub(t_process *proc)
 	{
 		proc->pc = (proc->pc + \
 						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
-		return ;
+		// return ;
 	}
 	else
 	{
@@ -97,6 +98,7 @@ void	ft_operation_sub(t_process *proc)
 		proc->regestries[args[2] - 1] = args[0] + args[1];
 		proc->carry = (proc->regestries[args[2] - 1] == 0) ? 1 : 0;
 	}
+		mz_print_pc_movements(proc);
 }
 
 /*
@@ -118,6 +120,7 @@ void	ft_operation_st(t_process *proc)
 //		printf("champion operation args error, AT PC= %d\n", proc->op_pc);
 		proc->pc = (proc->pc + \
 						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+			// mz_print_pc_movements(proc);
 	}
 	else
 	{
@@ -152,9 +155,9 @@ void	ft_operation_st(t_process *proc)
 			ft_memset(proc->arena[1] + offset, proc->player_id, 4);
 			// ft_printf("this addr {%d} should recieve recieved [%d]\n", \
 			offset, args[0]);
-
 		}
 	}
+			mz_print_pc_movements(proc);
 }
 
 /*
@@ -177,7 +180,7 @@ void	ft_operation_sti(t_process *proc)
 	{
 			proc->pc = (proc->pc + \
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
-			return ;
+			// mz_print_pc_movements(proc);
 	}
 	else
 	{
@@ -217,6 +220,7 @@ void	ft_operation_sti(t_process *proc)
 		ft_memcpy(proc->arena[0] + place_memory, (const void *)str, 4);
 		ft_memset(proc->arena[1] + place_memory, proc->player_id, 4);
 	}
+	mz_print_pc_movements(proc);
 }
 
 /*
