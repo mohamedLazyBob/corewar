@@ -52,7 +52,7 @@ void	ft_operation_live(t_process *process)
 	unsigned int	arg;
 
 	arg = -ft_parse_args(process, (unsigned char)DIR_CODE);
-	process->process_live = 1;
+	process->process_live++;
 	if (1 <= arg && \
 			arg <= process->players_counter)
 		{
@@ -64,7 +64,7 @@ void	ft_operation_live(t_process *process)
 		}
 	if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
 	{
-		ft_printf("P    %d | live %d\n", process->proc_id, -arg);
+		ft_printf("P %4d | live %d\n", process->proc_id, -arg);
 	// if ((g_input_bloc->flags[VERBOS_1] & 16 || \
 	// 	g_input_bloc->flags[VERBOS_2] & 16) && (process->next_inst != 8))
 	// 	mz_print_pc_movements(process);
