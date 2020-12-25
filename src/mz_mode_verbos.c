@@ -16,7 +16,10 @@ void	mz_print_op(t_process *proc, unsigned char args_types[3], int value[3])
 	if (!(g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4))
 	{
 		// ft_printf("non verbos!\n");
-		return ;	
+	// if ((g_input_bloc->flags[VERBOS_1] & 16 || \
+	// 	g_input_bloc->flags[VERBOS_2] & 16) && (proc->next_inst != 8))
+	// 	mz_print_pc_movements(proc);
+	// 	return ;	
 	}
 	// ft_printf("next inst : [%d], add == %d\n", proc->next_inst, AND);
 	if ((proc->next_inst ==  AND) || (proc->next_inst ==  OR) || (proc->next_inst ==  XOR))
@@ -85,17 +88,30 @@ void	mz_print_op(t_process *proc, unsigned char args_types[3], int value[3])
 		ft_printf("P    %d | sub r%d r%d r%d\n", proc->proc_id, \
 			value[0], value[1], value[2]);
 	}
+	// this shouldn't be here, it should be called after the execution 
+	// of every successfull operation,
+	// if ((g_input_bloc->flags[VERBOS_1] & 16 || \
+	// 	g_input_bloc->flags[VERBOS_2] & 16) && (proc->next_inst != 8))
+	// 	mz_print_pc_movements(proc);
 }
 
 void	mz_l_fork_mode_verbos(t_process *proc, int par1, int new_pc)
 {
 	if (!(g_input_bloc->flags[VERBOS_1] & 4 || \
-			g_input_bloc->flags[VERBOS_2] & 4))
+			g_input_bloc->flags[VERBOS_2] & 4))// if verbos mode activated
+	{
+		if ((g_input_bloc->flags[VERBOS_1] & 16 || \
+			g_input_bloc->flags[VERBOS_2] & 16))// if 16 number is giving as arg
+			mz_print_pc_movements(proc);
 		return ;	
+	}
 	if (proc->next_inst == FORK)
 		ft_printf("P    %d | fork %d (%d)\n", proc->proc_id, par1, new_pc);
 	else
 		ft_printf("P    %d | lfork %d (%d)\n", proc->proc_id, par1, new_pc);
+	// if ((g_input_bloc->flags[VERBOS_1] & 16 || \
+	// 	g_input_bloc->flags[VERBOS_2] & 16))
+	// 	mz_print_pc_movements(proc);
 }
 
 void	mz_print_usage(void)
@@ -126,9 +142,9 @@ void	mz_print_pc_movements(t_process *proc)
 
 	i = proc->op_pc;
 	operation_length = proc->pc - proc->op_pc;
-
-	// if (proc->next_inst == 8)// we print nothing for zjmp
-		// return ;
+	if (!((g_input_bloc->flags[VERBOS_1] & 16 || \
+		g_input_bloc->flags[VERBOS_2] & 16)))
+		return ;
 	ft_printf("ADV %d (0x%.4x -> 0x%.4x) ", operation_length, \
 											proc->op_pc, \
 											proc->pc);
