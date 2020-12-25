@@ -20,19 +20,26 @@
 void	print_arena(unsigned char *arena, int bol)
 {
 	int	idx;
+	int	line_index;
 
 	idx = 0;
+	line_index = 0;
 //	system("clear");
 	if (bol == 0)
 		bol = 32;
 	else
 		bol = 64;
+	ft_printf("0x%.4x: ", line_index);
 	while (idx < MEM_SIZE)
 	{
-		printf("%.2x ", arena[idx]);
+		ft_printf("%.2x ", arena[idx]);
 		idx++;
 		if (idx % bol == 0)
-			printf("\n");
+		{
+			line_index += bol;
+			ft_printf("\n");
+			ft_printf("0x%.4x: ", line_index);
+		}
 	}
 }
 

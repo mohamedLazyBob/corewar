@@ -51,27 +51,25 @@ void	ft_operation_live(t_process *process)
 {
 	unsigned int	arg;
 
-	// printf("I'm in Liive\n");
 	arg = -ft_parse_args(process, (unsigned char)DIR_CODE);
-	// ft_printf("arg : %d\n", arg);
 	process->process_live = 1;
-	// if (0 <= arg && arg <= REG_NUMBER)
+	if (1 <= arg && \
+			arg <= process->players_counter)
+		{
+			g_last_live = -1 * process->regestries[arg - 1];
+			mz_print_live(process);
+	// if ((g_input_bloc->flags[VERBOS_1] & 16 || \
+	// 	g_input_bloc->flags[VERBOS_2] & 16) && (process->next_inst != 8))
+	// 	mz_print_pc_movements(process);
+		}
+	if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
 	{
-		// printf("I'm in Liive: registre valid : %d, reg[%d] = %d\n", arg, arg, process->regestries[arg]);
-		// if (1 <= process->regestries[arg] && \
-				// process->regestries[arg] <= process->players_counter)
-		if (1 <= arg && \
-				arg <= process->players_counter)
-			{
-				g_last_live = -1 * process->regestries[arg - 1];
-				// ft_printf("+++++++++++++++++++> i'm doing live\n");
-				mz_print_live(process);
-				if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
-				{
-					ft_printf("P\t%d | live %d\n", process->proc_id, -arg);
-				}
-			}
+		ft_printf("P    %d | live %d\n", process->proc_id, -arg);
+	// if ((g_input_bloc->flags[VERBOS_1] & 16 || \
+	// 	g_input_bloc->flags[VERBOS_2] & 16) && (process->next_inst != 8))
+	// 	mz_print_pc_movements(process);
 	}
+	mz_print_pc_movements(process);
 }
 
 /*
@@ -83,9 +81,9 @@ void	ft_operation_aff(t_process *process)
 {
 	char			var;
 	unsigned int	arg;
-	unsigned char	parameter[3];
+	unsigned char	parameter[3] = {};
 
-	ft_get_args_type(process, process->arena[0][process->pc], parameter);
+	// ft_get_args_type(process, process->arena[0][process->pc], parameter);
 	if (ft_strcmp((char*)parameter, "ER") == 0)
 	{
 	//	printf("ERROR in aff operation: args byte.\n");
@@ -93,13 +91,17 @@ void	ft_operation_aff(t_process *process)
 	}
 	else
 	{
-		arg = ft_parse_args(process, parameter[0]);
-		arg = ft_get_argument_value(process, arg, parameter[0]);
-		var = (char)(arg % 256);
-		if (g_input_bloc->flags[AFF_1] || g_input_bloc->flags[AFF_2])
-			ft_printf("aff: %c\n", var);
+		arg = ft_parse_args(process, REG_CODE);
+		if (1 <= arg && arg <= 16)
+		{
+			arg = ft_get_argument_value(process, arg, REG_CODE);
+			var = (char)(arg % 256);
+			if (g_input_bloc->flags[AFF_1] || g_input_bloc->flags[AFF_2])
+				ft_printf("aff: %c\n", var);
 			// write(1, &var, 1);
+		}
 	}
+	mz_print_pc_movements(process);
 }
 
 /*
