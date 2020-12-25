@@ -169,15 +169,15 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 	{
 /**/
 		
-		if (game_params->cycles_to_die < 0 && procs != NULL)
-		{
-			ft_check(procs, &game_params);
-			(procs) = NULL;
-			return ;
-		}
+		// if (game_params->cycles_to_die < 0 && procs != NULL)
+		// {
+		// 	ft_check(procs, &game_params);
+		// 	(procs) = NULL;
+		// 	return ;
+		// }
 /**/
 		game_params->curr_life_cycle = 1;
-		while (procs && game_params->curr_life_cycle < game_params->cycles_to_die)
+		while (procs && game_params->curr_life_cycle <= game_params->cycles_to_die)
 		//while (game_params->curr_life_cycle < game_params->cycles_to_die) //kant
 		{
 			// ft_printf("It is now cycle %d\n", game_params->total_cycles_counter);
@@ -207,6 +207,8 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 				// return;
 			}
 		}
+		if (game_params->total_cycles_counter > 3000)
+			ft_printf("Cycle to die is now 1486\n");
 		// print_arena((*procs)->arena[0], 1);
 		// ft_check(procs, &game_params);
 	}
