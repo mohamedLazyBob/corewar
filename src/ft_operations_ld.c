@@ -38,7 +38,8 @@ void	ft_operation_ld(t_process *proc)
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 	{
 			proc->pc = (proc->pc + \
-					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+						 mz_size_to_escape(proc)) % MEM_SIZE;
+					// ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 			// return ;
 	}
 	else
@@ -77,7 +78,8 @@ void	ft_operation_lld(t_process *proc)
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 	{
 			proc->pc = (proc->pc + \
-					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+						 mz_size_to_escape(proc)) % MEM_SIZE;
+					// ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 	}
 	else
 	{
@@ -110,7 +112,8 @@ void	ft_operation_ldi(t_process *proc)
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 	{
 			proc->pc = (proc->pc + 
-					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+						 mz_size_to_escape(proc)) % MEM_SIZE;
+					// ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 	}
 	else
 	{
@@ -152,7 +155,8 @@ void	ft_operation_lldi(t_process *proc)
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 	{
 			proc->pc = (proc->pc + 
-					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+						 mz_size_to_escape(proc)) % MEM_SIZE;
+					// ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 	}
 	else
 	{

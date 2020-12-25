@@ -40,8 +40,10 @@ void	ft_operation_add(t_process *proc)
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 	{
+		// ft_printf("parameter : [%d][%d][%d]\n", parameters[0], parameters[1], parameters[2]);
 		proc->pc = (proc->pc + \
-						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+						 mz_size_to_escape(proc)) % MEM_SIZE;
+						// ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 		// return ;
 	}
 	else
@@ -75,7 +77,8 @@ void	ft_operation_sub(t_process *proc)
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 	{
 		proc->pc = (proc->pc + \
-						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+						 mz_size_to_escape(proc)) % MEM_SIZE;
+						// ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 		// return ;
 	}
 	else
@@ -119,7 +122,8 @@ void	ft_operation_st(t_process *proc)
 	{
 //		printf("champion operation args error, AT PC= %d\n", proc->op_pc);
 		proc->pc = (proc->pc + \
-						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+						 mz_size_to_escape(proc)) % MEM_SIZE;
+						// ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 			// mz_print_pc_movements(proc);
 	}
 	else
@@ -179,7 +183,8 @@ void	ft_operation_sti(t_process *proc)
 		(!(ft_reg_check(proc->arena[0][proc->pc % MEM_SIZE]))))
 	{
 			proc->pc = (proc->pc + \
-					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+						 mz_size_to_escape(proc)) % MEM_SIZE;
+					// ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 			// mz_print_pc_movements(proc);
 	}
 	else

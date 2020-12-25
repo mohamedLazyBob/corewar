@@ -175,3 +175,15 @@ int		ft_sizeof_params(t_process *process, unsigned char parameters[3])
 	}
 	return (ret);
 }
+
+int	mz_size_to_escape(t_process *proc)
+{
+	char	types_byte;
+	int		par[3];
+
+	types_byte = proc->arena[0][proc->pc - 1];
+	par[0] = !!((types_byte >> 6) & 3);
+	par[1] = !!((types_byte >> 4) & 3);
+	par[2] = !!((types_byte >> 2) & 3);
+	return (par[0] + par[1] + par[2]);
+}
