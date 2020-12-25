@@ -54,7 +54,7 @@
 # define MAX_CHECKS				10
 
 /*
-** ..
+** .. HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH
 */
 
 typedef char		t_arg_type;
@@ -65,7 +65,7 @@ typedef char		t_arg_type;
 # define T_LAB					8
 
 /*
-** ..
+** .HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH.
 */
 
 # define PROG_NAME_LENGTH		128

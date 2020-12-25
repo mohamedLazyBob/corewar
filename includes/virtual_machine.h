@@ -25,7 +25,7 @@
 
 /*
 ** t_dir_size values: 0 means sizeof(T_DIR) == 4, 1 -> sizeof(T_DIR) == 2
-**
+*HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*
 */
 
 typedef struct	s_op
@@ -42,7 +42,7 @@ typedef struct	s_op
 /*
 **
 ** this struct contains all what we need from the input, everything!
-**
+*HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*
 */
 typedef struct	s_playrs
 {
@@ -70,7 +70,7 @@ typedef struct	s_input_data
 ******************************************************************
 ** an enumiration that we'll use in t_input_data->flag[]
 ** to access the flags when we need them.
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 enum e_flags
 {
 	DUMP_64, DUMP_32, PAUSE_1, PAUSE_2, VERBOS_1, VERBOS_2, \
@@ -127,18 +127,18 @@ typedef struct	s_game
 **					struct up
 ** ****************************************************************************
 **					files down
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 
 /*
 *******************************************************************************
 ** main_vm_parse.c
 ** this file contains the main func
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 
 /*
 *******************************************************************************
 ** ft_read_champion.c
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 
 void			ft_read_champion(int fd, t_playrs *playrs);
 void			ft_open_champion(t_input_data bloc, t_playrs *playrs);
@@ -149,27 +149,27 @@ void			ft_exit(char *str);
 /*
 *******************************************************************************
 ** main_vm_parse.c
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 void			print_input(t_input_data *bloc, int *nbr_cycles);
 void			ft_free_exit(char *str, void **buff, size_t size);
 
 /*
 *******************************************************************************
 ** read_players.c
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 void			print_arena(unsigned char *arena, int bol);
 void			ft_read_players(int argc, char **av, t_input_data *bloc);
 
 /*
 *******************************************************************************
 ** arena_initialization.c
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 int				ft_init_arena(t_input_data *bloc, unsigned char *arena, int player_id);
 
 /*
 *******************************************************************************
 ** init_process_arena.c
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 
 t_process		*ft_init_proc(t_input_data *bloc, int player_id, unsigned char *arena[2]);
 void			ft_init_procs_arena(t_process **procs, t_input_data *bloc);
@@ -180,7 +180,7 @@ unsigned int	ft_reverse_endianness(unsigned char *temp, size_t size);
 /*
 *******************************************************************************
 ** operations_tools.c
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 
 void			ft_get_args_type(t_process *process, \
 									unsigned char types_byte, \
@@ -198,7 +198,7 @@ int				mz_size_to_escape(t_process *proc);
 /*
 *******************************************************************************
 ** logical_operators_and_jmp.c
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 
 void			ft_operation_and(t_process *process);
 void			ft_operation_or(t_process *process);
@@ -208,7 +208,7 @@ void			ft_operation_zjmp(t_process *process);
 /*
 *******************************************************************************
 ** op_live_aff.c
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 
 void			ft_operation_live(t_process *process);
 void			ft_operation_aff(t_process *process);
@@ -216,21 +216,21 @@ void			ft_operation_aff(t_process *process);
 /*
 *******************************************************************************
 ** op_fork_lfork.c
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 
 void			ft_operation_fork(t_process *process);
 void			ft_operation_lfork(t_process *process);
 /*
 *******************************************************************************
 ** operations_fork_live.c
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 
 void	ft_play_game(t_process *procs);
 
 /*
 *******************************************************************************
 ** ft_operations_add.c
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 
 int 			ft_size(int param, int t_dir_size);
 void			ft_operation_add(t_process *proc);
@@ -241,7 +241,7 @@ void			ft_operation_sti(t_process *proc);
 /*
 *******************************************************************************
 ** ft_operations_ld.c
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 
 void			ft_int_to_str(int var, char *str);
 void			ft_operation_ld(t_process *proc);
@@ -252,7 +252,7 @@ void			ft_operation_lldi(t_process *proc);
 /*
 *******************************************************************************
 ** ft_any_player.c
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 
 
 int				ft_reg_check(int reg);
@@ -261,21 +261,21 @@ void   			ft_any_player(t_process *proc, int temp, char *str, int size);
 /*
 *******************************************************************************
 ** ft_any_player.c
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 
 void    		ft_check(t_process **proc, t_game **game_params);
 
 /*
 *******************************************************************************
 ** play_battle.c
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 
 void			ft_play_battle(t_process **procs, t_input_data *bloc);
 
 /*
 *******************************************************************************
 ** mz_mode_verbos.c
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 void		mz_print_op(t_process *proc, unsigned char types[3], int values[3]);
 void		mz_l_fork_mode_verbos(t_process *proc, int par1, int new_pc);
 void		mz_print_usage(void);
@@ -284,7 +284,7 @@ void		mz_print_pc_movements(t_process *proc);
 /*
 *******************************************************************************
 ** debug_functions.c
-*/
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 
 void		debug_print_procs_list(t_process *procs);
 void		print_procs(t_process *ptr, t_input_data *bloc);
