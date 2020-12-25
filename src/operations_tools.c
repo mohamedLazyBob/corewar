@@ -93,9 +93,10 @@ int				ft_parse_args(t_process *process, unsigned char par)
 		// ft_printf("dir_size : %d\n", dir_size);
 		ft_memcpy((char*)&(num) + 4 - dir_size, process->arena[0] + process->pc, dir_size);
 		// ft_printf("num : %d, pc value : %d, pc : %d\n", num, process->arena[0][process->pc], process->pc);
-		// ft_printf("old num: %d\n", num);
 		// ft_printf("%x, %x, %x, %x\n",   ((char*)&num)[0], ((char*)&num)[1], ((char*)&num)[2], ((char*)&num)[3]);
 		num = ft_reverse_endianness((unsigned char*)&num, 4);
+		// ft_printf("\t\told num: %d\n", num);
+
 		if (dir_size == 2)
 			num = (short int)num;
 		// ft_printf("%x, %x, %x, %x\n",   ((char*)&num)[0], ((char*)&num)[1], ((char*)&num)[2], ((char*)&num)[3]);

@@ -42,7 +42,7 @@ void	ft_operation_add(t_process *proc)
 	{
 		proc->pc = (proc->pc + \
 						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
-		return ;
+		// return ;
 	}
 	else
 	{
@@ -59,6 +59,7 @@ void	ft_operation_add(t_process *proc)
 		proc->regestries[args[2] - 1] = args[0] + args[1];
 		proc->carry = (proc->regestries[args[2] - 1] == 0) ? 1 : 0;
 	}			
+		mz_print_pc_movements(proc);
 }
 
 /*
@@ -75,7 +76,7 @@ void	ft_operation_sub(t_process *proc)
 	{
 		proc->pc = (proc->pc + \
 						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
-		return ;
+		// return ;
 	}
 	else
 	{
@@ -97,6 +98,7 @@ void	ft_operation_sub(t_process *proc)
 		proc->regestries[args[2] - 1] = args[0] + args[1];
 		proc->carry = (proc->regestries[args[2] - 1] == 0) ? 1 : 0;
 	}
+		mz_print_pc_movements(proc);
 }
 
 /*
@@ -109,7 +111,8 @@ void	ft_operation_st(t_process *proc)
 	unsigned char	parameters[3];
 	char			str[4];
 
-	proc->regestries[1] = proc->regestries[0];
+		// why you do this ???
+	// proc->regestries[1] = proc->regestries[0];
 	proc->op_pc = proc->pc - 1;
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
@@ -117,6 +120,7 @@ void	ft_operation_st(t_process *proc)
 //		printf("champion operation args error, AT PC= %d\n", proc->op_pc);
 		proc->pc = (proc->pc + \
 						ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+			// mz_print_pc_movements(proc);
 	}
 	else
 	{
@@ -125,10 +129,14 @@ void	ft_operation_st(t_process *proc)
 		if ((parameters[0] == T_REG && (args[0] < 1 || 16 < args[0])) || \
 			(parameters[1] == T_REG && (args[1] < 1 || 16 < args[1])))
 			return ;
-	//	printf("=============%d		%d\n", proc->regestries[1], proc->regestries[args[0]]);
 		mz_print_op(proc, parameters, args);
+		// ft_printf("=============%d		%d\n", proc->regestries[1], proc->regestries[args[0] - 1]);
 		args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
-		
+		// ft_printf("=============%d		%d, [%u]{%x}\n", proc->regestries[1], args[0], args[0], args[0]);
+
+		// for (int i = 0; i < REG_NUMBER; i++)
+		// 	ft_printf("[%d] ", proc->regestries[i]);
+		// ft_printf("\n");
 		if (parameters[1] == T_REG)
 			proc->regestries[args[1] - 1] = args[0];
 		else // indirect choice
@@ -136,13 +144,20 @@ void	ft_operation_st(t_process *proc)
 			// im change value args[1] = (short)args[1] for work in negatif case;
 			// ft_any_player(proc, (proc->op_pc + (args[1] % IDX_MOD)), str, 4);
 			ft_int_to_str(args[0], str);
-			// ft_printf("str --> [%.2x][%.2x][%.2x][%.2x]\n", str[0],  str[1], str[2], str[3]);
-			ft_memcpy(proc->arena[0] + (proc->op_pc + (args[1] % IDX_MOD)), str, 4);
-			ft_memset(proc->arena[1] + (proc->op_pc + (args[1] % IDX_MOD)), proc->player_id, 4);
-			// ft_printf("this addr {%#x} should recieve recieved [%d]\n", proc->op_pc + (args[1] % IDX_MOD), args[0]);
-
+			int offset = ((proc->op_pc + (args[1] % IDX_MOD)) % MEM_SIZE);
+			// ft_printf("old offset = %d\n", offset);
+			if (offset < 0)
+				offset += MEM_SIZE;
+			// ft_printf("new offset = %d\n", offset);
+			// ft_printf("str from st--> [%.2x][%.2x][%.2x][%.2x]\n", str[0],  str[1], str[2], str[3]);
+			// ft_printf("args[0]: %d, reg2/reg[1]: %d\n", args[0], proc->regestries[1]);
+			ft_memcpy(proc->arena[0] + offset, str, 4);
+			ft_memset(proc->arena[1] + offset, proc->player_id, 4);
+			// ft_printf("this addr {%d} should recieve recieved [%d]\n", \
+			offset, args[0]);
 		}
 	}
+			mz_print_pc_movements(proc);
 }
 
 /*
@@ -157,6 +172,7 @@ void	ft_operation_sti(t_process *proc)
 	char			str[4];
 
 	proc->op_pc = proc->pc - 1;
+	// ft_printf("debug -- sti got called with op_pc: %d\n", proc->op_pc);
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 
 	if ((ft_strcmp((const char*)parameters, "ER") == 0) || \
@@ -164,7 +180,7 @@ void	ft_operation_sti(t_process *proc)
 	{
 			proc->pc = (proc->pc + \
 					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
-			return ;
+			// mz_print_pc_movements(proc);
 	}
 	else
 	{
@@ -184,6 +200,9 @@ void	ft_operation_sti(t_process *proc)
 			// place_memory = (proc->op_pc + args[2] % IDX_MOD% MEM_SIZE);
 		// else
 		place_memory = proc->op_pc + ((args[1] + args[2]) % IDX_MOD);
+		// ft_printf("before place_memory == %d\n", place_memory);
+		place_memory = (place_memory) % MEM_SIZE;
+		// ft_printf("after place_memory == %d\n", place_memory);
 		// the value in  -> args[0] not the same in -> proc->arena[0][proc->op_pc]
 		// args[0] ==  proc->arena[0][proc->op_pc + 2] 
 		// proc->op_pc += 2;
@@ -195,10 +214,13 @@ void	ft_operation_sti(t_process *proc)
 		if (place_memory < 0)
 			place_memory = MEM_SIZE + place_memory;
 		// ft_printf("printing offset == %d \n", place_memory);
-		// ft_printf("str == [%.2x][%.2x][%.2x][%.2x]\n", str[0], str[1], str[2], str[3]);
+		// ft_printf("sti : str == [%.2x][%.2x][%.2x][%.2x]\n", str[0], str[1], str[2], str[3]);
+		// ft_printf("this addr {%#x} should recieve recieved [%d]\n", place_memory, proc->regestries[args[0] - 1]);
+
 		ft_memcpy(proc->arena[0] + place_memory, (const void *)str, 4);
 		ft_memset(proc->arena[1] + place_memory, proc->player_id, 4);
 	}
+	mz_print_pc_movements(proc);
 }
 
 /*
