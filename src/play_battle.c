@@ -200,8 +200,10 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
 		}
 		ft_count_total_live(procs, &game_params);
-		(game_params->curr_life_cycle == game_params->cycles_to_die) ? ft_check(procs, &game_params) : 0;
-		// debug_print_procs_list(*procs);
+		// ft_printf("======== cycles to die: %d\n", game_params->cycles_to_die);
+		ft_check(procs, &game_params);
+
+		//  debug_print_procs_list(*procs);
 
 	}
 }
