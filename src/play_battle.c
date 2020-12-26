@@ -151,7 +151,7 @@ void	mesafi_visualize(t_input_data *bloc, \
 void	ft_count_total_live(t_process **proc, t_game **game_params)
 {
 	t_process	*p;
-
+	// (*game_params)->total_live_counter = 0;
 	if (proc && *proc)
 	{
 		p = *proc;
@@ -181,21 +181,13 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 	game_params->total_live_counter = 0;
 	while (procs && (*procs))
 	{		
-		if (game_params->cycles_to_die < 0 && (*procs) != NULL)
-		{
-			// ft_printf("							im here last\n");
-			ft_check(procs, &game_params);
-			(procs) = NULL;
-			g_procs_head = NULL;
-			return ;
-		}
-		game_params->curr_life_cycle = 1;
-		while (procs && (*procs) && game_params->curr_life_cycle <= game_params->cycles_to_die)
+		game_params->curr_life_cycle = 0;
+		while (procs && (*procs) && game_params->curr_life_cycle < game_params->cycles_to_die)
 		{
 			ptr = *procs;// we can send *procs directly and del ptr
 			if (bloc->flags[VERBOS_1] != 0 || bloc->flags[VERBOS_2] != 0)// if debug is onB
 				mz_print_debug_infos(procs, bloc, (*game_params));
-			ft_execute_cycle(ptr, game_params->total_cycles_counter, bloc->flags);
+			ft_execute_cycle(ptr, game_params->total_cycles_counter + 1, bloc->flags);
 			if (g_procs_head)
 				mz_update_procs(procs);
 			if (mz_dump_memory(bloc, procs, (*game_params)) == 1)
@@ -208,20 +200,8 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
 		}
 		ft_count_total_live(procs, &game_params);
-		ft_printf("Cycle to die is now %d\n", game_params->curr_life_cycle); // flag
-		t_process	*p;
-		p = *procs;
-		while (procs && *procs && p)
-		{
-			ft_printf("id of proc is : %d is live : %d\n", p->proc_id, p->process_live);
-			p = p->next;
-		}
-		ft_check(procs, &game_params);
-		// p = *procs;
-		// while (p)
-		// {
-		// 	ft_printf("	after				id of proc is : %d still live\n", p->proc_id);
-		// 	p = p->next;
-		// }
+		(game_params->curr_life_cycle == game_params->cycles_to_die) ? ft_check(procs, &game_params) : 0;
+		// debug_print_procs_list(*procs);
+
 	}
 }
