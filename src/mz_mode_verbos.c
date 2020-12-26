@@ -32,7 +32,7 @@ void	mz_print_op(t_process *proc, unsigned char args_types[3], int value[3])
 	else if ((proc->next_inst ==  LDI) || (proc->next_inst == STI))
 	{
 		char string[2][50] = {"P %4d | sti r%d %d %d\n", \
-				    "P    %d | ldi %d %d r%d\n"};
+				    "P %4d | ldi %d %d r%d\n"};
 		ft_printf(((proc->next_inst == STI) ? string[0] : string[1]), \
 				proc->proc_id, value[0], value[1], value[2]);
 /*
@@ -49,7 +49,7 @@ void	mz_print_op(t_process *proc, unsigned char args_types[3], int value[3])
 					(value[1] + value[2]) % IDX_MOD + proc->op_pc);
 		else if (proc->next_inst == LDI)
 		{
-			ft_printf("      | -> load %d + %d = %d (with pc and mod %d)\n", \
+			ft_printf("       | -> load from %d + %d = %d (with pc and mod %d)\n", \
 					value[0], \
 					value[1], \
 					value[0] + value[1], \
