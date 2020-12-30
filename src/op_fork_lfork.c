@@ -47,6 +47,7 @@ void	ft_operation_fork(t_process *proc)
 	new_proc->next = NULL;
 	new_proc->previous = NULL; //
 	new_proc->process_live = 0;
+	new_proc->operation_live = 1;//
 
 	ptr = proc;
 	while (ptr->previous != NULL)
