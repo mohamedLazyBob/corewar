@@ -198,6 +198,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 				mesafi_visualize(bloc, (*game_params), procs);
 			game_params->curr_life_cycle++;
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
+			// g_procs_head = NULL; //
 		}
 		ft_count_total_live(procs, &game_params);
 		// ft_printf("======== cycles to die: %d\n", game_params->cycles_to_die);
