@@ -38,8 +38,8 @@ void	ft_operation_ld(t_process *proc)
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 	{
 			proc->pc = (proc->pc + \
-						// mz_size_to_escape(proc)) % MEM_SIZE;
-					 ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+						//  mz_size_to_escape(proc)) % MEM_SIZE;
+					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 			// return ;
 	}
 	else
@@ -93,6 +93,7 @@ void	ft_operation_lld(t_process *proc)
 	mz_print_op(proc, parameters, args);
 	}
 	mz_print_pc_movements(proc);
+	// ft_printf("im lld\n");
 }
 
 /*
@@ -136,6 +137,7 @@ void	ft_operation_ldi(t_process *proc)
 	mz_print_op(proc, parameters, value);
 	}
 	mz_print_pc_movements(proc);
+	// ft_printf("im ldi\n");
 }
 
 /*
@@ -180,6 +182,7 @@ void	ft_operation_lldi(t_process *proc)
 	mz_print_op(proc, parameters, value);
 	}
 	mz_print_pc_movements(proc);
+	// ft_printf("im lldi\n");
 }
 
 /*
