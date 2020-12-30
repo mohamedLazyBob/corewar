@@ -260,15 +260,27 @@ void   			ft_any_player(t_process *proc, int temp, char *str, int size);
 
 /*
 *******************************************************************************
-** ft_any_player.c
-HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
+** ft_chek.c
+*/
 
 void    		ft_check(t_process **proc, t_game **game_params);
 
 /*
 *******************************************************************************
+** ft_kill.c
+*/
+
+void			ft_kill_carriage(t_process **carriage);
+void			ft_kill_last(t_process **proc, t_game **game_params,\
+								t_process **carriage, int nb);
+void			ft_loop_kill(t_process **proc, t_game **game_params,\
+								t_process **carriage);
+void			ft_kill_first(t_process **proc, t_game **game_params);
+
+/*
+*******************************************************************************
 ** play_battle.c
-HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
+*/
 
 void			ft_play_battle(t_process **procs, t_input_data *bloc);
 

@@ -45,6 +45,7 @@ void	ft_operation_fork(t_process *proc)
 		new_proc->pc = new_proc->pc % MEM_SIZE;
 	new_proc->proc_id = proc->players_counter + 1 + g_fork_counter++;
 	new_proc->next = NULL;
+	new_proc->previous = NULL; //
 	new_proc->process_live = 0;
 
 	ptr = proc;
@@ -80,6 +81,7 @@ void	ft_operation_lfork(t_process *proc)
 	new_proc->pc = (proc->op_pc + (first_arg_value)) % MEM_SIZE;
 	new_proc->proc_id = proc->players_counter + 1 + g_fork_counter++;
 	new_proc->next = NULL;
+	new_proc->previous = NULL; //
 	new_proc->process_live = 0;
 
 	ptr = proc;

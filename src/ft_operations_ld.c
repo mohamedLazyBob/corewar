@@ -38,8 +38,8 @@ void	ft_operation_ld(t_process *proc)
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 	{
 			proc->pc = (proc->pc + \
-						 mz_size_to_escape(proc)) % MEM_SIZE;
-					// ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+						// mz_size_to_escape(proc)) % MEM_SIZE;
+					 ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 			// return ;
 	}
 	else
