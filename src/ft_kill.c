@@ -97,7 +97,7 @@ void ft_kill_first(t_process **proc, t_game **game_params)
                 (*proc)->previous = NULL;
            // free(temp);
             temp = NULL;
-            temp = (*proc); // malo hada
+            //temp = (*proc); // malo hada
         }
 }
 /*

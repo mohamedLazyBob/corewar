@@ -184,6 +184,8 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 		game_params->curr_life_cycle = 0;
 		while (procs && (*procs) && game_params->curr_life_cycle < game_params->cycles_to_die)
 		{
+			// debug_print_procs_list(*procs);
+
 			ptr = *procs;// we can send *procs directly and del ptr
 			if (bloc->flags[VERBOS_1] != 0 || bloc->flags[VERBOS_2] != 0)// if debug is onB
 				mz_print_debug_infos(procs, bloc, (*game_params));
@@ -201,10 +203,9 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			// g_procs_head = NULL; //
 		}
 		ft_count_total_live(procs, &game_params);
-		// ft_printf("======== cycles to die: %d\n", game_params->cycles_to_die);
 		ft_check(procs, &game_params);
 
-		//  debug_print_procs_list(*procs);
+		// debug_print_procs_list(*procs);
 
 	}
 }

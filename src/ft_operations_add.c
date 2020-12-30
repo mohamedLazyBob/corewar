@@ -101,7 +101,7 @@ void	ft_operation_sub(t_process *proc)
 		mz_print_op(proc, parameters, args);
 		args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
 		args[1] = ft_get_argument_value(proc, args[1], parameters[1]);
-		proc->regestries[args[2] - 1] = args[0] + args[1];
+		proc->regestries[args[2] - 1] = args[0] - args[1];
 		proc->carry = (proc->regestries[args[2] - 1] == 0) ? 1 : 0;
 	}
 		mz_print_pc_movements(proc);
