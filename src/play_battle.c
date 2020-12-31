@@ -210,8 +210,12 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
 			g_procs_head = NULL;
 
+			if ((*procs)->procs_counter > 0)
+				(*procs)->procs_counter--;
 		
 		}
+		//  debug_print_procs_list(*procs);
+
 		ft_count_total_live(procs, &game_params);
 		ft_check(procs, &game_params);
 		

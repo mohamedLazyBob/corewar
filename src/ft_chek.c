@@ -82,5 +82,5 @@ void        ft_check(t_process **proc, t_game **game_params)
    }
     ft_check_cycle((*game_params));
     ft_clear_lives(proc);
-    // debug_print_procs_list(*proc);
+    //  debug_print_procs_list(*proc);
 }

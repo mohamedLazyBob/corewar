@@ -15,14 +15,16 @@
 static  int ft_check_carriage(t_process *carriage, t_game *game_params)
 {
   if ((game_params->cycles_to_die <= 0 || carriage->process_live == 0 || \
-                    carriage->process_live >= game_params->cycles_to_die) && carriage->operation_live == 0)
+                    carriage->process_live >= game_params->cycles_to_die) && \
+                    ((carriage->operation_live == 0 || carriage->procs_counter != 0) \
+                    || (carriage->operation_live == 1 && carriage->procs_counter == 0)))
     return (0);
 else
     return (1);
 }
 
 /*
-** ****************************************************************************
+** ****************************************************************************;lgw261  FGYU7 ` 
 **
 */
 
