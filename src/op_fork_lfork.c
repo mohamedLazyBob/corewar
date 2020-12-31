@@ -15,6 +15,7 @@
 
 extern t_process	*g_procs_head;
 unsigned int		g_fork_counter;
+extern unsigned int	*g_cycles_to_wait;
 
 /*gs[VERBOS_1] & 16 || \
 	// 	g_input_bloc->flags[VERBOS_2] & 16) && (process->next_inst != 8))
