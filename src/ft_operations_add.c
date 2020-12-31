@@ -233,7 +233,7 @@ void	ft_operation_sti(t_process *proc)
 		ft_memset(proc->arena[1] + place_memory, proc->player_id, 4);
 	}
 	mz_print_pc_movements(proc);
-	// ft_printf("im sti\n");
+	//  ft_printf("im sti\n");
 
 }
 
