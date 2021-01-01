@@ -45,7 +45,7 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle, int *flags)
 		// ft_printf("--> \tP:[%d] exec_at_cycle: %.2d, curr_cycle: %d, pc: %3d, op: %d\n", \
 		// 		ptr->proc_id, ptr->execution_cycle, curr_life_cycle, ptr->pc, ptr->next_inst);
 		// 1st mra ghadi idkhl || the last op excuted, read another one
-
+dprintf(2, "curr_life_cycle : %d\n", curr_life_cycle);
 		if (ptr->execution_cycle == -1 || \
 				ptr->execution_cycle < curr_life_cycle)
 			ft_read_opcode(ptr, curr_life_cycle);
@@ -209,14 +209,14 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			game_params->curr_life_cycle++;
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
 			// g_procs_head = NULL; //
+			dprintf(2, "ctd : %d ctd : %d\n", game_params->curr_life_cycle, game_params->cycles_to_die);
 		}
-		//  debug_print_procs_list(*procs);
-
+		debug_print_procs_list(*procs);
 		ft_count_total_live(procs, &game_params);
 		ft_check(procs, &game_params);
 		g_procs_head = *procs;
 		// g_procs_head = NULL;
-		// debug_print_procs_list(*procs);
+		//  debug_print_procs_list(*procs);
 
 	}
 }
