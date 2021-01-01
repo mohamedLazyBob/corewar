@@ -193,8 +193,8 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 				// dprintf(2, "outside the loop1\n");
 			ft_execute_cycle(ptr, game_params->total_cycles_counter + 1, bloc->flags);
 			// dprintf(2, "outside the loop2\n");
-			if (g_procs_head)
-				mz_update_procs(procs);
+			// if (g_procs_head)
+			mz_update_procs(procs);
 			// 				if (g_procs_head)
 			// 	dprintf(2, "%d   %d   %d   %d   %d   %d   %d\n", g_procs_head->execution_cycle, g_procs_head->operation_live, g_procs_head->player_id, g_procs_head->players_counter, g_procs_head->proc_id, g_procs_head->process_live, g_procs_head->procs_counter );
 			// else
@@ -208,13 +208,14 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 				mesafi_visualize(bloc, (*game_params), procs);
 			game_params->curr_life_cycle++;
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
-			g_procs_head = NULL; //
+			// g_procs_head = NULL; //
 		}
 		//  debug_print_procs_list(*procs);
 
 		ft_count_total_live(procs, &game_params);
 		ft_check(procs, &game_params);
-		g_procs_head = NULL;
+		g_procs_head = *procs;
+		// g_procs_head = NULL;
 		// debug_print_procs_list(*procs);
 
 	}
