@@ -45,7 +45,7 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle, int *flags)
 		// ft_printf("--> \tP:[%d] exec_at_cycle: %.2d, curr_cycle: %d, pc: %3d, op: %d\n", \
 		// 		ptr->proc_id, ptr->execution_cycle, curr_life_cycle, ptr->pc, ptr->next_inst);
 		// 1st mra ghadi idkhl || the last op excuted, read another one
-dprintf(2, "curr_life_cycle : %d\n", curr_life_cycle);
+// dprintf(2, "curr_life_cycle : %d\n", curr_life_cycle);
 		if (ptr->execution_cycle == -1 || \
 				ptr->execution_cycle < curr_life_cycle)
 			ft_read_opcode(ptr, curr_life_cycle);
@@ -159,6 +159,7 @@ void	ft_count_total_live(t_process **proc, t_game **game_params)
 		while (proc && *proc && p)
 		{
 			(*game_params)->total_live_counter += p->process_live;
+			// (*game_params)->total_live_counter += p->operation_live;
 			p = p->next;
 		}
 	}
@@ -190,16 +191,8 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			ptr = *procs;// we can send *procs directly and del ptr
 			if (bloc->flags[VERBOS_1] != 0 || bloc->flags[VERBOS_2] != 0)// if debug is onB
 				mz_print_debug_infos(procs, bloc, (*game_params));
-				// dprintf(2, "outside the loop1\n");
 			ft_execute_cycle(ptr, game_params->total_cycles_counter + 1, bloc->flags);
-			// dprintf(2, "outside the loop2\n");
-			// if (g_procs_head)
 			mz_update_procs(procs);
-			// 				if (g_procs_head)
-			// 	dprintf(2, "%d   %d   %d   %d   %d   %d   %d\n", g_procs_head->execution_cycle, g_procs_head->operation_live, g_procs_head->player_id, g_procs_head->players_counter, g_procs_head->proc_id, g_procs_head->process_live, g_procs_head->procs_counter );
-			// else
-			// 	dprintf(2, "bug\n");
-			
 			if (mz_dump_memory(bloc, procs, (*game_params)) == 1)
 				return ;
 			if (bloc->flags[PAUSE_1] != 0 || bloc->flags[PAUSE_2] != 0)
@@ -208,15 +201,9 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 				mesafi_visualize(bloc, (*game_params), procs);
 			game_params->curr_life_cycle++;
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
-			// g_procs_head = NULL; //
-			dprintf(2, "ctd : %d ctd : %d\n", game_params->curr_life_cycle, game_params->cycles_to_die);
 		}
-		debug_print_procs_list(*procs);
 		ft_count_total_live(procs, &game_params);
 		ft_check(procs, &game_params);
-		g_procs_head = *procs;
-		// g_procs_head = NULL;
-		//  debug_print_procs_list(*procs);
 
 	}
 }
