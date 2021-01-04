@@ -53,17 +53,24 @@ void	ft_operation_live(t_process *process)
 
 	arg = -ft_parse_args(process, (unsigned char)DIR_CODE);
 	process->process_live++;
-	if (1 <= arg && \
-			arg <= process->players_counter)
+	if (1 <= arg && arg <= REG_NUMBER)
+	{
+		if ((1 <= (-1 * process->regestries[arg -1])) && \
+			(-1 * process->regestries[arg -1]) <= g_input_bloc->players_counter)
 		{
 			g_last_live = -1 * process->regestries[arg - 1];
-            if (g_last_live > 0 && g_last_live < 5)
-                process->operation_live++;
-        	mz_print_live(process);
-	// if ((g_input_bloc->flags[VERBOS_1] & 16 || \
-	// 	g_input_bloc->flags[VERBOS_2] & 16) && (process->next_inst != 8))
-	// 	mz_print_pc_movements(process);
+			dprintf(2, "Proc id: %d -- g_last_live: %d, players_counter: %d, \n", \
+					process->proc_id, g_last_live, g_input_bloc->players_counter);
 		}
+
+
+            // if (g_last_live > 0 && g_last_live < 5)
+            //     process->operation_live++;
+		mz_print_live(process);
+				// if ((g_input_bloc->flags[VERBOS_1] & 16 || \
+				// 	g_input_bloc->flags[VERBOS_2] & 16) && (process->next_inst != 8))
+				// 	mz_print_pc_movements(process);
+	}
 	if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
 	{
 		ft_printf("P %4d | live %d\n", process->proc_id, -arg);

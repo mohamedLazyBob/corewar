@@ -13,7 +13,6 @@
 #include "virtual_machine.h"
 
 extern t_op g_op_tab[];
-unsigned int g_last_live;
 extern t_input_data *g_input_bloc;
 
 /*

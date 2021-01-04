@@ -13,6 +13,8 @@
 #include "../includes/virtual_machine.h"
 
 t_input_data		*g_input_bloc;
+t_process			*g_procs_head;
+unsigned int g_last_live;
 
 
 /*
@@ -139,6 +141,7 @@ int		main(int ac, char **av)
 	ft_memset(bloc.flags, 0, 11 * sizeof(int));
 	ft_read_players(ac, av, &bloc);
 	g_input_bloc = &bloc;
+	g_procs_head = NULL;
 	
 	bloc.players = (t_playrs*)ft_memalloc(sizeof(t_playrs) * bloc.players_counter);
 	ft_open_champion(bloc, bloc.players);
@@ -158,6 +161,8 @@ int		main(int ac, char **av)
 		// Check if needed:tabe 
 	// announce the winner
 	// exit
-	
+
+	ft_printf("Contestant %d, \"%s\", has won !", g_last_live, bloc.players[g_last_live - 1].header.prog_name);
+	// ft_printf("Contestant %d\n", g_last_live);
 	return (0);
 }

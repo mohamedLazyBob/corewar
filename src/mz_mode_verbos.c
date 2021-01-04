@@ -139,19 +139,34 @@ void	mz_print_pc_movements(t_process *proc)
 {
 	int	i;
 	int	operation_length;
+	int	pc_before_mod;
 
+	// ft_printf ("debug -- \n");
 	i = proc->op_pc;
-	operation_length = proc->pc - proc->op_pc;
+	if (proc->pc < proc->op_pc)	
+	{
+		operation_length = proc->pc - proc->op_pc + MEM_SIZE;
+		pc_before_mod = proc->pc + MEM_SIZE;
+	}
+	else
+	{
+		operation_length = proc->pc - proc->op_pc;
+		pc_before_mod = proc->pc;
+	}
+	
+
+
 	if (!((g_input_bloc->flags[VERBOS_1] & 16 || \
 		g_input_bloc->flags[VERBOS_2] & 16)))
 		return ;
 	ft_printf("ADV %d (0x%.4x -> 0x%.4x) ", operation_length, \
 											proc->op_pc, \
-											proc->pc);
-	while (i < proc->pc)
+											pc_before_mod);
+	while (i < pc_before_mod)
 	{
-		ft_printf("%.2x ", proc->arena[0][i]);
+		ft_printf("%.2x ", proc->arena[0][i % MEM_SIZE]);
 		i++;
 	}
+	// ft_printf(" {op : %d} ", proc->op_pc);
 	ft_printf("\n");
 }
