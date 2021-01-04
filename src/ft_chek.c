@@ -18,6 +18,8 @@ t_input_data		    *g_input_bloc;
 
 static void ft_check_cycle(t_game *game_params)
 {
+    dprintf(2, "cycle to die : %.6d tlc : %.3zu cc : %d\n", \
+        game_params->cycles_to_die, game_params->total_live_counter, game_params->checks_counter);
     if (game_params->total_live_counter >= NBR_LIVE || \
                     game_params->checks_counter  + 1 == MAX_CHECKS)
     {
@@ -31,8 +33,7 @@ static void ft_check_cycle(t_game *game_params)
     else
         game_params->checks_counter++;
 	if (game_params->cycles_to_die < 0)
-		game_params->cycles_to_die = 1;
-    game_params->total_live_counter = 0;
+		game_params->cycles_to_die -= 1;
 }
 
 /*
@@ -40,18 +41,19 @@ static void ft_check_cycle(t_game *game_params)
 **
 */
 
-static void    ft_clear_lives(t_process **proc)
+static void    ft_clear_lives(t_process **proc, t_game **game_params)
 {
     t_process *temp;
     temp = *proc;
     while (temp)
     {
-                                dprintf(2, "proc [%d] live %d %p \n", temp->proc_id, temp->process_live, temp->next);
-
         temp->operation_live = 0; //
         temp->process_live = 0;
+        temp->operation_live = 0;
         temp = temp->next;
     }
+    (*game_params)->total_live_counter = 0;
+    g_procs_head = (proc && *proc) ? (*proc) : NULL;
 }
 
 /*
@@ -61,14 +63,12 @@ static void    ft_clear_lives(t_process **proc)
 
 void        ft_check(t_process **proc, t_game **game_params)
 {
-
-    t_process **carriage;
+    t_process *carriage;
     t_process *temp;
-
-	carriage = proc;
+	carriage = *proc;
     if (proc && *proc)
    {
-        carriage = proc;
+        // carriage = proc;
         while (*proc)
         {
             if((*game_params)->cycles_to_die <= 0 || (*proc)->process_live == 0)
@@ -80,56 +80,25 @@ void        ft_check(t_process **proc, t_game **game_params)
             }
             proc = &(*proc)->next;
         }
+        // g_procs_head = carriage;
 
-//     t_process *carriage;
-//     t_process *temp;
+    //   // last and only
+    //     ft_kill_last(proc, game_params, &carriage, 0);
+    //     //for all procss exapt the first
+    //     ft_loop_kill(proc, game_params, &carriage);          
+    //     // first have 0 live it the problem
+    //     ft_kill_first(proc, game_params);
+    //     // for the laste proc ever
+    //     ft_kill_last(proc, game_params, &carriage, 1);
+	// 	if (proc && (*game_params)->cycles_to_die < 0)
+	// 	{//need more
+    //         free((*proc));
+    //         (*proc) = NULL;
+    //         (proc) = NULL;
+	// 	}
 
-// 	carriage = NULL;
-//     temp = NULL;
-//     if (proc && *proc)
-//    {
-//         carriage = *proc;
-//         while (carriage)
-//         {
-//             dprintf(2, "contuni\n\n");
-
-//             if ((*game_params)->cycles_to_die <= 0 || carriage->process_live == 0)
-//             {
-//                 temp = carriage;
-//                 carriage = carriage->next;
-//                 if (temp)
-//                     {
-//                         free(temp);
-//                     }
-//                 continue ;
-//             }
-//             if (carriage)
-//                 carriage = carriage->next;
-//         }
-
-
-        // // last and only
-        // ft_kill_last(proc, game_params, &carriage, 0);
-        // //for all procss exapt the first
-        // ft_loop_kill(proc, game_params, &carriage);          
-        // // first have 0 live it the problem
-        // ft_kill_first(proc, game_params);
-        // // for the laste proc ever
-        // ft_kill_last(proc, game_params, &carriage, 1);
-		// if (proc && (*game_params)->cycles_to_die < 0)
-		// {//need more
-        //     free((*proc));
-        //     (*proc) = NULL;
-        //     (proc) = NULL;
-		// }
-   }
-//    if (proc && *proc == NULL)
-//         free(proc);
-    dprintf(2, "curr cycle : %d ", (*game_params)->curr_life_cycle);
-    dprintf(2, "cycle to die : %d total live : %d check count : %d \n", (*game_params)->total_cycles_counter, (*game_params)->total_live_counter, (*game_params)->checks_counter);
     ft_check_cycle((*game_params));
-     dprintf(2, "aff curr cycle : %d\n", (*game_params)->curr_life_cycle);
-    ft_clear_lives(proc);
-    (*game_params)->total_live_counter = 0;
-    //  debug_print_procs_list(*proc);
+    ft_clear_lives(proc, game_params);
+
+   }
 }

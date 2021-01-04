@@ -20,7 +20,9 @@ extern t_process *g_procs_head;
 
 void	mz_update_procs(t_process **proc)
 {
-	*proc = g_procs_head;
+	if (g_procs_head != NULL)
+		*proc = g_procs_head;
+	g_procs_head = NULL;
 }
 
 

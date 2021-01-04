@@ -16,16 +16,16 @@
 *******************************************************************************
 */
 
-void	debug_print_procs_list(t_process *procs)
+void	debug_print_procs_list(t_process *procs, int i)
 {
 	t_process *temp;
 
 	temp = procs;
-	ft_printf("from the start: \n");
+	dprintf(2, "from the start: %d \n", i);
 	while (temp)
 	{
-		ft_printf("ptr %p , player_id: %d, proc_id: %d, pc: %d; next = %p\n", temp , temp->player_id, temp->proc_id, temp->pc, temp->next);
-		 ft_printf("\t[%d] live %d \n", temp->proc_id, temp->process_live);
+		dprintf(2, "ptr %p , player_id: %d, proc_id: %d, pc: %d; next = %p\n", temp , temp->player_id, temp->proc_id, temp->pc, temp->next);
+		 dprintf(2, "\t[%d] live %d \n", temp->proc_id, temp->process_live);
 		temp = temp->next;
 	}
 	// ft_printf("\n");

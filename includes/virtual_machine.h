@@ -298,7 +298,7 @@ void		mz_print_pc_movements(t_process *proc);
 ** debug_functions.c
 HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 
-void		debug_print_procs_list(t_process *procs);
+void		debug_print_procs_list(t_process *procs, int i);
 void		print_procs(t_process *ptr, t_input_data *bloc);
 
 #endif
