@@ -178,12 +178,36 @@ int		ft_sizeof_params(t_process *process, unsigned char parameters[3])
 
 int	mz_size_to_escape(t_process *proc)
 {
-	char	types_byte;
-	int		par[3];
+	// char	types_byte;
+	// int		par[3];
 
-	types_byte = proc->arena[0][proc->pc - 1];
-	par[0] = !!((types_byte >> 6) & 3);
-	par[1] = !!((types_byte >> 4) & 3);
-	par[2] = !!((types_byte >> 2) & 3);
-	return (par[0] + par[1] + par[2]);
+	// types_byte = proc->arena[0][proc->op_pc + 1];
+	// par[0] = !!((types_byte >> 6) & 3);
+	// par[1] = !!((types_byte >> 4) & 3);
+	// par[2] = !!((types_byte >> 2) & 3);
+	// return (par[0] + par[1] + par[2]);
+
+	char	types_byte;
+	int	ret;
+	int	i;
+	unsigned char		par[3] = {0, 0, 0};
+
+	i = -1;
+	ret = 0;
+	types_byte = proc->arena[0][proc->op_pc + 1];
+
+	par[0] = ((types_byte >> 6) & 3);
+	par[1] = ((types_byte >> 4) & 3);
+	par[2] = ((types_byte >> 2) & 3);
+
+	while (++i < 3)
+	{
+		if (par[i] == T_REG)
+			ret += 1;
+		else if (par[i] == T_IND)
+			ret += 2;
+		else if (par[i] == T_DIR)
+			ret += (g_op_tab[proc->next_inst].t_dir_size ? 2 : 4);
+	}
+	return (ret);
 }

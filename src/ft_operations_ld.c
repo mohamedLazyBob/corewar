@@ -37,9 +37,9 @@ void	ft_operation_ld(t_process *proc)
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 	{
-			proc->pc = (proc->pc + \
+			// proc->pc = (proc->pc + \
 						//  mz_size_to_escape(proc)) % MEM_SIZE;
-					ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+					// ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 			// return ;
 	}
 	else

@@ -14,7 +14,7 @@
 extern	void			(*g_operation[16])(t_process *process);
 extern	unsigned int	g_cycles_to_wait[16];
 extern	const t_op 		g_op_tab[17];
-t_process				*g_procs_head;
+extern	t_process		*g_procs_head;
 /*
 ** ****************************************************************************
 ** for the cycles_number we -1 of the curr cycle;
@@ -58,7 +58,7 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle, int *flags)
 		{
 			if (0 <= ptr->next_inst && ptr->next_inst <= 15)
 			{
-				// ft_printf("\t\t==>P\t%d | %5s, with carry: %d\n", -ptr->player_id, g_op_tab[ptr->next_inst].op_name, ptr->carry);
+				// ft_printf("\texec\t-->P\t%d | %5s, with carry: %d\n", ptr->proc_id, g_op_tab[ptr->next_inst].op_name, ptr->carry);
 				// if (ptr->next_inst == 8)
 					// ft_printf("\t\tP\t%d | %5s | pc : %d\n", ptr->proc_id, g_op_tab[ptr->next_inst].op_name, ptr->pc);
 				g_operation[ptr->next_inst](ptr);
@@ -181,19 +181,31 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 	game_params->checks_counter = 0;
 	game_params->live_counter = 0;
 	game_params->total_live_counter = 0;
+	int	bol = 0;
 	while (procs && (*procs))
 	{		
 		game_params->curr_life_cycle = 0;
-		while (procs && (*procs) && game_params->curr_life_cycle < game_params->cycles_to_die)
+
+		// ft_printf("\t\tcycle to die : %d\n", game_params->cycles_to_die);
+
+		while (procs && (*procs) && \
+				(game_params->curr_life_cycle < game_params->cycles_to_die || \
+					(game_params->cycles_to_die < 0 && bol++ == 0)))
 		{
 			//  debug_print_procs_list(*procs, 4);
-
+			// if (game_params->cycles_to_die <= 0)
+			// {
+			// 	ft_printf("cycle to die : %d, bol = %d\n", game_params->cycles_to_die, bol);
+			// }
 			ptr = *procs;// we can send *procs directly and del ptr
 			if (bloc->flags[VERBOS_1] != 0 || bloc->flags[VERBOS_2] != 0)// if debug is onB
 				mz_print_debug_infos(procs, bloc, (*game_params));
-			debug_print_procs_list(ptr, 0);
+			// debug_print_procs_list(ptr, 0);
+			
 			ft_execute_cycle(ptr, game_params->total_cycles_counter + 1, bloc->flags);
+				
 			mz_update_procs(procs);
+
 			if (mz_dump_memory(bloc, procs, (*game_params)) == 1)
 				return ;
 			if (bloc->flags[PAUSE_1] != 0 || bloc->flags[PAUSE_2] != 0)
@@ -204,14 +216,31 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
 			// g_procs_head = NULL; //
 		//  debug_print_procs_list(*procs);
+			// if (game_params->total_cycles_counter >= 7331)
+			// {
+			// 	ft_printf("before exit: [%d]/[%d] [%d]\n", game_params->curr_life_cycle, game_params->cycles_to_die, \
+			// 								game_params->total_cycles_counter);
+			// 	// exit(0);
+			// }
 		}
-		//  debug_print_procs_list(*procs, 1);
 		//  debug_print_procs_list(*procs);
 
 		ft_count_total_live(procs, &game_params);
 		ft_check(procs, &game_params);
+		bol = 0;
+		// if (game_params->cycles_to_die <= 0)
+		// 	ft_printf("cycle to die: %d, %p.\n", game_params->cycles_to_die, *procs);
+		// debug_print_procs_list(*procs, 1);
+		// if (game_params->total_cycles_counter >= 7331)
+		// {
+		// 	ft_printf("after check: [%d]/[%d] [%d]\n", game_params->curr_life_cycle, game_params->cycles_to_die, \
+		// 								game_params->total_cycles_counter);
+		// 	exit(0);
+		// }
+
+
 		//  debug_print_procs_list(*procs, 2);
 		// debug_print_procs_list(g_procs_head, 1);
-
 	}
+	// ft_printf("the end of battle\n");
 }

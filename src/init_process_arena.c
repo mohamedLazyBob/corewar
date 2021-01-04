@@ -77,7 +77,7 @@ void		ft_init_procs_arena(t_process **procs, t_input_data *bloc)
 		player_id--;
 	}
 	*procs = proc;
-	g_procs_head = proc;
+	// g_procs_head = proc;
 }
 
 /*
