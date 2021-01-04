@@ -106,6 +106,3 @@ void	ft_operation_aff(t_process *process)
 	mz_print_pc_movements(process);
 }
 
-/*
-** ****************************************************************************
-*/
