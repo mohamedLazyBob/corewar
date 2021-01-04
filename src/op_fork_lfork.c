@@ -49,6 +49,7 @@ void	ft_operation_fork(t_process *proc)
 	new_proc->previous = NULL; //
 	// new_proc->process_live = 0;
 	new_proc->execution_cycle = -1;
+	new_proc->operation_live = 0; //
 
 	ptr = proc;
 	while (ptr->previous != NULL)
@@ -86,6 +87,8 @@ void	ft_operation_lfork(t_process *proc)
 	new_proc->previous = NULL; //
 	// new_proc->process_live = 0;
 	new_proc->execution_cycle = -1;
+	new_proc->operation_live = 0; //
+
 
 
 	ptr = proc;

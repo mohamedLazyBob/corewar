@@ -57,7 +57,9 @@ void	ft_operation_live(t_process *process)
 			arg <= process->players_counter)
 		{
 			g_last_live = -1 * process->regestries[arg - 1];
-			mz_print_live(process);
+            if (g_last_live > 0 && g_last_live < 5)
+                process->operation_live++;
+        	mz_print_live(process);
 	// if ((g_input_bloc->flags[VERBOS_1] & 16 || \
 	// 	g_input_bloc->flags[VERBOS_2] & 16) && (process->next_inst != 8))
 	// 	mz_print_pc_movements(process);

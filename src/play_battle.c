@@ -158,7 +158,7 @@ void	ft_count_total_live(t_process **proc, t_game **game_params)
 		p = *proc;
 		while (proc && *proc && p)
 		{
-			(*game_params)->total_live_counter += p->process_live;
+			(*game_params)->total_live_counter += p->operation_live;
 			p = p->next;
 		}
 	}
@@ -209,7 +209,9 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			game_params->curr_life_cycle++;
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
 			// g_procs_head = NULL; //
+		//  debug_print_procs_list(*procs);
 		}
+		//  debug_print_procs_list(*procs);
 		//  debug_print_procs_list(*procs);
 
 		ft_count_total_live(procs, &game_params);
