@@ -193,7 +193,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 				mz_print_debug_infos(procs, bloc, (*game_params));
 			debug_print_procs_list(ptr, 0);
 			ft_execute_cycle(ptr, game_params->total_cycles_counter + 1, bloc->flags);
-			mz_update_procs(procs);
+
 			if (mz_dump_memory(bloc, procs, (*game_params)) == 1)
 				return ;
 			if (bloc->flags[PAUSE_1] != 0 || bloc->flags[PAUSE_2] != 0)
@@ -210,6 +210,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 
 		ft_count_total_live(procs, &game_params);
 		ft_check(procs, &game_params);
+		mz_update_procs(procs);
 		//  debug_print_procs_list(*procs, 2);
 		// debug_print_procs_list(g_procs_head, 1);
 

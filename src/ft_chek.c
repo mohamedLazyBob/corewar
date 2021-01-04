@@ -68,17 +68,27 @@ void        ft_check(t_process **proc, t_game **game_params)
 	carriage = *proc;
     if (proc && *proc)
    {
-        // carriage = proc;
-        while (*proc)
-        {
-            if((*game_params)->cycles_to_die <= 0 || (*proc)->process_live == 0)
+
+            while ((*game_params)->cycles_to_die <= 0 || (*proc)->process_live == 0)
             {
-                temp = *proc;
-                *proc = (*proc)->next;
+                temp = (*proc);
+                (*proc) = (*proc)->next;
+                (*proc)->previous = temp->previous;
+                free(temp);
+            }
+
+        carriage = (*proc);
+        while (carriage && carriage->next)
+        {
+            if((*game_params)->cycles_to_die <= 0 || carriage->next->process_live == 0)
+            {
+                temp = carriage->next;
+                carriage->next = carriage->next->next;
+                carriage->next->previous = temp->previous;
                 free(temp);
                 continue;
             }
-            proc = &(*proc)->next;
+            carriage = carriage->next;
         }
         // g_procs_head = carriage;
 
