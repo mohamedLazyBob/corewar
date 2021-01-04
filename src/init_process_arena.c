@@ -107,6 +107,7 @@ t_process	*ft_init_proc(t_input_data *bloc, \
 	proc->previous = NULL;
 	proc->carry = 0;
 	proc->process_live = 0;
+	proc->operation_live = 0; //
 	return (proc);
 }
 
