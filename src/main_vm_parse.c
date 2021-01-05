@@ -40,12 +40,14 @@ void ft_check_size_players(t_input_data *bloc)
 	int	i;
 
 	i = -1;
-	while (++i <= bloc->players_counter)
+	// while (++i <= bloc->players_counter)// it was like this, but it's an error.
+	while (++i < bloc->players_counter)
 	{
 		if (CHAMP_MAX_SIZE < bloc->players[i].header.prog_size)
 		{
 			//creat somthing like dprintf
-			dprintf(2, "Error: File %s has too large a code (%d bytes > 682 bytes)\n", bloc->players[i].header.prog_name, bloc->players[i].header.prog_size);
+			// dprintf(2, "player_counter = %d, i = %d\n", bloc->players_counter, i);
+			dprintf(2, "Error: File %s has too large a code (%u bytes > 682 bytes)\n", bloc->players[i].header.prog_name, bloc->players[i].header.prog_size);
 			//ft_exit(2, bloc->playrs[i]);
 			exit(1);
 		}
