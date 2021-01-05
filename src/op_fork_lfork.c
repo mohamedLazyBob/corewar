@@ -48,9 +48,8 @@ void	ft_operation_fork(t_process *proc)
 	new_proc->next = NULL;
 	new_proc->previous = NULL; //
 	new_proc->execution_cycle = -1;
-	new_proc->operation_live = 0; //
-	// new_proc->process_live = -1;
-
+	// new_proc->process_live = 0;
+	new_proc->is_new_bol = 1;
 
 /* ------------------------------------------------------ */
 	// add this new proc `new_proc` to the begining of the list
@@ -98,10 +97,10 @@ void	ft_operation_lfork(t_process *proc)
 	new_proc->proc_id = proc->players_counter + 1 + g_fork_counter++;
 	new_proc->next = NULL;
 	new_proc->previous = NULL; //
-	// new_proc->process_live = 0;
+	new_proc->process_live = 0;
 	new_proc->execution_cycle = -1;
-	new_proc->operation_live = 0; //
 	// new_proc->process_live = -1;
+	new_proc->is_new_bol = 1;
 
 /* ------------------------------------------------------ */
 	// add this new proc `new_proc` to the begining of the list

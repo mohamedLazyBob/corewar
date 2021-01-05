@@ -24,8 +24,8 @@ static void ft_check_cycle(t_game *game_params)
                     game_params->checks_counter  + 1 == MAX_CHECKS)
     {
         game_params->cycles_to_die -= CYCLE_DELTA;
-        if (((g_input_bloc->flags[VERBOS_1] & 16 || \
-			g_input_bloc->flags[VERBOS_2] & 16)))
+        // if (((g_input_bloc->flags[VERBOS_1] & 16 || \
+		// 	g_input_bloc->flags[VERBOS_2] & 16)))
             ft_printf("Cycle to die is now %d\n", game_params->cycles_to_die);
         game_params->checks_counter = 0;
        // (game_params)->total_live_counter = 0;
@@ -70,7 +70,12 @@ void        ft_check(t_process **proc, t_game **game_params)
     if (proc && *proc)
    {
 
-        while ((*proc) && ((*game_params)->cycles_to_die <= 0 || (*proc)->process_live == 0))
+        while ((*proc) && 
+            (
+                ((*game_params)->cycles_to_die <= 0) || \
+                (((*proc)->process_live == 0) && (*proc)->is_new_bol == 0)
+            )
+         )
         {
             temp = (*proc);
             (*proc) = (*proc)->next;
@@ -82,7 +87,7 @@ void        ft_check(t_process **proc, t_game **game_params)
         carriage = (*proc);
         while (carriage && carriage->next)
         {
-            if((*game_params)->cycles_to_die <= 0 || carriage->next->process_live == 0)
+            if((*game_params)->cycles_to_die <= 0 || (carriage->next->process_live == 0 && carriage->next->is_new_bol == 0))
             {
                 temp = carriage->next;
                 carriage->next = carriage->next->next;

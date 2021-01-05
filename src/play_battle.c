@@ -30,6 +30,7 @@ static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 		proc->execution_cycle = curr_life_cycle + g_cycles_to_wait[temp] - 1;
 	proc->op_pc = proc->pc;
 	proc->pc = (proc->pc + 1) % MEM_SIZE;
+	proc->is_new_bol = 0;
 }
 
 /*
@@ -226,7 +227,9 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 		//  debug_print_procs_list(*procs);
 
 		ft_count_total_live(procs, &game_params);
+		// debug_print_procs_list(*procs, 0);
 		ft_check(procs, &game_params);
+		// debug_print_procs_list(*procs, 1);	
 		bol = 0;
 		// if (game_params->cycles_to_die <= 0)
 		// 	ft_printf("cycle to die: %d, %p.\n", game_params->cycles_to_die, *procs);

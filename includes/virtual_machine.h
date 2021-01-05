@@ -110,6 +110,7 @@ typedef	struct	s_process
 	unsigned int	    players_counter;
 	unsigned int	    procs_counter;
 
+	int 				is_new_bol;
 	struct s_process	*next;
   	struct s_process	*previous;
 }				t_process;

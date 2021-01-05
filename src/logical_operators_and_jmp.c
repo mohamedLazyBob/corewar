@@ -153,9 +153,10 @@ void	ft_operation_zjmp(t_process *process)
 	// ft_printf("debug -- in zjmp\n");
 	if (process->carry == 1)
 	{
-		process->pc = (process->op_pc + (arg1 % IDX_MOD)) % MEM_SIZE;
+		process->pc = (MEM_SIZE + process->op_pc + (arg1 % IDX_MOD)) % MEM_SIZE;
 		if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
 			ft_printf("P %4d | zjmp %d OK\n", process->proc_id, arg1);
+			// ft_printf("pc for zjump : %d\n", process->pc);
 	}
 	else
 	{
