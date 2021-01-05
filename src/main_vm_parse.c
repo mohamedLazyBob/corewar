@@ -14,7 +14,7 @@
 
 t_input_data		*g_input_bloc;
 t_process			*g_procs_head;
-unsigned int g_last_live;
+unsigned int		g_last_live;
 
 
 /*
@@ -162,7 +162,7 @@ int		main(int ac, char **av)
 	// announce the winner
 	// exit
 
-	ft_printf("Contestant %d, \"%s\", has won !", g_last_live, bloc.players[g_last_live - 1].header.prog_name);
+	ft_printf("Contestant %d, \"%s\", has won !\n", g_last_live, bloc.players[g_last_live - 1].header.prog_name);
 	// ft_printf("Contestant %d\n", g_last_live);
 	return (0);
 }
