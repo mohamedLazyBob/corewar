@@ -15,7 +15,7 @@
 t_input_data		*g_input_bloc;
 t_process			*g_procs_head;
 unsigned int		g_last_live;
-int					g_zjmp;
+// int					g_zjmp;
 
 /*
 *******************************************************************************

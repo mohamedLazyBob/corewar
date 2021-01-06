@@ -2,7 +2,7 @@
 
 extern t_op g_op_tab[];
 extern t_input_data *g_input_bloc;
-extern int g_zjmp;
+// extern int g_zjmp;
 
 /*
 ** ****************************************************************************
@@ -18,8 +18,7 @@ void	ft_operation_or(t_process *process)
 	ft_get_args_type(process, process->arena[0][process->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
 	{
-		process->pc = (process->pc + \
-								 mz_size_to_escape(process)) % MEM_SIZE;
+		process->pc = (process->pc + mz_size_to_escape(process)) % MEM_SIZE;
 	}
 	else
 	{
@@ -37,5 +36,5 @@ void	ft_operation_or(t_process *process)
 											(process->carry = 0);
 		mz_print_op(process, parameters, args);
 	}
-	// mz_print_pc_movements(process);
+	mz_print_pc_movements(process);
 }

@@ -30,24 +30,22 @@ void	ft_operation_sti(t_process *proc)
 
 		mz_print_op(proc, parameters, args);
 		place_memory = proc->op_pc + ((args[1] + args[2]) % IDX_MOD);
-		place_memory = (place_memory) % MEM_SIZE;
-
 		ft_int_to_str(proc->regestries[args[0] - 1], str);
-		if (place_memory < 0)
-			place_memory = MEM_SIZE + place_memory;
 
-		int i = -1;
-		while (++i < 4)
-			proc->arena[0][(place_memory + i) % MEM_SIZE]  = str[i];
+		place_memory = (place_memory + MEM_SIZE) % MEM_SIZE;
 
-		i = -1;
-		while (++i < 4)
-			proc->arena[1][(place_memory + i) % MEM_SIZE]  = proc->players_counter;
+		copy_to_arena(proc->arena[0], str, place_memory, 4);
+		// int i = -1;
+		// while (++i < 4)
+		// 	proc->arena[0][(place_memory + i) % MEM_SIZE]  = str[i];
 
+		int var[4] = {proc->players_counter};
+		copy_to_arena(proc->arena[1], var, place_memory, 4);
+		// i = -1;
+		// while (++i < 4)
+		// 	proc->arena[1][(place_memory + i) % MEM_SIZE]  = proc->players_counter;
 	}
-	// mz_print_pc_movements(proc);
-	//  ft_printf("im sti\n");
-
+	mz_print_pc_movements(proc);
 }
 
 /*

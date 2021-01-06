@@ -29,3 +29,37 @@ void	ft_int_to_str(int var, char *str)
 	str[1] = (unsigned int)(var & 0x00ff0000) >> 16;
 	str[0] = (unsigned int)(var & 0xff000000) >> 24;
 }
+
+/*
+** ***************************************************************************
+**  copy from arena, without overflowing the arena size.
+*/
+
+void	copy_from_arena(void *dst, void *src, int idx, int len)
+{
+	int	i;
+
+	i = 0;
+	while (i < len)
+	{
+		((char*)dst)[i] = ((char*)src)[(idx + i) % MEM_SIZE];
+		i++;
+	}
+}
+
+/*
+** ***************************************************************************
+**  copy to arena, without overflowing the arena size.
+*/
+
+void	copy_to_arena(void *dst, void *src, int idx, int len)
+{
+	int	i;
+
+	i = 0;
+	while (i < len)
+	{
+		((char*)dst)[(idx + i) % MEM_SIZE] = ((char*)src)[i];
+		i++;
+	}
+}

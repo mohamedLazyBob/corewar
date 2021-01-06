@@ -84,6 +84,11 @@ int				ft_parse_args(t_process *process, unsigned char par)
 	{
 		dir_size = (g_op_tab[process->next_inst].t_dir_size ? 2 : 4);
 		ft_memcpy((char*)&(num) + 4 - dir_size, process->arena[0] + process->pc, dir_size);
+		/* ---------------------------- */
+		// maybe we should use this, bcs maybe idx + 4 is > MEM_SIZE
+		// copy_from_arena((char*)&(num) + 4 - dir_size, \
+						process->arena[0] + process->pc, 0, dir_size);
+		/* ---------------------------- */
 		num = ft_reverse_endianness((unsigned char*)&num, 4);
 		if (dir_size == 2)
 			num = (short int)num;
@@ -92,6 +97,10 @@ int				ft_parse_args(t_process *process, unsigned char par)
 	else if (par == IND_CODE)
 	{
 		ft_memcpy(&num, process->arena[0] + process->pc, 2);
+		/* ---------------------------- */
+		// maybe we should use this, bcs maybe idx + 4 is > MEM_SIZE
+		// copy_from_arena((void*)&(num), process->arena[0], process->pc, 2);
+		/* ---------------------------- */
 		num = (short int)ft_reverse_endianness((unsigned char*)&num, 2);
 		process->pc = (process->pc + 2) % MEM_SIZE;
 	}
@@ -107,12 +116,15 @@ int	ft_get_argument_value(t_process *process, \
 										unsigned char parameter)
 {
 	if (parameter == REG_CODE)
-		arg = process->regestries[arg - 1];// this was before just arg;
+		arg = process->regestries[arg - 1];
 	else if (parameter == IND_CODE)
 	{
 		ft_memcpy(&arg, process->arena[0] + (process->op_pc + (arg % IDX_MOD)), 4);
-		// maybe it should be like this instead 
-	//	ft_memcpy(&arg, process->arena[0] + (process->op_pc + arg), 4);
+		/* ---------------------------- */
+		// maybe we should use this, bcs maybe idx + 4 is > MEM_SIZE
+		//copy_from_arena((void*)&arg, process->arena[0], \
+						process->op_pc + (arg % IDX_MOD), 4);
+		/* ---------------------------- */
 		arg = ft_reverse_endianness((unsigned char*)&arg, 4);
 	}
 	return (arg);
@@ -131,8 +143,11 @@ int		ft_get_argument_value_war(t_process *process, \
 	else if (parameter == IND_CODE)
 	{
 		ft_memcpy(&arg, process->arena[0] + (process->op_pc + arg), 4);
-		// maybe it should be like this instead 
-	//	ft_memcpy(&arg, process->arena[0] + (process->op_pc + arg), 4);
+		/* ---------------------------- */
+		// maybe we should use this, bcs maybe idx + 4 is > MEM_SIZE
+		//copy_from_arena((void*)&arg, process->arena[0], \
+						process->op_pc + arg, 4);
+		/* ---------------------------- */
 		arg = ft_reverse_endianness((unsigned char*)&arg, 4);
 	}
 	return (arg);
