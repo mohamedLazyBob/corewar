@@ -1587,6 +1587,24 @@ It is now cycle 1533
 It is now cycle 1534
 It is now cycle 1535
 It is now cycle 1536
+from the start: 0 
+ptr 0x7fd3735000c0 , player_id: -1, proc_id: 4, pc: 410; next = 0x7fd373500010
+	[4] live 1 
+ptr 0x7fd373500010 , player_id: -2, proc_id: 3, pc: 2458; next = 0x7fd373403350
+	[3] live 1 
+ptr 0x7fd373403350 , player_id: -2, proc_id: 2, pc: 2151; next = 0x7fd373402df0
+	[2] live 1 
+ptr 0x7fd373402df0 , player_id: -1, proc_id: 1, pc: 103; next = 0x0
+	[1] live 1 
+from the start: 1 
+ptr 0x7fd3735000c0 , player_id: -1, proc_id: 4, pc: 410; next = 0x7fd373500010
+	[4] live 0 
+ptr 0x7fd373500010 , player_id: -2, proc_id: 3, pc: 2458; next = 0x7fd373403350
+	[3] live 0 
+ptr 0x7fd373403350 , player_id: -2, proc_id: 2, pc: 2151; next = 0x7fd373402df0
+	[2] live 0 
+ptr 0x7fd373402df0 , player_id: -1, proc_id: 1, pc: 103; next = 0x0
+	[1] live 0 
 It is now cycle 1537
 It is now cycle 1538
 It is now cycle 1539
@@ -4885,7 +4903,7 @@ It is now cycle 2980
 P   10 | zjmp 1801 OK
 P    9 | zjmp 263 OK
 It is now cycle 2981
-ADV 1 (0x0a8d -> 0x0a8e) 04 
+ADV 2 (0x0a8d -> 0x0a8f) 04 01 
 It is now cycle 2982
 P    5 | zjmp -16 OK
 P    2 | zjmp -16 OK
@@ -4897,25 +4915,23 @@ It is now cycle 2985
 It is now cycle 2986
 ADV 6 (0x028e -> 0x0294) 07 09 ff f0 00 00 
 It is now cycle 2987
+ADV 6 (0x0a8f -> 0x0a95) 07 09 ff f0 00 00 
 It is now cycle 2988
 It is now cycle 2989
 It is now cycle 2990
 It is now cycle 2991
-ADV 1 (0x0a8d -> 0x0a8e) 04 
-P    3 | live 118095856
-ADV 5 (0x0a8e -> 0x0a93) 01 07 09 ff f0 
+ADV 2 (0x0a8d -> 0x0a8f) 04 01 
 It is now cycle 2992
 It is now cycle 2993
 It is now cycle 2994
 It is now cycle 2995
 It is now cycle 2996
 It is now cycle 2997
+ADV 6 (0x0a8f -> 0x0a95) 07 09 ff f0 00 00 
 It is now cycle 2998
 It is now cycle 2999
 It is now cycle 3000
 It is now cycle 3001
-P    9 | live 118095856
-ADV 5 (0x0a8e -> 0x0a93) 01 07 09 ff f0 
 It is now cycle 3002
 P    4 | sti r4 0 0
        | -> store to 0 + 0 = 0 (with pc and mod 661)
@@ -4942,22 +4958,24 @@ It is now cycle 3009
 It is now cycle 3010
 It is now cycle 3011
 It is now cycle 3012
-ADV 2 (0x0295 -> 0x0297) 0f 0f 
+ADV 4 (0x0295 -> 0x0299) 0f 0f 0f 0f 
 It is now cycle 3013
+P    3 | sti r4 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 2710)
+ADV 5 (0x0a96 -> 0x0a9b) 0f 0f 0f 0f 07 
 It is now cycle 3014
 It is now cycle 3015
 It is now cycle 3016
 It is now cycle 3017
 It is now cycle 3018
+ADV 6 (0x0299 -> 0x029f) 07 09 ff f0 00 00 
 It is now cycle 3019
-P    3 | sti r4 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 2710)
-ADV 5 (0x0a96 -> 0x0a9b) 0f 0f 0f 0f 07 
 It is now cycle 3020
 It is now cycle 3021
 It is now cycle 3022
 P    4 | zjmp -16 OK
 It is now cycle 3023
+ADV 4 (0x0a96 -> 0x0a9a) 0f 0f 0f 0f 
 It is now cycle 3024
 It is now cycle 3025
 It is now cycle 3026
@@ -4968,18 +4986,18 @@ It is now cycle 3028
 P    6 | zjmp -16 OK
 P    1 | zjmp -16 OK
 It is now cycle 3029
-ADV 2 (0x0a96 -> 0x0a98) 0f 0f 
+ADV 6 (0x0a9a -> 0x0aa0) 07 09 ff f0 00 00 
 It is now cycle 3030
 It is now cycle 3031
 It is now cycle 3032
 It is now cycle 3033
+P    3 | zjmp -16 OK
 It is now cycle 3034
 It is now cycle 3035
 It is now cycle 3036
 It is now cycle 3037
 It is now cycle 3038
 It is now cycle 3039
-P    3 | zjmp -16 OK
 It is now cycle 3040
 It is now cycle 3041
 It is now cycle 3042
@@ -5014,15 +5032,15 @@ It is now cycle 3055
 It is now cycle 3056
 It is now cycle 3057
 It is now cycle 3058
+P    3 | sti r4 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 2699)
+ADV 5 (0x0a8b -> 0x0a90) 0f 0f 0f 0f 07 
 It is now cycle 3059
 It is now cycle 3060
 It is now cycle 3061
 It is now cycle 3062
 It is now cycle 3063
 It is now cycle 3064
-P    3 | sti r4 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 2699)
-ADV 5 (0x0a8b -> 0x0a90) 0f 0f 0f 0f 07 
 It is now cycle 3065
 It is now cycle 3066
 It is now cycle 3067
@@ -5034,7 +5052,49 @@ It is now cycle 3071
 It is now cycle 3072
 P    5 | zjmp -16 OK
 P    2 | zjmp -16 OK
+from the start: 0 
+ptr 0x7fd3736000c0 , player_id: -1, proc_id: 10, pc: 725; next = 0x7fd373600020
+	[10] live 3 
+ptr 0x7fd373600020 , player_id: -2, proc_id: 9, pc: 2763; next = 0x7fd373700200
+	[9] live 3 
+ptr 0x7fd373700200 , player_id: -2, proc_id: 8, pc: 2487; next = 0x7fd373700160
+	[8] live 2 
+ptr 0x7fd373700160 , player_id: -1, proc_id: 7, pc: 439; next = 0x7fd3737000c0
+	[7] live 2 
+ptr 0x7fd3737000c0 , player_id: -1, proc_id: 6, pc: 2430; next = 0x7fd373700020
+	[6] live 1 
+ptr 0x7fd373700020 , player_id: -2, proc_id: 5, pc: 364; next = 0x7fd3735000c0
+	[5] live 1 
+ptr 0x7fd3735000c0 , player_id: -1, proc_id: 4, pc: 640; next = 0x7fd373500010
+	[4] live 6 
+ptr 0x7fd373500010 , player_id: -2, proc_id: 3, pc: 2705; next = 0x7fd373403350
+	[3] live 6 
+ptr 0x7fd373403350 , player_id: -2, proc_id: 2, pc: 364; next = 0x7fd373402df0
+	[2] live 1 
+ptr 0x7fd373402df0 , player_id: -1, proc_id: 1, pc: 2430; next = 0x0
+	[1] live 1 
 Cycle to die is now 1486
+from the start: 1 
+ptr 0x7fd3736000c0 , player_id: -1, proc_id: 10, pc: 725; next = 0x7fd373600020
+	[10] live 0 
+ptr 0x7fd373600020 , player_id: -2, proc_id: 9, pc: 2763; next = 0x7fd373700200
+	[9] live 0 
+ptr 0x7fd373700200 , player_id: -2, proc_id: 8, pc: 2487; next = 0x7fd373700160
+	[8] live 0 
+ptr 0x7fd373700160 , player_id: -1, proc_id: 7, pc: 439; next = 0x7fd3737000c0
+	[7] live 0 
+ptr 0x7fd3737000c0 , player_id: -1, proc_id: 6, pc: 2430; next = 0x7fd373700020
+	[6] live 0 
+ptr 0x7fd373700020 , player_id: -2, proc_id: 5, pc: 364; next = 0x7fd3735000c0
+	[5] live 0 
+ptr 0x7fd3735000c0 , player_id: -1, proc_id: 4, pc: 640; next = 0x7fd373500010
+	[4] live 0 
+ptr 0x7fd373500010 , player_id: -2, proc_id: 3, pc: 2705; next = 0x7fd373403350
+	[3] live 0 
+ptr 0x7fd373403350 , player_id: -2, proc_id: 2, pc: 364; next = 0x7fd373402df0
+	[2] live 0 
+ptr 0x7fd373402df0 , player_id: -1, proc_id: 1, pc: 2430; next = 0x0
+	[1] live 0 
 It is now cycle 3073
 P    6 | zjmp -16 OK
 P    1 | zjmp -16 OK
@@ -5043,13 +5103,13 @@ It is now cycle 3075
 It is now cycle 3076
 It is now cycle 3077
 It is now cycle 3078
+P    3 | zjmp -16 OK
 It is now cycle 3079
 It is now cycle 3080
 It is now cycle 3081
 It is now cycle 3082
 It is now cycle 3083
 It is now cycle 3084
-P    3 | zjmp -16 OK
 It is now cycle 3085
 It is now cycle 3086
 It is now cycle 3087
@@ -5084,15 +5144,15 @@ It is now cycle 3100
 It is now cycle 3101
 It is now cycle 3102
 It is now cycle 3103
+P    3 | sti r4 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 2688)
+ADV 5 (0x0a80 -> 0x0a85) 0f 0f 0f 0f 07 
 It is now cycle 3104
 It is now cycle 3105
 It is now cycle 3106
 It is now cycle 3107
 It is now cycle 3108
 It is now cycle 3109
-P    3 | sti r4 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 2688)
-ADV 5 (0x0a80 -> 0x0a85) 0f 0f 0f 0f 07 
 It is now cycle 3110
 It is now cycle 3111
 It is now cycle 3112
@@ -5112,13 +5172,13 @@ It is now cycle 3120
 It is now cycle 3121
 It is now cycle 3122
 It is now cycle 3123
+P    3 | zjmp -16 OK
 It is now cycle 3124
 It is now cycle 3125
 It is now cycle 3126
 It is now cycle 3127
 It is now cycle 3128
 It is now cycle 3129
-P    3 | zjmp -16 OK
 It is now cycle 3130
 It is now cycle 3131
 It is now cycle 3132
@@ -5153,15 +5213,15 @@ It is now cycle 3145
 It is now cycle 3146
 It is now cycle 3147
 It is now cycle 3148
+P    3 | sti r4 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 2677)
+ADV 5 (0x0a75 -> 0x0a7a) 0f 0f 0f 0f 07 
 It is now cycle 3149
 It is now cycle 3150
 It is now cycle 3151
 It is now cycle 3152
 It is now cycle 3153
 It is now cycle 3154
-P    3 | sti r4 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 2677)
-ADV 5 (0x0a75 -> 0x0a7a) 0f 0f 0f 0f 07 
 It is now cycle 3155
 It is now cycle 3156
 It is now cycle 3157
@@ -5181,13 +5241,13 @@ It is now cycle 3165
 It is now cycle 3166
 It is now cycle 3167
 It is now cycle 3168
+P    3 | zjmp -16 OK
 It is now cycle 3169
 It is now cycle 3170
 It is now cycle 3171
 It is now cycle 3172
 It is now cycle 3173
 It is now cycle 3174
-P    3 | zjmp -16 OK
 It is now cycle 3175
 It is now cycle 3176
 It is now cycle 3177
@@ -5222,15 +5282,15 @@ It is now cycle 3190
 It is now cycle 3191
 It is now cycle 3192
 It is now cycle 3193
+P    3 | sti r4 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 2666)
+ADV 5 (0x0a6a -> 0x0a6f) 0f 0f 0f 0f 07 
 It is now cycle 3194
 It is now cycle 3195
 It is now cycle 3196
 It is now cycle 3197
 It is now cycle 3198
 It is now cycle 3199
-P    3 | sti r4 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 2666)
-ADV 5 (0x0a6a -> 0x0a6f) 0f 0f 0f 0f 07 
 It is now cycle 3200
 It is now cycle 3201
 It is now cycle 3202
@@ -5250,13 +5310,13 @@ It is now cycle 3210
 It is now cycle 3211
 It is now cycle 3212
 It is now cycle 3213
+P    3 | zjmp -16 OK
 It is now cycle 3214
 It is now cycle 3215
 It is now cycle 3216
 It is now cycle 3217
 It is now cycle 3218
 It is now cycle 3219
-P    3 | zjmp -16 OK
 It is now cycle 3220
 It is now cycle 3221
 It is now cycle 3222
@@ -5291,15 +5351,15 @@ It is now cycle 3235
 It is now cycle 3236
 It is now cycle 3237
 It is now cycle 3238
+P    3 | sti r4 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 2655)
+ADV 5 (0x0a5f -> 0x0a64) 0f 0f 0f 0f 07 
 It is now cycle 3239
 It is now cycle 3240
 It is now cycle 3241
 It is now cycle 3242
 It is now cycle 3243
 It is now cycle 3244
-P    3 | sti r4 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 2655)
-ADV 5 (0x0a5f -> 0x0a64) 0f 0f 0f 0f 07 
 It is now cycle 3245
 It is now cycle 3246
 It is now cycle 3247
@@ -5319,13 +5379,13 @@ It is now cycle 3255
 It is now cycle 3256
 It is now cycle 3257
 It is now cycle 3258
+P    3 | zjmp -16 OK
 It is now cycle 3259
 It is now cycle 3260
 It is now cycle 3261
 It is now cycle 3262
 It is now cycle 3263
 It is now cycle 3264
-P    3 | zjmp -16 OK
 It is now cycle 3265
 It is now cycle 3266
 It is now cycle 3267
@@ -5364,15 +5424,15 @@ ADV 3 (0x01b6 -> 0x01b9) 0c 00 2f
 It is now cycle 3281
 It is now cycle 3282
 It is now cycle 3283
+P    3 | sti r4 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 2644)
+ADV 5 (0x0a54 -> 0x0a59) 0f 0f 0f 0f 07 
 It is now cycle 3284
 It is now cycle 3285
 It is now cycle 3286
 It is now cycle 3287
 It is now cycle 3288
 It is now cycle 3289
-P    3 | sti r4 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 2644)
-ADV 5 (0x0a54 -> 0x0a59) 0f 0f 0f 0f 07 
 It is now cycle 3290
 P   11 | live 190055425
 ADV 5 (0x09e5 -> 0x09ea) 01 0b 54 04 01 
@@ -5398,6 +5458,7 @@ It is now cycle 3300
 It is now cycle 3301
 It is now cycle 3302
 It is now cycle 3303
+P    3 | zjmp -16 OK
 It is now cycle 3304
 It is now cycle 3305
 P   12 | sti r4 0 0
@@ -5410,7 +5471,6 @@ It is now cycle 3306
 It is now cycle 3307
 It is now cycle 3308
 It is now cycle 3309
-P    3 | zjmp -16 OK
 It is now cycle 3310
 It is now cycle 3311
 It is now cycle 3312
@@ -5453,15 +5513,15 @@ P    7 | zjmp -16 OK
 It is now cycle 3326
 It is now cycle 3327
 It is now cycle 3328
+P    3 | sti r4 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 2633)
+ADV 5 (0x0a49 -> 0x0a4e) 0f 0f 0f 0f 07 
 It is now cycle 3329
 It is now cycle 3330
 It is now cycle 3331
 It is now cycle 3332
 It is now cycle 3333
 It is now cycle 3334
-P    3 | sti r4 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 2633)
-ADV 5 (0x0a49 -> 0x0a4e) 0f 0f 0f 0f 07 
 It is now cycle 3335
 It is now cycle 3336
 It is now cycle 3337
@@ -5483,6 +5543,7 @@ It is now cycle 3345
 It is now cycle 3346
 It is now cycle 3347
 It is now cycle 3348
+P    3 | zjmp -16 OK
 It is now cycle 3349
 It is now cycle 3350
 P   12 | sti r4 0 0
@@ -5495,7 +5556,6 @@ It is now cycle 3351
 It is now cycle 3352
 It is now cycle 3353
 It is now cycle 3354
-P    3 | zjmp -16 OK
 It is now cycle 3355
 It is now cycle 3356
 It is now cycle 3357
@@ -5538,15 +5598,15 @@ P    7 | zjmp -16 OK
 It is now cycle 3371
 It is now cycle 3372
 It is now cycle 3373
+P    3 | sti r4 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 2622)
+ADV 5 (0x0a3e -> 0x0a43) 0f 0f 0f 0f 07 
 It is now cycle 3374
 It is now cycle 3375
 It is now cycle 3376
 It is now cycle 3377
 It is now cycle 3378
 It is now cycle 3379
-P    3 | sti r4 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 2622)
-ADV 5 (0x0a3e -> 0x0a43) 0f 0f 0f 0f 07 
 It is now cycle 3380
 It is now cycle 3381
 It is now cycle 3382
@@ -5568,6 +5628,7 @@ It is now cycle 3390
 It is now cycle 3391
 It is now cycle 3392
 It is now cycle 3393
+P    3 | zjmp -16 OK
 It is now cycle 3394
 It is now cycle 3395
 P   12 | sti r4 0 0
@@ -5580,7 +5641,6 @@ It is now cycle 3396
 It is now cycle 3397
 It is now cycle 3398
 It is now cycle 3399
-P    3 | zjmp -16 OK
 It is now cycle 3400
 It is now cycle 3401
 It is now cycle 3402
@@ -5623,15 +5683,15 @@ P    7 | zjmp -16 OK
 It is now cycle 3416
 It is now cycle 3417
 It is now cycle 3418
+P    3 | sti r4 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 2611)
+ADV 5 (0x0a33 -> 0x0a38) 0f 0f 0f 0f 07 
 It is now cycle 3419
 It is now cycle 3420
 It is now cycle 3421
 It is now cycle 3422
 It is now cycle 3423
 It is now cycle 3424
-P    3 | sti r4 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 2611)
-ADV 5 (0x0a33 -> 0x0a38) 0f 0f 0f 0f 07 
 It is now cycle 3425
 It is now cycle 3426
 It is now cycle 3427
@@ -5653,6 +5713,7 @@ It is now cycle 3435
 It is now cycle 3436
 It is now cycle 3437
 It is now cycle 3438
+P    3 | zjmp -16 OK
 It is now cycle 3439
 It is now cycle 3440
 P   12 | sti r4 0 0
@@ -5665,7 +5726,6 @@ It is now cycle 3441
 It is now cycle 3442
 It is now cycle 3443
 It is now cycle 3444
-P    3 | zjmp -16 OK
 It is now cycle 3445
 It is now cycle 3446
 It is now cycle 3447
@@ -5708,15 +5768,15 @@ P    7 | zjmp -16 OK
 It is now cycle 3461
 It is now cycle 3462
 It is now cycle 3463
+P    3 | sti r4 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 2600)
+ADV 5 (0x0a28 -> 0x0a2d) 0f 0f 0f 0f 07 
 It is now cycle 3464
 It is now cycle 3465
 It is now cycle 3466
 It is now cycle 3467
 It is now cycle 3468
 It is now cycle 3469
-P    3 | sti r4 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 2600)
-ADV 5 (0x0a28 -> 0x0a2d) 0f 0f 0f 0f 07 
 It is now cycle 3470
 It is now cycle 3471
 It is now cycle 3472
@@ -5738,6 +5798,7 @@ It is now cycle 3480
 It is now cycle 3481
 It is now cycle 3482
 It is now cycle 3483
+P    3 | zjmp -16 OK
 It is now cycle 3484
 It is now cycle 3485
 P    7 | sti r4 0 0
@@ -5747,7 +5808,6 @@ It is now cycle 3486
 It is now cycle 3487
 It is now cycle 3488
 It is now cycle 3489
-P    3 | zjmp -16 OK
 It is now cycle 3490
 It is now cycle 3491
 It is now cycle 3492
@@ -5786,15 +5846,15 @@ P    7 | zjmp -16 OK
 It is now cycle 3506
 It is now cycle 3507
 It is now cycle 3508
+P    3 | sti r4 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 2589)
+ADV 5 (0x0a1d -> 0x0a22) 0f 0f 0f 0f 07 
 It is now cycle 3509
 It is now cycle 3510
 It is now cycle 3511
 It is now cycle 3512
 It is now cycle 3513
 It is now cycle 3514
-P    3 | sti r4 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 2589)
-ADV 5 (0x0a1d -> 0x0a22) 0f 0f 0f 0f 07 
 It is now cycle 3515
 It is now cycle 3516
 It is now cycle 3517
@@ -5815,6 +5875,7 @@ It is now cycle 3525
 It is now cycle 3526
 It is now cycle 3527
 It is now cycle 3528
+P    3 | zjmp -16 OK
 It is now cycle 3529
 It is now cycle 3530
 P    7 | sti r4 0 0
@@ -5824,12 +5885,14 @@ It is now cycle 3531
 It is now cycle 3532
 It is now cycle 3533
 It is now cycle 3534
-P    3 | zjmp -16 OK
 It is now cycle 3535
 It is now cycle 3536
 It is now cycle 3537
 It is now cycle 3538
 It is now cycle 3539
+P   10 | sti r4 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 1167)
+ADV 5 (0x048f -> 0x0494) 0f 0f 0f 0f 05 
 It is now cycle 3540
 It is now cycle 3541
 It is now cycle 3542
@@ -5859,19 +5922,23 @@ P    1 | sti r4 0 -11
 ADV 5 (0x08ff -> 0x0904) 0b 54 04 01 07 
 It is now cycle 3549
 It is now cycle 3550
+P    9 | sti r4 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 3216)
+ADV 5 (0x0c90 -> 0x0c95) 0f 0f 0f 0f 05 
 P    7 | zjmp -16 OK
 It is now cycle 3551
 It is now cycle 3552
 It is now cycle 3553
+P    3 | sti r4 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 2578)
+ADV 5 (0x0a12 -> 0x0a17) 0f 0f 0f 0f 07 
 It is now cycle 3554
 It is now cycle 3555
 It is now cycle 3556
 It is now cycle 3557
 It is now cycle 3558
 It is now cycle 3559
-P    3 | sti r4 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 2578)
-ADV 5 (0x0a12 -> 0x0a17) 0f 0f 0f 0f 07 
+P   10 | zjmp -511 OK
 It is now cycle 3560
 It is now cycle 3561
 It is now cycle 3562
@@ -5889,9 +5956,11 @@ P    6 | zjmp -16 OK
 P    1 | zjmp -16 OK
 It is now cycle 3569
 It is now cycle 3570
+P    9 | zjmp -511 OK
 It is now cycle 3571
 It is now cycle 3572
 It is now cycle 3573
+P    3 | zjmp -16 OK
 It is now cycle 3574
 It is now cycle 3575
 P    7 | sti r4 0 0
@@ -5901,7 +5970,6 @@ It is now cycle 3576
 It is now cycle 3577
 It is now cycle 3578
 It is now cycle 3579
-P    3 | zjmp -16 OK
 It is now cycle 3580
 It is now cycle 3581
 It is now cycle 3582
@@ -5940,15 +6008,15 @@ P    7 | zjmp -16 OK
 It is now cycle 3596
 It is now cycle 3597
 It is now cycle 3598
+P    3 | sti r4 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 2567)
+ADV 5 (0x0a07 -> 0x0a0c) 0f 0f 0f 0f 07 
 It is now cycle 3599
 It is now cycle 3600
 It is now cycle 3601
 It is now cycle 3602
 It is now cycle 3603
 It is now cycle 3604
-P    3 | sti r4 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 2567)
-ADV 5 (0x0a07 -> 0x0a0c) 0f 0f 0f 0f 07 
 It is now cycle 3605
 It is now cycle 3606
 It is now cycle 3607
@@ -5969,6 +6037,7 @@ It is now cycle 3615
 It is now cycle 3616
 It is now cycle 3617
 It is now cycle 3618
+P    3 | zjmp -16 OK
 It is now cycle 3619
 It is now cycle 3620
 P    7 | sti r4 0 0
@@ -5978,7 +6047,6 @@ It is now cycle 3621
 It is now cycle 3622
 It is now cycle 3623
 It is now cycle 3624
-P    3 | zjmp -16 OK
 It is now cycle 3625
 It is now cycle 3626
 It is now cycle 3627
@@ -6017,15 +6085,15 @@ P    7 | zjmp -16 OK
 It is now cycle 3641
 It is now cycle 3642
 It is now cycle 3643
+P    3 | sti r4 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 2556)
+ADV 5 (0x09fc -> 0x0a01) 0f 0f 0f 0f 07 
 It is now cycle 3644
 It is now cycle 3645
 It is now cycle 3646
 It is now cycle 3647
 It is now cycle 3648
 It is now cycle 3649
-P    3 | sti r4 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 2556)
-ADV 5 (0x09fc -> 0x0a01) 0f 0f 0f 0f 07 
 It is now cycle 3650
 It is now cycle 3651
 It is now cycle 3652
@@ -6046,6 +6114,7 @@ It is now cycle 3660
 It is now cycle 3661
 It is now cycle 3662
 It is now cycle 3663
+P    3 | zjmp -16 OK
 It is now cycle 3664
 It is now cycle 3665
 P    7 | sti r4 0 0
@@ -6055,7 +6124,6 @@ It is now cycle 3666
 It is now cycle 3667
 It is now cycle 3668
 It is now cycle 3669
-P    3 | zjmp -16 OK
 It is now cycle 3670
 It is now cycle 3671
 It is now cycle 3672
@@ -6587,14 +6655,11 @@ It is now cycle 4009
 It is now cycle 4010
 It is now cycle 4011
 It is now cycle 4012
-P   10 | lfork 3847 (4510)
-ADV 3 (0x0297 -> 0x029a) 0f 0f 07 
 It is now cycle 4013
 It is now cycle 4014
 It is now cycle 4015
 It is now cycle 4016
 It is now cycle 4017
-ADV 2 (0x019e -> 0x01a0) ff f0 
 P    8 | zjmp -16 OK
 P    5 | zjmp -16 OK
 P    2 | zjmp -16 OK
@@ -6614,18 +6679,12 @@ ADV 5 (0x0109 -> 0x010e) 0f 0f 0f 0f 07
 It is now cycle 4026
 It is now cycle 4027
 It is now cycle 4028
-P   13 | live 986895
-ADV 5 (0x01a1 -> 0x01a6) 01 00 0f 0f 0f 
 It is now cycle 4029
-P    9 | lfork 3847 (6559)
-ADV 3 (0x0a98 -> 0x0a9b) 0f 0f 07 
 It is now cycle 4030
 It is now cycle 4031
 It is now cycle 4032
-P   10 | zjmp -16 OK
 It is now cycle 4033
 It is now cycle 4034
-ADV 2 (0x099f -> 0x09a1) ff f0 
 It is now cycle 4035
 It is now cycle 4036
 It is now cycle 4037
@@ -6651,15 +6710,12 @@ P    1 | sti r4 0 -11
        | -> store to 0 + -11 = -11 (with pc and mod 2171)
 ADV 5 (0x0886 -> 0x088b) 0b 54 04 01 07 
 It is now cycle 4044
-P   14 | live 3855
-ADV 5 (0x09a1 -> 0x09a6) 01 00 00 0f 0f 
 It is now cycle 4045
 P    7 | zjmp -16 OK
 It is now cycle 4046
 It is now cycle 4047
 It is now cycle 4048
 It is now cycle 4049
-P    9 | zjmp -16 OK
 It is now cycle 4050
 It is now cycle 4051
 It is now cycle 4052
@@ -7287,14 +7343,13 @@ It is now cycle 4457
 It is now cycle 4458
 It is now cycle 4459
 It is now cycle 4460
-P   12 | lfork 3855 (4296)
+P   12 | lfork 3855 (712)
 ADV 3 (0x01b9 -> 0x01bc) 0f 0f 0f 
 It is now cycle 4461
 It is now cycle 4462
 It is now cycle 4463
 It is now cycle 4464
 It is now cycle 4465
-ADV 2 (0x00c8 -> 0x00ca) 0f 0f 
 It is now cycle 4466
 It is now cycle 4467
 P    8 | zjmp -16 OK
@@ -7315,14 +7370,13 @@ P    7 | sti r4 0 0
 ADV 5 (0x009b -> 0x00a0) 0f 0f 0f 0f 07 
 It is now cycle 4476
 It is now cycle 4477
-P   11 | lfork 3855 (6356)
+P   11 | lfork 3855 (2772)
 ADV 3 (0x09c5 -> 0x09c8) 0f 0f 0f 
 It is now cycle 4478
 It is now cycle 4479
 It is now cycle 4480
 It is now cycle 4481
 It is now cycle 4482
-ADV 2 (0x08d4 -> 0x08d6) 0f 0f 
 It is now cycle 4483
 It is now cycle 4484
 It is now cycle 4485
@@ -7444,6 +7498,42 @@ P    2 | zjmp -16 OK
 It is now cycle 4558
 P    6 | zjmp -16 OK
 P    1 | zjmp -16 OK
+from the start: 0 
+ptr 0x7fd3734034c0 , player_id: -2, proc_id: 14, pc: 2853; next = 0x7fd373403420
+	[14] live 1 
+ptr 0x7fd373403420 , player_id: -1, proc_id: 13, pc: 810; next = 0x7fd373600200
+	[13] live 0 
+ptr 0x7fd373600200 , player_id: -1, proc_id: 12, pc: 445; next = 0x7fd373600160
+	[12] live 0 
+ptr 0x7fd373600160 , player_id: -2, proc_id: 11, pc: 2505; next = 0x7fd3736000c0
+	[11] live 1 
+ptr 0x7fd3736000c0 , player_id: -1, proc_id: 10, pc: 662; next = 0x7fd373600020
+	[10] live 0 
+ptr 0x7fd373600020 , player_id: -2, proc_id: 9, pc: 2711; next = 0x7fd373700200
+	[9] live 0 
+ptr 0x7fd373700200 , player_id: -2, proc_id: 8, pc: 2194; next = 0x7fd373700160
+	[8] live 1 
+ptr 0x7fd373700160 , player_id: -1, proc_id: 7, pc: 134; next = 0x7fd3737000c0
+	[7] live 0 
+ptr 0x7fd3737000c0 , player_id: -1, proc_id: 6, pc: 2050; next = 0x7fd373700020
+	[6] live 0 
+ptr 0x7fd373700020 , player_id: -2, proc_id: 5, pc: 2; next = 0x7fd3735000c0
+	[5] live 0 
+ptr 0x7fd3735000c0 , player_id: -1, proc_id: 4, pc: 486; next = 0x7fd373500010
+	[4] live 0 
+ptr 0x7fd373500010 , player_id: -2, proc_id: 3, pc: 2546; next = 0x7fd373403350
+	[3] live 0 
+ptr 0x7fd373403350 , player_id: -2, proc_id: 2, pc: 2; next = 0x7fd373402df0
+	[2] live 0 
+ptr 0x7fd373402df0 , player_id: -1, proc_id: 1, pc: 2050; next = 0x0
+	[1] live 0 
+from the start: 1 
+ptr 0x7fd3734034c0 , player_id: -2, proc_id: 14, pc: 2853; next = 0x7fd373600160
+	[14] live 0 
+ptr 0x7fd373600160 , player_id: -2, proc_id: 11, pc: 2505; next = 0x7fd373700200
+	[11] live 0 
+ptr 0x7fd373700200 , player_id: -2, proc_id: 8, pc: 2194; next = 0x0
+	[8] live 0 
 It is now cycle 4559
 It is now cycle 4560
 It is now cycle 4561
@@ -7954,8 +8044,6 @@ It is now cycle 5025
 It is now cycle 5026
 It is now cycle 5027
 It is now cycle 5028
-P   13 | lfork 1801 (2223)
-ADV 3 (0x01a6 -> 0x01a9) 0f 07 09 
 It is now cycle 5029
 It is now cycle 5030
 It is now cycle 5031
@@ -7970,20 +8058,16 @@ It is now cycle 5036
 It is now cycle 5037
 It is now cycle 5038
 It is now cycle 5039
-ADV 1 (0x08b0 -> 0x08b1) 04 
 It is now cycle 5040
 It is now cycle 5041
 It is now cycle 5042
 It is now cycle 5043
 It is now cycle 5044
-P   14 | lfork 3847 (6317)
-ADV 3 (0x09a6 -> 0x09a9) 0f 0f 07 
 It is now cycle 5045
 It is now cycle 5046
 It is now cycle 5047
 It is now cycle 5048
 It is now cycle 5049
-ADV 2 (0x08ad -> 0x08af) ff f0 
 It is now cycle 5050
 It is now cycle 5051
 It is now cycle 5052
@@ -7996,12 +8080,10 @@ It is now cycle 5057
 It is now cycle 5058
 It is now cycle 5059
 It is now cycle 5060
-ADV 1 (0x08b0 -> 0x08b1) 04 
 It is now cycle 5061
 It is now cycle 5062
 It is now cycle 5063
 It is now cycle 5064
-P   14 | zjmp -16 OK
 It is now cycle 5065
 It is now cycle 5066
 It is now cycle 5067
@@ -8427,7 +8509,7 @@ It is now cycle 5474
 It is now cycle 5475
 It is now cycle 5476
 It is now cycle 5477
-P   11 | lfork 1801 (4305)
+P   11 | lfork 1801 (2769)
 ADV 3 (0x09c8 -> 0x09cb) 0f 07 09 
 It is now cycle 5478
 It is now cycle 5479
@@ -8874,6 +8956,8 @@ It is now cycle 5918
 It is now cycle 5919
 It is now cycle 5920
 It is now cycle 5921
+P   14 | lfork 3855 (3487)
+ADV 3 (0x0c90 -> 0x0c93) 0f 0f 0f 
 It is now cycle 5922
 It is now cycle 5923
 It is now cycle 5924
@@ -8986,20 +9070,27 @@ It is now cycle 6030
 It is now cycle 6031
 It is now cycle 6032
 It is now cycle 6033
-P   13 | lfork 3855 (4285)
-ADV 3 (0x01ae -> 0x01b1) 0f 0f 0f 
 It is now cycle 6034
 It is now cycle 6035
 It is now cycle 6036
 It is now cycle 6037
 It is now cycle 6038
-ADV 2 (0x00bd -> 0x00bf) 0f 0f 
 It is now cycle 6039
 It is now cycle 6040
-P   17 | lfork 3855 (6081)
-ADV 3 (0x08b2 -> 0x08b5) 0f 0f 0f 
 It is now cycle 6041
 It is now cycle 6042
 It is now cycle 6043
 It is now cycle 6044
+from the start: 0 
+ptr 0x7fd373403350 , player_id: -2, proc_id: 16, pc: 3610; next = 0x7fd373402df0
+	[16] live 0 
+ptr 0x7fd373402df0 , player_id: -2, proc_id: 15, pc: 3217; next = 0x7fd3734034c0
+	[15] live 0 
+ptr 0x7fd3734034c0 , player_id: -2, proc_id: 14, pc: 3220; next = 0x7fd373600160
+	[14] live 0 
+ptr 0x7fd373600160 , player_id: -2, proc_id: 11, pc: 2513; next = 0x7fd373700200
+	[11] live 0 
+ptr 0x7fd373700200 , player_id: -2, proc_id: 8, pc: 2041; next = 0x0
+	[8] live 0 
+from the start: 1 
 Contestant 2, "Explosive Kitty", has won !

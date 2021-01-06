@@ -15,6 +15,7 @@ extern	void			(*g_operation[16])(t_process *process);
 extern	unsigned int	g_cycles_to_wait[16];
 extern	const t_op 		g_op_tab[17];
 extern	t_process		*g_procs_head;
+extern	int				g_zjmp;
 /*
 ** ****************************************************************************
 ** for the cycles_number we -1 of the curr cycle;
@@ -46,7 +47,7 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle, int *flags)
 		// ft_printf("--> \tP:[%d] exec_at_cycle: %.2d, curr_cycle: %d, pc: %3d, op: %d\n", \
 		// 		ptr->proc_id, ptr->execution_cycle, curr_life_cycle, ptr->pc, ptr->next_inst);
 		// 1st mra ghadi idkhl || the last op excuted, read another one
-// dprintf(2, "curr_life_cycle : %d\n", curr_life_cycle);
+		// dprintf(2, "curr_life_cycle : %d\n", curr_life_cycle);
 		if (ptr->execution_cycle == -1 || \
 				ptr->execution_cycle < curr_life_cycle)
 			ft_read_opcode(ptr, curr_life_cycle);
@@ -57,12 +58,15 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle, int *flags)
 		// ila tqado executi l'operation
 		if(ptr->execution_cycle == curr_life_cycle)
 		{
+
+			// g_zjmp = 0;
 			if (0 <= ptr->next_inst && ptr->next_inst <= 15)
 			{
 				// ft_printf("\tbefore exec\t-->Proc  %.2d | %5s, with carry: %d\n", \
 					ptr->proc_id, g_op_tab[ptr->next_inst].op_name, ptr->carry);
 				// if (ptr->next_inst == 8)
 					// ft_printf("\t\tP\t%d | %5s | pc : %d\n", ptr->proc_id, g_op_tab[ptr->next_inst].op_name, ptr->pc);
+				g_zjmp = 0;
 				g_operation[ptr->next_inst](ptr);
 				// ptr->operation_live = 0; //
 				// if ((flags[VERBOS_1] & 16 || flags[VERBOS_2] & 16) && (ptr->next_inst != 8))
@@ -73,6 +77,8 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle, int *flags)
 			}
 			else
 				ptr->pc++;
+			if (g_zjmp == 0)
+				mz_print_pc_movements(ptr);
 		}
 		ptr = ptr->next;
 	}
@@ -213,6 +219,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			if (bloc->flags[PAUSE_1] != 0 || bloc->flags[PAUSE_2] != 0)
 				mz_do_pause((*game_params), procs, bloc);
 			if (bloc->flags[VISU_1] != 0 || bloc->flags[VISU_2] != 0)
+
 				mesafi_visualize(bloc, (*game_params), procs);
 			game_params->curr_life_cycle++;
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
@@ -228,9 +235,9 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 		//  debug_print_procs_list(*procs);
 
 		ft_count_total_live(procs, &game_params);
-		// debug_print_procs_list(*procs, 0);
+		debug_print_procs_list(*procs, 0);
 		ft_check(procs, &game_params);
-		// debug_print_procs_list(*procs, 1);	
+		debug_print_procs_list(*procs, 1);	
 		bol = 0;
 		// if (game_params->cycles_to_die <= 0)
 		// 	ft_printf("cycle to die: %d, %p.\n", game_params->cycles_to_die, *procs);

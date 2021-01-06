@@ -14,7 +14,7 @@
 
 extern t_op g_op_tab[];
 extern t_input_data *g_input_bloc;
-
+extern int g_zjmp;
 /*
 ******************************************************************************
 ** I think this should work, I havent tested the IND
@@ -54,7 +54,7 @@ void	ft_operation_and(t_process *process)
 											(process->carry = 0);
 		mz_print_op(process, parameters, args);
 	}
-	mz_print_pc_movements(process);
+	// mz_print_pc_movements(process);
 }
 
 /*
@@ -94,7 +94,7 @@ void	ft_operation_or(t_process *process)
 											(process->carry = 0);
 		mz_print_op(process, parameters, args);
 	}
-	mz_print_pc_movements(process);
+	// mz_print_pc_movements(process);
 }
 
 /*
@@ -134,7 +134,7 @@ void	ft_operation_xor(t_process *process)
 											(process->carry = 0);
 		mz_print_op(process, parameters, args);
 	}
-	mz_print_pc_movements(process);
+	// mz_print_pc_movements(process);
 }
 
 /*
@@ -146,7 +146,6 @@ void	ft_operation_xor(t_process *process)
 void	ft_operation_zjmp(t_process *process)
 {
 	short int arg1;
-
 	process->op_pc = process->pc - 1;
 	arg1 = ft_parse_args(process, (unsigned char)DIR_CODE);
 	// ft_printf("\t\targ1: %d\n", arg1);
@@ -157,13 +156,14 @@ void	ft_operation_zjmp(t_process *process)
 		if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
 			ft_printf("P %4d | zjmp %d OK\n", process->proc_id, arg1);
 			// ft_printf("pc for zjump : %d\n", process->pc);
+			g_zjmp = 1;
 	}
 	else
 	{
 		if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
 			ft_printf("P %4d | zjmp %d FAILED\n", process->proc_id, arg1);
 		// if (g_input_bloc->flags[VERBOS_1] & 16 || g_input_bloc->flags[VERBOS_2] & 16)
-		// 	mz_print_pc_movements(process);
-		mz_print_pc_movements(process);
+			// mz_print_pc_movements(process);
+		// mz_print_pc_movements(process);
 	}
 }
