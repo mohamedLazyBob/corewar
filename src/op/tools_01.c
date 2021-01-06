@@ -175,18 +175,17 @@ int	mz_size_to_escape(t_process *proc)
 	i = -1;
 	ret = 0;
 	types_byte = proc->arena[0][proc->op_pc + 1];
-
 	par[0] = ((types_byte >> 6) & 3);
 	par[1] = ((types_byte >> 4) & 3);
 	par[2] = ((types_byte >> 2) & 3);
 
 	while (++i < 3)
 	{
-		if (par[i] == T_REG)
+		if (par[i] == REG_CODE)
 			ret += 1;
-		else if (par[i] == T_IND)
+		else if (par[i] == IND_CODE)
 			ret += 2;
-		else if (par[i] == T_DIR)
+		else if (par[i] == DIR_CODE)
 			ret += (g_op_tab[proc->next_inst].t_dir_size ? 2 : 4);
 	}
 	return (ret);

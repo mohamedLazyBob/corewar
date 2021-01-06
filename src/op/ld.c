@@ -48,9 +48,9 @@ void	ft_operation_ld(t_process *proc)
 		args[1] = ft_parse_args(proc, parameters[1]);
 		if (args[1] < 1 || 16 < args[1])
 			return;
-		ft_printf("debug -- arg 0: %d\n", args[0]);
+		// ft_printf("debug -- arg 0: %d\n", args[0]);
 		args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
-		ft_printf("debug -- arg 0: %d\n", args[0]);
+		// ft_printf("debug -- arg 0: %d\n", args[0]);
 		proc->carry = (args[0] == 0) ? 1 : 0;
 		proc->regestries[args[1] - 1] = args[0];
 		mz_print_op(proc, parameters, args);

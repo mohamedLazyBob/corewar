@@ -23,14 +23,17 @@ void	ft_operation_add(t_process *proc)
 	unsigned char	parameters[3];
 	int	args[3];
 
+	proc->op_pc = proc->pc - 1;
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 	{
 		// proc->pc = (proc->pc + MAX_ARGS_NUMBER) % MEM_SIZE;
 		// ft_printf("parameter : [%d][%d][%d]\n", parameters[0], parameters[1], parameters[2]);
-						// proc->pc = (proc->pc + \
-						// 				mz_size_to_escape(proc) - 1) % MEM_SIZE;
+		int var = mz_size_to_escape(proc);
+		// ft_printf("types_byte: %x, var: %x\n", proc->arena[0][proc->op_pc + 1], var);
+		proc->pc = (proc->pc + var + MEM_SIZE) % MEM_SIZE;
 						// ft_sizeof_params(proc, parameters)) % MEM_SIZE;
+		// ft_printf("op_pc : %d, op: %d \n", proc->op_pc, proc->pc);
 		// return ;
 	}
 	else
