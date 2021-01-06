@@ -63,7 +63,7 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle, int *flags)
 			if (0 <= ptr->next_inst && ptr->next_inst <= 15)
 			{
 				// ft_printf("\tbefore exec\t-->Proc  %.2d | %5s, with carry: %d\n", \
-					ptr->proc_id, g_op_tab[ptr->next_inst].op_name, ptr->carry);
+					// ptr->proc_id, g_op_tab[ptr->next_inst].op_name, ptr->carry);
 				// if (ptr->next_inst == 8)
 					// ft_printf("\t\tP\t%d | %5s | pc : %d\n", ptr->proc_id, g_op_tab[ptr->next_inst].op_name, ptr->pc);
 				g_zjmp = 0;
@@ -235,9 +235,9 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 		//  debug_print_procs_list(*procs);
 
 		ft_count_total_live(procs, &game_params);
-		debug_print_procs_list(*procs, 0);
+		// debug_print_procs_list(*procs, 0);
 		ft_check(procs, &game_params);
-		debug_print_procs_list(*procs, 1);	
+		// debug_print_procs_list(*procs, 1);	
 		bol = 0;
 		// if (game_params->cycles_to_die <= 0)
 		// 	ft_printf("cycle to die: %d, %p.\n", game_params->cycles_to_die, *procs);
