@@ -32,6 +32,7 @@ static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 	proc->op_pc = proc->pc;
 	proc->pc = (proc->pc + 1) % MEM_SIZE;
 	proc->is_new_bol = 0;
+	// ft_printf("debug -- proc %d | exec %d at %d\n", proc->proc_id, proc->next_inst, proc->execution_cycle);
 }
 
 /*
