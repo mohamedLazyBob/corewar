@@ -74,6 +74,7 @@ void			ft_read_champion(int fd, t_playrs *playrs)
 	if (playrs->header.prog_size <= 0 ||
 			playrs->header.prog_size > CHAMP_MAX_SIZE)
 		ft_exit("Error Size Code !");
+	// dprintf(2, "{%s} prog size : %d\n", playrs->header.prog_name, playrs->header.prog_size);
 	read(fd, playrs->header.comment, COMMENT_LENGTH);
 	read(fd, temp, 4);
 	if (ft_convert_num(temp) != 0)
