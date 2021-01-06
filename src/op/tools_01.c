@@ -170,16 +170,18 @@ int	mz_size_to_escape(t_process *proc)
 	char	types_byte;
 	int	ret;
 	int	i;
+	int	var;
 	unsigned char		par[3] = {0, 0, 0};
 
 	i = -1;
 	ret = 0;
+	var = g_op_tab[proc->next_inst].args_num;
 	types_byte = proc->arena[0][proc->op_pc + 1];
 	par[0] = ((types_byte >> 6) & 3);
 	par[1] = ((types_byte >> 4) & 3);
 	par[2] = ((types_byte >> 2) & 3);
 
-	while (++i < 3)
+	while (++i < var)
 	{
 		if (par[i] == REG_CODE)
 			ret += 1;

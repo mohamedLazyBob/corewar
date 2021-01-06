@@ -33,12 +33,7 @@ void	ft_operation_ld(t_process *proc)
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 	{
-			// proc->pc = (proc->pc + \
-			// 			 mz_size_to_escape(proc)) % MEM_SIZE;
-					// ft_sizeof_params(proc, parameters)) % MEM_SIZE;
-			// return ;
-	
-	// ft_printf("im ld\n");
+		proc->pc = (proc->pc + mz_size_to_escape(proc)) % MEM_SIZE;
 	// som time need to prent some time not
 		g_zjmp = 1;
 	}
@@ -55,6 +50,7 @@ void	ft_operation_ld(t_process *proc)
 		proc->regestries[args[1] - 1] = args[0];
 		mz_print_op(proc, parameters, args);
 	}
-	// mz_print_pc_movements(proc);
+	mz_print_pc_movements(proc);
+	g_zjmp = 1;
 	// ft_printf("im ld\n");
 }
