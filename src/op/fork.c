@@ -47,20 +47,9 @@ void	ft_operation_fork(t_process *proc)
 	new_proc->next = NULL;
 	new_proc->previous = NULL; //
 	new_proc->execution_cycle = -1;
-	// new_proc->process_live = 0;
 	new_proc->is_new_bol = 1;
 
 /* ------------------------------------------------------ */
-	// add this new proc `new_proc` to the begining of the list
-	// if (g_procs_head == NULL)
-	// {
-	// 	ptr = proc;
-	// }
-	// else
-	// {
-	// 	ptr = g_procs_head;
-	// }
-	
 	ptr = proc;
 /* ------------------------------------------------------ */
 	while (ptr->previous != NULL)

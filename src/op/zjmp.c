@@ -15,14 +15,11 @@ void	ft_operation_zjmp(t_process *process)
 	short int arg1;
 	process->op_pc = process->pc - 1;
 	arg1 = ft_parse_args(process, (unsigned char)DIR_CODE);
-	// ft_printf("\t\targ1: %d\n", arg1);
-	// ft_printf("debug -- in zjmp\n");
 	if (process->carry == 1)
 	{
 		process->pc = (MEM_SIZE + process->op_pc + (arg1 % IDX_MOD)) % MEM_SIZE;
 		if (g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4)
 			ft_printf("P %4d | zjmp %d OK\n", process->proc_id, arg1);
-			// ft_printf("pc for zjump : %d\n", process->pc);
 			g_zjmp = 1;
 	}
 	else

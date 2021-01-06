@@ -37,7 +37,6 @@ void			ft_get_args_type(t_process *process, \
 	int				i;
 	unsigned char	bit[3];
 
-	// ft_printf("types byts : [%x]\n", types_byte);
 	args[0] = (types_byte & 192) >> 6;
 	args[1] = (types_byte & 48) >> 4;
 	args[2] = (types_byte & 12) >> 2;
@@ -51,11 +50,7 @@ void			ft_get_args_type(t_process *process, \
 	if (!(((bit[0] & g_op_tab[process->next_inst].args_type[0]) == bit[0]) && \
 		((bit[1] & g_op_tab[process->next_inst].args_type[1]) == bit[1]) && \
 		((bit[2] & g_op_tab[process->next_inst].args_type[2]) == bit[2])))
-		{
 			ft_memcpy(args, "ER", 3);
-			// ft_printf("debug, bit : %d., type: %d\n", bit[1], g_op_tab[process->next_inst].args_type[1]);
-			// ft_printf("debug, inst : %d.\n", (bit[1] & g_op_tab[process->next_inst].args_type[1]));
-		}
 	i = -1;
 	while (++i < 3)
 		if (bit[i] == 0 && g_op_tab[process->next_inst].args_type[i] != 0)
@@ -83,25 +78,15 @@ int				ft_parse_args(t_process *process, unsigned char par)
 	if (par == REG_CODE)
 	{
 		num = (int)process->arena[0][process->pc];
-		// ft_printf("num : %d, pc value : %d, pc : %d\n", num, process->arena[0][process->pc], process->pc);
-		// ft_printf("[%.10x]\n", process->arena[0]);
 		process->pc = (process->pc + 1) % MEM_SIZE;
 	}
 	else if (par == DIR_CODE)
 	{
 		dir_size = (g_op_tab[process->next_inst].t_dir_size ? 2 : 4);
-		// ft_printf("dir_size : %d\n", dir_size);
 		ft_memcpy((char*)&(num) + 4 - dir_size, process->arena[0] + process->pc, dir_size);
-		// ft_printf("num : %d, pc value : %d, pc : %d\n", num, process->arena[0][process->pc], process->pc);
-		// ft_printf("%x, %x, %x, %x\n",   ((char*)&num)[0], ((char*)&num)[1], ((char*)&num)[2], ((char*)&num)[3]);
 		num = ft_reverse_endianness((unsigned char*)&num, 4);
-		// ft_printf("\t\told num: %d\n", num);
-
 		if (dir_size == 2)
 			num = (short int)num;
-		// ft_printf("%x, %x, %x, %x\n",   ((char*)&num)[0], ((char*)&num)[1], ((char*)&num)[2], ((char*)&num)[3]);
-		// ft_printf("new num: %d\n", num);
-		// exit(0);
 		process->pc = (process->pc + dir_size) % MEM_SIZE;
 	}
 	else if (par == IND_CODE)
@@ -176,17 +161,12 @@ int		ft_sizeof_params(t_process *process, unsigned char parameters[3])
 	return (ret);
 }
 
+/*
+******************************************************************************
+*/ 
+
 int	mz_size_to_escape(t_process *proc)
 {
-	// char	types_byte;
-	// int		par[3];
-
-	// types_byte = proc->arena[0][proc->op_pc + 1];
-	// par[0] = !!((types_byte >> 6) & 3);
-	// par[1] = !!((types_byte >> 4) & 3);
-	// par[2] = !!((types_byte >> 2) & 3);
-	// return (par[0] + par[1] + par[2]);
-
 	char	types_byte;
 	int	ret;
 	int	i;
