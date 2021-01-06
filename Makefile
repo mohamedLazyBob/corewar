@@ -1,13 +1,29 @@
 NAME= corewar
 
 SRC_PATH= src
-SRC_NAME=	main_vm_parse.c			read_players.c	ft_read_champion.c \
-			arena_initialization.c	op.c			      logical_operators_and_jmp.c \
-			operations_tools.c 		  op_live_aff.c	ft_operations_add.c	\
-			ft_operations_ld.c		  ft_any_player.c	ft_chek.c	\
-			init_process_arena.c	  play_battle.c \
-			mz_mode_verbos.c		op_fork_lfork.c 	debug_functions.c \
-			ft_kill.c
+SRC_NAME=	main_vm_parse.c				read_players.c	ft_read_champion.c \
+			arena_initialization.c		op.c \
+			ft_any_player.c				ft_chek.c	\
+			init_process_arena.c	  	play_battle.c \
+			mz_mode_verbos.c		 	debug_functions.c \
+			ft_kill.c \
+			op/add.c \
+			op/aff.c \
+			op/and.c \
+			op/fork.c \
+			op/ld.c  \
+			op/ldi.c \
+			op/lfork.c \
+			op/live.c \
+			op/lld.c \
+			op/lldi.c \
+			op/or.c \
+			op/st.c \
+			op/sti.c \
+			op/sub.c \
+			op/xor.c \
+			op/zjmp.c \
+			op/operations_tools.c
 
 HDR_PATH= includes
 HDR_NAME= virtual_machine.h op.h
@@ -53,6 +69,7 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(HDR) | $(OBJ_PATH)
 
 $(OBJ_PATH):
 	@mkdir $@
+	@mkdir $@/op
 
 clean:
 	@rm -fr $(OBJ)
