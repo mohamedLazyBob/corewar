@@ -15,13 +15,6 @@
 extern t_input_data *g_input_bloc;
 extern int	g_zjmp;
 
-void	ft_int_to_str(int var, char *str)
-{
-	str[3] = (unsigned int)(var);
-	str[2] = (unsigned int)(var & 0x0000ff00) >> 8;
-	str[1] = (unsigned int)(var & 0x00ff0000) >> 16;
-	str[0] = (unsigned int)(var & 0xff000000) >> 24;
-}
 
 /*
 ******************************************************************************

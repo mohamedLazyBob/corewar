@@ -13,20 +13,6 @@
 #include "../includes/virtual_machine.h"
 
 extern t_input_data *g_input_bloc;
-/*
-******************************************************************************
-*/
-
-int 	ft_size(int param, int t_dir_size)
-{	
-	if (param == REG_CODE)
-		param = 1;
-	else if (param == IND_CODE)
-		param = 2;
-	else if (param == DIR_CODE)
-		param = t_dir_size;
-	return (param);
-}
 
 /*
 ******************************************************************************

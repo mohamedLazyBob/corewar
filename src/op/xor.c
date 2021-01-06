@@ -11,19 +11,14 @@ extern int g_zjmp;
 
 void	ft_operation_xor(t_process *process)
 {
-	// int				i;
 	int	args[3];
 	unsigned char	parameters[3];
 
-	// i = -1;
 	process->op_pc = process->pc - 1;
 	ft_get_args_type(process, process->arena[0][process->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
 	{
-	//	printf("champion operation args error, AT PC= %d\n", process->op_pc);
-		// process->pc = (process->pc + REG_SIZE * 3) % MEM_SIZE;
-		process->pc = (process->pc + \
-								 mz_size_to_escape(process)) % MEM_SIZE;
+		process->pc = (process->pc + mz_size_to_escape(process)) % MEM_SIZE;
 	}
 	else
 	{

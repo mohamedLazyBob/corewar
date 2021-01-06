@@ -23,7 +23,8 @@ SRC_NAME=	main_vm_parse.c				read_players.c	ft_read_champion.c \
 			op/sub.c \
 			op/xor.c \
 			op/zjmp.c \
-			op/operations_tools.c
+			op/tools_01.c \
+			op/tools_02.c
 
 HDR_PATH= includes
 HDR_NAME= virtual_machine.h op.h
