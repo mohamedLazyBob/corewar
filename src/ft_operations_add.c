@@ -42,8 +42,8 @@ void	ft_operation_add(t_process *proc)
 	{
 		// proc->pc = (proc->pc + MAX_ARGS_NUMBER) % MEM_SIZE;
 		// ft_printf("parameter : [%d][%d][%d]\n", parameters[0], parameters[1], parameters[2]);
-		proc->pc = (proc->pc + \
-						 mz_size_to_escape(proc) - 1) % MEM_SIZE;
+						// proc->pc = (proc->pc + \
+						// 				mz_size_to_escape(proc) - 1) % MEM_SIZE;
 						// ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 		// return ;
 	}
@@ -62,7 +62,7 @@ void	ft_operation_add(t_process *proc)
 		proc->regestries[args[2] - 1] = args[0] + args[1];
 		proc->carry = (proc->regestries[args[2] - 1] == 0) ? 1 : 0;
 	}			
-		mz_print_pc_movements(proc);
+		// mz_print_pc_movements(proc);
 		// ft_printf("im add\n");
 }
 
@@ -80,8 +80,8 @@ void	ft_operation_sub(t_process *proc)
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 	{
 		// proc->pc = (proc->pc + MAX_ARGS_NUMBER) % MEM_SIZE;
-		proc->pc = (proc->pc + \
-						 mz_size_to_escape(proc)) % MEM_SIZE;
+					// proc->pc = (proc->pc + \
+					// 				mz_size_to_escape(proc)) % MEM_SIZE;
 						// ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 		// return ;
 	}
@@ -105,7 +105,7 @@ void	ft_operation_sub(t_process *proc)
 		proc->regestries[args[2] - 1] = args[0] - args[1];
 		proc->carry = (proc->regestries[args[2] - 1] == 0) ? 1 : 0;
 	}
-		mz_print_pc_movements(proc);
+		// mz_print_pc_movements(proc);
 		// ft_printf("im sub\n");
 
 }
@@ -167,7 +167,7 @@ void	ft_operation_st(t_process *proc)
 			offset, args[0]);
 		}
 	}
-			mz_print_pc_movements(proc);
+			// mz_print_pc_movements(proc);
 			// ft_printf("im st\n");
 
 }
@@ -191,8 +191,8 @@ void	ft_operation_sti(t_process *proc)
 		// (!(ft_reg_check(proc->arena[0][proc->pc % MEM_SIZE]))))
 	if ((ft_strcmp((const char*)parameters, "ER") == 0))
 	{
-			proc->pc = (proc->pc + \
-						 mz_size_to_escape(proc)) % MEM_SIZE;
+							proc->pc = (proc->pc +  2)% MEM_SIZE;;
+										// mz_size_to_escape(proc)) % MEM_SIZE;
 					// ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 			// mz_print_pc_movements(proc);
 	}
@@ -242,7 +242,7 @@ void	ft_operation_sti(t_process *proc)
 			proc->arena[1][(place_memory + i) % MEM_SIZE]  = proc->players_counter;
 
 	}
-	mz_print_pc_movements(proc);
+	// mz_print_pc_movements(proc);
 	//  ft_printf("im sti\n");
 
 }

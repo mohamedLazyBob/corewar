@@ -60,7 +60,7 @@ void	ft_operation_live(t_process *process)
 		g_last_live = arg;
 		mz_print_live(process);
 	}
-	mz_print_pc_movements(process);
+	// mz_print_pc_movements(process);
 }
 
 /*
@@ -92,6 +92,6 @@ void	ft_operation_aff(t_process *process)
 			// write(1, &var, 1);
 		}
 	}
-	mz_print_pc_movements(process);
+	// mz_print_pc_movements(process);
 }
 
