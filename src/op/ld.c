@@ -34,7 +34,7 @@ void	ft_operation_ld(t_process *proc)
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 	{
 			// proc->pc = (proc->pc + \
-						//  mz_size_to_escape(proc)) % MEM_SIZE;
+			// 			 mz_size_to_escape(proc)) % MEM_SIZE;
 					// ft_sizeof_params(proc, parameters)) % MEM_SIZE;
 			// return ;
 	
@@ -44,20 +44,16 @@ void	ft_operation_ld(t_process *proc)
 	}
 	else
 	{
-	args[0] = ft_parse_args(proc, parameters[0]);
-	args[1] = ft_parse_args(proc, parameters[1]);
-	if (args[1] < 1 || 16 < args[1])
-		return;
-	args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
-	proc->carry = (args[0] == 0) ? 1 : 0;
-	proc->regestries[args[1] - 1] = args[0];
-	// ft_printf("the reg[%d] == %d\n", args[1] - 1, args[0]);
-	mz_print_op(proc, parameters, args);
-// // // 
-// // 	ft_printf("at the end of ld regs value: \n");
-// 	for (int i = 0; i < REG_NUMBER; i++)
-// 		ft_printf("[%d] ", proc->regestries[i]);
-// 	ft_printf("\n");
+		args[0] = ft_parse_args(proc, parameters[0]);
+		args[1] = ft_parse_args(proc, parameters[1]);
+		if (args[1] < 1 || 16 < args[1])
+			return;
+		ft_printf("debug -- arg 0: %d\n", args[0]);
+		args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
+		ft_printf("debug -- arg 0: %d\n", args[0]);
+		proc->carry = (args[0] == 0) ? 1 : 0;
+		proc->regestries[args[1] - 1] = args[0];
+		mz_print_op(proc, parameters, args);
 	}
 	// mz_print_pc_movements(proc);
 	// ft_printf("im ld\n");
