@@ -15,7 +15,7 @@ extern	void			(*g_operation[16])(t_process *process);
 extern	unsigned int	g_cycles_to_wait[16];
 extern	const t_op 		g_op_tab[17];
 extern	t_process		*g_procs_head;
-extern	int				g_zjmp;
+// extern	int				g_zjmp;
 /*
 ** ****************************************************************************
 ** for the cycles_number we -1 of the curr cycle;
@@ -67,7 +67,7 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle, int *flags)
 					// ptr->proc_id, g_op_tab[ptr->next_inst].op_name, ptr->carry);
 				// if (ptr->next_inst == 8)
 					// ft_printf("\t\tP\t%d | %5s | pc : %d\n", ptr->proc_id, g_op_tab[ptr->next_inst].op_name, ptr->pc);
-				g_zjmp = 0;
+				// g_zjmp = 0;
 				g_operation[ptr->next_inst](ptr);
 				// ptr->operation_live = 0; //
 				// if ((flags[VERBOS_1] & 16 || flags[VERBOS_2] & 16) && (ptr->next_inst != 8))
@@ -78,8 +78,8 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle, int *flags)
 			}
 			else
 				ptr->pc++;
-			if (g_zjmp == 0)
-				mz_print_pc_movements(ptr);
+			// if (g_zjmp == 0)
+				// mz_print_pc_movements(ptr);
 		}
 		ptr = ptr->next;
 	}

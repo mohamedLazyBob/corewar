@@ -36,6 +36,6 @@ void	ft_operation_xor(t_process *process)
 											(process->carry = 0);
 		mz_print_op(process, parameters, args);
 	}
-	// mz_print_pc_movements(process);
+	mz_print_pc_movements(process);
 }
 

@@ -11,10 +11,7 @@ void	ft_operation_st(t_process *proc)
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
 	{
-		// proc->pc = (proc->pc + \
-						//  mz_size_to_escape(proc)) % MEM_SIZE;
-						// ft_sizeof_params(proc, parameters)) % MEM_SIZE;
-			// mz_print_pc_movements(proc);
+		proc->pc = (proc->pc + mz_size_to_escape(proc)) % MEM_SIZE;
 	}
 	else
 	{
@@ -38,8 +35,7 @@ void	ft_operation_st(t_process *proc)
 			ft_memset(proc->arena[1] + offset, proc->player_id, 4);
 		}
 	}
-	// mz_print_pc_movements(proc);
-	// ft_printf("im st\n");
+	mz_print_pc_movements(proc);
 }
 
 /*

@@ -302,4 +302,12 @@ HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 void		debug_print_procs_list(t_process *procs, int i);
 void		print_procs(t_process *ptr, t_input_data *bloc);
 
+/*
+*******************************************************************************
+** tools_02.c
+*/
+
+void	copy_from_arena(void *dst, void *src, int idx, int len);
+void	copy_to_arena(void *dst, void *src, int idx, int len);
+
 #endif

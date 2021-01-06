@@ -27,7 +27,5 @@ void	ft_operation_sub(t_process *proc)
 		proc->regestries[args[2] - 1] = args[0] - args[1];
 		proc->carry = (proc->regestries[args[2] - 1] == 0) ? 1 : 0;
 	}
-	// mz_print_pc_movements(proc);
-	// ft_printf("im sub\n");
-
+	mz_print_pc_movements(proc);
 }
