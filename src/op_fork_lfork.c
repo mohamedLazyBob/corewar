@@ -93,7 +93,7 @@ void	ft_operation_lfork(t_process *proc)
 		exit(-1);
 	ft_memcpy((void*)new_proc, (void*)proc, sizeof(t_process));
 
-	new_proc->pc = (proc->op_pc + (first_arg_value)) % MEM_SIZE;
+	new_proc->pc = proc->op_pc + (first_arg_value);
 	new_proc->proc_id = proc->players_counter + 1 + g_fork_counter++;
 	new_proc->next = NULL;
 	new_proc->previous = NULL; //
