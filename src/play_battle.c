@@ -44,6 +44,7 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle, int *flags)
 {
 	// if (curr_life_cycle == 12425)
 		// debug_print_procs_list(ptr, curr_life_cycle);
+	t_process *temp = ptr;
 	while (ptr)
 	{
 		// ft_printf("--> \tP:[%d] exec_at_cycle: %.2d, curr_cycle: %d, pc: %3d, op: %d\n", \
@@ -69,6 +70,12 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle, int *flags)
 				// if (ptr->next_inst == 8)
 					// ft_printf("\t\tP\t%d | %5s | pc : %d\n", ptr->proc_id, g_op_tab[ptr->next_inst].op_name, ptr->pc);
 				// g_zjmp = 0;
+				// if (ptr->proc_id == 1448)
+				// {
+				// 	ft_printf("we have the proc\n");
+				// 	debug_print_procs_list(temp, 0);
+				// 	exit(0);
+				// }
 				g_operation[ptr->next_inst](ptr);
 				/* .  if the op is live, then we save this cycle number   */
 				if (ptr->next_inst == 0)
@@ -206,7 +213,6 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			// debug_print_procs_list(ptr, 0);
 			
 			ft_execute_cycle(ptr, game_params->total_cycles_counter + 1, bloc->flags);
-				
 			mz_update_procs(procs);
 
 			if (mz_dump_memory(bloc, procs, (*game_params)) == 1)

@@ -46,8 +46,11 @@ void	ft_operation_fork(t_process *proc)
 	new_proc->proc_id = proc->players_counter + 1 + g_fork_counter++;
 	new_proc->next = NULL;
 	new_proc->previous = NULL; //
-	new_proc->execution_cycle = -1;
+	/* waaaaaqila hada howa lmochkil, hit db l proc yallah t criya, w khaso itprinta bli madarch live since a long while ago, (his father live counter) */
+	/* awla kayn chi mochkil, aykon tcrea ms mazdnahch l list */
+	// new_proc->execution_cycle = -1;
 	new_proc->is_new_bol = 1;
+	new_proc->said_live_at = proc->said_live_at;
 
 /* ------------------------------------------------------ */
 	ptr = proc;
@@ -61,5 +64,11 @@ void	ft_operation_fork(t_process *proc)
 	g_procs_head = new_proc;
 	mz_l_fork_mode_verbos(proc, first_arg_value, new_proc->pc);
 	mz_print_pc_movements(proc);
+
+	// if (new_proc->proc_id == 1448)
+	// {
+	// 	ft_printf("proc 1448 got created \n");
+	// 	exit(0);
+	// }
 }
 
