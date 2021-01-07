@@ -34,24 +34,24 @@ void	ft_operation_and(t_process *process)
 	ft_get_args_type(process, process->arena[0][process->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
 	{
-		process->pc = (process->pc + \
-						 mz_size_to_escape(process)) % MEM_SIZE;
+		process->pc = (process->pc + mz_size_to_escape(process)) % MEM_SIZE;
 	}
 	else
 	{
 		args[0] = ft_parse_args(process, parameters[0]);
 		args[1] = ft_parse_args(process, parameters[1]);
 		args[2] = ft_parse_args(process, parameters[2]);
-		if ((parameters[0] == T_REG && (args[0] < 1 || 16 < args[0])) || \
+		if (!((parameters[0] == T_REG && (args[0] < 1 || 16 < args[0])) || \
 			(parameters[1] == T_REG && (args[1] < 1 || 16 < args[1])) || \
-			(parameters[2] == T_REG && (args[2] < 1 || 16 < args[2])))
-			return ;
-		args[0] = ft_get_argument_value(process, args[0], parameters[0]);
-		args[1] = ft_get_argument_value(process, args[1], parameters[1]);
-		process->regestries[args[2] - 1] = (args[0] & args[1]);
-		(process->regestries[args[2] - 1] == 0) ? (process->carry = 1) : \
-											(process->carry = 0);
-		mz_print_op(process, parameters, args);
+			(parameters[2] == T_REG && (args[2] < 1 || 16 < args[2]))))
+		{
+			args[0] = ft_get_argument_value(process, args[0], parameters[0]);
+			args[1] = ft_get_argument_value(process, args[1], parameters[1]);
+			process->regestries[args[2] - 1] = (args[0] & args[1]);
+			(process->regestries[args[2] - 1] == 0) ? (process->carry = 1) : \
+												(process->carry = 0);
+			mz_print_op(process, parameters, args);
+		}
 	}
 	mz_print_pc_movements(process);
 }

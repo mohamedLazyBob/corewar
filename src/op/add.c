@@ -35,15 +35,16 @@ void	ft_operation_add(t_process *proc)
 		args[0] = ft_parse_args(proc, parameters[0]);
 		args[1] = ft_parse_args(proc, parameters[1]);
 		args[2] = ft_parse_args(proc, parameters[2]);
-		if ((parameters[0] == T_REG && (args[0] < 1 || 16 < args[0])) || \
+		if (!((parameters[0] == T_REG && (args[0] < 1 || 16 < args[0])) || \
 			(parameters[1] == T_REG && (args[1] < 1 || 16 < args[1])) || \
-			(parameters[2] == T_REG && (args[2] < 1 || 16 < args[2])))
-			return ;
-		mz_print_op(proc, parameters, args);
-		args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
-		args[1] = ft_get_argument_value(proc, args[1], parameters[1]);
-		proc->regestries[args[2] - 1] = args[0] + args[1];
-		proc->carry = (proc->regestries[args[2] - 1] == 0) ? 1 : 0;
+			(parameters[2] == T_REG && (args[2] < 1 || 16 < args[2]))))
+		{
+			mz_print_op(proc, parameters, args);
+			args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
+			args[1] = ft_get_argument_value(proc, args[1], parameters[1]);
+			proc->regestries[args[2] - 1] = args[0] + args[1];
+			proc->carry = (proc->regestries[args[2] - 1] == 0) ? 1 : 0;
+		}
 	}			
 	mz_print_pc_movements(proc);
 }

@@ -13,9 +13,11 @@ void	ft_operation_aff(t_process *process)
 {
 	char			var;
 	unsigned int	arg;
-	unsigned char	parameter[3] = {};
+	unsigned char	parameters_type[3] = {};
 
-	if (ft_strcmp((char*)parameter, "ER") == 0)
+	process->op_pc = process->pc - 1;
+	ft_get_args_type(process, process->arena[0][process->pc], parameters_type);
+	if (ft_strcmp((char*)parameters_type, "ER") == 0)
 	{
 		process->pc = (process->pc + 1) % MEM_SIZE;
 	}

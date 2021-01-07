@@ -14,13 +14,7 @@ void	mz_print_op(t_process *proc, unsigned char args_types[3], int value[3])
 {
 	// ft_printf("i was called \n");
 	if (!(g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4))
-	{
-		// ft_printf("non verbos!\n");
-	// if ((g_input_bloc->flags[VERBOS_1] & 16 || \
-	// 	g_input_bloc->flags[VERBOS_2] & 16) && (proc->next_inst != 8))
-	// 	mz_print_pc_movements(proc);
 		return ;	
-	}
 	// ft_printf("next inst : [%d], add == %d\n", proc->next_inst, AND);
 	if ((proc->next_inst ==  AND) || (proc->next_inst ==  OR) || (proc->next_inst ==  XOR))
 	{
@@ -140,7 +134,7 @@ void	mz_print_pc_movements(t_process *proc)
 	int	i;
 	int	operation_length;
 	int	pc_before_mod;
-
+	// ft_printf("\t\tprint adv was called\n");
 	if (!((g_input_bloc->flags[VERBOS_1] & 16 || \
 			g_input_bloc->flags[VERBOS_2] & 16)))
 		return ;
