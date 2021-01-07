@@ -41,8 +41,8 @@ void	ft_operation_fork(t_process *proc)
 	ft_memcpy((void*)new_proc, (void*)proc, sizeof(t_process));
 
 	new_proc->pc = proc->op_pc + (first_arg_value % IDX_MOD);
-	if (new_proc->pc >= MEM_SIZE)
-		new_proc->pc = new_proc->pc % MEM_SIZE;
+	new_proc->pc = ((MEM_SIZE + new_proc->pc) % MEM_SIZE);
+
 	new_proc->proc_id = proc->players_counter + 1 + g_fork_counter++;
 	new_proc->next = NULL;
 	new_proc->previous = NULL; //

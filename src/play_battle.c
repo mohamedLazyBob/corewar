@@ -42,13 +42,14 @@ static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 
 void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle, int *flags)
 {
-		// debug_print_procs_list(ptr);
+	// if (curr_life_cycle == 12425)
+		// debug_print_procs_list(ptr, curr_life_cycle);
 	while (ptr)
 	{
 		// ft_printf("--> \tP:[%d] exec_at_cycle: %.2d, curr_cycle: %d, pc: %3d, op: %d\n", \
-		// 		ptr->proc_id, ptr->execution_cycle, curr_life_cycle, ptr->pc, ptr->next_inst);
-		// 1st mra ghadi idkhl || the last op excuted, read another one
-		// dprintf(2, "curr_life_cycle : %d\n", curr_life_cycle);
+				ptr->proc_id, ptr->execution_cycle, curr_life_cycle, ptr->pc, ptr->next_inst);
+
+
 		if (ptr->execution_cycle == -1 || \
 				ptr->execution_cycle < curr_life_cycle)
 			ft_read_opcode(ptr, curr_life_cycle);
@@ -199,11 +200,6 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 				(game_params->curr_life_cycle < game_params->cycles_to_die || \
 					(game_params->cycles_to_die < 0 && bol++ == 0)))
 		{
-			//  debug_print_procs_list(*procs, 4);
-			// if (game_params->cycles_to_die <= 0)
-			// {
-			// 	ft_printf("cycle to die : %d, bol = %d\n", game_params->cycles_to_die, bol);
-			// }
 			ptr = *procs;// we can send *procs directly and del ptr
 			if (bloc->flags[VERBOS_1] != 0 || bloc->flags[VERBOS_2] != 0)// if debug is onB
 				mz_print_debug_infos(procs, bloc, (*game_params));
@@ -222,35 +218,10 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 				mesafi_visualize(bloc, (*game_params), procs);
 			game_params->curr_life_cycle++;
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
-			// g_procs_head = NULL; //
-		//  debug_print_procs_list(*procs);
-			// if (game_params->total_cycles_counter >= 7331)
-			// {
-			// 	ft_printf("before exit: [%d]/[%d] [%d]\n", game_params->curr_life_cycle, game_params->cycles_to_die, \
-			// 								game_params->total_cycles_counter);
-			// 	// exit(0);
-			// }
+	
 		}
-		//  debug_print_procs_list(*procs);
-
 		ft_count_total_live(procs, &game_params);
-		// debug_print_procs_list(*procs, 0);
 		ft_check(procs, &game_params);
-		// debug_print_procs_list(*procs, 1);	
 		bol = 0;
-		// if (game_params->cycles_to_die <= 0)
-		// 	ft_printf("cycle to die: %d, %p.\n", game_params->cycles_to_die, *procs);
-		// debug_print_procs_list(*procs, 1);
-		// if (game_params->total_cycles_counter >= 7331)
-		// {
-		// 	ft_printf("after check: [%d]/[%d] [%d]\n", game_params->curr_life_cycle, game_params->cycles_to_die, \
-		// 								game_params->total_cycles_counter);
-		// 	exit(0);
-		// }
-
-
-		//  debug_print_procs_list(*procs, 2);
-		// debug_print_procs_list(g_procs_head, 1);
 	}
-	// ft_printf("the end of battle\n");
 }
