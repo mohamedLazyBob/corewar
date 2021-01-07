@@ -22,7 +22,7 @@ extern t_input_data *g_input_bloc;
 ** the last one alive
 */
 
-static	void	mz_print_live(t_process *process)
+static	void	mz_print_live(t_process *process, int arg)
 {
 	char			*name;
 
@@ -31,15 +31,18 @@ static	void	mz_print_live(t_process *process)
 	{
 		for (int i = 0; i < g_input_bloc->players_counter; i++)
 		{
-			if (g_input_bloc->ids[i] == -1 * process->player_id)
+			//if (g_input_bloc->ids[i] == -1 * process->player_id)
+			if (g_input_bloc->ids[i] == arg)
 			{
 				name = g_input_bloc->players[i].header.prog_name;
 				break;
 			}
 		}
 
-		ft_printf("Player %d (%s) is said to be alive\n", \
+		// ft_printf("Player %d (%s) is said to be alive\n", \
 						-1*process->player_id, name);
+
+		ft_printf("Player %d (%s) is said to be alive\n", arg, name);
 	}
 }
 
@@ -58,7 +61,8 @@ void	ft_operation_live(t_process *process)
 	if (1 <= arg && arg <= g_input_bloc->players_counter)
 	{
 		g_last_live = arg;
-		mz_print_live(process);
+		// process->said_live_at = ;
+		mz_print_live(process, arg);
 	}
 	mz_print_pc_movements(process);
 }

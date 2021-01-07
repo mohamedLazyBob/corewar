@@ -81,7 +81,12 @@ void        ft_check(t_process **proc, t_game **game_params)
             (*proc) = (*proc)->next;
             if (*proc)
                 (*proc)->previous = temp->previous;
-            // ft_printf("Process %d hasn't lived for %d cycles (CTD %d)\n", temp->proc_id, 0, (*game_params)->cycles_to_die);
+			if (g_input_bloc->flags[VERBOS_1] & 8 || g_input_bloc->flags[VERBOS_2] & 8)
+			{
+				int	var = (*game_params)->total_cycles_counter - temp->said_live_at;
+                ft_printf("Process %d hasn't lived for %d cycles (CTD %d)\n", \
+                                temp->proc_id, var, (*game_params)->cycles_to_die);
+			}
             free(temp);
         }
 
@@ -94,7 +99,12 @@ void        ft_check(t_process **proc, t_game **game_params)
                 carriage->next = carriage->next->next;
                 if (carriage->next != NULL)
                     carriage->next->previous = temp->previous;
-                // ft_printf("Process %d hasn't lived for %d cycles (CTD %d)\n", temp->proc_id, 0, (*game_params)->cycles_to_die);
+				if (g_input_bloc->flags[VERBOS_1] & 8 || g_input_bloc->flags[VERBOS_2] & 8)
+				{
+					int	var = (*game_params)->total_cycles_counter - temp->said_live_at;
+   		            ft_printf("Process %d hasn't lived for %d cycles (CTD %d)\n", \
+							temp->proc_id, var, (*game_params)->cycles_to_die);
+				}
                 free(temp);
                 continue;
             }
