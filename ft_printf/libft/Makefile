@@ -31,6 +31,8 @@ SRC_NAME=	ft_atoi.c  		ft_bzero.c		ft_charinword.c	ft_isalnum.c	\
 		 	ft_strsub.c		ft_strtrim.c	ft_tolower.c	ft_toupper.c 	\
 		 	get_next_line.c	ft_lstdelone.c 	ft_isupper.c	ft_strndup.c	\
 			ft_isspace.c	ft_str_number_cmp.c	\
+			erase.c	get_front.c	init_deque.c \
+			insert_rear.c		new_dlist.c
 
 HDR_PATH=	headers
 HDR_NAME= 	libft.h 

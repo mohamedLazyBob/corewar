@@ -132,39 +132,54 @@ void	ft_introduce_players(t_input_data *bloc)
 *******************************************************************************
 */
 
+static int	data_allocation(t_datum *data)
+{
+	if (!(data->bloc = (t_input_data *)malloc(sizeof(t_input_data))))
+		return (1);
+	if (!(data->procs = (t_process *)malloc(sizeof(t_process))))
+	{
+		ft_memdel((void **)&(data->bloc));
+		return (1);
+	}
+	if (!(data->deque = (t_deque *)malloc(sizeof(t_deque))))
+	{
+		ft_memdel((void **)&(data->bloc));
+		ft_memdel((void **)&(data->procs));
+		return (1);
+	}
+	return (0);
+}
+
+static void	*battle_start(void *data)
+{
+	t_datum		*datum;
+
+	datum = (t_datum *)data;
+	ft_play_battle(datum->deque, &datum->procs, datum->bloc);
+	return (NULL);
+}
+
 int		main(int ac, char **av)
 {
-	t_input_data	bloc;
-	t_process		*procs;
-	//int				nbr_cycles[2];
-	//t_playrs		*playrs;
+	t_datum			data;
+	pthread_t		thread_id;
 
-	ft_memset(&bloc, 0, sizeof(bloc));
-	ft_memset(bloc.flags, 0, 11 * sizeof(int));
-	ft_read_players(ac, av, &bloc);
-	g_input_bloc = &bloc;
+	if (data_allocation(&data) == 1)
+		return (1);
+	ft_memset(data.bloc, 0, sizeof(t_input_data));
+	ft_memset(data.bloc->flags, 0, 11 * sizeof(int));
+	ft_read_players(ac, av, data.bloc);
+	g_input_bloc = data.bloc;
 	g_procs_head = NULL;
-	
-	bloc.players = (t_playrs*)ft_memalloc(sizeof(t_playrs) * bloc.players_counter);
-	ft_open_champion(bloc, bloc.players);
-  	ft_check_size_players(&bloc);
-  
-	// init processes (all of them)
-	ft_init_procs_arena(&procs, &bloc);
-	//		print_procs(procs, &bloc);
-			// print_arena(procs->arena[0], 1);
-		
-	ft_introduce_players(&bloc);
-	ft_play_battle(&procs, &bloc);
-	// play the game: the loop
-		// sets the opcode
-		// Reduce the number of cycles before execution
-		// Perform operation
-		// Check if needed:tabe 
-	// announce the winner
-	// exit
-
-	ft_printf("Contestant %d, \"%s\", has won !\n", g_last_live, bloc.players[g_last_live - 1].header.prog_name);
-	// ft_printf("Contestant %d\n", g_last_live);
+	data.bloc->players = (t_playrs*)ft_memalloc(sizeof(t_playrs) * data.bloc->players_counter);
+	ft_open_champion(*(data.bloc), data.bloc->players);
+  	ft_check_size_players(data.bloc);
+	ft_init_procs_arena(&data.procs, data.bloc);	
+	ft_introduce_players(data.bloc);
+	init_deque(data.deque);
+	pthread_create(&thread_id, NULL, battle_start, &data);
+	visualizer(data.deque);
+	pthread_join(thread_id, NULL);
+	ft_printf("Contestant %d, \"%s\", has won !\n", g_last_live, data.bloc->players[g_last_live - 1].header.prog_name);
 	return (0);
 }

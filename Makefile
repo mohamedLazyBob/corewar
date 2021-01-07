@@ -32,6 +32,9 @@ HDR_NAME= virtual_machine.h op.h
 LIB_PATH= ft_printf
 LIB= libftprintf.a
 
+VISUALIZER_PATH= visualizer
+VISUALIZER= visualizer.a
+
 OBJ_PATH= .obj
 OBJ_NAME= $(SRC_NAME:.c=.o)
 
@@ -55,8 +58,8 @@ HDR_FLAGS= $(HDR_PATH)
 
 all: lib $(NAME) 
 
-$(NAME): $(LIB_PATH)/$(LIB) $(OBJ)
-	@$(COMP) $(OBJ) $(LD_FLAGS) $(LD_LIBS) -o $@
+$(NAME): $(LIB_PATH)/$(LIB) $(VISUALIZER_PATH)/$(VISUALIZER) $(OBJ)
+	@$(COMP) $(OBJ) $(LD_FLAGS) $(LD_LIBS) $(VISUALIZER_PATH)/$(VISUALIZER) -framework GLUT -framework OpenGL -o $@
 	@ echo "\033[1;34m>>\033[0m $(NAME): \033[1;32m binary is ready.\033[0m"
 
 lib:

@@ -96,7 +96,7 @@ t_process	*ft_init_proc(t_input_data *bloc, \
 	idx = ft_get_player_index(bloc, proc_id + 1);
 	if (!(proc = (t_process*)ft_memalloc(sizeof(t_process))))
 		exit(0);
-	proc->pc = ft_init_arena(bloc, arena[0], idx);
+	proc->pc = ft_init_arena(bloc, arena, idx);
 	proc->proc_id = 1 + proc_id++;
 	proc->player_id = -1 * proc->proc_id;
 	proc->arena[0] = arena[0];
@@ -109,7 +109,7 @@ t_process	*ft_init_proc(t_input_data *bloc, \
 	proc->previous = NULL;
 	proc->carry = 0;
 	proc->process_live = 0;
-	proc->operation_live = 0; //
+	proc->operation_live = 0;
 	proc->is_new_bol = 1;
 	return (proc);
 }

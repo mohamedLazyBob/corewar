@@ -17,8 +17,11 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <string.h>
+# include <pthread.h>
 # include "op.h"
 # include "../ft_printf/headers/ft_printf.h"
+# include "../ft_printf/libft/headers/deque.h"
+# include "../ft_printf/libft/headers/dlist.h"
 
 # define FALSE 0
 # define TRUE 1
@@ -124,6 +127,21 @@ typedef struct	s_game
 	size_t			total_live_counter;
 	size_t			live_counter;
 }				t_game;
+
+typedef struct	s_datum
+{
+	t_input_data	*bloc;
+	t_deque			*deque;
+	t_process		*procs;
+}				t_datum;
+
+typedef struct	s_kit
+{
+	t_input_data	*bloc;
+	t_game			*game_params;
+	t_process		*procs;
+}				t_kit;
+
 /*
 **					struct up
 ** ****************************************************************************
@@ -165,7 +183,7 @@ void			ft_read_players(int argc, char **av, t_input_data *bloc);
 *******************************************************************************
 ** arena_initialization.c
 HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
-int				ft_init_arena(t_input_data *bloc, unsigned char *arena, int player_id);
+int				ft_init_arena(t_input_data *bloc, unsigned char *arena[2], int player_id);
 
 /*
 *******************************************************************************
@@ -283,7 +301,7 @@ void			ft_kill_first(t_process **proc, t_game **game_params);
 ** play_battle.c
 */
 
-void			ft_play_battle(t_process **procs, t_input_data *bloc);
+void			ft_play_battle(t_deque *deque, t_process **procs, t_input_data *bloc);
 
 /*
 *******************************************************************************
@@ -309,5 +327,12 @@ void		print_procs(t_process *ptr, t_input_data *bloc);
 
 void	copy_from_arena(void *dst, void *src, int idx, int len);
 void	copy_to_arena(void *dst, void *src, int idx, int len);
+
+/*
+*******************************************************************************
+** visualizer
+*/
+
+void			visualizer(t_deque *deque);
 
 #endif

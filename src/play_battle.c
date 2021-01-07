@@ -179,7 +179,34 @@ void	ft_count_total_live(t_process **proc, t_game **game_params)
 **
 */
 
-void	ft_play_battle(t_process **procs, t_input_data *bloc)
+static void	pusher(t_deque *deque, t_input_data *bloc, t_game *game_params, t_process *procs)
+{
+	t_kit		kit;
+	t_process	*node;
+
+	kit.bloc = bloc;
+	kit.game_params = malloc(sizeof(t_game));
+	ft_memcpy(kit.game_params, game_params, sizeof(t_game));
+	kit.procs = malloc(sizeof(t_process));
+	ft_memcpy(kit.procs, procs, sizeof(t_process));
+	kit.procs->arena[0] = malloc(MEM_SIZE);
+	kit.procs->arena[1] = malloc(MEM_SIZE);
+	ft_memcpy(kit.procs->arena[0], procs->arena[0], MEM_SIZE);
+	ft_memcpy(kit.procs->arena[1], procs->arena[1], MEM_SIZE);
+	node = kit.procs;
+	node->next = NULL;
+	while (procs->next != NULL)
+	{
+		node->next = malloc(sizeof(t_process));
+		ft_memcpy(node->next, procs->next, sizeof(t_process));
+		node = node->next;
+		procs = procs->next;
+		node->next = NULL;
+	}
+	insert_rear(deque, new_dlist(&kit, sizeof(t_kit)));
+}
+
+void		ft_play_battle(t_deque *deque, t_process **procs, t_input_data *bloc)
 {
 	t_process	*ptr;
 	t_game		*game_params;
@@ -219,9 +246,8 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 				return ;
 			if (bloc->flags[PAUSE_1] != 0 || bloc->flags[PAUSE_2] != 0)
 				mz_do_pause((*game_params), procs, bloc);
-			if (bloc->flags[VISU_1] != 0 || bloc->flags[VISU_2] != 0)
-
-				mesafi_visualize(bloc, (*game_params), procs);
+			// if (bloc->flags[VISU_1] != 0 || bloc->flags[VISU_2] != 0)
+				pusher(deque, bloc, game_params, *procs);
 			game_params->curr_life_cycle++;
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
 			// g_procs_head = NULL; //

@@ -43,7 +43,7 @@ void	print_arena(unsigned char *arena, int bol)
 	}
 }
 
-int		ft_init_arena(t_input_data *bloc, unsigned char *arena, int player_id)
+int		ft_init_arena(t_input_data *bloc, unsigned char *arena[2], int player_id)
 {
 	static int	pc;
 	int			chunk;
@@ -51,7 +51,8 @@ int		ft_init_arena(t_input_data *bloc, unsigned char *arena, int player_id)
 
 	chunk = (int)(MEM_SIZE / bloc->players_counter);
 	len = bloc->players[player_id].header.prog_size;
-	ft_memcpy(arena + pc, bloc->players[player_id].exec_code, len);
+	ft_memcpy(arena[0] + pc, bloc->players[player_id].exec_code, len);
+	ft_memset(arena[1] + pc, bloc->ids[player_id], len);
 	pc += chunk;
 	//print_arena(bloc, arena);
 	return (pc - chunk);
