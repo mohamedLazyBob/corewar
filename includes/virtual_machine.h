@@ -284,6 +284,7 @@ void			ft_kill_first(t_process **proc, t_game **game_params);
 *******************************************************************************
 ** play_battle.c
 */
+void	ft_count_total_live(t_process **proc, t_game **game_params);
 
 void			ft_play_battle(t_process **procs, t_input_data *bloc);
 

@@ -18,8 +18,10 @@ t_input_data		    *g_input_bloc;
 
 static void ft_check_cycle(t_game *game_params)
 {
-    // dprintf(2, "cycle to die : %.6d tlc : %.3zu cc : %d\n", \
-        game_params->cycles_to_die, game_params->total_live_counter, game_params->checks_counter);
+    // dprintf(2, "at cycle %zu -- cycle to die : %.6d tlc : %.3zu cc : %d\n", \
+        game_params->total_cycles_counter, game_params->cycles_to_die, \
+        game_params->total_live_counter, game_params->checks_counter);	
+
     if (game_params->total_live_counter >= NBR_LIVE || \
                     game_params->checks_counter  + 1 == MAX_CHECKS)
     {
@@ -67,61 +69,52 @@ void        ft_check(t_process **proc, t_game **game_params)
 
     if (proc && *proc)
     {
-			// if ((*game_params)->total_cycles_counter >= 12424)
-			// {
-			// 	debug_print_procs_list(*proc, 2);
-			// 	// exit(0);
-			// }
-    while ((*proc) && (((*game_params)->cycles_to_die <= 0) || (((*proc)->process_live == 0))))
-    {
-        temp = (*proc);
-        if (g_input_bloc->flags[VERBOS_1] & 8 || g_input_bloc->flags[VERBOS_2] & 8)
+		// debug_print_procs_list(*proc, -1);
+        while ((*proc) && (((*game_params)->cycles_to_die <= 0) || (((*proc)->process_live == 0))))
         {
-            int	var = (*game_params)->total_cycles_counter - temp->said_live_at - 1;
-            ft_printf("Process %d hasn't lived for %d cycles (CTD %d)\n", \
-                            temp->proc_id, var, (*game_params)->cycles_to_die);
-        }
-		// if ((*proc)->is_new_bol == 0)
-		// {
-        	(*proc) = (*proc)->next;
-        	if (*proc)
-            	(*proc)->previous = temp->previous;
-  	      	free(temp);
-		// }
-		// else
-		// {
-		// 	break;
-		// }
-    }
-    carriage = (*proc);
-    while (carriage && carriage->next)
-    {
-        if((*game_params)->cycles_to_die <= 0 || (carriage->next->process_live == 0))
-        {
-            temp = carriage->next;
+            temp = (*proc);
+			// ft_printf("\t0 - proc[%d] live at [%d] diff [%d]\n", temp->proc_id, temp->said_live_at, \
+							(*game_params)->total_cycles_counter - temp->said_live_at);
             if (g_input_bloc->flags[VERBOS_1] & 8 || g_input_bloc->flags[VERBOS_2] & 8)
             {
                 int	var = (*game_params)->total_cycles_counter - temp->said_live_at;
                 ft_printf("Process %d hasn't lived for %d cycles (CTD %d)\n", \
-                        temp->proc_id, var, (*game_params)->cycles_to_die);
+                                temp->proc_id, var, (*game_params)->cycles_to_die);
             }
-			// if (carriage->next->is_new_bol == 0)
-			// {
-            	carriage->next = carriage->next->next;
-            	if (carriage->next != NULL)
-                	carriage->next->previous = temp->previous;
-            	free(temp);
-			// }
-			// else
-			// {
-            // 	carriage->next = carriage->next->next;
-			// }
-            continue;
+            (*proc) = (*proc)->next;
+            if (*proc)
+                (*proc)->previous = temp->previous;
+            free(temp);
         }
-        carriage = carriage->next;
-    }
-    ft_check_cycle((*game_params));
-    ft_clear_lives(proc, game_params);
+
+        carriage = (*proc);
+		// ft_printf("\t1 - proc[%d] live at [%d] diff [%d]\n", carriage->proc_id, carriage->said_live_at, \
+							(*game_params)->total_cycles_counter - carriage->said_live_at);
+
+        while (carriage && carriage->next)
+        {
+			// ft_printf("\t2 - proc[%d] live at [%d] diff [%d]\n", carriage->next->proc_id, carriage->next->said_live_at, \
+							(*game_params)->total_cycles_counter - carriage->next->said_live_at);
+            if((*game_params)->cycles_to_die <= 0 || (carriage->next->process_live == 0))
+            {
+                temp = carriage->next;
+                if (g_input_bloc->flags[VERBOS_1] & 8 || g_input_bloc->flags[VERBOS_2] & 8)
+                {
+                    int	var = (*game_params)->total_cycles_counter - temp->said_live_at;
+                    ft_printf("Process %d hasn't lived for %d cycles (CTD %d)\n", \
+                            temp->proc_id, var, (*game_params)->cycles_to_die);
+                }
+                carriage->next = carriage->next->next;
+                if (carriage->next != NULL)
+                    carriage->next->previous = temp->previous;
+                free(temp);
+                continue;
+            }
+            carriage = carriage->next;
+        }
+		// debug_print_procs_list(*proc, 1);
+        ft_check_cycle((*game_params));
+        ft_clear_lives(proc, game_params);
 
    }
 }

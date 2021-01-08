@@ -31,8 +31,14 @@ void	ft_operation_st(t_process *proc)
 				int offset = ((proc->op_pc + (args[1] % IDX_MOD)) % MEM_SIZE);
 				if (offset < 0)
 					offset += MEM_SIZE;
-				ft_memcpy(proc->arena[0] + offset, str, 4);
-				ft_memset(proc->arena[1] + offset, proc->player_id, 4);
+
+				// ft_memcpy(proc->arena[0] + offset, str, 4);
+				copy_to_arena(proc->arena[0], str, offset, 4);
+
+				// ft_memset(proc->arena[1] + offset, proc->player_id, 4);
+				int	tab[4] = {proc->player_id, proc->player_id, proc->player_id, proc->player_id};
+				copy_to_arena(proc->arena[1], tab, offset, 4);
+
 			}
 		}
 	}

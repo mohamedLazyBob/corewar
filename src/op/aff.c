@@ -19,7 +19,7 @@ void	ft_operation_aff(t_process *process)
 	ft_get_args_type(process, process->arena[0][process->pc], parameters_type);
 	if (ft_strcmp((char*)parameters_type, "ER") == 0)
 	{
-		process->pc = (process->pc + 1) % MEM_SIZE;
+		process->pc = (process->pc + mz_size_to_escape(process)) % MEM_SIZE;
 	}
 	else
 	{

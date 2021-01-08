@@ -114,8 +114,11 @@ void	mz_print_debug_infos(t_process **procs, \
 ** ****************************************************************************
 ** Done!
 */
-int		mz_dump_memory(t_input_data *bloc, t_process **procs, t_game game_params)
+int		mz_dump_memory(t_input_data *bloc, t_process **procs, t_game **game_par)
 {
+	t_game game_params;
+
+	game_params = **game_par;
 	if ((bloc->flags[DUMP_32] != -1 && (game_params.total_cycles_counter == (bloc->flags[DUMP_32]))) ||
 		(bloc->flags[DUMP_64] != -1 && (game_params.total_cycles_counter == (bloc->flags[DUMP_64]))))
 	{
@@ -198,7 +201,6 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 	{		
 		game_params->curr_life_cycle = 0;
 
-		// ft_printf("\t\tcycle to die : %d\n", game_params->cycles_to_die);
 
 		while (procs && (*procs) && \
 				(game_params->curr_life_cycle < game_params->cycles_to_die || \
@@ -207,31 +209,21 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			ptr = *procs;// we can send *procs directly and del ptr
 			if (bloc->flags[VERBOS_1] != 0 || bloc->flags[VERBOS_2] != 0)// if debug is onB
 				mz_print_debug_infos(procs, bloc, (*game_params));
-			// debug_print_procs_list(ptr, 0);
 			
 			ft_execute_cycle(ptr, game_params->total_cycles_counter + 1, bloc->flags);
 			mz_update_procs(procs);
-			// if (game_params->total_cycles_counter == 12424)
-			// {
-			// 	debug_print_procs_list(*procs, 1);
-			// 	// exit(0);
-			// }
-			if (mz_dump_memory(bloc, procs, (*game_params)) == 1)
-				exit(0) ;
+
+			if (mz_dump_memory(bloc, procs, &game_params) == 1)
+				exit(0);
+
 			if (bloc->flags[PAUSE_1] != 0 || bloc->flags[PAUSE_2] != 0)
 				mz_do_pause((*game_params), procs, bloc);
 			if (bloc->flags[VISU_1] != 0 || bloc->flags[VISU_2] != 0)
-
 				mesafi_visualize(bloc, (*game_params), procs);
 			game_params->curr_life_cycle++;
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
 	
 		}
-			// if (game_params->total_cycles_counter >= 12424)
-			// {
-			// 	debug_print_procs_list(*procs, 2);
-			// 	// exit(0);
-			// }
 		ft_count_total_live(procs, &game_params);
 		ft_check(procs, &game_params);
 		bol = 0;
