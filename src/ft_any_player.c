@@ -34,5 +34,5 @@ void    ft_any_player(t_process *proc, int place_memory, char *str, int size)
     ft_int_to_str(proc->regestries[proc->arena[0][proc->op_pc] - 1], str);
 	ft_printf("[%.2x][%.2x][%.2x][%.2x]\n", str[0],  str[1], str[2], str[3]);
 	ft_memcpy(proc->arena[0] + place_memory, (const void *)str, size);
-	ft_memset(proc->arena[1] + place_memory, proc->player_id, size);
+	ft_memset(proc->arena[1] + place_memory, -proc->player_id, size);
 }

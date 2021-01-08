@@ -32,7 +32,7 @@ void	ft_operation_st(t_process *proc)
 			if (offset < 0)
 				offset += MEM_SIZE;
 			ft_memcpy(proc->arena[0] + offset, str, 4);
-			ft_memset(proc->arena[1] + offset, proc->player_id, 4);
+			ft_memset(proc->arena[1] + offset, -proc->player_id, 4);
 		}
 	}
 	mz_print_pc_movements(proc);
