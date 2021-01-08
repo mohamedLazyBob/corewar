@@ -28,9 +28,11 @@ void	ft_operation_lldi(t_process *proc)
 		{
 			value[0] = ft_get_argument_value_war(proc, value[0], parameters[0]);
 			value[1] = ft_get_argument_value_war(proc, value[1], parameters[1]);
+			// ft_printf("debug -- v1: %d, v2: %d\n", value[0], value[1]);
 
 			// we should also replace this 
-			ft_memcpy(&temp, proc->arena[0] + proc->op_pc + ((value[0] + value[1])), 4);// reading the value from ram
+			// ft_memcpy(&temp, proc->arena[0] + proc->op_pc + ((value[0] + value[1])), 4);// reading the value from ram
+			copy_from_arena(&temp, proc->arena[0], proc->op_pc + (value[0] + value[1]), 4);
 
 			temp = ft_reverse_endianness((unsigned char*)&temp, 4); // revering from big_endien to small_endian
 			proc->regestries[value[2] - 1] = temp;// storing the result to the 3dr argument.	
@@ -39,4 +41,5 @@ void	ft_operation_lldi(t_process *proc)
 		}
 	}
 	mz_print_pc_movements(proc);
+		// exit(0);dd
 }

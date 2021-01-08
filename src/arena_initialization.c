@@ -29,18 +29,19 @@ void	print_arena(unsigned char *arena, int bol)
 		bol = 32;
 	else
 		bol = 64;
-	ft_printf("0x%.4x: ", line_index);
+	ft_printf("0x%.4x : ", line_index);
 	while (idx < MEM_SIZE)
 	{
 		ft_printf("%.2x ", arena[idx]);
 		idx++;
-		if (idx % bol == 0)
+		if (idx < MEM_SIZE && idx % bol == 0)
 		{
 			line_index += bol;
 			ft_printf("\n");
-			ft_printf("0x%.4x: ", line_index);
+			ft_printf("0x%.4x : ", line_index);
 		}
 	}
+	ft_printf("\n");
 }
 
 int		ft_init_arena(t_input_data *bloc, unsigned char *arena, int player_id)

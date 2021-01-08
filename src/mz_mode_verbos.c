@@ -61,6 +61,11 @@ void	mz_print_op(t_process *proc, unsigned char args_types[3], int value[3])
 	else if (proc->next_inst == LLDI)
 	{
 		ft_printf("P %4d | lldi %d %d r%d\n", proc->proc_id, value[0], value[1], value[2]);
+		ft_printf("       | -> load from %d + %d = %d (with pc %d)\n", \
+				value[0], \
+				value[1], \
+				value[0] + value[1], \
+				value[0] + value[1] + proc->op_pc);
 	}
 	else if (proc->next_inst == LD)
 	{

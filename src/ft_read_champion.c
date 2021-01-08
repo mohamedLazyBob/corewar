@@ -60,6 +60,7 @@ void			ft_fd_players(t_input_data *bloc)
 void			ft_read_champion(t_input_data bloc, t_playrs *playrs, int i)
 {
 	unsigned char	temp[4];
+	int				ret;
 
 	read(bloc.fd[i], temp, 4);
 	playrs->header.magic = ft_convert_num(temp);
@@ -72,8 +73,7 @@ void			ft_read_champion(t_input_data bloc, t_playrs *playrs, int i)
 	read(bloc.fd[i], temp, 4);
 	if (ft_convert_num(temp) != 0)
 	{
-		dprintf(2, "Error: File %s has a code size that differ from what its header says\n", \
-							bloc.names[i]);
+		dprintf(2, "Error: File %s has a code size that differ from what its header says\n", bloc.names[i]);
 		exit(1);
 	}
 	read(bloc.fd[i], temp, 4);
@@ -97,11 +97,11 @@ void			ft_read_champion(t_input_data bloc, t_playrs *playrs, int i)
 	if ((playrs->exec_code =
 				(unsigned char*)ft_strnew(playrs->header.prog_size)) == NULL)
 		exit(0);
-	read(bloc.fd[i], playrs->exec_code, playrs->header.prog_size);
-	if ((read(bloc.fd[i], temp, 1) >= 0))
+
+	ret = read(bloc.fd[i], playrs->exec_code, playrs->header.prog_size);
+	if ((ret != playrs->header.prog_size) || ((read(bloc.fd[i], temp, 1) > 0)))
 	{
-		dprintf(2, "Error: File %s has a code size that differ from what its header says\n", \
-							bloc.names[i]);
+		dprintf(2, "Error: File %s has a code size that differ from what its header says \n", bloc.names[i]);
 		exit(1);
 	}
 }

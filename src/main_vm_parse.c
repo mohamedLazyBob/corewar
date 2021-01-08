@@ -124,7 +124,7 @@ void	ft_introduce_players(t_input_data *bloc)
 	ft_putstr("Introducing contestants...\n");
 	while (++i <= bloc->players_counter)
 	{
-		ft_printf("* Player %d, weighing %.2d bytes, \"%s\" (\"%s\") !\n", i, \
+		ft_printf("* Player %d, weighing %d bytes, \"%s\" (\"%s\") !\n", i, \
 				bloc->players[i - 1].header.prog_size, \
 				bloc->players[i - 1].header.prog_name, \
 				bloc->players[i - 1].header.comment);

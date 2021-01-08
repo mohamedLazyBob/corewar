@@ -158,7 +158,7 @@ int		ft_get_argument_value_war(t_process *process, \
 		// ft_memcpy(&arg, process->arena[0] + (process->op_pc + arg), 4);
 
 		// maybe we should use this, bcs maybe idx + 4 is > MEM_SIZE
-		//copy_from_arena((void*)&arg, process->arena[0], \
+		copy_from_arena((void*)&arg, process->arena[0], \
 						process->op_pc + arg, 4);
 		/* ---------------------------- */
 		arg = ft_reverse_endianness((unsigned char*)&arg, 4);

@@ -105,9 +105,6 @@ void	mz_print_debug_infos(t_process **procs, \
 				bloc->flags[VERBOS_1] : bloc->flags[VERBOS_2];
 	if (verbos && (verbos & 2))
 	{
-		// ft_putstr("It is now cycle ");
-		// ft_putnbr(game_params.total_cycles_counter);
-		// write(1, "\n", 1);
 		ft_printf("It is now cycle %d\n", game_params.total_cycles_counter);
 	}
 
@@ -220,7 +217,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 			// 	// exit(0);
 			// }
 			if (mz_dump_memory(bloc, procs, (*game_params)) == 1)
-				return ;
+				exit(0) ;
 			if (bloc->flags[PAUSE_1] != 0 || bloc->flags[PAUSE_2] != 0)
 				mz_do_pause((*game_params), procs, bloc);
 			if (bloc->flags[VISU_1] != 0 || bloc->flags[VISU_2] != 0)

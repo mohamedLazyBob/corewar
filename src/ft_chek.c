@@ -24,8 +24,7 @@ static void ft_check_cycle(t_game *game_params)
                     game_params->checks_counter  + 1 == MAX_CHECKS)
     {
         game_params->cycles_to_die -= CYCLE_DELTA;
-        // if (((g_input_bloc->flags[VERBOS_1] & 16 || \
-		// 	g_input_bloc->flags[VERBOS_2] & 16)))
+	    if ((g_input_bloc->flags[VERBOS_1] & 2) || (g_input_bloc->flags[VERBOS_2] & 2))
             ft_printf("Cycle to die is now %d\n", game_params->cycles_to_die);
         game_params->checks_counter = 0;
        // (game_params)->total_live_counter = 0;
@@ -78,7 +77,7 @@ void        ft_check(t_process **proc, t_game **game_params)
         temp = (*proc);
         if (g_input_bloc->flags[VERBOS_1] & 8 || g_input_bloc->flags[VERBOS_2] & 8)
         {
-            int	var = (*game_params)->total_cycles_counter - temp->said_live_at;
+            int	var = (*game_params)->total_cycles_counter - temp->said_live_at - 1;
             ft_printf("Process %d hasn't lived for %d cycles (CTD %d)\n", \
                             temp->proc_id, var, (*game_params)->cycles_to_die);
         }
