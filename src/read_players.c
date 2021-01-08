@@ -170,10 +170,11 @@ void	ft_read_players(int argc, char **av, t_input_data *bloc)
 		idx += ret + 1;
 	}
 	ft_add_ids(bloc);
-	if (bloc->players_counter == 1)
-		ft_free_exit("ERROR: in number of args, too few.", 
-						(void**)bloc->names, bloc->players_counter);
-	else if (bloc->players_counter == 0)
+	// if (bloc->players_counter == 1)
+	// 	ft_free_exit("ERROR: in number of args, too few.", 
+	// 					(void**)bloc->names, bloc->players_counter);
+	// else if (bloc->players_counter == 0)
+	if (bloc->players_counter == 0)
 	{
 		mz_print_usage();
 		exit(0);

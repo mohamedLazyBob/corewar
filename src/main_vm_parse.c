@@ -47,7 +47,10 @@ void ft_check_size_players(t_input_data *bloc)
 		{
 			//creat somthing like dprintf
 			// dprintf(2, "player_counter = %d, i = %d\n", bloc->players_counter, i);
-			dprintf(2, "Error: File %s has too large a code (%u bytes > 682 bytes)\n", bloc->players[i].header.prog_name, bloc->players[i].header.prog_size);
+			dprintf(2, "Error: File %s has too large a code (%u bytes > 682 bytes)\n", \
+			bloc->names[i], \
+			bloc->players[i].header.prog_size);
+			// bloc->players[i].header.prog_name, \
 			//ft_exit(2, bloc->playrs[i]);
 			exit(1);
 		}
@@ -147,7 +150,7 @@ int		main(int ac, char **av)
 	
 	bloc.players = (t_playrs*)ft_memalloc(sizeof(t_playrs) * bloc.players_counter);
 	ft_open_champion(bloc, bloc.players);
-  	ft_check_size_players(&bloc);
+  	// ft_check_size_players(&bloc);
   
 	// init processes (all of them)
 	ft_init_procs_arena(&procs, &bloc);
@@ -155,6 +158,7 @@ int		main(int ac, char **av)
 			// print_arena(procs->arena[0], 1);
 		
 	ft_introduce_players(&bloc);
+	g_last_live = bloc.players_counter;
 	ft_play_battle(&procs, &bloc);
 	// play the game: the loop
 		// sets the opcode

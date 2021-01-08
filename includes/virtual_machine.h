@@ -143,7 +143,7 @@ HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 ** ft_read_champion.c
 HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 
-void			ft_read_champion(int fd, t_playrs *playrs);
+void			ft_read_champion(t_input_data bloc, t_playrs *playrs, int i);
 void			ft_open_champion(t_input_data bloc, t_playrs *playrs);
 void			ft_fd_players(t_input_data	*bloc);
 unsigned int	ft_convert_num(unsigned char *temp);
