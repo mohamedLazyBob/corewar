@@ -64,6 +64,7 @@ $(NAME): $(LIB_PATH)/$(LIB) $(VISUALIZER_PATH)/$(VISUALIZER) $(OBJ)
 
 lib:
 	@make -sC ft_printf
+	@make -C $(VISUALIZER_PATH)
 
 #$(LIB_PATH)/$(LIB): lib
 #	@echo "***"
@@ -79,10 +80,12 @@ clean:
 	@rm -fr $(OBJ)
 	@rm -fr $(OBJ_PATH) 2> /dev/null || true
 	@make -C $(LIB_PATH) clean
+	@make clean -C $(VISUALIZER_PATH)
 	@echo "\033[1;34m>>\033[0m $(NAME): \033[1;33m object files deleted.\033[0m" 
 
 fclean:
 	@make -C $(LIB_PATH) fclean
+	@make fclean -C $(VISUALIZER_PATH)
 	@rm -fr $(OBJ)
 	@rm -fr $(OBJ_PATH) 2> /dev/null || true
 	@echo "\033[1;34m>>\033[0m $(NAME): \033[1;33m object files deleted.\033[0m" 
