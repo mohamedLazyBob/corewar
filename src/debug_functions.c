@@ -30,7 +30,7 @@ void	debug_print_procs_list(t_process *procs, int i)
 		// //  dprintf(2, "\t[%d] live %d \n", temp->proc_id, temp->process_live);
 		ft_printf("ptr %p , player_id: %d, proc_id: %d, pc: %d; next = %p\n", \
 					temp , temp->player_id, temp->proc_id, temp->pc, temp->next);
-		ft_printf("\t[%d] live %d \n", temp->proc_id, temp->process_live);
+		ft_printf("\t[%d] live %d , valid live: %d\n", temp->proc_id, temp->process_live, temp->valid_player_live_counter);
 		temp = temp->next;
 	}
 	// ft_printf("\n");

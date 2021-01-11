@@ -61,6 +61,7 @@ void	ft_operation_live(t_process *process)
 	if (1 <= arg && arg <= g_input_bloc->players_counter)
 	{
 		g_last_live = arg;
+		process->valid_player_live_counter++;
 		mz_print_live(process, arg);
 	}
 	mz_print_pc_movements(process);

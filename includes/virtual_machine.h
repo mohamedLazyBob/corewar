@@ -90,7 +90,6 @@ enum e_flags
 */
 typedef	struct	s_process
 {
-	int 				operation_live;
 	int 			    cycle_to_die;
 	int 			    check;
 	unsigned int	    execution_cycle;
@@ -106,12 +105,14 @@ typedef	struct	s_process
 	unsigned int	    regestries[REG_NUMBER];
 
 	unsigned int	    process_live;
+	int 				valid_player_live_counter;
+	int					said_live_at;
+
 	unsigned int    	carry;
 	unsigned int	    players_counter;
 	unsigned int	    procs_counter;
 
 	int 				is_new_bol;
-	int					said_live_at;
 
 	struct s_process	*next;
   	struct s_process	*previous;
@@ -287,6 +288,7 @@ void			ft_kill_first(t_process **proc, t_game **game_params);
 void	ft_count_total_live(t_process **proc, t_game **game_params);
 
 void			ft_play_battle(t_process **procs, t_input_data *bloc);
+void	execute_number_of_cycles(t_game *game_params, t_input_data *bloc, t_process **procs, int bol);
 
 /*
 *******************************************************************************

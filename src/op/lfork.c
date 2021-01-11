@@ -28,7 +28,12 @@ void	ft_operation_lfork(t_process *proc)
 	new_proc->next = NULL;
 	new_proc->previous = NULL; //
 	new_proc->is_new_bol = 1;
+
 	new_proc->said_live_at = proc->said_live_at;
+	//new_proc->valid_player_live_counter = proc->valid_player_live_counter;
+	// new_proc->said_live_at = 0;
+	new_proc->process_live = 0;
+	new_proc->valid_player_live_counter =0;
 
 	ptr = proc;
 	while (ptr->previous != NULL)
@@ -41,9 +46,10 @@ void	ft_operation_lfork(t_process *proc)
 	mz_l_fork_mode_verbos(proc, first_arg_value, proc->op_pc + (first_arg_value));
 	mz_print_pc_movements(proc);
 
-	// if (new_proc->proc_id == 1448)
+	// int var = 30;
+	// if (new_proc->proc_id == var)
 	// {
-	// 	ft_printf("proc 1448 got created, it's last live = %d\n", new_proc->said_live_at);
+	// 	ft_printf("proc [%d] got created, by : [%d] it's last live = %d\n", var, proc->proc_id, new_proc->said_live_at);
 	// 	debug_print_procs_list(g_procs_head, 0);
 	// 	exit(0);
 	// }
