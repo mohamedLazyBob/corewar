@@ -29,7 +29,7 @@ void	ft_operation_aff(t_process *process)
 			arg = ft_get_argument_value(process, arg, REG_CODE);
 			var = (char)(arg % 256);
 			if (g_input_bloc->flags[AFF_1] || g_input_bloc->flags[AFF_2])
-				ft_printf("aff: %c\n", var);
+				ft_printf("Aff: %c\n", var);
 		}
 	}
 	mz_print_pc_movements(process);

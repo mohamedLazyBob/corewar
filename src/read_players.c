@@ -21,7 +21,7 @@
 ** + -v / --verbos	: are we running in debug mode and wich debug mode it's
 */
 
-int		ft_read_sideflags(int i, char **av, t_input_data *bloc)
+int		ft_read_sideflags(int i, char **av, t_input_data *bloc, int *bol)
 {
 	char			*temp_str;
 	int				ret;
@@ -30,7 +30,8 @@ int		ft_read_sideflags(int i, char **av, t_input_data *bloc)
 
 	temp_str = ft_strdup_lower(av[i]);
 	// ft_printf("temp_str = [%s]\n", temp_str);
-	ret = -1;
+	ret = 0;
+	*bol = -1;
 	for (int j = 0; j < 11; j++)
 	{
 		if (0 == ft_strcmp(temp_str, flags[j]))
@@ -38,14 +39,15 @@ int		ft_read_sideflags(int i, char **av, t_input_data *bloc)
 			if (j < 6 && (av[i + 1]))
 			{
 				bloc->flags[j] = ft_atoi(av[i + 1]);
-				ret = 1;
+				*bol = 1;
 			}
 			else if (6 <= j)
 			{
 				// ft_printf("[%s] -%d- [%s]\n", temp_str,j,  flags[j]);
 				bloc->flags[j] = 1;
-				ret = 0;
+				*bol = 0;
 			}
+			ret = 1;
 			break;
 		}
 	}
@@ -159,9 +161,9 @@ void	ft_read_players(int argc, char **av, t_input_data *bloc)
 	while (idx < argc)
 	{
 		if ((bloc->players_counter == MAX_PLAYERS) && \
-				(0 == ft_read_sideflags(idx, av, bloc)))
+				(0 == ft_read_sideflags(idx, av, bloc, &ret)))
 			ft_exit("ERROR: Wrong number of args");
-		ret = ft_read_sideflags(idx, av, bloc);
+		ft_read_sideflags(idx, av, bloc, &ret);
 		// ft_printf("ret == %d for av[i] : [%s]\n", ret, av[idx]);
 		if (ret == -1)
 			ret = ft_read_player_numb(idx, av, bloc);
