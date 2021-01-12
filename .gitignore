@@ -4,7 +4,7 @@
 *.swo
 *.log
 */*.log
-resources/file.log
+resources/*.log
 corewar
 .vscode
 # we can add also gitignore itself but I'm not sure if every one have this file in it's localy repo
