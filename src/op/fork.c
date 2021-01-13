@@ -63,7 +63,7 @@ void	ft_operation_fork(t_process *proc)
 	new_proc->next = ptr;
 	new_proc->previous = NULL;
 	g_procs_head = new_proc;
-	mz_l_fork_mode_verbos(proc, first_arg_value, new_proc->pc);
+	mz_l_fork_mode_verbos(proc, first_arg_value, proc->op_pc + (first_arg_value % IDX_MOD));
 	mz_print_pc_movements(proc);
 
 	// int var = 30;

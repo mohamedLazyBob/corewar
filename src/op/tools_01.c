@@ -46,7 +46,6 @@ void			ft_get_args_type(t_process *process, \
 		(args[i] == 0) ? (bit[i] = 0) : \
 							(bit[i] = (unsigned char)(1 << (args[i] - 1)));
 	}
-	// ft_printf("[%d][%d][%d]\n", bit[0],  bit[1], bit[2]);
 	if (!(((bit[0] & g_op_tab[process->next_inst].args_type[0]) == bit[0]) && \
 		((bit[1] & g_op_tab[process->next_inst].args_type[1]) == bit[1]) && \
 		((bit[2] & g_op_tab[process->next_inst].args_type[2]) == bit[2])))
@@ -83,35 +82,16 @@ int				ft_parse_args(t_process *process, unsigned char par)
 	else if (par == DIR_CODE)
 	{
 		dir_size = (g_op_tab[process->next_inst].t_dir_size ? 2 : 4);
-		/* ---------------------------- */
-		// ft_memcpy((char*)&(num) + 4 - dir_size, process->arena[0] + process->pc, dir_size);
-
-		// maybe we should use this, bcs maybe idx + 4 is > MEM_SIZE
 		copy_from_arena((char*)&(num) + 4 - dir_size, \
 						process->arena[0], process->pc, dir_size);
-		/* ---------------------------- */
 		num = ft_reverse_endianness((unsigned char*)&num, 4);
-
-	// if (process->proc_id == 5159)
-	// {
-	// 	ft_printf("\nPc : %d, arena limit : %d\n", process->pc, MEM_SIZE);
-	// 	ft_printf("\narena: %x, %x, %x, %x\n", process->arena[0][process->pc], process->arena[0][process->pc + 1], \
-	// 											process->arena[0][process->pc + 2], process->arena[0][(process->pc + 3) % MEM_SIZE]);
-	// 	ft_printf("\n\nfrom pars args num: %d\n\n", num);
-	// }
-
 		if (dir_size == 2)
 			num = (short int)num;
 		process->pc = (process->pc + dir_size) % MEM_SIZE;
 	}
 	else if (par == IND_CODE)
 	{
-		/* ---------------------------- */
-		// ft_memcpy(&num, process->arena[0] + process->pc, 2);
-
-		// maybe we should use this, bcs maybe idx + 4 is > MEM_SIZE
 		copy_from_arena((void*)&(num), process->arena[0], process->pc, 2);
-		/* ---------------------------- */
 		num = (short int)ft_reverse_endianness((unsigned char*)&num, 2);
 		process->pc = (process->pc + 2) % MEM_SIZE;
 	}
@@ -120,6 +100,7 @@ int				ft_parse_args(t_process *process, unsigned char par)
 
 /*
 ******************************************************************************
+** this reads from a regestrie or from a ram/arena[0] adrress 
 */
 
 int	ft_get_argument_value(t_process *process, \
@@ -130,13 +111,8 @@ int	ft_get_argument_value(t_process *process, \
 		arg = process->regestries[arg - 1];
 	else if (parameter == IND_CODE)
 	{
-		/* ---------------------------- */
-		// ft_memcpy(&arg, process->arena[0] + (process->op_pc + (arg % IDX_MOD)), 4);
-
-		// maybe we should use this, bcs maybe idx + 4 is > MEM_SIZE
 		copy_from_arena((void*)&arg, process->arena[0], \
 						process->op_pc + (arg % IDX_MOD), 4);
-		/* ---------------------------- */
 		arg = ft_reverse_endianness((unsigned char*)&arg, 4);
 	}
 	return (arg);
@@ -144,32 +120,36 @@ int	ft_get_argument_value(t_process *process, \
 
 /*
 ******************************************************************************
+** this is the same as ft_get_argument_value, the only diff is that it's 
+** without the restriction of IDX_MOD
+** the only operations that uses this are: ldi, and lldi;
 */
 
 int		ft_get_argument_value_war(t_process *process, \
 										int arg, \
 										unsigned char parameter)
 {
+	int	temp;
+
+	temp = 0;
 	if (parameter == REG_CODE)
-		arg = process->regestries[arg - 1];// this was before just arg;
+		arg = process->regestries[arg - 1];
 	else if (parameter == IND_CODE)
 	{
-		/* ---------------------------- */
-		// ft_memcpy(&arg, process->arena[0] + (process->op_pc + arg), 4);
-
-		// maybe we should use this, bcs maybe idx + 4 is > MEM_SIZE
-		copy_from_arena((void*)&arg, process->arena[0], \
+		copy_from_arena(((char*)&temp), process->arena[0], \
 						process->op_pc + arg, 4);
-		/* ---------------------------- */
-		arg = ft_reverse_endianness((unsigned char*)&arg, 4);
+		arg = ft_reverse_endianness((unsigned char*)&temp, 4);
 	}
 	return (arg);
 }
 
+
 /*
 ******************************************************************************
+** we don't use this function anymore, I think we should delete it
 */
 
+#if 0
 int		ft_sizeof_params(t_process *process, unsigned char parameters[3])
 {
 	int i;
@@ -188,9 +168,11 @@ int		ft_sizeof_params(t_process *process, unsigned char parameters[3])
 	}
 	return (ret);
 }
-
+#endif
 /*
 ******************************************************************************
+** this function calculates the number of bytes that we should jump over
+** when the types byte isn't valid.
 */ 
 
 int	mz_size_to_escape(t_process *proc)

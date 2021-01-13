@@ -1,8 +1,34 @@
 #include "virtual_machine.h"
 extern t_input_data     *g_input_bloc;
-// extern int              g_zjmp;
 
-void	ft_operation_lld(t_process *proc)
+/*
+******************************************************************************
+** idk why but lld, reads form the ram/arena only 2 bytes instead of 4 as
+** the others (ld, ldi, lldi)
+*/
+static	int	ft_get_argument_value_for_lld(t_process *process, \
+										int arg, \
+										unsigned char parameter)
+{
+	int	temp;
+
+	temp = 0;
+	if (parameter == REG_CODE)
+		arg = process->regestries[arg - 1];
+	else if (parameter == IND_CODE)
+	{
+		copy_from_arena(((char*)&temp) + 2, process->arena[0], \
+						process->op_pc + arg, 2);
+		arg = ft_reverse_endianness((unsigned char*)&temp, 4);
+	}
+	return (arg);
+}
+
+/*
+******************************************************************************
+*/
+
+void		ft_operation_lld(t_process *proc)
 {
 	unsigned char	parameters[3];
 	int	args[3];
@@ -21,7 +47,7 @@ void	ft_operation_lld(t_process *proc)
 		args[1] = ft_parse_args(proc, parameters[1]);
 		if (!(args[1] < 1 || 16 < args[1]))
 		{
-			args[0] = ft_get_argument_value_war(proc, args[0], parameters[0]);
+			args[0] = ft_get_argument_value_for_lld(proc, args[0], parameters[0]);
 			proc->carry = (args[0] == 0) ? 1 : 0;
 			proc->regestries[args[1] - 1] = args[0];
 			mz_print_op(proc, parameters, args);

@@ -2,15 +2,20 @@
 extern t_input_data     *g_input_bloc;
 extern int              g_zjmp;
 
+/*
+** ****************************************************************************
+** ZAZs corewar doesn't modify the carry for somereason idk.
+** ldi should modify it as all the other operations and that what we do
+*/
+
 void	ft_operation_ldi(t_process *proc)
 {
 	unsigned char	parameters[3];
 	int				value[3];
 	int				temp;
-	int             add_to_pc;
 	char			str[4];
+
 	temp = 0;
-	proc->op_pc = proc->pc - 1;
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
 	{
@@ -28,12 +33,10 @@ void	ft_operation_ldi(t_process *proc)
 		{
 			value[0] = ft_get_argument_value_war(proc, value[0], parameters[0]);
 			value[1] = ft_get_argument_value_war(proc, value[1], parameters[1]);
+			copy_from_arena(&temp, proc->arena[0], proc->op_pc + ((value[0] + value[1]) % IDX_MOD), 4);
 
-			// to-do : we should replace it with: load_from_arena()
-			ft_memcpy(&temp, proc->arena[0] + proc->op_pc + ((value[0] + value[1]) % IDX_MOD), 4);// reading the value from ram
-
-			temp = ft_reverse_endianness((unsigned char*)&temp, 4); // revering from big_endien to small_endian
-			proc->regestries[value[2] - 1] = temp;// storing the result to the 3dr argument.	
+			temp = ft_reverse_endianness((unsigned char*)&temp, 4);
+			proc->regestries[value[2] - 1] = temp;
 			proc->carry = (temp == 0) ? 1 : 0; // modify the carry.
 			mz_print_op(proc, parameters, value);
 		}

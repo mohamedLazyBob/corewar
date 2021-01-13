@@ -194,7 +194,7 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 
 	game_params = ft_memalloc(sizeof(t_game));
 	game_params->cycles_to_die = CYCLE_TO_DIE;
-	game_params->total_cycles_counter = 1;	
+	game_params->total_cycles_counter = 0;	
 	game_params->checks_counter = 0;
 	game_params->live_counter = 0;
 	game_params->total_live_counter = 0;
@@ -216,27 +216,25 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 void	execute_number_of_cycles(t_game *game_params, t_input_data *bloc, t_process **procs, int bol)
 {
 	t_process	*ptr;
-
+	
 		while (procs && (*procs) && \
 				(game_params->curr_life_cycle < game_params->cycles_to_die || \
 					(game_params->cycles_to_die < 0 && bol++ == 0)))
 		{
+			game_params->curr_life_cycle++;
+			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
 			ptr = *procs;// we can send *procs directly and del ptr
 			if (bloc->flags[VERBOS_1] != 0 || bloc->flags[VERBOS_2] != 0)// if debug is onB
 				mz_print_debug_infos(procs, bloc, (*game_params));
 			
-			ft_execute_cycle(ptr, game_params->total_cycles_counter + 1, bloc->flags);
+			ft_execute_cycle(ptr, game_params->total_cycles_counter, bloc->flags);
 			mz_update_procs(procs);
 
 			if (mz_dump_memory(bloc, procs, &game_params) == 1)
 				exit(0);
-
 			if (bloc->flags[PAUSE_1] != 0 || bloc->flags[PAUSE_2] != 0)
 				mz_do_pause((*game_params), procs, bloc);
 			if (bloc->flags[VISU_1] != 0 || bloc->flags[VISU_2] != 0)
 				mesafi_visualize(bloc, (*game_params), procs);
-			game_params->curr_life_cycle++;
-			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
-	
 		}
 }

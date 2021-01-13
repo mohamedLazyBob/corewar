@@ -12,13 +12,10 @@ typedef enum s_ops
 
 void	mz_print_op(t_process *proc, unsigned char args_types[3], int value[3])
 {
-	// ft_printf("i was called \n");
 	if (!(g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4))
 		return ;	
-	// ft_printf("next inst : [%d], add == %d\n", proc->next_inst, AND);
 	if ((proc->next_inst ==  AND) || (proc->next_inst ==  OR) || (proc->next_inst ==  XOR))
 	{
-		// ft_printf("debug -- print xor -- %d, %d, r%d\n", value[0], value[1], value[2]);
 		ft_printf("P %4d | %s %d %d r%d\n", proc->proc_id, \
 			g_op_tab[proc->next_inst].op_name, \
 			value[0], value[1], value[2]);
@@ -29,12 +26,7 @@ void	mz_print_op(t_process *proc, unsigned char args_types[3], int value[3])
 				    "P %4d | ldi %d %d r%d\n"};
 		ft_printf(((proc->next_inst == STI) ? string[0] : string[1]), \
 				proc->proc_id, value[0], value[1], value[2]);
-/*
-		if (proc->next_inst == STI)
-			ft_printf("P    %d | sti r%d %d %d\n", proc->proc_id, args[0], args[1], args[2]);
-		else if (proc->next_inst == LDI)
-			ft_printf("P    %d | ldi %d %d r%d\n", proc->proc_id, args[0], args[1], args[2]);
-*/
+
 		if (proc->next_inst == STI)
 			ft_printf("       | -> store to %d + %d = %d (with pc and mod %d)\n", \
 					value[1], \
@@ -51,7 +43,6 @@ void	mz_print_op(t_process *proc, unsigned char args_types[3], int value[3])
 		}
 		
 
-		// ft_printf("debug : %d, pid %d\n", proc->op_pc, proc->proc_id);
 		
 	}
 	else if (proc->next_inst == LLD)
@@ -108,9 +99,6 @@ void	mz_l_fork_mode_verbos(t_process *proc, int par1, int new_pc)
 		ft_printf("P %4d | fork %d (%d)\n", proc->proc_id, par1, new_pc);
 	else
 		ft_printf("P %4d | lfork %d (%d)\n", proc->proc_id, par1, new_pc);
-	// if ((g_input_bloc->flags[VERBOS_1] & 16 || \
-	// 	g_input_bloc->flags[VERBOS_2] & 16))
-	// 	mz_print_pc_movements(proc);
 }
 
 void	mz_print_usage(void)
