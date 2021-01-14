@@ -99,7 +99,7 @@ void			ft_read_champion(t_input_data bloc, t_playrs *playrs, int i)
 		exit(0);
 
 	ret = read(bloc.fd[i], playrs->exec_code, playrs->header.prog_size);
-	if ((ret != playrs->header.prog_size) || ((read(bloc.fd[i], temp, 1) > 0)))
+	if ((ret != (int)playrs->header.prog_size) || ((read(bloc.fd[i], temp, 1) > 0)))
 	{
 		dprintf(2, "Error: File %s has a code size that differ from what its header says \n", bloc.names[i]);
 		exit(1);

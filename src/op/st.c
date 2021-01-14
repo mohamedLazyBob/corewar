@@ -1,5 +1,4 @@
 #include "virtual_machine.h"
-extern t_input_data *g_input_bloc;
 
 void	ft_operation_st(t_process *proc)
 {
@@ -20,7 +19,7 @@ void	ft_operation_st(t_process *proc)
 		if (!((parameters[0] == T_REG && (args[0] < 1 || 16 < args[0])) || \
 			(parameters[1] == T_REG && (args[1] < 1 || 16 < args[1]))))
 		{
-			mz_print_op(proc, parameters, args);
+			mz_print_op(proc, args);
 			args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
 
 			if (parameters[1] == T_REG)
@@ -32,10 +31,7 @@ void	ft_operation_st(t_process *proc)
 				if (offset < 0)
 					offset += MEM_SIZE;
 
-				// ft_memcpy(proc->arena[0] + offset, str, 4);
 				copy_to_arena(proc->arena[0], str, offset, 4);
-
-				// ft_memset(proc->arena[1] + offset, proc->player_id, 4);
 				int	tab[4] = {proc->player_id, proc->player_id, proc->player_id, proc->player_id};
 				copy_to_arena(proc->arena[1], tab, offset, 4);
 

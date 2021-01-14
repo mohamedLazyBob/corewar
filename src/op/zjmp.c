@@ -1,8 +1,6 @@
 #include "virtual_machine.h"
 
-extern t_op g_op_tab[];
 extern t_input_data *g_input_bloc;
-// extern int g_zjmp;
 
 /*
 ** ****************************************************************************
@@ -15,10 +13,8 @@ void	ft_operation_zjmp(t_process *process)
 {
 	short int arg1;
 
-	// print_arena(process->arena[0], 1);
 	process->op_pc = process->pc - 1;
 	arg1 = ft_parse_args(process, (unsigned char)DIR_CODE);
-	// ft_printf("debug -- zjmp proc[%d] -- carry: %d\n", process->proc_id, process->carry);
 	if (process->carry == 1)
 	{
 		process->pc = (MEM_SIZE + process->op_pc + (arg1 % IDX_MOD)) % MEM_SIZE;

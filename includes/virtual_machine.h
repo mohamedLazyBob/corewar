@@ -92,7 +92,7 @@ typedef	struct	s_process
 {
 	int 			    cycle_to_die;
 	int 			    check;
-	unsigned int	    execution_cycle;
+	int			    execution_cycle;
 	unsigned int	    next_inst;
 
 	int	    pc;
@@ -123,9 +123,9 @@ typedef struct	s_game
 	int				cycles_to_die;
 	int				curr_life_cycle;
 	unsigned int	checks_counter;
-	size_t			total_cycles_counter;
-	size_t			total_live_counter;
-	size_t			live_counter;
+	int				total_cycles_counter;
+	int				total_live_counter;
+	int				live_counter;
 }				t_game;
 /*
 **					struct up
@@ -168,14 +168,15 @@ void			ft_read_players(int argc, char **av, t_input_data *bloc);
 *******************************************************************************
 ** arena_initialization.c
 HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
-int				ft_init_arena(t_input_data *bloc, unsigned char *arena, int player_id);
+int				ft_init_arena(t_input_data *bloc, unsigned char *arena[2], \
+								int idx, unsigned int player_id);
 
 /*
 *******************************************************************************
 ** init_process_arena.c
 HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
 
-t_process		*ft_init_proc(t_input_data *bloc, int player_id, unsigned char *arena[2]);
+t_process		*ft_init_proc(t_input_data *bloc, unsigned char *arena[2]);
 void			ft_init_procs_arena(t_process **procs, t_input_data *bloc);
 void			mz_update_procs(t_process **proc);
 int				ft_get_player_index(t_input_data *bloc, int player_id);
@@ -294,7 +295,7 @@ void	execute_number_of_cycles(t_game *game_params, t_input_data *bloc, t_process
 *******************************************************************************
 ** mz_mode_verbos.c
 HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH*/
-void		mz_print_op(t_process *proc, unsigned char types[3], int values[3]);
+void		mz_print_op(t_process *proc, int values[3]);
 void		mz_l_fork_mode_verbos(t_process *proc, int par1, int new_pc);
 void		mz_print_usage(void);
 void		mz_print_pc_movements(t_process *proc);

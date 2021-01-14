@@ -41,8 +41,8 @@ OBJ= $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 
 # **************************************************************************** #
 
-COMP= gcc
-CFLAGES= -g -Wall -Wextra -Werror
+COMP= clang
+CFLAGES= -Wall -Wextra -Werror
 
 LD_FLAGS= -L$(LIB_PATH)
 LD_LIBS= -l$(patsubst lib%.a,%, $(LIB))
@@ -51,7 +51,7 @@ HDR_FLAGS= $(HDR_PATH)
 
 
 # **************************************************************************** #
-#.PHONY: all lib clean fclean re 
+.PHONY: all lib clean fclean re 
 
 all: lib $(NAME) 
 
@@ -66,7 +66,7 @@ lib:
 #	@echo "***"
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(HDR) | $(OBJ_PATH)
-	@$(COMP) $(CFLAGS) -I $(HDR_FLAGS) -o $@ -c $<
+	@$(COMP) $(CFLAGES) -I $(HDR_FLAGS) -o $@ -c $<
 
 $(OBJ_PATH):
 	@mkdir $@

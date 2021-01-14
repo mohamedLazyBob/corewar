@@ -42,42 +42,17 @@ static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 ** Done!
 */
 
-void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle, int *flags)
+void	ft_execute_cycle(t_process *ptr, int curr_life_cycle)
 {
-	// if (curr_life_cycle == 12425)
-		// debug_print_procs_list(ptr, curr_life_cycle);
-	t_process *temp = ptr;
 	while (ptr)
 	{
-		// ft_printf("--> \tP:[%d] exec_at_cycle: %.2d, curr_cycle: %d, pc: %3d, op: %d\n", \
-				ptr->proc_id, ptr->execution_cycle, curr_life_cycle, ptr->pc, ptr->next_inst);
-
-
 		if (ptr->execution_cycle == -1 || \
 				ptr->execution_cycle < curr_life_cycle)
 			ft_read_opcode(ptr, curr_life_cycle);
-
-		// ft_printf("%d/%d -- P%d | op: %4s, carry:%d\n", ptr->execution_cycle, curr_life_cycle, ptr->proc_id, \
-						// g_op_tab[ptr->next_inst].op_name, ptr->carry);
-
-		// ila tqado executi l'operation
 		if(ptr->execution_cycle == curr_life_cycle)
 		{
-
-			// g_zjmp = 0;
 			if (0 <= ptr->next_inst && ptr->next_inst <= 15)
 			{
-				// ft_printf("\tbefore exec\t-->Proc  %.2d | %5s, with carry: %d\n", \
-					ptr->proc_id, g_op_tab[ptr->next_inst].op_name, ptr->carry);
-				// if (ptr->next_inst == 8)
-					// ft_printf("\t\tP\t%d | %5s | pc : %d\n", ptr->proc_id, g_op_tab[ptr->next_inst].op_name, ptr->pc);
-				// g_zjmp = 0;
-				// if (ptr->proc_id == 1448)
-				// {
-				// 	ft_printf("we have the proc\n");
-				// 	debug_print_procs_list(temp, 0);
-				// 	exit(0);
-				// }
 				g_operation[ptr->next_inst](ptr);
 				/* .  if the op is live, then we save this cycle number   */
 				if (ptr->next_inst == 0)
@@ -86,8 +61,6 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle, int *flags)
 			}
 			else
 				ptr->pc++;
-			// if (g_zjmp == 0)
-				// mz_print_pc_movements(ptr);
 		}
 		ptr = ptr->next;
 	}
@@ -97,8 +70,7 @@ void	ft_execute_cycle(t_process *ptr, size_t curr_life_cycle, int *flags)
 ** ****************************************************************************
 ** TO-DO: tomorrow 13/12/2020
 */
-void	mz_print_debug_infos(t_process **procs, \
-							t_input_data *bloc, \
+void	mz_print_debug_infos(t_input_data *bloc, \
 							t_game game_params)
 {
 	int	verbos;
@@ -124,8 +96,6 @@ int		mz_dump_memory(t_input_data *bloc, t_process **procs, t_game **game_par)
 	if ((bloc->flags[DUMP_32] != -1 && (game_params.total_cycles_counter == (bloc->flags[DUMP_32]))) ||
 		(bloc->flags[DUMP_64] != -1 && (game_params.total_cycles_counter == (bloc->flags[DUMP_64]))))
 	{
-		// if dump flag is activated, and we gonna dump
-		// flags[x] == -1 : no dump flag
 		if (bloc->flags[DUMP_64] != -1)
 			print_arena((*procs)->arena[0], bloc->flags[DUMP_64]);
 		else
@@ -144,8 +114,6 @@ void	mz_do_pause(t_game game_params, t_process **procs, t_input_data *bloc)
 	const int	pause_value = (bloc->flags[PAUSE_1] != -1) ? \
 						bloc->flags[PAUSE_1] : bloc->flags[PAUSE_2];
 
-	// printf("pause value == %d, %d\n", bloc->flags[PAUSE_1], bloc->flags[PAUSE_2]);
-	//if (game_params.curr_life_cycle == pause_value)// maybe we should use this
 	if (game_params.total_cycles_counter == pause_value)
 		print_arena((*procs)->arena[0], 1);
 }
@@ -159,6 +127,9 @@ void	mesafi_visualize(t_input_data *bloc, \
 							t_process **procs)
 {
 	// mesafi part
+	(void)bloc;
+	(void)game_params;
+	(void)procs;
 }
 
 /*
@@ -176,7 +147,6 @@ void	ft_count_total_live(t_process **proc, t_game **game_params)
 		while (proc && *proc && p)
 		{
 			(*game_params)->total_live_counter += p->process_live;
-			// (*game_params)->total_live_counter += p->valid_player_live_counter;
 			p = p->next;
 		}
 	}
@@ -189,7 +159,7 @@ void	ft_count_total_live(t_process **proc, t_game **game_params)
 
 void	ft_play_battle(t_process **procs, t_input_data *bloc)
 {
-	t_process	*ptr;
+	// t_process	*ptr;
 	t_game		*game_params;
 
 	game_params = ft_memalloc(sizeof(t_game));
@@ -203,10 +173,6 @@ void	ft_play_battle(t_process **procs, t_input_data *bloc)
 	{		
 		game_params->curr_life_cycle = 0;
 		execute_number_of_cycles(game_params, bloc, procs, bol);
-		#if 0
-        ft_printf("debug -- before check\n");
-        debug_print_procs_list(*procs, 1);
-		#endif
 		ft_count_total_live(procs, &game_params);
 		ft_check(procs, &game_params);
 		bol = 0;
@@ -225,9 +191,9 @@ void	execute_number_of_cycles(t_game *game_params, t_input_data *bloc, t_process
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
 			ptr = *procs;// we can send *procs directly and del ptr
 			if (bloc->flags[VERBOS_1] != 0 || bloc->flags[VERBOS_2] != 0)// if debug is onB
-				mz_print_debug_infos(procs, bloc, (*game_params));
+				mz_print_debug_infos(bloc, (*game_params));
 			
-			ft_execute_cycle(ptr, game_params->total_cycles_counter, bloc->flags);
+			ft_execute_cycle(ptr, game_params->total_cycles_counter);
 			mz_update_procs(procs);
 
 			if (mz_dump_memory(bloc, procs, &game_params) == 1)

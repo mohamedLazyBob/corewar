@@ -55,7 +55,6 @@ int	ft_get_player_index(t_input_data *bloc, int player_id)
 void		ft_init_procs_arena(t_process **procs, t_input_data *bloc)
 {
 	int				player_id;
-	char			*str;
 	t_process		*proc;
 	t_process		*temp;
 	unsigned char	*arena[2];
@@ -64,12 +63,12 @@ void		ft_init_procs_arena(t_process **procs, t_input_data *bloc)
 	arena[1] = (unsigned char*)ft_memalloc(MEM_SIZE);
 	if (!arena[0] || !arena[1])
 		exit(0);
-	proc = ft_init_proc(bloc, bloc->players_counter, arena);
+	proc = ft_init_proc(bloc, arena);
 	player_id = bloc->players_counter - 1;
 	*procs = proc;
 	while (player_id > 0)
 	{
-		temp = ft_init_proc(bloc, player_id, arena);
+		temp = ft_init_proc(bloc, arena);
 		temp->next = proc;
 		proc->previous = temp;
 		proc = temp;
@@ -77,7 +76,6 @@ void		ft_init_procs_arena(t_process **procs, t_input_data *bloc)
 		player_id--;
 	}
 	*procs = proc;
-	// g_procs_head = proc;
 }
 
 /*
@@ -86,7 +84,6 @@ void		ft_init_procs_arena(t_process **procs, t_input_data *bloc)
 */
 
 t_process	*ft_init_proc(t_input_data *bloc, \
-							int player_id, \
 							unsigned char *arena[2])
 {
 	t_process	*proc;
@@ -96,11 +93,16 @@ t_process	*ft_init_proc(t_input_data *bloc, \
 	idx = ft_get_player_index(bloc, proc_id + 1);
 	if (!(proc = (t_process*)ft_memalloc(sizeof(t_process))))
 		exit(0);
-	proc->pc = ft_init_arena(bloc, arena[0], idx);
+
+	// proc->pc = ft_init_arena(bloc, arena[0], idx);
+
 	proc->proc_id = 1 + proc_id++;
 	proc->player_id = -1 * proc->proc_id;
+
 	proc->arena[0] = arena[0];
 	proc->arena[1] = arena[1];
+	proc->pc = ft_init_arena(bloc, arena, idx, proc->player_id);
+
 	ft_memset(proc->regestries, 0, REG_NUMBER);
 	proc->regestries[0] = proc->player_id;
 	proc->players_counter = bloc->players_counter;
@@ -125,15 +127,16 @@ t_process	*ft_init_proc(t_input_data *bloc, \
 
 unsigned int	ft_reverse_endianness(unsigned char *temp, size_t size)
 {
-	int				i;
+	size_t				i;
 	unsigned int	hex;
 
-	i = -1;
+	i = 0;
 	hex = 0;
-	while (++i < size)
+	while (i < size)
 	{
 		hex = hex << 8;
 		hex = hex | (unsigned int)temp[i];
+		++i;
 	}
 	return (hex);
 }

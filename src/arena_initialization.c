@@ -13,8 +13,9 @@
 #include "virtual_machine.h"
 
 /*
-** this file is just for test, I think that we'll delete or unuse these
-** function after. (we'll do a new structure)
+** ****************************************************************************
+** this princs the arena in two modes 64/32 character per line
+** we use it when dumping the memory!
 */
 
 void	print_arena(unsigned char *arena, int bol)
@@ -24,7 +25,6 @@ void	print_arena(unsigned char *arena, int bol)
 
 	idx = 0;
 	line_index = 0;
-//	system("clear");
 	if (bol == 0)
 		bol = 32;
 	else
@@ -44,16 +44,28 @@ void	print_arena(unsigned char *arena, int bol)
 	ft_printf("\n");
 }
 
-int		ft_init_arena(t_input_data *bloc, unsigned char *arena, int player_id)
+/*
+** ****************************************************************************
+** initialize arena[0] with the executed code of the player
+** and arena[1] with the player id
+*/
+
+int		ft_init_arena(t_input_data *bloc, \
+						unsigned char *arena[2], \
+						int idx, \
+						unsigned int player_id)
 {
 	static int	pc;
 	int			chunk;
 	int			len;
+	int			i;
 
 	chunk = (int)(MEM_SIZE / bloc->players_counter);
-	len = bloc->players[player_id].header.prog_size;
-	ft_memcpy(arena + pc, bloc->players[player_id].exec_code, len);
+	len = bloc->players[idx].header.prog_size;
+	copy_to_arena(arena[0], bloc->players[idx].exec_code, pc, len);
+	i = pc - 1;
+	while (++i < pc + len)
+		arena[1][i] = (unsigned char)player_id;
 	pc += chunk;
-	//print_arena(bloc, arena);
 	return (pc - chunk);
 }

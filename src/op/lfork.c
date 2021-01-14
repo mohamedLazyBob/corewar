@@ -2,8 +2,8 @@
 
 extern t_process	*g_procs_head;
 unsigned int		g_fork_counter;
-extern unsigned int	*g_cycles_to_wait;/*
 
+/*
 ** ****************************************************************************
 ** this func makes a copy of the carriage (process), and places the copy at
 ** FIRST_ARGUMENT (without the modulo)
@@ -30,8 +30,6 @@ void	ft_operation_lfork(t_process *proc)
 	new_proc->is_new_bol = 1;
 
 	new_proc->said_live_at = proc->said_live_at;
-	//new_proc->valid_player_live_counter = proc->valid_player_live_counter;
-	// new_proc->said_live_at = 0;
 	new_proc->process_live = 0;
 	new_proc->valid_player_live_counter =0;
 
@@ -45,12 +43,4 @@ void	ft_operation_lfork(t_process *proc)
 	g_procs_head = new_proc;
 	mz_l_fork_mode_verbos(proc, first_arg_value, proc->op_pc + (first_arg_value));
 	mz_print_pc_movements(proc);
-
-	// int var = 30;
-	// if (new_proc->proc_id == var)
-	// {
-	// 	ft_printf("proc [%d] got created, by : [%d] it's last live = %d\n", var, proc->proc_id, new_proc->said_live_at);
-	// 	debug_print_procs_list(g_procs_head, 0);
-	// 	exit(0);
-	// }
 }

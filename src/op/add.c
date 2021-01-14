@@ -12,8 +12,6 @@
 
 #include "../includes/virtual_machine.h"
 
-extern t_input_data *g_input_bloc;
-
 /*
 ******************************************************************************
 */
@@ -39,7 +37,7 @@ void	ft_operation_add(t_process *proc)
 			(parameters[1] == T_REG && (args[1] < 1 || 16 < args[1])) || \
 			(parameters[2] == T_REG && (args[2] < 1 || 16 < args[2]))))
 		{
-			mz_print_op(proc, parameters, args);
+			mz_print_op(proc, args);
 			args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
 			args[1] = ft_get_argument_value(proc, args[1], parameters[1]);
 			proc->regestries[args[2] - 1] = args[0] + args[1];

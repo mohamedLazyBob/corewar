@@ -12,10 +12,6 @@
 
 #include "virtual_machine.h"
 
-extern t_op g_op_tab[];
-extern t_input_data *g_input_bloc;
-// extern int g_zjmp;
-
 /*
 ******************************************************************************
 ** I think this should work, I havent tested the IND
@@ -50,7 +46,7 @@ void	ft_operation_and(t_process *process)
 			process->regestries[args[2] - 1] = (args[0] & args[1]);
 			(process->regestries[args[2] - 1] == 0) ? (process->carry = 1) : \
 												(process->carry = 0);
-			mz_print_op(process, parameters, args);
+			mz_print_op(process, args);
 		}
 	}
 	mz_print_pc_movements(process);

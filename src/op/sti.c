@@ -1,6 +1,8 @@
 #include "virtual_machine.h"
-extern t_input_data *g_input_bloc;
 
+/*
+******************************************************************************
+*/
 
 void	ft_operation_sti(t_process *proc)
 {
@@ -8,6 +10,7 @@ void	ft_operation_sti(t_process *proc)
 	int				args[3];
 	int				place_memory;
 	char			str[4];
+	const	int		var[4] = {proc->players_counter};
 
 	proc->op_pc = proc->pc - 1;
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
@@ -27,27 +30,15 @@ void	ft_operation_sti(t_process *proc)
 			args[1] = ft_get_argument_value(proc, args[1], parameters[1]);
 			args[2] = ft_get_argument_value(proc, args[2], parameters[2]);
 
-			mz_print_op(proc, parameters, args);
+			mz_print_op(proc, args);
 			place_memory = proc->op_pc + ((args[1] + args[2]) % IDX_MOD);
 			ft_int_to_str(proc->regestries[args[0] - 1], str);
 
 			place_memory = (place_memory + MEM_SIZE) % MEM_SIZE;
 
 			copy_to_arena(proc->arena[0], str, place_memory, 4);
-			// int i = -1;
-			// while (++i < 4)
-			// 	proc->arena[0][(place_memory + i) % MEM_SIZE]  = str[i];
-
-			int var[4] = {proc->players_counter};
-			copy_to_arena(proc->arena[1], var, place_memory, 4);
-			// i = -1;
-			// while (++i < 4)
-			// 	proc->arena[1][(place_memory + i) % MEM_SIZE]  = proc->players_counter;
+			copy_to_arena(proc->arena[1], (void*)var, place_memory, 4);
 		}
 	}
 	mz_print_pc_movements(proc);
 }
-
-/*
-******************************************************************************
-*/

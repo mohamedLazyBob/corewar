@@ -1,6 +1,4 @@
 #include "virtual_machine.h"
-extern t_input_data     *g_input_bloc;
-extern int              g_zjmp;
 
 /*
 ** ****************************************************************************
@@ -13,7 +11,6 @@ void	ft_operation_ldi(t_process *proc)
 	unsigned char	parameters[3];
 	int				value[3];
 	int				temp;
-	char			str[4];
 
 	temp = 0;
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
@@ -37,8 +34,8 @@ void	ft_operation_ldi(t_process *proc)
 
 			temp = ft_reverse_endianness((unsigned char*)&temp, 4);
 			proc->regestries[value[2] - 1] = temp;
-			proc->carry = (temp == 0) ? 1 : 0; // modify the carry.
-			mz_print_op(proc, parameters, value);
+			proc->carry = (temp == 0) ? 1 : 0;
+			mz_print_op(proc, value);
 		}
 	}
 	mz_print_pc_movements(proc);

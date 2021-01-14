@@ -10,7 +10,7 @@ typedef enum s_ops
 	LLD, LLDI, LFORK, AFF
 }		t_ops;
 
-void	mz_print_op(t_process *proc, unsigned char args_types[3], int value[3])
+void	mz_print_op(t_process *proc, int value[3])
 {
 	if (!(g_input_bloc->flags[VERBOS_1] & 4 || g_input_bloc->flags[VERBOS_2] & 4))
 		return ;	
@@ -41,9 +41,6 @@ void	mz_print_op(t_process *proc, unsigned char args_types[3], int value[3])
 					value[0] + value[1], \
 					(value[0] + value[1]) % IDX_MOD + proc->op_pc);
 		}
-		
-
-		
 	}
 	else if (proc->next_inst == LLD)
 	{

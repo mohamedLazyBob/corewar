@@ -12,10 +12,6 @@
 
 #include "../includes/virtual_machine.h"
 
-extern t_input_data *g_input_bloc;
-// extern int	g_zjmp;
-
-
 /*
 ******************************************************************************
 */
@@ -43,9 +39,8 @@ void	ft_operation_ld(t_process *proc)
 			args[0] = ft_get_argument_value(proc, args[0], parameters[0]);
 			proc->carry = (args[0] == 0) ? 1 : 0;
 			proc->regestries[args[1] - 1] = args[0];
-			mz_print_op(proc, parameters, args);
+			mz_print_op(proc, args);
 		}
 	}
 	mz_print_pc_movements(proc);
-	// g_zjmp = 1;
 }
