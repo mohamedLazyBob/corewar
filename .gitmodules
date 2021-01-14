@@ -1,6 +1,0 @@
-[submodule "ft_printf"]
-	path = ft_printf
-	url = https://github.com/mohamedLazyBob/ft_printf.git
-[submodule "ft_printf2"]
-	path = ft_printf2
-	url = https://github.com/mohamedLazyBob/ft_printf.git
