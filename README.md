@@ -20,3 +20,9 @@
 clone this repo.
 run the make command.
 include the header files.
+
+## How to `submodules`
+- git submodule add https://github.com/mohamedLazyBob/ft_printf.git
+	now the ft_printf is added as submodule.
+-  git submodule update --remote --merge ft_printf
+	to update/pull the new changes of the `ft_printf` submodule.
