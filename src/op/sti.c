@@ -6,19 +6,30 @@
 /*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 11:57:22 by del-alj           #+#    #+#             */
-/*   Updated: 2021/01/15 10:13:42 by del-alj          ###   ########.fr       */
+/*   Updated: 2021/01/15 10:46:24 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "virtual_machine.h"
 
-void	ft_operation_sti(t_process *proc)
+static void	ft_to_arena(t_process *proc, int place_memory, char *str)
+{
+	const int	var[4] = {proc->players_counter};
+
+	copy_to_arena(proc->arena[0], str, place_memory, 4);
+	copy_to_arena(proc->arena[1], (void*)var, place_memory, 4);
+}
+
+/*
+** *****************************************************************************
+*/
+
+void		ft_operation_sti(t_process *proc)
 {
 	unsigned char	parameters[3];
 	int				args[3];
 	int				place_memory;
 	char			str[4];
-	const	int		var[4] = {proc->players_counter};
 
 	proc->op_pc = proc->pc - 1;
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
@@ -26,12 +37,8 @@ void	ft_operation_sti(t_process *proc)
 		proc->pc = (proc->pc + mz_size_to_escape(proc)) % MEM_SIZE;
 	else
 	{
-		args[0] = ft_parse_args(proc, parameters[0]);
-		args[1] = ft_parse_args(proc, parameters[1]);
-		args[2] = ft_parse_args(proc, parameters[2]);
-		if (!((parameters[0] == T_REG && (args[0] < 1 || 16 < args[0])) || \
-			(parameters[1] == T_REG && (args[1] < 1 || 16 < args[1])) || \
-			(parameters[2] == T_REG && (args[2] < 1 || 16 < args[2]))))
+		ft_value_arg(parameters, args, proc, 3);
+		if (ft_check_reg_args(parameters, args))
 		{
 			args[1] = ft_get_argument_value(proc, args[1], parameters[1]);
 			args[2] = ft_get_argument_value(proc, args[2], parameters[2]);
@@ -39,8 +46,7 @@ void	ft_operation_sti(t_process *proc)
 			place_memory = proc->op_pc + ((args[1] + args[2]) % IDX_MOD);
 			ft_int_to_str(proc->regestries[args[0] - 1], str);
 			place_memory = (place_memory + MEM_SIZE) % MEM_SIZE;
-			copy_to_arena(proc->arena[0], str, place_memory, 4);
-			copy_to_arena(proc->arena[1], (void*)var, place_memory, 4);
+			ft_to_arena(proc, place_memory, str);
 		}
 	}
 	mz_print_pc_movements(proc);
