@@ -14,7 +14,6 @@
 
 extern t_input_data *g_input_bloc;
 
-
 /*
 ** ****************************************************************************
 ** aff read on byte from mem, that contains the number of the regestre to print
@@ -25,8 +24,8 @@ void	ft_operation_aff(t_process *process)
 	char			var;
 	unsigned int	arg;
 	unsigned char	*parameters_type;
-   
-	parameters_type = (unsigned char[3]){};
+
+	parameters_type = (unsigned char[3]){0, 0, 0};
 	process->op_pc = process->pc - 1;
 	ft_get_args_type(process, process->arena[0][process->pc], parameters_type);
 	if (ft_strcmp((char*)parameters_type, "ER") == 0)

@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:55:39 by mzaboub           #+#    #+#             */
-/*   Updated: 2021/01/14 12:10:46 by del-alj          ###   ########.fr       */
+/*   Updated: 2021/01/15 10:57:04 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ int		ft_parse_args(t_process *process, unsigned char par)
 	int	dir_size;
 
 	num = 0;
-	dir_size = 0;
 	if (par == REG_CODE)
 	{
 		num = (int)process->arena[0][process->pc];
