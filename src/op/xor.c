@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   xor.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/14 12:12:15 by del-alj           #+#    #+#             */
+/*   Updated: 2021/01/14 12:13:07 by del-alj          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "virtual_machine.h"
 
 /*
@@ -7,15 +19,13 @@
 
 void	ft_operation_xor(t_process *process)
 {
-	int	args[3];
+	int				args[3];
 	unsigned char	parameters[3];
 
 	process->op_pc = process->pc - 1;
 	ft_get_args_type(process, process->arena[0][process->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
-	{
 		process->pc = (process->pc + mz_size_to_escape(process)) % MEM_SIZE;
-	}
 	else
 	{
 		args[0] = ft_parse_args(process, parameters[0]);
@@ -35,4 +45,3 @@ void	ft_operation_xor(t_process *process)
 	}
 	mz_print_pc_movements(process);
 }
-

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   tools_02.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/14 12:11:11 by del-alj           #+#    #+#             */
+/*   Updated: 2021/01/14 12:12:01 by del-alj          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "virtual_machine.h"
 
 /*
@@ -6,8 +18,8 @@
 ** meaning the size that we gonna parse to read it's value.
 */
 
-int 	ft_size(int param, int t_dir_size)
-{	
+int		ft_size(int param, int t_dir_size)
+{
 	if (param == REG_CODE)
 		param = 1;
 	else if (param == IND_CODE)

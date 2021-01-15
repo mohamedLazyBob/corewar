@@ -1,4 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ldi.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/14 12:36:51 by del-alj           #+#    #+#             */
+/*   Updated: 2021/01/14 13:39:23 by del-alj          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "virtual_machine.h"
+
+/*
+** *****************************************************************************
+ */
+
+void	ft_value_arg(unsigned char *parameters, int *value, t_process *proc, \
+					int nb_arg)
+{
+	int	i;
+
+	i = -1;
+	while (++i < nb_arg)
+	{
+		value[i] = ft_parse_args(proc, parameters[i]);
+	}
+}
 
 /*
 ** ****************************************************************************
@@ -9,29 +37,29 @@
 void	ft_operation_ldi(t_process *proc)
 {
 	unsigned char	parameters[3];
-	int				value[3];
+	int				*value;
 	int				temp;
 
 	temp = 0;
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
-	{
 		proc->pc = (proc->pc + mz_size_to_escape(proc)) % MEM_SIZE;
-	}
 	else
 	{
+		
 		value[0] = ft_parse_args(proc, parameters[0]);
 		value[1] = ft_parse_args(proc, parameters[1]);
 		value[2] = ft_parse_args(proc, parameters[2]);
-
+//		value = (int[3]){};
+//		ft_value_arg(parameters, &value, proc, 3);
 		if (!(((parameters[0] == T_REG) && (value[0] < 1 || 16 < value[0])) || \
 			((parameters[1] == T_REG) && (value[1] < 1 || 16 < value[1])) || \
 			((parameters[2] == T_REG) && (value[2] < 1 || 16 < value[2]))))
 		{
 			value[0] = ft_get_argument_value_war(proc, value[0], parameters[0]);
 			value[1] = ft_get_argument_value_war(proc, value[1], parameters[1]);
-			copy_from_arena(&temp, proc->arena[0], proc->op_pc + ((value[0] + value[1]) % IDX_MOD), 4);
-
+			copy_from_arena(&temp, proc->arena[0], proc->op_pc + ((value[0] + \
+							value[1]) % IDX_MOD), 4);
 			temp = ft_reverse_endianness((unsigned char*)&temp, 4);
 			proc->regestries[value[2] - 1] = temp;
 			proc->carry = (temp == 0) ? 1 : 0;

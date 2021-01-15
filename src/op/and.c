@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 19:15:15 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/03 09:30:45 by mzaboub          ###   ########.fr       */
+/*   Updated: 2021/01/14 11:40:51 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,13 @@
 
 void	ft_operation_and(t_process *process)
 {
-	int	args[3];
+	int				args[3];
 	unsigned char	parameters[3];
 
 	process->op_pc = process->pc - 1;
 	ft_get_args_type(process, process->arena[0][process->pc], parameters);
 	if (ft_strcmp((char*)parameters, "ER") == 0)
-	{
 		process->pc = (process->pc + mz_size_to_escape(process)) % MEM_SIZE;
-	}
 	else
 	{
 		args[0] = ft_parse_args(process, parameters[0]);

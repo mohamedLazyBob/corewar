@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   aff.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/14 11:35:23 by del-alj           #+#    #+#             */
+/*   Updated: 2021/01/14 12:17:57 by del-alj          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "virtual_machine.h"
 
 extern t_input_data *g_input_bloc;
@@ -12,14 +24,13 @@ void	ft_operation_aff(t_process *process)
 {
 	char			var;
 	unsigned int	arg;
-	unsigned char	parameters_type[3] = {};
-
+	unsigned char	*parameters_type;
+   
+	parameters_type = (unsigned char[3]){};
 	process->op_pc = process->pc - 1;
 	ft_get_args_type(process, process->arena[0][process->pc], parameters_type);
 	if (ft_strcmp((char*)parameters_type, "ER") == 0)
-	{
 		process->pc = (process->pc + mz_size_to_escape(process)) % MEM_SIZE;
-	}
 	else
 	{
 		arg = ft_parse_args(process, REG_CODE);

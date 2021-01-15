@@ -6,28 +6,21 @@
 /*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 14:33:40 by del-alj           #+#    #+#             */
-/*   Updated: 2020/11/27 14:35:32 by del-alj          ###   ########.fr       */
+/*   Updated: 2021/01/14 11:35:08 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/virtual_machine.h"
 
-/*
-******************************************************************************
-*/
-
 void	ft_operation_add(t_process *proc)
 {
 	unsigned char	parameters[3];
-	int	args[3];
+	int				args[3];
 
 	proc->op_pc = proc->pc - 1;
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
-	{
-		int var = mz_size_to_escape(proc);
-		proc->pc = (proc->pc + var) % MEM_SIZE;
-	}
+		proc->pc = (proc->pc + mz_size_to_escape(proc)) % MEM_SIZE;
 	else
 	{
 		args[0] = ft_parse_args(proc, parameters[0]);
@@ -43,6 +36,6 @@ void	ft_operation_add(t_process *proc)
 			proc->regestries[args[2] - 1] = args[0] + args[1];
 			proc->carry = (proc->regestries[args[2] - 1] == 0) ? 1 : 0;
 		}
-	}			
+	}
 	mz_print_pc_movements(proc);
 }

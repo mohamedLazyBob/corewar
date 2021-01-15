@@ -1,16 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sub.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/14 11:58:54 by del-alj           #+#    #+#             */
+/*   Updated: 2021/01/14 11:59:10 by del-alj          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "virtual_machine.h"
 
 void	ft_operation_sub(t_process *proc)
 {
 	unsigned char	parameters[3];
-	int	args[3];
+	int				args[3];
 
 	proc->op_pc = proc->pc - 1;
 	ft_get_args_type(proc, proc->arena[0][proc->pc], parameters);
 	if (ft_strcmp((const char*)parameters, "ER") == 0)
-	{
 		proc->pc = (proc->pc + mz_size_to_escape(proc)) % MEM_SIZE;
-	}
 	else
 	{
 		args[0] = ft_parse_args(proc, parameters[0]);

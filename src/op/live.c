@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_live_aff.c                                      :+:      :+:    :+:   */
+/*   live.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/27 10:44:23 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/01 11:02:59 by mzaboub          ###   ########.fr       */
+/*   Created: 2021/01/14 11:46:15 by del-alj           #+#    #+#             */
+/*   Updated: 2021/01/14 11:48:35 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "virtual_machine.h"
 
-extern int g_last_live;
+extern int			g_last_live;
 extern t_input_data *g_input_bloc;
 
 /*
@@ -25,16 +25,19 @@ extern t_input_data *g_input_bloc;
 static	void	mz_print_live(int arg)
 {
 	char	*name;
+	int		i;
 
 	name = NULL;
-	if ((g_input_bloc->flags[VERBOS_1] & 1) || (g_input_bloc->flags[VERBOS_2] & 1))
+	i = -1;
+	if ((g_input_bloc->flags[VERBOS_1] & 1) || \
+			(g_input_bloc->flags[VERBOS_2] & 1))
 	{
-		for (int i = 0; i < g_input_bloc->players_counter; i++)
+		while (++i < g_input_bloc->players_counter)
 		{
 			if (g_input_bloc->ids[i] == arg)
 			{
 				name = g_input_bloc->players[i].header.prog_name;
-				break;
+				break ;
 			}
 		}
 		ft_printf("Player %d (%s) is said to be alive\n", arg, name);
@@ -45,7 +48,7 @@ static	void	mz_print_live(int arg)
 ** ****************************************************************************
 */
 
-void	ft_operation_live(t_process *process)
+void			ft_operation_live(t_process *process)
 {
 	int	arg;
 
@@ -61,4 +64,3 @@ void	ft_operation_live(t_process *process)
 	}
 	mz_print_pc_movements(process);
 }
-
