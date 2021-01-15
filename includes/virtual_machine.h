@@ -315,5 +315,14 @@ void		print_procs(t_process *ptr, t_input_data *bloc);
 
 void	copy_from_arena(void *dst, void *src, int idx, int len);
 void	copy_to_arena(void *dst, void *src, int idx, int len);
+void	ft_value_arg(unsigned char *parameters, int *value, t_process *proc, \
+												int nb_arg);
+
+/*
+*******************************************************************************
+** tools_03.c
+*/
+
+int		ft_check_reg_args(unsigned char *parameters, int *value);
 
 #endif

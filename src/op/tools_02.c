@@ -6,7 +6,7 @@
 /*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 12:11:11 by del-alj           #+#    #+#             */
-/*   Updated: 2021/01/14 12:12:01 by del-alj          ###   ########.fr       */
+/*   Updated: 2021/01/15 09:40:48 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,21 @@ void	copy_to_arena(void *dst, void *src, int idx, int len)
 	{
 		((char*)dst)[(idx + i) % MEM_SIZE] = ((char*)src)[i];
 		i++;
+	}
+}
+
+/*
+** *****************************************************************************
+*/
+
+void	ft_value_arg(unsigned char *parameters, int *value, t_process *proc, \
+												int nb_arg)
+{
+	int	i;
+
+	i = -1;
+	while (++i < nb_arg)
+	{
+		(value)[i] = ft_parse_args(proc, parameters[i]);
 	}
 }
