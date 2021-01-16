@@ -78,6 +78,16 @@ enum e_flags
 };
 
 /*
+******************************************************************
+*/
+
+typedef enum	s_ops
+{
+	LIVE, LD, ST, ADD, SUB, AND, OR, XOR, ZJMP, LDI, \
+	STI, FORK, LLD, LLDI, LFORK, AFF
+}				t_ops;
+
+/*
 **
 ** this struct contains contains all what we need during the execution
 ** of the cycles 

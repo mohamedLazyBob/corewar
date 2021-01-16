@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:42:03 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/04 12:12:45 by mzaboub          ###   ########.fr       */
+/*   Updated: 2021/01/16 12:08:13 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 t_input_data		*g_input_bloc;
 t_process			*g_procs_head;
 unsigned int		g_last_live;
-// int					g_zjmp;
 
 /*
-*******************************************************************************
+** *****************************************************************************
 */
 
 void	ft_free_exit(char *str, void **buff, size_t size)
@@ -35,82 +34,26 @@ void	ft_free_exit(char *str, void **buff, size_t size)
 	exit(0);
 }
 
-void ft_check_size_players(t_input_data *bloc)
+/*
+** *****************************************************************************
+*/
+
+void	ft_check_size_players(t_input_data *bloc)
 {
 	int	i;
 
 	i = -1;
-	// while (++i <= bloc->players_counter)// it was like this, but it's an error.
 	while (++i < bloc->players_counter)
 	{
 		if (CHAMP_MAX_SIZE < bloc->players[i].header.prog_size)
 		{
-			//creat somthing like dprintf
-			// dprintf(2, "player_counter = %d, i = %d\n", bloc->players_counter, i);
 			dprintf(2, "Error: File %s has too large a code (%u bytes > 682 bytes)\n", \
 			bloc->names[i], \
 			bloc->players[i].header.prog_size);
-			// bloc->players[i].header.prog_name, \
-			//ft_exit(2, bloc->playrs[i]);
 			exit(1);
 		}
 	}
 }
-
-/*
-*******************************************************************************
-** we'll remove this function afterword, it's just for test purpose
-*/
-#if 0
-void	print_input(t_input_data *bloc, int *nbr_cycles)
-{
-	int				idx;
-
-	idx = 0;
-	printf("dump -- type: %d, value : %d\n", nbr_cycles[0], nbr_cycles[1]);
-	while (idx < bloc->players_counter)
-	{
-		printf("id: %d, name: [%s]\n", bloc->ids[idx], bloc->names[idx]);
-		idx++;
-	}
-}
-#endif
-/*
-*******************************************************************************
-*/
-#if 0
-void	ft_temp(t_input_data bloc, t_playrs *playrs)
-{
-	t_process process;
-
-		process.arena[0] = ft_init_arena(bloc, playrs);
-	ft_memset(process.regestries, 0, 16*sizeof(int));
-
-	process.player_id = bloc.ids[1];// 2
-	process.regestries[1] = -process.player_id;
-	//printf("{{%.8x}}\n", process.regestries[1]);
-
-	process.pc = 1;
-	process.next_inst = process.arena[0][0] - 1;
-	process.carry = 1;
-
-	process.players_counter = bloc.players_counter;
-
-	printf("\n\n\n\n");
-	//printf("next inst : %.2d\n", process.next_inst);
-	for (int idx = 0; idx < 100; idx++)
-		printf("%.2x ", process.arena[0][idx]);
-	//ft_operation_and(&process);
-	//ft_operation_zjmp(&process);
-	printf("\n*****%d***%d***%d******\n", process.regestries[3], process.regestries[6], process.regestries[3]);
-	ft_operation_st(&process);
-	printf("\n*****%d***%d***%d******\n", process.regestries[3], process.regestries[6], process.regestries[3]);
-	 printf("\n*****%d***\n", process.pc);
-	for (int i = 0; i < REG_NUMBER; i++)
-		printf("%d ", process.regestries[i]);
-	printf("\n");
-}
-#endif
 
 /*
 *******************************************************************************
@@ -139,32 +82,20 @@ int		main(int ac, char **av)
 {
 	t_input_data	bloc;
 	t_process		*procs;
-	//int				nbr_cycles[2];
-	//t_playrs		*playrs;
 
 	ft_memset(&bloc, 0, sizeof(bloc));
 	ft_memset(bloc.flags, 0, 11 * sizeof(int));
 	ft_read_players(ac, av, &bloc);
 	g_input_bloc = &bloc;
 	g_procs_head = NULL;
-	
-	bloc.players = (t_playrs*)ft_memalloc(sizeof(t_playrs) * bloc.players_counter);
+	bloc.players = (t_playrs*)ft_memalloc(sizeof(t_playrs) * \
+					bloc.players_counter);
 	ft_open_champion(bloc, bloc.players);
-  
 	ft_init_procs_arena(&procs, &bloc);
-		
 	ft_introduce_players(&bloc);
 	g_last_live = bloc.players_counter;
 	ft_play_battle(&procs, &bloc);
-	// play the game: the loop
-		// sets the opcode
-		// Reduce the number of cycles before execution
-		// Perform operation
-		// Check if needed:tabe 
-	// announce the winner
-	// exit
-
-	ft_printf("Contestant %d, \"%s\", has won !\n", g_last_live, bloc.players[g_last_live - 1].header.prog_name);
-	// ft_printf("Contestant %d\n", g_last_live);
+	ft_printf("Contestant %d, \"%s\", has won !\n", g_last_live, \
+					bloc.players[g_last_live - 1].header.prog_name);
 	return (0);
 }

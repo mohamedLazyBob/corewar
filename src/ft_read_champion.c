@@ -6,7 +6,7 @@
 /*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 13:21:01 by del-alj           #+#    #+#             */
-/*   Updated: 2020/12/04 11:32:19 by mzaboub          ###   ########.fr       */
+/*   Updated: 2021/01/16 11:58:54 by del-alj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ void			ft_read_champion(t_input_data bloc, t_playrs *playrs, int i)
 	}
 	read(bloc.fd[i], temp, 4);
 	playrs->header.prog_size = ft_convert_num(temp);
-
 	if (playrs->header.prog_size == 0 ||
 			playrs->header.prog_size > CHAMP_MAX_SIZE)
 	{
@@ -97,9 +96,9 @@ void			ft_read_champion(t_input_data bloc, t_playrs *playrs, int i)
 	if ((playrs->exec_code =
 				(unsigned char*)ft_strnew(playrs->header.prog_size)) == NULL)
 		exit(0);
-
 	ret = read(bloc.fd[i], playrs->exec_code, playrs->header.prog_size);
-	if ((ret != (int)playrs->header.prog_size) || ((read(bloc.fd[i], temp, 1) > 0)))
+	if ((ret != (int)playrs->header.prog_size) || \
+						((read(bloc.fd[i], temp, 1) > 0)))
 	{
 		dprintf(2, "Error: File %s has a code size that differ from what its header says \n", bloc.names[i]);
 		exit(1);
