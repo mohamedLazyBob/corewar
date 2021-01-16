@@ -26,3 +26,6 @@ include the header files.
 	now the ft_printf is added as submodule.
 -  git submodule update --remote --merge ft_printf
 	to update/pull the new changes of the `ft_printf` submodule.
+- if it's the first time you gonna use ft_printf do this:
+	rm -r ft_printf
+	git submodule update --init ft_printf
