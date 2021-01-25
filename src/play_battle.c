@@ -199,6 +199,8 @@ static void	pusher(t_deque *deque, t_input_data *bloc, t_game *game_params, t_pr
 	{
 		node->next = malloc(sizeof(t_process));
 		ft_memcpy(node->next, procs->next, sizeof(t_process));
+		node->next->arena[0] = kit.procs->arena[0];
+		node->next->arena[1] = kit.procs->arena[1];
 		node = node->next;
 		procs = procs->next;
 		node->next = NULL;
