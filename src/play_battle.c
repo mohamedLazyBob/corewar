@@ -249,7 +249,7 @@ void		ft_play_battle(t_deque *deque, t_process **procs, t_input_data *bloc)
 			if (bloc->flags[PAUSE_1] != 0 || bloc->flags[PAUSE_2] != 0)
 				mz_do_pause((*game_params), procs, bloc);
 			// if (bloc->flags[VISU_1] != 0 || bloc->flags[VISU_2] != 0)
-				print_arena((*procs)->arena[1], 1);
+				// print_arena((*procs)->arena[1], 1);
 				pusher(deque, bloc, game_params, *procs);
 			game_params->curr_life_cycle++;
 			game_params->total_cycles_counter++;// kaykhdm ghi f live, for vis
