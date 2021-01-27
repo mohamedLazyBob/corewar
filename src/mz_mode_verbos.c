@@ -19,60 +19,6 @@ extern t_input_data	*g_input_bloc;
 ** *****************************************************************************
 */
 
-void	mz_print_op(t_process *proc, int value[3])
-{
-	if (!(g_input_bloc->flags[VERBOS_1] & 4 || \
-				g_input_bloc->flags[VERBOS_2] & 4))
-		return ;
-	if ((proc->next_inst == AND) || (proc->next_inst == OR) || \
-			(proc->next_inst == XOR))
-		ft_printf("P %4d | %s %d %d r%d\n", proc->proc_id, \
-			g_op_tab[proc->next_inst].op_name, value[0], value[1], value[2]);
-	else if ((proc->next_inst == LDI) || (proc->next_inst == STI))
-	{
-		char string[2][50] = {"P %4d | sti r%d %d %d\n", \
-			"P %4d | ldi %d %d r%d\n"};
-		ft_printf(((proc->next_inst == STI) ? string[0] : string[1]), \
-				proc->proc_id, value[0], value[1], value[2]);
-		if (proc->next_inst == STI)
-			ft_printf("       | -> store to %d + %d = %d (with pc and mod %d)\n", \
-					value[1], \
-					value[2], \
-					value[1] + value[2], \
-					(value[1] + value[2]) % IDX_MOD + proc->op_pc);
-		else if (proc->next_inst == LDI)
-		{
-			ft_printf("       | -> load from %d + %d = %d (with pc and mod %d)\n", \
-					value[0], value[1], value[0] + value[1], \
-					(value[0] + value[1]) % IDX_MOD + proc->op_pc);
-		}
-	}
-	else if (proc->next_inst == LLD)
-		ft_printf("P %4d | lld %d r%d\n", proc->proc_id, value[0], value[1]);
-	else if (proc->next_inst == LLDI)
-	{
-		ft_printf("P %4d | lldi %d %d r%d\n", proc->proc_id, value[0], \
-				value[1], value[2]);
-		ft_printf("       | -> load from %d + %d = %d (with pc %d)\n", \
-				value[0], value[1], value[0] + value[1], \
-				value[0] + value[1] + proc->op_pc);
-	}
-	else if (proc->next_inst == LD)
-		ft_printf("P %4d | ld %d r%d\n", proc->proc_id, value[0], value[1]);
-	else if (proc->next_inst == ST)
-		ft_printf("P %4d | st r%d %d\n", proc->proc_id, value[0], value[1]);
-	else if (proc->next_inst == ADD)
-		ft_printf("P %4d | add r%d r%d r%d\n", proc->proc_id, \
-				value[0], value[1], value[2]);
-	else if (proc->next_inst == SUB)
-		ft_printf("P %4d | sub r%d r%d r%d\n", proc->proc_id, \
-				value[0], value[1], value[2]);
-}
-
-/*
-** *****************************************************************************
-*/
-
 void	mz_l_fork_mode_verbos(t_process *proc, int par1, int new_pc)
 {
 	if (!(g_input_bloc->flags[VERBOS_1] & 4 || \
@@ -95,23 +41,31 @@ void	mz_l_fork_mode_verbos(t_process *proc, int par1, int new_pc)
 
 void	mz_print_usage(void)
 {
-	ft_printf("{RED}Usage: ./corewar [-d N -s N -v N | -b --stealth | -n --stealth] [-a] <champion1.cor> <...>{EOC}\n");
-	ft_printf("\t-a / --aff       : Prints output from \"aff\" (Default is to hide it)\n");
-	ft_printf("{GREEN} #### TEXT OUTPUT MODE ########################################################## {EOC}\n");
-	ft_printf("\t-d / --dump   N    : Dumps memory after N cycles then exits\n");
-	ft_printf("\t-s / --pause  N    : Runs N cycles, dumps memory, pauses, then repeats\n");
-	ft_printf("\t-v / --verbos N    : Verbosity levels, can be added together to enable several\n");
-	ft_printf("\t\t\t\t- 0 : Show only essentials (introduction + the winner)\n");
+	const char str[] = "################################################";
+
+	ft_printf("{RED}Usage: ./corewar [-d N -s N -v N | -b --stealth %s",\
+				"| -n --stealth] [-a] <champion1.cor> <...>{EOC}\n");
+	ft_printf("\t-a / --aff       : Prints output from \"aff\" %s", \
+				"(Default is to hide it)\n");
+	ft_printf("{GREEN} #### TEXT OUTPUT MODE ##########%s {EOC}\n", str);
+	ft_printf("\t-d / --dump   N    : %s", \
+				"Dumps memory after N cycles then exits\n");
+	ft_printf("\t-s / --pause  N    : %s", \
+				"Runs N cycles, dumps memory, pauses, then repeats\n");
+	ft_printf("\t-v / --verbos N    : %s", \
+				"Verbosity levels, can be added together to enable several\n");
+	ft_printf("\t\t\t\t- 0 : %s", \
+				"Show only essentials (introduction + the winner)\n");
 	ft_printf("\t\t\t\t- 1 : Show lives\n");
 	ft_printf("\t\t\t\t- 2 : Show cycles\n");
 	ft_printf("\t\t\t\t- 4 : Show operations (Params are NOT litteral ...)\n");
 	ft_printf("\t\t\t\t- 8 : Show deaths\n");
 	ft_printf("\t\t\t\t- 16 : Show PC movements (Except for jumps)\n");
 	ft_printf("\t--stealth : Hides the real contents of the memory\n");
-	ft_printf("{GREEN} #### visualization OUTPUT MODE ################################################{EOC}\n");
+	ft_printf("{GREEN} #### visualization OUTPUT MODE %s {EOC}\n", str);
 	ft_printf("\t-n / --visu    : visualization output mode\n");
 	ft_printf("\t--stealth : Hides the real contents of the memory\n");
-	ft_printf("{GREEN}################################################################################{EOC}\n");
+	ft_printf("{GREEN}################################%s {EOC}\n", str);
 }
 
 /*
@@ -140,10 +94,8 @@ void	mz_print_pc_movements(t_process *proc)
 	}
 	ft_printf("ADV %d (0x%.4x -> 0x%.4x) ", operation_length, proc->op_pc, \
 			pc_before_mod);
-	while (i < pc_before_mod)
-	{
+	i--;
+	while (++i < pc_before_mod)
 		ft_printf("%.2x ", proc->arena[0][i % MEM_SIZE]);
-		i++;
-	}
 	ft_printf("\n");
 }

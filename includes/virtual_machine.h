@@ -335,4 +335,25 @@ void	ft_value_arg(unsigned char *parameters, int *value, t_process *proc, \
 
 int		ft_check_reg_args(unsigned char *parameters, int *value);
 
+/*
+*******************************************************************************
+** mz_tools.c
+*/
+
+void		mz_print_debug_infos(t_input_data *bloc, t_game game_params);
+int			mz_dump_memory(t_input_data *bloc, t_process **procs, \
+							t_game **game_par);
+void		mz_do_pause(t_game game_params, t_process **procs, \
+						t_input_data *bloc);
+							
+void		mesafi_visualize(t_input_data *bloc, t_game game_params, \
+							t_process **procs);
+
+/*
+*******************************************************************************
+** mz_print_op.c
+*/
+
+void	mz_print_op(t_process *proc, int value[3]);
+
 #endif
