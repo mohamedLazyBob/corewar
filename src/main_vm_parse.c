@@ -47,7 +47,8 @@ void	ft_check_size_players(t_input_data *bloc)
 	{
 		if (CHAMP_MAX_SIZE < bloc->players[i].header.prog_size)
 		{
-			dprintf(2, "Error: File %s has too large a code (%u bytes > 682 bytes)\n", \
+			ft_dprintf(2, "Error: File %s has too large a code (%u bytes > 682 \
+			bytes)\n", \
 			bloc->names[i], \
 			bloc->players[i].header.prog_size);
 			exit(1);

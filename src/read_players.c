@@ -23,70 +23,34 @@
 
 int		ft_read_sideflags(int i, char **av, t_input_data *bloc, int *bol)
 {
-	char			*temp_str;
-	int				ret;
-	const char	flags[11][10] = {"-d", "--dump", "-s", "--pause", "-v", "--verbos", \
-								"-n", "--visu", "-a", "--aff", "--stealth"};
+	char		*temp_str;
+	int			ret;
+	const char	flags[11][10] = {"-d", "--dump", "-s", "--pause", "-v", \
+				"--verbos", "-n", "--visu", "-a", "--aff", "--stealth"};
+	int			j;
 
 	temp_str = ft_strdup_lower(av[i]);
-	// ft_printf("temp_str = [%s]\n", temp_str);
 	ret = 0;
 	*bol = -1;
-	for (int j = 0; j < 11; j++)
+	j = -1;
+	while (++j < 11)
 	{
 		if (0 == ft_strcmp(temp_str, flags[j]))
 		{
-			if (j < 6 && (av[i + 1]))
-			{
+			if (j < 6 && (av[i + 1]) && (*bol = 1))
 				bloc->flags[j] = ft_atoi(av[i + 1]);
-				*bol = 1;
-			}
-			else if (6 <= j)
-			{
-				// ft_printf("[%s] -%d- [%s]\n", temp_str,j,  flags[j]);
+			else if (6 <= j && (*bol = 0))
 				bloc->flags[j] = 1;
-				*bol = 0;
-			}
 			ret = 1;
-			break;
+			break ;
 		}
 	}
 	free(temp_str);
 	return (ret);
-
-
-/*
-	temp_str = ft_strdup_lower(av[i]);
-	ret = 1;
-	if ((ft_strcmp(temp_str, "--dump") == 0) && (av[i + 1]))
-	{
-		bloc->nbr_cycles[0] = 0;
-		bloc->nbr_cycles[1] = ft_atoi(av[i + 1]);
-	}
-	else if ((ft_strcmp(temp_str, "-d") == 0) && (av[i + 1]))
-	{
-		bloc->nbr_cycles[0] = 1;
-		bloc->nbr_cycles[1] = ft_atoi(av[i + 1]);
-	}
-	else if ((ft_strcmp(temp_str, "-n") == 0) || \
-				(ft_strcmp(temp_str, "--visu") == 0))
-	{
-		bloc->visu = 1;
-		ret = 0;
-	}
-	else if (((ft_strcmp(temp_str, "-v") == 0) || \
-				(ft_strcmp(temp_str, "--verbos") == 0)) && (av[i + 1]))
-	{
-		bloc->verbos_activated = 1;
-		bloc->verbos_level = ft_atoi(av[i + 1]);
-	}
-	else
-		ret = 0;
-*/
 }
 
 /*
-*******************************************************************************
+** ****************************************************************************
 */
 
 int		ft_read_player_numb(int idx, char **av, t_input_data *bloc)
@@ -148,7 +112,7 @@ void	ft_add_ids(t_input_data *bloc)
 }
 
 /*
-*******************************************************************************
+** ****************************************************************************
 */
 
 void	ft_read_players(int argc, char **av, t_input_data *bloc)
@@ -164,7 +128,6 @@ void	ft_read_players(int argc, char **av, t_input_data *bloc)
 				(0 == ft_read_sideflags(idx, av, bloc, &ret)))
 			ft_exit("ERROR: Wrong number of args");
 		ft_read_sideflags(idx, av, bloc, &ret);
-		// ft_printf("ret == %d for av[i] : [%s]\n", ret, av[idx]);
 		if (ret == -1)
 			ret = ft_read_player_numb(idx, av, bloc);
 		if (ret == -1)
@@ -172,17 +135,9 @@ void	ft_read_players(int argc, char **av, t_input_data *bloc)
 		idx += ret + 1;
 	}
 	ft_add_ids(bloc);
-	// if (bloc->players_counter == 1)
-	// 	ft_free_exit("ERROR: in number of args, too few.", 
-	// 					(void**)bloc->names, bloc->players_counter);
-	// else if (bloc->players_counter == 0)
 	if (bloc->players_counter == 0)
 	{
 		mz_print_usage();
 		exit(0);
 	}
 }
-
-/*
-*******************************************************************************
-*/

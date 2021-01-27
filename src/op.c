@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "virtual_machine.h"
-//#include <stdio.h>
 
 const t_op			g_op_tab[17] =
 {
@@ -42,25 +41,25 @@ const t_op			g_op_tab[17] =
 
 unsigned int	g_cycles_to_wait[16] =
 {
-	10,  //live
-	5,   //ld 
-	5,   // st
-	10,  // add
-	10,  // sub
-	6,  // and
-	6,  // or
-	6,  // xor
-	20,  // zjmp
-	25,  // ldi
-	25,  // sti
-	800,  // fork
-	10,  // lld
-	50,  // lldi
-	1000,  // lfork
-	2 // aff
+	10,
+	5,
+	5,
+	10,
+	10,
+	6,
+	6,
+	6,
+	20,
+	25,
+	25,
+	800,
+	10,
+	50,
+	1000,
+	2
 };
 
-void			(*g_operation[16])(t_process *process) = 
+void			(*g_operation[16])(t_process *process) =
 {
 	ft_operation_live, \
 	ft_operation_ld, \
@@ -79,25 +78,3 @@ void			(*g_operation[16])(t_process *process) =
 	ft_operation_lfork, \
 	ft_operation_aff
 };
-
-/*
-int	main(void)
-{
-	for (int i = 0; i < 17; i++)
-	{
-		printf("name :%s,\n args_num: %d, \nargs type :%d, %d, %d, \nidx: %d, \nexec_cycle: %d, \ndescription: %s, \narg_type_code: %d, \nreg_size: %d\n\n", 
-				  g_op_tab[i].op_name, \
-				  g_op_tab[i].args_num\
-				, g_op_tab[i].args_type[0] \
-				, g_op_tab[i].args_type[1] \
-				, g_op_tab[i].args_type[2] \
-				, g_op_tab[i].idx \
-				, g_op_tab[i].execution_cycle \
-				, g_op_tab[i].op_description \
-				, g_op_tab[i].arg_type_code \
-				, g_op_tab[i].reg_size
-				);
-	}
-	return (0);
-}
-*/
