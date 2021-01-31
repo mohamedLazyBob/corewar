@@ -22,7 +22,7 @@ static void	filler(t_kit *kit, char cursor[64][64], int *processesAlive)
 	node = kit->procs;
 	while (node != NULL)
 	{
-		cursor[(node->pc - 1) % 64][(node->pc - 1) / 64] = newCursor;
+		cursor[(node->op_pc) % 64][(node->op_pc) / 64] = newCursor;
 		// cursor[(node->op_pc - 1) % 64][(node->op_pc - 1) / 64] = oldCursor;
 		node = node->next;
 		*processesAlive += 1;
