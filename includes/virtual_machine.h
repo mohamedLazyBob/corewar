@@ -17,8 +17,11 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <string.h>
+# include <pthread.h>
 # include "op.h"
 # include "../ft_printf/headers/ft_printf.h"
+# include "../ft_printf/libft/headers/deque.h"
+# include "../ft_printf/libft/headers/dlist.h"
 
 # define FALSE 0
 # define TRUE 1
@@ -121,6 +124,22 @@ typedef struct	s_game
 	int					total_live_counter;
 	int					live_counter;
 }				t_game;
+
+typedef struct	s_datum
+{
+	t_input_data	*bloc;
+	t_deque			*deque;
+	t_process		*procs;
+}				t_datum;
+
+typedef struct	s_kit
+{
+	t_input_data	*bloc;
+	t_game			*game_params;
+	t_process		*procs;
+	unsigned int	live[4][2];
+	int				last_live;
+}				t_kit;
 
 /*
 **					struct up
@@ -282,7 +301,8 @@ void			ft_kill_first(t_process **proc, t_game **game_params);
 */
 void			ft_count_total_live(t_process **proc, t_game **game_params);
 
-void			ft_play_battle(t_process **procs, t_input_data *bloc);
+void			ft_play_battle(t_deque *data, t_process **procs, \
+				t_input_data *bloc);
 void			execute_number_of_cycles(t_game *game_params, \
 				t_input_data *bloc, t_process **procs, int bol);
 
@@ -322,8 +342,6 @@ int				mz_dump_memory(t_input_data *bloc, t_process **procs, \
 							t_game **game_par);
 void			mz_do_pause(t_game game_params, t_process **procs, \
 						t_input_data *bloc);
-void			mesafi_visualize(t_input_data *bloc, t_game game_params, \
-							t_process **procs);
 
 /*
 *******************************************************************************
@@ -339,5 +357,12 @@ void			mz_print_op(t_process *proc, int value[3]);
 
 void			ft_error_handler(int bool, char *name, t_playrs *playrs, \
 				int err);
+
+/*
+*******************************************************************************
+** visualizer
+*/
+
+void			visualizer(t_deque *deque);
 
 #endif

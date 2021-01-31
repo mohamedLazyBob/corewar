@@ -33,6 +33,9 @@ HDR_NAME= virtual_machine.h op.h
 LIB_PATH= ft_printf
 LIB= libftprintf.a
 
+VISUALIZER_PATH= visualizer
+VISUALIZER= visualizer.a
+
 OBJ_PATH= .obj
 OBJ_NAME= $(SRC_NAME:.c=.o)
 
@@ -56,12 +59,13 @@ HDR_FLAGS= $(HDR_PATH)
 
 all: lib $(NAME) 
 
-$(NAME): $(LIB_PATH)/$(LIB) $(OBJ)
-	@$(COMP) $(OBJ) $(LD_FLAGS) $(LD_LIBS) -o $@
+$(NAME): $(LIB_PATH)/$(LIB) $(VISUALIZER_PATH)/$(VISUALIZER) $(OBJ)
+	@$(COMP) $(OBJ) $(LD_FLAGS) $(LD_LIBS) $(VISUALIZER_PATH)/$(VISUALIZER) -framework GLUT -framework OpenGL -o $@
 	@ echo "\033[1;34m>>\033[0m $(NAME): \033[1;32m binary is ready.\033[0m"
 
 lib:
 	@make -sC ft_printf
+	@make -C $(VISUALIZER_PATH)
 
 #$(LIB_PATH)/$(LIB): lib
 #	@echo "***"
@@ -77,10 +81,12 @@ clean:
 	@rm -fr $(OBJ)
 	@rm -fr $(OBJ_PATH) 2> /dev/null || true
 	@make -C $(LIB_PATH) clean
+	@make clean -C $(VISUALIZER_PATH)
 	@echo "\033[1;34m>>\033[0m $(NAME): \033[1;33m object files deleted.\033[0m" 
 
 fclean:
 	@make -C $(LIB_PATH) fclean
+	@make fclean -C $(VISUALIZER_PATH)
 	@rm -fr $(OBJ)
 	@rm -fr $(OBJ_PATH) 2> /dev/null || true
 	@echo "\033[1;34m>>\033[0m $(NAME): \033[1;33m object files deleted.\033[0m" 

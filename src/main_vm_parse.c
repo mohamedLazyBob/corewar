@@ -15,6 +15,13 @@
 t_input_data		*g_input_bloc;
 t_process			*g_procs_head;
 unsigned int		g_last_live;
+unsigned int		g_live[4][2] = {
+	{0, 0},
+	{0, 0},
+	{0, 0},
+	{0, 0},
+};
+int					g_current_cycle = 0;
 
 /*
 ** *****************************************************************************
@@ -79,24 +86,56 @@ void	ft_introduce_players(t_input_data *bloc)
 *******************************************************************************
 */
 
+static int	data_allocation(t_datum *data)
+{
+	if (!(data->bloc = (t_input_data *)malloc(sizeof(t_input_data))))
+		return (1);
+	if (!(data->procs = (t_process *)malloc(sizeof(t_process))))
+	{
+		ft_memdel((void **)&(data->bloc));
+		return (1);
+	}
+	if (!(data->deque = (t_deque *)malloc(sizeof(t_deque))))
+	{
+		ft_memdel((void **)&(data->bloc));
+		ft_memdel((void **)&(data->procs));
+		return (1);
+	}
+	return (0);
+}
+
+static void	*battle_start(void *data)
+{
+	t_datum		*datum;
+
+	datum = (t_datum *)data;
+	ft_play_battle(datum->deque, &datum->procs, datum->bloc);
+	return (NULL);
+}
+
 int		main(int ac, char **av)
 {
-	t_input_data	bloc;
-	t_process		*procs;
+	t_datum			data;
+	pthread_t		thread_id;
 
-	ft_memset(&bloc, 0, sizeof(bloc));
-	ft_memset(bloc.flags, 0, 11 * sizeof(int));
-	ft_read_players(ac, av, &bloc);
-	g_input_bloc = &bloc;
+	if (data_allocation(&data) == 1)
+		return (1);
+	ft_memset(data.bloc, 0, sizeof(t_input_data));
+	ft_memset(data.bloc->flags, 0, 11 * sizeof(int));
+	ft_read_players(ac, av, data.bloc);
+	g_input_bloc = data.bloc;
 	g_procs_head = NULL;
-	bloc.players = (t_playrs*)ft_memalloc(sizeof(t_playrs) * \
-					bloc.players_counter);
-	ft_open_champion(bloc, bloc.players);
-	ft_init_procs_arena(&procs, &bloc);
-	ft_introduce_players(&bloc);
-	g_last_live = bloc.players_counter;
-	ft_play_battle(&procs, &bloc);
+	data.bloc->players = (t_playrs*)ft_memalloc(sizeof(t_playrs) * \
+			data.bloc->players_counter);
+	ft_open_champion(*(data.bloc), data.bloc->players);
+	ft_init_procs_arena(&data.procs, data.bloc);	
+	ft_introduce_players(data.bloc);
+	g_last_live =  data.bloc->players_counter;
+	init_deque(data.deque);
+	pthread_create(&thread_id, NULL, battle_start, &data);
+	visualizer(data.deque);
+	pthread_join(thread_id, NULL);
 	ft_printf("Contestant %d, \"%s\", has won !\n", g_last_live, \
-					bloc.players[g_last_live - 1].header.prog_name);
+			data.bloc->players[g_last_live - 1].header.prog_name);
 	return (0);
 }

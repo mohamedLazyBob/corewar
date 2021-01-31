@@ -14,6 +14,8 @@
 
 extern int			g_last_live;
 extern t_input_data *g_input_bloc;
+extern unsigned int	g_live[4][2];
+extern int			g_current_cycle;
 
 /*
 ** ****************************************************************************
@@ -61,6 +63,8 @@ void			ft_operation_live(t_process *process)
 		g_last_live = arg;
 		process->valid_player_live_counter++;
 		mz_print_live(arg);
+		g_live[arg - 1][0] += 1;
+		g_live[arg - 1][1] = g_current_cycle;
 	}
 	mz_print_pc_movements(process);
 }

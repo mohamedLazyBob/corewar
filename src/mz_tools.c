@@ -75,17 +75,4 @@ void		mz_do_pause(t_game game_params, t_process **procs, \
 
 /*
 ** ****************************************************************************
-** mesafi well take care of it.
-*/
-
-void		mesafi_visualize(t_input_data *bloc, t_game game_params, \
-							t_process **procs)
-{
-	(void)bloc;
-	(void)game_params;
-	(void)procs;
-}
-
-/*
-** ****************************************************************************
 */

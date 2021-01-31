@@ -14,7 +14,9 @@
 
 static void	ft_to_arena(t_process *proc, int place_memory, char *str)
 {
-	const int	var[4] = {proc->players_counter};
+	const int	player_id = proc->player_id & 0xFF;
+	const int	var[4] = {(player_id | (player_id << 8) | \
+					(player_id << 16) | (player_id << 24))};
 
 	copy_to_arena(proc->arena[0], str, place_memory, 4);
 	copy_to_arena(proc->arena[1], (void*)var, place_memory, 4);
@@ -44,8 +46,8 @@ void		ft_operation_sti(t_process *proc)
 			args[2] = ft_get_argument_value(proc, args[2], parameters[2]);
 			mz_print_op(proc, args);
 			place_memory = proc->op_pc + ((args[1] + args[2]) % IDX_MOD);
-			ft_int_to_str(proc->regestries[args[0] - 1], str);
 			place_memory = (place_memory + MEM_SIZE) % MEM_SIZE;
+			ft_int_to_str(proc->regestries[args[0] - 1], str);
 			ft_to_arena(proc, place_memory, str);
 		}
 	}
