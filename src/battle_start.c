@@ -1,46 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dlist.h                                            :+:      :+:    :+:   */
+/*   battle_start.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mesafi <mesafi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/24 11:38:57 by mesafi            #+#    #+#             */
-/*   Updated: 2020/12/24 11:38:58 by mesafi           ###   ########.fr       */
+/*   Created: 2021/02/01 09:04:37 by mesafi            #+#    #+#             */
+/*   Updated: 2021/02/01 09:04:38 by mesafi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DLIST_H
+#include "../includes/virtual_machine.h"
 
-/*
- ** Definitions
-*/
-
-# define DLIST_H
-
-/*
- ** Includes
-*/
-
-# include <stdlib.h>
-# include "libft.h"
-
-/*
- ** Structures
-*/
-
-typedef struct	s_dlist
+void		*battle_start(void *data)
 {
-	void			*content;
-	size_t			size;
-	struct s_dlist	*next;
-	struct s_dlist	*prev;
-}				t_dlist;
+	t_datum		*datum;
 
-/*
- ** Functions ProtoType
-*/
-
-t_dlist			*new_dlist(void const *content, size_t size);
-
-#endif
+	datum = (t_datum *)data;
+	ft_play_battle(datum->deque, &datum->procs, datum->bloc);
+	return (NULL);
+}

@@ -364,5 +364,9 @@ void			ft_error_handler(int bool, char *name, t_playrs *playrs, \
 */
 
 void			visualizer(t_deque *deque);
+void			*battle_start(void *data);
+void			pusher(t_deque *deque, t_input_data *bloc, t_game *game_params,
+					t_process *procs);
+void			ft_free(t_datum *data);
 
 #endif

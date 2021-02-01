@@ -14,7 +14,7 @@
 
 t_input_data		*g_input_bloc;
 t_process			*g_procs_head;
-unsigned int		g_last_live;
+unsigned int		g_last_live = 0;
 unsigned int		g_live[4][2] = {
 	{0, 0},
 	{0, 0},
@@ -27,7 +27,7 @@ int					g_current_cycle = 0;
 ** *****************************************************************************
 */
 
-void	ft_free_exit(char *str, void **buff, size_t size)
+void		ft_free_exit(char *str, void **buff, size_t size)
 {
 	size_t	i;
 
@@ -45,7 +45,7 @@ void	ft_free_exit(char *str, void **buff, size_t size)
 ** *****************************************************************************
 */
 
-void	ft_check_size_players(t_input_data *bloc)
+void		ft_check_size_players(t_input_data *bloc)
 {
 	int	i;
 
@@ -67,7 +67,7 @@ void	ft_check_size_players(t_input_data *bloc)
 *******************************************************************************
 */
 
-void	ft_introduce_players(t_input_data *bloc)
+void		ft_introduce_players(t_input_data *bloc)
 {
 	int	i;
 
@@ -104,16 +104,7 @@ static int	data_allocation(t_datum *data)
 	return (0);
 }
 
-static void	*battle_start(void *data)
-{
-	t_datum		*datum;
-
-	datum = (t_datum *)data;
-	ft_play_battle(datum->deque, &datum->procs, datum->bloc);
-	return (NULL);
-}
-
-int		main(int ac, char **av)
+int			main(int ac, char **av)
 {
 	t_datum			data;
 	pthread_t		thread_id;
@@ -128,14 +119,16 @@ int		main(int ac, char **av)
 	data.bloc->players = (t_playrs*)ft_memalloc(sizeof(t_playrs) * \
 			data.bloc->players_counter);
 	ft_open_champion(*(data.bloc), data.bloc->players);
-	ft_init_procs_arena(&data.procs, data.bloc);	
+	ft_init_procs_arena(&data.procs, data.bloc);
 	ft_introduce_players(data.bloc);
-	g_last_live =  data.bloc->players_counter;
+	g_last_live = data.bloc->players_counter;
 	init_deque(data.deque);
 	pthread_create(&thread_id, NULL, battle_start, &data);
-	visualizer(data.deque);
+	if (data.bloc->flags[VISU_1] != 0 || data.bloc->flags[VISU_2] != 0)
+		visualizer(data.deque);
 	pthread_join(thread_id, NULL);
 	ft_printf("Contestant %d, \"%s\", has won !\n", g_last_live, \
 			data.bloc->players[g_last_live - 1].header.prog_name);
+	ft_free(&data);
 	return (0);
 }

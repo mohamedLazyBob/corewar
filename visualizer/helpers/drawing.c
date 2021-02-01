@@ -164,7 +164,7 @@ void		drawing(t_dlist *node)
 	}
 	putInformation(kit, processesAlive);
 	progressBar(kit, percent);
-	if (!node->next)
+	if (!node->next && !kit->last_live)
 		winner(kit);
 	keysUsage();
 }

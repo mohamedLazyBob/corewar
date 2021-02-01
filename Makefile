@@ -7,6 +7,7 @@ SRC_NAME=	main_vm_parse.c				read_players.c	ft_read_champion.c \
 			init_process_arena.c	  	play_battle.c \
 			mz_mode_verbos.c		 	ft_print_error.c\
 			ft_kill.c					mz_tools.c		mz_print_op.c	\
+			ft_pusher.c					battle_start.c	ft_free.c \
 			op/add.c \
 			op/aff.c \
 			op/and.c \

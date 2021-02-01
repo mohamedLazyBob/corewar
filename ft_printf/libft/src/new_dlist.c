@@ -24,7 +24,9 @@ t_dlist		*new_dlist(void const *content, size_t size)
 	{
 		node->content = NULL;
 		node->size = 0;
-	} else {
+	}
+	else
+	{
 		ft_memcpy(node->content, content, size);
 		node->size = size;
 	}
