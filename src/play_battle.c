@@ -12,21 +12,21 @@
 
 #include "virtual_machine.h"
 
-extern	void			(*g_operation[16])(t_process *process);
-extern	unsigned int	g_cycles_to_wait[16];
-extern	const t_op		g_op_tab[17];
-extern	t_process		*g_procs_head;
-t_deque					*g_deque;
-extern int				g_current_cycle;
+extern void (*g_operation[16])(t_process *process);
+extern unsigned int g_cycles_to_wait[16];
+extern const t_op g_op_tab[17];
+extern t_process *g_procs_head;
+t_deque *g_deque;
+extern int g_current_cycle;
 
 /*
 ** ****************************************************************************
 ** for the cycles_number we -1 of the curr cycle;
 */
 
-static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
+static void ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 {
-	unsigned char	temp;
+	unsigned char temp;
 
 	temp = proc->arena[0][proc->pc] - 1;
 	proc->next_inst = temp;
@@ -43,12 +43,12 @@ static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 ** Done!
 */
 
-void		ft_execute_cycle(t_process *ptr, int curr_life_cycle)
+void ft_execute_cycle(t_process *ptr, int curr_life_cycle)
 {
 	while (ptr)
 	{
-		if (ptr->execution_cycle == -1 || \
-				ptr->execution_cycle < curr_life_cycle)
+		if (ptr->execution_cycle == -1 ||
+			ptr->execution_cycle < curr_life_cycle)
 			ft_read_opcode(ptr, curr_life_cycle);
 		if (ptr->execution_cycle == curr_life_cycle)
 		{
@@ -70,9 +70,9 @@ void		ft_execute_cycle(t_process *ptr, int curr_life_cycle)
 ** ****************************************************************************
 */
 
-void		ft_count_total_live(t_process **proc, t_game **game_params)
+void ft_count_total_live(t_process **proc, t_game **game_params)
 {
-	t_process	*p;
+	t_process *p;
 
 	(*game_params)->total_live_counter = 0;
 	if (proc && *proc)
@@ -90,10 +90,10 @@ void		ft_count_total_live(t_process **proc, t_game **game_params)
 ** ****************************************************************************
 */
 
-void		ft_play_battle(t_deque *data, t_process **procs, t_input_data *bloc)
+void ft_play_battle(t_deque *data, t_process **procs, t_input_data *bloc)
 {
-	t_game	*game_params;
-	int		bol;
+	t_game *game_params;
+	int bol;
 
 	g_deque = data;
 	game_params = ft_memalloc(sizeof(t_game));
@@ -117,13 +117,14 @@ void		ft_play_battle(t_deque *data, t_process **procs, t_input_data *bloc)
 ** **************************************************************************
 */
 
-void		execute_number_of_cycles(t_game *game_params, t_input_data *bloc, \
-									t_process **procs, int bol)
+void execute_number_of_cycles(t_game *game_params, t_input_data *bloc,
+							  t_process **procs, int bol)
 {
-	t_process	*ptr;
+	t_process *ptr;
 
-	while (procs && (*procs) && \
-			(game_params->curr_life_cycle < game_params->cycles_to_die || \
+	// ft_printf("debug -- [%d][%d]\n", bloc->flags[VISU_1], bloc->flags[VISU_2]);
+	while (procs && (*procs) &&
+		   (game_params->curr_life_cycle < game_params->cycles_to_die ||
 			(game_params->cycles_to_die < 0 && bol++ == 0)))
 	{
 		game_params->curr_life_cycle++;

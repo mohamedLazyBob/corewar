@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/virtual_machine.h"
+#include "virtual_machine.h"
 
 extern int				g_last_live;
 extern unsigned int		g_live[4][2];

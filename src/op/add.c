@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/virtual_machine.h"
+#include "virtual_machine.h"
 
 void	ft_operation_add(t_process *proc)
 {

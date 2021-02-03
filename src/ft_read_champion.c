@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/virtual_machine.h"
+#include "virtual_machine.h"
 
 void			ft_exit(char *str)
 {

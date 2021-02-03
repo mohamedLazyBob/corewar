@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/virtual_machine.h"
+#include "virtual_machine.h"
 
 /*
 *******************************************************************************
@@ -39,7 +39,7 @@ int		ft_read_sideflags(int i, char **av, t_input_data *bloc, int *bol)
 		{
 			if (j < 6 && (av[i + 1]) && (*bol = 1))
 				bloc->flags[j] = ft_atoi(av[i + 1]);
-			else if (6 <= j && (*bol = 0))
+			else if (6 <= j && !(*bol = 0))
 				bloc->flags[j] = 1;
 			ret = 1;
 			break ;

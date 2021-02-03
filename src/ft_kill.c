@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/virtual_machine.h"
+#include "virtual_machine.h"
 
 static int	ft_check_carriage(t_process *carriage, t_game *game_params)
 {
