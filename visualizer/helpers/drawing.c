@@ -6,11 +6,11 @@
 /*   By: mesafi <mesafi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 12:46:01 by mesafi            #+#    #+#             */
-/*   Updated: 2021/01/25 12:46:02 by mesafi           ###   ########.fr       */
+/*   Updated: 2021/02/03 15:27:32 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <visualizer.h>
+#include "visualizer.h"
 
 static int newCursor = 6;
 static int oldCursor = 5;

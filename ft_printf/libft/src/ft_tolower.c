@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/01 05:10:05 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/04 13:49:05 by mzaboub          ###   ########.fr       */
+/*   Updated: 2021/02/03 12:39:23 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strdup_lower(char *buff)
 	char			*str;
 
 	idx = 0;
-	str = (char*)ft_memalloc(ft_strlen(buff));
+	str = (char*)ft_memalloc(1 + ft_strlen(buff));
 	while (idx < strlen(buff))
 	{
 		if (buff[idx] >= 'A' && buff[idx] <= 'Z')
@@ -34,5 +34,6 @@ char	*ft_strdup_lower(char *buff)
 			str[idx] = buff[idx];
 		idx++;
 	}
+	str[idx] = 0;
 	return (str);
 }

@@ -6,7 +6,7 @@
 #    By: mesafi <mesafi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/29 23:34:49 by mesafi            #+#    #+#              #
-#    Updated: 2020/02/04 09:30:16 by mesafi           ###   ########.fr        #
+#    Updated: 2021/02/03 15:29:27 by mzaboub          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ $(NAME): $(OBJS) $(HEADER)
 	@echo "⇾ $(NAME) $(GREEN)done ( ˆᴗˆ )$(RESET)"
 
 %.o: %.c
-	@$(CC) -c $(CFLAGS) $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 	@if [[ -f $(NAME) ]] ; then \
 		echo "⇾ $@ $(GREEN)updated$(RESET)" ; \
 	fi;

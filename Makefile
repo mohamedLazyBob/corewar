@@ -47,7 +47,7 @@ OBJ= $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 # **************************************************************************** #
 
 COMP= clang
-CFLAGES= -Wall -Wextra -Werror
+CFLAGES= -g -Wall -Wextra -Werror
 
 LD_FLAGS= -L$(LIB_PATH)
 LD_LIBS= -l$(patsubst lib%.a,%, $(LIB))
@@ -61,7 +61,7 @@ HDR_FLAGS= $(HDR_PATH)
 all: lib $(NAME) 
 
 $(NAME): $(LIB_PATH)/$(LIB) $(VISUALIZER_PATH)/$(VISUALIZER) $(OBJ)
-	@$(COMP) $(OBJ) $(LD_FLAGS) $(LD_LIBS) $(VISUALIZER_PATH)/$(VISUALIZER) -framework GLUT -framework OpenGL -o $@
+	@$(COMP) -g $(OBJ) $(LD_FLAGS) $(LD_LIBS) $(VISUALIZER_PATH)/$(VISUALIZER) -framework GLUT -framework OpenGL -o $@
 	@ echo "\033[1;34m>>\033[0m $(NAME): \033[1;32m binary is ready.\033[0m"
 
 lib:

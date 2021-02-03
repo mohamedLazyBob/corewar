@@ -6,7 +6,7 @@
 /*   By: mesafi <mesafi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/17 18:49:10 by mesafi            #+#    #+#             */
-/*   Updated: 2020/12/17 18:49:12 by mesafi           ###   ########.fr       */
+/*   Updated: 2021/02/03 15:29:21 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 #include <stdio.h>
 #include <GLUT/glut.h>
 #include <GLUT/glutbitmap.h>
-#include "virtual_machine.h"
+#include "../includes/virtual_machine.h"
 #include "../ft_printf/libft/headers/deque.h"
 #include "../ft_printf/libft/headers/dlist.h"
 

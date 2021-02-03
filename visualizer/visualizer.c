@@ -6,11 +6,11 @@
 /*   By: mesafi <mesafi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 10:25:27 by mesafi            #+#    #+#             */
-/*   Updated: 2020/12/07 10:25:29 by mesafi           ###   ########.fr       */
+/*   Updated: 2021/02/03 15:25:01 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <visualizer.h>
+#include "visualizer.h"
 
 t_deque		*datum = NULL;
 t_dlist		*node = NULL;

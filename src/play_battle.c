@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 16:56:52 by mzaboub           #+#    #+#             */
-/*   Updated: 2020/12/04 12:53:47 by mzaboub          ###   ########.fr       */
+/*   Updated: 2021/02/03 11:47:20 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ extern int g_current_cycle;
 ** for the cycles_number we -1 of the curr cycle;
 */
 
-static void ft_read_opcode(t_process *proc, size_t curr_life_cycle)
+static void	ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 {
 	unsigned char temp;
 
@@ -43,7 +43,7 @@ static void ft_read_opcode(t_process *proc, size_t curr_life_cycle)
 ** Done!
 */
 
-void ft_execute_cycle(t_process *ptr, int curr_life_cycle)
+void		ft_execute_cycle(t_process *ptr, int curr_life_cycle)
 {
 	while (ptr)
 	{
@@ -70,7 +70,7 @@ void ft_execute_cycle(t_process *ptr, int curr_life_cycle)
 ** ****************************************************************************
 */
 
-void ft_count_total_live(t_process **proc, t_game **game_params)
+void		ft_count_total_live(t_process **proc, t_game **game_params)
 {
 	t_process *p;
 
@@ -90,10 +90,10 @@ void ft_count_total_live(t_process **proc, t_game **game_params)
 ** ****************************************************************************
 */
 
-void ft_play_battle(t_deque *data, t_process **procs, t_input_data *bloc)
+void		ft_play_battle(t_deque *data, t_process **procs, t_input_data *bloc)
 {
-	t_game *game_params;
-	int bol;
+	int		bol;
+	t_game	*game_params;
 
 	g_deque = data;
 	game_params = ft_memalloc(sizeof(t_game));
@@ -117,14 +117,14 @@ void ft_play_battle(t_deque *data, t_process **procs, t_input_data *bloc)
 ** **************************************************************************
 */
 
-void execute_number_of_cycles(t_game *game_params, t_input_data *bloc,
-							  t_process **procs, int bol)
+void		execute_number_of_cycles(t_game *game_params, \
+										t_input_data *bloc, \
+										t_process **procs, int bol)
 {
 	t_process *ptr;
 
-	// ft_printf("debug -- [%d][%d]\n", bloc->flags[VISU_1], bloc->flags[VISU_2]);
 	while (procs && (*procs) &&
-		   (game_params->curr_life_cycle < game_params->cycles_to_die ||
+			(game_params->curr_life_cycle < game_params->cycles_to_die ||
 			(game_params->cycles_to_die < 0 && bol++ == 0)))
 	{
 		game_params->curr_life_cycle++;
