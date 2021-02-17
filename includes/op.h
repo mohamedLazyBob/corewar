@@ -6,7 +6,7 @@
 /*   By: zaz <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:33:27 by zaz               #+#    #+#             */
-/*   Updated: 2020/12/03 15:00:50 by mzaboub          ###   ########.fr       */
+/*   Updated: 2021/02/17 11:14:39 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 ** Toutes les tailles sont en octets.
 ** On part du principe qu'un int fait 32 bits. Est-ce vrai chez vous ?
 */
+
 #ifndef OP_H
 # define OP_H
 
@@ -30,6 +31,7 @@
 ** IDX_MOD	= MEM_SIZE / 8
 ** CHAMP_MAX_SIZE = MEM_SIZE / 6
 */
+
 # define MAX_ARGS_NUMBER		4
 # define MAX_PLAYERS			4
 # define MEM_SIZE				4096
@@ -65,7 +67,7 @@ typedef char		t_arg_type;
 # define T_LAB					8
 
 /*
-** .HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH.
+** .. HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH
 */
 
 # define PROG_NAME_LENGTH		128

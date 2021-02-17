@@ -6,7 +6,7 @@
 /*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 13:21:01 by del-alj           #+#    #+#             */
-/*   Updated: 2021/01/16 11:58:54 by del-alj          ###   ########.fr       */
+/*   Updated: 2021/02/17 11:09:06 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,10 @@ void			ft_open_champion(t_input_data bloc, t_playrs *playrs)
 	ft_fd_players(&bloc);
 	while (++i < bloc.players_counter)
 		ft_read_champion(bloc, playrs + i, i);
+	i = -1;
+	while (++i < bloc.players_counter)
+	{
+		close(bloc.fd[i]);
+		bloc.fd[i] = -1;
+	}
 }

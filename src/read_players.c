@@ -6,7 +6,7 @@
 /*   By: mzaboub <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 14:13:29 by mzaboub           #+#    #+#             */
-/*   Updated: 2021/02/03 12:39:42 by mzaboub          ###   ########.fr       */
+/*   Updated: 2021/02/17 11:10:25 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int		ft_read_sideflags(int i, char **av, t_input_data *bloc, int *bol)
 	const char	flags[11][10] = {"-d", "--dump", "-s", "--pause", "-v", \
 				"--verbos", "-n", "--visu", "-a", "--aff", "--stealth"};
 	int			j;
-
 
 	temp_str = ft_strdup_lower(av[i]);
 	ret = 0;

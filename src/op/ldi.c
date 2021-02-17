@@ -6,7 +6,7 @@
 /*   By: del-alj <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 12:36:51 by del-alj           #+#    #+#             */
-/*   Updated: 2021/01/15 12:00:15 by del-alj          ###   ########.fr       */
+/*   Updated: 2021/02/17 11:09:52 by mzaboub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,16 @@
 ** ****************************************************************************
 ** ZAZs corewar doesn't modify the carry for somereason idk.
 ** ldi should modify it as all the other operations and that what we do
+**
+** 	proc->regestries[value[2] - 1] = temp;
+** -----------------------
+** --> this line was deleted, bcs it looks like no one else is doing it.
+** 	and zaz's corewar don't do it!
+**
+** 	proc->carry = (temp == 0) ? 1 : 0;
+** -----------------
+**
+** 	mz_print_op(proc, value);
 */
 
 void	ft_operation_ldi(t_process *proc)
@@ -39,7 +49,6 @@ void	ft_operation_ldi(t_process *proc)
 							value[1]) % IDX_MOD), 4);
 			temp = ft_reverse_endianness((unsigned char*)&temp, 4);
 			proc->regestries[value[2] - 1] = temp;
-			proc->carry = (temp == 0) ? 1 : 0;
 			mz_print_op(proc, value);
 		}
 	}
