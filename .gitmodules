@@ -1,0 +1,3 @@
+[submodule "visualizer"]
+	path = visualizer
+	url = https://github.com/MohammedEsafi/visualizer.git
