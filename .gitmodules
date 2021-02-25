@@ -1,3 +1,6 @@
 [submodule "visualizer"]
 	path = visualizer
 	url = https://github.com/MohammedEsafi/visualizer.git
+[submodule "ft_printf"]
+	path = ft_printf
+	url = https://github.com/mohamedLazyBob/ft_printf.git
