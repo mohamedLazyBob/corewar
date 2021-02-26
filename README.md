@@ -37,7 +37,7 @@ Corewar is one of the interesting projects in our 1337 curriculum, where we had 
 
 The `VM` programe accepts 1 to 4 programs, and can be runed with different options. I'll leave it to you to discover them.
 ```bash
-Usage: ./corewar [-d N -s N -v N | -b --stealth | -n --stealth] [-a] <champion1.cor> <...>
+Usage: ./corewar [ -d N  -s N  -v N ] [-a] <champion1.cor> <...>
         -a / --aff       : Prints output from "aff" (Default is to hide it)
 #### TEXT OUTPUT MODE ########################################################## 
         -d / --dump   N    : Dumps memory after N cycles then exits
