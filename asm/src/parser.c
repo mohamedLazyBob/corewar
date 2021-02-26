@@ -21,9 +21,8 @@ static t_op_parser	*label_parser_helper(t_asm *asm_info, t_line *tab,
 	int				next_index;
 
 	next_index = 1;
-	if ((label = (t_label *)ft_memalloc(sizeof(t_label))) == 0)
-		error(MEMORY);
-	if ((label->value = ft_strdup(tab[0].content)) == 0)
+	if (((label = (t_label *)ft_memalloc(sizeof(t_label))) == 0) || \
+		((label->value = ft_strdup(tab[0].content)) == 0))
 		error(MEMORY);
 	label->size = asm_info->binary_position;
 	if ((node = ft_lstnew(label, sizeof(t_label))) == 0)

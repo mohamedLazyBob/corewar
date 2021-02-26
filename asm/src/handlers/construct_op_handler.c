@@ -22,11 +22,8 @@ static int	arg_setter_helper(t_asm *asm_info, t_line *tab,
 	{
 		tab_next_index += op_type_handler(asm_info, tab + tab_next_index,
 											op_parser, arg);
-		if (tab[tab_next_index].content == 0)
-		{
-			++arg;
+		if ((tab[tab_next_index].content == 0) && (++arg))
 			break ;
-		}
 		if ((tab[tab_next_index].content[0] == SEPARATOR_CHAR &&
 				tab[tab_next_index + 1].content == 0) ||
 				tab[tab_next_index].content[0] != SEPARATOR_CHAR)
@@ -38,7 +35,7 @@ static int	arg_setter_helper(t_asm *asm_info, t_line *tab,
 		}
 	}
 	if (arg > 3)
-		error_row_col(ARGUMENTS_WRONG_NUMBER, tab[tab_next_index].row, 
+		error_row_col(ARGUMENTS_WRONG_NUMBER, tab[tab_next_index].row, \
 		tab[tab_next_index].col);
 	op_parser->args_num = arg;
 	return (tab_next_index);
