@@ -45,6 +45,9 @@ typedef	enum	e_bool
 	TRUE
 }				t_bool;
 
+
+
+
 typedef struct	s_op_parser
 {
 	char				op_name[10];

@@ -20,6 +20,8 @@ HEADER = headers/libft.h
 
 GRAPH = graph/graph.h
 
+HEADERS = $(HEADER) $(GRAPH)
+
 OBJS = lib/bst_delete.o \
 			lib/bst_deletenode.o \
 			lib/bst_find.o \
@@ -147,7 +149,7 @@ $(NAME): $(OBJS) $(HEADER) $(GRAPH)
 	@ranlib $(NAME)
 	@make -C ft_printf
 	
-%.o: %.c
+%.o: %.c $(HEADERS)
 	@$(CC) -I. $(CFLAGS) -c -o $@ $<
 	@if [[ $? && -f $(NAME) ]] ; then \
 		echo "$(BLUE)→ $(GREEN)$@ updated$(RESET)" ; \

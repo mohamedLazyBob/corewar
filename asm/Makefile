@@ -81,19 +81,19 @@ $(NAME): $(PREBUILD) $(SRC_OBJS) $(HANDLERS_OBJS) $(ASM_OBJ) $(HEADERS)
 	fi;
 	@$(CC) $(CFLAGS) $(ASM_OBJ) $(SRC_OBJS) $(HANDLERS_OBJS) $(LIBFT) $(FT_PRINTF) -o $(NAME)
 
-$(SRC_OBJS): $(OBJSDIR)/$(SRCSDIR)/%.o : $(SRCSDIR)/%.c
+$(SRC_OBJS): $(OBJSDIR)/$(SRCSDIR)/%.o : $(SRCSDIR)/%.c $(HEADERS)
 	@$(CC) -c $(CFLAGS) $< -o $@
 	@if [[ -f $(NAME) ]] ; then \
 		echo "$(BLUE)→ $(GREEN)$@ $(GREEN)updated$(RESET)" ; \
 	fi;
 	
-$(HANDLERS_OBJS): $(OBJSDIR)/$(SRCSDIR)/$(HANDLERSDIR)/%.o : $(SRCSDIR)/$(HANDLERSDIR)/%.c
+$(HANDLERS_OBJS): $(OBJSDIR)/$(SRCSDIR)/$(HANDLERSDIR)/%.o : $(SRCSDIR)/$(HANDLERSDIR)/%.c  $(HEADERS)
 	@$(CC) -c $(CFLAGS) $< -o $@
 	@if [[ -f $(NAME) ]] ; then \
 		echo "$(BLUE)→ $(GREEN)$@ $(GREEN)updated$(RESET)" ; \
 	fi;
 
-$(ASM_OBJ): $(OBJSDIR)/%.o : %.c
+$(ASM_OBJ): $(OBJSDIR)/%.o : %.c $(HEADERS)
 	@$(CC) -c $(CFLAGS) $< -o $@
 	@if [[ -f $(NAME) ]] ; then \
 		echo "$(BLUE)→ $(GREEN)$@ $(GREEN)updated$(RESET)" ; \

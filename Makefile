@@ -37,6 +37,9 @@ LIB= libftprintf.a
 VISUALIZER_PATH= visualizer
 VISUALIZER= visualizer.a
 
+ASM_PATH= asm
+ASM_NAME= asm
+
 OBJ_PATH= .obj
 OBJ_NAME= $(SRC_NAME:.c=.o)
 
@@ -44,6 +47,7 @@ SRC= $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 HDR= $(addprefix $(HDR_PATH)/,$(HDR_NAME))
 OBJ= $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 
+ASM= $(addprefix $(ASM_PATH)/,$(ASM_NAME))
 # **************************************************************************** #
 
 COMP= clang
@@ -65,8 +69,9 @@ $(NAME): $(LIB_PATH)/$(LIB) $(VISUALIZER_PATH)/$(VISUALIZER) $(OBJ)
 	@ echo "\033[1;34m>>\033[0m $(NAME): \033[1;32m binary is ready.\033[0m"
 
 lib:
-	@make -sC ft_printf
-	@make -C $(VISUALIZER_PATH)
+	@make -sC $(LIB_PATH)
+	@make -sC $(ASM_PATH)
+	@make -sC $(VISUALIZER_PATH)
 
 #$(LIB_PATH)/$(LIB): lib
 #	@echo "***"
@@ -81,13 +86,15 @@ $(OBJ_PATH):
 clean:
 	@rm -fr $(OBJ)
 	@rm -fr $(OBJ_PATH) 2> /dev/null || true
-	@make -C $(LIB_PATH) clean
-	@make clean -C $(VISUALIZER_PATH)
+	@make -sC $(LIB_PATH) clean
+	@make -sC $(ASM_PATH) clean
+	@make -sC $(VISUALIZER_PATH) clean
 	@echo "\033[1;34m>>\033[0m $(NAME): \033[1;33m object files deleted.\033[0m" 
 
 fclean:
-	@make -C $(LIB_PATH) fclean
-	@make fclean -C $(VISUALIZER_PATH)
+	@make -sC $(LIB_PATH) fclean
+	@make -sC $(ASM_PATH) fclean
+	@make -sC $(VISUALIZER_PATH) fclean
 	@rm -fr $(OBJ)
 	@rm -fr $(OBJ_PATH) 2> /dev/null || true
 	@echo "\033[1;34m>>\033[0m $(NAME): \033[1;33m object files deleted.\033[0m" 
