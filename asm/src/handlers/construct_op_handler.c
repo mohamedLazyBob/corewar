@@ -6,7 +6,7 @@
 /*   By: tbareich <tbareich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 03:30:10 by tbareich          #+#    #+#             */
-/*   Updated: 2021/02/26 06:59:59 by tbareich         ###   ########.fr       */
+/*   Updated: 2021/02/26 18:44:34 by tbareich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ static int	arg_setter_helper(t_asm *asm_info, t_line *tab,
 			++tab_next_index;
 		}
 	}
+	if (arg > 3)
+		error_row_col(ARGUMENTS_WRONG_NUMBER, tab[tab_next_index].row, 
+		tab[tab_next_index].col);
 	op_parser->args_num = arg;
 	return (tab_next_index);
 }

@@ -6,7 +6,7 @@
 /*   By: tbareich <tbareich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 02:47:32 by tbareich          #+#    #+#             */
-/*   Updated: 2021/02/26 07:10:28 by tbareich         ###   ########.fr       */
+/*   Updated: 2021/02/26 18:40:27 by tbareich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ static int	dir_helper(t_asm *asm_info, t_line *tab, t_op_parser *op_parser,
 		error_row_col(DIR_INVALID, asm_info->row, tab[0].col);
 	if (tab[1].content[0] == LABEL_CHAR)
 	{
-		op_parser->args[arg_index] = ft_strdup(tab[2].content);
+		if ((op_parser->args[arg_index] = ft_strdup(tab[2].content)) == 0)
+			error(MEMORY);
 		op_parser->args_type[arg_index] = T_DIR | T_LAB;
 		return (3);
 	}

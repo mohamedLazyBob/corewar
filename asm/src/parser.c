@@ -6,7 +6,7 @@
 /*   By: tbareich <tbareich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 15:49:28 by tbareich          #+#    #+#             */
-/*   Updated: 2021/02/26 07:18:14 by tbareich         ###   ########.fr       */
+/*   Updated: 2021/02/26 19:08:24 by tbareich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ static t_op_parser	*label_parser_helper(t_asm *asm_info, t_line *tab,
 	next_index = 1;
 	if ((label = (t_label *)ft_memalloc(sizeof(t_label))) == 0)
 		error(MEMORY);
-	label->value = ft_strdup(tab[0].content);
+	if ((label->value = ft_strdup(tab[0].content)) == 0)
+		error(MEMORY);
 	label->size = asm_info->binary_position;
 	if ((node = ft_lstnew(label, sizeof(t_label))) == 0)
 		error(MEMORY);

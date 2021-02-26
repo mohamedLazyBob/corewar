@@ -6,7 +6,7 @@
 /*   By: tbareich <tbareich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 03:53:20 by tbareich          #+#    #+#             */
-/*   Updated: 2021/02/26 11:44:15 by tbareich         ###   ########.fr       */
+/*   Updated: 2021/02/26 19:06:54 by tbareich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,13 @@ static void	player_reader_helper(t_asm *asm_info, int fd, char *quotes_num)
 			error(MEMORY);
 		if (tab[0].content == 0)
 		{
+			ft_memdel((void **)&line);
 			free_tab_handler(tab);
 			continue;
 		}
 		fill_player_infos(asm_info, tab, quotes_num, &type);
 		free_tab_handler(tab);
+		ft_memdel((void **)&line);
 	}
 	if (status < 0)
 		error(MEMORY);

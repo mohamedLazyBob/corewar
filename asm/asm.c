@@ -6,7 +6,7 @@
 /*   By: tbareich <tbareich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 16:39:18 by tbareich          #+#    #+#             */
-/*   Updated: 2021/02/26 16:21:09 by tbareich         ###   ########.fr       */
+/*   Updated: 2021/02/26 19:10:08 by tbareich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,13 +73,16 @@ static void	exit_program(t_asm *asm_info)
 {
 	t_list		*list;
 	t_list		*tmp;
+	t_label		*label;
 
 	ft_memdel((void **)&(asm_info->champion_name));
 	ft_memdel((void **)&(asm_info->champion_comment));
 	list = asm_info->labels;
 	while (list)
 	{
-		ft_memdel((void **)&(list->content));
+		label = (t_label *)list->content;
+		ft_memdel((void **)&(label->value));
+		ft_memdel((void **)&(label));
 		tmp = list->next;
 		ft_memdel((void **)&list);
 		list = tmp;

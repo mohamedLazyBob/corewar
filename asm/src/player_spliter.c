@@ -6,7 +6,7 @@
 /*   By: tbareich <tbareich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 04:43:04 by tbareich          #+#    #+#             */
-/*   Updated: 2021/02/26 09:06:44 by tbareich         ###   ########.fr       */
+/*   Updated: 2021/02/26 19:06:31 by tbareich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	player_w_nb(char *str, int qn)
 	{
 		while (qn != 1 && (*str == ' ' || *str == '\t' || *str == '\n'))
 			++str;
-		if (qn != 1 && (*str == COMMENT_CHAR || str[i] == ALT_COMMENT_CHAR))
+		if (qn != 1 && (*str == COMMENT_CHAR || *str == ALT_COMMENT_CHAR))
 			break ;
 		if (*str)
 		{
@@ -87,7 +87,7 @@ t_line		*player_spliter(char *str)
 
 	if (str == 0)
 		return (0);
-	if ((tab = (t_line *)ft_memalloc((player_w_nb((char *)str, qn) + 1) *
+	if ((tab = (t_line *)ft_memalloc((player_w_nb(str, qn) + 1) *
 							sizeof(t_line))) == 0)
 		error(MEMORY);
 	k = 0;
