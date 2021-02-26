@@ -6,7 +6,7 @@
 #    By: tbareich <tbareich@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/20 13:51:29 by mesafi            #+#    #+#              #
-#    Updated: 2021/02/26 16:06:46 by tbareich         ###   ########.fr        #
+#    Updated: 2021/02/26 19:26:10 by mzaboub          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,8 +63,7 @@ HANDLERS_OBJS	= $(patsubst %.c, $(OBJSDIR)/$(SRCSDIR)/$(HANDLERSDIR)/%.o, $(HAND
 
 
 CC			= gcc
-# TODO: delete -g flag
-CFLAGS		= -Wall -Wextra -Werror -g -I./headers/ -I./libft/headers
+CFLAGS		= -Wall -Wextra -Werror -I./headers/ -I./libft/headers
 
 # Colors
 GREEN = \033[32m
