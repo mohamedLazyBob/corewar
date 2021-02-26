@@ -6,13 +6,10 @@
 #    By: tbareich <tbareich@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/24 14:13:12 by tbareich          #+#    #+#              #
-#    Updated: 2021/02/23 13:30:44 by tbareich         ###   ########.fr        #
+#    Updated: 2021/02/26 15:12:28 by tbareich         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-# TODO: Delete this line
-SHELL:=/bin/zsh
 
 NAME = ../libftprintf.a
 
@@ -136,7 +133,7 @@ OBJS = ft_printf.o \
 			helpers/error_handler.o \
 			helpers/separated_number.o
 
-CC = clang
+CC = gcc
 
 # ****************
 # **** COLORS ****

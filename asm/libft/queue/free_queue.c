@@ -6,7 +6,7 @@
 /*   By: tbareich <tbareich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 21:31:38 by mesafi            #+#    #+#             */
-/*   Updated: 2020/03/02 17:23:28 by tbareich         ###   ########.fr       */
+/*   Updated: 2021/02/26 15:58:54 by tbareich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ void	free_queue(t_queue *queue)
 		content = dequeue(queue);
 		ft_memdel((void **)&content);
 	}
+	ft_memdel((void **)&queue);
 }

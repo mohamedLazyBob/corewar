@@ -6,7 +6,7 @@
 /*   By: tbareich <tbareich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 00:42:44 by tbareich          #+#    #+#             */
-/*   Updated: 2021/02/26 06:54:25 by tbareich         ###   ########.fr       */
+/*   Updated: 2021/02/26 15:43:40 by tbareich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	get_label_handler(t_asm *asm_info, t_op_parser *op_parser, int index)
 	}
 	if (tmp == NULL)
 	{
-		ft_printf("[Ln %d] Error: The label \"%s\" doesn't exist.\n",
+		ft_dprintf(2, "[Ln %d] Error: The label \"%s\" doesn't exist.\n",
 			op_parser->row, op_parser->args[index]);
 		exit(1);
 	}

@@ -6,13 +6,11 @@
 #    By: tbareich <tbareich@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/29 23:34:49 by mesafi            #+#    #+#              #
-#    Updated: 2021/02/23 13:30:27 by tbareich         ###   ########.fr        #
+#    Updated: 2021/02/26 15:12:19 by tbareich         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-# TODO: Delete this line
-SHELL:=/bin/zsh
 
 NAME = libft.a
 
@@ -119,7 +117,7 @@ OBJS = lib/bst_delete.o \
 			math/min.o \
 			math/abs.o
 
-CC = clang
+CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror -I./headers
 

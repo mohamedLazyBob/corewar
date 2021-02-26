@@ -6,7 +6,7 @@
 /*   By: tbareich <tbareich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 16:39:18 by tbareich          #+#    #+#             */
-/*   Updated: 2021/02/26 05:49:06 by tbareich         ###   ########.fr       */
+/*   Updated: 2021/02/26 16:21:09 by tbareich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 void		asm_init(t_asm *asm_info)
 {
 	asm_info->champion_name = 0;
-	asm_info->champion_name = 0;
+	asm_info->champion_comment = 0;
 	asm_info->name_length = -1;
 	asm_info->comment_length = -1;
 	asm_info->row = 0;
@@ -69,6 +69,23 @@ static void	start_compiler(t_asm *asm_info)
 	}
 }
 
+static void	exit_program(t_asm *asm_info)
+{
+	t_list		*list;
+	t_list		*tmp;
+
+	ft_memdel((void **)&(asm_info->champion_name));
+	ft_memdel((void **)&(asm_info->champion_comment));
+	list = asm_info->labels;
+	while (list)
+	{
+		ft_memdel((void **)&(list->content));
+		tmp = list->next;
+		ft_memdel((void **)&list);
+		list = tmp;
+	}
+}
+
 int			main(int ac, char **av)
 {
 	int			asm_fd;
@@ -94,5 +111,6 @@ int			main(int ac, char **av)
 	exe_fd = create_exe(av[1]);
 	print_binary(asm_info, exe_fd);
 	close(exe_fd);
+	exit_program(&asm_info);
 	return (0);
 }
