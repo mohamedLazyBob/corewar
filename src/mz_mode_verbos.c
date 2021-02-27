@@ -43,11 +43,11 @@ void	mz_print_usage(void)
 {
 	const char str[] = "################################################";
 
-	ft_printf("{RED}Usage: ./corewar [-d N -s N -v N | -b --stealth %s",\
-				"| -n --stealth] [-a] <champion1.cor> <...>{EOC}\n");
+	ft_printf("{RED} Usage: ./corewar [-d N -s N -v N {EOC}");
+	ft_printf("{RED}| -n --stealth] [-a] <champion1.cor> <...> {EOC}\n");
+	ft_printf("{GREEN} #### TEXT OUTPUT MODE ##########%s {EOC}\n", str);
 	ft_printf("\t-a / --aff       : Prints output from \"aff\" %s", \
 				"(Default is to hide it)\n");
-	ft_printf("{GREEN} #### TEXT OUTPUT MODE ##########%s {EOC}\n", str);
 	ft_printf("\t-d / --dump   N    : %s", \
 				"Dumps memory after N cycles then exits\n");
 	ft_printf("\t-s / --pause  N    : %s", \
@@ -61,10 +61,8 @@ void	mz_print_usage(void)
 	ft_printf("\t\t\t\t- 4 : Show operations (Params are NOT litteral ...)\n");
 	ft_printf("\t\t\t\t- 8 : Show deaths\n");
 	ft_printf("\t\t\t\t- 16 : Show PC movements (Except for jumps)\n");
-	ft_printf("\t--stealth : Hides the real contents of the memory\n");
 	ft_printf("{GREEN} #### visualization OUTPUT MODE %s {EOC}\n", str);
 	ft_printf("\t-n / --visu    : visualization output mode\n");
-	ft_printf("\t--stealth : Hides the real contents of the memory\n");
 	ft_printf("{GREEN}################################%s {EOC}\n", str);
 }
 

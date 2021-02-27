@@ -109,15 +109,16 @@ OBJS = lib/bst_delete.o \
 			queue/enqueue.o \
 			queue/init_queue.o \
 			queue/free_queue.o \
-			graph/add_edge.o \
-			graph/create_graph.o \
-			graph/print_graph.o \
-			graph/delete_graph.o \
 			array_list/append.o \
 			array_list/init_array_list.o \
 			math/max.o \
 			math/min.o \
 			math/abs.o
+
+GRAPH_OBJS = graph/add_edge.o \
+			graph/create_graph.o \
+			graph/print_graph.o \
+			graph/delete_graph.o \
 
 CC = gcc
 
@@ -141,7 +142,7 @@ build:
 		echo "$(BLUE)→ $(YELLOW)Creating $(NAME) ...$(RESET)" ; \
 	fi;
 
-$(NAME): $(OBJS) $(HEADER) $(GRAPH)
+$(NAME): $(OBJS) $(GRAPH_OBJS) $(HEADER) $(GRAPH)
 	@if [ ! -f $(NAME) ] ; then \
 		echo "$(BLUE)→ $(GREEN)$(NAME) done $(RESET)" ; \
 	fi;
@@ -149,9 +150,15 @@ $(NAME): $(OBJS) $(HEADER) $(GRAPH)
 	@ranlib $(NAME)
 	@make -C ft_printf
 	
-%.o: %.c $(HEADERS)
-	@$(CC) -I. $(CFLAGS) -c -o $@ $<
-	@if [[ $? && -f $(NAME) ]] ; then \
+$(OBJS) : %.o: %.c $(HEADER)
+	@$(CC) -I$(HEADER) $(CFLAGS) -c -o $@ $<
+	@if [[ -f $(NAME) ]] ; then \
+		echo "$(BLUE)→ $(GREEN)$@ updated$(RESET)" ; \
+	fi;
+
+$(GRAPH_OBJS) : %.o: %.c $(GRAPH)
+	@$(CC) -I$(GRAPH) $(CFLAGS) -c -o $@ $<
+	@if [[ -f $(NAME) ]] ; then \
 		echo "$(BLUE)→ $(GREEN)$@ updated$(RESET)" ; \
 	fi;
 
