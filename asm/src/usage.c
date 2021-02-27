@@ -14,6 +14,12 @@
 
 void	usage(void)
 {
-	ft_dprintf(2, "usage: ./asm file_name\n");
+	ft_dprintf(2, "\n  Usage: ./asm {green}[options]{eoc} <file_name>\n\n");
+	ft_dprintf(2, \
+	"  [ Options ] : {green}-a{eoc} --> print the binary file in the stdout.");
+	ft_dprintf(2, "\n");
+	ft_dprintf(2, \
+	"                {green}-h {eoc}|{green} --help{eoc} --> ");
+	ft_dprintf(2, "print this help man.\n\n");
 	exit(1);
 }
