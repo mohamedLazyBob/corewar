@@ -45,9 +45,6 @@ typedef	enum	e_bool
 	TRUE
 }				t_bool;
 
-
-
-
 typedef struct	s_op_parser
 {
 	char				op_name[10];
@@ -137,6 +134,6 @@ t_bool			is_valid_label_handler(char *str);
 char			*check_file_name_handler(char *str);
 int				get_arg_type_code_handler(int type);
 void			free_tab_handler(t_line *tab);
-void			command_handler( t_asm *asm_info, int ac, char **av);
+void			command_handler(t_asm *asm_info, int ac, char **av);
 
 #endif

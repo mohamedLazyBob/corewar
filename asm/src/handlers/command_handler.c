@@ -21,7 +21,7 @@ static int	check_option(char *str)
 	return (0);
 }
 
-void		command_handler( t_asm *asm_info, int ac, char **av)
+void		command_handler(t_asm *asm_info, int ac, char **av)
 {
 	if (ac < 2 || ac > 3)
 		usage();

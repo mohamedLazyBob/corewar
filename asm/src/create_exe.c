@@ -19,7 +19,7 @@ void	create_exe(t_asm *asm_info)
 
 	if (asm_info->exe_fd == 1)
 	{
-		asm_info->exe_fd =  1;
+		asm_info->exe_fd = 1;
 		return ;
 	}
 	tmp = check_file_name_handler(asm_info->file_name);

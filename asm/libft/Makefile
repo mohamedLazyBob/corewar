@@ -163,6 +163,7 @@ $(GRAPH_OBJS) : %.o: %.c $(GRAPH)
 clean:
 	@make clean -C ft_printf
 	@rm -f $(OBJS)
+	@rm -f $(GRAPH_OBJS)
 	@echo "$(BLUE)→ $(RED)$(NAME) clean$(RESET)"
 
 fclean: clean
