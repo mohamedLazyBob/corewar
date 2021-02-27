@@ -6,7 +6,7 @@
 /*   By: tbareich <tbareich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 15:49:28 by tbareich          #+#    #+#             */
-/*   Updated: 2021/02/26 19:08:24 by tbareich         ###   ########.fr       */
+/*   Updated: 2021/02/27 11:37:21 by tbareich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,8 @@ t_op_parser			*parser(t_asm *asm_info, t_line *tab)
 		index = get_op_index_handler(tab[0].content);
 	if (index == -1)
 	{
-		if (label_char != 0)
-			*label_char = 0;
 		if (label_char != 0 &&
-				is_valid_label_handler(tab[0].content) == TRUE)
+				is_valid_label_handler(tab[0].content, label_char) == TRUE)
 			return (label_parser_helper(asm_info, tab, label_char));
 		else
 			error_row_col("Invalid label.", asm_info->row, tab[0].col);

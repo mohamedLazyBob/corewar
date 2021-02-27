@@ -6,7 +6,7 @@
 /*   By: tbareich <tbareich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 02:47:32 by tbareich          #+#    #+#             */
-/*   Updated: 2021/02/26 18:40:27 by tbareich         ###   ########.fr       */
+/*   Updated: 2021/02/27 11:38:44 by tbareich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	ind_helper(t_asm *asm_info, t_line *tab, t_op_parser *op_parser,
 	{
 		if (tab[1].content == 0)
 			error_row_col(IND_INVALID, asm_info->row, tab[1].col);
-		if (is_valid_label_handler(tab[1].content) == FALSE)
+		if (is_ind_valid_label_handler(tab[1].content) == FALSE)
 			error_row_col(IND_LAB_INVALID, asm_info->row, tab[1].col);
 		op_parser->args[arg_index] = ft_strdup(tab[1].content);
 		op_parser->args_type[arg_index] = T_IND | T_LAB;
