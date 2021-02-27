@@ -5,17 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tbareich <tbareich@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/01/20 13:51:29 by mesafi            #+#    #+#              #
-#    Updated: 2021/02/26 19:26:10 by mzaboub          ###   ########.fr        #
+#    Created: 2021/02/27 08:25:03 by tbareich          #+#    #+#              #
+#    Updated: 2021/02/27 08:25:04 by tbareich         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+
 # Usage:
-# make			# compile all binary
+# make			# compile all binaries
 # make clean	# remove all binaries and objects
 # make fclean	# remove created library
 # make re		# Get recompiled
-
 
 # Standard variables
 NAME		= asm
