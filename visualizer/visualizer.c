@@ -32,7 +32,7 @@ void			display(void)
 static void		goNext()
 {
 	carry = 0;
-	if (!(node = node->next))
+	if (!node || !(node = node->next))
 		return ;
 	glutPostRedisplay();
 }
@@ -40,14 +40,14 @@ static void		goNext()
 static void		goPrevious()
 {
 	carry = 0;
-	if (!(node = node->prev))
+	if (!node || !(node = node->prev))
 		return ;
 	glutPostRedisplay();
 }
 
 static void		timer(int data)
 {
-	if (!carry || !(node = node->next))
+	if (!node || (!carry || !(node = node->next)))
 		return ;
 	glutPostRedisplay();
 	glutTimerFunc(0, timer, 0);
