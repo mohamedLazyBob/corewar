@@ -6,7 +6,7 @@
 /*   By: tbareich <tbareich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 16:39:18 by tbareich          #+#    #+#             */
-/*   Updated: 2021/02/26 19:10:08 by tbareich         ###   ########.fr       */
+/*   Updated: 2021/02/27 11:11:21 by tbareich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ void		asm_init(t_asm *asm_info)
 	asm_info->labels = 0;
 	asm_info->binary_position =
 				4 + PROG_NAME_LENGTH + 4 + 4 + COMMENT_LENGTH + 4;
+	asm_info->exe_fd = -1;
+	asm_info->asm_fd = -1;
+	asm_info->minus_a_option = 0;
+	asm_info->file_name = 0;
 	init_queue(&(asm_info->lables_memo));
 	init_queue(&(asm_info->op_parser));
 	init_queue(&(asm_info->memo));
@@ -69,7 +73,7 @@ static void	start_compiler(t_asm *asm_info)
 	}
 }
 
-static void	exit_program(t_asm *asm_info)
+static void	free_asm(t_asm *asm_info)
 {
 	t_list		*list;
 	t_list		*tmp;
@@ -91,29 +95,23 @@ static void	exit_program(t_asm *asm_info)
 
 int			main(int ac, char **av)
 {
-	int			asm_fd;
-	int			exe_fd;
 	t_asm		asm_info;
 	int			champion_executable_size;
 
-	if (ac < 2)
-		usage();
 	asm_init(&asm_info);
-	asm_fd = open(av[1], O_RDONLY);
-	if (asm_fd < 0)
-		error(FILE_DOES_NOT_EXIST);
-	check_file_name_handler(av[1]);
-	player_reader(&asm_info, asm_fd);
+	command_handler(&asm_info, ac, av);
+	player_reader(&asm_info, asm_info.asm_fd);
 	infos_compiler(&asm_info);
-	reader(&asm_info, asm_fd);
+	reader(&asm_info, asm_info.asm_fd);
 	start_compiler(&asm_info);
 	champion_executable_size = asm_info.binary_position -
 	(4 + PROG_NAME_LENGTH + 4 + 4 + COMMENT_LENGTH + 4);
 	ft_memrcpy(asm_info.memo_program_size, &champion_executable_size, 4);
-	close(asm_fd);
-	exe_fd = create_exe(av[1]);
-	print_binary(asm_info, exe_fd);
-	close(exe_fd);
-	exit_program(&asm_info);
+	close(asm_info.asm_fd);
+	create_exe(&asm_info);
+	print_binary(asm_info, asm_info.exe_fd);
+	if (asm_info.exe_fd != 1)
+		close(asm_info.exe_fd);
+	free_asm(&asm_info);
 	return (0);
 }

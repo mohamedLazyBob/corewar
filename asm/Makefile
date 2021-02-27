@@ -6,7 +6,7 @@
 #    By: tbareich <tbareich@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/27 08:25:03 by tbareich          #+#    #+#              #
-#    Updated: 2021/02/27 08:25:04 by tbareich         ###   ########.fr        #
+#    Updated: 2021/02/27 10:59:40 by tbareich         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ HANDLERS= op_memo_handlers.c \
 			check_file_name_handler.c \
 			construct_op_handler.c \
 			free_tab_handler.c \
+			command_handler.c \
 			get_arg_type_code_handler.c
 
 

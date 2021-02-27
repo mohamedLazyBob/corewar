@@ -6,7 +6,7 @@
 /*   By: tbareich <tbareich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 12:26:33 by tbareich          #+#    #+#             */
-/*   Updated: 2021/02/26 16:07:25 by tbareich         ###   ########.fr       */
+/*   Updated: 2021/02/27 11:08:27 by tbareich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,10 @@ typedef struct	s_asm
 	t_queue		lables_memo;
 	int			memo_index;
 	char		*memo_program_size;
+	int			asm_fd;
+	int			exe_fd;
+	int			minus_a_option;
+	char		*file_name;
 }				t_asm;
 
 void			usage(void);
@@ -109,7 +113,7 @@ t_line			*spliter(char *str);
 t_line			*player_spliter(char *str);
 void			player_reader(t_asm *asm_info, int fd);
 int				checker(t_op_parser *op_parser);
-int				create_exe(char *str);
+void			create_exe(t_asm *asm_info);
 
 int				get_op_index_handler(char *str);
 int				lab_handler(t_asm *asm_info, t_op_parser *op_parser,
@@ -133,5 +137,6 @@ t_bool			is_valid_label_handler(char *str);
 char			*check_file_name_handler(char *str);
 int				get_arg_type_code_handler(int type);
 void			free_tab_handler(t_line *tab);
+void			command_handler( t_asm *asm_info, int ac, char **av);
 
 #endif
