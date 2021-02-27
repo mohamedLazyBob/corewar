@@ -6,7 +6,7 @@
 /*   By: tbareich <tbareich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 12:26:33 by tbareich          #+#    #+#             */
-/*   Updated: 2021/02/27 11:08:27 by tbareich         ###   ########.fr       */
+/*   Updated: 2021/02/27 11:38:28 by tbareich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,8 @@ int				op_type_handler(t_asm *asm_info, t_line *tab,
 t_bool			is_valid_register_handler(char *str);
 void			construct_op_handler(t_asm *asm_info, t_line *tab,
 							t_op_parser *op_parser);
-t_bool			is_valid_label_handler(char *str);
+t_bool			is_valid_label_handler(char *str, char *label_char);
+t_bool			is_ind_valid_label_handler(char *str);
 char			*check_file_name_handler(char *str);
 int				get_arg_type_code_handler(int type);
 void			free_tab_handler(t_line *tab);
