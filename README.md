@@ -26,6 +26,15 @@ Corewar is one of the interesting projects in our 1337 curriculum, where we had 
   these are all now just a part of our DNA now 😉  
 
 # Screenshots
+![Screen Shot 1](https://user-images.githubusercontent.com/45185441/111455262-dc98da80-8715-11eb-8b3a-da6cbd214a5a.jpg)
+
+
+![Screen Shot 2](https://user-images.githubusercontent.com/45185441/111455277-e3275200-8715-11eb-84c2-613c92ba9c9c.jpg)
+
+
+![Screen Shot 3](https://user-images.githubusercontent.com/45185441/111455297-e9b5c980-8715-11eb-93bd-44375c7a004d.jpg)
+
+
 
 # Installation & How to use?
 1. open your terminal of choice and run these commands in order.
